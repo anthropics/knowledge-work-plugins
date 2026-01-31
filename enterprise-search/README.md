@@ -135,13 +135,20 @@ Result: "Based on message history and doc authorship,
 ## Getting Started
 
 ```bash
-# 1. Install
-claude plugins add knowledge-work-plugins/enterprise-search
+# 1. Add the marketplace (one-time setup)
+claude plugin marketplace add anthropics/knowledge-work-plugins
 
-# 2. Search across everything
+# 2. Install
+claude plugin install enterprise-search@knowledge-work-plugins
+```
+
+Once installed, use the plugin:
+
+```bash
+# Search across everything
 /enterprise-search:search [your question here]
 
-# 3. Get a digest
+# Get a digest
 /enterprise-search:digest --daily
 ```
 

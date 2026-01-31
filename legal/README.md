@@ -13,19 +13,21 @@ An AI-powered productivity plugin for in-house legal teams, primarily designed f
 
 ## Installation
 
+First, add the marketplace (one-time setup):
+
+```bash
+claude plugin marketplace add anthropics/knowledge-work-plugins
 ```
-claude plugins add knowledge-work-plugins/legal
+
+Then install this plugin:
+
+```bash
+claude plugin install legal@knowledge-work-plugins
 ```
 
 ## Quick Start
 
-### 1. Install the plugin
-
-```
-claude plugins add knowledge-work-plugins/legal
-```
-
-### 2. Configure your playbook
+### 1. Configure your playbook
 
 Create a local settings file to define your organization's standard positions. This is where you encode your team's negotiation playbook, risk tolerances, and standard terms.
 

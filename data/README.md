@@ -4,8 +4,16 @@ A data analyst plugin primarily designed for [Cowork](https://claude.com/product
 
 ## Installation
 
+First, add the marketplace (one-time setup):
+
+```bash
+claude plugin marketplace add anthropics/knowledge-work-plugins
 ```
-claude plugins add knowledge-work-plugins/data
+
+Then install this plugin:
+
+```bash
+claude plugin install data@knowledge-work-plugins
 ```
 
 ## What It Does

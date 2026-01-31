@@ -4,8 +4,16 @@ A sales productivity plugin primarily designed for [Cowork](https://claude.com/p
 
 ## Installation
 
+First, add the marketplace (one-time setup):
+
 ```bash
-claude plugins add knowledge-work-plugins/sales
+claude plugin marketplace add anthropics/knowledge-work-plugins
+```
+
+Then install this plugin:
+
+```bash
+claude plugin install sales@knowledge-work-plugins
 ```
 
 ## Commands

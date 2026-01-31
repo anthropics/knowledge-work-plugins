@@ -6,8 +6,16 @@ A finance and accounting plugin primarily designed for [Cowork](https://claude.c
 
 ## Installation
 
+First, add the marketplace (one-time setup):
+
 ```bash
-claude plugins add knowledge-work-plugins/finance
+claude plugin marketplace add anthropics/knowledge-work-plugins
+```
+
+Then install this plugin:
+
+```bash
+claude plugin install finance@knowledge-work-plugins
 ```
 
 ## Commands

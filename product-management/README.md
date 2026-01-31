@@ -4,8 +4,16 @@ A product management plugin primarily designed for [Cowork](https://claude.com/p
 
 ## Installation
 
+First, add the marketplace (one-time setup):
+
+```bash
+claude plugin marketplace add anthropics/knowledge-work-plugins
 ```
-claude plugins add knowledge-work-plugins/product-management
+
+Then install this plugin:
+
+```bash
+claude plugin install product-management@knowledge-work-plugins
 ```
 
 ## What It Does

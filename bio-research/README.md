@@ -55,12 +55,16 @@ Systematic framework for research problem selection based on Fischbach & Walsh's
 
 ## Getting Started
 
-```bash
-# Install the plugin
-/install anthropics/knowledge-work-plugins bio-research
+First, add the marketplace (one-time setup):
 
-# Run the start command to see available tools
-/start
+```bash
+claude plugin marketplace add anthropics/knowledge-work-plugins
+```
+
+Then install this plugin:
+
+```bash
+claude plugin install bio-research@knowledge-work-plugins
 ```
 
 ## Common Workflows
