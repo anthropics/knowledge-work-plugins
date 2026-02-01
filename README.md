@@ -31,11 +31,14 @@ Install these directly from Cowork, browse the full collection here on GitHub, o
 ## Getting Started
 
 ```bash
-# Install from the plugin marketplace
-claude plugins add knowledge-work-plugins
+# First, add the marketplace
+claude plugin marketplace add https://github.com/anthropics/knowledge-work-plugins
 
-# Or install a specific plugin
-claude plugins add knowledge-work-plugins/sales
+# Then install plugins (install all or just the ones you need)
+claude plugin install productivity@knowledge-work-plugins
+claude plugin install sales@knowledge-work-plugins
+claude plugin install legal@knowledge-work-plugins
+# ... etc
 ```
 
 Once installed, plugins activate automatically. Skills fire when relevant, and slash commands are available in your session (e.g., `/sales:call-prep`, `/data:write-query`).
