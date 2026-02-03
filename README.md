@@ -1,4 +1,4 @@
-# Knowledge Work Plugins
+# Knowledge Work Pluginssssssssssssssss
 
 Plugins that turn Claude into a specialist for your role, team, and company. Built for [Claude Cowork](https://claude.com/product/cowork), also compatible with [Claude Code](https://claude.com/product/claude-code).
 
