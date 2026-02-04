@@ -30,7 +30,7 @@
     },
     "similarweb": {
       "type": "http",
-      "url": "https://mcp.similarweb.com"
+      "url": "https://mcp.similarweb.com/mcp"
     },
     "klaviyo": {
       "type": "http",
