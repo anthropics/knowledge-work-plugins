@@ -67,7 +67,7 @@ User: "ask todd about the PSR for phoenix"
    → "What does X mean? I'll remember it."
 ```
 
-This tiered approach keeps CLAUDE.md lean (~100 lines) while supporting unlimited scale in memory/.
+This tiered approach keeps CLAUDE.md lean (~100 lines) while supporting unlimited scale in memory.
 
 ## File Locations
 
