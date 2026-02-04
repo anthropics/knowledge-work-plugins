@@ -6,7 +6,7 @@
     },
     "box": {
       "type": "http",
-      "url": "https://mcp.box.com"
+      "url": "https://mcp.box.com/mcp"
     },
     "egnyte": {
       "type": "http",
