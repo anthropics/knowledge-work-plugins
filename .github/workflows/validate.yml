@@ -1,0 +1,148 @@
+name: Validate Plugin Files
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  validate-json:
+    name: Validate JSON Files
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    
+    - name: Validate all JSON files
+      run: |
+        echo "Validating JSON files..."
+        find . -name "*.json" -type f | while read file; do
+          echo "Checking $file"
+          python3 -m json.tool "$file" > /dev/null || exit 1
+        done
+        echo "✓ All JSON files are valid"
+    
+    - name: Validate plugin.json schema
+      run: |
+        echo "Validating plugin.json files..."
+        find . -name "plugin.json" -type f | while read file; do
+          echo "Checking $file"
+          # Check required fields exist
+          python3 << EOF
+import json
+import sys
+
+with open("$file") as f:
+    data = json.load(f)
+    
+required = ["name", "version", "description", "author"]
+missing = [field for field in required if field not in data]
+
+if missing:
+    print(f"Missing required fields in $file: {missing}")
+    sys.exit(1)
+
+# Validate name format (lowercase, hyphens only)
+if not data["name"].replace("-", "").islower():
+    print(f"Plugin name must be lowercase with hyphens: {data['name']}")
+    sys.exit(1)
+
+# Validate version format (semantic versioning)
+version = data["version"]
+parts = version.split(".")
+if len(parts) != 3 or not all(p.isdigit() for p in parts):
+    print(f"Version must be semantic (e.g., 1.0.0): {version}")
+    sys.exit(1)
+
+print(f"✓ $file is valid")
+EOF
+        done
+        echo "✓ All plugin.json files are valid"
+
+  validate-markdown:
+    name: Validate Markdown Files
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Check for malformed strikethrough
+      run: |
+        echo "Checking for malformed strikethrough syntax..."
+        if grep -r "~~[^~]" --include="*.md" .; then
+          echo "❌ Found malformed strikethrough syntax (~~text without closing ~~)"
+          echo "Please remove strikethrough or fix formatting"
+          exit 1
+        fi
+        echo "✓ No malformed strikethrough found"
+    
+    - name: Check for trailing whitespace
+      run: |
+        echo "Checking for trailing whitespace..."
+        if grep -r " $" --include="*.md" .; then
+          echo "❌ Found trailing whitespace in markdown files"
+          exit 1
+        fi
+        echo "✓ No trailing whitespace found"
+
+  validate-structure:
+    name: Validate Plugin Structure
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Check required files
+      run: |
+        echo "Validating plugin structure..."
+        for plugin_dir in */; do
+          # Skip if not a plugin directory
+          if [ ! -f "$plugin_dir/.claude-plugin/plugin.json" ]; then
+            continue
+          fi
+          
+          plugin_name=$(basename "$plugin_dir")
+          echo "Checking $plugin_name..."
+          
+          # Check required files
+          required_files=(
+            ".claude-plugin/plugin.json"
+            "README.md"
+            "LICENSE"
+          )
+          
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$plugin_dir/$file" ]; then
+              echo "❌ Missing required file: $plugin_dir/$file"
+              exit 1
+            fi
+          done
+          
+          echo "✓ $plugin_name structure is valid"
+        done
+        echo "✓ All plugin structures are valid"
+
+  lint-markdown:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Markdown Lint
+      uses: DavidAnson/markdownlint-cli2-action@v13
+      with:
+        globs: '**/*.md'
+        config: |
+          {
+            "default": true,
+            "MD013": false,
+            "MD033": false,
+            "MD041": false
+          }
