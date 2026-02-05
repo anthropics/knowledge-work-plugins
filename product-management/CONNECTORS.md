@@ -10,10 +10,10 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
-| Chat | `~~chat` | Slack | Microsoft Teams |
-| Project tracker | `~~project tracker` | Linear, Asana, monday.com, ClickUp, Atlassian (Jira/Confluence) | Shortcut, Basecamp |
-| Knowledge base | `~~knowledge base` | Notion | Confluence, Guru, Coda |
-| Design | `~~design` | Figma | Sketch, Adobe XD |
-| Product analytics | `~~product analytics` | Amplitude, Pendo | Mixpanel, Heap, FullStory |
-| User feedback | `~~user feedback` | Intercom | Productboard, Canny, UserVoice |
-| Meeting transcription | `~~meeting transcription` | Fireflies | Gong, Dovetail, Otter.ai |
+| Chat | `chat` | Slack | Microsoft Teams |
+| Project tracker | `project tracker` | Linear, Asana, monday.com, ClickUp, Atlassian (Jira/Confluence) | Shortcut, Basecamp |
+| Knowledge base | `knowledge base` | Notion | Confluence, Guru, Coda |
+| Design | `design` | Figma | Sketch, Adobe XD |
+| Product analytics | `product analytics` | Amplitude, Pendo | Mixpanel, Heap, FullStory |
+| User feedback | `user feedback` | Intercom | Productboard, Canny, UserVoice |
+| Meeting transcription | `meeting transcription` | Fireflies | Gong, Dovetail, Otter.ai |

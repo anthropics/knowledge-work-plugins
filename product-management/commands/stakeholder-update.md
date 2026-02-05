@@ -30,22 +30,22 @@ Ask who the update is for:
 
 ### 3. Pull Context from Connected Tools
 
-If **~~project tracker** is connected:
+If **project tracker** is connected:
 - Pull status of roadmap items and milestones
 - Identify completed items since last update
 - Surface items that are at risk or blocked
 - Pull sprint or iteration progress
 
-If **~~chat** is connected:
+If **chat** is connected:
 - Search for relevant team discussions and decisions
 - Find blockers or issues raised in channels
 - Identify key decisions made asynchronously
 
-If **~~meeting transcription** is connected:
+If **meeting transcription** is connected:
 - Pull recent meeting notes and discussion summaries
 - Find decisions and action items from relevant meetings
 
-If **~~knowledge base** is connected:
+If **knowledge base** is connected:
 - Search for recent meeting notes
 - Find decision documents or design reviews
 
@@ -74,7 +74,7 @@ Structure the update for the target audience. See the **stakeholder-comms** skil
 After generating the update:
 - Ask if the user wants to adjust tone, detail level, or emphasis
 - Offer to format for the delivery channel (email, chat post, doc, slides)
-- If **~~chat** is connected, offer to draft the message for sending
+- If **chat** is connected, offer to draft the message for sending
 
 ## Output Format
 

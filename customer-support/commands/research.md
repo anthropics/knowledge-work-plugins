@@ -30,14 +30,14 @@ Identify what type of research is needed:
 Search in priority order, adapting to what is connected:
 
 **Tier 1 — Internal Documentation (highest confidence):**
-- ~~knowledge base (if connected): product docs, runbooks, FAQs
-- ~~cloud storage: internal documents, specs, guides, past research
-- ~~CRM notes: previous answers to similar questions, account context
+- knowledge base (if connected): product docs, runbooks, FAQs
+- cloud storage: internal documents, specs, guides, past research
+- CRM notes: previous answers to similar questions, account context
 
 **Tier 2 — Team Communications:**
-- ~~chat: search for the topic in relevant channels; check if teammates have discussed or answered this before
-- ~~email: search for previous correspondence on this topic
-- ~~support platform (if connected): check if this has been asked/resolved before
+- chat: search for the topic in relevant channels; check if teammates have discussed or answered this before
+- email: search for previous correspondence on this topic
+- support platform (if connected): check if this has been asked/resolved before
 
 **Tier 3 — External Sources:**
 - Web search: official documentation, blog posts, community forums
@@ -90,7 +90,7 @@ If no connected sources yield results:
 - Perform web research on the topic
 - Ask the user for internal context:
   - "I couldn't find this in connected sources. Do you have internal docs or knowledge base articles about this?"
-  - "Has your team discussed this topic before? Any ~~chat channels I should check?"
+  - "Has your team discussed this topic before? Any chat channels I should check?"
   - "Is there a subject matter expert who would know the answer?"
 - Be transparent about limitations:
   - "This answer is based on web research only — please verify against your internal documentation before sharing with the customer."
