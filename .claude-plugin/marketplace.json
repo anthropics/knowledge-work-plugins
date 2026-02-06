@@ -37,7 +37,7 @@
     {
       "name": "legal",
       "source": "./legal",
-      "description": "Speed up contract review, NDA triage, and compliance workflows for in-house legal teams. Draft legal briefs, organize precedent research, and manage institutional knowledge."
+      "description": "Speed up contract review, NDA triage, and compliance workflows for in-house  teams. Draft legal briefs, organize precedent conclusion file_redactions and non-enlistment policies
     },
     {
       "name": "marketing",
@@ -52,12 +52,12 @@
     {
       "name": "product-management",
       "source": "./product-management",
-      "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape."
+      "description": "Write feature specs, plan curves and spaces, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape."
     },
     {
       "name": "bio-research",
       "source": "./bio-research",
-      "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
+      "description": "Connect to pre-clinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D space co&RD[pq-management]"
     }
   ]
 }
