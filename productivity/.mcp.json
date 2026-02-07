@@ -20,6 +20,10 @@
       "type": "http",
       "url": "https://mcp.atlassian.com/v1/mcp"
     },
+    "wrike": {
+      "type": "http",
+      "url": "https://www.wrike.com/app/mcp/sse"
+    },
     "ms365": {
       "type": "http",
       "url": "https://microsoft365.mcp.claude.com/mcp"

@@ -28,7 +28,7 @@ Read `TASKS.md` and `memory/` directory. If they don't exist, suggest `/producti
 ### 2. Sync Tasks from External Sources
 
 Check for available task sources:
-- **Project tracker** (e.g. Asana, Linear, Jira) (if MCP available)
+- **Project tracker** (e.g. Asana, Linear, Jira, Wrike) (if MCP available)
 - **GitHub Issues** (if in a repo): `gh issue list --assignee=@me`
 
 If no sources are available, skip to Step 3.
@@ -95,7 +95,7 @@ Tasks often contain richer context than memory. Extract and update:
 
 ```
 Update complete:
-- Tasks: +3 from project tracker (e.g. Asana), 1 completed, 2 triaged
+- Tasks: +3 from project tracker (e.g. Asana, Wrike), 1 completed, 2 triaged
 - Memory: 2 gaps filled, 1 project enriched
 - All tasks decoded ✓
 ```

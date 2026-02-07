@@ -51,7 +51,7 @@ The best source of workplace language is the user's actual task list. Real tasks
 ```
 Where do you keep your todos or task list? This could be:
 - A local file (e.g., TASKS.md, todo.txt)
-- An app (e.g. Asana, Linear, Jira, Notion, Todoist)
+- An app (e.g. Asana, Linear, Jira, Notion, Wrike, Todoist)
 - A notes file
 
 I'll use your tasks to learn your workplace shorthand.
