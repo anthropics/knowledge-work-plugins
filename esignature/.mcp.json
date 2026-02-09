@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "signeasy": {
-      "type": "http",
+      "type": "sse",
       "url": "https://mcp.signeasy.com/mcp/sse"
     }
   }

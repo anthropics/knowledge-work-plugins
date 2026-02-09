@@ -21,7 +21,7 @@
       "url": "https://microsoft365.mcp.claude.com/mcp"
     },
     "signeasy": {
-      "type": "http",
+      "type": "sse",
       "url": "https://mcp.signeasy.com/mcp/sse"
     }
   }
