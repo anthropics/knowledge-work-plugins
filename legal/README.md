@@ -77,7 +77,7 @@ Configure paths to your template files or define inline templates for common inq
 
 ### 3. Connect your tools
 
-The plugin works best when connected to your existing tools via MCP. Pre-configured servers include Slack, Box, Egnyte, Atlassian, and Microsoft 365. See [CONNECTORS.md](CONNECTORS.md) for the full list of supported categories and options.
+The plugin works best when connected to your existing tools via MCP. Pre-configured servers include Slack, Box, Egnyte, Atlassian, Microsoft 365, and Signeasy. See [CONNECTORS.md](CONNECTORS.md) for the full list of supported categories and options.
 
 ## Commands
 
@@ -181,6 +181,7 @@ The plugin connects to your tools through MCP (Model Context Protocol) servers:
 |----------|----------|---------|
 | Chat | Slack, Teams | Team requests, notifications, triage |
 | Cloud storage | Box, Egnyte | Playbooks, templates, precedents |
+| E-signature | [Signeasy](https://signeasy.com) | Track pending and signed documents, send reminders, cancel requests, search signers, manage templates |
 | Office suite | Microsoft 365 | Email, calendar, documents |
 | Project tracker | Atlassian (Jira/Confluence) | Matter tracking, tasks |
 
