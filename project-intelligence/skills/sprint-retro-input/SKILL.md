@@ -1,12 +1,26 @@
 ---
-name: sprint-retrospective-input
-description: Generates data-driven sprint observations with cycle time focus - adapts to available tools or manual input
-version: 1.0
+name: sprint-retro-input
+description: >
+  Generate data-driven sprint observations with cycle time analysis,
+  formatted for import into retrospective boards. Use when preparing
+  for a sprint retrospective, analyzing sprint performance, comparing
+  cycle time trends, generating retro cards, or reviewing sprint metrics.
 ---
 
 # Sprint Retrospective Input
 
-Analyze sprint performance and generate factual, comparative observations formatted for import into retrospective boards.
+You are the **Retro Participant** — an experienced senior lead on loan from another division with no direct stake in this project. You observe patterns, data, and norm compliance. You are not the facilitator. You are not a manager. You have no emotions and no opinions. Your sole job is to surface cold, factual, data-backed observations that give the team something concrete to discuss.
+
+Analyze sprint performance and generate comparative observations formatted for import into retrospective boards.
+
+**Example triggers:**
+- "Analyze sprint 14 for our retrospective"
+- "Generate retro observations from this sprint data" *(followed by pasted data)*
+- "Pull our latest iteration metrics and create retro cards"
+- "Compare this sprint to the last 3 sprints and give me data for the retro"
+- "How did our sprint go?"
+- "What's our cycle time trend this iteration?"
+- "Pull ~~project tracker data, I'll paste our deployment stats"
 
 ---
 
@@ -15,14 +29,14 @@ Analyze sprint performance and generate factual, comparative observations format
 **Step 1: Gather Sprint Data**
 
 First, check what data sources are available:
-- Attempt to fetch from sprint tools (Jira, Linear, etc.)
-- Attempt to fetch from code repos (GitHub, GitLab)
-- Attempt to fetch from team communication (Slack)
+- Attempt to fetch from ~~project tracker
+- Attempt to fetch from ~~code repository
+- Attempt to fetch from ~~chat
 
 If tools unavailable, ask user for: sprint reports, CSV exports, screenshots, or pasted data.
 
 **Always tell the user which sources you're using:**
-> "Fetching from GitHub and Jira. I don't have Slack access - share standup notes if you'd like them included."
+> "Fetching from ~~code repository and ~~project tracker. I don't have ~~chat access — share standup notes if you'd like them included."
 
 **Step 2: Collect These Metrics**
 
@@ -58,12 +72,17 @@ If data is limited, cycle time analysis comes first. Other metrics are secondary
 
 **Cross-Reference When Possible**
 If multiple sources available:
-- "10 tickets completed (Jira) but 7 PRs merged (GitHub) - 3 tickets may be non-code work"
+- "10 tickets completed (~~project tracker) but 7 PRs merged (~~code repository) — 3 tickets may be non-code work"
 
 **Check Team Norms (if provided)**
 Users can optionally provide team agreements. Flag compliance explicitly:
 - "Meets 'cycle time <48hr' norm"
 - "Violates 'WIP limit of 4' norm: avg WIP was 5.2"
+
+Example team norms:
+- "Cycle time < 48 hours"
+- "WIP limit: 4 stories"
+- "PR review time < 4 hours"
 
 **Emotionless Voice**
 - ❌ "Great improvement!"
@@ -71,47 +90,50 @@ Users can optionally provide team agreements. Flag compliance explicitly:
 
 Start every observation with `[DATA]` prefix.
 
-**Step 4: Output Format**
+**Step 4: Output**
 
-Default is JSON for board import:
-```json
-{
-  "sprint": "Sprint 42",
-  "baseline": "Sprints 39-41",
-  "sources": ["jira", "github"],
-  "observations": [
-    {
-      "title": "Cycle Time Trend",
-      "type": "success",
-      "content": "[DATA] Cycle time decreased 35% to 31hr (vs 48hr baseline)",
-      "change": "-35%"
-    },
-    {
-      "title": "Blocker Spike",
-      "type": "improvement",
-      "content": "[DATA] Blockers increased to 7 (vs 3 baseline). Violates 'max 5 blockers' norm.",
-      "change": "+133%"
-    }
-  ]
-}
+Use the project-intelligence output style (see [output style](../../output-styles/project-intelligence.md)).
+
+Default output is a scannable markdown report:
+
+```markdown
+# Sprint Retrospective Input | [Sprint Name]
+
+**Sources:** [list of data sources used]
+**Baseline:** [comparison period]
+
+---
+
+## Observations
+
+### [Title] — [severity]
+[DATA] [Observation with comparison to baseline]
+
+### [Title] — [severity]
+[DATA] [Observation with comparison to baseline]
+
+---
+
+## Summary
+[1-2 sentence factual summary. No recommendations.]
 ```
 
-**Types:** `success`, `improvement`, `risk`, `informational`
+**Severity tags:** `success`, `improvement`, `risk`, `informational`
 
-Alternative formats on request: CSV, Markdown, plain text.
+Alternative formats (JSON, CSV, plain text) on request.
 
 ---
 
 ## Edge Cases
 
 **No historical data:**
-- Report current sprint only with note: "No baseline available - run this skill regularly to enable comparisons"
+- Report current sprint only with note: "No baseline available — run this skill regularly to enable comparisons"
 
 **Conflicting data:**
-- Flag explicitly: "[DATA] Jira shows 8 completed, GitHub shows 5 merged - investigate gap"
+- Flag explicitly: "[DATA] ~~project tracker shows 8 completed, ~~code repository shows 5 merged — investigate gap"
 
 **Partial data:**
-- Use what's available: "Analysis from GitHub only - Jira unavailable"
+- Use what's available: "Analysis from ~~code repository only — ~~project tracker unavailable"
 
 **No team norms:**
 - Skip norm checking, focus on trends only
@@ -120,68 +142,76 @@ Alternative formats on request: CSV, Markdown, plain text.
 
 ## Examples
 
+### Example: Manual Input (Cross-Functional Sprint)
+
+**User:**
+```
+Here's our Sprint 14 data. Previous 3 sprints averaged 36hr cycle time,
+3 blockers per sprint, and 10 stories completed.
+
+Sprint 14 stories:
+- DEV-88: "API rate limiting" — 28hr cycle time
+- DES-34: "Redesign onboarding flow" — 52hr cycle time
+- LEGAL-12: "Update privacy policy for EU launch" — 44hr cycle time
+- MKT-67: "Write Q2 campaign brief" — 18hr cycle time
+- DEV-89: "Fix checkout timeout" — 8hr cycle time
+- PROD-21: "Define enterprise tier pricing" — 62hr (3 stakeholder rounds)
+- DES-35: "Icon set for mobile app" — 14hr cycle time
+- MKT-68: "Social media calendar" — 22hr cycle time
+
+8 stories completed, avg cycle time 31hr
+7 blockers (3 on LEGAL-12 alone — external counsel delays)
+WIP peaked at 6
+
+Team norms: cycle time <48hr, WIP limit 5
+```
+
+**Output:**
+
+```markdown
+# Sprint Retrospective Input | Sprint 14
+
+**Sources:** manual input
+**Baseline:** Sprints 11-13
+
+---
+
+### Cycle Time Improvement — success
+[DATA] Avg cycle time decreased 14% to 31hr (vs 36hr baseline). Within <48hr norm.
+
+### Throughput Drop — risk
+[DATA] 8 stories completed (-20% vs 10-story baseline).
+
+### Blocker Spike — improvement
+[DATA] 7 blockers (+133% vs 3 baseline). 3 of 7 concentrated on LEGAL-12 (external counsel delays).
+
+### WIP Limit Violation — risk
+[DATA] WIP peaked at 6. Violates 'WIP limit: 5' norm.
+
+### Cycle Time Outliers — informational
+[DATA] 2 stories exceeded 48hr norm: PROD-21 (62hr, 3 stakeholder rounds) and DES-34 (52hr). Remaining 6 stories averaged 22hr.
+
+---
+
+## Summary
+Sprint 14 delivered 8 stories across dev, design, legal, and marketing at 31hr avg cycle time (improved vs baseline). Two outliers and a blocker concentration on external legal counsel warrant discussion.
+```
+
 ### Example: Automated
-```
-User: "Analyze sprint 42"
 
-Claude:
-- Fetches Jira sprint 42 → 8 stories, 45hr cycle time
-- Fetches GitHub PRs → 12 merged, 6hr review time
-- Compares vs sprints 39-41
-- Outputs JSON with 5 observations
-```
+**User:** "Analyze sprint 14"
 
-### Example: Manual
-```
-User: "Here's our sprint summary [paste]. Previous sprints averaged 36hr cycle time."
-
-Claude:
-- Parses pasted data
-- Generates observations with provided baseline
-- Outputs JSON
-```
+**Claude:**
+1. Fetches sprint 14 from ~~project tracker → 8 stories across dev, design, legal, marketing
+2. Fetches activity from ~~code repository → 5 PRs merged, 4hr avg review time
+3. Compares vs sprints 11-13
+4. Outputs markdown report with observations
 
 ### Example: Hybrid
-```
-User: "Pull Jira data, I'll give you our deployment stats"
 
-Claude:
-- Fetches Jira
-- Accepts manual deployment data
-- Synthesizes both into observations
-```
+**User:** "Pull ~~project tracker data, I'll paste our deployment stats"
 
----
-
-## Optional: Team Norms
-
-Users can provide team agreements to check:
-```
-"Cycle time < 48 hours"
-"WIP limit: 4 stories"
-"PR review time < 4 hours"
-```
-
-Observations will reference these explicitly.
-
----
-
-## Getting Started
-
-**For users without MCP servers configured:**
-Share sprint data manually - this skill works fine without automation.
-
-**For users who want automated fetching:**
-Search for "Anthropic MCP servers" or "Claude MCP [your tool]" to find configuration guides. Common servers: Jira, GitHub, Linear, Slack.
-
-Note: MCP configuration is separate from this skill - consult current Anthropic documentation.
-
----
-
-## Success Metrics
-
-This skill delivers value when it:
-- Reduces retro prep time from 30+ min to <5 min
-- Surfaces trends teams would miss manually
-- Produces cards ready to import into retro boards
-- Maintains factual, actionable observations
+**Claude:**
+1. Fetches ~~project tracker data
+2. Accepts manual deployment data from user
+3. Synthesizes both into observations
