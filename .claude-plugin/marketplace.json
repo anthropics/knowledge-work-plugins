@@ -58,6 +58,11 @@
       "name": "bio-research",
       "source": "./bio-research",
       "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
+    },
+    {
+      "name": "job-search",
+      "source": "./job-search",
+      "description": "Find decision-makers, customize resumes, and generate outreach scripts to land your next role faster."
     }
   ]
 }

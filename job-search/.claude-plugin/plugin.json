@@ -1,0 +1,8 @@
+{
+  "name": "job-search",
+  "version": "0.1.0",
+  "description": "Find decision-makers, customize resumes, and generate outreach scripts to land your next role faster.",
+  "author": {
+    "name": "Anthropic"
+  }
+}
