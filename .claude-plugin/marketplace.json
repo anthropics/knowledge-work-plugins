@@ -5,61 +5,6 @@
   },
   "plugins": [
     {
-      "name": "productivity",
-      "source": "./productivity",
-      "description": "Manage tasks, plan your day, and build up memory of important context about your work. Syncs with your calendar, email, and chat to keep everything organized and on track."
-    },
-    {
-      "name": "enterprise-search",
-      "source": "./enterprise-search",
-      "description": "Search across all of your company's tools in one place. Find anything across email, chat, documents, and wikis without switching between apps."
-    },
-    {
-      "name": "cowork-plugin-management",
-      "source": "./cowork-plugin-management",
-      "description": "Create, customize, and manage plugins tailored to your organization's tools and workflows. Configure MCP servers, adjust plugin behavior, and adapt templates to match how your team works."
-    },
-    {
-      "name": "sales",
-      "source": "./sales",
-      "description": "Prospect, craft outreach, and build deal strategy faster. Prep for calls, manage your pipeline, and write personalized messaging that moves deals forward."
-    },
-    {
-      "name": "finance",
-      "source": "./finance",
-      "description": "Streamline finance and accounting workflows, from journal entries and reconciliation to financial statements and variance analysis. Speed up audit prep, month-end close, and keeping your books clean."
-    },
-    {
-      "name": "data",
-      "source": "./data",
-      "description": "Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders."
-    },
-    {
-      "name": "legal",
-      "source": "./legal",
-      "description": "Speed up contract review, NDA triage, and compliance workflows for in-house legal teams. Draft legal briefs, organize precedent research, and manage institutional knowledge."
-    },
-    {
-      "name": "marketing",
-      "source": "./marketing",
-      "description": "Create content, plan campaigns, and analyze performance across marketing channels. Maintain brand voice consistency, track competitors, and report on what's working."
-    },
-    {
-      "name": "customer-support",
-      "source": "./customer-support",
-      "description": "Triage tickets, draft responses, escalate issues, and build your knowledge base. Research customer context and turn resolved issues into self-service content."
-    },
-    {
-      "name": "product-management",
-      "source": "./product-management",
-      "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape."
-    },
-    {
-      "name": "bio-research",
-      "source": "./bio-research",
-      "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
-    },
-    {
       "name": "job-search",
       "source": "./job-search",
       "description": "Find decision-makers, customize resumes, and generate outreach scripts to land your next role faster."
