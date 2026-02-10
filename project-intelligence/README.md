@@ -45,6 +45,7 @@ Aggregate signals across quality checks, open risks, schedule status, and team r
 | `schedule-forecast` | Milestone burndown, throughput trends, completion confidence | ✅ Ready |
 | `dependency-readiness` | External/internal dependency status for milestones | ✅ Ready |
 | `stakeholder-signoff` | Approval tracking with enablement verification | ✅ Ready |
+| `change-summary` | Tiered changelog: major milestone, minor milestone, review delta | ✅ Ready |
 
 *Input skills work standalone or feed into aggregators.*
 
@@ -101,6 +102,7 @@ See [CONNECTORS.md](./CONNECTORS.md) for tool setup.
 │ • schedule-forecast│          │
 │ • dependency-readiness        │
 │ • stakeholder-signoff         │
+│ • change-summary              │
 └────────────────────┼──────────┘
                      │
                ┌─────┴──────────────┐

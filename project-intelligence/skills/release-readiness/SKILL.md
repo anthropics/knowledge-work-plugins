@@ -46,6 +46,7 @@ Pull the latest output from each available input skill:
 | Flow | `story-flow` | Are stories flowing or stuck? |
 | Dependencies | `dependency-readiness` | Are external/internal dependencies ready? |
 | Approvals | `stakeholder-signoff` | Have stakeholders been enabled and approved? |
+| Changes | `change-summary` | Is the changelog clear and communicated? |
 
 If a skill hasn't been run recently, run it or note it as "not assessed."
 
@@ -65,6 +66,7 @@ Convert each skill output to a traffic light:
 | **Flow** | Stories completing within targets | Some stories exceeding cycle time | Multiple stalled or churning stories |
 | **Dependencies** | All dependencies verified ready | Some at risk or in progress | Critical-path dependency not ready or unknown |
 | **Approvals** | All stakeholders enabled and approved | Pending or conditional approvals | Informed objection or rubber stamp on critical approver |
+| **Changes** | Changelog generated and shared | Changelog generated but not shared | No changelog or major gaps in coverage |
 
 **Step 3: Apply Decision Logic**
 
@@ -105,6 +107,7 @@ Use the project-intelligence output style (see [output style](../../output-style
 | Flow | 🟢/🟡/🔴 | [1-line summary] |
 | Dependencies | 🟢/🟡/🔴 | [1-line summary] |
 | Approvals | 🟢/🟡/🔴 | [1-line summary] |
+| Changes | 🟢/🟡/🔴 | [1-line summary] |
 
 ---
 
@@ -167,6 +170,7 @@ Collect yellow signals that aren't blocking but need awareness:
 | `story-flow` | Non-critical stories exceeding cycle time |
 | `dependency-readiness` | Non-critical dependencies at risk or in progress |
 | `stakeholder-signoff` | Pending approvals, conditional approvals, or rubber stamps |
+| `change-summary` | Changelog not shared with stakeholders or has major gaps |
 
 ---
 
