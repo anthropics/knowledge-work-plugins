@@ -46,10 +46,6 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 
 ### Track Registry (Canonical)
 
-- [x] **Track: health-core** (./tracks/health-core/)
-  - Description: Plugin foundation
-  - Phase: 1
-  - Adapts From: -
 - [~] **Track: health-complaints** (./tracks/health-complaints/)
   - Description: Patient complaints
   - Phase: 2
@@ -133,7 +129,7 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 
 ### Summary
 
-- **22 tracks** total (1 meta + 20 implementation + 1 infrastructure)
+- **21 tracks** total (1 meta + 19 implementation + 1 infrastructure)
 - **33 planned skills** across all tracks
 - **16 planned commands** for key workflows
 - **0 implemented skills** in `health/skills/` currently
