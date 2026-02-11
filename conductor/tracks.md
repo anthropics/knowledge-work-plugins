@@ -32,12 +32,14 @@ PHASE 3: Extended Workflows (parallel)                    │
 ├── health-quality ──────────────────────────────────────┤
 ├── health-financial ────────────────────────────────────┤
 ├── health-evidence ─────────────────────────────────────┤
-└── health-data-analysis ────────────────────────────────┤
+├── health-data-analysis ────────────────────────────────┤
+└── health-public-health ────────────────────────────────┤
                                                           │
 PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 ├── health-ethics ───────────────────────────────────────┤
 ├── health-economics ────────────────────────────────────┤
 ├── health-manuscripts ──────────────────────────────────┤
+├── health-doc-coauthoring ──────────────────────────────┤
 ├── health-grants ───────────────────────────────────────┤
 └── health-medicolegal ──────────────────────────────────┘
 ```
@@ -59,17 +61,19 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 | [health-financial](./tracks/health-financial/) | Payer contracts | 3 | finance |
 | [health-evidence](./tracks/health-evidence/) | Systematic reviews | 3 | bio-research |
 | [health-data-analysis](./tracks/health-data-analysis/) | Epidemiological reports | 3 | data |
+| [health-public-health](./tracks/health-public-health/) | Notifiable disease reporting and surveillance | 3 | legal/compliance |
 | [health-ethics](./tracks/health-ethics/) | Research/clinical ethics | 4 | bio-research |
 | [health-economics](./tracks/health-economics/) | HTA, cost-effectiveness | 4 | data, finance |
 | [health-manuscripts](./tracks/health-manuscripts/) | Journal preparation | 4 | bio-research |
+| [health-doc-coauthoring](./tracks/health-doc-coauthoring/) | Three-stage collaborative clinical document development | 4 | document-skills/docx |
 | [health-grants](./tracks/health-grants/) | Grant applications | 4 | bio-research |
 | [health-medicolegal](./tracks/health-medicolegal/) | Child protection, affidavits, medico-legal | 4 | legal |
 
 ### Summary
 
-- **19 tracks** total (1 meta + 18 implementation)
-- **30 skills** across all tracks
-- **14 commands** for key workflows
+- **21 tracks** total (1 meta + 20 implementation)
+- **33 skills** across all tracks
+- **16 commands** for key workflows
 - **4 phases** of execution
 
 ## Track Status
@@ -83,4 +87,4 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 
 | Track | Description | Status |
 |-------|-------------|--------|
-| [skill-quality](./tracks/skill-quality/) | Improve 50+ existing skills across all plugins | planning |
+| [health-skill-quality](./tracks/skill-quality/) | Quality standards for health plugin skills (30 skills) | planning |
