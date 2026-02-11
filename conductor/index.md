@@ -36,5 +36,6 @@ plugin-name/
 | data | SQL, visualization, analysis |
 | enterprise-search | Cross-tool search |
 | bio-research | Life sciences R&D |
+| health | Health checks & diagnostics |
 | cowork-plugin-management | Plugin creation |
 | health | Healthcare organization workflows |
