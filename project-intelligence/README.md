@@ -1,8 +1,8 @@
 # Project Intelligence
 
-**Surface patterns in any team's work — code, documents, designs, or compliance artifacts.**
+**Surface patterns in any team's work e.g. code, documents, designs, or compliance artifacts.**
 
-A composable skill set that analyzes project data across disciplines and surfaces factual, data-driven observations for retrospectives, quality gates, release decisions, and process improvement. Designed to supplement — not duplicate — role-specific plugins.
+A composable skill set that analyzes project data across disciplines.  It surfaces factual, data-driven observations for retrospectives, quality gates, release decisions, and process improvement. Designed to supplement role-specific plugins.
 
 > **A note on terminology:** These skills use the word **"story"** to mean any trackable unit of work — whether your team calls them stories, tasks, tickets, cards, work items, or issues. If it moves through columns on a board or has a lifecycle status, it's a story here.
 
@@ -10,7 +10,7 @@ A composable skill set that analyzes project data across disciplines and surface
 
 ## Where This Fits
 
-The Anthropic plugin suite is **role-based** — each plugin coaches a specific role (product manager, legal counsel, finance) on how to do their job. Project-intelligence is **process-based** — it observes what's happening across all roles and answers: *"What's the actual state of this project right now?"*
+The Anthropic plugin suite is **role-based**; each plugin coaches a specific role (product manager, legal counsel, finance) and performs tasks on their behalf. Project-intelligence is **process-based**; it observes what's happening across all roles and answers: *"What's the actual state of this project right now?"*
 
 | | Role Plugins | Project Intelligence |
 |---|---|---|
