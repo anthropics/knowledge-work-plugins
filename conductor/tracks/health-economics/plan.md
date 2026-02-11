@@ -16,6 +16,7 @@
   - Acceptance: Costing methodology
   - Acceptance: QALY/DALY calculation guidance
   - Acceptance: Sensitivity analysis framework
+  - MCP: `~~research literature` (PubMed)
   - Source patterns: `data/statistical-analysis`
 
 ## Phase 2: HTA Submission Skill

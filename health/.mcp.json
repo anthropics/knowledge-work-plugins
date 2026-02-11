@@ -25,7 +25,28 @@
         "FHIR_BASE_URL": "${FHIR_BASE_URL}",
         "FHIR_CLIENT_ID": "${FHIR_CLIENT_ID}",
         "FHIR_CLIENT_SECRET": "${FHIR_CLIENT_SECRET}"
-      },
+      }
+    },
+    "icd10": {
+      "command": "npx",
+      "args": ["-y", "@google/mcp-server-icd10"],
+      "env": {
+        "ICD10_API_KEY": "${ICD10_API_KEY}"
+      }
+    },
+    "snomed": {
+      "command": "npx",
+      "args": ["-y", "@google/mcp-server-snomed"],
+      "env": {
+        "SNOMED_API_URL": "${SNOMED_API_URL}"
+      }
+    },
+    "pubmed": {
+      "command": "npx",
+      "args": ["-y", "@google/mcp-server-pubmed"],
+      "env": {
+        "PUBMED_API_KEY": "${PUBMED_API_KEY}"
+      }
     }
   }
 }

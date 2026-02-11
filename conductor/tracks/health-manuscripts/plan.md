@@ -15,6 +15,7 @@
   - Acceptance: Reporting guideline compliance checking
   - Acceptance: Figure/table preparation guidance
   - Acceptance: Reference formatting
+  - MCP: `~~research literature` (PubMed)
   - Source patterns: `scientific-writing`, `venue-templates`
 
 ## Phase 2: Prepare Manuscript Command

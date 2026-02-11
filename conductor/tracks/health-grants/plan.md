@@ -15,6 +15,7 @@
   - Acceptance: HRC (NZ) structure and requirements
   - Acceptance: Assessment criteria alignment
   - Acceptance: Budget justification framework
+  - MCP: `~~research literature` (PubMed)
   - Source patterns: `research-grants`
 
 ## Phase 2: Grant Application Command

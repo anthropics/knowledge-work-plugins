@@ -13,3 +13,6 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Cloud storage | `~~cloud storage` | SharePoint | Box, Egnyte, Google Drive, Dropbox |
 | Project tracker | `~~project tracker` | Jira | ServiceNow, Azure DevOps, Linear, Asana |
 | Clinical systems | `~~clinical systems` | FHIR | Epic, Cerner, Custom APIs |
+| Medical coding | `~~medical coding` | ICD-10 | ICD-11, SNOMED-CT |
+| Clinical terminology | `~~clinical terminology` | SNOMED | LOINC, RxNorm |
+| Research literature | `~~research literature` | PubMed | Cochrane Library, Google Scholar |

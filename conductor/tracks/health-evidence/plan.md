@@ -15,6 +15,7 @@
   - Acceptance: Data extraction templates
   - Acceptance: Risk of bias tools (RoB 2, ROBINS-I)
   - Acceptance: GRADE evidence grading
+  - MCP: `~~research literature` (PubMed), `~~clinical terminology` (SNOMED/LOINC)
   - Source patterns: `bio-research`, PRISMA guidelines
 
 ## Phase 2: Evidence Synthesis Skill

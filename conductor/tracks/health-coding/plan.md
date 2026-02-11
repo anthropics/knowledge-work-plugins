@@ -17,7 +17,7 @@
   - Acceptance: Common coding errors
   - Acceptance: Documentation requirements
   - Source patterns: `data/data-validation`
-  - MCP: ICD-10 Codes connector
+  - MCP: `~~medical coding` (ICD-10), `~~clinical terminology` (SNOMED)
 
 ## Phase 2: Validate Coding Command
 *Dependencies: Phase 1*
