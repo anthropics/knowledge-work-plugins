@@ -45,9 +45,9 @@ Using the category taxonomy and priority framework from the **ticket-triage** sk
 
 Before routing, check available sources:
 
-- **~~support platform**: Search for similar open or recently resolved tickets
-- **~~knowledge base**: Check for known issues or existing documentation
-- **~~project tracker**: Check if there's an existing bug report or feature request
+- **support platform**: Search for similar open or recently resolved tickets
+- **knowledge base**: Check for known issues or existing documentation
+- **project tracker**: Check if there's an existing bug report or feature request
 
 ### 4. Determine Routing
 

@@ -38,27 +38,27 @@ Parse the user's input to determine:
 
 Gather relevant background from available sources:
 
-**~~email:**
+**email:**
 - Previous correspondence with this customer on this topic
 - Any commitments or timelines previously shared
 - Tone and style of the existing thread
 
-**~~chat:**
+**chat:**
 - Internal discussions about this customer or topic
 - Any guidance from product, engineering, or leadership
 - Similar situations and how they were handled
 
-**~~CRM (if connected):**
+**CRM (if connected):**
 - Account details and plan level
 - Contact information and key stakeholders
 - Previous escalations or sensitive issues
 
-**~~support platform (if connected):**
+**support platform (if connected):**
 - Related tickets and their resolution
 - Known issues or workarounds
 - SLA status and response time commitments
 
-**~~knowledge base:**
+**knowledge base:**
 - Official documentation or help articles to reference
 - Product roadmap information (if shareable)
 - Policy or process documentation

@@ -29,12 +29,12 @@ Ask the user:
 - Job postings (signal of strategic direction)
 - Social media and community discussions
 
-If **~~knowledge base** is connected:
+If **knowledge base** is connected:
 - Search for existing competitive analysis documents
 - Find win/loss reports or sales battle cards
 - Pull prior competitive research
 
-If **~~chat** is connected:
+If **chat** is connected:
 - Search for competitive mentions in sales or product channels
 - Find recent deal feedback involving competitors
 

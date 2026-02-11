@@ -35,9 +35,9 @@ Parse the input to identify:
 
 If a ticket reference is provided, look up the full context:
 
-- **~~support platform**: Pull the ticket thread, resolution, and any internal notes
-- **~~knowledge base**: Check if a similar article already exists (update vs. create new)
-- **~~project tracker**: Check if there's a related bug or feature request
+- **support platform**: Pull the ticket thread, resolution, and any internal notes
+- **knowledge base**: Check if a similar article already exists (update vs. create new)
+- **project tracker**: Check if there's a related bug or feature request
 
 ### 2. Draft the Article
 
@@ -77,7 +77,7 @@ from the knowledge-management skill]
 ### 4. Offer Next Steps
 
 After generating the article:
-- "Want me to check if a similar article already exists in your ~~knowledge base?"
+- "Want me to check if a similar article already exists in your knowledge base?"
 - "Should I adjust the technical depth for a different audience?"
 - "Want me to draft a companion article (e.g., a how-to to go with this troubleshooting guide)?"
 - "Should I create an internal-only version with additional technical detail?"

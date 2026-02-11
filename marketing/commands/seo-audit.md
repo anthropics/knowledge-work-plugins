@@ -38,11 +38,11 @@ Gather the following from the user. If not provided, ask before proceeding:
 
 Research keywords related to the user's domain, topic, or target keywords.
 
-**If ~~SEO tools are connected:**
+**If SEO tools are connected:**
 - Pull keyword data, search volume, keyword difficulty scores, and ranking positions automatically
 - Identify keywords the site currently ranks for and where it's gaining or losing ground
 
-**If ~~product analytics are connected:**
+**If product analytics are connected:**
 - Cross-reference keyword targets with actual organic traffic data to validate which keywords are driving visits and conversions
 
 **If tools are not connected:**

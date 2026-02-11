@@ -144,7 +144,7 @@ Introduction and what they will learn -- Lesson 1: foundational concept -- Lesso
 
 ## Tool Integration
 
-### If ~~email marketing is connected (e.g., Klaviyo, Mailchimp, Customer.io)
+### If email marketing is connected (e.g., Klaviyo, Mailchimp, Customer.io)
 - Reference how to set up the sequence as a flow or automation in the platform
 - Note any platform-specific features to use (e.g., smart send time, conditional splits, A/B testing)
 - Map the branching logic to the platform's visual flow builder concepts

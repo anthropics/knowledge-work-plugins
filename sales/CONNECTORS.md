@@ -10,11 +10,11 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
-| Calendar | `~~calendar` | Microsoft 365 | Google Calendar |
-| Chat | `~~chat` | Slack | Microsoft Teams |
-| CRM | `~~CRM` | HubSpot, Close | Salesforce, Pipedrive, Copper |
-| Data enrichment | `~~data enrichment` | Clay, ZoomInfo | Apollo, Clearbit, Lusha |
-| Email | `~~email` | Microsoft 365 | Gmail |
-| Knowledge base | `~~knowledge base` | Notion | Confluence, Guru |
-| Meeting transcription | `~~conversation intelligence` | Fireflies | Gong, Chorus, Otter.ai |
-| Project tracker | `~~project tracker` | Atlassian (Jira/Confluence) | Linear, Asana |
+| Calendar | `calendar` | Microsoft 365 | Google Calendar |
+| Chat | `chat` | Slack | Microsoft Teams |
+| CRM | `CRM` | HubSpot, Close | Salesforce, Pipedrive, Copper |
+| Data enrichment | `data enrichment` | Clay, ZoomInfo | Apollo, Clearbit, Lusha |
+| Email | `email` | Microsoft 365 | Gmail |
+| Knowledge base | `knowledge base` | Notion | Confluence, Guru |
+| Meeting transcription | `conversation intelligence` | Fireflies | Gong, Chorus, Otter.ai |
+| Project tracker | `project tracker` | Atlassian (Jira/Confluence) | Linear, Asana |

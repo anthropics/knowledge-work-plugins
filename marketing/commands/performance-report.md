@@ -25,7 +25,7 @@ User runs `/performance-report` or asks for a marketing report, performance anal
 2. **Time period** — the reporting window (last week, last month, last quarter, custom date range)
 
 3. **Data source**:
-   - If ~~product analytics is connected: pull performance data automatically
+   - If product analytics is connected: pull performance data automatically
    - If not connected: ask the user to provide metrics. Prompt with: "Please paste or share your performance data. I can work with spreadsheets, CSV data, dashboard screenshots described in text, or just the key numbers."
 
 4. **Comparison period** (optional) — prior period or year-over-year for trend context

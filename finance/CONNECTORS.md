@@ -10,11 +10,11 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
-| Data warehouse | `~~data warehouse` | Snowflake\*, Databricks\*, BigQuery | Redshift, PostgreSQL |
-| Email | `~~email` | Microsoft 365 | — |
-| Office suite | `~~office suite` | Microsoft 365 | — |
-| Chat | `~~chat` | Slack | Microsoft Teams |
-| ERP / Accounting | `~~erp` | — (no supported MCP servers yet) | NetSuite, SAP, QuickBooks, Xero |
-| Analytics / BI | `~~analytics` | — (no supported MCP servers yet) | Tableau, Looker, Power BI |
+| Data warehouse | `data warehouse` | Snowflake\*, Databricks\*, BigQuery | Redshift, PostgreSQL |
+| Email | `email` | Microsoft 365 | — |
+| Office suite | `office suite` | Microsoft 365 | — |
+| Chat | `chat` | Slack | Microsoft Teams |
+| ERP / Accounting | `erp` | — (no supported MCP servers yet) | NetSuite, SAP, QuickBooks, Xero |
+| Analytics / BI | `analytics` | — (no supported MCP servers yet) | Tableau, Looker, Power BI |
 
 \* Placeholder — MCP URL not yet configured

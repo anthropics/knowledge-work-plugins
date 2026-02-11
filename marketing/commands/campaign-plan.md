@@ -93,7 +93,7 @@ Define KPIs aligned to the campaign objective:
 - How each metric will be tracked
 - Reporting cadence recommendation
 
-If ~~product analytics is connected, reference any available historical performance benchmarks to inform targets.
+If product analytics is connected, reference any available historical performance benchmarks to inform targets.
 
 ### 8. Budget Allocation (if budget provided)
 - Breakdown by channel or activity
