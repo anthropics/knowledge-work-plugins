@@ -8,7 +8,6 @@
         "SHAREPOINT_CLIENT_ID": "${SHAREPOINT_CLIENT_ID}",
         "SHAREPOINT_CLIENT_SECRET": "${SHAREPOINT_CLIENT_SECRET}"
       },
-      "disabled": true
     },
     "jira": {
       "command": "npx",
@@ -18,7 +17,6 @@
         "JIRA_EMAIL": "${JIRA_EMAIL}",
         "JIRA_API_TOKEN": "${JIRA_API_TOKEN}"
       },
-      "disabled": true
     },
     "fhir": {
       "command": "npx",
@@ -28,7 +26,6 @@
         "FHIR_CLIENT_ID": "${FHIR_CLIENT_ID}",
         "FHIR_CLIENT_SECRET": "${FHIR_CLIENT_SECRET}"
       },
-      "disabled": true
     }
   }
 }

@@ -37,3 +37,4 @@ plugin-name/
 | enterprise-search | Cross-tool search |
 | bio-research | Life sciences R&D |
 | cowork-plugin-management | Plugin creation |
+| health | Healthcare organization workflows |

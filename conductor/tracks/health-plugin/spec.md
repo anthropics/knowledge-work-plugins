@@ -2,7 +2,7 @@
 
 ## Overview
 
-A comprehensive healthcare plugin ecosystem comprising 17 tracks delivering 27 skills and 13 commands for healthcare organizations.
+A comprehensive healthcare plugin ecosystem comprising 17 tracks delivering 30 skills and 14 commands for healthcare organizations.
 
 ## Program Goals
 
@@ -43,13 +43,14 @@ A comprehensive healthcare plugin ecosystem comprising 17 tracks delivering 27 s
 |-------|--------|----------|-------------|
 | health-ethics | research-ethics, clinical-ethics | /ethics-review | bio-research |
 | health-economics | health-econ-eval, hta-submission | /economic-evaluation | data, finance |
-| health-manuscripts | manuscript-prep | /prepare-manuscript | scientific-writing |
-| health-grants | grant-writer | /grant-application | research-grants |
+| health-manuscripts | manuscript-prep | /prepare-manuscript | bio-research |
+| health-grants | grant-writer | /grant-application | bio-research |
+| health-medicolegal | child-protection, affidavits, medicolegal-reports | /medicolegal-report | legal |
 
 ## Total Deliverables
 
-- **27 Skills** across 16 implementation tracks
-- **13 Commands** for key workflows
+- **30 Skills** across 17 implementation tracks
+- **14 Commands** for key workflows
 - **1 Plugin** installable as `health`
 
 ## Coordination Points

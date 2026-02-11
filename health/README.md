@@ -52,9 +52,7 @@ See [CONNECTORS.md](./CONNECTORS.md) for connector setup instructions.
 
 ### Customization
 
-1. Copy `.mcp.json.template` to `.mcp.json`
-2. Configure your organization's connectors
-3. Adjust skill parameters in your Claude Code settings
+Configure your organization's connectors in the `.mcp.json` file. Enable the connectors you need and set the appropriate environment variables.
 
 ## Dependencies
 

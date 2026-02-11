@@ -6,6 +6,6 @@
   "created": "2026-02-11",
   "priority": "medium",
   "dependencies": ["health-core"],
-  "deliverable": "payer-contracts, charge-capture, grant-management skills",
+  "deliverable": "payer-contracts, charge-capture skills",
   "adapts_from": ["legal/contract-review", "finance/reconciliation"]
 }

@@ -8,7 +8,7 @@
 - [x] Create `health/.claude-plugin/plugin.json` (524aca0)
   - Acceptance: Valid JSON, installs successfully
 - [x] Create `health/README.md` (524aca0)
-  - Acceptance: Documents 7 planned domains (complaints, incidents, risk, governance, ethics, compliance, procurement)
+  - Acceptance: Documents the planned health domains (complaints, incidents, risk, governance, ethics, compliance, procurement)
 - [x] Create `health/CONNECTORS.md` (524aca0)
   - Acceptance: Lists document storage, issue tracking, clinical systems categories
 - [x] Create `health/.mcp.json` (524aca0)

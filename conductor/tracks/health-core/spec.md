@@ -32,9 +32,9 @@ health/
 
 ### .mcp.json
 Template connectors for:
-- Document storage (SharePoint, Box, Egnyte)
-- Issue tracking (Jira, ServiceNow)
-- Clinical systems (placeholder for TBD integrations)
+- Document storage (SharePoint)
+- Issue tracking (Jira)
+- Clinical systems (FHIR)
 
 ### README.md
 - Plugin purpose and scope

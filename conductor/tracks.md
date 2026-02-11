@@ -47,13 +47,13 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 | Track | Description | Phase | Adapts From |
 |-------|-------------|-------|-------------|
 | [health-core](./tracks/health-core/) | Plugin foundation | 1 | - |
-| [health-complaints](./tracks/health-complaints/) | Patient complaints | 2 | customer-support |
+| [health-complaints](./tracks/health-complaints/) | Patient complaints | 2 | customer-support/ticket-triage |
 | [health-incidents](./tracks/health-incidents/) | Serious adverse events | 2 | customer-support/escalation |
-| [health-risk](./tracks/health-risk/) | Multi-domain risk | 2 | legal/risk-assessment |
+| [health-risk](./tracks/health-risk/) | Multi-domain risk | 2 | legal/legal-risk-assessment |
 | [health-information](./tracks/health-information/) | ROI, consent, records | 2 | legal/compliance |
-| [health-coding](./tracks/health-coding/) | Clinical coding | 2 | data/validation |
+| [health-coding](./tracks/health-coding/) | Clinical coding | 2 | data/data-validation |
 | [health-governance](./tracks/health-governance/) | Policies, procedures | 3 | legal/compliance |
-| [health-credentialing](./tracks/health-credentialing/) | Provider credentialing | 3 | productivity/memory |
+| [health-credentialing](./tracks/health-credentialing/) | Provider credentialing | 3 | productivity/memory-management |
 | [health-procurement](./tracks/health-procurement/) | Devices, business cases | 3 | legal/contract-review |
 | [health-quality](./tracks/health-quality/) | QI, accreditation | 3 | product-management |
 | [health-financial](./tracks/health-financial/) | Payer contracts | 3 | finance |
@@ -61,8 +61,8 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 | [health-data-analysis](./tracks/health-data-analysis/) | Epidemiological reports | 3 | data |
 | [health-ethics](./tracks/health-ethics/) | Research/clinical ethics | 4 | bio-research |
 | [health-economics](./tracks/health-economics/) | HTA, cost-effectiveness | 4 | data, finance |
-| [health-manuscripts](./tracks/health-manuscripts/) | Journal preparation | 4 | scientific-writing |
-| [health-grants](./tracks/health-grants/) | Grant applications | 4 | research-grants |
+| [health-manuscripts](./tracks/health-manuscripts/) | Journal preparation | 4 | bio-research |
+| [health-grants](./tracks/health-grants/) | Grant applications | 4 | bio-research |
 | [health-medicolegal](./tracks/health-medicolegal/) | Child protection, affidavits, medico-legal | 4 | legal |
 
 ### Summary
