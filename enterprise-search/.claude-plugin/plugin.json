@@ -4,5 +4,34 @@
   "description": "Search across all of your company's tools in one place. Find anything across email, chat, documents, and wikis without switching between apps.",
   "author": {
     "name": "Anthropic"
-  }
+  },
+  "categories": ["search", "productivity", "knowledge-management"],
+  "tags": ["search", "knowledge-synthesis", "cross-platform", "document-search", "unified-search", "information-retrieval"],
+  "difficulty": "beginner",
+  "connectors": {
+    "required": [],
+    "optional": [
+      {
+        "type": "email",
+        "description": "Search email archives and threads",
+        "examples": ["Gmail", "Outlook"]
+      },
+      {
+        "type": "chat",
+        "description": "Search chat history and channels",
+        "examples": ["Slack", "Microsoft Teams"]
+      },
+      {
+        "type": "documents",
+        "description": "Search document repositories",
+        "examples": ["Google Drive", "Confluence", "Notion", "SharePoint"]
+      }
+    ]
+  },
+  "useCases": [
+    "Find information across multiple tools",
+    "Synthesize knowledge from various sources",
+    "Locate specific documents or conversations",
+    "Research topics across company knowledge"
+  ]
 }

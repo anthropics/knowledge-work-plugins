@@ -4,5 +4,18 @@
   "description": "Manage tasks, plan your day, and build up memory of important context about your work. Syncs with your calendar, email, and chat to keep everything organized and on track.",
   "author": {
     "name": "Anthropic"
-  }
+  },
+  "categories": ["productivity", "organization", "personal"],
+  "tags": ["tasks", "memory", "organization", "planning", "notes", "context-management"],
+  "difficulty": "beginner",
+  "connectors": {
+    "required": [],
+    "optional": []
+  },
+  "useCases": [
+    "Manage and prioritize tasks",
+    "Build persistent memory of work context",
+    "Track people, projects, and preferences",
+    "Plan daily workflows"
+  ]
 }

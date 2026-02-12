@@ -4,5 +4,25 @@
   "description": "Streamline finance and accounting workflows, from journal entries and reconciliation to financial statements and variance analysis. Speed up audit prep, month-end close, and keeping your books clean.",
   "author": {
     "name": "Anthropic"
-  }
+  },
+  "categories": ["finance", "accounting", "operations"],
+  "tags": ["accounting", "reconciliation", "journal-entries", "variance-analysis", "audit", "financial-statements", "close-management", "bookkeeping"],
+  "difficulty": "intermediate",
+  "connectors": {
+    "required": [],
+    "optional": [
+      {
+        "type": "erp",
+        "description": "General ledger, trial balance, close functionality",
+        "examples": ["NetSuite", "SAP", "QuickBooks", "Xero"]
+      }
+    ]
+  },
+  "useCases": [
+    "Prepare and review journal entries",
+    "Perform account reconciliations",
+    "Analyze budget variances",
+    "Support audit documentation",
+    "Manage month-end close process"
+  ]
 }

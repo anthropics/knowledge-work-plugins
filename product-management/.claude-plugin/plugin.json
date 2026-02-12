@@ -4,5 +4,19 @@
   "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape.",
   "author": {
     "name": "Anthropic"
-  }
+  },
+  "categories": ["product-management", "strategy", "operations"],
+  "tags": ["feature-specs", "roadmap", "user-research", "stakeholder-communication", "competitive-analysis", "prds", "product-strategy"],
+  "difficulty": "intermediate",
+  "connectors": {
+    "required": [],
+    "optional": []
+  },
+  "useCases": [
+    "Write detailed feature specifications",
+    "Plan and manage product roadmaps",
+    "Synthesize user research findings",
+    "Communicate updates to stakeholders",
+    "Analyze competitive landscape"
+  ]
 }

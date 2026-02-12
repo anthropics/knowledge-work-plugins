@@ -4,5 +4,18 @@
   "description": "Create, customize, and manage plugins tailored to your organization's tools and workflows. Configure MCP servers, adjust plugin behavior, and adapt templates to match how your team works.",
   "author": {
     "name": "Anthropic"
-  }
+  },
+  "categories": ["administration", "customization", "developer-tools"],
+  "tags": ["plugins", "mcp", "configuration", "customization", "templates", "workflow-automation", "admin"],
+  "difficulty": "advanced",
+  "connectors": {
+    "required": [],
+    "optional": []
+  },
+  "useCases": [
+    "Customize existing plugins for your organization",
+    "Configure MCP server connections",
+    "Adapt plugin templates to team workflows",
+    "Manage plugin settings and behavior"
+  ]
 }
