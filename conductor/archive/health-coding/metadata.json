@@ -1,0 +1,12 @@
+{
+  "track_id": "health-coding",
+  "name": "Health Clinical Coding",
+  "description": "Clinical coding and classification - ICD-10, ICD-11, SNOMED, ACHI mapping and validation",
+  "status": "planning",
+  "created": "2026-02-11",
+  "priority": "medium",
+  "dependencies": ["health-core"],
+  "deliverable": "clinical-coding skill, /validate-coding command",
+  "adapts_from": ["data/data-validation"],
+  "classifications": ["ICD-10-AM", "ICD-11", "SNOMED-CT", "ACHI", "DRG"]
+}
