@@ -46,7 +46,7 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 
 ### Track Registry (Canonical)
 
-## [ ] Track: health-information - ROI, consent, records
+## [x] Track: health-information - ROI, consent, records
 Folder: [./tracks/health-information/](./tracks/health-information/)
 Phase: 2
 Adapts From: legal/compliance
