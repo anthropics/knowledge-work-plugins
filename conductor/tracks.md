@@ -46,7 +46,7 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 
 ### Track Registry (Canonical)
 
-## [ ] Track: health-procurement - Devices, business cases
+## [x] Track: health-procurement - Devices, business cases
 Folder: [./tracks/health-procurement/](./tracks/health-procurement/)
 Phase: 3
 Adapts From: legal/contract-review
