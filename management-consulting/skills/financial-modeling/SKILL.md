@@ -1,6 +1,6 @@
 ---
 name: financial-modeling
-description: Build financial models for business cases including ROI, NPV, IRR, DCF, and scenario analysis. Use when developing investment recommendations, comparing strategic options, or quantifying the value of initiatives. Based on consulting approaches to financial analysis and business case development.
+description: Build financial models for business cases including ROI, NPV, IRR, DCF, and scenario analysis. Use when developing investment recommendations, comparing strategic options, or quantifying the value of initiatives.
 ---
 
 # Financial Modeling Skill

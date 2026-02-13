@@ -1,6 +1,6 @@
 ---
 name: process-excellence
-description: Apply Lean Six Sigma methodology for process improvement and operational excellence. Use when analyzing business processes, identifying waste, or designing improved workflows. Includes value stream mapping, process mining integration, SIPOC analysis, standard work design, and process performance dashboards used by operational consulting practices.
+description: Apply Lean Six Sigma methodology for process improvement and operational excellence. Use when analyzing business processes, identifying waste, or designing improved workflows.
 ---
 
 # Process Excellence Skill

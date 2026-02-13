@@ -1,6 +1,6 @@
 ---
 name: executive-presentation
-description: Create executive presentations using top-down structured communication and modern storytelling techniques. Use when preparing client presentations, board decks, or C-suite communications. Applies proven methodologies for clear, compelling visual communication.
+description: Create executive presentations using top-down structured communication and modern storytelling techniques. Use when preparing client presentations, board decks, or C-suite communications.
 ---
 
 # Executive Presentation Skill

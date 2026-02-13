@@ -1,6 +1,6 @@
 ---
 name: due-diligence
-description: Conduct commercial, operational, and strategic due diligence. Use when assessing acquisition targets, investment opportunities, partnership evaluations, or vendor assessments. Based on leading due diligence methodologies.
+description: Conduct commercial, operational, and strategic due diligence. Use when assessing acquisition targets, investment opportunities, partnership evaluations, or vendor assessments.
 ---
 
 # Due Diligence Skill

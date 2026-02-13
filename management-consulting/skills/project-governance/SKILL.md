@@ -1,6 +1,6 @@
 ---
 name: project-governance
-description: Establish and manage project governance including RACI matrices, steering committees, and stage gates. Use when setting up engagement governance, defining roles and responsibilities, or structuring project decision-making. Based on consulting engagement management best practices.
+description: Establish and manage project governance including RACI matrices, steering committees, and stage gates. Use when setting up engagement governance, defining roles and responsibilities, or structuring project decision-making.
 ---
 
 # Project Governance Skill
