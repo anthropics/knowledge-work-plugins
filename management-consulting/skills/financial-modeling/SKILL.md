@@ -9,213 +9,35 @@ You are a financial analysis assistant applying the modeling techniques used in 
 
 **Important**: This skill provides financial frameworks and calculation methodologies. All financial analyses should be reviewed by qualified finance professionals before client presentation.
 
----
+## Core Financial Analysis Reference
 
-## Financial Analysis Framework
+This skill builds on standard financial analysis workflows. For core financial analysis templates including ROI analysis, business case development, cash flow projections, NPV/IRR calculations, DCF valuation, scenario analysis, and break-even analysis, use the `/financial-analysis` command.
 
-### Step 1: Define the Investment Case
-
-```
-## Investment Case Definition
-
-### Project Overview
-- **Project name**: [Name]
-- **Strategic objective**: [Why this investment]
-- **Time horizon**: [Years]
-- **Investment type**: [New capability / Efficiency / Growth / Compliance / Digital Transformation / AI]
-
-### Investment Scope
-| Component | Description | Estimated Cost |
-|-----------|-------------|----------------|
-| Initial investment | [One-time costs] | $[Amount] |
-| Implementation | [Implementation costs] | $[Amount] |
-| Working capital | [Working capital needs] | $[Amount] |
-| Contingency | [Risk buffer] | $[Amount] |
-| **Total Investment** | | **$[Amount]** |
-
-### Benefits Scope
-| Benefit | Type | Timeframe | Estimated Value |
-|---------|------|-----------|------------------|
-| [Benefit 1] | [Revenue/Cost] | [Years 1-N] | $[Amount] |
-| [Benefit 2] | [Revenue/Cost] | [Years 1-N] | $[Amount] |
-| [Benefit 3] | [Revenue/Cost] | [Years 1-N] | $[Amount] |
-
-### Digital/AI Considerations
-- **Technology costs**: Cloud, AI/ML, infrastructure
-- **Data costs**: Data acquisition, cleaning, storage
-- **AI benefits**: Automation savings, prediction value, personalization uplift
-- **Platform economics**: Network effects, ecosystem revenue
-```
-
-### Step 2: Build the Financial Model
-
-```
-## Financial Model Structure
-
-### Assumptions
-
-#### Revenue Assumptions
-| Assumption | Value | Basis |
-|------------|-------|-------|
-| [Revenue driver 1] | [Value] | [Source] |
-| [Revenue driver 2] | [Value] | [Source] |
-
-#### Cost Assumptions
-| Assumption | Value | Basis |
-|------------|-------|-------|
-| [Cost driver 1] | [Value] | [Source] |
-| [Cost driver 2] | [Value] | [Source] |
-
-#### Timing Assumptions
-| Milestone | Timing | Dependencies |
-|-----------|--------|--------------|
-| [Milestone 1] | [Date] | [Dependencies] |
-| [Milestone 2] | [Date] | [Dependencies] |
-
-### Base Case Model
-
-#### Cash Flow Projection
-
-| Line Item | Year 0 | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 |
-|-----------|--------|--------|--------|--------|--------|--------|
-| **Investment** | | | | | | |
-| Capital expenditure | ($X) | | | | | |
-| Implementation cost | ($X) | | | | | |
-| Working capital | ($X) | | | | | |
-| **Total Investment** | ($X) | | | | | |
-| | | | | | | |
-| **Benefits** | | | | | | |
-| Revenue increase | | $X | $X | $X | $X | $X |
-| Cost reduction | | $X | $X | $X | $X | $X |
-| **Total Benefits** | | $X | $X | $X | $X | $X |
-| | | | | | | |
-| **Net Cash Flow** | ($X) | $X | $X | $X | $X | $X |
-| **Cumulative Cash Flow** | ($X) | ($X) | $X | $X | $X | $X |
-```
+This skill adds specialized financial modeling tools that go beyond the standard workflows: advanced valuation metrics, discount rate selection, total cost of ownership analysis, Monte Carlo and real-options thinking, and modern modeling best practices.
 
 ---
 
-## Key Financial Metrics
+## Behavioral Principles
 
-### 1. Net Present Value (NPV)
+When building financial models or reviewing financial analyses:
 
-```
-## NPV Calculation
+1. **Document every assumption**: State the source, basis, and confidence level for each assumption. Undocumented assumptions are the #1 cause of flawed business cases.
+2. **Be conservative by default**: Use realistic, not optimistic, assumptions. Stretch goals are not baseline projections. If a client pushes for aggressive numbers, flag the risk explicitly.
+3. **Sensitivity over precision**: A precise but wrong number is worse than an approximate range. Always identify which 2-3 variables drive 80% of the outcome and test them.
+4. **Show alternatives**: Never present a single option. Always show at least a "do nothing" baseline and one alternative to the recommended path.
+5. **Separate facts from forecasts**: Clearly distinguish historical data from projected values. Label assumptions as "verified," "estimated," or "placeholder."
+6. **Make it auditable**: Structure models so a third party can trace any output back to its source assumptions in under 5 minutes.
+7. **The number supports the decision**: The business case exists to support a decision, not to generate a number. If the financial analysis doesn't lead to a clear recommendation, the framing is wrong.
 
-### Formula
-NPV = Σ [Cash Flow / (1 + r)^t] - Initial Investment
+---
 
-Where:
-- r = Discount rate
-- t = Time period
-
-### Calculation
-
-| Year | Cash Flow | Discount Factor (r=X%) | Present Value |
-|------|-----------|------------------------|---------------|
-| 0 | ($X) | 1.000 | ($X) |
-| 1 | $X | 0.XXX | $X |
-| 2 | $X | 0.XXX | $X |
-| 3 | $X | 0.XXX | $X |
-| 4 | $X | 0.XXX | $X |
-| 5 | $X | 0.XXX | $X |
-| **NPV** | | | **$X** |
-
-### Interpretation
-- NPV > 0: Investment creates value (accept)
-- NPV = 0: Investment breaks even (indifferent)
-- NPV < 0: Investment destroys value (reject)
-
-### Enhancement: Real-Options NPV
-- Consider flexibility value of staged investments
-- Model optionality to expand/contract
-- Include AI learning value
-```
-
-### 2. Internal Rate of Return (IRR)
-
-```
-## IRR Calculation
-
-### Formula
-IRR = Rate where NPV = 0
-
-### Calculation Method
-Use iterative calculation or Excel IRR function
-
-### Results
-
-| Scenario | IRR | Decision |
-|----------|-----|----------|
-| Base case | X% | [Accept/Reject] |
-| Upside | X% | [Accept/Reject] |
-| Downside | X% | [Accept/Reject] |
-
-### Interpretation
-- IRR > Hurdle rate: Accept the investment
-- IRR = Hurdle rate: Indifferent
-- IRR < Hurdle rate: Reject the investment
-
-### Modified IRR (MIRR)
-- Use when reinvestment rate differs from financing rate
-- More accurate for projects with non-standard cash flows
-```
-
-### 3. Payback Period
-
-```
-## Payback Period Calculation
-
-### Simple Payback
-Time to recover initial investment from cumulative cash flows
-
-| Year | Cumulative Cash Flow |
-|------|----------------------|
-| 0 | ($X) |
-| 1 | ($X) |
-| 2 | $X |
-| 3 | $X |
-
-**Payback Period**: Between Year 1 and Year 2
-= 1 + [($X) / $X] = X.X years
-
-### Discounted Payback
-Time to recover initial investment from discounted cumulative cash flows
-
-**Discounted Payback Period**: X.X years
-
-### Interpretation
-- Shorter payback: Lower risk, faster capital recovery
-- Industry benchmarks: Compare to typical payback in sector
-- Consider tech/hype cycle - faster payback may indicate faster obsolescence
-```
-
-### 4. Return on Investment (ROI)
-
-```
-## ROI Calculation
-
-### Simple ROI
-ROI = (Total Benefits - Total Costs) / Total Costs × 100%
-
-### Calculation
-ROI = ($X - $X) / $X × 100% = X%
-
-### Annualized ROI
-Annual ROI = [(Total Benefits / Total Costs)^(1/n) - 1] × 100%
-
-### Interpretation
-- Higher ROI: More efficient use of capital
-- Compare to cost of capital or alternative investments
-```
-
-### 5. Economic Value Added (EVA)
+## Economic Value Added (EVA)
 
 ```
 ## EVA Calculation
 
 ### Formula
-EVA = NOPAT - (WACC × Capital Employed)
+EVA = NOPAT - (WACC x Capital Employed)
 
 Where:
 - NOPAT = Net Operating Profit After Tax
@@ -225,192 +47,13 @@ Where:
 ### Interpretation
 - Positive EVA: Creates value for shareholders
 - Negative EVA: Destroys value
-```
+- Compare EVA across business units to identify value creators vs. destroyers
 
----
-
-## Scenario Analysis
-
-### Building Scenarios
-
-```
-## Scenario Framework
-
-### Scenario Design
-
-| Variable | Base Case | Upside Case | Downside Case |
-|----------|-----------|-------------|---------------|
-| [Driver 1] | [Value] | [Value] | [Value] |
-| [Driver 2] | [Value] | [Value] | [Value] |
-| [Driver 3] | [Value] | [Value] | [Value] |
-
-### Scenario Results Summary
-
-| Metric | Upside | Base | Downside |
-|--------|--------|------|----------|
-| NPV | $X | $X | $X |
-| IRR | X% | X% | X% |
-| Payback | X yrs | X yrs | X yrs |
-| ROI | X% | X% | X% |
-
-### Sensitivity Analysis
-
-| Variable | -20% Impact on NPV | +20% Impact on NPV |
-|----------|-------------------|-------------------|
-| [Driver 1] | $X | $X |
-| [Driver 2] | $X | $X |
-| [Driver 3] | $X | $X |
-
-**Key insight**: [Which variables most impact the investment case]
-
-### Monte Carlo Analysis
-- Model 10,000+ scenarios with variable distributions
-- Show probability distribution of outcomes
-- Calculate probability of loss, target returns
-- Use AI to identify key risk factors
-```
-
-### Break-Even Analysis
-
-```
-## Break-Even Analysis
-
-### Unit Economics
-| Metric | Value |
-|--------|-------|
-| Price per unit | $X |
-| Variable cost per unit | $X |
-| Contribution margin | $X |
-| Contribution margin % | X% |
-
-### Break-Even Calculation
-Fixed Costs / Contribution Margin = Break-Even Units
-
-Break-Even = $X / $X = X,XXX units
-
-### Break-Even Chart
-[Visual showing break-even point]
-
-### Implications
-- Current capacity: X,XXX units
-- Break-even: X,XXX units
-- Margin of safety: X%
-```
-
----
-
-## Business Case Template
-
-### Executive Summary
-
-```
-## Business Case: [Project Name]
-
-### Executive Summary
-
-**Recommendation**: [One-sentence recommendation]
-
-**Investment Required**: $[Amount] over [Timeline]
-
-**Expected Returns**:
-- NPV: $[Amount] (at X% discount rate)
-- IRR: X%
-- Payback: X years
-- ROI: X%
-
-**Key Benefits**:
-1. [Benefit 1 quantified]
-2. [Benefit 2 quantified]
-3. [Benefit 3 quantified]
-
-**Risks**:
-- [Risk 1] — [Mitigation]
-- [Risk 2] — [Mitigation]
-
-**Decision Required**: [What approval is needed]
-```
-
-### Detailed Business Case
-
-```
-## 1. Strategic Context
-
-### Business Objective
-[Why this investment matters strategically]
-
-### Problem or Opportunity
-[What problem does this solve or opportunity does it capture?]
-
-### Options Considered
-| Option | Description | NPV | IRR | Recommendation |
-|--------|-------------|-----|-----|----------------|
-| A | [Do nothing] | $X | X% | [Baseline] |
-| B | [Option 1] | $X | X% | [Recommended] |
-| C | [Option 2] | $X | X% | [Alternative] |
-
-## 2. Financial Analysis
-
-### Investment Summary
-| Category | Year 0 | Year 1 | Year 2 | Year 3 | Total |
-|----------|--------|--------|--------|--------|-------|
-| Capital | $X | | | | $X |
-| Operating | | $X | $X | $X | $X |
-| Total | $X | $X | $X | $X | $X |
-
-### Benefit Summary
-| Benefit | Year 1 | Year 2 | Year 3 | Total |
-|---------|--------|--------|--------|-------|
-| [Benefit 1] | $X | $X | $X | $X |
-| [Benefit 2] | $X | $X | $X | $X |
-| Total | $X | $X | $X | $X |
-
-### Returns Summary
-| Metric | Value | Target | Status |
-|--------|-------|--------|--------|
-| NPV | $X | $X | [Met/Not Met] |
-| IRR | X% | X% | [Met/Not Met] |
-| Payback | X yrs | X yrs | [Met/Not Met] |
-| ROI | X% | X% | [Met/Not Met] |
-
-## 3. Risk Assessment
-
-### Risk Register
-| Risk | Likelihood | Impact | Mitigation | Residual Risk |
-|------|------------|--------|------------|---------------|
-| [Risk 1] | [H/M/L] | [H/M/L] | [Mitigation] | [H/M/L] |
-| [Risk 2] | [H/M/L] | [H/M/L] | [Mitigation] | [H/M/L] |
-
-### Sensitivity
-[Which variables most impact the business case]
-
-## 4. Implementation Plan
-
-### Timeline
-| Phase | Duration | Start | End |
-|-------|----------|-------|-----|
-| Phase 1 | X months | [Date] | [Date] |
-| Phase 2 | X months | [Date] | [Date] |
-
-### Resource Requirements
-| Role | FTE | Duration |
-|------|-----|----------|
-| [Role 1] | X.X | [Time] |
-| [Role 2] | X.X | [Time] |
-
-## 5. Recommendations and Next Steps
-
-### Recommendation
-[Clear statement of recommendation]
-
-### Required Decisions
-1. [Decision 1]
-2. [Decision 2]
-
-### Next Steps
-| Action | Owner | Due Date |
-|--------|-------|----------|
-| [Action 1] | [Name] | [Date] |
-| [Action 2] | [Name] | [Date] |
+### When to Use EVA
+- Comparing performance across divisions of different sizes
+- Evaluating whether growth is actually creating value
+- Setting performance targets that account for capital cost
+- Assessing acquisition targets (is the target generating returns above its cost of capital?)
 ```
 
 ---
@@ -438,40 +81,16 @@ Break-Even = $X / $X = X,XXX units
 | Very high risk | 20%+ | New ventures, R&D, AI/ML |
 | Platform/AI | 15-25% | Digital transformation |
 
+### Guidance
+
+- When in doubt, use a higher discount rate -- it is better to reject a good project than to accept a bad one
+- For AI/ML investments, account for the uncertainty in adoption rates and the speed of technology change
+- If a project looks attractive only at a low discount rate, flag it as sensitive to cost-of-capital assumptions
+- Always show NPV at multiple discount rates (e.g., WACC, WACC+2%, WACC+5%)
+
 ---
 
-## Advanced Forecasting
-
-- **Predictive analytics**: Use ML models for demand forecasting
-- **Anomaly detection**: Identify unusual patterns in assumptions
-- **Scenario generation**: AI can suggest additional scenarios
-- **Real-time updates**: Connect models to live data feeds
-
-### Modern Modeling Best Practices
-
-```
-## Financial Model Standards
-
-### Structure
-- Single source of truth for assumptions
-- Clear inputs vs. outputs separation
-- Scenario switches that update entire model
-- Sensitivity tables linked to key outputs
-
-### Technology Integration
-- Cloud-based collaboration
-- Version control for model history
-- Audit trails for changes
-- API connections for live data
-
-### Visualization
-- Interactive dashboards
-- Drill-down capability
-- Export to multiple formats
-- Mobile-friendly views
-```
-
-### Total Cost of Ownership (TCO)
+## Total Cost of Ownership (TCO)
 
 ```
 ## TCO Analysis
@@ -491,41 +110,153 @@ Break-Even = $X / $X = X,XXX units
 - Support overhead
 - Compliance/certification costs
 
+### Hidden Costs (often missed)
+- Data migration and integration
+- Dual-running during transition
+- Vendor lock-in switching costs
+- Technical debt accumulation
+- Opportunity cost of internal resources
+
 ### TCO Summary
 | Metric | Value |
 |--------|-------|
 | Total TCO | $X |
 | Annualized TCO | $X |
 | Cost per user/year | $X |
+| TCO vs. alternatives | [Comparison] |
+```
+
+### When to Use TCO vs. Simple ROI
+
+- **Use TCO** when comparing competing solutions (e.g., build vs. buy, vendor A vs. vendor B)
+- **Use ROI** when evaluating a single investment against a do-nothing baseline
+- **Use both** when the investment decision involves both "should we do it?" and "how should we do it?"
+
+---
+
+## Advanced Valuation Concepts
+
+### Modified IRR (MIRR)
+
+Standard IRR assumes reinvestment at the IRR rate, which is often unrealistic. MIRR corrects this:
+
+- **Financing rate**: Cost to fund the project (typically WACC)
+- **Reinvestment rate**: Rate earned on interim cash flows (typically cost of capital or a conservative market rate)
+- Use MIRR when the project has non-standard cash flows (e.g., multiple sign changes) or when IRR produces multiple solutions
+
+### Real-Options Valuation
+
+Traditional NPV undervalues projects with embedded flexibility. Real-options thinking adds value for:
+
+- **Option to expand**: Invest small now, scale up if successful
+- **Option to abandon**: Cut losses if early results are poor
+- **Option to defer**: Wait for better information before committing
+- **Option to switch**: Change inputs, outputs, or technology mid-project
+
+When to apply real-options thinking:
+- Staged investments (especially R&D, AI/ML pilots)
+- High-uncertainty environments where flexibility has tangible value
+- Platform investments where future use cases are uncertain
+- When traditional NPV is negative but "close" -- flexibility may tip the balance
+
+### Monte Carlo Simulation Concepts
+
+For major investments, point-estimate scenarios (best/base/worst) understate the range of outcomes:
+
+- Assign probability distributions to key assumptions (not just three points)
+- Run thousands of iterations to produce a probability distribution of outcomes
+- Report: probability of positive NPV, expected NPV, 5th/95th percentile range
+- Use to identify which assumptions contribute most to outcome variance
+- Particularly valuable for AI/ML investments where adoption curves are uncertain
+
+---
+
+## Digital/AI Investment Considerations
+
+When modeling technology or AI investments, account for cost structures that differ from traditional capital projects:
+
+### Cost Patterns
+- **Cloud infrastructure**: Operating expense, scales with usage (not fixed capital)
+- **Data costs**: Acquisition, cleaning, labeling, storage -- often underestimated
+- **AI/ML talent**: Scarce and expensive; model as ongoing cost, not one-time
+- **Technical debt**: Accumulates if not managed; include remediation budget
+
+### Benefit Patterns
+- **Automation savings**: High confidence, easy to quantify
+- **Prediction/decision quality**: Medium confidence, model as error-rate reduction
+- **Personalization uplift**: Measurable via A/B testing, but adoption curve matters
+- **Platform/network effects**: Hard to model precisely; use scenario analysis
+
+### Modeling Guidance
+- Separate "proven" benefits (automation) from "speculative" benefits (network effects)
+- Use higher discount rates for speculative AI benefits
+- Model adoption curves -- AI benefits rarely arrive at full scale in Year 1
+- Include a "technology pivot" scenario where the chosen approach needs to change
+
+---
+
+## Modern Modeling Best Practices
+
+```
+## Financial Model Standards
+
+### Structure
+- Single source of truth for assumptions (one assumptions tab/section)
+- Clear inputs vs. outputs separation
+- Scenario switches that update the entire model from one control
+- Sensitivity tables linked to key outputs
+
+### Quality Controls
+- Version control for model history
+- Audit trails for every change to assumptions
+- Cell-level comments explaining non-obvious formulas
+- Error checks that flag circular references, broken links, or out-of-range values
+
+### Presentation
+- Interactive dashboards for stakeholder review
+- Drill-down from summary metrics to supporting detail
+- Export to multiple formats (slides, spreadsheets, PDF)
+- Executive summary that fits on one page
 ```
 
 ---
 
-## Best Practices
+## Advanced Forecasting Techniques
 
-1. **Document all assumptions**: Future cash flows are only as good as the assumptions
-2. **Be conservative**: Use realistic, not optimistic, assumptions
-3. **Show your work**: Include supporting calculations
-4. **Test sensitivity**: Identify which assumptions matter most
-5. **Consider risks**: Include risk-adjusted scenarios
-6. **Compare alternatives**: Always show options, not just recommended path
-7. **Quantify intangible benefits**: Try to put numbers on soft benefits
-8. **Update regularly**: Business cases should be living documents
-9. **Include AI/Tech considerations**: Technology costs and benefits matter
-10. **Apply Monte Carlo**: Use probability-based risk analysis for major investments
-11. **Consider real options**: Value of flexibility in staged investments
-12. **Make it auditable**: Structure for easy review and validation
+- **Predictive analytics**: Use ML models for demand forecasting when historical data is available
+- **Anomaly detection**: Identify unusual patterns in assumption inputs that may signal errors
+- **Scenario generation**: AI can suggest additional scenarios based on historical variance
+- **Real-time updates**: Connect models to live data feeds for continuous reforecasting
+- **Driver-based forecasting**: Build from operational drivers (units, prices, headcount) rather than top-down growth rates
+
+---
+
+## Routing Guide
+
+| Need | Use |
+|------|-----|
+| ROI analysis for an investment | `/financial-analysis` command |
+| Business case with NPV/IRR/payback | `/financial-analysis` command |
+| DCF valuation of a business | `/financial-analysis` command |
+| Scenario analysis (best/base/worst) | `/financial-analysis` command |
+| Break-even analysis | `/financial-analysis` command |
+| Choosing the right discount rate | This skill |
+| Total cost of ownership comparison | This skill |
+| EVA calculation across business units | This skill |
+| Real-options or Monte Carlo thinking | This skill |
+| AI/digital investment modeling | This skill |
+| Financial model structure and standards | This skill |
+| Advanced forecasting techniques | This skill |
 
 ---
 
 ## Notes
 
-- The "number" is never the point — the business case supports a decision
-- Finance and strategy must work together — numbers without story lack impact
+- The "number" is never the point -- the business case supports a decision
+- Finance and strategy must work together -- numbers without story lack impact
 - Sensitivity analysis is more important than precise projections
 - Always stress-test the business case with realistic downside scenarios
 - Be prepared to explain every assumption
 - If you can't explain it simply, you don't understand it well enough
-- Always include technology/digital dimension in business cases
-- AI/ML investments have specific cost structures - account for data, compute, talent
-- Platform investments have different economics - consider network effects
+- AI/ML investments have specific cost structures -- account for data, compute, talent
+- Platform investments have different economics -- consider network effects

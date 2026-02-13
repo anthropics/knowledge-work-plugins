@@ -272,7 +272,7 @@ I'll send the workshop summary by [date]. Any questions?"
 | Ranking options | Dot voting |
 | Complex decisions | Multi-voting + discussion |
 | Consensus needed | Gradients of agreement |
-| Final authority | RAPID framework |
+| Final authority | Decision rights matrix |
 
 ### Managing Dynamics
 | Challenge | Response |

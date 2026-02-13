@@ -1,6 +1,6 @@
 ---
 name: process-excellence
-description: Apply Lean Six Sigma methodology for process improvement and operational excellence. Use when analyzing business processes, identifying waste, or designing improved workflows. Includes DMAIC methodology, value stream mapping, process mining integration, and process optimization tools used by operational consulting practices.
+description: Apply Lean Six Sigma methodology for process improvement and operational excellence. Use when analyzing business processes, identifying waste, or designing improved workflows. Includes value stream mapping, process mining integration, SIPOC analysis, standard work design, and process performance dashboards used by operational consulting practices.
 ---
 
 # Process Excellence Skill
@@ -9,156 +9,85 @@ You are a process improvement assistant applying Lean Six Sigma methodologies us
 
 **Important**: This skill provides process improvement frameworks and techniques. Significant process changes should be implemented with appropriate change management and pilot testing.
 
-## The DMAIC Methodology
+## DMAIC Methodology Reference
 
-### Overview
+This skill builds on the DMAIC framework (Define, Measure, Analyze, Improve, Control). For the core DMAIC phase templates including problem statements, root cause analysis (5 Whys, Fishbone), waste identification (TIMWOODS), solution evaluation matrices, pilot plans, control plans, and control charts, use the `/process-improve` command.
 
-```
-## DMAIC Framework
-
-D - Define    → Define the problem and process boundaries
-M - Measure   → Measure current performance and collect data
-A - Analyze   → Analyze root causes and identify variation
-I - Improve   → Develop and implement solutions
-C - Control   → Sustain improvements and monitor performance
-
-### Key Principle
-DMAIC is a data-driven improvement cycle used for improving,
-optimizing and stabilizing business processes and designs.
-```
+This skill adds specialized tools that complement the DMAIC workflow: value stream mapping, process mining, SIPOC analysis, standard work design, and performance dashboards.
 
 ---
 
-## Phase 1: Define
+## Value Stream Mapping
 
-### Problem Statement
-
-```
-## Define the Problem
-
-### Problem Statement
-[The problem to be solved, in one sentence]
-
-### Background
-- **Process**: [Name of process]
-- **Current state**: [What's wrong]
-- **Impact**: [Who is affected, what is the cost]
-- **Goal**: [What improvement is needed]
-
-### Scope
-- **In scope**: [What's included]
-- **Out of scope**: [What's excluded]
-- **Boundaries**: [Where process starts/ends]
-
-### Project Charter
-
-| Element | Content |
-|---------|---------|
-| Project name | [Name] |
-| Problem statement | [Statement] |
-| Goal statement | [SMART goal] |
-| Scope | [Boundaries] |
-| Timeline | [Start - End dates] |
-| Team | [Members and roles] |
-| Sponsor | [Executive sponsor] |
-```
-
-### Process Mapping
-
-```
-## Process Definition
-
-### Process Overview
-- **Process name**: [Name]
-- **Owner**: [Person responsible]
-- **Purpose**: [Why this process exists]
-- **Customers**: [Who receives the output]
-- **Inputs**: [What enters the process]
-- **Outputs**: [What leaves the process]
-
-### High-Level Process Map
-
-     ┌─────────┐
-     │ INPUT   │
-     └────┬────┘
-          │
-          ▼
-    ┌───────────┐     ┌───────────┐     ┌───────────┐
-    │  STEP 1   │────▶│  STEP 2   │────▶│  STEP 3   │
-    └───────────┘     └───────────┘     └───────────┘
-          │                                   │
-          ▼                                   ▼
-     ┌─────────┐                         ┌─────────┐
-     │OUTPUT 1 │                         │OUTPUT 2 │
-     └─────────┘                         └─────────┘
-```
-
----
-
-## Phase 2: Measure
-
-### Process Metrics
-
-```
-## Current State Metrics
-
-### Key Process Indicators (KPIs)
-
-| Metric | Definition | Current Performance | Target | Gap |
-|--------|------------|---------------------|--------|-----|
-| Cycle time | [Definition] | [Value] | [Value] | [Gap] |
-| Throughput | [Definition] | [Value] | [Value] | [Gap] |
-| Defect rate | [Definition] | [Value] | [Value] | [Gap] |
-| Cost per unit | [Definition] | [Value] | [Value] | [Gap] |
-
-### Process Capability
-
-| Metric | Specification | Current | Capability (Cpk) |
-|--------|--------------|---------|-----------------|
-| [CTQ 1] | [Spec limits] | [Mean, SD] | [Cpk value] |
-| [CTQ 2] | [Spec limits] | [Mean, SD] | [Cpk value] |
-
-### Data Collection Plan
-
-| Data Element | Measurement Method | Sample Size | Frequency | Owner |
-|--------------|-------------------|-------------|-----------|-------|
-| [Element 1] | [Method] | [Size] | [Freq] | [Name] |
-| [Element 2] | [Method] | [Size] | [Freq] | [Name] |
-```
-
-### Value Stream Mapping
+### Current State Map
 
 ```
 ## Value Stream Map: [Process Name]
 
 ### Current State Map
 
-┌──────────────────────────────────────────────────────────────────────────┐
-│  CURRENT STATE MAP                                                       │
-│                                                                          │
-│  [Supplier] ──▶│◀────▶│◀────▶│◀────▶│◀────▶│◀────▶│◀──▶ [Customer]      │
-│                │      │      │      │      │      │                      │
-│               C/T   C/T    C/T    C/T    C/T    C/T                    │
-│               5m    3m     10m    2m     8m     4m                     │
-│                │      │      │      │      │      │                      │
-│               WIP   WIP    WIP    WIP    WIP    WIP                    │
-│                12    8      25     5      15     3                      │
-│                │      │      │      │      │      │                      │
-│               ████  ████   ████   ████   ████   ████                    │
-│               ████  ████   ████   ████   ████   ████                    │
-│                                                                          │
-│  Total Lead Time: XXX min                                                │
-│  Value-Added Time: XXX min                                              │
-│  % Value-Added: XX%                                                     │
-└──────────────────────────────────────────────────────────────────────────┘
++--------------------------------------------------------------------------+
+|  CURRENT STATE MAP                                                       |
+|                                                                          |
+|  [Supplier] -->|<---->|<---->|<---->|<---->|<---->|<--> [Customer]       |
+|                |      |      |      |      |      |                      |
+|               C/T   C/T    C/T    C/T    C/T    C/T                      |
+|               5m    3m     10m    2m     8m     4m                        |
+|                |      |      |      |      |      |                      |
+|               WIP   WIP    WIP    WIP    WIP    WIP                      |
+|                12    8      25     5      15     3                        |
+|                |      |      |      |      |      |                      |
+|               ####  ####   ####   ####   ####   ####                     |
+|               ####  ####   ####   ####   ####   ####                     |
+|                                                                          |
+|  Total Lead Time: XXX min                                                |
+|  Value-Added Time: XXX min                                               |
+|  % Value-Added: XX%                                                      |
++--------------------------------------------------------------------------+
 
 ### Legend
 - C/T = Cycle Time (time to complete one unit)
 - WIP = Work in Progress
-- ████ = Process step
+- #### = Process step
 ```
 
-### Process Mining Integration
+### Future State Map
+
+```
+## Future State Map: [Process Name]
+
++--------------------------------------------------------------------------+
+|  FUTURE STATE MAP                                                        |
+|                                                                          |
+|  [Supplier] -->|<---------------->|<-----------> [Customer]              |
+|                |                   |                                      |
+|               C/T                  C/T                                    |
+|                5m                  15m                                    |
+|                |                   |                                      |
+|               WIP                  WIP                                    |
+|                2                   2                                      |
+|                |                   |                                      |
+|               ####  === IMPROVED PROCESS ==================> ####        |
+|                                                                          |
+|  Total Lead Time: XX min (XX% reduction)                                 |
+|  Value-Added Time: XX min (XX% of total)                                 |
++--------------------------------------------------------------------------+
+```
+
+### Value Stream Mapping Guidance
+
+When building a value stream map:
+1. Walk the process from customer back to supplier
+2. Record cycle time, changeover time, and WIP at each step
+3. Separate value-added from non-value-added time
+4. Identify bottlenecks (highest cycle time relative to takt)
+5. Mark inventory accumulation points
+6. Calculate total lead time vs. value-added time ratio
+7. Design future state to achieve continuous flow where possible
+
+---
+
+## Process Mining Integration
 
 ```
 ## Process Mining Analysis
@@ -181,209 +110,17 @@ optimizing and stabilizing business processes and designs.
 | [Wait time] | [Location] | [Reduce] |
 ```
 
----
+### When to Use Process Mining
 
-## Phase 3: Analyze
-
-### Root Cause Analysis
-
-```
-## Root Cause Analysis
-
-### Problem Breakdown
-[Main problem broken into components]
-
-     [PROBLEM]
-          │
-    ┌─────┴─────┐
-    │            │
- [Cause 1]    [Cause 2]
-    │            │
- ┌──┴──┐     ┌──┴──┐
- │     │     │     │
-[C1A] [C1B] [C2A] [C2B]
-
-### Root Cause Identification
-
-| Potential Cause | Data Source | Analysis Method | Validated? |
-|-----------------|-------------|-----------------|------------|
-| [Cause 1] | [Data] | [Method] | Yes/No |
-| [Cause 2] | [Data] | [Method] | Yes/No |
-```
-
-### 5 Whys Analysis
-
-```
-Problem: [Problem statement]
-
-1. Why? [Answer]
-2. Why? [Answer]
-3. Why? [Answer]
-4. Why? [Answer]
-5. Why? [Answer]
-
-**Root Cause**: [Final root cause]
-```
-
-### Fishbone Diagram
-
-```
-                    [PROBLEM]
-                         │
-    ┌────────────────────┼────────────────────┐
-    │                    │                    │
-    │                    │                    │
-  PEOPLE              PROCESS              EQUIPMENT
-    │                    │                    │
-    │                    │                    │
-    │                    │                    │
-    └────────────────────┴────────────────────┘
-    
-                    MATERIALS
-                        │
-                        │
-```
-
-### Waste Identification (TIMWOODS)
-
-```
-## Lean Wastes: TIMWOODS
-
-| Waste | Description | Examples in Process | Impact |
-|-------|-------------|---------------------|--------|
-| Transport | Unnecessary movement of materials | [Example] | [Impact] |
-| Inventory | Excess stock beyond immediate need | [Example] | [Impact] |
-| Motion | Unnecessary movement of people | [Example] | [Impact] |
-| Waiting | Idle time between steps | [Example] | [Impact] |
-| Overproduction | Making more than needed | [Example] | [Impact] |
-| Over-processing | Doing more than required | [Example] | [Impact] |
-| Defects | Errors requiring rework | [Example] | [Impact] |
-| Skills | Underutilizing human potential | [Example] | [Impact] |
-
-### Waste Reduction Opportunities
-
-| Waste Type | Opportunity | Expected Benefit |
-|------------|-------------|------------------|
-| [Type] | [Opportunity] | [Benefit] |
-```
+- Large-scale processes with many variants and exceptions
+- ERP/workflow system logs available for extraction
+- Need to discover actual process behavior vs. documented process
+- Conformance checking against regulatory or policy requirements
+- Identifying automation candidates from high-volume, low-variation paths
 
 ---
 
-## Phase 4: Improve
-
-### Solution Development
-
-```
-## Improvement Solutions
-
-### Solution Options
-
-| Solution | Impact | Effort | Risk | Score | Selected? |
-|----------|--------|--------|------|-------|-----------|
-| [Option 1] | H/M/L | H/M/L | H/M/L | [Calc] | [Yes/No] |
-| [Option 2] | H/M/L | H/M/L | H/M/L | [Calc] | [Yes/No] |
-
-### Recommended Solution: [Name]
-
-**Description**: [What the solution is]
-
-**How it works**: [Step-by-step description]
-
-**Automation Integration**:
-- **Tasks for automation**: [Steps identified]
-- **Human decision points**: [Required judgments]
-- **System integrations**: [Connections needed]
-
-**Benefits**:
-- [Benefit 1]
-- [Benefit 2]
-- [Benefit 3]
-
-**Implementation approach**:
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
-```
-
-### Pilot Plan
-
-```
-## Pilot Plan
-
-| Element | Details |
-|---------|---------|
-| Scope | [What will be piloted] |
-| Location | [Where] |
-| Duration | [Time period] |
-| Success criteria | [Metrics and targets] |
-| Rollout criteria | [What must be achieved] |
-```
-
-### Future State Map
-
-```
-## Future State Map: [Process Name]
-
-┌──────────────────────────────────────────────────────────────────────────┐
-│  FUTURE STATE MAP                                                       │
-│                                                                          │
-│  [Supplier] ──▶│◀────────────────▶│◀──────────▶ [Customer]            │
-│                │                   │                                   │
-│               C/T                  C/T                                  │
-│                5m                  15m                                  │
-│                │                   │                                   │
-│               WIP                  WIP                                  │
-│                2                   2                                    │
-│                │                   │                                   │
-│               ████    ═════════════╦╦╦═══════════▶ ████                  │
-│               ████    ══  IMPROVED PROCESS ══════════════▶ ████          │
-│                                                                          │
-│  Total Lead Time: XX min (XX% reduction)                                │
-│  Value-Added Time: XX min (XX% of total)                               │
-└──────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Phase 5: Control
-
-### Control Plan
-
-```
-## Control Plan
-
-### Control Measures
-
-| Process Input | Control Method | Monitoring Frequency | Owner | Response |
-|--------------|----------------|----------------------|-------|----------|
-| [Input 1] | [Method] | [Frequency] | [Name] | [Response] |
-| [Input 2] | [Method] | [Frequency] | [Name] | [Response] |
-
-### Control Charts
-
-| Metric | Chart Type | UCL | LCL | Target | Frequency |
-|--------|------------|-----|-----|--------|-----------|
-| [Metric] | [Type] | [Value] | [Value] | [Value] | [Freq] |
-
-### Response Plan
-
-| Trigger | Response | Owner | Timeline |
-|---------|----------|-------|----------|
-| [Trigger 1] | [Response] | [Name] | [Time] |
-| [Trigger 2] | [Response] | [Name] | [Time] |
-
-### Sustaining Improvements
-- Training plan for process owners
-- Documentation updates
-- Handover checklist
-- Escalation process
-```
-
----
-
-## Process Improvement Tools
-
-### SIPOC Analysis
+## SIPOC Analysis
 
 ```
 ## SIPOC: [Process Name]
@@ -397,7 +134,11 @@ Problem: [Problem statement]
 | **C**ustomers | [Who receives the outputs] |
 ```
 
-### Standard Work
+SIPOC is used in the Define phase to establish process boundaries before detailed mapping. It answers: Who supplies what, through which steps, producing what, for whom?
+
+---
+
+## Standard Work
 
 ```
 ## Standard Work: [Process Name]
@@ -422,11 +163,17 @@ Problem: [Problem statement]
    - Check: [Quality check point]
 ```
 
+### Standard Work Principles
+
+- Takt time sets the pace: Customer demand / Available time = Required rate
+- WIP limits prevent overburden and expose bottlenecks
+- Cycle time must be less than or equal to takt time at every station
+- Standard work is the baseline for improvement, not the ceiling
+- Document the current best method, then improve from there
+
 ---
 
-## Key Metrics and Targets
-
-### Process Metrics Dashboard
+## Process Performance Dashboard
 
 ```
 ## Process Performance Dashboard
@@ -463,7 +210,7 @@ G = Green (on target), Y = Yellow (at risk), R = Red (off target)
 
 ## Best Practices
 
-1. **Start with data**: Never assume — measure current state before proposing improvements
+1. **Start with data**: Never assume -- measure current state before proposing improvements
 2. **Focus on the customer**: Value is defined by the customer, not internal convenience
 3. **Eliminate waste first**: Remove non-value-added activities before optimizing
 4. **Standardize before improving**: You can only improve what is standardized
@@ -476,8 +223,8 @@ G = Green (on target), Y = Yellow (at risk), R = Red (off target)
 
 ## Notes
 
-- Lean is about flow — eliminate bottlenecks and reduce wait times
-- Six Sigma is about variation — reduce defects and inconsistencies
+- Lean is about flow -- eliminate bottlenecks and reduce wait times
+- Six Sigma is about variation -- reduce defects and inconsistencies
 - Together, they drive both efficiency and effectiveness
 - The "improved" process must work for the people who operate it
 - Continuous improvement is a journey, not a destination

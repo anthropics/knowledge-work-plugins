@@ -35,145 +35,20 @@ Determine the focus area:
 | Financial | Historical performance, projections | Is it real? |
 | Technical | Technology, IP | Is it viable? |
 
-### Step 2: Commercial Due Diligence
+### Step 2: Conduct Due Diligence Analysis
 
-For market and customer assessment:
+Apply the relevant analysis frameworks from the due-diligence skill based on the scope defined in Step 1. Cover each focus area identified, using the skill's detailed templates for:
 
-```
-## Commercial Due Diligence: [Target Company]
+- **Commercial DD**: Market assessment, customer analysis, revenue quality, competitive position
+- **Operational DD**: Process & efficiency, technology DD, management & team assessment
+- **Financial DD**: Quality of earnings, working capital, capex, cash flow
+- **Strategic DD**: Strategic fit, synergy assessment, competitive positioning, integration complexity
+- **Technology & IP DD**: Architecture, technical debt, IP protection, security posture
+- **Legal & Regulatory DD**: Litigation, compliance, contract review, data privacy
 
-### Market Position
-- **Market share**: [X]%
-- **Share trend**: [Growing/Stable/Declining]
-- **Competitive position**: [Leader/Challenger/Niche]
+For each area, document key findings with evidence, risk levels, and source confidence.
 
-### Revenue Analysis
-| Revenue Stream | % of Total | Growth | Sustainability |
-|----------------|------------|--------|----------------|
-| [Stream 1] | X% | X% | [High/Med/Low] |
-| [Stream 2] | X% | X% | [High/Med/Low] |
-
-### Customer Analysis
-| Metric | Value | Assessment |
-|--------|-------|------------|
-| # Customers | X | |
-| Top 10 concentration | X% | [High/Med/Low risk] |
-| Retention rate | X% | [Strong/Weak] |
-| NPS/CSAT | X | [Strong/Weak] |
-
-### Customer Deep Dive
-| Customer | Revenue | Contract Terms | Renewal History |
-|----------|---------|----------------|-----------------|
-| [Customer 1] | $X | [Terms] | [History] |
-| [Customer 2] | $X | [Terms] | [History] |
-
-### Growth Sustainability
-- **Historical growth**: [X]% CAGR
-- **Growth drivers**: [What drove growth]
-- **Future growth**: [Can it continue?]
-
-### Market Opportunity
-- **TAM**: $XXB
-- **SAM**: $XXB
-- **SOM**: $XXB
-- **Growth rate**: X% CAGR
-
-### Key Findings & Risks
-| Finding | Impact | Mitigant |
-|---------|--------|----------|
-| [Finding 1] | [H/M/L] | [Mitigant] |
-| [Finding 2] | [H/M/L] | [Mitigant] |
-```
-
-### Step 3: Operational Due Diligence
-
-For process and efficiency assessment:
-
-```
-## Operational Due Diligence: [Target Company]
-
-### Operational Performance
-| Metric | Target | Actual | Gap |
-|--------|--------|--------|-----|
-| [Metric 1] | [Benchmark] | [Actual] | [Gap] |
-| [Metric 2] | [Benchmark] | [Actual] | [Gap] |
-
-### Process Assessment
-| Process | Efficiency | Scalability | Assessment |
-|---------|------------|--------------|------------|
-| [Process 1] | [H/M/L] | [H/M/L] | [Assessment] |
-| [Process 2] | [H/M/L] | [H/M/L] | [Assessment] |
-
-### Technology Assessment
-| System | Criticality | Health | Investment Needed |
-|--------|-------------|--------|-------------------|
-| [System 1] | [High] | [Good/Poor] | [High/Med/Low] |
-| [System 2] | [Medium] | [Good/Poor] | [High/Med/Low] |
-
-### Organizational Assessment
-| Dimension | Assessment | Notes |
-|-----------|------------|-------|
-| Headcount | [Appropriate/Over/Under] | |
-| Skill levels | [Assessment] | |
-| Key person risk | [High/Med/Low] | |
-| Culture | [Assessment] | |
-
-### Cost Structure
-| Cost Category | % Revenue | Benchmark | Assessment |
-|---------------|-----------|-----------|------------|
-| COGS | X% | X% | [High/Low] |
-| Opex | X% | X% | [High/Low] |
-
-### Operational Risks
-| Risk | Likelihood | Impact | Mitigation |
-|------|------------|--------|------------|
-| [Risk 1] | [H/M/L] | [H/M/L] | [Mitigation] |
-| [Risk 2] | [H/M/L] | [H/M/L] | [Mitigation] |
-```
-
-### Step 4: Strategic Due Diligence
-
-For strategic fit assessment:
-
-```
-## Strategic Due Diligence: [Target Company]
-
-### Strategic Fit Assessment
-
-#### With Acquirer Strategy
-| Dimension | Fit | Rationale |
-|-----------|-----|-----------|
-| [Strategic pillar] | [High/Med/Low] | [Rationale] |
-| [Strategic pillar] | [High/Med/Low] | [Rationale] |
-
-#### Synergy Assessment
-| Synergy Type | Potential Value | Realizability | Confidence |
-|--------------|------------------|---------------|------------|
-| Revenue | $X | [High/Med/Low] | [High/Med/Low] |
-| Cost | $X | [High/Med/Low] | [High/Med/Low] |
-| Strategic | Qualitative | [High/Med/Low] | [High/Med/Low] |
-
-### Competitive Positioning
-- **Current position**: [Assessment]
-- **Post-acquisition position**: [Assessment]
-- **Sustainability**: [Assessment]
-
-### Integration Complexity
-| Dimension | Complexity | Notes |
-|-----------|------------|-------|
-| Technology | [High/Med/Low] | |
-| Culture | [High/Med/Low] | |
-| Operations | [High/Med/Low] | |
-| Customer | [High/Med/Low] | |
-
-### Strategic Risks
-| Risk | Impact | Mitigation |
-|------|--------|------------|
-| [Risk 1] | [H/M/L] | [Mitigation] |
-| [Risk 2] | [H/M/L] | [Mitigation] |
-```
-
-### Step 5: Investment Recommendation
+### Step 3: Investment Recommendation
 
 Synthesize findings:
 

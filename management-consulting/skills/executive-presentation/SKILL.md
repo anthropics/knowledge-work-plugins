@@ -9,135 +9,17 @@ You are a presentation design assistant applying top-down structured communicati
 
 **Important**: This skill provides presentation frameworks and communication techniques. Presenters should customize content to their specific audience and context.
 
----
+## Core Methodology Reference
 
-## Top-Down Structured Communication
+The `/presentation-create` command covers the end-to-end presentation workflow: top-down pyramid structure, Situation-Complication-Resolution framing, slide-by-slide templates (Title, Executive Summary, Problem, Analysis, Recommendation, Financial Impact, Roadmap), visual design guidelines, the "So What?" test, rehearsal checklists, and Q&A preparation tables. Use that command for building a complete presentation from scratch.
 
-### Core Concept
-
-```
-## Top-Down Communication Structure
-
-                            [KEY MESSAGE]
-                    (What you want the audience to do/know)
-
-                    ┌─────────────┴─────────────┐
-                    │                           │
-            [SUPPORTING POINT 1]    [SUPPORTING POINT 2]
-                    │                           │
-          ┌─────────┴─────────┐       ┌─────────┴─────────┐
-          │                   │       │                   │
-    [EVIDENCE A]       [EVIDENCE B]  [EVIDENCE C]   [EVIDENCE D]
-```
-
-**Key Rules:**
-1. **Lead with the answer**: Start with the recommendation or conclusion
-2. **Support with logic**: Each supporting point must logically lead to the conclusion
-3. **Structured decomposition**: Supporting points must be mutually exclusive, collectively exhaustive
-4. **Build from the top**: Each level summarizes the level below
-
-### Modern Enhancements
-
-- **Data-first framing**: Lead with the most compelling data point
-- **AI-insight integration**: Highlight AI-derived insights prominently
-- **Interactive elements**: Build in decision points for the audience
-- **Digital-native design**: Consider screen-first, presentation-second
-
-### Application by Section Type
-
-```
-## Executive Summary Structure
-
-### The Answer (1 sentence)
-[Clear recommendation or key message]
-
-### The Proof (3-4 bullets)
-- [Key supporting point 1]
-- [Key supporting point 2]
-- [Key supporting point 3]
-
-### The Next Step (1 sentence)
-[What you want the audience to do]
-
-
-## Problem-Solution Structure
-
-### The Problem (1 sentence)
-[What challenge needs to be addressed]
-
-### The Impact (2-3 bullets)
-- [Consequence 1]
-- [Consequence 2]
-- [Consequence 3]
-
-### The Solution (1 sentence)
-[Recommended approach]
-
-### The Value (3-4 bullets)
-- [Benefit 1 - quantified]
-- [Benefit 2 - quantified]
-- [Benefit 3 - quantified]
-
-
-## Situation-Complication-Resolution
-
-### Situation (2-3 sentences)
-[Current state and context]
-
-### Complication (2-3 sentences)
-[What changed or what the problem is]
-
-### Resolution (1-2 sentences)
-[Recommended approach]
-
-### Call to Action (1 sentence)
-[What you want the audience to do]
-```
+This skill adds specialized techniques that elevate executive communication beyond structure: emotional storytelling, audience adaptation, advanced visual design, additional presentation formats, and the behavioral principles that separate competent presentations from compelling ones.
 
 ---
 
-## Storytelling for Executives
+## Storytelling for Emotional Impact
 
-### The Story Arc
-
-```
-## Consulting Story Structure
-
-### Hook (10% of presentation)
-- Start with a surprising fact, question, or statement
-- Connect to the audience's priorities
-- Establish stakes
-- Use real-time data or live metrics when possible
-
-### Context (20% of presentation)
-- Current situation
-- What you found
-- Why it matters
-
-### Challenge (15% of presentation)
-- The core problem
-- Why it's hard
-- What's at risk if unsolved
-- Include digital transformation stakes
-
-### Journey (25% of presentation)
-- How you approached it
-- Key insights
-- What you tested
-- Highlight AI/analytics applied
-
-### Solution (20% of presentation)
-- Your recommendations
-- The plan
-- Expected outcomes
-
-### Call to Action (10% of presentation)
-- What you need from the audience
-- Next steps
-- Timeline
-```
-
-### Creating Emotional Impact
+### Creating Tension and Resolution
 
 | Element | Technique | Example |
 |---------|-----------|---------|
@@ -149,97 +31,24 @@ You are a presentation design assistant applying top-down structured communicati
 
 ### Modern Storytelling Elements
 
-- **Data storytelling**: Weave data naturally into the narrative
-- **Visual analytics**: Show dynamic charts and live dashboards
-- **AI insights**: Highlight machine learning findings prominently
+- **Data storytelling**: Weave data naturally into the narrative — numbers inform, stories transform
+- **Visual analytics**: Show dynamic charts and live dashboards where possible
+- **AI insights**: Highlight machine learning findings prominently with distinct visual treatment
 - **Digital proof points**: Include technology/digital case studies
 - **Interactive Q&A**: Build in decision moments for the audience
 
+### Modern Enhancements to Top-Down Communication
+
+- **Data-first framing**: Lead with the most compelling data point
+- **AI-insight integration**: Highlight AI-derived insights prominently
+- **Interactive elements**: Build in decision points for the audience
+- **Digital-native design**: Consider screen-first, presentation-second
+
 ---
 
-## Presentation Structure Templates
+## Additional Presentation Formats
 
-### Standard Consulting Deck
-
-```
-## Slide 1: Title Slide
-# [Project Name]
-## [Subtitle]
-### [Date] | [Presenter Name]
-
-
-## Slide 2: Executive Summary
-## The Bottom Line
-[1-2 sentence recommendation]
-
-## Key Findings
-- [Finding 1]
-- [Finding 2]
-- [Finding 3]
-
-## Recommended Actions
-1. [Action 1]
-2. [Action 2]
-
-## Next Steps
-[What you need from the audience]
-
-
-## Slide 3: Agenda
-## Today's Discussion
-1. [Topic 1]
-2. [Topic 2]
-3. [Topic 3]
-4. [Next Steps]
-
-
-## [Section Start]: Context
-
-## Slide 4: [Section Title]
-## Background
-- [Context point 1]
-- [Context point 2]
-- [Context point 3]
-
-
-## [Section]: Analysis
-
-## Slide 5: [Key Insight]
-### The Issue
-[1 sentence problem statement]
-
-### Our Analysis
-- [Finding 1 with data]
-- [Finding 2 with data]
-- [Finding 3 with data]
-
-### Implication
-[Why this matters]
-
-
-## [Section]: Recommendations
-
-## Slide 6: Recommendations
-### What We Propose
-
-| Initiative | Impact | Timeline | Investment |
-|------------|--------|----------|------------|
-| [Initiative 1] | [High/Med] | [Duration] | $[Amount] |
-| [Initiative 2] | [High/Med] | [Duration] | $[Amount] |
-| [Initiative 3] | [High/Med] | [Duration] | $[Amount] |
-
-
-## Slide 7: Next Steps
-### Recommended Path Forward
-
-| Milestone | Owner | Date |
-|-----------|-------|------|
-| [Step 1] | [Name] | [Date] |
-| [Step 2] | [Name] | [Date] |
-
-### Decision Required
-[What you need from the audience]
-```
+The `/presentation-create` command covers the standard consulting deck structure. The formats below provide additional templates not covered by that command.
 
 ### AI/Technology Presentation Addendum
 
@@ -308,37 +117,9 @@ You are a presentation design assistant applying top-down structured communicati
 
 ---
 
-## Visual Design Principles
+## Advanced Visual Design
 
-### Slide Layout
-
-```
-## Effective Slide Structure
-
-┌────────────────────────────────────────────┐
-│  TITLE: Clear, specific, outcome-focused   │
-│                                            │
-│  ┌──────────────────────────────────────┐  │
-│  │                                       │  │
-│  │         MAIN CONTENT                 │  │
-│  │         (chart, diagram,            │  │
-│  │          or key points)             │  │
-│  │                                       │  │
-│  └──────────────────────────────────────┘  │
-│                                            │
-│  TAKEAWAY: One clear insight per slide    │
-└────────────────────────────────────────────┘
-```
-
-### Visual Trends
-
-- **Minimalist design**: Less text, more visual impact
-- **Data visualization**: Sophisticated charts that tell a story
-- **Interactive elements**: Clickable demos, live data
-- **AI-generated insights**: Highlighted in distinct visual style
-- **Mobile-first thinking**: Ensure readability on all devices
-
-### Chart Best Practices
+### Chart Selection Guide
 
 | Chart Type | Use For | Best Practice |
 |------------|---------|---------------|
@@ -350,7 +131,7 @@ You are a presentation design assistant applying top-down structured communicati
 | Heat map | Showing patterns | Clear legend, intuitive colors |
 | Sankey | Showing flow | Label clearly, limited nodes |
 
-### Color and Design
+### Color and Design Principles
 
 - Use brand colors consistently
 - Limit to 3-4 colors per slide
@@ -362,19 +143,14 @@ You are a presentation design assistant applying top-down structured communicati
 
 ---
 
-## Handling Q&A
+## Handling Difficult Q&A
 
-### Preparation
+The `/presentation-create` command includes a Q&A anticipation table. This section adds the response framework and preparation depth for high-stakes situations.
+
+### Preparation for Hard Questions
 
 ```
 ## Anticipating Questions
-
-### Likely Questions
-1. [Question 1]
-   - Preparation: [Response]
-
-2. [Question 2]
-   - Preparation: [Response]
 
 ### Hard Questions
 1. [Difficult question]
@@ -420,55 +196,15 @@ You are a presentation design assistant applying top-down structured communicati
 
 ---
 
-## Presentation Checklist
+## Behavioral Principles
 
-### Before
-
-- [ ] Know your audience
-- [ ] Test all technology
-- [ ] Have backup materials
-- [ ] Practice timing
-- [ ] Prepare for questions
-- [ ] Know the room setup
-- [ ] Test screen sharing, virtual backgrounds
-- [ ] Prepare AI-assisted backup data
-
-### During
-
-- [ ] Start strong
-- [ ] Make eye contact
-- [ ] Vary your pace and tone
-- [ ] Engage the audience
-- [ ] Watch for signals
-- [ ] Stay on time
-- [ ] Reference live data when relevant
-- [ ] Highlight AI/analytics insights
-
-### After
-
-- [ ] Summarize key points
-- [ ] Confirm next steps
-- [ ] Send follow-up materials
-- [ ] Request feedback
-- [ ] Document lessons learned
-- [ ] Send digital/AI resources mentioned
-
----
-
-## Best Practices
-
-1. **One message per slide**: If you can't summarize a slide in one sentence, it's too complex
-2. **Support, don't reproduce**: Slides support your talking points, don't just read them
-3. **Practice out loud**: You'll find issues you don't see on screen
-4. **Expect the unexpected**: Technology fails, schedules change, be ready
-5. **Less is more**: White space, fewer words, cleaner design
-6. **Quantify everything**: Numbers create credibility
-7. **End with action**: Never leave the audience wondering "so what?"
-8. **Tell stories**: Data informs, stories transform
-9. **Embed AI insights**: Make machine learning findings visible and prominent
-10. **Design for digital**: Consider how slides will look in PDF/share format
-11. **Accessibility matters**: Ensure color contrast, font size, alt text
-12. **Continuous improvement**: Update based on feedback
+- **Lead with the answer, always**: Executives lose patience with build-up; state the recommendation in the first 30 seconds and earn the right to explain afterward
+- **Every slide must pass the "so what?" test**: If you cannot articulate why the audience should care about a slide in one sentence, cut or restructure it
+- **Quantify or don't claim it**: Unsupported claims erode credibility; attach a number, a source, or a date to every assertion
+- **Design for the skeptic in the room**: Assume at least one audience member will challenge your logic; build the pyramid so each level withstands scrutiny independently
+- **Less content, more conviction**: A 7-slide deck delivered with authority beats a 30-slide deck that hedges; cut ruthlessly and own what remains
+- **Rehearse transitions, not just slides**: The story arc breaks when transitions are weak; script the bridge sentence between each section
+- **Adapt in real time**: Read body language and questions; be prepared to skip slides, dive deeper, or reorder based on audience signals
 
 ---
 
@@ -477,9 +213,21 @@ You are a presentation design assistant applying top-down structured communicati
 - Top-down structured communication applies to every level: deck, section, slide, bullet
 - If your grandmother can't understand it, simplify
 - Executives appreciate brevity — earn their time by being concise
-- The "so what?" test: every slide and section should answer this question
-- Practice doesn't make perfect — practice makes prepared
-- Your presentation is only as good as your preparation
 - Always highlight the AI/digital dimension of recommendations
 - Data storytelling is more important than ever — weave data into narratives
 - Consider the hybrid meeting environment — present for both in-room and remote
+- Practice doesn't make perfect — practice makes prepared
+- Your presentation is only as good as your preparation
+
+---
+
+### When to Apply This Skill vs. the Command
+
+| Situation | Use |
+|-----------|-----|
+| Building a complete presentation end-to-end | `/presentation-create` command |
+| Needing advanced storytelling and emotional impact techniques | This skill |
+| Creating an AI/Technology addendum or One-Page Memo | This skill |
+| Selecting chart types and advanced visual design guidance | This skill |
+| Preparing for high-stakes Q&A with response framework | This skill |
+| Understanding behavioral principles for executive communication | This skill |

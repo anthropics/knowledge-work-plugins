@@ -1,7 +1,7 @@
 {
   "name": "management-consulting",
   "version": "1.0.0",
-  "description": "End-to-end management consulting workflow plugin. From RFP responses and proposal development through strategy formulation, implementation planning, and project closure. Provides comprehensive frameworks and best practices for strategy, operations, and transformation engagements.",
+  "description": "Analyze RFPs, develop proposals, apply strategic frameworks, and build implementation plans. Create executive deliverables for strategy, operations, and transformation engagements.",
   "author": {
     "name": "Anot"
   }

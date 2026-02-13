@@ -49,7 +49,7 @@ Capture essential context:
 
 ### Step 2: Apply Value Proposition Framework
 
-Structure the value proposition using the **VALUE Framework**:
+Structure the value proposition using the **VALUED Framework**:
 
 ```
 ## Value Proposition: [Offering]
@@ -58,26 +58,76 @@ Structure the value proposition using the **VALUE Framework**:
 **What value do we create?**
 - [Primary value: cost reduction, revenue growth, risk mitigation, capability building]
 - [Secondary value]
+- [Quantified impact: specific numbers, percentages, timeframes]
 
 ### Audience Link
 **Why does this matter to THEM?**
 - Connect value to their specific priorities
 - Use their language and terminology
+- Address their biggest fear or aspiration
 
 ### Logic Proof
 **Why should they believe us?**
-- [Evidence 1: methodology]
-- [Evidence 2: experience]
-- [Evidence 3: credentials]
+- [Evidence 1: methodology with track record]
+- [Evidence 2: relevant experience with named outcomes]
+- [Evidence 3: credentials, certifications, or third-party validation]
 
 ### Unique Differentiation
 **What makes us different?**
-- [Differentiator 1]
-- [Differentiator 2]
-- [Why it matters]
+- [Differentiator 1 — what only we can claim]
+- [Differentiator 2 — why it's sustainable]
+- [Why competitors cannot easily replicate this]
+
+### Evidence & Execution
+**How do we deliver and prove it?**
+- [Delivery model: how the work gets done]
+- [Track record: quantified results from similar engagements]
+- [Risk mitigation: how we de-risk the engagement for the client]
 ```
 
-### Step 3: Test and Refine
+### Step 3: Develop Messaging Hierarchy
+
+Create layered messaging for different contexts and audiences:
+
+```
+## Messaging Hierarchy
+
+### Headline Value Proposition
+[One sentence: For [target client] who [need], our [offering] delivers [primary benefit] unlike [alternative] because [key differentiator].]
+
+### Elevator Pitch (30 seconds)
+[3-4 sentences that a partner could deliver naturally in conversation:
+- Hook: the client problem
+- Solution: what we do differently
+- Proof: one compelling result
+- Action: what happens next]
+
+### Stakeholder-Level Messages
+
+#### C-Suite (Strategic)
+- **Message**: [Focus on enterprise value, competitive advantage, shareholder impact]
+- **Proof**: [Board-level metrics and outcomes]
+
+#### Functional Leaders (Operational)
+- **Message**: [Focus on capability improvement, team effectiveness, operational metrics]
+- **Proof**: [Operational KPIs and efficiency gains]
+
+#### Practitioners (Technical)
+- **Message**: [Focus on methodology, tools, skill development, day-to-day improvement]
+- **Proof**: [Practical examples and peer references]
+
+### Competitive Positioning
+
+| Dimension | Our Position | Competitor A | Competitor B |
+|-----------|-------------|-------------|-------------|
+| [Key dimension 1] | [Our stance] | [Their stance] | [Their stance] |
+| [Key dimension 2] | [Our stance] | [Their stance] | [Their stance] |
+| [Key dimension 3] | [Our stance] | [Their stance] | [Their stance] |
+
+**Positioning statement**: In the [market category], we are the [differentiation] firm because [sustainable reason].
+```
+
+### Step 4: Test and Refine
 
 Validate the value proposition:
 
@@ -105,22 +155,32 @@ Validate the value proposition:
 - [ ] Can we back it up?
 ```
 
+### Iteration Guidance
+
+For any checklist item that fails:
+- **Clarity fails**: Simplify language, remove jargon, cut to one core benefit
+- **Relevance fails**: Re-interview the client need — the value prop may be solving the wrong problem
+- **Differentiation fails**: Dig deeper into methodology, team, or IP — generic claims need to be replaced with specifics only you can claim
+- **Belief fails**: Add or strengthen proof points — quantified case studies, named references, third-party validation
+
 ## Output Format
 
 Generate:
 
 1. **Master Value Proposition** — One-paragraph version
 2. **Elevator Pitch** — 30-second version
-3. **Value Drivers** — Bulleted key benefits
-4. **Proof Points** — Supporting evidence and examples
-5. **Differentiation Statement** — Competitive positioning
+3. **Stakeholder Messages** — C-suite, functional leader, and practitioner versions
+4. **Value Drivers** — Bulleted key benefits with quantification
+5. **Proof Points** — Supporting evidence and examples
+6. **Competitive Positioning** — Differentiation vs. alternatives
+7. **Differentiation Statement** — One-sentence competitive positioning
 
 After generating, ask:
 
 > "Would you like me to:
 > - Develop specific use cases for this value proposition?
-> - Create messaging for different stakeholder levels?
-> - Build a capabilities deck supporting this positioning?"
+> - Build a capabilities deck supporting this positioning?
+> - Create a one-page leave-behind for client meetings?"
 
 ## Notes
 
@@ -132,3 +192,4 @@ After generating, ask:
 - Revisit and refresh value propositions as markets evolve
 - Proof points and case studies strengthen credibility
 - Simplicity wins — if you can't explain it in one sentence, refine it
+- Competitive positioning requires understanding what competitors actually claim, not just what they do

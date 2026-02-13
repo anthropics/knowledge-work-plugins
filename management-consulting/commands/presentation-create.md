@@ -261,26 +261,23 @@ For each slide, ask:
 ## Slide 2: Executive Summary
 [Key messages in priority order]
 
-## Slide 3-5: Situation/Context
+## Slides 3-4: Situation/Context
 [Establishing the common ground]
 
-## Slide 6-8: Complication/Problem
+## Slides 5-6: Complication/Problem
 [Defining the challenge]
 
-## Slide 9-12: Analysis
-[Framework applications and findings]
+## Slides 7-8: Analysis & Evidence
+[Framework applications and key findings — put detailed analysis in backup]
 
-## Slide 13-15: Recommendation
-[Your proposed solution]
+## Slide 9: Recommendation
+[Your proposed solution — clear, specific, actionable]
 
-## Slide 16-17: Impact
-[Quantified benefits and risks]
+## Slide 10: Impact & Next Steps
+[Quantified benefits and specific actions with timeline]
 
-## Slide 18: Next Steps
-[Specific actions and timeline]
-
-## Backup Slides
-[Additional supporting material]
+## Backup Slides (as needed)
+[Detailed analysis, data tables, methodology, additional evidence]
 
 ## Speaker Notes
 [Key points to emphasize, timing, transitions]

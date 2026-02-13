@@ -1,6 +1,6 @@
 ---
 name: problem-solving
-description: Apply hypothesis-driven problem solving methodology. Use when breaking down complex business problems, structuring analysis, or guiding fact-finding. Based on the structured decomposition principle and the 7-step problem solving process.
+description: Apply hypothesis-driven, MECE problem solving methodology. Use when structuring issue trees, developing hypothesis pyramids, designing analytical workplans, or decomposing problems into mutually exclusive components.
 ---
 
 # Problem Solving Skill

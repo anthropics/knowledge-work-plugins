@@ -9,9 +9,15 @@ You are a project governance assistant applying the frameworks and structures us
 
 **Important**: This skill provides governance frameworks and templates. Governance structures should be customized to project size, complexity, and organizational context.
 
-## Governance Framework Design
+---
 
-### Level 1: Project Charter
+## Command Coverage
+
+The `/governance-setup` command provides the end-to-end workflow for establishing project governance including governance structure selection (light/standard/complex), RACI matrix creation, decision rights matrices, meeting cadence design, escalation paths, and governance charter documentation. Use that command for initial governance setup on a new engagement.
+
+The frameworks below are **not covered** by the command and provide additional governance components for ongoing project management: project charters, stage gate frameworks, hybrid delivery models, status reporting templates, risk registers, issue logs, project closure procedures, and lessons learned.
+
+## Project Charter
 
 ```
 ## Project Charter: [Project Name]
@@ -66,134 +72,7 @@ You are a project governance assistant applying the frameworks and structures us
 
 ---
 
-### Level 2: RACI Matrix
-
-```
-## RACI Matrix: [Project Name]
-
-### Legend
-- **R**esponsible: Does the work
-- **A**ccountable: Ultimate decision authority
-- **C**onsulted: Provides input before decisions
-- **I**nformed: Kept updated on decisions
-
-### RACI by Workstream
-
-| Activity/Decision | Sponsor | Director | Eng Manager | Team | Client | Client Team |
-|-------------------|---------|----------|-------------|------|--------|--------------|
-| **Strategy & Direction** | | | | | | |
-| Define project scope | I | A | R | C | I | C |
-| Approve major decisions | A | C | R | I | C | I |
-| **Planning** | | | | | | |
-| Develop work plan | I | A | R | C | I | C |
-| Estimate effort | I | I | A | R | C | C |
-| **Execution** | | | | | | |
-| Conduct analysis | I | I | A | R | C | C |
-| Develop deliverables | I | I | A | R | C | C |
-| Review deliverables | I | C | A | R | C | C |
-| **Governance** | | | | | | |
-| Steering committee | A | C | R | I | C | I |
-| Status reporting | I | I | A | R | I | I |
-| Issue resolution | I | C | A | R | C | C |
-| **Closure** | | | | | | |
-| Final acceptance | A | C | R | I | R | C |
-| Lessons learned | I | I | A | R | C | C |
-
-### RACI Construction Rules
-1. Only ONE "A" per activity — clear accountability
-2. "R" can be multiple — shared work
-3. "C" should be limited — consult selectively
-4. "I" is the default — don't over-specify
-```
-
----
-
-### Level 3: Steering Committee
-
-```
-## Steering Committee: [Project Name]
-
-### Committee Charter
-
-#### Purpose
-[What the steering committee does]
-
-#### Responsibilities
-1. Approve project scope and changes
-2. Resolve escalated issues
-3. Ensure resources are available
-4. Make strategic decisions
-5. Monitor project health
-
-#### Authority
-- Approve budget changes up to $[Amount]
-- Approve timeline changes up to [X] weeks
-- Escalate beyond these limits to [executive]
-
-#### Limitations
-- Cannot approve scope increases beyond [amount]
-- Cannot extend timeline beyond [date]
-- Must escalate to [role] for major strategy changes
-
-### Committee Composition
-
-| Role | Name | Organization | Committee Role |
-|------|------|--------------|----------------|
-| Chair | [Name] | [Org] | Final authority |
-| Member | [Name] | [Org] | Strategic guidance |
-| Member | [Name] | [Org] | Business perspective |
-| Member | [Name] | [Org] | Technical perspective |
-| Secretary | [Name] | [Org] | Admin support |
-
-### Meeting Cadence
-
-| Meeting | Frequency | Duration | Attendees |
-|---------|-----------|----------|-----------|
-| Steering committee | Monthly | 60 min | Full committee |
-| Working session | Weekly | 30 min | Eng Manager + Client lead |
-| Ad-hoc | As needed | 90 min | As required |
-
-### Agenda Template
-
-#### Standard Steering Committee Agenda
-
-1. **Opening and approvals** (5 min)
-   - Approve previous minutes
-   - Approve agenda
-
-2. **Project status** (15 min)
-   - Dashboard review
-   - Milestone status
-
-3. **Issues and decisions** (15 min)
-   - Escalated issues
-   - Decisions needed
-
-4. **Change requests** (10 min)
-   - Scope changes
-   - Budget changes
-
-5. **Forward look** (10 min)
-   - Upcoming milestones
-   - Risks
-
-6. **AOB** (5 min)
-   - Any other business
-
-### Escalation Matrix
-
-| Issue Type | First Response | Escalation Path |
-|------------|---------------|-----------------|
-| Scope change | Eng Manager → | Director → Sponsor → Steering |
-| Schedule risk | Eng Manager → | Director → Sponsor |
-| Resource conflict | Eng Manager → | Director → HR |
-| Budget variance | Eng Manager → | Director → Finance |
-| Strategic issue | Director → | Sponsor → Steering |
-```
-
----
-
-### Level 4: Stage Gate Framework
+## Stage Gate Framework
 
 ```
 ## Stage Gate Model: [Project Name]
@@ -279,11 +158,11 @@ You are a project governance assistant applying the frameworks and structures us
     ┌─────────────────────────────────────────────────────────┐
     │                    PROJECT PHASE                        │
     └─────────────────────────────────────────────────────────┘
-    
+
     ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐
     │ Sprint 1│ │ Sprint 2│ │ Sprint 3│ │ Sprint 4│
     └─────────┘ └─────────┘ └─────────┘ └─────────┘
-    
+
     ←─────────── PHASE DELIVERABLE ────────────→
 
 ### Hybrid Governance Elements
@@ -500,27 +379,29 @@ R           │
 
 ---
 
-## Best Practices
+## Behavioral Principles
 
-1. **Establish governance early**: Set up RACI and steering committee at project start
-2. **Keep it proportional**: Governance overhead should match project size/complexity
-3. **One accountable person**: Clear accountability prevents decision paralysis
-4. **Escalate appropriately**: Define clear escalation paths and thresholds
-5. **Report regularly**: Consistent status reporting builds trust
-6. **Manage risks proactively**: Identify and mitigate before they become issues
-7. **Document decisions**: Maintain decision log for audit trail
-8. **Learn and improve**: Capture lessons learned for future projects
-9. **Close properly**: Don't skip closure activities — they build relationships
+- **Governance enables, it doesn't restrict**: If governance isn't adding value, it's adding overhead — redesign it
+- **Right-size to complexity**: A 3-person engagement doesn't need the same governance as a 50-person transformation
+- **One accountable person per decision**: Multiple "A"s in a RACI means nobody is accountable — resolve ambiguity early
+- **Escalate early, not late**: Surprises destroy trust faster than bad news delivered promptly
+- **Living documents over shelf-ware**: A RACI that isn't updated when roles change is worse than no RACI — it creates false confidence
+- **Close properly**: Skipping closure activities sacrifices the relationship capital you built during the engagement
 
 ---
 
-## Notes
+### When to Apply This Skill vs. the Command
 
-- Governance is about enabling, not restricting — make it add value
-- Too much governance slows everything down; too little causes chaos
-- The RACI is a living document — update as things change
-- Status reporting should be efficient — provide value, not just compliance
-- Issues are not failures — how we handle them defines success
-- Always escalate early — surprises are never good
-- Document everything — verbal agreements have no memory
-- The sponsor sets the tone — their involvement matters
+| Situation | Use |
+|-----------|-----|
+| Setting up governance for a new engagement end-to-end | `/governance-setup` command |
+| Selecting governance structure (light/standard/complex) | `/governance-setup` command |
+| Creating initial RACI matrix and decision rights | `/governance-setup` command |
+| Defining meeting cadence and escalation paths | `/governance-setup` command |
+| Drafting the governance charter document | `/governance-setup` command |
+| Creating a project charter with scope, budget, milestones | This skill |
+| Implementing stage gate frameworks with gate criteria | This skill |
+| Designing hybrid agile-waterfall delivery models | This skill |
+| Building status reporting templates (RAG dashboards) | This skill |
+| Setting up risk registers and issue logs | This skill |
+| Managing project closure and lessons learned | This skill |

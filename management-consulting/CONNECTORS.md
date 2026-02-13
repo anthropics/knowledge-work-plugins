@@ -14,8 +14,8 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Cloud storage | `~~cloud storage` | Box, Egnyte | Google Drive, SharePoint, Dropbox |
 | Office suite | `~~office suite` | Microsoft 365 | Google Workspace |
 | Project tracker | `~~project tracker` | Atlassian (Jira, Confluence) | Asana, Monday.com |
-| Data warehouse | `~~data warehouse` | — (no supported MCP servers yet) | Snowflake, BigQuery |
-| BI / Visualization | `~~bi` | — (no supported MCP servers yet) | Tableau, Power BI |
+| Data warehouse | `~~data warehouse` | Snowflake, BigQuery | Databricks, Redshift |
+| BI / Visualization | `~~bi` | — | Tableau, Power BI |
 
 ## Graceful degradation
 
