@@ -53,6 +53,22 @@ Search across all documents — signed, pending, expired, and templates — by n
 /document-search [query]
 ```
 
+### `/document-details` -- Document Details
+
+Get comprehensive information about any document — signer status breakdown, timestamps, and progress.
+
+```
+/document-details [document ID or name]
+```
+
+### `/cancel-request` -- Cancel Signature Request
+
+Safely cancel/void a pending signature request with confirmation workflow.
+
+```
+/cancel-request [document ID or name]
+```
+
 ## Skills
 
 | Skill | Description |
@@ -118,7 +134,9 @@ esignature/
 ├── commands/
 │   ├── signature-status.md
 │   ├── send-reminder.md
-│   └── document-search.md
+│   ├── document-search.md
+│   ├── document-details.md
+│   └── cancel-request.md
 └── skills/
     ├── document-tracking/SKILL.md
     └── signature-workflows/SKILL.md
