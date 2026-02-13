@@ -58,6 +58,11 @@
       "name": "bio-research",
       "source": "./bio-research",
       "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
+    },
+    {
+      "name": "management-consulting",
+      "source": "./management-consulting",
+      "description": "End-to-end management consulting workflows from RFP response and proposal development through strategy formulation, implementation planning, and project closure. Apply strategic frameworks, build business cases, and create executive deliverables."
     }
   ]
 }
