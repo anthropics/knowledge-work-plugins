@@ -86,4 +86,6 @@ Both wrapped and unwrapped formats are supported:
 
 Use the `url` field from `search_mcp_registry` results.
 
-**Note:** First-party integrations (Gmail, Google Calendar, Google Drive) are connected at the user level and don't need plugin `.mcp.json` entries.
+### Directory Entries Without a URL
+
+Some directory entries have no `url` because the endpoint is dynamic — the admin provides it when connecting the server. These servers can still be referenced in the plugin's MCP config by **name**: if the MCP server name in the config matches the directory entry name, it is treated the same as a URL match.

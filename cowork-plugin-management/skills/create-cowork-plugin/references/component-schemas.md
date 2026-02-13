@@ -294,7 +294,7 @@ Decisions: `approve`, `block`, `ask_user` (ask for confirmation).
 }
 ```
 
-**SSE** (hosted with OAuth):
+**SSE** (remote server, server-sent events transport):
 ```json
 {
   "mcpServers": {
@@ -306,7 +306,7 @@ Decisions: `approve`, `block`, `ask_user` (ask for confirmation).
 }
 ```
 
-**HTTP** (REST API):
+**HTTP** (remote server, streamable HTTP transport):
 ```json
 {
   "mcpServers": {
@@ -323,11 +323,11 @@ Decisions: `approve`, `block`, `ask_user` (ask for confirmation).
 
 ### Server Type Selection Guide
 
-| Type | Best for | Auth method |
-|------|----------|-------------|
-| stdio | Local tools, custom servers | Environment variables |
-| SSE | Hosted cloud services | OAuth (automatic) |
-| HTTP | REST API backends | Token headers |
+| Type | Best for | Transport |
+|------|----------|-----------|
+| stdio | Local tools, custom servers | Subprocess (stdin/stdout) |
+| SSE | Remote servers using server-sent events | HTTP + SSE streaming |
+| HTTP | Remote servers using streamable HTTP | HTTP request/response |
 
 ### Environment Variable Expansion
 
@@ -336,6 +336,10 @@ All MCP configs support `${VAR_NAME}` substitution:
 - `${ANY_ENV_VAR}` — user environment variables
 
 Document all required environment variables in the plugin README.
+
+### Directory Servers Without a URL
+
+Some MCP directory entries have no `url` because the endpoint is dynamic. Plugins can reference these servers by **name** instead — if the server name in the plugin's MCP config matches the directory entry name, it is treated the same as a URL match.
 
 ## CONNECTORS.md
 
