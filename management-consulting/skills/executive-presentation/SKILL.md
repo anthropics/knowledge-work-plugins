@@ -208,6 +208,15 @@ The `/presentation-create` command includes a Q&A anticipation table. This secti
 
 ---
 
+## PPTX Generation
+
+When generating actual .pptx files (not markdown outlines), read
+[pptx-consulting.md](pptx-consulting.md) for consulting-specific slide
+masters, anatomy rules, and layout patterns for pptxgenjs. Default to
+`LAYOUT_WIDE` (13.33" x 7.5") for consulting decks.
+
+---
+
 ## Notes
 
 - Top-down structured communication applies to every level: deck, section, slide, bullet
