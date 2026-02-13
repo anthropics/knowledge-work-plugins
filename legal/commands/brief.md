@@ -57,6 +57,12 @@ Check each connected source for legal-relevant items:
 - Approaching expiration dates (next 30 days)
 - Newly executed agreements
 
+**E-signature (if connected):**
+- Documents pending your signature
+- Documents you sent that are waiting on others to sign
+- Documents signed in the past week
+- Expired or lapsed signature requests that need follow-up
+
 **CRM (if connected):**
 - Deals moving to stages that require legal involvement
 - New opportunities flagged for legal review
@@ -73,6 +79,12 @@ Check each connected source for legal-relevant items:
 - **Awaiting Your Review**: [count and list]
 - **Pending Counterparty Response**: [count and list]
 - **Approaching Deadlines**: [items due this week]
+
+### Signature Status
+- **Pending Your Signature**: [count and list from ~~e-signature]
+- **Awaiting Others**: [count and list of documents sent for signature]
+- **Recently Signed**: [documents completed in the past week]
+- **Expired/Lapsed**: [signature requests that expired without completion]
 
 ### New Requests
 [Contract review requests, NDA requests, compliance questions received since last brief]

@@ -59,6 +59,13 @@ Search for:
 - Redlines and drafts
 - Due diligence materials
 
+#### E-signature (e.g., Signeasy) -- If Connected
+Search for documents involving the vendor:
+- Signed/completed documents (search by vendor name)
+- Pending signature requests involving the vendor
+- Expired or lapsed documents that were not signed
+- Signer details and signature status for each document
+
 #### Chat (e.g., Slack, Teams) -- If Connected
 Search for recent mentions:
 - Contract requests involving this vendor

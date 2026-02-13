@@ -1,0 +1,8 @@
+{
+  "name": "esignature",
+  "version": "1.0.0",
+  "description": "Track, manage, and automate e-signature workflows. Monitor pending and signed documents, send reminders, manage templates, and get a real-time view of your signature pipeline.",
+  "author": {
+    "name": "Signeasy"
+  }
+}
