@@ -157,6 +157,36 @@ Example:
 - Each criterion should be independently testable
 - Avoid ambiguous words: "fast", "user-friendly", "intuitive" — define what these mean concretely
 
+## Idea Structuring
+
+### From Raw Idea to PRD-Ready Concept
+Before writing a full PRD, raw ideas need to be structured. This is the bridge between "someone said we should do X" and a formal spec. Use this when ideas come from Slack threads, customer conversations, brainstorms, or stakeholder requests.
+
+### Idea Structuring Process
+1. **Define the problem**: What user problem does this idea address? If you cannot state the problem clearly, the idea is not ready for a spec.
+2. **Identify the customer signal**: Where did this idea come from? Customer feedback, support tickets, Slack discussion, competitive pressure, internal observation? Stronger signals (many customers, recurring theme) deserve more investment.
+3. **Explore solution options**: Generate 2-3 approaches, not just the first idea. Consider:
+   - Option A: Simplest version that solves the core problem
+   - Option B: More comprehensive approach with broader impact
+   - Option C: Different angle entirely (reframe the problem)
+4. **List assumptions**: What must be true for each option to work? Customer behavior assumptions, technical feasibility assumptions, market assumptions.
+5. **Identify what you do not know**: What would you need to learn before committing? Can you validate quickly (survey, prototype, data analysis)?
+6. **Recommend next step**: Is this ready for a full PRD? Or does it need validation first (customer interviews, prototype, experiment)?
+
+### When an Idea is Ready for a PRD
+- The problem is clearly defined and backed by evidence
+- At least one viable solution approach has been identified
+- Critical assumptions have been validated (or a validation plan exists)
+- The idea has a plausible path to measurable impact
+- A PM is willing to own the spec and drive it forward
+
+### When an Idea Needs More Work
+- The problem is vague ("users want it to be better")
+- No customer evidence beyond one person's opinion
+- The solution is prescribed without understanding the problem ("build a dashboard")
+- Critical assumptions are untested and high-risk
+- Nobody can articulate what success looks like
+
 ## Scope Management
 
 ### Recognizing Scope Creep

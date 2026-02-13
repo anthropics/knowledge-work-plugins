@@ -143,6 +143,36 @@ Adjust ratios based on team context:
 - When adding to the roadmap, always ask: "What comes off?"
 - Better to commit to fewer things and deliver reliably than to overcommit and disappoint
 
+## Decision Memos
+
+### When to Write a Decision Memo
+Write a decision memo when the team faces a strategic choice with meaningful trade-offs — which initiative to prioritize, build vs buy, which approach to take. A decision memo structures the conversation and creates a record of the reasoning.
+
+### Decision Memo Structure
+Present 2-3 options with a clear recommendation:
+
+**Context** (2-3 sentences): What decision needs to be made and why now?
+
+**Options** — for each option (2-3 maximum):
+- **Description**: What does this option involve? (2-3 sentences)
+- **Evidence for**: Customer demand data, strategic alignment, competitive pressure
+- **Evidence against**: Risks, costs, opportunity cost, technical concerns
+- **Resource requirements**: Team size, duration, dependencies
+- **Expected impact**: Quantified where possible (revenue, adoption, retention)
+
+**Recommendation**: State clearly which option you recommend and why. The recommendation should follow logically from the evidence.
+
+**Trade-offs acknowledged**: What are you giving up by choosing the recommended option? Showing you have considered the downsides builds credibility.
+
+**Next steps**: If approved, what happens next? Who does what by when?
+
+### Decision Memo Tips
+- Keep it under 2 pages. If you need more space, the decision may need to be broken down.
+- Lead with the recommendation. Busy stakeholders want your answer before the analysis.
+- Be honest about uncertainty. "We believe X based on Y evidence, but Z is unclear" is more credible than false confidence.
+- Include a "reversibility" assessment. One-way doors (hard to undo) deserve more deliberation than two-way doors (easy to reverse).
+- Present genuinely different options, not straw men. If one option is obviously bad, it should not be in the memo.
+
 ## Communicating Roadmap Changes
 
 ### When the Roadmap Changes
