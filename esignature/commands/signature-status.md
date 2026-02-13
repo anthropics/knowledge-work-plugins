@@ -24,7 +24,8 @@ Query ~~e-signature for all document states:
 2. **Pending for others** -- Documents you sent that are waiting on others
 3. **Recently signed** -- Documents completed in the past 7 days
 4. **Expired/lapsed** -- Signature requests that expired without completion
-5. **Account summary** -- Overall document counts and recent activity
+5. **Account info** -- Subscription status, credits, and user details
+6. **Account summary** -- Overall document counts and recent activity
 
 ### Step 2: Generate Dashboard
 
@@ -53,6 +54,8 @@ Output a structured dashboard:
 - **Total Documents**: [count]
 - **Templates Available**: [count]
 - **Subscription Status**: [status]
+- **Envelope Credits**: [count]
+- **Paid Account**: [yes/no]
 ```
 
 ### Step 3: Highlight Urgent Items
