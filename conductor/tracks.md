@@ -119,5 +119,4 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 
 ---
 
-- [ ] **Track: Establish a Strategic Equalizer plugin for Ministers and Ministerial staffers to audit and challenge bureaucratic advice.**
-*Link: [./tracks/ministerial-audit_20260214/](./tracks/ministerial-audit_20260214/)*
+- [x] **Track: Establish a Strategic Equalizer plugin for Ministers and Ministerial staffers to audit and challenge bureaucratic advice.** (./tracks/ministerial-audit_20260214/)
