@@ -53,7 +53,7 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
   - Phase: 3
   - Adapts From: finance
 
-- [ ] **Track: health-evidence** (./tracks/health-evidence/)
+- [x] **Track: health-evidence** (./tracks/health-evidence/)
   - Phase: 3
   - Adapts From: bio-research
 
