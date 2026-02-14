@@ -116,3 +116,7 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 - Tasks should include `Owner:` and `Updated:` context at section level for accountability.
 - Tracks with no `IN PROGRESS` task should remain `planning`.
 - Explicit blockers should be marked with `BLOCKER:` or `BLOCKED:` so status tooling can detect them.
+
+---
+
+- [x] **Track: Establish a Real Estate NZ plugin focused on Ray White Lower Hutt workflows, covering the property lifecycle from prospecting to settlement.** (./tracks/real-estate-nz_20260214/)
