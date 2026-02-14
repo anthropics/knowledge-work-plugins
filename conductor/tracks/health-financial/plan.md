@@ -17,7 +17,7 @@
 *Dependencies: Phase 1*
 *Estimated: 1 session*
 
-- [x] Create `health/skills/charge-capture/SKILL.md`
+- [x] Create `health/skills/charge-capture/SKILL.md` [a3cb4af]
   - Acceptance: CDM review methodology
   - Acceptance: Coding validation guidance
   - Acceptance: Compliance red flags
