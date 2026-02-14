@@ -4,9 +4,10 @@
 *Dependencies: health-core*
 *Estimated: 1-2 sessions*
 
-- [ ] Create `health/skills/payer-contracts/SKILL.md`
+- [x] Create `health/skills/payer-contracts/SKILL.md`
   - Acceptance: Follows [health skill standards](../health-plugin/skill-standards.md) (14-section template)
   - Acceptance: Includes Confidence Indicators for contract risk
+  - Acceptance: AU/NZ financial and payer defaults are explicit, with US/EU-lite fallback
   - Acceptance: Healthcare-specific contract review checklist
   - Acceptance: Key term identification (rates, timeliness, medical necessity)
   - Acceptance: Renewal tracking guidance
