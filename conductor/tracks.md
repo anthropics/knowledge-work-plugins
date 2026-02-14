@@ -120,3 +120,7 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 ---
 
 - [x] **Track: Establish a Strategic Equalizer plugin for Ministers and Ministerial staffers to audit and challenge bureaucratic advice.** (./tracks/ministerial-audit_20260214/)
+
+---
+
+- [ ] **Track: Establish a Real Estate NZ plugin focused on Ray White Lower Hutt workflows, covering the property lifecycle from prospecting to settlement.** (./tracks/real-estate-nz_20260214/)
