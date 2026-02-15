@@ -39,6 +39,17 @@
     "benchling": {
       "type": "http",
       "url": ""
+    },
+    "life-sciences": {
+      "type": "http",
+      "url": "",
+      "_comment": "Fuzzy-to-Fact life sciences gateway (HGNC, UniProt, Ensembl, NCBI, ChEMBL, PubChem, IUPHAR, STRING, BioGRID, WikiPathways, OpenTargets, ClinicalTrials). Source: https://github.com/donbr/lifesciences-research"
+    },
+    "cq-eval": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["mcp-servers/cq-eval/server.py"],
+      "_comment": "Competency Question golden test set management and scoring. Validates data federation accuracy against gold standard mechanistic paths."
     }
   }
 }
