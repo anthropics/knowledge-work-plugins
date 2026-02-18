@@ -321,14 +321,6 @@ Decisions: `approve`, `block`, `ask_user` (ask for confirmation).
 }
 ```
 
-### Server Type Selection Guide
-
-| Type | Best for | Transport |
-|------|----------|-----------|
-| stdio | Local tools, custom servers | Subprocess (stdin/stdout) |
-| SSE | Remote servers using server-sent events | HTTP + SSE streaming |
-| HTTP | Remote servers using streamable HTTP | HTTP request/response |
-
 ### Environment Variable Expansion
 
 All MCP configs support `${VAR_NAME}` substitution:
