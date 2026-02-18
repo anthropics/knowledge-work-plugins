@@ -58,6 +58,11 @@
       "name": "bio-research",
       "source": "./bio-research",
       "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
+    },
+    {
+      "name": "esignature",
+      "source": "./esignature",
+      "description": "Track, manage, and automate e-signature workflows. Monitor pending and signed documents, send reminders, manage templates, and get a real-time view of your signature pipeline."
     }
   ]
 }

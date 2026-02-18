@@ -145,7 +145,7 @@ Output a structured report:
 ### Step 6: Routing Suggestion
 
 Based on the classification:
-- **GREEN**: Suggest the user proceed to signature under their standard delegation of authority
+- **GREEN**: Suggest the user proceed to signature under their standard delegation of authority. If ~~e-signature is connected, offer to send the NDA for signature via the e-signature tool
 - **YELLOW**: Identify which specific issues need counsel attention and suggest the user route to the appropriate reviewer
 - **RED**: Recommend the user engage counsel for a full review, and provide a counterproposal NDA if the organization has a standard form
 
