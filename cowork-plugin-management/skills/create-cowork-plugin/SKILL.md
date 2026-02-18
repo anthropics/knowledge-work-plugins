@@ -233,7 +233,14 @@ If the user says "whatever you think is best," provide specific recommendations 
 
 1. Summarize what was created — list each component and its purpose
 2. Ask if the user wants any adjustments
-3. Run `claude plugin validate <path-to-plugin-json>`; fix any errors and warnings
+3. Run `claude plugin validate <path-to-plugin-json>` to check the plugin structure. If this command is unavailable (e.g., when running inside Cowork), verify the structure manually:
+   - `.claude-plugin/plugin.json` exists and contains valid JSON with at least a `name` field
+   - The `name` field is kebab-case (lowercase letters, numbers, and hyphens only)
+   - Any component directories referenced by the plugin (`commands/`, `skills/`, `agents/`, `hooks/`) actually exist and contain files in the expected formats — `.md` for commands/skills/agents, `.json` for hooks
+   - Each skill subdirectory contains a `SKILL.md`
+   - Report what passed and what didn't, the same way the CLI validator would
+
+   Fix any errors before proceeding.
 4. Package as a `.plugin` file:
 
 ```bash
