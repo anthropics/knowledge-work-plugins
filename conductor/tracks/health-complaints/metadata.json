@@ -1,0 +1,11 @@
+{
+  "track_id": "health-complaints",
+  "name": "Health Complaints Management",
+  "description": "Patient and family complaint handling, service recovery, response drafting, and satisfaction tracking",
+  "status": "complete",
+  "created": "2026-02-14",
+  "priority": "medium",
+  "dependencies": ["health-core"],
+  "deliverable": "complaint-analysis, response-drafting skills, /submit-complaint command",
+  "adapts_from": ["customer-support/ticket-triage", "customer-support/canned-responses"]
+}

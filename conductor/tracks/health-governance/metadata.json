@@ -1,0 +1,16 @@
+{
+  "track_id": "health-governance",
+  "name": "Health Governance",
+  "description": "Governance document development - clinical services plans, medicine standing orders, policies, procedures, guidelines",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "medium",
+  "dependencies": [
+    "health-core"
+  ],
+  "deliverable": "policy-development, procedure-development, guideline-development skills",
+  "adapts_from": [
+    "legal/compliance",
+    "product-management/stakeholder-comms"
+  ]
+}

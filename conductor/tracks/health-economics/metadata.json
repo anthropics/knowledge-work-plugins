@@ -1,0 +1,12 @@
+{
+  "track_id": "health-economics",
+  "name": "Health Economics",
+  "description": "Health economic evaluation - cost-effectiveness, cost-utility, HTA submissions, PBAC/MSAC/NICE perspectives",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "high",
+  "dependencies": ["health-core", "health-evidence"],
+  "deliverable": "health-econ-eval, hta-submission skills, /economic-evaluation command",
+  "adapts_from": ["data/statistical-analysis", "finance/financial-statements"],
+  "frameworks": ["PBAC", "MSAC", "NICE", "CADTH"]
+}
