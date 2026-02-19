@@ -58,6 +58,11 @@
       "name": "bio-research",
       "source": "./bio-research",
       "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
+    },
+    {
+      "name": "management-consulting",
+      "source": "./management-consulting",
+      "description": "Analyze RFPs, develop proposals, apply strategic frameworks, and build implementation plans. Create executive deliverables for strategy, operations, and transformation engagements."
     }
   ]
 }
