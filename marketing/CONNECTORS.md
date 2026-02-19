@@ -15,5 +15,6 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Marketing automation | `~~marketing automation` | HubSpot | Marketo, Pardot, Mailchimp |
 | Product analytics | `~~product analytics` | Amplitude | Mixpanel, Google Analytics |
 | Knowledge base | `~~knowledge base` | Notion | Confluence, Guru |
-| SEO | `~~SEO` | Ahrefs, Similarweb | Semrush, Moz |
+| SEO | `~~SEO` | Ahrefs, Similarweb, Conductor | Semrush, Moz |
+| AEO / AI Search | `~~AEO` | Conductor | - |
 | Email marketing | `~~email marketing` | Klaviyo | Mailchimp, Brevo, Customer.io |
