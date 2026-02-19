@@ -1,0 +1,12 @@
+{
+  "track_id": "health-grants",
+  "name": "Health Grants",
+  "description": "Grant/funding application support - NHMRC, MRFF, HRC (NZ), ARC health-related",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "medium",
+  "dependencies": ["health-core", "health-evidence"],
+  "deliverable": "grant-writer skill, /grant-application command",
+  "adapts_from": ["research-grants"],
+  "funders": ["NHMRC", "MRFF", "HRC-NZ", "ARC", "NIH"]
+}
