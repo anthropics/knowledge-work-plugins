@@ -58,6 +58,11 @@
       "name": "bio-research",
       "source": "./bio-research",
       "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
+    },
+    {
+      "name": "project-intelligence",
+      "source": "./project-intelligence",
+      "description": "Surface patterns in any team's work — code, documents, designs, or compliance artifacts. Analyze flow, quality, risks, dependencies, and stakeholder readiness to inform milestones, retrospectives, and release decisions."
     }
   ]
 }

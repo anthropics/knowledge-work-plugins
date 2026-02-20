@@ -1,0 +1,8 @@
+{
+    "name": "project-intelligence",
+    "version": "1.0.0",
+    "description": "Surface patterns in any team's work — code, documents, designs, or compliance artifacts. Analyze flow, quality, risks, dependencies, and stakeholder readiness to inform milestones, retrospectives, and release decisions.",
+    "author": {
+        "name": "Dutch Steutel"
+    }
+}
