@@ -1,0 +1,12 @@
+{
+  "track_id": "health-medicolegal",
+  "name": "Health Medicolegal",
+  "description": "Medicolegal documentation - child protection reports, affidavits, medico-legal reports, coroner's reports, workers compensation",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "medium",
+  "dependencies": ["health-core"],
+  "deliverable": "medicolegal-reports, child-protection, affidavit-drafting skills, /prepare-report command",
+  "adapts_from": ["legal/canned-responses", "legal/contract-review"],
+  "document_types": ["child-protection", "affidavit", "medicolegal-report", "coroner-report", "workers-comp", "capacity-assessment"]
+}

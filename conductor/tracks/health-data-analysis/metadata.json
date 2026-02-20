@@ -1,0 +1,12 @@
+{
+  "track_id": "health-data-analysis",
+  "name": "Health Data Analysis",
+  "description": "Health data analysis and reporting - epidemiological analyses, population health, formatted outputs",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "medium",
+  "dependencies": ["health-core", "health-coding"],
+  "deliverable": "health-data-report skill, /analyze-health-data command",
+  "adapts_from": ["data/statistical-analysis", "data/data-visualization", "document-skills/xlsx", "document-skills/pdf"],
+  "outputs": ["epidemiological-reports", "forest-plots", "survival-curves", "population-dashboards"]
+}
