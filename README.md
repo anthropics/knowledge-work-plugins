@@ -12,19 +12,19 @@ Each plugin bundles the skills, connectors, slash commands, and sub-agents for a
 
 We're open-sourcing 11 plugins built and inspired by our own work:
 
-| Plugin | How it helps | Connectors |
-|--------|-------------|------------|
-| **[productivity](./productivity)** | Manage tasks, calendars, daily workflows, and personal context so you spend less time repeating yourself. | Slack, Notion, Asana, Linear, Jira, Monday, ClickUp, Microsoft 365 |
-| **[sales](./sales)** | Research prospects, prep for calls, review your pipeline, draft outreach, and build competitive battlecards. | Slack, HubSpot, Close, Clay, ZoomInfo, Notion, Jira, Fireflies, Microsoft 365 |
-| **[customer-support](./customer-support)** | Triage tickets, draft responses, package escalations, research customer context, and turn resolved issues into knowledge base articles. | Slack, Intercom, HubSpot, Guru, Jira, Notion, Microsoft 365 |
-| **[product-management](./product-management)** | Write specs, plan roadmaps, synthesize user research, keep stakeholders updated, and track the competitive landscape. | Slack, Linear, Asana, Monday, ClickUp, Jira, Notion, Figma, Amplitude, Pendo, Intercom, Fireflies |
-| **[marketing](./marketing)** | Draft content, plan campaigns, enforce brand voice, brief on competitors, and report on performance across channels. | Slack, Canva, Figma, HubSpot, Amplitude, Notion, Ahrefs, SimilarWeb, Klaviyo |
-| **[legal](./legal)** | Review contracts, triage NDAs, navigate compliance, assess risk, prep for meetings, and draft templated responses. | Slack, Box, Egnyte, Jira, Microsoft 365 |
-| **[finance](./finance)** | Prep journal entries, reconcile accounts, generate financial statements, analyze variances, manage close, and support audits. | Snowflake, Databricks, BigQuery, Slack, Microsoft 365 |
-| **[data](./data)** | Query, visualize, and interpret datasets — write SQL, run statistical analysis, build dashboards, and validate your work before sharing. | Snowflake, Databricks, BigQuery, Hex, Amplitude, Jira |
-| **[enterprise-search](./enterprise-search)** | Find anything across email, chat, docs, and wikis — one query across all your company's tools. | Slack, Notion, Guru, Jira, Asana, Microsoft 365 |
-| **[bio-research](./bio-research)** | Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D. | PubMed, BioRender, bioRxiv, ClinicalTrials.gov, ChEMBL, Synapse, Wiley, Owkin, Open Targets, Benchling |
-| **[cowork-plugin-management](./cowork-plugin-management)** | Create new plugins or customize existing ones for your organization's specific tools and workflows. | — |
+| Plugin                                                     | How it helps                                                                                                                                                   | Connectors                                                                                             |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **[productivity](./productivity)**                         | Manage tasks, calendars, daily workflows, and personal context so you spend less time repeating yourself.                                                      | Slack, Notion, Asana, Linear, Jira, Monday, ClickUp, Microsoft 365                                     |
+| **[sales](./sales)**                                       | Research prospects, prep for calls, review your pipeline, draft outreach, and build competitive battlecards.                                                   | Slack, HubSpot, Close, Clay, ZoomInfo, Notion, Jira, Fireflies, Microsoft 365                          |
+| **[customer-support](./customer-support)**                 | Triage tickets, draft responses, package escalations, research customer context, and turn resolved issues into knowledge base articles.                        | Slack, Intercom, HubSpot, Guru, Jira, Notion, Microsoft 365                                            |
+| **[product-management](./product-management)**             | Write specs, plan roadmaps, synthesize user research, keep stakeholders updated, and track the competitive landscape.                                          | Slack, Linear, Asana, Monday, ClickUp, Jira, Notion, Figma, Amplitude, Pendo, Intercom, Fireflies      |
+| **[marketing](./marketing)**                               | Draft content, plan campaigns, enforce brand voice, brief on competitors, and report on performance across channels.                                           | Slack, Canva, Figma, HubSpot, Amplitude, Notion, Ahrefs, SimilarWeb, Klaviyo                           |
+| **[legal](./legal)**                                       | Review contracts, triage NDAs, navigate compliance, assess risk, prep for meetings, and draft templated responses.                                             | Slack, Box, Egnyte, Jira, Microsoft 365                                                                |
+| **[finance](./finance)**                                   | Prep journal entries, reconcile accounts, generate financial statements, analyze variances, manage close, and support audits.                                  | Snowflake, Databricks, BigQuery, Slack, Microsoft 365                                                  |
+| **[data](./data)**                                         | Query, visualize, and interpret datasets — write SQL, run statistical analysis, build dashboards, and validate your work before sharing.                       | Snowflake, Databricks, BigQuery, Hex, Amplitude, Jira                                                  |
+| **[enterprise-search](./enterprise-search)**               | Find anything across email, chat, docs, and wikis — one query across all your company's tools.                                                                 | Slack, Notion, Guru, Jira, Asana, Microsoft 365                                                        |
+| **[bio-research](./bio-research)**                         | Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D. | PubMed, BioRender, bioRxiv, ClinicalTrials.gov, ChEMBL, Synapse, Wiley, Owkin, Open Targets, Benchling |
+| **[cowork-plugin-management](./cowork-plugin-management)** | Create new plugins or customize existing ones for your organization's specific tools and workflows.                                                            | —                                                                                                      |
 
 Install these directly from Cowork, browse the full collection here on GitHub, or build your own.
 
@@ -63,6 +63,11 @@ plugin-name/
 - **Connectors** wire Claude to the external tools your role depends on — CRMs, project trackers, data warehouses, design tools, and more — via [MCP servers](https://modelcontextprotocol.io/).
 
 Every component is file-based — markdown and JSON, no code, no infrastructure, no build steps.
+
+For a deeper understanding of plugin architecture, see:
+
+- [Architecture Overview](./docs/ARCHITECTURE.md) — How plugins are structured and loaded
+- [Commands vs Skills](./docs/COMMANDS_VS_SKILLS.md) — Understanding when to use each
 
 ## Making Them Yours
 
