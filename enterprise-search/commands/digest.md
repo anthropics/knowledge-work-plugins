@@ -27,47 +27,47 @@ The user may also specify a custom range:
 
 Identify which MCP sources are connected (same approach as the search command):
 
-- **~~chat** — channels, DMs, mentions
-- **~~email** — inbox, sent, threads
-- **~~cloud storage** — recently modified docs shared with user
-- **~~project tracker** — tasks assigned, completed, commented on
-- **~~CRM** — opportunity updates, account activity
-- **~~knowledge base** — recently updated wiki pages
+- **chat** — channels, DMs, mentions
+- **email** — inbox, sent, threads
+- **cloud storage** — recently modified docs shared with user
+- **project tracker** — tasks assigned, completed, commented on
+- **CRM** — opportunity updates, account activity
+- **knowledge base** — recently updated wiki pages
 
 If no sources are connected, guide the user:
 ```
 To generate a digest, you'll need at least one source connected.
-Check your MCP settings to add ~~chat, ~~email, ~~cloud storage, or other tools.
+Check your MCP settings to add chat, email, cloud storage, or other tools.
 ```
 
 ### 3. Gather Activity from Each Source
 
-**~~chat:**
+**chat:**
 - Search for messages mentioning the user (`to:me`)
 - Check channels the user is in for recent activity
 - Look for threads the user participated in
 - Identify new messages in key channels
 
-**~~email:**
+**email:**
 - Search recent inbox messages
 - Identify threads with new replies
 - Flag emails with action items or questions directed at the user
 
-**~~cloud storage:**
+**cloud storage:**
 - Find documents recently modified or shared with the user
 - Note new comments on docs the user owns or collaborates on
 
-**~~project tracker:**
+**project tracker:**
 - Tasks assigned to the user (new or updated)
 - Tasks completed by others that the user follows
 - Comments on tasks the user is involved with
 
-**~~CRM:**
+**CRM:**
 - Opportunity stage changes
 - New activities logged on accounts the user owns
 - Updated contacts or accounts
 
-**~~knowledge base:**
+**knowledge base:**
 - Recently updated documents in relevant collections
 - New documents created in watched areas
 
@@ -101,15 +101,15 @@ Organize the digest by topic, project, or theme rather than by source. Merge rel
 
 ```
 ## Project Aurora
-- ~~chat: Design review thread concluded — team chose Option B (#design, Tuesday)
-- ~~email: Sarah sent updated spec incorporating feedback (Wednesday)
-- ~~cloud storage: "Aurora API Spec v3" updated by Sarah (Wednesday)
-- ~~project tracker: 3 tasks moved to In Progress, 2 completed
+- chat: Design review thread concluded — team chose Option B (#design, Tuesday)
+- email: Sarah sent updated spec incorporating feedback (Wednesday)
+- cloud storage: "Aurora API Spec v3" updated by Sarah (Wednesday)
+- project tracker: 3 tasks moved to In Progress, 2 completed
 
 ## Budget Planning
-- ~~email: Finance team requesting Q2 projections by Friday
-- ~~chat: Todd shared template in #finance (Monday)
-- ~~cloud storage: "Q2 Budget Template" shared with you (Monday)
+- email: Finance team requesting Q2 projections by Friday
+- chat: Todd shared template in #finance (Monday)
+- cloud storage: "Q2 Budget Template" shared with you (Monday)
 ```
 
 ### 6. Format the Digest
@@ -119,7 +119,7 @@ Structure the output clearly:
 ```
 # [Daily/Weekly] Digest — [Date or Date Range]
 
-Sources scanned: ~~chat, ~~email, ~~cloud storage, [others]
+Sources scanned: chat, email, cloud storage, [others]
 
 ## Action Items (X items)
 - [ ] [Action item 1] — from [person], [source] ([date])
@@ -166,7 +166,7 @@ Across [N] sources · Covering [time range]
 - Default to `--daily` if no flag is specified
 - Group by topic/project, not by source — users care about what happened, not where it happened
 - Action items should always be listed first — they are the most actionable part of a digest
-- Deduplicate cross-source activity (same decision in ~~chat and email = one entry)
+- Deduplicate cross-source activity (same decision in chat and email = one entry)
 - For weekly digests, prioritize significance over completeness — highlight what matters, skip noise
 - If the user has a memory system (CLAUDE.md), use it to decode people names and project references
 - Include enough context in each item that the user can decide whether to dig deeper without clicking through

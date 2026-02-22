@@ -39,11 +39,11 @@ Use the "When to Escalate vs. Handle in Support" criteria from the **escalation*
 
 Pull together relevant information from available sources:
 
-- **~~support platform**: Related tickets, timeline of communications, previous troubleshooting
-- **~~CRM** (if connected): Account details, key contacts, previous escalations
-- **~~chat**: Internal discussions about this issue, similar reports from other customers
-- **~~project tracker** (if connected): Related bug reports or feature requests, engineering status
-- **~~knowledge base**: Known issues or workarounds, relevant documentation
+- **support platform**: Related tickets, timeline of communications, previous troubleshooting
+- **CRM** (if connected): Account details, key contacts, previous escalations
+- **chat**: Internal discussions about this issue, similar reports from other customers
+- **project tracker** (if connected): Related bug reports or feature requests, engineering status
+- **knowledge base**: Known issues or workarounds, relevant documentation
 
 ### 3. Assess Business Impact
 
@@ -109,7 +109,7 @@ If the issue is a bug, follow the reproduction step best practices from the **es
 ### 7. Offer Next Steps
 
 After generating the escalation:
-- "Want me to post this in a ~~chat channel for the target team?"
+- "Want me to post this in a chat channel for the target team?"
 - "Should I update the customer with an interim response?"
 - "Want me to set a follow-up reminder to check on this?"
 - "Should I draft a customer-facing update with the current status?"

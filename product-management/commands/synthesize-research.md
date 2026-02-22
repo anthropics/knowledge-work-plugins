@@ -16,10 +16,10 @@ Synthesize user research from multiple sources into structured insights and reco
 Accept research from any combination of:
 - **Pasted text**: Interview notes, transcripts, survey responses, feedback
 - **Uploaded files**: Research documents, spreadsheets, recordings summaries
-- **~~knowledge base** (if connected): Search for research documents, interview notes, survey results
-- **~~user feedback** (if connected): Pull recent support tickets, feature requests, bug reports
-- **~~product analytics** (if connected): Pull usage data, funnel metrics, behavioral data
-- **~~meeting transcription** (if connected): Pull interview recordings, meeting summaries, and discussion notes
+- **knowledge base** (if connected): Search for research documents, interview notes, survey results
+- **user feedback** (if connected): Pull recent support tickets, feature requests, bug reports
+- **product analytics** (if connected): Pull usage data, funnel metrics, behavioral data
+- **meeting transcription** (if connected): Pull interview recordings, meeting summaries, and discussion notes
 
 Ask the user what they have:
 - What type of research? (interviews, surveys, usability tests, analytics, support tickets, sales call notes)
