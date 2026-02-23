@@ -127,4 +127,5 @@ PHASE 4: Research/Academic (parallel, depends Phase 3)    │
 
 ---
 
-- [x] **Track: Upgrade the Real Estate plugin to include contractor Shadow Workflows, Vault RE webhooks, and OpenClaw branding.** (./tracks/real-estate-upgrade_20260214/)
+- [x] **Track: Upgrade the Real Estate plugin to include contractor Shadow Workflows, Vault RE webhooks, and OpenClaw branding.** [archive]
+*Link: [./tracks/archive/real-estate-upgrade_20260214/](./tracks/archive/real-estate-upgrade_20260214/)*
