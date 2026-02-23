@@ -1,0 +1,8 @@
+{
+  "name": "pdf-research",
+  "version": "0.1.0",
+  "description": "Read, navigate, and analyze PDF documents — academic papers, reports, and local files. Uses a local PDF MCP server for interactive viewing and text extraction.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

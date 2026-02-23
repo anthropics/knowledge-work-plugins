@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pdf": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-pdf", "--stdio"]
+    }
+  }
+}
