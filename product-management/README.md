@@ -13,11 +13,18 @@ claude plugins add knowledge-work-plugins/product-management
 This plugin gives you an AI-powered product management partner that can help with:
 
 - **Feature Specs & PRDs** — Generate structured product requirements documents from a problem statement or feature idea. Includes user stories, requirements prioritization, success metrics, and scope management.
-- **Roadmap Planning** — Create, update, and reprioritize your product roadmap. Supports Now/Next/Later, quarterly themes, and OKR-aligned formats with dependency mapping.
+- **Roadmap Planning** — Create, update, and reprioritize your product roadmap. Supports Now/Next/Later, quarterly themes, and OKR-aligned formats with dependency mapping and decision memos.
 - **Stakeholder Updates** — Generate status updates tailored to your audience (executives, engineering, customers). Pulls context from connected tools to save you the weekly update grind.
 - **User Research Synthesis** — Turn interview notes, survey data, and support tickets into structured insights. Identifies themes, builds personas, and surfaces opportunity areas with supporting evidence.
 - **Competitive Analysis** — Research competitors and generate briefs with feature comparisons, positioning analysis, and strategic implications.
 - **Metrics Review** — Analyze product metrics, identify trends, compare against targets, and surface actionable insights.
+- **Sprint Reviews** — Summarize sprint accomplishments with velocity metrics, demo highlights, and retrospective themes. Connects the dots between delivered work and product goals.
+- **Meeting Preparation** — Prepare for customer meetings, QBRs, and stakeholder calls with account context, talking points, risk assessment, and follow-up actions.
+- **Daily Briefs** — Start each day with a synthesis of overnight activity across Slack, project trackers, support tickets, and community channels.
+- **Prototyping** — Generate standalone interactive HTML prototypes from PRDs or feature descriptions. No dependencies, no build tools — just open in a browser.
+- **Release Notes** — Turn completed Jira tickets and PRD excerpts into polished, customer-facing release notes with proper categorization and tone.
+- **Feature Ideation** — Structure raw ideas from Slack threads, customer feedback, and brainstorms into validated feature concepts ready for a PRD.
+- **Executive Summaries** — Distill complex information into one-pagers (under 500 words) and TL;DRs (3-5 bullets) optimized for busy stakeholders.
 
 ## Commands
 
@@ -29,17 +36,30 @@ This plugin gives you an AI-powered product management partner that can help wit
 | `/synthesize-research` | Synthesize user research from interviews, surveys, and tickets |
 | `/competitive-brief` | Create a competitive analysis brief |
 | `/metrics-review` | Review and analyze product metrics |
+| `/daily-brief` | Synthesize overnight activity into a morning brief |
+| `/meeting-prep` | Prepare for customer meetings with context and talking points |
+| `/sprint-review` | Generate a sprint review summary with metrics and demos |
+| `/prototype` | Generate an interactive HTML prototype from a PRD or feature description |
+| `/release-notes` | Create customer-facing release notes from completed work |
+| `/feature-ideation` | Structure raw ideas into validated feature concepts |
+| `/one-pager` | Synthesize complex information into a one-page executive summary |
+| `/tldr` | Create a quick 3-5 bullet summary for Slack or email |
 
 ## Skills
 
 | Skill | What It Covers |
 |---|---|
-| `feature-spec` | PRD structure, user stories, requirements categorization, acceptance criteria |
-| `roadmap-management` | Prioritization frameworks (RICE, MoSCoW), roadmap formats, dependency mapping |
+| `feature-spec` | PRD structure, user stories, requirements categorization, acceptance criteria, idea structuring |
+| `roadmap-management` | Prioritization frameworks (RICE, MoSCoW), roadmap formats, dependency mapping, decision memos |
 | `stakeholder-comms` | Update templates by audience, risk communication, decision documentation |
 | `user-research-synthesis` | Thematic analysis, affinity mapping, persona development, opportunity sizing |
 | `competitive-analysis` | Feature comparison matrices, positioning analysis, win/loss analysis |
 | `metrics-tracking` | Product metrics hierarchy, goal setting (OKRs), dashboard design, review cadences |
+| `sprint-execution` | Sprint metrics, velocity analysis, demo preparation, burndown interpretation, retrospectives |
+| `meeting-preparation` | Account review methodology, talking point frameworks, risk identification, QBR planning |
+| `release-communication` | Customer-facing writing, changelog categorization, version conventions, deprecation lifecycle |
+| `executive-synthesis` | Pyramid principle, one-pager framework, TL;DR writing, audience adaptation |
+| `html-prototyping` | Design defaults, responsive layout patterns, interactive components, accessibility basics |
 
 ## Example Workflows
 
@@ -81,6 +101,36 @@ Claude: Which competitor(s) or feature area do you want to analyze?
 You: Compare our onboarding flow to [competitor A] and [competitor B]
 Claude: [Researches competitor onboarding approaches]
 Claude: [Generates brief with feature comparison, strengths/weaknesses, and strategic implications]
+```
+
+### Sprint Review
+
+```
+You: /sprint-review
+Claude: What sprint are we reviewing? I'll also need the dates and team name.
+You: Sprint 42, Jan 6-17, Search Pod
+Claude: [Pulls completed tickets from project tracker, team discussion from Slack]
+Claude: [Generates sprint summary with velocity metrics, demo highlights, blockers, and customer feedback]
+```
+
+### Morning Brief
+
+```
+You: /daily-brief
+Claude: Good morning! What's your name and company? I'll synthesize what happened overnight.
+You: Jane, Acme Corp
+Claude: [Scans Slack channels, project tracker updates, support tickets]
+Claude: [Generates prioritized brief: what needs attention today, what's blocked, what shipped overnight]
+```
+
+### Interactive Prototype
+
+```
+You: /prototype
+Claude: What feature or flow should I prototype?
+You: A search results page with filters for content type, date range, and author
+Claude: [Generates a complete standalone HTML file with interactive filters, realistic data, and responsive layout]
+Claude: [Save as .html and open in your browser — no build tools needed]
 ```
 
 ## Data Sources
