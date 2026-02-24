@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "google-search": {
+      "type": "http",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-google-search"]
+    },
+    "openclaw": {
+      "type": "http",
+      "url": "https://api.openclaw.io/v1",
+      "description": "Personal brand management and social media automation."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "track_id": "health-incidents",
+  "name": "Health Incident Management",
+  "description": "Clinical incident reporting, root cause analysis, corrective action plans, and sentinel event management",
+  "status": "complete",
+  "created": "2026-02-14",
+  "priority": "high",
+  "dependencies": ["health-core"],
+  "deliverable": "incident-reporting, root-cause-analysis, cap-writing skills, /report-incident command",
+  "adapts_from": ["customer-support/escalation", "product-management/roadmap-management"]
+}

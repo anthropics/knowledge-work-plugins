@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: conductor-track-validator
+        name: Conductor Track Validator
+        entry: python conductor/scripts/validate_tracks.py
+        language: system
+        pass_filenames: false
+        files: ^(conductor/|health/)

@@ -1,0 +1,13 @@
+{
+  "track_id": "skill-quality",
+  "name": "Health Skill Quality",
+  "description": "Quality standards and templates for health plugin skills: healthcare-specific structure, regulatory compliance, and cross-references",
+  "status": "complete",
+  "created": "2026-02-11",
+  "completed": "2026-02-14",
+  "priority": "medium",
+  "dependencies": ["health-core"],
+  "deliverable": "Health skill template and quality standards for all 33 planned health skills",
+  "phases": 2,
+  "total_skills": 33
+}
