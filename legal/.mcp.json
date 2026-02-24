@@ -19,6 +19,18 @@
     "ms365": {
       "type": "http",
       "url": "https://microsoft365.mcp.claude.com/mcp"
+    },
+    "docusign": {
+      "type": "http",
+      "url": "https://mcp.docusign.com/mcp"
+    },
+    "google-calendar": {
+      "type": "http",
+      "url": "https://gcal.mcp.claude.com/mcp"
+    },
+    "gmail": {
+      "type": "http",
+      "url": "https://gmail.mcp.claude.com/mcp"
     }
   }
 }

@@ -1,0 +1,8 @@
+{
+  "name": "design",
+  "version": "1.0.0",
+  "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

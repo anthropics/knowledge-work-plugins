@@ -1,0 +1,11 @@
+{
+  "name": "slack-by-salesforce",
+  "description": "Slack integration for searching messages, sending communications, managing canvases, and more",
+  "version": "1.0.0",
+  "author": {
+    "name": "Salesforce",
+    "url": "https://slack.com"
+  },
+  "homepage": "https://github.com/slackapi/slack-mcp-plugin",
+  "license": "MIT"
+}

@@ -12,10 +12,12 @@ Analyze your pipeline health, prioritize deals, and get actionable recommendatio
 ## Usage
 
 ```
-/pipeline-review
+/pipeline-review [segment or rep]
 ```
 
-Then provide your pipeline data.
+Review pipeline for: $ARGUMENTS
+
+If a file is referenced: @$1
 
 ---
 

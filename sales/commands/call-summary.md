@@ -12,10 +12,12 @@ Process call notes or a transcript to extract action items, draft follow-up comm
 ## Usage
 
 ```
-/call-summary
+/call-summary <notes or transcript>
 ```
 
-Then paste your notes, transcript, or upload a recording.
+Process these call notes: $ARGUMENTS
+
+If a file is referenced: @$1
 
 ---
 

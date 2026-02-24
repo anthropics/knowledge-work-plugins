@@ -12,10 +12,12 @@ Generate a weighted sales forecast with risk analysis and commit recommendations
 ## Usage
 
 ```
-/forecast
+/forecast [period]
 ```
 
-Then provide your pipeline data and targets.
+Generate a forecast for: $ARGUMENTS
+
+If a file is referenced: @$1
 
 ---
 

@@ -47,6 +47,18 @@
     "fireflies": {
       "type": "http",
       "url": "https://api.fireflies.ai/mcp"
+    },
+    "google-calendar": {
+      "type": "http",
+      "url": "https://gcal.mcp.claude.com/mcp"
+    },
+    "gmail": {
+      "type": "http",
+      "url": "https://gmail.mcp.claude.com/mcp"
+    },
+    "similarweb": {
+      "type": "http",
+      "url": "https://mcp.similarweb.com/mcp"
     }
   }
 }

@@ -9,6 +9,12 @@ argument-hint: "<research topic or question>"
 
 Synthesize user research from multiple sources into structured insights and recommendations.
 
+## Usage
+
+```
+/synthesize-research $ARGUMENTS
+```
+
 ## Workflow
 
 ### 1. Gather Research Inputs

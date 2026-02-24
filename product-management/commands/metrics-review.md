@@ -9,6 +9,12 @@ argument-hint: "<time period or metric focus>"
 
 Review and analyze product metrics, identify trends, and surface actionable insights.
 
+## Usage
+
+```
+/metrics-review $ARGUMENTS
+```
+
 ## Workflow
 
 ### 1. Gather Metrics Data

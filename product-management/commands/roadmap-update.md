@@ -9,6 +9,12 @@ argument-hint: "<update description>"
 
 Update, create, or reprioritize a product roadmap.
 
+## Usage
+
+```
+/roadmap-update $ARGUMENTS
+```
+
 ## Workflow
 
 ### 1. Understand Current State

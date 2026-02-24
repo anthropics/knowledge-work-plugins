@@ -1,0 +1,20 @@
+{
+  "name": "brand-voice",
+  "owner": {
+    "name": "TribeAI"
+  },
+  "metadata": {
+    "description": "Discover brand materials across enterprise platforms, generate LLM-ready guidelines, and enforce brand voice on AI content",
+    "version": "1.0.0",
+    "pluginRoot": "."
+  },
+  "plugins": [
+    {
+      "name": "brand-voice",
+      "source": ".",
+      "description": "Discover brand materials across enterprise platforms, generate LLM-ready guidelines, and enforce brand voice on AI content",
+      "version": "1.0.0",
+      "keywords": ["brand-voice", "sales", "marketing", "content-creation", "guidelines", "discovery", "enterprise"]
+    }
+  ]
+}

@@ -9,6 +9,12 @@ argument-hint: "<competitor or feature area>"
 
 Create a competitive analysis brief for one or more competitors or a feature area.
 
+## Usage
+
+```
+/competitive-brief $ARGUMENTS
+```
+
 ## Workflow
 
 ### 1. Scope the Analysis

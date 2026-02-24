@@ -1,0 +1,8 @@
+{
+  "name": "human-resources",
+  "version": "1.0.0",
+  "description": "Streamline people operations — recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

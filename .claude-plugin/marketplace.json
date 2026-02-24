@@ -58,6 +58,58 @@
       "name": "bio-research",
       "source": "./bio-research",
       "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
+    },
+    {
+      "name": "slack-by-salesforce",
+      "source": "./partner-built/slack",
+      "description": "Slack integration for searching messages, sending communications, managing canvases, and more",
+      "author": {
+        "name": "Salesforce"
+      }
+    },
+    {
+      "name": "apollo",
+      "source": "./partner-built/apollo",
+      "description": "Prospect, enrich leads, and load outreach sequences with Apollo.io — one-click MCP server integration for Claude Code and Cowork.",
+      "author": {
+        "name": "Apollo.io"
+      }
+    },
+    {
+      "name": "common-room",
+      "source": "./partner-built/common-room",
+      "description": "Turn Common Room into your GTM copilot. Research accounts and contacts, prep for calls with attendee profiles and talking points, and draft personalized outreach across email, LinkedIn, and phone.",
+      "author": {
+        "name": "Common Room"
+      }
+    },
+    {
+      "name": "engineering",
+      "source": "./engineering",
+      "description": "Streamline engineering workflows — standups, code review, architecture decisions, incident response, and technical documentation. Works with your existing tools or standalone."
+    },
+    {
+      "name": "human-resources",
+      "source": "./human-resources",
+      "description": "Streamline people operations — recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly."
+    },
+    {
+      "name": "design",
+      "source": "./design",
+      "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs."
+    },
+    {
+      "name": "operations",
+      "source": "./operations",
+      "description": "Optimize business operations — vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently."
+    },
+    {
+      "name": "brand-voice",
+      "source": "./partner-built/brand-voice",
+      "description": "Discover your brand voice from existing documents and conversations, generate enforceable guidelines, and validate AI-generated content against your established tone and positioning.",
+      "author": {
+        "name": "Tribe AI"
+      }
     }
   ]
 }

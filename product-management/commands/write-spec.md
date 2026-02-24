@@ -9,6 +9,12 @@ argument-hint: "<feature or problem statement>"
 
 Write a feature specification or product requirements document (PRD).
 
+## Usage
+
+```
+/write-spec $ARGUMENTS
+```
+
 ## Workflow
 
 ### 1. Understand the Feature

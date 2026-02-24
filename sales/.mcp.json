@@ -35,6 +35,26 @@
     "ms365": {
       "type": "http",
       "url": "https://microsoft365.mcp.claude.com/mcp"
+    },
+    "apollo": {
+      "type": "http",
+      "url": "https://api.apollo.io/mcp"
+    },
+    "outreach": {
+      "type": "http",
+      "url": "https://mcp.outreach.io/mcp"
+    },
+    "google-calendar": {
+      "type": "http",
+      "url": "https://gcal.mcp.claude.com/mcp"
+    },
+    "gmail": {
+      "type": "http",
+      "url": "https://gmail.mcp.claude.com/mcp"
+    },
+    "similarweb": {
+      "type": "http",
+      "url": "https://mcp.similarweb.com/mcp"
     }
   }
 }

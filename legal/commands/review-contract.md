@@ -12,8 +12,10 @@ Review a contract against your organization's negotiation playbook. Analyze each
 ## Invocation
 
 ```
-/review-contract
+/review-contract <contract file or URL>
 ```
+
+Review the contract: @$1
 
 ## Workflow
 

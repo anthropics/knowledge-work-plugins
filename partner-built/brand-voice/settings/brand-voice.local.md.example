@@ -1,0 +1,42 @@
+---
+# Brand Voice Plugin Settings
+# Copy this file to .claude/brand-voice.local.md and fill in your values.
+# Required fields: company_name. All other fields are optional with sensible defaults.
+company_name: ""          # required
+platforms:
+  notion: true
+  confluence: false
+  google-drive: false
+  box: false
+  microsoft-365: false
+  figma: false
+  gong: false
+  granola: false
+  slack: false
+discovery:
+  search-depth: standard    # standard | deep
+  max-sources: 15
+enforcement:
+  strictness: balanced      # strict | balanced | flexible
+  always-explain: true
+open-questions:
+  share-with-team: false
+---
+# Brand Context
+
+## Company Name
+[Your company]
+
+## Known Brand Materials
+- Notion: [URL to brand workspace or page]
+- Confluence space: [space name or URL]
+- Google Drive folder: [URL]
+- Box folder: [URL]
+- SharePoint site: [URL]
+- Figma brand kit: [URL]
+- Gong call library: [filter or tag name]
+- Granola meetings: [search query or tag name]
+- Slack channels: [#brand, #marketing, or other relevant channels]
+
+## Additional Context
+[Any other context about your brand that the plugin should know — target audience, industry, competitive landscape, recent brand changes, etc.]

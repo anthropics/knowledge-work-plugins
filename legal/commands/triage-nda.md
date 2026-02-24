@@ -7,6 +7,8 @@ argument-hint: "<NDA file or text>"
 
 > If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../CONNECTORS.md).
 
+Triage the NDA: @$1
+
 Rapidly triage incoming NDAs against standard screening criteria. Classify the NDA for routing: standard approval, counsel review, or full legal review.
 
 ## Invocation
