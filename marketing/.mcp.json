@@ -1,5 +1,9 @@
 {
   "mcpServers": {
+    "acoustic": {
+      "type": "http",
+      "url": "https://mcp.acoustiq.ai/mcp"
+    },
     "slack": {
       "type": "http",
       "url": "https://mcp.slack.com/mcp"
@@ -31,10 +35,6 @@
     "similarweb": {
       "type": "http",
       "url": "https://mcp.similarweb.com"
-    },
-    "klaviyo": {
-      "type": "http",
-      "url": "https://mcp.klaviyo.com/mcp"
     }
   }
 }

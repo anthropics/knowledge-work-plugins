@@ -3,6 +3,6 @@
   "version": "0.2.2",
   "description": "Create, customize, and manage plugins tailored to your organization's tools and workflows. Configure MCP servers, adjust plugin behavior, and adapt templates to match how your team works.",
   "author": {
-    "name": "Anthropic"
+    "name": "Acoustic"
   }
 }
