@@ -1,0 +1,17 @@
+{
+  "track_id": "health-complaints",
+  "name": "Health Complaints",
+  "description": "Patient complaints management - clinician complaints, service/organizational complaints, resolution workflows",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "high",
+  "dependencies": [
+    "health-core"
+  ],
+  "deliverable": "complaints-management skill, /submit-complaint command",
+  "adapts_from": [
+    "customer-support/ticket-triage",
+    "customer-support/escalation",
+    "customer-support/response-drafting"
+  ]
+}

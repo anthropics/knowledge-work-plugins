@@ -1,0 +1,30 @@
+name: Conductor Track Validation
+
+on:
+  pull_request:
+    paths:
+      - "conductor/**"
+      - "health/**"
+      - ".pre-commit-config.yaml"
+  push:
+    branches:
+      - main
+    paths:
+      - "conductor/**"
+      - "health/**"
+      - ".pre-commit-config.yaml"
+
+jobs:
+  validate-tracks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate Conductor tracks
+        run: python conductor/scripts/validate_tracks.py

@@ -1,0 +1,11 @@
+{
+  "track_id": "health-procurement",
+  "name": "Health Procurement",
+  "description": "Medical device procurement, value analysis, business case development, and capital equipment planning",
+  "status": "complete",
+  "created": "2026-02-14",
+  "priority": "medium",
+  "dependencies": ["health-core"],
+  "deliverable": "device-procurement, business-case skills, /procurement-request and /business-case commands",
+  "adapts_from": ["legal/contract-review", "finance/financial-statements"]
+}

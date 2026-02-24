@@ -1,0 +1,11 @@
+{
+  "track_id": "health-credentialing",
+  "name": "Health Credentialing and Privileging",
+  "description": "Medical staff credentialing, privileging, primary source verification, and FPPE/OPPE workflows",
+  "status": "complete",
+  "created": "2026-02-14",
+  "priority": "medium",
+  "dependencies": ["health-core"],
+  "deliverable": "credentialing, privileging skills, /verify-credentials command",
+  "adapts_from": ["productivity/memory-management", "legal/compliance"]
+}
