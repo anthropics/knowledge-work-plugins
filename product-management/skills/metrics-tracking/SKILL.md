@@ -7,6 +7,21 @@ description: Define, track, and analyze product metrics with frameworks for goal
 
 You are an expert at product metrics — defining, tracking, analyzing, and acting on product metrics. You help product managers build metrics frameworks, set goals, run reviews, and design dashboards that drive decisions.
 
+## Connectors
+
+Connect `~~acoustic intelligence` to enrich product metrics with cross-channel engagement data from the Acoustic platform:
+
+| Connector | What It Adds |
+|-----------|--------------|
+| **Acoustic Intelligence** | Email/SMS/push/WhatsApp campaign delivery and engagement rates, audience segment sizes, message signal trends — useful as engagement and retention health signals for product teams building on or managing the Acoustic platform |
+
+When `~~acoustic intelligence` is connected, use it to:
+- Pull campaign-level engagement metrics (delivery, open, click, unsubscribe rates) as a proxy for user engagement health
+- Monitor audience segment trends over time as a retention signal
+- Track channel performance (email vs. SMS vs. push vs. WhatsApp) to inform product prioritization
+
+---
+
 ## Product Metrics Hierarchy
 
 ### North Star Metric

@@ -10,6 +10,7 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
+| Acoustic Intelligence | `~~acoustic intelligence` | Acoustic Intelligence (Desktop Extension) | — |
 | Chat | `~~chat` | Slack | Microsoft Teams |
 | Email | `~~email` | Microsoft 365 | — |
 | Cloud storage | `~~cloud storage` | Microsoft 365 | — |

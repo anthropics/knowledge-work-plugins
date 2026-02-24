@@ -7,6 +7,21 @@ description: Draft marketing content across channels — blog posts, social medi
 
 Guidelines and frameworks for creating effective marketing content across channels.
 
+## Connectors
+
+Connect `~~acoustic intelligence` to inform content with real audience engagement data:
+
+| Connector | What It Adds |
+|-----------|--------------|
+| **Acoustic Intelligence** | Audience segment definitions and sizes, past content engagement signals (what subject lines, CTAs, and content themes drove opens and clicks), channel preferences by segment |
+
+When `~~acoustic intelligence` is connected, use it to:
+- Look up audience segment profiles to tailor content to the actual audience before drafting
+- Pull top-performing subject lines and CTAs from past campaigns as reference for new content
+- Check which content themes and message types historically drove engagement for a given segment
+
+---
+
 ## Content Type Templates
 
 ### Blog Post Structure

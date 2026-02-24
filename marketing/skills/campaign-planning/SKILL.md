@@ -7,6 +7,22 @@ description: Plan marketing campaigns with objectives, audience segmentation, ch
 
 Frameworks and guidance for planning, structuring, and executing marketing campaigns.
 
+## Connectors
+
+Connect `~~acoustic intelligence` to supercharge campaign planning with live data from your Acoustic platform:
+
+| Connector | What It Adds |
+|-----------|--------------|
+| **Acoustic Intelligence** | Historical campaign performance, audience segment membership, send/engagement signals, channel preferences, suppression lists |
+
+When `~~acoustic intelligence` is connected, use it to:
+- Pull campaign send history and engagement rates to benchmark new campaign goals
+- Check audience segment membership and sizes before finalizing targeting
+- Review past campaign results by channel (email, SMS, push, WhatsApp) to inform channel mix
+- Identify suppressed or unsubscribed contacts to exclude from planning
+
+---
+
 ## Campaign Framework: Objective, Audience, Message, Channel, Measure
 
 Every campaign should be built on this five-part framework:

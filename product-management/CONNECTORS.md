@@ -10,6 +10,7 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
+| Acoustic Intelligence | `~~acoustic intelligence` | Acoustic Intelligence (Desktop Extension) | — |
 | Chat | `~~chat` | Slack | Microsoft Teams |
 | Project tracker | `~~project tracker` | Linear, Asana, monday.com, ClickUp, Atlassian (Jira/Confluence) | Shortcut, Basecamp |
 | Knowledge base | `~~knowledge base` | Notion | Confluence, Guru, Coda |

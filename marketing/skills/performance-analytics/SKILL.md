@@ -7,6 +7,22 @@ description: Analyze marketing performance with key metrics, trend analysis, and
 
 Frameworks for measuring, reporting, and optimizing marketing performance across channels and campaigns.
 
+## Connectors
+
+Connect `~~acoustic intelligence` to pull live performance data directly from your Acoustic platform:
+
+| Connector | What It Adds |
+|-----------|--------------|
+| **Acoustic Intelligence** | Email/SMS/push/WhatsApp campaign metrics, delivery rates, open/click rates, bounce rates, unsubscribes, audience engagement trends, message-level signal data |
+
+When `~~acoustic intelligence` is connected, use it to:
+- Pull campaign-level metrics (delivery, opens, clicks, conversions) instead of requesting manual exports
+- Retrieve engagement trends across channels and time periods for trend analysis
+- Access message signal data (sent, delivered, opened, clicked, bounced, unsubscribed) at the contact level
+- Compare campaign performance across audience segments
+
+---
+
 ## Key Marketing Metrics by Channel
 
 ### Email Marketing

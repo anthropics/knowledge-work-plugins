@@ -7,6 +7,20 @@ description: Research competitors and compare positioning, messaging, content st
 
 Frameworks and methodologies for researching competitors, comparing positioning, and identifying market opportunities.
 
+## Connectors
+
+Connect `~~acoustic intelligence` for Acoustic-platform-specific competitive context:
+
+| Connector | What It Adds |
+|-----------|--------------|
+| **Acoustic Intelligence** | Your own campaign engagement benchmarks to compare against industry norms; audience behavior patterns to validate competitive positioning claims |
+
+When `~~acoustic intelligence` is connected, use it to:
+- Pull your own engagement benchmarks (open rates, CTR, delivery rates) to contextualize competitive comparisons
+- Validate whether competitive claims about channel effectiveness align with your actual Acoustic performance data
+
+---
+
 ## Competitive Research Methodology
 
 ### Research Sources

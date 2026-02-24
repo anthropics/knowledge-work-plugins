@@ -57,6 +57,7 @@ Connect your tools to supercharge this skill:
 | **Chat** | Internal chat discussions (e.g. Slack) about the account, colleague insights |
 | **Transcripts** | Prior call recordings, topics covered, competitor mentions |
 | **Calendar** | Auto-find the meeting, pull attendees and description |
+| **Acoustic Intelligence** | Prospect/customer campaign engagement history, last Acoustic touch (email/SMS/push/WhatsApp), content they interacted with, channel preferences, suppression status |
 
 > **No connectors?** No problem. Just tell me about the meeting and paste any context you have. I'll research the rest.
 
@@ -182,6 +183,11 @@ Run **call-follow-up** to:
 5. Transcripts → Find prior calls
    - Pull: call recordings with this account
    - Extract: key moments, objections raised, topics covered
+
+6. Acoustic Intelligence → Check engagement footprint
+   - Pull: recent campaign sends to this account's contacts, open/click history
+   - Pull: last Acoustic touch date and channel (email, SMS, push, WhatsApp)
+   - Extract: content they engaged with, channel preference, suppression status
 ```
 
 **If no connectors:**

@@ -10,6 +10,7 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
+| Acoustic Intelligence | `~~acoustic intelligence` | Acoustic Intelligence (Desktop Extension) | — |
 | Calendar | `~~calendar` | Microsoft 365 | Google Calendar |
 | Chat | `~~chat` | Slack | Microsoft Teams |
 | CRM | `~~CRM` | HubSpot, Close | Salesforce, Pipedrive, Copper |

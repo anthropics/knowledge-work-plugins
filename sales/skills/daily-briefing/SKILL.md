@@ -23,6 +23,7 @@ Get a clear view of what matters most today. This skill works with whatever you 
 │  + CRM: pipeline alerts, tasks, deal health                     │
 │  + Email: unread from key accounts, waiting on replies          │
 │  + Enrichment: overnight signals on your accounts               │
+│  + Acoustic Intelligence: hot accounts from recent engagement   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -53,6 +54,7 @@ Connect your tools to supercharge this skill:
 | **CRM** | Open pipeline, deals closing soon, overdue tasks, stale deals |
 | **Email** | Unread from opportunity contacts, emails waiting on replies |
 | **Enrichment** | Overnight signals: funding, hiring, news on your accounts |
+| **Acoustic Intelligence** | Accounts with high recent engagement (opens, clicks) surfaced as "hot" accounts worth prioritizing today |
 
 > **No connectors?** No problem. Tell me your meetings and deals, and I'll create your briefing.
 
@@ -159,6 +161,11 @@ Connect your tools to supercharge this skill:
 
 4. Enrichment → Check signals (if available)
    - Funding, hiring, news on open accounts
+
+5. Acoustic Intelligence → Surface hot accounts (if available)
+   - Pull: contacts who opened or clicked a campaign in the last 7 days
+   - Match: against open opportunities in CRM
+   - Flag: accounts showing engagement spike as priority outreach today
 ```
 
 **If no connectors:**

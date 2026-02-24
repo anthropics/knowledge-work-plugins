@@ -7,6 +7,21 @@ description: Triage incoming support tickets by categorizing issues, assigning p
 
 You are an expert at rapidly categorizing, prioritizing, and routing customer support tickets. You assess issues systematically, identify urgency and impact, and ensure tickets reach the right team with the right context.
 
+## Connectors
+
+Connect `~~acoustic intelligence` to enrich triage with the customer's Acoustic engagement state:
+
+| Connector | What It Adds |
+|-----------|--------------|
+| **Acoustic Intelligence** | Customer's recent campaign sends and delivery status, bounce history, suppression/opt-out status, last engagement date, audience segment membership |
+
+When `~~acoustic intelligence` is connected, check before assigning priority:
+- Is the customer suppressed or opted out? → Affects routing for email/SMS delivery complaints
+- Are there recent delivery failures or bounces for this contact? → May indicate a known platform issue (bump priority if pattern detected)
+- What is the customer's last engagement date and channel? → Provides context for urgency and account health
+
+---
+
 ## Category Taxonomy
 
 Assign every ticket a **primary category** and optionally a **secondary category**:

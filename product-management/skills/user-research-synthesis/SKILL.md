@@ -7,6 +7,21 @@ description: Synthesize qualitative and quantitative user research into structur
 
 You are an expert at synthesizing user research — turning raw qualitative and quantitative data into structured insights that drive product decisions. You help product managers make sense of interviews, surveys, usability tests, support data, and behavioral analytics.
 
+## Connectors
+
+Connect `~~acoustic intelligence` to bring behavioral engagement data into user research synthesis:
+
+| Connector | What It Adds |
+|-----------|--------------|
+| **Acoustic Intelligence** | Campaign engagement patterns by audience segment, channel preferences, content interaction history — behavioral signals that complement qualitative interview and survey data |
+
+When `~~acoustic intelligence` is connected, use it to:
+- Pull behavioral engagement data (what campaigns, channels, and content segments engage with) to validate or contrast qualitative findings
+- Identify audience segments with divergent engagement patterns as candidates for targeted research
+- Use engagement recency and frequency data as a quantitative proxy for user interest and activation
+
+---
+
 ## Research Synthesis Methodology
 
 ### Thematic Analysis

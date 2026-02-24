@@ -10,10 +10,11 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
+| Acoustic Intelligence | `~~acoustic intelligence` | Acoustic Intelligence (Desktop Extension) | — |
 | Chat | `~~chat` | Slack | Microsoft Teams |
 | Design | `~~design` | Canva, Figma | Adobe Creative Cloud |
 | Marketing automation | `~~marketing automation` | HubSpot | Marketo, Pardot, Mailchimp |
 | Product analytics | `~~product analytics` | Amplitude | Mixpanel, Google Analytics |
 | Knowledge base | `~~knowledge base` | Notion | Confluence, Guru |
 | SEO | `~~SEO` | Ahrefs, Similarweb | Semrush, Moz |
-| Email marketing | `~~email marketing` | Klaviyo | Mailchimp, Brevo, Customer.io |
+| Email marketing | `~~email marketing` | Acoustic (HTTP endpoint) | Klaviyo, Mailchimp, Brevo, Customer.io |

@@ -50,6 +50,7 @@ Connect your tools to supercharge this skill:
 |-----------|--------------|
 | **Enrichment** | Verified emails, phone numbers, tech stack, org chart, funding details |
 | **CRM** | Prior relationship history, past opportunities, existing contacts, notes |
+| **Acoustic Intelligence** | Campaign engagement history, last Acoustic touch and channel, content interactions, audience segment membership, recency and frequency of Acoustic-powered outreach |
 
 > **No connectors?** No problem. Web search provides solid research for any company or person.
 
@@ -241,6 +242,23 @@ If CRM available:
 - What happened before (won/lost deals)
 - Who we've talked to
 - Notes and history
+
+### Step 4b: Acoustic Intelligence Check (If Connected)
+
+```
+If Acoustic Intelligence available:
+1. Look up account contacts by email domain
+2. Get campaign engagement history (last 90 days)
+3. Check channel preference (email, SMS, push, WhatsApp)
+4. Get audience segment membership
+5. Note last touch date and content interacted with
+```
+
+**Acoustic Intelligence adds:**
+- Marketing engagement footprint (how contacts respond to Acoustic-powered outreach)
+- Channel preference signals (which channel they engage with most)
+- Content interests (topics and messages that drove clicks or opens)
+- Recency and frequency of engagement
 
 ### Step 5: Synthesize
 

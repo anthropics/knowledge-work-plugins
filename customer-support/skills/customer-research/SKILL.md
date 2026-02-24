@@ -56,6 +56,7 @@ These provide context but may reflect one perspective.
 - **Support tickets**: Previous resolutions, known issues, workarounds
 - **Internal documents** (Drive, shared folders): Specs, plans, analyses
 - **Meeting notes**: Previous discussions, decisions, commitments
+- **Acoustic Intelligence** (`~~acoustic intelligence`): Customer's campaign engagement history, recent message signals (sent, opened, clicked, bounced, unsubscribed), channel preferences, audience segment membership, suppression status — particularly useful when the customer's issue relates to email delivery, campaign behavior, or Acoustic platform usage
 
 Confidence level: **Medium-High** (may be subjective or incomplete)
 
