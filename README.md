@@ -78,3 +78,13 @@ As your team builds and shares plugins, Claude becomes a cross-functional expert
 ## Contributing
 
 Plugins are just markdown files. Fork the repo, make your changes, and submit a PR.
+
+## Star History
+
+<a href="https://www.star-history.com/#anthropics/knowledge-work-plugins&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=anthropics/knowledge-work-plugins&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=anthropics/knowledge-work-plugins&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=anthropics/knowledge-work-plugins&type=date&legend=top-left" />
+ </picture>
+</a>
