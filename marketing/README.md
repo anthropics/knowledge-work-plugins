@@ -18,6 +18,7 @@ claude plugins add knowledge-work-plugins/marketing
 | `/competitive-brief` | Research competitors and generate a positioning and messaging comparison |
 | `/performance-report` | Build a marketing performance report with key metrics, trends, and optimization recommendations |
 | `/seo-audit` | Run a comprehensive SEO audit — keyword research, on-page analysis, content gaps, technical checks, and competitor comparison |
+| `/aeo-audit` | Run a comprehensive AEO (Answer Engine Optimization) audit — brand visibility, citation analysis, sentiment tracking across ChatGPT, Gemini, Perplexity, Google AIO, and Google AI Mode |
 | `/email-sequence` | Design and draft multi-email sequences for nurture flows, onboarding, drip campaigns, and more |
 
 ## Skills
@@ -85,4 +86,5 @@ This plugin works with the following MCP servers:
 - **Notion** — Access briefs, style guides, and campaign documents
 - **Ahrefs** — SEO keyword research, backlink analysis, and site audits
 - **Similarweb** — Competitive traffic analysis and market benchmarking
+- **Conductor** — AI visibility tracking, brand insights, and AEO (Answer Engine Optimization) analytics
 - **Klaviyo** — Draft and review email marketing sequences and campaigns
