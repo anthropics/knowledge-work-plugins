@@ -1,0 +1,26 @@
+{
+  "name": "legal-swiss",
+  "version": "1.0.0",
+  "description": "Swiss-law legal productivity plugin for in-house legal teams. Contract review (OR Art. 100 mandatory law, URG, CISG), NDA triage (OR Art. 340–340c), nDSG/GDPR compliance (AV-Vereinbarung, breach notification, FDPIC/EDÖB), legal risk assessment (CHF exposure, VR liability), and templated responses. Covers German, French, Italian, and English. Calibrated to Swiss mandatory law, FDPIC supervisory framework, and Swiss court practice.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "jurisdiction": "CH",
+  "primaryLaw": [
+    "OR (Obligationenrecht)",
+    "nDSG (Bundesgesetz über den Datenschutz, in force 1 September 2023)",
+    "ZGB (Zivilgesetzbuch)",
+    "ZPO (Zivilprozessordnung)",
+    "IPRG (Bundesgesetz über das Internationale Privatrecht)",
+    "URG (Urheberrechtsgesetz)",
+    "FINMA Circular 2023/1 (outsourcing)",
+    "KG / WEKO (Kartellgesetz)"
+  ],
+  "languages": ["de", "fr", "it", "en"],
+  "regulatoryAuthorities": [
+    "FDPIC / EDÖB (Federal Data Protection and Information Commissioner)",
+    "FINMA (Swiss Financial Market Supervisory Authority)",
+    "WEKO (Swiss Competition Commission / Commission de la concurrence)",
+    "SECO (State Secretariat for Economic Affairs)"
+  ]
+}
