@@ -36,7 +36,8 @@ All of the following carveouts should be present:
 - [ ] **Prior possession**: Information already known to the receiving party before disclosure
 - [ ] **Independent development**: Information independently developed without use of or reference to confidential information
 - [ ] **Third-party receipt**: Information rightfully received from a third party without restriction
-- [ ] **Legal compulsion**: Right to disclose when required by law, regulation, or legal process (with notice to the disclosing party where legally permitted)
+- [ ] **Legal compulsion**: Right to disclose when required by law, regulation, or legal process (with notice where permitted; no notice required for regulatory or whistleblower disclosures)
+- [ ] **DTSA whistleblower immunity notice**: If the NDA governs trade secrets, confirm the agreement includes the Defend Trade Secrets Act immunity notice (18 U.S.C. § 1833(b)) or that the organization provides it separately
 
 ### 5. Permitted Disclosures
 - [ ] **Employees**: Can share with employees who need to know
