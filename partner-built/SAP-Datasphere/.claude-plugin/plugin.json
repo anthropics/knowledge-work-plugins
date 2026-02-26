@@ -1,0 +1,12 @@
+{
+  "name": "datasphere",
+  "version": "0.3.0",
+  "description": "The most comprehensive SAP Datasphere plugin for Claude. 18 specialized skills covering exploration, data modeling, integration, BW Bridge migration, security architecture, CLI automation, business content activation, catalog governance, performance optimization, and troubleshooting — all through natural language. Powered by 45 MCP tools with enterprise-grade security.",
+  "author": {
+    "name": "Mario De Felipe",
+    "url": "https://github.com/MarioDeFelipe"
+  },
+  "homepage": "https://github.com/MarioDeFelipe/sap-datasphere-plugin-for-claude-cowork",
+  "repository": "https://github.com/MarioDeFelipe/sap-datasphere-plugin-for-claude-cowork",
+  "license": "MIT"
+}
