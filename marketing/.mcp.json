@@ -20,6 +20,10 @@
       "type": "http",
       "url": "https://mcp.amplitude.com/mcp"
     },
+    "amplitude-eu": {
+      "type": "http",
+      "url": "https://mcp.eu.amplitude.com/mcp"
+    },
     "notion": {
       "type": "http",
       "url": "https://mcp.notion.com/mcp"

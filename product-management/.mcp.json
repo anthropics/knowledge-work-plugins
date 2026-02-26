@@ -36,6 +36,10 @@
       "type": "http",
       "url": "https://mcp.amplitude.com/mcp"
     },
+    "amplitude-eu": {
+      "type": "http",
+      "url": "https://mcp.eu.amplitude.com/mcp"
+    },
     "pendo": {
       "type": "http",
       "url": "https://app.pendo.io/mcp/v0/shttp"
