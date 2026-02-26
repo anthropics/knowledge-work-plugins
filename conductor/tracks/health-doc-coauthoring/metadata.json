@@ -1,0 +1,14 @@
+{
+  "track_id": "health-doc-coauthoring",
+  "name": "Health Document Co-authoring",
+  "description": "Three-stage collaborative document development for clinical protocols, care pathways, clinical practice guidelines, HTA submissions",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "medium",
+  "dependencies": ["health-core", "health-governance"],
+  "deliverable": "clinical-doc-coauthoring skill, /coauthor command",
+  "adapts_from": ["document-skills/docx"],
+  "workflow_stages": ["context-gathering", "refinement", "reader-testing"],
+  "jurisdictions": ["Australia", "New Zealand"],
+  "lite_variants": ["US", "EU"]
+}

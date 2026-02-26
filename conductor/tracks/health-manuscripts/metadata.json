@@ -1,0 +1,12 @@
+{
+  "track_id": "health-manuscripts",
+  "name": "Health Manuscripts",
+  "description": "Journal manuscript preparation with formatting requirements, CONSORT/STROBE/CHEERS compliance",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "medium",
+  "dependencies": ["health-core", "health-evidence"],
+  "deliverable": "manuscript-prep skill, /prepare-manuscript command",
+  "adapts_from": ["scientific-writing"],
+  "checklists": ["CONSORT", "STROBE", "CHEERS", "PRISMA", "ARRIVE"]
+}

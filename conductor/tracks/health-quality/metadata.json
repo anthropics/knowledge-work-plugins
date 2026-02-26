@@ -1,0 +1,16 @@
+{
+  "track_id": "health-quality",
+  "name": "Health Quality & Performance",
+  "description": "Quality improvement projects, accreditation preparation, patient experience, outcomes tracking",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "medium",
+  "dependencies": [
+    "health-core"
+  ],
+  "deliverable": "quality-improvement, accreditation-prep skills, /qi-project command",
+  "adapts_from": [
+    "product-management/roadmap-management",
+    "data/statistical-analysis"
+  ]
+}

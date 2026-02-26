@@ -1,0 +1,11 @@
+{
+  "track_id": "health-risk",
+  "name": "Health Risk Management",
+  "description": "Clinical risk assessment, worker safety risk, enterprise risk management, and risk register maintenance",
+  "status": "complete",
+  "created": "2026-02-14",
+  "priority": "high",
+  "dependencies": ["health-core"],
+  "deliverable": "clinical-risk, worker-risk, enterprise-risk skills, /assess-risk command",
+  "adapts_from": ["legal/legal-risk-assessment", "finance/financial-statements"]
+}
