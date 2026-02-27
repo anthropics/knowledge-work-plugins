@@ -686,3 +686,8 @@ Verify data types and column names
 6. **Test in SAC early** — Validate filter behavior and dashboard performance
 7. **Document for users** — Clear measure definitions enable self-service analytics
 8. **Optimize for consumption** — Simplify complexity; performance matters in dashboards
+
+## What's New (2026.05)
+
+- **Share Analytic Models Across Spaces**: You can now share an analytic model to one or more other spaces. In the target space, you can create a new analytic model on top of the shared one for space-specific consumption. This enables a hub-and-spoke pattern where a central analytics team maintains core models and business units layer their own measures and dimensions on top.
+- **Filter on Aggregated Measure Values in OData API**: When consuming analytic models via OData, you can now filter on aggregated measure values. Example syntax: `?$filter=Partner_ID eq '100000005' and Value gt 1000000`. This enables consumers to request only rows where measures meet specific thresholds, reducing data transfer and improving dashboard performance.

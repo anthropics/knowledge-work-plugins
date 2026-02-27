@@ -449,3 +449,8 @@ See reference files for detailed procedures:
 - `references/replication-flows.md` - Detailed replication configuration
 - `references/transformation-flows.md` - Delta staging patterns
 - `references/task-chains.md` - Orchestration patterns
+
+## What's New (2026.05)
+
+- **Improved Primary Key Order Handling in Replication Flows**: During table replication, the primary key order from the source is now preserved in the target. This prevents replication failures caused by key order mismatches between source and target tables. No configuration needed — this is automatic behavior.
+- **Output Parameters in Task Chains**: Task chain objects now support output parameters. You can map output parameters from task objects to the parent task chain, enabling more flexible orchestration of nested task chains and conditional logic based on task results.

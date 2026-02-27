@@ -419,3 +419,9 @@ Use to test calculated column expressions, filters, and join logic
 3. **Build associations for navigation** — Enable users to drill down and explore data across dimensions
 4. **Validate before deployment** — Use MCP tools to test queries and understand dependencies
 5. **Document comprehensively** — Clear descriptions help future maintainers and end users understand intent and usage patterns
+
+## What's New (2026.05)
+
+- **Partitioning Local Tables for Intelligent Applications**: If your Datasphere is part of an SAP Business Data Cloud formation, you can now create partitions for local tables installed via intelligent applications. This enables better management of read-only tables with large data volumes by breaking data into chunks.
+- **Change Primary Key Index Type in Local Tables**: When a local table has multiple primary keys, you can now change the index type in the Local Table editor. This optimizes performance in very large volume scenarios where the default index type may not be optimal.
+- **Review and Restore Transformation Flow Versions**: You can now review past versions of transformation flows, open them in read-only mode, download them as CSN/JSON files, and restore a past version to replace the current version. This provides version history and rollback capability for transformation logic.

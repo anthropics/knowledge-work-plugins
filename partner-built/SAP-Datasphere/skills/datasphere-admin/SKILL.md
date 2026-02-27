@@ -281,3 +281,8 @@ See reference files for detailed procedures:
 - `references/security-governance.md` - Security configuration details
 - `references/system-monitoring.md` - Monitoring and troubleshooting
 - `references/transport.md` - Transport lifecycle management
+
+## What's New (2026.05)
+
+- **Critical Storage Threshold — Automatic Space Locking**: To protect tenant stability, Datasphere will now automatically lock ALL spaces when disk usage reaches a critical threshold. A message appears in the Space Management app and on each space page. To unlock and resume work, you must either increase tenant disk storage or delete unneeded data. This is a critical operational consideration — monitor disk usage proactively and set up alerts before reaching the threshold.
+- **Installing Intelligent Applications for Multiple Source Systems**: If your Datasphere is part of a Business Data Cloud formation, you can now install a single intelligent application multiple times for different source systems. Each source system creates (or reuses) its own ingestion space, with source-specific preparation and application spaces identified by an alias.

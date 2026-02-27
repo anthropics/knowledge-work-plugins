@@ -1593,6 +1593,10 @@ Response: "These 12 tables have audit logging:
 - T_CUSTOMER_PII: Detailed READ logging, 3-year retention
 - T_FINANCIAL: Change-only logging, 10-year retention
 - T_SALES: Change-only logging, 1-year retention"
+
+## What's New (2026.05)
+
+- **Visibility of Data Access Controls Applied to Sources**: When editing a Graphical or SQL View, you can now see data access controls (DACs) applied to the view's sources in a new subsection "Applied via Sources" under the Data Access Controls panel. This provides transparency into inherited security — you can see not just the DACs applied directly to your view, but also those applied upstream to the views and tables your view consumes. Critical for auditing and debugging access control behavior in complex view hierarchies.
 ```
 
 ---

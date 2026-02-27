@@ -180,3 +180,7 @@ a business analyst, a data scientist, or a manager trying to understand what dat
 - Use concrete examples and numbers rather than abstract descriptions
 - If showing tabular data, keep it to 5-10 rows unless the user asks for more
 - When profiling, focus on the insights (quality issues, patterns, anomalies) not just the numbers
+
+## What's New (2026.05)
+
+- **Filter on Aggregated Measure Values in OData API**: When querying analytic models via OData, you can now filter on aggregated measure values. Example: `?$filter=Partner_ID eq '100000005' and Value gt 1000000`. This is useful when exploring data programmatically or building consumption queries — you can request only rows where measures exceed specific thresholds.

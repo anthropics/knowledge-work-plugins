@@ -87,3 +87,8 @@ Path: Left Menu → Data Integration Monitor
 3. Review error logs in monitor
 4. Check Cloud Connector (on-prem sources)
 5. Verify POI block availability (external targets)
+
+## What's New (2026.05)
+
+### Improved Primary Key Order Handling
+During table replication, the primary key order from the source is now preserved in the target table. Previously, mismatches in primary key column ordering between source and target could cause replication failures. This fix is automatic and requires no configuration changes. If you previously encountered key order mismatch errors, re-deploying the replication flow should resolve the issue.

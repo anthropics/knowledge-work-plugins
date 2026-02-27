@@ -970,3 +970,7 @@ Returns: Space configuration, objects, sizing, security posture
 - Version data products and communicate changes
 - Plan data retention and archival strategy upfront
 - Consider privacy and compliance implications early
+
+## What's New (2026.05)
+
+- **Optimized Data Product Uninstallation**: Uninstalling data products is now significantly faster. All related artifacts — including replication flows — are automatically removed during uninstallation. Previously, orphaned replication flows could remain after uninstalling a data product, requiring manual cleanup.

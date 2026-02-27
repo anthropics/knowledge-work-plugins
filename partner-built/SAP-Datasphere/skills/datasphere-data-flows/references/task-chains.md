@@ -89,4 +89,13 @@ Morning: Source Extracts (Parallel) → AND → Transformations (Serial) → Fac
 ```
 Replication Flows (CDC) run continuously
 Task Chain (scheduled): Transformation Flows → Analytics Layer
+
+## What's New (2026.05)
+
+### Output Parameters in Task Chains
+Task chain objects now support output parameters, enabling more flexible orchestration:
+- **Define output parameters** on task objects (Data Flows, Transformation Flows, etc.)
+- **Map output parameters** from a task object to the parent task chain
+- **Use in nested task chains** — output parameters propagate upward through the chain hierarchy
+- This enables conditional logic and dynamic behavior based on task execution results
 ```
