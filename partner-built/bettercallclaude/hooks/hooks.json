@@ -1,0 +1,17 @@
+{
+  "description": "Anwaltsgeheimnis (attorney-client privilege) detection for Swiss law practice",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/privacy-check.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

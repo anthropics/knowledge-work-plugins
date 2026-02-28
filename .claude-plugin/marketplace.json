@@ -110,6 +110,15 @@
       "author": {
         "name": "Tribe AI"
       }
+    },
+    {
+      "name": "bettercallclaude",
+      "source": "./partner-built/bettercallclaude",
+      "description": "Swiss legal intelligence — BGE/ATF/DTF precedent research, federal statute lookup, cantonal court decisions, citation verification, legal drafting, and case strategy across all 26 Swiss cantons with 5 bundled MCP servers.",
+      "author": {
+        "name": "Federico Cesconi",
+        "url": "https://bettercallclaude.ch"
+      }
     }
   ]
 }
