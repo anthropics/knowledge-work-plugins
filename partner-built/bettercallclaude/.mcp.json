@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "bettercallclaude-entscheidsuche": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/entscheidsuche/dist/index.js"]
+    },
+    "bettercallclaude-bge-search": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/bge-search/dist/index.js"]
+    },
+    "bettercallclaude-legal-citations": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/legal-citations/dist/index.js"]
+    },
+    "bettercallclaude-fedlex-sparql": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/fedlex-sparql/dist/index.js"]
+    },
+    "bettercallclaude-onlinekommentar": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/onlinekommentar/dist/index.js"]
+    }
+  }
+}
