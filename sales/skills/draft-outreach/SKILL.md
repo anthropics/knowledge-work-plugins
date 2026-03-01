@@ -100,7 +100,7 @@ Research first, then draft. This skill never sends generic outreach - it always 
 
 ## Email Draft Status
 
-[Draft created - check ~~email]
+[Draft created - check your email client]
 [Email not connected - copy email above]
 [No email found - use LinkedIn approach]
 
@@ -436,5 +436,5 @@ Best,
 ---
 
 ## Email Draft Status
-Draft created - check ~~email
+Draft created - check your email client
 ```
