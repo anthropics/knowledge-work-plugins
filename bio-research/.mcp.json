@@ -20,6 +20,13 @@
       "type": "http",
       "url": "https://mcp.deepsense.ai/chembl/mcp"
     },
+    "biosciences-mcp": {
+      "type": "http",
+      "url": "https://biosciences-mcp.fastmcp.app/mcp",
+      "headers": {
+        "Authorization": "Bearer ${BIOSCIENCES_API_KEY}"
+      }
+    },
     "synapse": {
       "type": "http",
       "url": "https://mcp.synapse.org/mcp"
