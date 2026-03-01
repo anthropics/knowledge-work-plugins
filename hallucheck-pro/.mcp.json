@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "hallucheck-verifier": {
+      "command": "python3",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcps/hallucheck-verifier.py"],
+      "env": {
+        "PYTHONPATH": "${CLAUDE_PLUGIN_ROOT}"
+      }
+    }
+  }
+}
