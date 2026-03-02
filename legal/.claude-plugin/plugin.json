@@ -4,5 +4,19 @@
   "description": "Speed up contract review, NDA triage, and compliance workflows for in-house legal teams. Draft legal briefs, organize precedent research, and manage institutional knowledge.",
   "author": {
     "name": "Anthropic"
-  }
+  },
+  "categories": ["legal", "compliance", "operations"],
+  "tags": ["contracts", "nda", "compliance", "risk-assessment", "legal-review", "briefings", "contract-review", "due-diligence"],
+  "difficulty": "intermediate",
+  "connectors": {
+    "required": [],
+    "optional": []
+  },
+  "useCases": [
+    "Review and redline contracts",
+    "Triage incoming NDAs",
+    "Assess legal risks in agreements",
+    "Prepare legal meeting briefings",
+    "Draft standard legal responses"
+  ]
 }

@@ -4,5 +4,19 @@
   "description": "Create content, plan campaigns, and analyze performance across marketing channels. Maintain brand voice consistency, track competitors, and report on what's working.",
   "author": {
     "name": "Anthropic"
-  }
+  },
+  "categories": ["marketing", "content", "communication"],
+  "tags": ["campaigns", "content-creation", "brand-voice", "competitive-analysis", "analytics", "copywriting", "marketing-strategy", "seo"],
+  "difficulty": "beginner",
+  "connectors": {
+    "required": [],
+    "optional": []
+  },
+  "useCases": [
+    "Plan and structure marketing campaigns",
+    "Create on-brand content",
+    "Analyze competitor positioning",
+    "Track campaign performance metrics",
+    "Maintain brand voice guidelines"
+  ]
 }

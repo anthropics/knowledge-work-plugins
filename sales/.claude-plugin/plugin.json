@@ -4,5 +4,50 @@
   "description": "Prospect, craft outreach, and build deal strategy faster. Prep for calls, manage your pipeline, and write personalized messaging that moves deals forward.",
   "author": {
     "name": "Anthropic"
-  }
+  },
+  "categories": ["sales", "business-development", "communication"],
+  "tags": ["prospecting", "outreach", "pipeline", "crm", "cold-email", "deal-strategy", "account-research", "call-prep"],
+  "difficulty": "beginner",
+  "connectors": {
+    "required": [],
+    "optional": [
+      {
+        "type": "crm",
+        "description": "Account history, contacts, opportunities, prior relationships",
+        "examples": ["Salesforce", "HubSpot"]
+      },
+      {
+        "type": "email",
+        "description": "Recent threads, open questions, ability to create drafts",
+        "examples": ["Gmail", "Outlook"]
+      },
+      {
+        "type": "calendar",
+        "description": "Meeting details, attendees, scheduling",
+        "examples": ["Google Calendar", "Outlook Calendar"]
+      },
+      {
+        "type": "chat",
+        "description": "Internal discussions, colleague insights, team context",
+        "examples": ["Slack", "Microsoft Teams"]
+      },
+      {
+        "type": "transcripts",
+        "description": "Call recordings, key moments, competitor mentions",
+        "examples": ["Gong", "Chorus"]
+      },
+      {
+        "type": "enrichment",
+        "description": "Verified contact info, tech stack, org charts, funding signals",
+        "examples": ["ZoomInfo", "Apollo", "Clearbit"]
+      }
+    ]
+  },
+  "useCases": [
+    "Research a prospect company before outreach",
+    "Prepare for an upcoming sales call",
+    "Draft personalized cold emails",
+    "Get a daily briefing on pipeline and meetings",
+    "Build competitive intelligence battlecards"
+  ]
 }

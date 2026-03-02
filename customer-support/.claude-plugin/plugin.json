@@ -4,5 +4,45 @@
   "description": "Triage tickets, draft responses, escalate issues, and build your knowledge base. Research customer context and turn resolved issues into self-service content.",
   "author": {
     "name": "Anthropic"
-  }
+  },
+  "categories": ["customer-support", "communication", "operations"],
+  "tags": ["tickets", "triage", "escalation", "knowledge-base", "customer-service", "response-drafting", "support"],
+  "difficulty": "beginner",
+  "connectors": {
+    "required": [],
+    "optional": [
+      {
+        "type": "knowledge-base",
+        "description": "Product docs, KB articles, specifications",
+        "examples": ["Zendesk Guide", "Confluence", "Notion"]
+      },
+      {
+        "type": "crm",
+        "description": "Account notes, activity history, opportunity details",
+        "examples": ["Salesforce", "HubSpot"]
+      },
+      {
+        "type": "support-tickets",
+        "description": "Previous resolutions, known issues, ticket history",
+        "examples": ["Zendesk", "Intercom", "Freshdesk"]
+      },
+      {
+        "type": "email",
+        "description": "Customer correspondence, internal discussions",
+        "examples": ["Gmail", "Outlook"]
+      },
+      {
+        "type": "chat",
+        "description": "Team discussions, context sharing",
+        "examples": ["Slack", "Microsoft Teams"]
+      }
+    ]
+  },
+  "useCases": [
+    "Triage incoming support tickets",
+    "Research customer issues and history",
+    "Draft responses to customer inquiries",
+    "Escalate issues to appropriate teams",
+    "Create and maintain knowledge base articles"
+  ]
 }
