@@ -1,6 +1,6 @@
 # BetterCallClaude — Swiss Legal Intelligence
 
-Research Swiss law, draft legal documents, and verify citations across all 26 cantons — powered by 5 bundled MCP servers with live access to BGE/ATF/DTF precedents, Fedlex statutes, and cantonal court decisions.
+Research Swiss law, draft legal documents, and verify citations across all 26 cantons — powered by 5 hosted MCP servers with live access to BGE/ATF/DTF precedents, Fedlex statutes, and cantonal court decisions.
 
 ---
 
@@ -32,19 +32,21 @@ All tools operate read-only and include Anwaltsgeheimnis (attorney-client privil
 
 ---
 
-## MCP Servers (Bundled)
+## MCP Servers
 
-All MCP servers are bundled and start automatically — no external setup required.
+All MCP servers are hosted at `mcp.bettercallclaude.ch` and connect automatically — no local setup required.
 
 | Server | What it connects to | Tools |
 |--------|-------------------|-------|
 | **bge-search** | Swiss Federal Supreme Court (BGE) decisions | search_bge, get_bge_decision, validate_citation |
-| **entscheidsuche** | Federal + cantonal court decisions (6 cantons) | search_decisions, search_canton, get_related_decisions, get_decision_details, analyze_precedent_success_rate, find_similar_cases, get_legal_provision_interpretation |
+| **entscheidsuche** | Federal + cantonal court decisions (6 cantons) | search_decisions, search_canton, get_decision_details, analyze_precedent_success_rate, find_similar_cases, get_legal_provision_interpretation |
 | **fedlex-sparql** | Swiss federal legislation via Fedlex SPARQL | lookup_statute, get_article, search_legislation, find_related, get_metadata |
 | **legal-citations** | Citation parsing, formatting, and validation | validate_citation, format_citation, convert_citation, parse_citation, get_provision_text, extract_citations, standardize_document_citations, compare_citation_versions |
 | **onlinekommentar** | OnlineKommentar.ch legal commentaries | search_commentaries, get_commentary, get_commentary_for_article, list_legislative_acts |
 
-All 27 tools declare `readOnlyHint: true` and `destructiveHint: false`.
+All 26 tools declare `readOnlyHint: true` and `destructiveHint: false`.
+
+> For the full install with privacy hooks and offline capability, use the main repository: [fedec65/bettercallclaude](https://github.com/fedec65/BetterCallClaude)
 
 ---
 

@@ -1,24 +1,24 @@
 {
   "mcpServers": {
-    "bettercallclaude-entscheidsuche": {
-      "command": "node",
-      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/entscheidsuche/dist/index.js"]
-    },
     "bettercallclaude-bge-search": {
-      "command": "node",
-      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/bge-search/dist/index.js"]
+      "type": "http",
+      "url": "https://mcp.bettercallclaude.ch/bge-search/mcp"
     },
-    "bettercallclaude-legal-citations": {
-      "command": "node",
-      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/legal-citations/dist/index.js"]
+    "bettercallclaude-entscheidsuche": {
+      "type": "http",
+      "url": "https://mcp.bettercallclaude.ch/entscheidsuche/mcp"
     },
     "bettercallclaude-fedlex-sparql": {
-      "command": "node",
-      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/fedlex-sparql/dist/index.js"]
+      "type": "http",
+      "url": "https://mcp.bettercallclaude.ch/fedlex-sparql/mcp"
+    },
+    "bettercallclaude-legal-citations": {
+      "type": "http",
+      "url": "https://mcp.bettercallclaude.ch/legal-citations/mcp"
     },
     "bettercallclaude-onlinekommentar": {
-      "command": "node",
-      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-servers/onlinekommentar/dist/index.js"]
+      "type": "http",
+      "url": "https://mcp.bettercallclaude.ch/onlinekommentar/mcp"
     }
   }
 }
