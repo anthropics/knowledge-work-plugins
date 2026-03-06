@@ -110,6 +110,17 @@
       "author": {
         "name": "Tribe AI"
       }
+    },
+    {
+      "name": "mintlify",
+      "description": "Build beautiful documentation sites with Mintlify. Convert non-markdown files into properly formatted MDX pages, add and modify content with correct component use, and automate documentation updates.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/mintlify/mintlify-claude-plugin.git",
+        "sha": "ce435be18a700dc849d6a63a80da4816d1e2128c"
+      },
+      "homepage": "https://www.mintlify.com/"
     }
   ]
 }
