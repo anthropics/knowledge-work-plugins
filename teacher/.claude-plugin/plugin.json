@@ -1,0 +1,12 @@
+{
+  "name": "teacher",
+  "version": "1.0.0",
+  "description": "Plan lessons, create assessments, provide feedback to students, and manage classroom activities. Connects to educational tools to streamline teaching workflows.",
+  "author": {
+    "name": "Multicortex",
+    "url": "https://multicortex.ai/"
+  },
+  "keywords": ["multicortex", "teaching", "tools", "educational", "students", "sequences", "mcp"]
+
+}
+
