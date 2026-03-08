@@ -1,0 +1,11 @@
+{
+  "name": "sentinel-ai-safety",
+  "description": "Real-time safety scanning for Claude Cowork conversations. Detects prompt injection, PII leaks, harmful content, and compliance violations with sub-millisecond latency.",
+  "version": "0.5.2",
+  "author": {
+    "name": "Maxwell Calkin",
+    "url": "https://github.com/MaxwellCalkin/sentinel-ai"
+  },
+  "homepage": "https://github.com/MaxwellCalkin/sentinel-ai",
+  "license": "Apache-2.0"
+}
