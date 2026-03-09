@@ -110,6 +110,17 @@
       "author": {
         "name": "Tribe AI"
       }
+    },
+    {
+      "name": "daloopa",
+      "description": "Financial analysis skills powered by Daloopa's institutional-grade data",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/daloopa/plugin.git",
+        "sha": "b5641f5bdfb2a44ac541486444cd8a595ccfc49c"
+      },
+      "homepage": "https://github.com/daloopa/plugin"
     }
   ]
 }
