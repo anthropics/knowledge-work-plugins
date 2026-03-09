@@ -1,7 +1,0 @@
-git clone https://github.com/nayaracls/knowledge-work-plugins.git
-cp -r "DEV-DOCS/land-grow-plugin" knowledge-work-plugins/land-grow
-cd knowledge-work-plugins
-git checkout -b feat/land-grow-plugin
-git add land-grow/
-git commit -m "feat: add land-grow consulting methodology plugin"
-git push origin feat/land-grow-plugin
