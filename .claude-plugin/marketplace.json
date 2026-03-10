@@ -110,6 +110,19 @@
       "author": {
         "name": "Tribe AI"
       }
+    },
+    {
+      "name": "zapier",
+      "description": "Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client.",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "zapier/zapier-mcp",
+        "path": "plugins/zapier",
+        "ref": "main",
+        "sha": "b93007e9a726c6ee93c57a949e732744ef5acbfd"
+      },
+      "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier"
     }
   ]
 }
