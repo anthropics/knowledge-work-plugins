@@ -343,7 +343,21 @@ Instead, write facts in batches of 10-15 as you extract them:
    - `fact_count` matches the length of the `facts` array
    - No fact is missing `source.quote` (the most commonly dropped field)
    If verification fails, fix and rewrite before continuing.
-5. Move to the next section and repeat.
+5. **Quote verification** — for each fact in the batch, verify the quote
+   actually exists in the source document:
+   - Use the Grep tool to search for a distinctive substring of
+     `source.quote` (at least 20 characters) in the original file.
+   - If Grep finds a match: the quote is verified.
+   - If Grep finds no match: the quote may be hallucinated. Re-read the
+     relevant section of the source file, find the actual text, and correct
+     the quote. If no matching content exists, delete the fact entirely.
+   - You do NOT need to Grep every quote for short documents (under 50 lines)
+     that you read in full — you can verify by memory. For large documents
+     read in sections, always Grep-verify quotes from previous sections
+     that are no longer in your immediate context.
+   - Display any corrections: "Quote corrected: fact_id (original → fixed)"
+   - Display any deletions: "Fact removed: fact_id (quote not found in source)"
+6. Move to the next section and repeat.
 
 When appending to an existing fact file, first Read the current file, merge the new
 facts into the existing `facts` array, update `fact_count`, update `extracted_at`,

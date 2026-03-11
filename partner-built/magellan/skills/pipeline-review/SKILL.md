@@ -142,6 +142,10 @@ Check:
   files by name.
 - **Fact Count Cross-Check**: Sum `fact_count` from all fact files. Compare to total
   reported during ingestion. If they differ, facts were lost.
+- **Quote Spot-Check**: For 3 randomly sampled facts across different domains, use
+  Grep to search for a distinctive substring (20+ chars) of `source.quote` in the
+  original source file. If any quote is not found in the source, flag as blocker —
+  hallucinated quotes indicate extraction quality failure.
 
 Blockers:
 - 0 domains after ingestion
@@ -364,6 +368,7 @@ Use these categories to enable pattern analysis across runs:
 | `invalid_output` | Output exists but fails validation (empty summary, missing fields) |
 | `wrong_tool` | Write tool or Bash used instead of proper fact-writing mechanism |
 | `count_mismatch` | Accounted totals don't match expected totals |
+| `hallucinated_quote` | A source.quote in a fact does not appear in the source document |
 | `quality_gap` | Output exists and is valid but is notably thin or low quality |
 | `enhancement` | Suggestion for Magellan improvement (not a current-run issue) |
 
