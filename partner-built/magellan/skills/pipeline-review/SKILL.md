@@ -142,10 +142,15 @@ Check:
   files by name.
 - **Fact Count Cross-Check**: Sum `fact_count` from all fact files. Compare to total
   reported during ingestion. If they differ, facts were lost.
-- **Quote Spot-Check**: For 3 randomly sampled facts across different domains, use
-  Grep to search for a distinctive substring (20+ chars) of `source.quote` in the
-  original source file. If any quote is not found in the source, flag as blocker —
-  hallucinated quotes indicate extraction quality failure.
+- **Quote Verification (exhaustive)**: For EVERY fact across ALL domains:
+  1. Read the fact file.
+  2. For each fact, take a distinctive substring (20+ chars) from `source.quote`.
+  3. Grep for that substring in the original source file (`source.document`).
+  4. Track results: verified count, failed count, and the specific fact_ids that failed.
+  5. Display: "Quotes verified: N/M passed (K failed: f_xxx, f_yyy)"
+  If ANY quote is not found in its source document, flag as blocker with category
+  `hallucinated_quote`. List every failed fact_id so the orchestrator can correct
+  or remove them before proceeding.
 
 Blockers:
 - 0 domains after ingestion
