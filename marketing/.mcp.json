@@ -32,6 +32,10 @@
       "type": "http",
       "url": "https://mcp.similarweb.com"
     },
+    "conductor": {
+      "type": "http",
+      "url": "https://mcp-universal.conductor.com/mcp"
+    },
     "klaviyo": {
       "type": "http",
       "url": "https://mcp.klaviyo.com/mcp"
