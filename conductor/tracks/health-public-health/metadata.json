@@ -1,0 +1,13 @@
+{
+  "track_id": "health-public-health",
+  "name": "Health Public Health",
+  "description": "Public health reporting, notifiable diseases, surveillance, population health notifications, outbreak response",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "medium",
+  "dependencies": ["health-core", "health-coding"],
+  "deliverable": "notifiable-diseases, public-health-surveillance skills, /report-notifiable command",
+  "adapts_from": ["legal/compliance"],
+  "jurisdictions": ["Australia", "New Zealand"],
+  "lite_variants": ["US", "EU"]
+}

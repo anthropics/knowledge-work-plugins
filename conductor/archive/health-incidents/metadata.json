@@ -1,0 +1,11 @@
+{
+  "track_id": "health-incidents",
+  "name": "Health Incidents",
+  "description": "Serious adverse events (SAEs) and incident reporting, investigation, and escalation workflows",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "high",
+  "dependencies": ["health-core"],
+  "deliverable": "incident-reporting skill, /report-incident command",
+  "adapts_from": ["customer-support/escalation", "legal/legal-risk-assessment"]
+}

@@ -1,0 +1,11 @@
+{
+  "track_id": "health-ethics",
+  "name": "Health Ethics",
+  "description": "Research ethics (REC/IRB) and clinical ethics consultation workflows",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "medium",
+  "dependencies": ["health-core"],
+  "deliverable": "research-ethics, clinical-ethics skills, /ethics-review command",
+  "adapts_from": ["bio-research", "legal/compliance"]
+}

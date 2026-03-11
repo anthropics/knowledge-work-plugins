@@ -1,0 +1,24 @@
+{
+  "name": "health",
+  "version": "0.1.0",
+  "description": "Healthcare organization workflows for compliance, quality, and clinical operations",
+  "author": {
+    "name": "Anthropic"
+  },
+  "license": "MIT",
+  "keywords": [
+    "healthcare",
+    "compliance",
+    "quality",
+    "clinical",
+    "risk",
+    "governance"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anomaly/knowledge-work-plugins"
+  },
+  "engines": {
+    "claude-code": ">=0.1.0"
+  }
+}
