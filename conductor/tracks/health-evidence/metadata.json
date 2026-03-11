@@ -1,0 +1,12 @@
+{
+  "track_id": "health-evidence",
+  "name": "Health Evidence Synthesis",
+  "description": "Systematic reviews, evidence synthesis, PRISMA workflows, meta-analysis support",
+  "status": "complete",
+  "created": "2026-02-11",
+  "priority": "high",
+  "dependencies": ["health-core"],
+  "deliverable": "systematic-review, evidence-synthesis skills, /start-review command",
+  "adapts_from": ["bio-research"],
+  "connectors": ["pubmed", "biorxiv", "cochrane"]
+}

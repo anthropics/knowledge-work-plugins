@@ -1,0 +1,11 @@
+{
+  "track_id": "health-information",
+  "name": "Health Information Governance",
+  "description": "Release of information processing, consent management, privacy compliance, and records management",
+  "status": "complete",
+  "created": "2026-02-14",
+  "priority": "medium",
+  "dependencies": ["health-core"],
+  "deliverable": "release-of-information, consent-management skills, /process-roi command",
+  "adapts_from": ["legal/compliance", "document-skills/docx"]
+}

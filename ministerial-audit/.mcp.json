@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "google-search": {
+      "type": "http",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-google-search"]
+    }
+  }
+}

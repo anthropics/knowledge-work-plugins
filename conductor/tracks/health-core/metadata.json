@@ -1,0 +1,11 @@
+{
+  "track_id": "health-core",
+  "name": "Health Core",
+  "description": "Foundation plugin structure, shared utilities, and connector configuration for all health tracks",
+  "status": "complete",
+  "created": "2026-02-11",
+  "completed": "2026-02-11",
+  "priority": "high",
+  "dependencies": [],
+  "deliverable": "health/ plugin skeleton with plugin.json, README, .mcp.json"
+}

@@ -1,0 +1,9 @@
+{
+  "enabledMcpjsonServers": [
+    "outlook",
+    "betterbird",
+    "thunderbird_tk",
+    "thunderbird_bb1"
+  ],
+  "enableAllProjectMcpServers": true
+}
