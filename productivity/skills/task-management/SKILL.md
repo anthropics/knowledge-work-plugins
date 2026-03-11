@@ -71,6 +71,15 @@ Task format:
 - Read the Waiting On section
 - Note how long each item has been waiting
 
+## Task Interpretation Rules
+
+When interpreting user input related to tasks:
+
+- If a single message contains multiple distinct tasks, split them into separate task entries.
+- Preserve the user’s original wording for task titles whenever possible.
+- If task intent or a due date is ambiguous, ask a clarifying question before writing to `TASKS.md`.
+- Do not infer deadlines, priorities, or assignees unless explicitly stated by the user.
+
 ## Conventions
 
 - **Bold** the task title for scannability
