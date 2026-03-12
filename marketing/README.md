@@ -82,6 +82,7 @@ This plugin works with the following MCP servers:
 - **Figma** — Access design files and brand assets
 - **HubSpot** — Pull campaign data, manage contacts, and track marketing automation
 - **Amplitude** — Pull product analytics and user behavior data for performance reporting
+- **Mixpanel** — Pull product analytics, funnels, and user behavior data for performance reporting
 - **Notion** — Access briefs, style guides, and campaign documents
 - **Ahrefs** — SEO keyword research, backlink analysis, and site audits
 - **Similarweb** — Competitive traffic analysis and market benchmarking
