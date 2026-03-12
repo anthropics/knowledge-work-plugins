@@ -46,7 +46,7 @@ fi
 PLUGIN_NAME="$(basename "$PLUGIN_DIR")"
 
 echo ""
-printf "${BOLD}Validating plugin: ${PLUGIN_NAME}${RESET}\n"
+printf "${BOLD}Validating plugin: %s${RESET}\n" "$PLUGIN_NAME"
 printf "  Path: %s\n" "$PLUGIN_DIR"
 echo ""
 
@@ -59,7 +59,7 @@ has_frontmatter_field() {
   local file="$1"
   local field="$2"
   # frontmatter is between the first and second '---' lines
-  awk '/^---/{c++; if(c==2) exit} c==1 && /^'"$field"'[[:space:]]*:/' "$file" | grep -q .
+  awk -v f="$field" '/^---/{c++; if(c==2) exit} c==1 && $0 ~ "^"f"[[:space:]]*:"' "$file" | grep -q .
 }
 
 # ---------------------------------------------------------------------------
@@ -165,13 +165,11 @@ else
         continue
       fi
 
-      skill_ok=true
       for field in name description; do
         if has_frontmatter_field "$skill_file" "$field"; then
           pass "$rel: has '$field' in frontmatter"
         else
           fail "$rel: frontmatter missing required '$field' field"
-          skill_ok=false
         fi
       done
     done
@@ -253,7 +251,7 @@ echo ""
 # ---------------------------------------------------------------------------
 # Summary
 # ---------------------------------------------------------------------------
-printf "${BOLD}Summary for ${PLUGIN_NAME}${RESET}\n"
+printf "${BOLD}Summary for %s${RESET}\n" "$PLUGIN_NAME"
 
 if [[ $FAIL_COUNT -eq 0 && $WARN_COUNT -eq 0 ]]; then
   printf "  ${GREEN}All checks passed.${RESET}\n"

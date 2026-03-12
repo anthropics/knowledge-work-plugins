@@ -55,13 +55,13 @@ while IFS= read -r -d '' plugin_json; do
   PLUGIN_DIRS+=("$plugin_dir")
 done < <(find "$REPO_ROOT" -name "plugin.json" -path "*/.claude-plugin/plugin.json" -print0 2>/dev/null)
 
-# Sort for consistent output
-IFS=$'\n' PLUGIN_DIRS=($(sort <<<"${PLUGIN_DIRS[*]}")); unset IFS
-
 if [[ ${#PLUGIN_DIRS[@]} -eq 0 ]]; then
   printf "${YELLOW}No plugins found in '%s'.${RESET}\n" "$REPO_ROOT"
   exit 0
 fi
+
+# Sort for consistent output
+IFS=$'\n' PLUGIN_DIRS=($(sort <<<"${PLUGIN_DIRS[*]}")); unset IFS
 
 echo ""
 printf "${BOLD}Plugin Validation — $(date '+%Y-%m-%d %H:%M:%S')${RESET}\n"
