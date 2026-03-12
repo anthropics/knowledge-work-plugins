@@ -2,7 +2,7 @@
 
 Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D. Use with [Cowork](https://claude.com/product/cowork) or install directly in Claude Code.
 
-This plugin consolidates 10 MCP server integrations and 5 analysis skills into a single package for life science researchers.
+This plugin consolidates 11 MCP server integrations and 5 analysis skills into a single package for life science researchers.
 
 ## What's Included
 
@@ -14,6 +14,7 @@ This plugin consolidates 10 MCP server integrations and 5 analysis skills into a
 |----------|-------------|---------------------|
 | U.S. National Library of Medicine | Search biomedical literature and research articles | `~~literature` |
 | deepsense.ai | Access preprints from bioRxiv and medRxiv | `~~literature` |
+| BGPT | Search scientific papers for structured experimental data (methods, results, quality scores) | `~~literature` |
 | John Wiley & Sons | Access academic research and publications | `~~journal access` |
 | Sage Bionetworks | Collaborative research data management | `~~data repository` |
 | deepsense.ai | Bioactive drug-like compound database | `~~chemical database` |
