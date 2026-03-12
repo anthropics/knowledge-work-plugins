@@ -27,6 +27,7 @@ Test which MCP servers are connected by listing available tools. Group the resul
 **Literature & Data Sources:**
 - ~~literature database — biomedical literature search
 - ~~literature database — preprint access (biology and medicine)
+- ~~literature database — structured experimental data from full-text papers (BGPT)
 - ~~journal access — academic publications
 - ~~data repository — collaborative research data (Sage Bionetworks)
 

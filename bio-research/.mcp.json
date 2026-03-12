@@ -12,6 +12,10 @@
       "type": "http",
       "url": "https://mcp.deepsense.ai/biorxiv/mcp"
     },
+    "bgpt": {
+      "type": "sse",
+      "url": "https://bgpt.pro/mcp/sse"
+    },
     "c-trials": {
       "type": "http",
       "url": "https://mcp.deepsense.ai/clinical_trials/mcp"
