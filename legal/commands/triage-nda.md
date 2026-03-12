@@ -45,7 +45,7 @@ The NDA playbook should define:
 - Defaults applied:
   - Mutual obligations required (unless the organization is only disclosing)
   - Term: 2-3 years standard, up to 5 years for trade secrets
-  - Standard carveouts required: independently developed, publicly available, rightfully received from third party, required by law
+  - Standard carveouts required: independently developed, publicly available, rightfully received from third party, legal compulsion (with notice where permitted; no notice required for regulatory or whistleblower disclosures)
   - No non-solicitation or non-compete provisions
   - No residuals clause (or narrowly scoped if present)
   - Governing law in a reasonable commercial jurisdiction
