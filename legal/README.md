@@ -4,6 +4,8 @@ An AI-powered productivity plugin for in-house legal teams, primarily designed f
 
 > **Disclaimer:** This plugin assists with legal workflows but does not provide legal advice. Always verify conclusions with qualified legal professionals. AI-generated analysis should be reviewed by licensed attorneys before being relied upon for legal decisions.
 
+> **Jurisdiction Notice:** The default playbook examples in this plugin reference U.S. legal concepts, jurisdictions (e.g., Delaware, New York, California), and regulations (e.g., CCPA). If you operate outside the United States, you must customize the playbook configuration in `.claude/legal.local.md` to reflect your local laws, regulations, and standard commercial practices before relying on this plugin.
+
 ## Target Personas
 
 - **Commercial Counsel** -- Contract negotiation, vendor management, deal support
@@ -28,6 +30,8 @@ claude plugins add knowledge-work-plugins/legal
 ### 2. Configure your playbook
 
 Create a local settings file to define your organization's standard positions. This is where you encode your team's negotiation playbook, risk tolerances, and standard terms.
+
+> **Note:** The example below uses U.S.-centric defaults. Adjust governing law, regulatory references, and standard positions to match your jurisdiction.
 
 In your project's `.claude/` directory, create a `legal.local.md` file:
 
