@@ -1,0 +1,13 @@
+{
+  "name": "coderocket",
+  "version": "1.0.0",
+  "description": "AI-powered deployment automation. Generate CI/CD workflows, create PRs, and review code — all from Claude Code.",
+  "author": {
+    "name": "CodeRocket",
+    "url": "https://deploy.coderocket.com"
+  },
+  "repository": "https://github.com/mlgraham/coderocket-plugin",
+  "homepage": "https://deploy.coderocket.com",
+  "license": "MIT",
+  "keywords": ["deploy", "ci/cd", "github-actions", "devops", "workflow", "coderocket"]
+}
