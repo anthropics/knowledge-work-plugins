@@ -25,9 +25,10 @@ Before searching, determine which MCP sources are available. Attempt to identify
 If no MCP sources are connected:
 ```
 To search across your tools, you'll need to connect at least one source.
-Check your MCP settings to add ~~chat, ~~email, ~~cloud storage, or other tools.
+Check your MCP settings to add a chat tool (e.g. Slack), email, cloud storage, or other tools.
 
-Supported sources: ~~chat, ~~email, ~~cloud storage, ~~project tracker, ~~CRM, ~~knowledge base,
+Supported sources: chat (e.g. Slack), email (e.g. Microsoft 365), cloud storage,
+project tracker (e.g. Jira), CRM, knowledge base (e.g. Notion),
 and any other MCP-connected service.
 ```
 
