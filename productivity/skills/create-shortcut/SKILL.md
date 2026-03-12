@@ -1,9 +1,6 @@
 ---
 name: create-shortcut
-description: >
-  Create a reusable shortcut for a repeated workflow or action.
-  Use when: create a shortcut, make a shortcut, set up a recurring task, create a daily briefing shortcut,
-  automate a morning routine, make a repeating workflow, create a workflow shortcut, save this as a shortcut.
+description: Save reusable workflow shortcuts to SHORTCUTS.md for manual invocation
 ---
 
 # Create Shortcut
