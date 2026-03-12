@@ -28,6 +28,7 @@ This plugin gives Claude a persistent understanding of your work:
 
 | Skill | Description |
 |-------|-------------|
+| `create-shortcut` | Save reusable workflow shortcuts to `SHORTCUTS.md` and invoke them by name. Note: scheduled/automatic execution is not supported natively — shortcuts are invoked manually. |
 | `memory-management` | Two-tier memory system — CLAUDE.md for working memory, memory/ directory for deep storage |
 | `task-management` | Markdown-based task tracking using a shared TASKS.md file |
 
