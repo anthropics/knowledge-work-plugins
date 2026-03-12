@@ -20,10 +20,10 @@ YELLOW='\033[1;33m'
 BOLD='\033[1m'
 RESET='\033[0m'
 
-pass()  { echo -e "  ${GREEN}[PASS]${RESET} $*"; }
-fail()  { echo -e "  ${RED}[FAIL]${RESET} $*"; FAIL_COUNT=$((FAIL_COUNT + 1)); }
-warn()  { echo -e "  ${YELLOW}[WARN]${RESET} $*"; WARN_COUNT=$((WARN_COUNT + 1)); }
-info()  { echo -e "        $*"; }
+pass()  { printf "  ${GREEN}[PASS]${RESET} %s\n" "$*"; }
+fail()  { printf "  ${RED}[FAIL]${RESET} %s\n" "$*"; FAIL_COUNT=$((FAIL_COUNT + 1)); }
+warn()  { printf "  ${YELLOW}[WARN]${RESET} %s\n" "$*"; WARN_COUNT=$((WARN_COUNT + 1)); }
+info()  { printf "        %s\n" "$*"; }
 
 FAIL_COUNT=0
 WARN_COUNT=0
@@ -39,15 +39,15 @@ fi
 PLUGIN_DIR="${1%/}"   # strip trailing slash
 
 if [[ ! -d "$PLUGIN_DIR" ]]; then
-  echo -e "${RED}ERROR:${RESET} '$PLUGIN_DIR' is not a directory." >&2
+  printf "${RED}ERROR:${RESET} '%s' is not a directory.\n" "$PLUGIN_DIR" >&2
   exit 1
 fi
 
 PLUGIN_NAME="$(basename "$PLUGIN_DIR")"
 
 echo ""
-echo -e "${BOLD}Validating plugin: ${PLUGIN_NAME}${RESET}"
-echo -e "  Path: $PLUGIN_DIR"
+printf "${BOLD}Validating plugin: ${PLUGIN_NAME}${RESET}\n"
+printf "  Path: %s\n" "$PLUGIN_DIR"
 echo ""
 
 # ---------------------------------------------------------------------------
@@ -59,13 +59,13 @@ has_frontmatter_field() {
   local file="$1"
   local field="$2"
   # frontmatter is between the first and second '---' lines
-  awk '/^---/{c++; if(c==2) exit} c==1 && /^'"$field"'\s*:/' "$file" | grep -q .
+  awk '/^---/{c++; if(c==2) exit} c==1 && /^'"$field"'[[:space:]]*:/' "$file" | grep -q .
 }
 
 # ---------------------------------------------------------------------------
 # 1. .claude-plugin/plugin.json — required
 # ---------------------------------------------------------------------------
-echo -e "${BOLD}[1] .claude-plugin/plugin.json${RESET}"
+printf "${BOLD}[1] .claude-plugin/plugin.json${RESET}\n"
 
 PLUGIN_JSON="$PLUGIN_DIR/.claude-plugin/plugin.json"
 
@@ -102,7 +102,7 @@ echo ""
 # ---------------------------------------------------------------------------
 # 2. commands/*.md — YAML frontmatter with 'description'
 # ---------------------------------------------------------------------------
-echo -e "${BOLD}[2] commands/*.md — YAML frontmatter${RESET}"
+printf "${BOLD}[2] commands/*.md — YAML frontmatter${RESET}\n"
 
 COMMANDS_DIR="$PLUGIN_DIR/commands"
 
@@ -141,7 +141,7 @@ echo ""
 # ---------------------------------------------------------------------------
 # 3. skills/*/SKILL.md — YAML frontmatter with 'name' and 'description'
 # ---------------------------------------------------------------------------
-echo -e "${BOLD}[3] skills/*/SKILL.md — YAML frontmatter${RESET}"
+printf "${BOLD}[3] skills/*/SKILL.md — YAML frontmatter${RESET}\n"
 
 SKILLS_DIR="$PLUGIN_DIR/skills"
 
@@ -183,7 +183,7 @@ echo ""
 # ---------------------------------------------------------------------------
 # 4. .mcp.json — valid JSON if present
 # ---------------------------------------------------------------------------
-echo -e "${BOLD}[4] .mcp.json (optional)${RESET}"
+printf "${BOLD}[4] .mcp.json (optional)${RESET}\n"
 
 MCP_JSON="$PLUGIN_DIR/.mcp.json"
 
@@ -216,7 +216,7 @@ echo ""
 # 5. ~~ placeholder check
 #    Files that contain ~~ placeholders should have a CONNECTORS.md nearby
 # ---------------------------------------------------------------------------
-echo -e "${BOLD}[5] ~~ placeholder consistency${RESET}"
+printf "${BOLD}[5] ~~ placeholder consistency${RESET}\n"
 
 # Collect all .md files in the plugin (excluding CONNECTORS.md itself)
 ALL_MD_FILES=()
@@ -253,14 +253,14 @@ echo ""
 # ---------------------------------------------------------------------------
 # Summary
 # ---------------------------------------------------------------------------
-echo -e "${BOLD}Summary for ${PLUGIN_NAME}${RESET}"
+printf "${BOLD}Summary for ${PLUGIN_NAME}${RESET}\n"
 
 if [[ $FAIL_COUNT -eq 0 && $WARN_COUNT -eq 0 ]]; then
-  echo -e "  ${GREEN}All checks passed.${RESET}"
+  printf "  ${GREEN}All checks passed.${RESET}\n"
 elif [[ $FAIL_COUNT -eq 0 ]]; then
-  echo -e "  ${GREEN}All checks passed${RESET} with ${YELLOW}${WARN_COUNT} warning(s)${RESET}."
+  printf "  ${GREEN}All checks passed${RESET} with ${YELLOW}%d warning(s)${RESET}.\n" "$WARN_COUNT"
 else
-  echo -e "  ${RED}${FAIL_COUNT} check(s) failed${RESET}, ${YELLOW}${WARN_COUNT} warning(s)${RESET}."
+  printf "  ${RED}%d check(s) failed${RESET}, ${YELLOW}%d warning(s)${RESET}.\n" "$FAIL_COUNT" "$WARN_COUNT"
 fi
 
 echo ""

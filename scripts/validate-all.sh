@@ -30,13 +30,13 @@ REPO_ROOT="${1:-"$(dirname "$SCRIPT_DIR")"}"
 VALIDATE_SCRIPT="$SCRIPT_DIR/validate-plugin.sh"
 
 if [[ ! -x "$VALIDATE_SCRIPT" ]]; then
-  echo -e "${RED}ERROR:${RESET} validate-plugin.sh not found or not executable at:" >&2
+  printf "${RED}ERROR:${RESET} validate-plugin.sh not found or not executable at:\n" >&2
   echo "  $VALIDATE_SCRIPT" >&2
   exit 1
 fi
 
 if [[ ! -d "$REPO_ROOT" ]]; then
-  echo -e "${RED}ERROR:${RESET} Repo root '$REPO_ROOT' is not a directory." >&2
+  printf "${RED}ERROR:${RESET} Repo root '%s' is not a directory.\n" "$REPO_ROOT" >&2
   exit 1
 fi
 
@@ -59,14 +59,14 @@ done < <(find "$REPO_ROOT" -name "plugin.json" -path "*/.claude-plugin/plugin.js
 IFS=$'\n' PLUGIN_DIRS=($(sort <<<"${PLUGIN_DIRS[*]}")); unset IFS
 
 if [[ ${#PLUGIN_DIRS[@]} -eq 0 ]]; then
-  echo -e "${YELLOW}No plugins found in '$REPO_ROOT'.${RESET}"
+  printf "${YELLOW}No plugins found in '%s'.${RESET}\n" "$REPO_ROOT"
   exit 0
 fi
 
 echo ""
-echo -e "${BOLD}Plugin Validation — $(date '+%Y-%m-%d %H:%M:%S')${RESET}"
-echo -e "Repository: $REPO_ROOT"
-echo -e "Plugins found: ${#PLUGIN_DIRS[@]}"
+printf "${BOLD}Plugin Validation — $(date '+%Y-%m-%d %H:%M:%S')${RESET}\n"
+printf "Repository: %s\n" "$REPO_ROOT"
+printf "Plugins found: %d\n" "${#PLUGIN_DIRS[@]}"
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
@@ -106,40 +106,40 @@ NUM_PASSED=$(( ${#PASSED[@]} + ${#WARNED[@]} ))
 NUM_FAILED=${#FAILED[@]}
 
 echo ""
-echo -e "${BOLD}Overall Results${RESET}"
+printf "${BOLD}Overall Results${RESET}\n"
 echo ""
-echo -e "  Total plugins validated : $TOTAL"
-echo -e "  ${GREEN}Passed${RESET}                  : $NUM_PASSED"
-echo -e "  ${RED}Failed${RESET}                  : $NUM_FAILED"
+printf "  Total plugins validated : %d\n" "$TOTAL"
+printf "  ${GREEN}Passed${RESET}                  : %d\n" "$NUM_PASSED"
+printf "  ${RED}Failed${RESET}                  : %d\n" "$NUM_FAILED"
 echo ""
 
 if [[ ${#PASSED[@]} -gt 0 ]]; then
-  echo -e "  ${GREEN}Clean passes:${RESET}"
+  printf "  ${GREEN}Clean passes:${RESET}\n"
   for p in "${PASSED[@]}"; do
-    echo -e "    ${GREEN}✓${RESET} $p"
+    printf "    ${GREEN}✓${RESET} %s\n" "$p"
   done
   echo ""
 fi
 
 if [[ ${#WARNED[@]} -gt 0 ]]; then
-  echo -e "  ${YELLOW}Passed with warnings:${RESET}"
+  printf "  ${YELLOW}Passed with warnings:${RESET}\n"
   for p in "${WARNED[@]}"; do
-    echo -e "    ${YELLOW}~${RESET} $p"
+    printf "    ${YELLOW}~${RESET} %s\n" "$p"
   done
   echo ""
 fi
 
 if [[ ${#FAILED[@]} -gt 0 ]]; then
-  echo -e "  ${RED}Failed:${RESET}"
+  printf "  ${RED}Failed:${RESET}\n"
   for p in "${FAILED[@]}"; do
-    echo -e "    ${RED}✗${RESET} $p"
+    printf "    ${RED}✗${RESET} %s\n" "$p"
   done
   echo ""
-  echo -e "${RED}Validation failed for ${NUM_FAILED} plugin(s). See output above for details.${RESET}"
+  printf "${RED}Validation failed for %d plugin(s). See output above for details.${RESET}\n" "$NUM_FAILED"
   echo ""
   exit 1
 fi
 
-echo -e "${GREEN}All plugins passed validation.${RESET}"
+printf "${GREEN}All plugins passed validation.${RESET}\n"
 echo ""
 exit 0
