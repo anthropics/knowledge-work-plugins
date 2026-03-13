@@ -4,5 +4,30 @@
   "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D",
   "author": {
     "name": "Anthropic"
-  }
+  },
+  "categories": ["research", "life-sciences", "data-analysis"],
+  "tags": ["genomics", "single-cell", "clinical-trials", "nextflow", "bioinformatics", "rna-seq", "scientific-research", "allotrope"],
+  "difficulty": "advanced",
+  "connectors": {
+    "required": [],
+    "optional": [
+      {
+        "type": "scientific-data",
+        "description": "Standardized scientific data formats and repositories",
+        "examples": ["Allotrope", "NCBI", "EBI"]
+      },
+      {
+        "type": "workflow-orchestration",
+        "description": "Bioinformatics pipeline execution",
+        "examples": ["Nextflow", "Snakemake"]
+      }
+    ]
+  },
+  "useCases": [
+    "Design clinical trial protocols",
+    "Analyze single-cell RNA sequencing data",
+    "Develop Nextflow bioinformatics pipelines",
+    "Convert instrument data to Allotrope format",
+    "Prioritize scientific research problems"
+  ]
 }
