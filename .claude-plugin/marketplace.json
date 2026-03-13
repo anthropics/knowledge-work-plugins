@@ -65,7 +65,7 @@
     {
       "name": "apollo",
       "source": "./partner-built/apollo",
-      "description": "Prospect, enrich leads, and load outreach sequences with Apollo.io — one-click MCP server integration for Claude Code and Cowork.",
+      "description": "Prospect, enrich leads, and load outreach sequences with Apollo.io \u2014 one-click MCP server integration for Claude Code and Cowork.",
       "author": {
         "name": "Apollo.io"
       }
@@ -81,22 +81,22 @@
     {
       "name": "engineering",
       "source": "./engineering",
-      "description": "Streamline engineering workflows — standups, code review, architecture decisions, incident response, and technical documentation. Works with your existing tools or standalone."
+      "description": "Streamline engineering workflows \u2014 standups, code review, architecture decisions, incident response, and technical documentation. Works with your existing tools or standalone."
     },
     {
       "name": "human-resources",
       "source": "./human-resources",
-      "description": "Streamline people operations — recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly."
+      "description": "Streamline people operations \u2014 recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly."
     },
     {
       "name": "design",
       "source": "./design",
-      "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs."
+      "description": "Accelerate design workflows \u2014 critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs."
     },
     {
       "name": "operations",
       "source": "./operations",
-      "description": "Optimize business operations — vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently."
+      "description": "Optimize business operations \u2014 vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently."
     },
     {
       "name": "brand-voice",
@@ -105,6 +105,87 @@
       "author": {
         "name": "Tribe AI"
       }
+    },
+    {
+      "name": "planetscale",
+      "description": "An authenticated hosted MCP server that accesses your PlanetScale organizations, databases, branches, schema, and Insights data. Query against your data, surface slow queries, and get organizational and account information.",
+      "category": "database",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/planetscale/claude-plugin.git",
+        "sha": "f1066cac5bb956bbbb05918f5b07fe0e873d44ea"
+      },
+      "homepage": "https://planetscale.com/"
+    },
+    {
+      "name": "adspirer-ads-agent",
+      "description": "Cross-platform ad management for Google Ads, Meta Ads, TikTok Ads, and LinkedIn Ads. 91 tools for keyword research, campaign creation, performance analysis, and budget optimization.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/amekala/adspirer-mcp-plugin.git",
+        "sha": "aa70dbdbbbb843e94a794c10c2b13f5dd66b5e40"
+      },
+      "homepage": "https://www.adspirer.com"
+    },
+    {
+      "name": "sanity-plugin",
+      "description": "Sanity content platform integration with MCP server, agent skills, and slash commands. Query and author content, build and optimize GROQ queries, design schemas, and set up Visual Editing.",
+      "category": "development",
+      "author": {
+        "name": "Sanity"
+      },
+      "source": {
+        "source": "url",
+        "url": "https://github.com/sanity-io/agent-toolkit.git",
+        "sha": "4b1fb10bd707a22cf0cdfad5374ffc885f2ffa8d"
+      },
+      "homepage": "https://www.sanity.io"
+    },
+    {
+      "name": "zoominfo",
+      "description": "Search companies and contacts, enrich leads, find lookalikes, and get AI-ranked contact recommendations. Pre-built skills chain multiple ZoomInfo tools into complete B2B sales workflows.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Zoominfo/zoominfo-mcp-plugin.git",
+        "sha": "0705316ef8a2d0c64f81e50d4612ccc6a74edf03"
+      },
+      "homepage": "https://zoominfo.com"
+    },
+    {
+      "name": "mintlify",
+      "description": "Build beautiful documentation sites with Mintlify. Convert non-markdown files into properly formatted MDX pages, add and modify content with correct component use, and automate documentation updates.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/mintlify/mintlify-claude-plugin.git",
+        "sha": "ce435be18a700dc849d6a63a80da4816d1e2128c"
+      },
+      "homepage": "https://www.mintlify.com/"
+    },
+    {
+      "name": "daloopa",
+      "description": "Financial analysis skills powered by Daloopa's institutional-grade data",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/daloopa/plugin.git",
+        "sha": "b5641f5bdfb2a44ac541486444cd8a595ccfc49c"
+      },
+      "homepage": "https://github.com/daloopa/plugin"
+    },
+    {
+      "name": "zapier",
+      "description": "Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client.",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "zapier/zapier-mcp",
+        "path": "plugins/zapier",
+        "ref": "main",
+        "sha": "b93007e9a726c6ee93c57a949e732744ef5acbfd"
+      },
+      "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier"
     }
   ]
 }
