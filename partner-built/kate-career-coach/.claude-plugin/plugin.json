@@ -1,0 +1,9 @@
+{
+  "name": "kate-career-coach",
+  "version": "0.3.0",
+  "description": "Kate, a senior career coach for executive job searches. Structured workflows for fit assessment, interview prep, resume optimization, post-interview debrief, and weekly monitoring of target companies and open roles.",
+  "author": {
+    "name": "Chris Bell"
+  },
+  "keywords": ["career", "coaching", "job search", "interview", "executive", "resume"]
+}
