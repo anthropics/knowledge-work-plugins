@@ -38,7 +38,7 @@
     },
     "pendo": {
       "type": "http",
-      "url": "https://app.pendo.io/mcp/v0/shttp"
+      "url": "https://app.pendo.io/mcp/v0/http"
     },
     "intercom": {
       "type": "http",
