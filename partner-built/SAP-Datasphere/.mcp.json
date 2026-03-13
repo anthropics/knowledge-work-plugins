@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "sap-datasphere": {
+      "command": "npx",
+      "args": ["-y", "@mariodefe/sap-datasphere-mcp"],
+      "env": {
+        "DATASPHERE_BASE_URL": "~~https://your-tenant.region.hcs.cloud.sap",
+        "DATASPHERE_CLIENT_ID": "~~your-oauth-client-id",
+        "DATASPHERE_CLIENT_SECRET": "~~your-oauth-client-secret",
+        "DATASPHERE_TOKEN_URL": "~~https://your-tenant.authentication.region.hana.ondemand.com/oauth/token",
+        "DATASPHERE_AUTH_URL": "~~https://your-tenant.authentication.region.hana.ondemand.com",
+        "USE_MOCK_DATA": "false"
+      }
+    }
+  }
+}
