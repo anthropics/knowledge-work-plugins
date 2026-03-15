@@ -15,4 +15,4 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Knowledge base | `~~knowledge base` | Notion | Confluence, Guru, Coda |
 | Project tracker | `~~project tracker` | Linear, Asana, Atlassian (Jira/Confluence) | Shortcut, ClickUp |
 | User feedback | `~~user feedback` | Intercom | Productboard, Canny, UserVoice, Dovetail |
-| Product analytics | `~~product analytics` | — | Amplitude, Mixpanel, Heap, FullStory |
+| Product analytics | `~~product analytics` | Mixpanel | Amplitude, Heap, FullStory |

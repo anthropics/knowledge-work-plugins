@@ -94,7 +94,7 @@ Connect your project management and communication tools for the best experience.
 - Project tracker (Linear, Asana, monday.com, ClickUp, Atlassian) for roadmap integration, ticket context, and status tracking
 - Knowledge base (Notion) for existing specs, research, and meeting notes
 - Design (Figma) for design context and handoff
-- Product analytics (Amplitude, Pendo) for usage data, metrics, and behavioral analysis
+- Product analytics (Amplitude, Pendo, Mixpanel) for usage data, metrics, and behavioral analysis
 - User feedback (Intercom) for support tickets, feature requests, and user conversations
 - Meeting transcription (Fireflies) for meeting notes and discussion context
 

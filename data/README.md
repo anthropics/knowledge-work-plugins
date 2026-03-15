@@ -111,7 +111,7 @@ Claude: [Reviews methodology] → [Checks for survivorship bias in churn analysi
 This plugin works best when connected to your data infrastructure. Add MCP servers for:
 
 - **Data Warehouse**: Snowflake, Databricks, BigQuery, or any SQL-compatible database
-- **Analytics/BI**: Amplitude, Looker, Tableau, or similar
+- **Analytics/BI**: Amplitude, Looker, Mixpanel, Tableau, or similar
 - **Notebooks**: Jupyter, Hex, or similar
 - **Spreadsheets**: Google Sheets, Excel
 - **Data Orchestration**: Airflow, dbt, Dagster, Prefect
