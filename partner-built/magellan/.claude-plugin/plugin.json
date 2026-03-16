@@ -1,0 +1,17 @@
+{
+  "name": "magellan",
+  "version": "2.0.0",
+  "description": "Enterprise knowledge discovery — extracts structured knowledge from code, documents, and transcripts, then builds a shared, queryable knowledge graph with contradictions and open questions as primary output",
+  "author": {
+    "name": "Slalom"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "knowledge-discovery",
+    "knowledge-graph",
+    "enterprise",
+    "architecture",
+    "due-diligence",
+    "legacy-systems"
+  ]
+}
