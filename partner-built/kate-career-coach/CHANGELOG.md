@@ -2,6 +2,29 @@
 
 ---
 
+## v0.3.1 — 2026-03-15
+
+### Internal improvements
+
+**Reduced context load**
+Commands are now thin dispatchers. Each command file collects the context it needs, then defers entirely to `references/flows.md` for execution. Previously, command files restated their flow steps in full and also cited flows.md — redundant in both directions. No change to behavior; lower token cost per command invocation.
+
+**flows.md read once per session, not per command**
+Session initialization now reads `references/flows.md` at startup and holds it in context for the full session. Previously it was re-read on each command invocation. Multi-command sessions (e.g., fit assessment followed by interview prep in the same session) no longer read the file twice.
+
+**Scheduled task prompt generated as a file**
+`/setup-monitoring` no longer embeds the monitoring flow steps directly in the scheduled task prompt. Instead, Kate generates `monitoring/scheduled_task_prompt.md` during setup — a standalone file that the scheduled task reads at runtime. This makes flows.md the single source of truth for monitoring behavior. If you update the monitoring flow in a future version, re-running `/setup-monitoring` regenerates the prompt file automatically.
+
+**Standing coaching rules trimmed**
+Three rules in the coaching rule set (complement skill identification, show don't tell probe, red flag management) were written at execution-instruction detail level — duplicating what flows.md already specifies. They are now principle statements, with execution detail owned exclusively by flows.md.
+
+### What changed
+- All five command files — stripped restated flow steps, kept context-gathering
+- `SKILL.md` — flows.md added to Session Init Step 1; three Standing Coaching Rules reduced to principle statements
+- `commands/setup-monitoring.md` — embedded scheduled task prompt replaced with generated-file approach
+
+---
+
 ## v0.3.0 — 2026-03-05
 
 ### New coaching capabilities

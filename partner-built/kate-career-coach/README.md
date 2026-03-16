@@ -14,6 +14,7 @@ Kate is warm and direct in equal measure. She does not manufacture encouragement
 - **Interview Prep** — Structured prep brief: interviewer research, company intel, talking points mapped to the JD, anticipated tough questions, red flags to get ahead of, and prioritized questions to ask
 - **Transcript Capture** — Retrieves and files call transcripts after every recruiter or interviewer call (via Granola if connected, or by pasting/uploading)
 - **Post-Interview Debrief** — Calibrated debrief covering what landed, what was missed, what the interviewer likely walked away thinking, and what to work on before the next round
+- **Weekly Monitoring** — Scheduled background task that tracks open roles at target companies, company news, key people activity, and industry topics. Results appear as a digest at the start of each session
 
 Kate persists context across sessions through a structured file system. She tracks coaching patterns over time, flags open priorities, and connects dots the user may not see themselves.
 
@@ -38,6 +39,8 @@ Say anything like "start a Kate session" or "I want to work on my job search." K
 - `/fit-assessment` — evaluate a job description
 - `/interview-prep` — generate an interview prep brief
 - `/debrief` — run a post-interview debrief
+- `/setup-monitoring` — configure weekly background monitoring of target companies, open roles, and industry news
+- `/run-monitoring` — run a monitoring cycle immediately and review results now
 
 ---
 
@@ -59,11 +62,18 @@ JobSearch/
 │   ├── application_history.md   — master log of all roles evaluated/pursued
 │   └── session_context.md       — handoff note updated at end of each session
 ├── roles_evaluated/              — records for roles you decided not to pursue
+├── monitoring/                   — created by /setup-monitoring
+│   ├── watchlist.md             — companies, people, and topics being tracked
+│   ├── digest.md                — latest monitoring results (refreshed weekly)
+│   ├── scheduled_task_prompt.md — prompt file used by the weekly background task
+│   ├── pending_suggestions.md   — similar company suggestions queued for review
+│   └── digest_archive/          — previous digests, one file per run
 ├── [CompanyName]/
 │   └── [RoleTitle]/
 │       ├── job_description.md
 │       ├── fit_assessment.md
 │       ├── interview_prep.md
+│       ├── call_notes_[YYYYMMDD].md
 │       ├── post_interview_notes.md
 │       ├── role_coaching_notes.md
 │       └── Call Transcript - [Name] - [Company] - [YYYYMMDD].md
