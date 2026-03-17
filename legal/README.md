@@ -29,7 +29,10 @@ claude plugins add knowledge-work-plugins/legal
 
 Create a local settings file to define your organization's standard positions. This is where you encode your team's negotiation playbook, risk tolerances, and standard terms.
 
-In your project's `.claude/` directory, create a `legal.local.md` file:
+Create a `legal.local.md` file where Claude can find it:
+
+- **Cowork**: Save it in any folder you've shared with Cowork (via the folder picker). The plugin finds it automatically.
+- **Claude Code**: Save it in your project's `.claude/` directory.
 
 ```markdown
 # Legal Playbook Configuration
