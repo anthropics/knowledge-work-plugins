@@ -36,6 +36,10 @@
       "type": "http",
       "url": "https://mcp.klaviyo.com/mcp"
     },
+    "supermetrics": {
+      "type": "http",
+      "url": "https://mcp.supermetrics.com/mcp"
+    },
     "google-calendar": {
       "type": "http",
       "url": "https://gcal.mcp.claude.com/mcp"
