@@ -1,0 +1,15 @@
+# quandri-customer-support plugin configuration
+# This plugin works through MCP integrations — no API keys or secrets required here.
+# Connect the following tools in Cowork before using these skills:
+
+# Required MCP integrations:
+#   - HubSpot     (customer context, ticket history, account lookup)
+#   - Linear      (issue creation, triage, tracking)
+#   - Slack       (escalations, team notifications, Slack search)
+#   - Granola     (meeting notes and history)
+#   - Gmail       (customer email drafts)
+#   - Google Calendar (upcoming meetings, scheduling)
+#   - Asana       (task tracking, team output)
+
+# No additional configuration needed.
+# Team roster and workspace URLs are baked into the skills for the Quandri CS team.
