@@ -257,6 +257,16 @@
         "sha": "e671da495f7ec0ed6be5e9fa71e260f886a1dc36"
       },
       "homepage": "https://docs.brightdata.com"
+    },
+    {
+      "name": "searchfit-seo",
+      "description": "Free AI-powered SEO toolkit — audit websites, plan content strategy, optimize pages, generate schema markup, cluster keywords, and track AI visibility. Works with any website or codebase.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/searchfit/searchfit-seo.git",
+        "sha": "ced1a99a9fadfc10aa573a05829fc1bd357d4e4c"
+      },
+      "homepage": "https://searchfit.ai"
     }
   ]
 }
