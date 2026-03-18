@@ -10,13 +10,14 @@ Each plugin bundles the skills, connectors, slash commands, and sub-agents for a
 
 ## Plugin Marketplace
 
-We're open-sourcing 11 plugins built and inspired by our own work:
+We're open-sourcing 12 plugins built and inspired by our own work:
 
 | Plugin | How it helps | Connectors |
 |--------|-------------|------------|
 | **[productivity](./productivity)** | Manage tasks, calendars, daily workflows, and personal context so you spend less time repeating yourself. | Slack, Notion, Asana, Linear, Jira, Monday, ClickUp, Microsoft 365 |
 | **[sales](./sales)** | Research prospects, prep for calls, review your pipeline, draft outreach, and build competitive battlecards. | Slack, HubSpot, Close, Clay, ZoomInfo, Notion, Jira, Fireflies, Microsoft 365 |
 | **[customer-support](./customer-support)** | Triage tickets, draft responses, package escalations, research customer context, and turn resolved issues into knowledge base articles. | Slack, Intercom, HubSpot, Guru, Jira, Notion, Microsoft 365 |
+| **[recruiting](./recruiting)** | Screen resumes, source candidates, design interviews, run debriefs, write job descriptions, and manage your hiring pipeline. | Slack, Greenhouse, Lever, Apollo, Clay, LinkedIn, Notion, Zoom, Google Calendar, Gmail |
 | **[product-management](./product-management)** | Write specs, plan roadmaps, synthesize user research, keep stakeholders updated, and track the competitive landscape. | Slack, Linear, Asana, Monday, ClickUp, Jira, Notion, Figma, Amplitude, Pendo, Intercom, Fireflies |
 | **[marketing](./marketing)** | Draft content, plan campaigns, enforce brand voice, brief on competitors, and report on performance across channels. | Slack, Canva, Figma, HubSpot, Amplitude, Notion, Ahrefs, SimilarWeb, Klaviyo |
 | **[legal](./legal)** | Review contracts, triage NDAs, navigate compliance, assess risk, prep for meetings, and draft templated responses. | Slack, Box, Egnyte, Jira, Microsoft 365 |
