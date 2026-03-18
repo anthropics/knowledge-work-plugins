@@ -227,6 +227,16 @@
         "sha": "d9ba949011e725be55cae11acc741aa1f1f393d3"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
+    },
+    {
+      "name": "cloudinary",
+      "description": "Use Cloudinary directly in Claude. Manage assets, apply transformations, optimize media, and more through natural conversation.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/cloudinary-devs/cloudinary-plugin.git",
+        "sha": "137c5d7acd9c3f10e80cd2a400486971e1664f31"
+      },
+      "homepage": "https://cloudinary.com/documentation"
     }
   ]
 }
