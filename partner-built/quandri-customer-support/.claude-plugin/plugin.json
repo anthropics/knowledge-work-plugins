@@ -1,0 +1,9 @@
+{
+  "name": "quandri-customer-support",
+  "version": "0.2.0",
+  "description": "Customer Support skills for the Quandri CS team — ticket triage, response drafting, escalations, knowledge base management, and weekly incident reporting across HubSpot, Linear, Slack, and Notion.",
+  "author": {
+    "name": "Quandri Customer Support"
+  },
+  "keywords": ["customer-support", "triage", "hubspot", "linear", "escalation", "knowledge-base"]
+}
