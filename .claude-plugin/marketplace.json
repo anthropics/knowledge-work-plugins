@@ -277,6 +277,18 @@
         "sha": "acdf284da6aa98b14f8dad90a9827006d8df425c"
       },
       "homepage": "https://docs.atlan.com/"
+    },
+    {
+      "name": "ai-firstify",
+      "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
+      "source": {
+        "source": "git-subdir",
+        "url": "techwolf-ai/ai-first-toolkit",
+        "path": "plugins/ai-firstify",
+        "ref": "main",
+        "sha": "7f18e11d694b9ae62ea3009fbbc175f08ae913df"
+      },
+      "homepage": "https://ai-first.techwolf.ai"
     }
   ]
 }
