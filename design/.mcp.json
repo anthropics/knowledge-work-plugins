@@ -24,6 +24,10 @@
       "type": "http",
       "url": "https://mcp.notion.com/mcp"
     },
+    "mixpanel": {
+      "type": "http",
+      "url": "https://mcp.mixpanel.com/mcp"
+    },
     "intercom": {
       "type": "http",
       "url": "https://mcp.intercom.com/mcp"
