@@ -309,6 +309,16 @@
         "sha": "c5d1bf5f7e95a71e230fc19ae2150ddd9c549854"
       },
       "homepage": "https://postiz.com/agent"
+    },
+    {
+      "name": "figma",
+      "description": "Figma design platform integration. Access design files, extract component information, read design tokens, and translate designs into code. Bridge the gap between design and development workflows.",
+      "category": "design",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/figma/mcp-server-guide.git"
+      },
+      "homepage": "https://github.com/figma/mcp-server-guide"
     }
   ]
 }
