@@ -267,6 +267,16 @@
         "sha": "ced1a99a9fadfc10aa573a05829fc1bd357d4e4c"
       },
       "homepage": "https://searchfit.ai"
+    },
+    {
+      "name": "atlan",
+      "description": "Atlan data catalog plugin for Claude Code. Search, explore, govern, and manage your data assets through natural language. Powered by the Atlan MCP server with semantic search, lineage traversal, glossary management, data quality rules, and more.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/atlanhq/agent-toolkit.git",
+        "sha": "acdf284da6aa98b14f8dad90a9827006d8df425c"
+      },
+      "homepage": "https://docs.atlan.com/"
     }
   ]
 }
