@@ -237,6 +237,16 @@
         "sha": "137c5d7acd9c3f10e80cd2a400486971e1664f31"
       },
       "homepage": "https://cloudinary.com/documentation"
+    },
+    {
+      "name": "nimble",
+      "description": "Nimble web data toolkit — search, extract, map, crawl the web and work with structured data agents",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Nimbleway/agent-skills.git",
+        "sha": "cf391e95bd8ac009e3641f172434a1d130dde7fe"
+      },
+      "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation"
     }
   ]
 }
