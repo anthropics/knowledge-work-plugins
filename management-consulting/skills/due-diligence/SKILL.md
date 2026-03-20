@@ -1,6 +1,6 @@
 ---
 name: due-diligence
-description: Conduct commercial, operational, and strategic due diligence for M&A, investment, or partnership decisions. Use when assessing acquisition targets, investment opportunities, vendor evaluations, or any situation requiring rigorous business assessment and risk identification.
+description: Conduct commercial, operational, financial, strategic, and technology due diligence for M&A, investment, partnership, or vendor decisions. Use when assessing acquisition targets, performing quality of earnings analysis, evaluating working capital, reviewing technology and IP, planning post-merger integration, quantifying synergies, or any situation requiring rigorous business assessment and risk identification.
 ---
 
 # Due Diligence
