@@ -345,7 +345,7 @@ connects in that category. Plugins are tool-agnostic.
     },
     "slack": {
       "type": "http",
-      "url": "https://slack.mcp.claude.com/mcp"
+      "url": "https://mcp.slack.com/mcp"
     }
   }
 }
