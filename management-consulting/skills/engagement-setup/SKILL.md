@@ -5,7 +5,7 @@ description: Guide the first weeks of a consulting engagement from contract sign
 
 # Engagement Setup
 
-Take a consulting engagement from "we just won this work" to "the engagement is running." This covers five things that happen roughly in sequence but overlap in practice: transitioning from sales to delivery, planning the kickoff, mapping stakeholders, designing discovery, and establishing the operating rhythm.
+Take a consulting engagement from "we just won this work" to "the engagement is running." This covers the first weeks of a consulting engagement: transitioning from sales to delivery, planning the kickoff, mapping stakeholders, designing discovery, and establishing the operating rhythm. For designing standalone facilitated sessions later in the engagement (strategy offsites, innovation sprints), see workshop-facilitation.
 
 The goal is shared understanding and momentum, not a stack of templates. Every artifact here should earn its place by driving alignment or unblocking work.
 
