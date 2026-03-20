@@ -1,6 +1,6 @@
 ---
 name: financial-modeling
-description: Build financial models for business cases including ROI, NPV, IRR, DCF, scenario analysis, and total cost of ownership. Use for investment recommendations, comparing strategic options, quantifying initiatives, building business cases, or company valuations.
+description: Build financial models for business cases including ROI, NPV, IRR, scenario analysis, and total cost of ownership. Use when developing investment recommendations, comparing strategic options, quantifying the value of initiatives, building business cases, performing cost-benefit analysis, or valuing a business unit for strategic decisions. Covers standard financial analysis workflows (ROI, business case, cash flow projections, break-even, DCF) and advanced techniques (EVA, MIRR, real options, Monte Carlo thinking, discount rate selection).
 ---
 
 # Financial Modeling

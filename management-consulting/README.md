@@ -15,10 +15,10 @@ Domain knowledge Claude draws on automatically when your work touches consulting
 | Skill | Description |
 |---|---|
 | `strategic-analysis` | Hypothesis-driven decomposition, issue trees, MECE analysis, and named framework application (Five Forces, PESTLE, 7S, VRIO, etc.) |
-| `financial-modeling` | Business case math, ROI/NPV/IRR, sensitivity analysis |
+| `financial-modeling` | Business cases, cost-benefit analysis, ROI/NPV/IRR, sensitivity analysis, scenario modeling |
 | `client-deliverables` | Consulting reports, executive presentations, top-down structured communication, storylining, data visualization |
 | `change-management` | Transformation planning, resistance management, adoption tracking |
-| `due-diligence` | Commercial, operational, and strategic assessment |
+| `due-diligence` | Commercial, operational, financial, strategic, and technology assessment, integration planning |
 | `engagement-setup` | Kickoff planning, discovery phase, stakeholder mapping |
 | `implementation-planning` | Options evaluation, business cases, roadmaps, implementation plans |
 | `org-design` | Operating model and organizational structure design |
