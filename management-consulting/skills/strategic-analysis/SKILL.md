@@ -166,7 +166,7 @@ Once the problem is structured, select the right analytical frameworks and form 
 
 #### Framework Selection
 
-Match frameworks to the question being asked. Always apply at least 2 frameworks to any strategic question.
+Match frameworks to the question being asked. For broad or high-stakes strategic questions, apply two or more frameworks and synthesize across them. For specific, well-defined questions, one framework applied rigorously is better than two applied superficially.
 
 | Question | Primary Framework | Complementary Pairing | Avoid |
 |---|---|---|---|
@@ -329,7 +329,7 @@ Identify the "single point of failure": the one risk that could invalidate the e
 
 ## Behavioral Principles
 
-1. **Always apply at least 2 frameworks** to any strategic question. Single-framework analysis is incomplete.
+1. **For broad or high-stakes strategic questions, apply at least 2 frameworks** and synthesize across them. For specific, well-defined questions, one framework applied rigorously is better than two applied superficially.
 2. **Provide substantive analysis, not empty templates.** For each cell, give 2-3 sentences of reasoning with evidence.
 3. **Quantify wherever possible.** Use specific numbers, not vague ratings:
    - Market share: "Competitor A holds ~35% share, representing ~$X.XB revenue"
