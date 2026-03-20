@@ -1,8 +1,8 @@
 ---
 name: website-generator
-description: This skill allows you to create a professional, engaging, and user-friendly website in seconds using AI. To create a website, you need to provide a name for your project/business, along with a description of the project/business (goals, structure, etc.).
+description: This skill allows you to create a professional, engaging, and user-friendly website in seconds using AI. To create a website, you need to provide a description of your project/business (goals, structure, etc.).
 user-invocable: true
-argument-hint: "[business name and description]"
+argument-hint: "[business description]"
 ---
 
 # Website Generator Skill
@@ -17,15 +17,15 @@ When someone asks to "Build and host a website," "Create a launch-ready site," "
 
 ### 1. Request Business Information
 
-Request the project name and a brief description (business name and description) if the user has not provided it.
+Request a description of the project/business if the user has not provided it. Business name is optional — if the user provides one, include it; if not, proceed with the description alone.
 
-**IMPORTANT:** Absolutely NEVER explicitly ask for structure and style preferences. Append any information volunteered by the user (e.g., website goals, website structure, and style preferences) to the user-provided description.
+Append any information volunteered by the user (e.g., website goals, website structure, and style preferences) to the user-provided description.
 
 **Example:** If someone tells you about a women's shoe store named Bellas, and then tells you they are interested in a pink color scheme and team and products pages, the description should be: "Bellas is a women's shoe store. We want a website with a pink color scheme that has team and products pages."
 
 ### 2. Never Invent Information
 
-Absolutely NEVER invent name or description, even as an example. ALWAYS make sure to request the business name and description from the user before creating a website signup link.
+Absolutely NEVER invent a business description, even as an example. ALWAYS make sure to request the business description from the user before creating a website signup link. Never block on a missing business name — it is optional.
 
 ### 3. Create the Signup Link
 
@@ -62,5 +62,5 @@ If the link above isn't working, visit: https://b12.io/gpt/bugreport
 ## Important Notes
 
 - Always URL-escape both the business name and business description in the signup link
-- Focus on gathering the essential information (name and description) without overwhelming the user with questions about preferences
-- Let users volunteer additional details about style, structure, or goals rather than explicitly requesting them
+- Only the business description is required; business name is optional
+- Feel free to ask the user for structure and style preferences to include in the description
