@@ -5,7 +5,7 @@ description: Create consulting-grade client deliverables (written reports and ex
 
 # Client Deliverables
 
-Produce formal consulting deliverables that communicate complex analysis with clarity and impact. This covers both written reports and executive presentations. Structure everything for decision-makers: bottom-line up front, evidence-backed findings, actionable recommendations, professional formatting.
+Produce formal consulting deliverables that communicate complex analysis with clarity and impact. This covers deliverable creation during and after consulting engagements, including both written reports and executive presentations. For pitch decks and proposals aimed at winning work, see proposal-development. Structure everything for decision-makers: bottom-line up front, evidence-backed findings, actionable recommendations, professional formatting.
 
 ## Before You Begin
 

@@ -5,7 +5,7 @@ description: Design and facilitate consulting workshops including strategy offsi
 
 # Workshop Facilitation
 
-Design, plan, and run effective strategy workshops, design thinking sessions, and innovation sprints. This covers the full lifecycle: objective-setting, participant planning, pre-work design, methodology selection, agenda design, facilitation techniques, and post-workshop follow-through.
+Design, plan, and run effective strategy workshops, design thinking sessions, and innovation sprints. This covers the design and facilitation of structured working sessions at any point in an engagement. For the broader engagement launch process (kickoff, discovery, stakeholder mapping), see engagement-setup. The full lifecycle covered here: objective-setting, participant planning, pre-work design, methodology selection, agenda design, facilitation techniques, and post-workshop follow-through.
 
 ## Before You Begin
 
