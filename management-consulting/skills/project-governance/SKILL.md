@@ -5,7 +5,7 @@ description: Establish and manage project governance for consulting engagements.
 
 # Project Governance
 
-Establish and operate governance structures that ensure clear decision-making, accountability, and stakeholder alignment throughout a consulting engagement. This covers the full project management lifecycle: from initial governance setup through ongoing status reporting, risk management, and project closure.
+Establish and operate the oversight structure for consulting engagements, ensuring clear decision-making, accountability, and stakeholder alignment throughout. For building the implementation plan itself (workstreams, phasing, business cases), see implementation-planning. This covers the full project management lifecycle: from initial governance setup through ongoing status reporting, risk management, and project closure.
 
 ## Before You Begin
 
