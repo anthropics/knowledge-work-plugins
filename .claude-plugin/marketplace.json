@@ -65,7 +65,7 @@
     {
       "name": "apollo",
       "source": "./partner-built/apollo",
-      "description": "Prospect, enrich leads, and load outreach sequences with Apollo.io — one-click MCP server integration for Claude Code and Cowork.",
+      "description": "Prospect, enrich leads, and load outreach sequences with Apollo.io \u2014 one-click MCP server integration for Claude Code and Cowork.",
       "author": {
         "name": "Apollo.io"
       }
@@ -81,22 +81,22 @@
     {
       "name": "engineering",
       "source": "./engineering",
-      "description": "Streamline engineering workflows — standups, code review, architecture decisions, incident response, and technical documentation. Works with your existing tools or standalone."
+      "description": "Streamline engineering workflows \u2014 standups, code review, architecture decisions, incident response, and technical documentation. Works with your existing tools or standalone."
     },
     {
       "name": "human-resources",
       "source": "./human-resources",
-      "description": "Streamline people operations — recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly."
+      "description": "Streamline people operations \u2014 recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly."
     },
     {
       "name": "design",
       "source": "./design",
-      "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs."
+      "description": "Accelerate design workflows \u2014 critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs."
     },
     {
       "name": "operations",
       "source": "./operations",
-      "description": "Optimize business operations — vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently."
+      "description": "Optimize business operations \u2014 vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently."
     },
     {
       "name": "brand-voice",
@@ -200,7 +200,7 @@
     },
     {
       "name": "cockroachdb",
-      "description": "CockroachDB plugin for Claude Code — explore schemas, write optimized SQL, debug queries, and manage distributed database clusters directly from your AI coding agent.",
+      "description": "CockroachDB plugin for Claude Code \u2014 explore schemas, write optimized SQL, debug queries, and manage distributed database clusters directly from your AI coding agent.",
       "source": {
         "source": "url",
         "url": "https://github.com/cockroachdb/claude-plugin.git",
@@ -240,7 +240,7 @@
     },
     {
       "name": "nimble",
-      "description": "Nimble web data toolkit — search, extract, map, crawl the web and work with structured data agents",
+      "description": "Nimble web data toolkit \u2014 search, extract, map, crawl the web and work with structured data agents",
       "source": {
         "source": "url",
         "url": "https://github.com/Nimbleway/agent-skills.git",
@@ -260,7 +260,7 @@
     },
     {
       "name": "searchfit-seo",
-      "description": "Free AI-powered SEO toolkit — audit websites, plan content strategy, optimize pages, generate schema markup, cluster keywords, and track AI visibility. Works with any website or codebase.",
+      "description": "Free AI-powered SEO toolkit \u2014 audit websites, plan content strategy, optimize pages, generate schema markup, cluster keywords, and track AI visibility. Works with any website or codebase.",
       "source": {
         "source": "url",
         "url": "https://github.com/searchfit/searchfit-seo.git",
@@ -292,7 +292,7 @@
     },
     {
       "name": "product-tracking-skills",
-      "description": "AI agent skills that make SaaS products data-ready for product analytics — from codebase scan to tracking plan to working instrumentation code.",
+      "description": "AI agent skills that make SaaS products data-ready for product analytics \u2014 from codebase scan to tracking plan to working instrumentation code.",
       "source": {
         "source": "url",
         "url": "https://github.com/Accoil/product-tracking-skills.git",
@@ -319,6 +319,14 @@
         "url": "https://github.com/figma/mcp-server-guide.git"
       },
       "homepage": "https://github.com/figma/mcp-server-guide"
+    },
+    {
+      "name": "management-consulting",
+      "source": "./management-consulting",
+      "description": "Strategic problem solving, framework analysis, and engagement delivery for management consulting. Covers the full lifecycle from scoping and proposals through implementation and closeout.",
+      "author": {
+        "name": "Anot"
+      }
     }
   ]
 }
