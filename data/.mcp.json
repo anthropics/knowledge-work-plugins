@@ -31,6 +31,10 @@
     "definite": {
       "type": "http",
       "url": "https://api.definite.app/v3/mcp/http"
+    },
+    "mixpanel": {
+      "type": "http",
+      "url": "https://mcp.mixpanel.com/mcp"
     }
   }
 }
