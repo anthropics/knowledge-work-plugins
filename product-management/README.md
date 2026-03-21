@@ -42,7 +42,7 @@ This plugin gives you an AI-powered product management partner that can help wit
 | `user-research-synthesis` | Thematic analysis, affinity mapping, persona development, opportunity sizing |
 | `competitive-analysis` | Feature comparison matrices, positioning analysis, win/loss analysis |
 | `metrics-tracking` | Product metrics hierarchy, goal setting (OKRs), dashboard design, review cadences |
-| `product-brainstorming` | Brainstorming modes (problem exploration, solution ideation, assumption testing, strategy), PM frameworks, session structure, thinking partner behaviors |
+| `brainstorm` | Brainstorming modes (problem exploration, solution ideation, assumption testing, strategy), PM frameworks, session structure, thinking partner behaviors |
 
 ## Example Workflows
 
