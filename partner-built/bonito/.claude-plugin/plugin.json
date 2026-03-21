@@ -1,0 +1,13 @@
+{
+  "name": "bonito",
+  "version": "1.0.0",
+  "description": "Deploy and manage AI infrastructure across cloud providers. Connect AWS Bedrock, Azure OpenAI, GCP Vertex AI, OpenAI, Anthropic, and Groq through a unified gateway. Create agents, configure intelligent routing with failover and cost optimization, analyze spending, and debug issues.",
+  "author": {
+    "name": "Bonito AI",
+    "url": "https://getbonito.com"
+  },
+  "repository": "https://github.com/ShabariRepo/bonito",
+  "homepage": "https://getbonito.com",
+  "license": "MIT",
+  "keywords": ["ai-infrastructure", "multi-provider", "routing", "agents", "gateway", "aws-bedrock", "azure-openai", "gcp-vertex", "cost-optimization", "failover"]
+}
