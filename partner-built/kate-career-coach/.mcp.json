@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "granola": {
+      "type": "url",
+      "url": "https://mcp.granola.ai/mcp"
+    }
+  }
+}

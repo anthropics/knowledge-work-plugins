@@ -82,6 +82,12 @@ JobSearch/
 
 ---
 
+## Configuration
+
+Kate does not use a `settings.local.json` file. User configuration — target roles, compensation floor, geography, work model, motivation, and other search parameters — is captured interactively during the onboarding flow and written to `user/user_profile.md` inside your job search folder. To update any of these parameters after onboarding, just tell Kate directly and she will update the file.
+
+---
+
 ## Notes
 
 Kate writes certain files autonomously (coaching notes, application history, session context, fit assessments, role records). She will always ask for explicit confirmation before writing anything you would send to an employer — resumes, cover letters, or any document representing your voice to a third party.
