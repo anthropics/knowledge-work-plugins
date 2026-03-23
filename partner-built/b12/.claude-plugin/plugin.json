@@ -1,0 +1,19 @@
+{
+  "name": "b12",
+  "version": "1.0.0",
+  "description": "Create a professional, AI-generated website in seconds. Provide your business name and description — B12 handles design, copy, and hosting automatically.",
+  "author": {
+    "name": "B12",
+    "url": "https://www.b12.io/"
+  },
+  "homepage": "https://www.b12.io/",
+  "license": "Apache-2.0",
+  "keywords": [
+    "b12",
+    "website",
+    "web-builder",
+    "ai-website",
+    "design",
+    "hosting"
+  ]
+}
