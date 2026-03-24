@@ -1,4 +1,5 @@
 ---
+name: aeo-audit
 description: Run a comprehensive AEO (Answer Engine Optimization) audit — brand visibility, citation analysis, sentiment tracking, and AI search performance across ChatGPT, Gemini, Perplexity, Google AIO, Google AI Mode, and other AI engines
 argument-hint: "<brand or topic> [audit type]"
 ---
