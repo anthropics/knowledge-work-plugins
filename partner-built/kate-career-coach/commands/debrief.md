@@ -7,7 +7,7 @@ allowed-tools:
   - Glob
 ---
 
-Load the kate-coach skill and run the post-interview debrief flow as defined in `references/flows.md`.
+Run the **Post-Interview Debrief Flow** in `skills/kate-coach/references/flows.md`.
 
 Before starting, collect:
 - Company name, role, interviewer name, interview stage, and date

@@ -7,7 +7,7 @@ allowed-tools:
   - Glob
 ---
 
-Load the kate-coach skill and run the fit assessment flow as defined in `references/flows.md`.
+Run the **Fit Assessment Flow** in `skills/kate-coach/references/flows.md`.
 
 Before starting, collect:
 - The job description (pasted text or uploaded file)
