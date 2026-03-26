@@ -7,7 +7,7 @@ The PDF server runs on your machine via `npx`.
 
 | Category | Server | How it runs |
 |----------|--------|-------------|
-| PDF viewer | `@modelcontextprotocol/server-pdf` | Local stdio via `npx` (auto-installed) |
+| PDF viewer & annotator | `@modelcontextprotocol/server-pdf` | Local stdio via `npx` (auto-installed) |
 
 ### Requirements
 - Node.js >= 18

@@ -2,7 +2,7 @@
   "mcpServers": {
     "pdf": {
       "command": "npx",
-      "args": ["@modelcontextprotocol/server-pdf", "--stdio"]
+      "args": ["-y", "@modelcontextprotocol/server-pdf", "--stdio"]
     }
   }
 }
