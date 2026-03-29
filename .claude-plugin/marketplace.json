@@ -324,6 +324,15 @@
       "name": "pdf-viewer",
       "source": "./pdf-viewer",
       "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures \u2014 then download the annotated copy."
+    },
+    {
+      "name": "gmail-inbox-cleaner",
+      "source": "./partner-built/gmail-inbox-cleaner",
+      "description": "Systematic Gmail inbox overhaul \u2014 four-stage cleanup with Claude reading every email, intelligent bulk delete, sender-by-sender review, label/filter system, unsubscribe sweep, and bin safety audit. Works for any inbox.",
+      "author": {
+        "name": "Siddhant Kalra",
+        "url": "https://github.com/siddhantkalra"
+      }
     }
   ]
 }

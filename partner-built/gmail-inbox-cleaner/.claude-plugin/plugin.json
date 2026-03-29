@@ -1,0 +1,13 @@
+{
+  "name": "gmail-inbox-cleaner",
+  "version": "0.3.0",
+  "description": "Systematic Gmail inbox overhaul — audit, intelligent bulk delete, sender-by-sender review, label/filter system, unsubscribe sweep, and bin safety audit. Works for any inbox, any user.",
+  "author": {
+    "name": "Siddhant Kalra",
+    "url": "https://github.com/siddhantkalra"
+  },
+  "repository": "https://github.com/siddhantkalra/gmail-inbox-cleaner-plugin",
+  "homepage": "https://github.com/siddhantkalra/gmail-inbox-cleaner-plugin",
+  "license": "MIT",
+  "keywords": ["gmail", "inbox", "email", "cleanup", "filters", "labels", "unsubscribe"]
+}
