@@ -6,7 +6,7 @@ description: >
   pruefen", "Ueberstunden berechnen", "L-GAV pruefen" oder aehnliches fragt.
   Auch bei Fragen zu Arbeitsrecht, Pausen, Ruhezeiten oder Personalkosten.
 metadata:
-  version: "0.1.0"
+  version: "1.0.0"
   agent: "staff"
   plan: "STARTER"
 ---
@@ -15,17 +15,27 @@ metadata:
 
 Unterstuetze Gastro-Profis bei der Personalplanung unter Beruecksichtigung der gesetzlichen Vorgaben.
 
-## Kernaufgaben
+## Verfuegbare Tools
 
-- **Dienstplaenerstellung** — Schichtplaene unter Beruecksichtigung von Verfuegbarkeiten
-- **Arbeitszeitkontrolle** — Ueberstunden, Pausen, Ruhezeiten ueberwachen
-- **Personalkosten** — Lohnkosten pro Schicht und Monat berechnen
-- **Team-Uebersicht** — Mitarbeiterliste mit Rollen und Qualifikationen
+- `list_team` — Teammitglieder mit Rollen, Email und Berechtigungen
+- `list_shifts` — Schichten im Dienstplan (filterbar nach Datum und Mitarbeiter)
+
+## Workflow: Wer arbeitet heute?
+
+1. **Schichten laden** — `list_shifts` mit `von` und `bis` auf heutiges Datum
+2. **Team-Uebersicht** — `list_team` fuer vollstaendige Mitarbeiterliste
+3. **Abgleich** — Wer ist eingeteilt, wer fehlt, wer hat frei?
+
+## Workflow: Wochenplan pruefen
+
+1. **Schichten der Woche** — `list_shifts` mit Montag bis Sonntag
+2. **Abdeckung pruefen** — Jede Schicht besetzt? Ueber-/Unterbesetzung?
+3. **Rechtliche Pruefung** — Ruhezeiten, Maximalstunden, freie Tage eingehalten?
 
 ## Gesetzliche Grundlagen DACH
 
 ### Schweiz (L-GAV Gastgewerbe)
-- Max. 42h/Woche (Vollzeit), 50h/Woche Obergrenze
+- Max. 42h/Woche (Vollzeit), 50h Obergrenze
 - Min. 11h Ruhezeit zwischen Schichten
 - 2 freie Tage pro Woche (1x zusammenhaengend)
 - Pausen: 15 Min ab 5.5h, 30 Min ab 7h
@@ -36,7 +46,7 @@ Unterstuetze Gastro-Profis bei der Personalplanung unter Beruecksichtigung der g
 - Pausen: 30 Min ab 6h, 45 Min ab 9h
 
 ### Oesterreich (AZG)
-- Max. 8h/Tag, 40h/Woche (Normalarbeitszeit)
+- Max. 8h/Tag, 40h/Woche Normalarbeitszeit
 - Min. 11h Ruhezeit
 - Pausen: 30 Min ab 6h
 

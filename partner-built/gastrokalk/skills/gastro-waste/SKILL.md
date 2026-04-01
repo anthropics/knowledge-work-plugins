@@ -4,9 +4,8 @@ description: >
   Lebensmittelverschwendung und Nachhaltigkeit fuer die Gastronomie. Verwende diesen Skill
   wenn der Nutzer "Food Waste reduzieren", "Verschwendung messen", "Abfall tracken",
   "Nachhaltigkeit verbessern", "Reste verwerten", "Too Good To Go" oder aehnliches fragt.
-  Auch bei Fragen zu Abfallmanagement, Nose-to-Tail oder Zero Waste Kueche.
 metadata:
-  version: "0.1.0"
+  version: "1.0.0"
   agent: "waste"
   plan: "PROFESSIONAL"
 ---
@@ -15,22 +14,33 @@ metadata:
 
 Unterstuetze Gastro-Profis bei der Reduktion von Lebensmittelverschwendung.
 
-## Waste-Tracking
+## Verfuegbare Tools
 
-Erfasse und kategorisiere Abfall:
-- **Zubereitungsabfall** — Ruestabfall, Schalen, Knochen
-- **Ueberproduktion** — Zu viel vorbereitet
-- **Tellerruecklauf** — Vom Gast nicht gegessene Portionen
-- **MHD-Verluste** — Abgelaufene Ware aus dem Lager
-- **Lagerungs-Verluste** — Falsche Lagerung, Verderb
+- `get_mhd_kritisch` — Kritische/abgelaufene MHD-Warnungen (sofortiger Handlungsbedarf)
+- `list_bestand` — Lagerbestand mit MHD-Daten und Werten
+- `list_recipes` — Rezepte fuer kreative Resteverwertung
+- `get_recipe` — Rezept-Details: welche Zutaten werden gebraucht?
+- `get_foodcost_overview` — Food-Cost fuer Waste-Auswirkung auf Marge
 
-## Reduktionsstrategien
+## Workflow: Taeglicher Waste-Check
 
-- **Nose-to-Tail / Root-to-Leaf** — Ganzes Tier/Gemuese verwerten
-- **Batch-Cooking** — Kleinere Mengen, oefter nachproduzieren
-- **Tagessuppe** — Reste kreativ verwerten
-- **Portionsgroessen** — Regelmaessig Tellerruecklauf analysieren
-- **Too Good To Go** — Ueberschuesse verguerednstigt abgeben
+1. **MHD pruefen** — `get_mhd_kritisch` fuer sofort zu verarbeitende Ware
+2. **Bestand laden** — `list_bestand` fuer Ueberbestaende identifizieren
+3. **Verwertung planen:**
+   - Kurzes MHD → Als Tagesgericht/Suppe verwerten
+   - Ueberbestand → Portionsgroessen anpassen oder einfrieren
+   - Abgelaufen → Entsorgen und dokumentieren (HACCP)
+4. **Rezept suchen** — `list_recipes` fuer Gerichte mit den betroffenen Zutaten
+
+## Waste-Kategorien
+
+| Kategorie | Ursache | Massnahme |
+|-----------|---------|-----------|
+| Zubereitungsabfall | Ruestabfall, Schalen | Nose-to-Tail, Bruehe kochen |
+| Ueberproduktion | Zu viel vorbereitet | Kleinere Batches, oefter nachproduzieren |
+| Tellerruecklauf | Zu grosse Portionen | Portionsgroessen reduzieren |
+| MHD-Verluste | Falsche Lagerung/FIFO | `get_mhd_kritisch` taeglich |
+| Lagerungs-Verluste | Temperatur, Feuchtigkeit | Lagerkontrollen |
 
 ## Zielwerte
 
@@ -42,4 +52,5 @@ Erfasse und kategorisiere Abfall:
 
 ## Finanzieller Impact
 
-Jedes Prozent weniger Food Waste = ca. 1% mehr Gewinn. Bei CHF 500k Wareneinsatz: 1% = CHF 5.000/Jahr.
+Jedes Prozent weniger Food Waste = ca. 1% mehr Gewinn.
+Bei CHF 500k Wareneinsatz: 1% = CHF 5.000/Jahr Ersparnis.

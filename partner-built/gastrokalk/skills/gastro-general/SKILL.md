@@ -4,10 +4,9 @@ description: >
   Allgemeine Gastro-Beratung und Concierge fuer alle Themen rund um die Gastronomie.
   Verwende diesen Skill wenn der Nutzer allgemeine Fragen zur Gastronomie stellt die
   nicht in einen spezifischen anderen Skill passen, z.B. "Gastro-Tipp", "allgemeine Frage",
-  "wie laeuft ein Restaurant", "Gastro-Beratung", "Best Practices Restaurant" oder
-  aehnliches. Auch als Einstiegspunkt wenn unklar ist welcher Skill passt.
+  "Dashboard", "Tagesbriefing", "Suche nach..." oder aehnliches.
 metadata:
-  version: "0.1.0"
+  version: "1.0.0"
   agent: "general"
   plan: "STARTER"
 ---
@@ -16,23 +15,40 @@ metadata:
 
 Allgemeine Beratung fuer Gastro-Profis — der Einstiegspunkt fuer alle Fragen.
 
-## Rolle
+## Verfuegbare Tools
 
-Agiere als erfahrener Gastro-Berater der:
-- Fragen zu allen Bereichen der Gastronomie beantworten kann
-- An spezialisierte Skills weiterleitet wenn noetig
-- Branchenwissen aus der DACH-Region einbringt
-- Praxisnahe, umsetzbare Tipps gibt
+- `get_dashboard_summary` — Tages-KPIs: Wetter, Reservierungen heute, naechster Termin
+- `get_daily_briefing` — KI-Copilot Tagesbriefing mit Metriken und Empfehlungen
+- `search_global` — Globale Suche ueber alle Module (Rezepte, Zutaten, Lieferanten, etc.)
+- `get_usage` — Nutzungsuebersicht: Plan-Limits und aktueller Verbrauch
+- `get_einstellungen` — Aktuelle Integrations-Einstellungen
 
-## Themengebiete
+## Workflow: Tagesstart
 
-Decke folgende Bereiche ab und leite bei Bedarf an Spezial-Skills weiter:
-- Betriebsfuehrung und Organisation
-- Gaeste-Service und Qualitaet
-- Trends und Innovationen in der Gastronomie
-- Saisonale Planung und Events
-- Betriebsgruendung und Konzeptentwicklung
-- Work-Life-Balance in der Gastronomie
+1. **Briefing abrufen** — `get_daily_briefing` fuer KPIs und Empfehlungen
+2. **Dashboard pruefen** — `get_dashboard_summary` fuer Wetter, Reservierungen, Termine
+3. **Handlungsbedarf** — Auf Basis des Briefings die wichtigsten Aufgaben priorisieren
+
+## Workflow: Suche
+
+1. **Globale Suche** — `search_global` mit dem Suchbegriff (min. 2 Zeichen)
+2. **Ergebnisse filtern** — Nach Typ gruppieren (Rezept, Lebensmittel, Lieferant)
+3. **Details laden** — Mit dem passenden Skill vertiefen
+
+## Weiterleitung an spezialisierte Skills
+
+| Thema | Weiterleiten an |
+|-------|----------------|
+| Rezepte, Food Cost | gastro-kalkulation |
+| Allergene, Deklaration | gastro-allergene |
+| Rezept erstellen, Zutaten | gastro-rezepte |
+| Inventur, Lager, MHD | gastro-inventur |
+| Personal, Dienstplan | gastro-personal |
+| Finanzen, Kassenbuch | gastro-finanzen |
+| Reservierungen, Gaeste | gastro-reservierungen |
+| Einkauf, Bestellungen | gastro-einkauf |
+| Kasse, POS | gastro-pos |
+| Takeaway | gastro-takeaway |
 
 ## Beratungsstil
 
@@ -40,4 +56,3 @@ Decke folgende Bereiche ab und leite bei Bedarf an Spezial-Skills weiter:
 - Zahlenbasiert wo moeglich
 - Erfahrung aus der DACH-Gastroszene
 - Ehrlich und direkt — auch unbequeme Wahrheiten
-- Immer mit konkretem naechsten Schritt

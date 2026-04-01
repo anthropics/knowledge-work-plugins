@@ -6,7 +6,7 @@ description: >
   "Bestand aktualisieren", "Lagerwert berechnen" oder aehnliches fragt.
   Auch bei Fragen zu Mindesthaltbarkeit, Lagerorganisation oder Bestandsoptimierung.
 metadata:
-  version: "0.1.0"
+  version: "1.0.0"
   agent: "inventory"
   plan: "STARTER"
 ---
@@ -15,25 +15,42 @@ metadata:
 
 Unterstuetze Gastro-Profis bei der effizienten Lagerverwaltung nach FIFO-Prinzip.
 
-## Kernaufgaben
+## Verfuegbare Tools
 
-- **Bestandsuebersicht** — Aktuelle Lagerbestaende mit Mengen und Werten abrufen
-- **MHD-Kontrolle** — Ablaufende Produkte identifizieren und priorisieren
-- **FIFO-Management** — First-In-First-Out Prinzip ueberwachen
-- **Inventur durchfuehren** — Systematische Bestandsaufnahme mit Soll/Ist-Vergleich
-- **Nachbestellungen** — Mindestbestaende pruefen und Bestellvorschlaege erstellen
+- `list_bestand` — Aktueller Lagerbestand mit Mengen, Werten, Lagerort und MHD
+- `get_mhd_kritisch` — Kritische und abgelaufene MHD-Warnungen (ABGELAUFEN/KRITISCH/Warnung)
+- `list_inventories` — Alle Inventuren auflisten (Status, Datum, Positionenanzahl)
+- `get_inventory_detail` — Inventur-Details mit Soll/Ist-Abweichungen und Gesamtwert
 
-## MHD-Warnungen
+## Workflow: MHD-Check (taeglich empfohlen)
 
-Priorisiere nach Dringlichkeit:
-- Rot: Abgelaufen oder heute ablaufend
-- Orange: Innerhalb der naechsten 3 Tage
-- Gelb: Innerhalb der naechsten 7 Tage
+1. **Kritische Artikel pruefen** — `get_mhd_kritisch`
+2. **Massnahmen nach Status:**
+   - ABGELAUFEN → Sofort entsorgen, dokumentieren (HACCP-Pflicht)
+   - KRITISCH (< 3 Tage) → Heute verarbeiten, als Tagesempfehlung einsetzen
+   - Warnung (< 7 Tage) → In Menuplanung der naechsten Tage einbeziehen
+3. **Gesamtbestand pruefen** — `list_bestand` fuer Lageruebersicht
 
-## FIFO-Prinzip
+## Workflow: Inventur durchfuehren
 
-Stelle sicher dass aeltere Ware zuerst verbraucht wird. Bei Verstoessen gegen FIFO weise den Nutzer darauf hin und schlage Massnahmen vor.
+1. **Letzte Inventuren** — `list_inventories` um Historie und Status zu sehen
+2. **Details vergleichen** — `get_inventory_detail` fuer Soll/Ist je Position
+3. **Abweichungen bewerten:**
+   - \> 10% → Schwund pruefen (Diebstahl, Fehlbuchungen, Verderb)
+   - 5-10% → Portionskontrolle verschaerfen
+   - < 5% → Im gruenen Bereich
 
-## Lagerwert-Berechnung
+## Workflow: Bestand pruefen
 
-Berechne den aktuellen Lagerwert basierend auf Einkaufspreisen. Zeige Veraenderungen gegenueber der letzten Inventur.
+1. **Bestand abrufen** — `list_bestand` mit optionalem Suchbegriff oder Lagerort-Filter
+2. **Lagerwert berechnen** — Aus den Werten (Menge × Preis) in der Antwort
+3. **Nachbestellbedarf** — Niedrige Bestaende identifizieren → weiterleiten an gastro-einkauf
+
+## Richtwerte
+
+| Kennzahl | Zielwert |
+|----------|----------|
+| Umschlagshaeufigkeit | 12-24x/Jahr (Frischware hoeher) |
+| Schwundquote | < 2% des Wareneinsatzes |
+| MHD-Verluste | < 1% des Lagerwerts |
+| Inventurdifferenz | < 5% Abweichung |

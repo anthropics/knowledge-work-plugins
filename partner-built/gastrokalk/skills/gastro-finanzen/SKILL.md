@@ -6,7 +6,7 @@ description: >
   "Kosten analysieren", "Budget planen", "Gewinn berechnen" oder aehnliches fragt.
   Auch bei Fragen zu Mehrwertsteuer, Buchhaltung oder Finanzplanung.
 metadata:
-  version: "0.1.0"
+  version: "1.0.0"
   agent: "finance"
   plan: "STARTER"
 ---
@@ -15,13 +15,27 @@ metadata:
 
 Unterstuetze Gastro-Profis bei der Finanzverwaltung und Buchhaltung.
 
-## Kernaufgaben
+## Verfuegbare Tools
 
-- **Kassenbuch** — Tageseinnahmen und -ausgaben erfassen
-- **Tagesabschluss** — Soll/Ist-Vergleich, Differenzen identifizieren
-- **MwSt-Berechnung** — Korrekte Steuersaetze anwenden
-- **Umsatzanalyse** — Tages-, Wochen-, Monatsumsaetze auswerten
-- **Kostenstruktur** — Fixkosten, variable Kosten, Break-Even
+- `list_kassenbuch` — Kassenbuch-Eintraege mit Einnahmen, Ausgaben und Saldo (filterbar nach Zeitraum)
+- `get_dashboard_summary` — Tages-KPIs und aktuelle Reservierungen
+- `get_foodcost_overview` — Food-Cost Analyse: Durchschnitt, Top Profitable, Kategorien
+- `get_profitabilitaet` — Profitabilitaets-Analyse: Gewinn nach Rezept und Kategorie
+- `list_pos_orders` — POS-Bestellungen mit Umsatz und Zahlungsart
+
+## Workflow: Tagesabschluss
+
+1. **POS-Bestellungen pruefen** — `list_pos_orders` mit Datum heute
+2. **Kassenbuch abrufen** — `list_kassenbuch` fuer heutige Ein-/Ausgaben
+3. **Soll/Ist vergleichen** — POS-Umsatz vs. Kassenbuch-Einnahmen
+4. **Differenzen dokumentieren** — Toleranz: +/- CHF 5.00
+
+## Workflow: Monatsauswertung
+
+1. **Kassenbuch laden** — `list_kassenbuch` mit `von`/`bis` auf Monatszeitraum
+2. **Food-Cost pruefen** — `get_foodcost_overview` fuer Durchschnitt und Problemrezepte
+3. **Profitabilitaet** — `get_profitabilitaet` fuer Gewinn pro Gericht und Kategorie
+4. **Kennzahlen berechnen** — Prime Cost, Betriebsergebnis, RevPASH
 
 ## MwSt-Saetze DACH
 
@@ -33,8 +47,9 @@ Unterstuetze Gastro-Profis bei der Finanzverwaltung und Buchhaltung.
 
 ## Kennzahlen
 
-- **Food Cost:** 25-35% vom Umsatz
-- **Personalkosten:** 30-35% vom Umsatz
-- **Prime Cost (Food + Personal):** max. 65%
-- **Betriebsergebnis:** min. 10-15%
-- **RevPASH:** Umsatz pro verfuegbarem Sitzplatz pro Stunde
+| Kennzahl | Zielwert |
+|----------|----------|
+| Food Cost | 25-35% vom Umsatz |
+| Personalkosten | 30-35% vom Umsatz |
+| Prime Cost (Food + Personal) | max. 65% |
+| Betriebsergebnis | min. 10-15% |

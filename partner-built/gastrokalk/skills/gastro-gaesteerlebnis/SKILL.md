@@ -6,7 +6,7 @@ description: >
   "Gaestewuensche notieren", "Allergien eines Gastes", "Bewertungen analysieren" oder
   aehnliches fragt. Auch bei Fragen zu Gaestebindung, Beschwerdemanagement oder Upselling.
 metadata:
-  version: "0.1.0"
+  version: "1.0.0"
   agent: "gaesteerlebnis"
   plan: "STARTER"
 ---
@@ -15,22 +15,27 @@ metadata:
 
 Unterstuetze Gastro-Profis bei der Pflege von Gaesteprofilen und Gaestebindung.
 
-## Kernaufgaben
+## Verfuegbare Tools
 
-- **Gasteprofile** — Vorlieben, Allergien, Geburtstage, besondere Anlaesse
-- **VIP-Management** — Stammgaeste erkennen und besonders betreuen
-- **Feedback** — Bewertungen sammeln, auswerten, reagieren
-- **Beschwerdemanagement** — Strukturierte Bearbeitung von Reklamationen
+- `list_gaeste` — Gaeste-Datenbank durchsuchen (Name, Besuchsanzahl, Kontakt)
+- `list_reservations` — Reservierungen mit Gastinformationen
+- `get_reservation` — Reservierung-Details: Bemerkungen, Allergien, Vorlieben
+- `create_reservation` — Neue Reservierung fuer Stammgast anlegen
+- `send_email` — Persoenliche E-Mail an Gast senden (Danke, Einladung, Angebot)
+- `list_emails` — Bisherige E-Mail-Kommunikation pruefen
 
-## Gastprofil-Daten
+## Workflow: Stammgast erkennen
 
-Erfasse und pflege:
-- Name, Kontaktdaten
-- Allergien und Unvertraeglichkeiten
-- Lieblingsgerichte und -getraenke
-- Sitzplatzpraeferenzen
-- Besuchshistorie
-- Besondere Anlaesse (Geburtstag, Jubilaeum)
+1. **Gast suchen** — `list_gaeste` mit Name oder Telefonnummer
+2. **Besuchshistorie** — Anzahl Besuche, letzte Besuche
+3. **Reservierungen** — `list_reservations` fuer bisherige Buchungen und Bemerkungen
+4. **Service personalisieren** — Allergien, Vorlieben, Sitzplatzpraeferenzen beruecksichtigen
+
+## Workflow: VIP-Betreuung
+
+1. **Gast identifizieren** — `list_gaeste` — wer hat die meisten Besuche?
+2. **Profil laden** — Vorlieben, Allergien, besondere Anlaesse
+3. **Persoenliche Nachricht** — `send_email` fuer Geburtstag, Jubilaeum, Einladung
 
 ## Upselling-Strategien
 
@@ -38,3 +43,11 @@ Erfasse und pflege:
 - Weinbegleitung zum gewaehlten Menue
 - Aperitif bei Ankunft vorschlagen
 - Dessert-Empfehlung nach Hauptgang
+
+## Beschwerdemanagement
+
+1. Zuhoeren und Ernst nehmen
+2. Entschuldigen (auch wenn nicht schuld)
+3. Sofort-Loesung anbieten (Rabatt, Ersatzgericht, Gratis-Dessert)
+4. Nachfassen per E-Mail — `send_email`
+5. Intern dokumentieren und Ursache beseitigen
