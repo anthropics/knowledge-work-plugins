@@ -16,13 +16,44 @@ After installing the plugin, set two environment variables:
 | `GASTROKALK_API_URL` | Your GastroKalk API URL (e.g. `https://www.gastrokalk.com/api`) |
 | `GASTROKALK_API_KEY` | Your personal API key (find it under Settings in your GastroKalk account) |
 
-## Skills
+## Skills (22 total)
 
-| Skill | Trigger examples |
-|-------|-----------------|
-| **gastro-kalkulation** | "Calculate recipe", "Food cost analysis", "Cost per portion" |
-| **gastro-rezepte** | "Create recipe", "Search ingredient", "What can I cook with..." |
-| **gastro-allergene** | "Check allergens", "Is this gluten-free?", "Allergen declaration" |
+### STARTER plan
+
+| Skill | Domain |
+|-------|--------|
+| **gastro-general** | General assistant, concierge |
+| **gastro-kalkulation** | Recipe costing, food cost analysis |
+| **gastro-rezepte** | Recipe generation, ingredient search |
+| **gastro-allergene** | Allergen detection, EU declaration |
+| **gastro-inventur** | Inventory management, MHD/FIFO |
+| **gastro-personal** | Staff management, scheduling |
+| **gastro-finanzen** | Finance, bookkeeping, VAT |
+| **gastro-reservierungen** | Reservations, RevPASH |
+| **gastro-analyse** | Menu engineering, analytics |
+| **gastro-preisoptimierung** | Pricing optimization, margins |
+| **gastro-compliance** | HACCP, food safety, allergens |
+| **gastro-onboarding** | Setup guide, quick wins |
+| **gastro-takeaway** | Takeaway orders, delivery |
+| **gastro-pos** | POS, payments, daily close |
+| **gastro-einkauf** | Purchasing, price comparison |
+| **gastro-gaesteerlebnis** | Guest profiles, VIP, feedback |
+| **gastro-schichtplanung** | Shift optimization, conflicts |
+| **gastro-email** | Communication, templates |
+
+### PROFESSIONAL plan
+
+| Skill | Domain |
+|-------|--------|
+| **gastro-forecast** | Demand forecasting, holidays |
+| **gastro-waste** | Food waste reduction, MHD |
+| **gastro-marketing** | Social media, newsletter, CRM |
+
+### ENTERPRISE plan
+
+| Skill | Domain |
+|-------|--------|
+| **gastro-multi-standort** | Multi-location, central purchasing |
 
 ## MCP Server Tools
 
