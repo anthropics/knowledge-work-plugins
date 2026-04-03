@@ -55,6 +55,11 @@
       "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape."
     },
     {
+      "name": "bio-research",
+      "source": "./bio-research",
+      "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
+    },
+    {
       "name": "slack-by-salesforce",
       "source": "./partner-built/slack",
       "description": "Slack integration for searching messages, sending communications, managing canvases, and more",
