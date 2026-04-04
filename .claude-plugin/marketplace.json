@@ -134,7 +134,7 @@
       "homepage": "https://www.adspirer.com"
     },
     {
-      "name": "sanity-plugin",
+      "name": "sanity",
       "description": "Sanity content platform integration with MCP server, agent skills, and slash commands. Query and author content, build and optimize GROQ queries, design schemas, and set up Visual Editing.",
       "category": "development",
       "author": {
