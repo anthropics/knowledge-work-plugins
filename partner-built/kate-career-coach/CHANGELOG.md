@@ -2,38 +2,6 @@
 
 ---
 
-## v0.4.0 — 2026-03-25
-
-### Skill-based invocation architecture
-
-**New individual skills**
-Five new skills added — `fit-assessment`, `interview-prep`, `debrief`, `run-monitoring`, and `setup-monitoring`. Each has proper trigger phrases and loads only its relevant flow section from `flows.md` on demand. These are now the primary invocation path; slash commands remain as stubs for users who prefer that style.
-
-**kate-coach SKILL.md trimmed**
-Removed the upfront `flows.md` load from session init (~385 lines no longer pulled on every session start). Monitoring Watchlist Structure detail moved into the monitoring skills where it belongs. Detailed Flows section updated to describe the new lazy-load architecture.
-
-**flows.md corrected**
-Intelligence Diagnostic and Vision Narrative are now correctly placed in the Pre-Interview Prep flow (steps 2A and 4B). Removed from the Onboarding flow where they had no business being.
-
-**Commands stripped to stubs**
-The nested "Load the kate-coach skill" instruction removed from all five command files. They still exist as slash command invocation paths but no longer cause a double-load.
-
-**README updated**
-Skill-based invocation documented; slash command references removed.
-
-### What changed
-- `skills/fit-assessment/SKILL.md` — new
-- `skills/interview-prep/SKILL.md` — new
-- `skills/debrief/SKILL.md` — new
-- `skills/run-monitoring/SKILL.md` — new
-- `skills/setup-monitoring/SKILL.md` — new
-- `skills/kate-coach/SKILL.md` — trimmed session init, removed watchlist structure, updated flow references
-- `skills/kate-coach/references/flows.md` — moved Intelligence Diagnostic and Vision Narrative to correct flow
-- All five command files — stripped to stubs
-- `README.md` — updated invocation section
-
----
-
 ## v0.3.1 — 2026-03-15
 
 ### Internal improvements

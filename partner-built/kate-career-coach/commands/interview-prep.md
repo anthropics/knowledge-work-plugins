@@ -8,7 +8,7 @@ allowed-tools:
   - WebSearch
 ---
 
-Run the **Pre-Interview Prep Flow** in `skills/kate-coach/references/flows.md`.
+Load the kate-coach skill and run the pre-interview prep flow as defined in `references/flows.md`.
 
 Before starting, collect:
 - Company name and role

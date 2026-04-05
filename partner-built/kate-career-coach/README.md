@@ -34,15 +34,13 @@ Point Claude Cowork at your new folder.
 
 Say anything like "start a Kate session" or "I want to work on my job search." Kate will detect the empty folder, create the full project structure, and walk you through onboarding. No manual file setup needed.
 
-### 4. Trigger specific workflows
+### 4. Use commands for specific workflows
 
-Kate's workflows are available as skills — just describe what you want and Kate loads the right flow automatically. Example phrases:
-
-- "Evaluate this job description" or "run a fit assessment" — launches the Fit Assessment flow
-- "Prep me for my interview at [Company]" — launches the Interview Prep flow
-- "Let's debrief my interview" — launches the Post-Interview Debrief flow
-- "Set up monitoring" — configures weekly background monitoring of target companies, open roles, and industry news
-- "Run monitoring now" — runs a monitoring cycle immediately
+- `/fit-assessment` — evaluate a job description
+- `/interview-prep` — generate an interview prep brief
+- `/debrief` — run a post-interview debrief
+- `/setup-monitoring` — configure weekly background monitoring of target companies, open roles, and industry news
+- `/run-monitoring` — run a monitoring cycle immediately and review results now
 
 ---
 
@@ -64,7 +62,7 @@ JobSearch/
 │   ├── application_history.md   — master log of all roles evaluated/pursued
 │   └── session_context.md       — handoff note updated at end of each session
 ├── roles_evaluated/              — records for roles you decided not to pursue
-├── monitoring/                   — created when you first set up monitoring
+├── monitoring/                   — created by /setup-monitoring
 │   ├── watchlist.md             — companies, people, and topics being tracked
 │   ├── digest.md                — latest monitoring results (refreshed weekly)
 │   ├── scheduled_task_prompt.md — prompt file used by the weekly background task
@@ -81,6 +79,12 @@ JobSearch/
 │       └── Call Transcript - [Name] - [Company] - [YYYYMMDD].md
 └── start_here.md                — optional: any notes for initializing Kate
 ```
+
+---
+
+## Configuration
+
+Kate does not use a `settings.local.json` file. User configuration — target roles, compensation floor, geography, work model, motivation, and other search parameters — is captured interactively during the onboarding flow and written to `user/user_profile.md` inside your job search folder. To update any of these parameters after onboarding, just tell Kate directly and she will update the file.
 
 ---
 
