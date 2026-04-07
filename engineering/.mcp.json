@@ -22,7 +22,7 @@
     },
     "github": {
       "type": "http",
-      "url": "https://api.github.com/mcp"
+      "url": "https://api.githubcopilot.com/mcp/"
     },
     "pagerduty": {
       "type": "http",
