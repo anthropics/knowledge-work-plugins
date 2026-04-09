@@ -326,6 +326,16 @@
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
     {
+      "name": "zoom-plugin",
+      "description": "Claude plugin for planning, building, and debugging Zoom integrations across REST APIs, SDKs, webhooks, bots, and MCP workflows.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/zoom/zoom-plugin.git"
+      },
+      "homepage": "https://developers.zoom.us/"
+    },
+    {
       "name": "pdf-viewer",
       "source": "./pdf-viewer",
       "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures \u2014 then download the annotated copy."
