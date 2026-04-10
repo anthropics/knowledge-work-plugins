@@ -1,0 +1,462 @@
+# Analytics Platforms Template
+# 
+# For products that provide analytics (meta: analytics about analytics):
+# Amplitude, Mixpanel, Heap, PostHog, Accoil, etc.
+#
+# Usage: /design analytics-platforms
+
+meta:
+  template: analytics-platforms
+  template_version: "1.0.0"
+  description: "Analytics, BI, and data visualization products"
+  extends: b2b-saas-core
+
+entity_extensions:
+  account:
+    additional_traits:
+      - name: data_sources_connected
+        type: integer
+      - name: monthly_events
+        type: integer
+        description: "Monthly event volume"
+      - name: dashboards_count
+        type: integer
+      - name: users_tracked
+        type: integer
+
+events:
+  # ===== DATA SOURCES =====
+
+  - name: data_source.connected
+    category: core_value
+    description: "User connects a data source"
+    properties:
+      - name: source_id
+        type: string
+        required: true
+      - name: source_type
+        type: string
+        enum: [sdk, segment, warehouse, api, import]
+        required: true
+      - name: source_name
+        type: string
+        required: false
+        description: "e.g., postgres, snowflake, bigquery"
+      - name: is_first_source
+        type: boolean
+        required: false
+    expected_frequency: low
+
+  - name: data_source.disconnected
+    category: configuration
+    description: "User disconnects a data source"
+    properties:
+      - name: source_id
+        type: string
+        required: true
+      - name: source_type
+        type: string
+        required: true
+    expected_frequency: low
+
+  - name: data_source.synced
+    category: core_value
+    description: "Data source sync completes"
+    properties:
+      - name: source_id
+        type: string
+        required: true
+      - name: sync_type
+        type: string
+        enum: [full, incremental]
+        required: true
+      - name: records_synced
+        type: integer
+        required: true
+      - name: duration_seconds
+        type: integer
+        required: true
+    expected_frequency: high
+
+  - name: data_source.error
+    category: core_value
+    description: "Data source sync fails"
+    properties:
+      - name: source_id
+        type: string
+        required: true
+      - name: error_type
+        type: string
+        required: true
+    expected_frequency: low
+
+  # ===== QUERIES =====
+
+  - name: query.executed
+    category: core_value
+    description: "User runs an analytics query"
+    properties:
+      - name: query_type
+        type: string
+        enum: [funnel, retention, segmentation, pathflow, custom]
+        required: true
+      - name: duration_ms
+        type: integer
+        required: true
+      - name: data_range_days
+        type: integer
+        required: false
+      - name: events_scanned
+        type: integer
+        required: false
+      - name: cached
+        type: boolean
+        required: false
+    expected_frequency: high
+
+  - name: query.saved
+    category: core_value
+    description: "User saves a query"
+    properties:
+      - name: query_id
+        type: string
+        required: true
+      - name: query_type
+        type: string
+        required: true
+    expected_frequency: medium
+
+  - name: query.shared
+    category: collaboration
+    description: "User shares a query"
+    properties:
+      - name: query_id
+        type: string
+        required: true
+      - name: share_type
+        type: string
+        enum: [link, embed, user]
+        required: true
+    expected_frequency: low
+
+  # ===== DASHBOARDS =====
+
+  - name: dashboard.created
+    category: core_value
+    description: "User creates a dashboard"
+    properties:
+      - name: dashboard_id
+        type: string
+        required: true
+      - name: creation_method
+        type: string
+        enum: [blank, template, duplicate]
+        required: true
+    expected_frequency: low
+
+  - name: dashboard.viewed
+    category: core_value
+    description: "User views a dashboard"
+    properties:
+      - name: dashboard_id
+        type: string
+        required: true
+      - name: charts_count
+        type: integer
+        required: false
+      - name: viewing_duration_seconds
+        type: integer
+        required: false
+    expected_frequency: high
+
+  - name: dashboard.edited
+    category: core_value
+    description: "User edits a dashboard"
+    properties:
+      - name: dashboard_id
+        type: string
+        required: true
+      - name: edit_type
+        type: string
+        enum: [add_chart, remove_chart, rearrange, settings]
+        required: true
+    expected_frequency: medium
+
+  - name: dashboard.shared
+    category: collaboration
+    description: "User shares a dashboard"
+    properties:
+      - name: dashboard_id
+        type: string
+        required: true
+      - name: share_type
+        type: string
+        enum: [link, embed, email, slack]
+        required: true
+      - name: recipient_count
+        type: integer
+        required: false
+    expected_frequency: low
+
+  - name: dashboard.scheduled
+    category: configuration
+    description: "User schedules dashboard delivery"
+    properties:
+      - name: dashboard_id
+        type: string
+        required: true
+      - name: frequency
+        type: string
+        enum: [daily, weekly, monthly]
+        required: true
+      - name: delivery_channel
+        type: string
+        enum: [email, slack]
+        required: true
+    expected_frequency: low
+
+  # ===== CHARTS / VISUALIZATIONS =====
+
+  - name: chart.created
+    category: core_value
+    description: "User creates a chart"
+    properties:
+      - name: chart_id
+        type: string
+        required: true
+      - name: chart_type
+        type: string
+        enum: [line, bar, pie, table, funnel, retention, cohort, sankey, map]
+        required: true
+      - name: metrics_count
+        type: integer
+        required: false
+      - name: dimensions_count
+        type: integer
+        required: false
+    expected_frequency: medium
+
+  - name: chart.interacted
+    category: core_value
+    description: "User interacts with a chart"
+    properties:
+      - name: chart_id
+        type: string
+        required: true
+      - name: interaction_type
+        type: string
+        enum: [filter, drill_down, zoom, export, hover]
+        required: true
+    expected_frequency: high
+
+  # ===== REPORTS =====
+
+  - name: report.generated
+    category: core_value
+    description: "User generates a report"
+    properties:
+      - name: report_id
+        type: string
+        required: true
+      - name: report_type
+        type: string
+        enum: [custom, template, automated]
+        required: true
+      - name: charts_included
+        type: integer
+        required: false
+    expected_frequency: low
+
+  - name: report.exported
+    category: core_value
+    description: "User exports a report"
+    properties:
+      - name: report_id
+        type: string
+        required: true
+      - name: export_format
+        type: string
+        enum: [pdf, csv, xlsx, png, pptx]
+        required: true
+    expected_frequency: low
+
+  # ===== ALERTS =====
+
+  - name: alert.created
+    category: configuration
+    description: "User creates a metric alert"
+    properties:
+      - name: alert_id
+        type: string
+        required: true
+      - name: metric_type
+        type: string
+        required: true
+      - name: condition_type
+        type: string
+        enum: [threshold, change, anomaly]
+        required: true
+      - name: notification_channel
+        type: string
+        enum: [email, slack, webhook]
+        required: true
+    expected_frequency: low
+
+  - name: alert.triggered
+    category: core_value
+    description: "Alert condition is met"
+    properties:
+      - name: alert_id
+        type: string
+        required: true
+      - name: metric_value
+        type: number
+        required: true
+      - name: threshold_value
+        type: number
+        required: false
+    expected_frequency: medium
+
+  - name: alert.acknowledged
+    category: core_value
+    description: "User acknowledges an alert"
+    properties:
+      - name: alert_id
+        type: string
+        required: true
+      - name: time_to_ack_minutes
+        type: integer
+        required: true
+    expected_frequency: low
+
+  # ===== SEGMENTS & COHORTS =====
+
+  - name: segment.created
+    category: core_value
+    description: "User creates a user segment"
+    properties:
+      - name: segment_id
+        type: string
+        required: true
+      - name: criteria_count
+        type: integer
+        required: true
+      - name: estimated_users
+        type: integer
+        required: false
+    expected_frequency: low
+
+  - name: cohort.created
+    category: core_value
+    description: "User creates a cohort"
+    properties:
+      - name: cohort_id
+        type: string
+        required: true
+      - name: cohort_type
+        type: string
+        enum: [behavioral, computed, imported]
+        required: true
+    expected_frequency: low
+
+  - name: cohort.synced
+    category: core_value
+    description: "Cohort is synced to destination"
+    properties:
+      - name: cohort_id
+        type: string
+        required: true
+      - name: destination
+        type: string
+        required: true
+        description: "e.g., facebook, google, salesforce"
+      - name: users_synced
+        type: integer
+        required: true
+    expected_frequency: low
+
+  # ===== SCHEMA & GOVERNANCE =====
+
+  - name: event_schema.defined
+    category: configuration
+    description: "User defines event schema"
+    properties:
+      - name: event_name
+        type: string
+        required: true
+      - name: properties_count
+        type: integer
+        required: true
+    expected_frequency: low
+
+  - name: property.classified
+    category: configuration
+    description: "User classifies a property (PII, sensitive)"
+    properties:
+      - name: property_name
+        type: string
+        required: true
+      - name: classification
+        type: string
+        enum: [pii, sensitive, internal, public]
+        required: true
+    expected_frequency: low
+
+  - name: data.archived
+    category: configuration
+    description: "User archives old data"
+    properties:
+      - name: data_range_days
+        type: integer
+        required: true
+      - name: events_archived
+        type: integer
+        required: true
+    expected_frequency: low
+
+  # ===== INSIGHTS / AI =====
+
+  - name: insight.generated
+    category: core_value
+    description: "AI/ML generates an insight"
+    properties:
+      - name: insight_type
+        type: string
+        enum: [anomaly, correlation, recommendation, prediction]
+        required: true
+      - name: confidence_score
+        type: number
+        required: false
+    expected_frequency: medium
+
+  - name: insight.viewed
+    category: core_value
+    description: "User views an AI insight"
+    properties:
+      - name: insight_id
+        type: string
+        required: true
+      - name: insight_type
+        type: string
+        required: true
+    expected_frequency: medium
+
+  - name: insight.actioned
+    category: core_value
+    description: "User takes action on an insight"
+    properties:
+      - name: insight_id
+        type: string
+        required: true
+      - name: action_type
+        type: string
+        enum: [create_segment, create_alert, share, dismiss]
+        required: true
+    expected_frequency: low
+
+implementation_notes:
+  - "Query duration_ms is critical for performance monitoring"
+  - "Track cached vs non-cached to optimize query performance"
+  - "data_range_days helps understand query patterns"
+  - "charts_count and dashboards_count are activation indicators"
+  - "This template is meta — you're tracking analytics about analytics"

@@ -1,0 +1,38 @@
+{
+  "name": "nimble",
+  "version": "0.17.0",
+  "description": "Real-time web search and data extraction for AI agents \u2013 powered by Nimble. Search, extract, map, and crawl any site on the web with built-in stealth, JS rendering, and retries. Get clean, structured web data from any public webpage with pre-built Web Search Agents, or build your own reusable extraction templates. The definitive web data toolkit for AI-native development.",
+  "author": {
+    "name": "Nimble",
+    "email": "support@nimbleway.com",
+    "url": "https://www.nimbleway.com"
+  },
+  "homepage": "https://www.nimbleway.com",
+  "repository": "https://github.com/Nimbleway/agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "nimble",
+    "web-extraction",
+    "web-search",
+    "web-crawl",
+    "web-map",
+    "scraping",
+    "agents",
+    "mcp",
+    "cli",
+    "data-extraction",
+    "structured-data",
+    "competitor-intelligence",
+    "meeting-prep",
+    "company-research",
+    "business-intelligence"
+  ],
+  "skills": [
+    "./skills/web-search-tools/",
+    "./skills/productivity/",
+    "./skills/business-research/",
+    "./skills/marketing/",
+    "./skills/healthcare/"
+  ],
+  "agents": ["./agents/nimble-researcher.md", "./agents/nimble-analyst.md"]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "product-tracking-skills",
+  "owner": {
+    "name": "Accoil",
+    "email": "hello@accoil.com"
+  },
+  "metadata": {
+    "description": "Open-source AI agent skills that make SaaS products data-ready for product analytics. Scan your codebase, design a tracking plan, generate instrumentation code.",
+    "version": "1.1.0"
+  },
+  "plugins": [
+    {
+      "name": "product-tracking-skills",
+      "source": "./",
+      "description": "Full product tracking lifecycle — model, audit, design, instrument, implement, and maintain tracking for B2B SaaS products.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Accoil",
+        "email": "hello@accoil.com"
+      },
+      "homepage": "https://accoil.com/product-tracking",
+      "repository": "https://github.com/accoil/product-tracking-skills",
+      "license": "MIT",
+      "keywords": [
+        "product-analytics",
+        "product-tracking",
+        "tracking-plan",
+        "event-tracking",
+        "instrumentation",
+        "data-ready",
+        "b2b",
+        "saas",
+        "segment",
+        "amplitude",
+        "mixpanel",
+        "posthog",
+        "accoil",
+        "rudderstack",
+        "google-analytics",
+        "sentry",
+        "launchdarkly",
+        "statsig",
+        "hotjar",
+        "plausible",
+        "fathom",
+        "usermaven",
+        "journy",
+        "new-relic",
+        "azure-application-insights",
+        "cloudflare-analytics",
+        "userpilot",
+        "google-tag-manager"
+      ],
+      "category": "analytics",
+      "tags": [
+        "product-analytics",
+        "tracking-plan",
+        "event-tracking",
+        "instrumentation",
+        "code-generation",
+        "b2b-saas",
+        "data-ready",
+        "open-source"
+      ]
+    }
+  ]
+}

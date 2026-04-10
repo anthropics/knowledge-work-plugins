@@ -1,0 +1,13 @@
+{
+  "name": "daloopa-marketplace",
+  "owner": {
+    "name": "Daloopa"
+  },
+  "plugins": [
+    {
+      "name": "daloopa",
+      "source": "./",
+      "description": "Financial analysis skills powered by Daloopa's institutional-grade data"
+    }
+  ]
+}

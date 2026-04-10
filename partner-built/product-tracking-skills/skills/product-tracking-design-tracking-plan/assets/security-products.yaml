@@ -1,0 +1,523 @@
+# Security Products Template
+# 
+# For security, compliance, and monitoring products:
+# SIEM, vulnerability scanners, compliance tools, etc.
+#
+# Usage: /design security-products
+
+meta:
+  template: security-products
+  template_version: "1.0.0"
+  description: "Security monitoring, alerts, compliance, and vulnerability management"
+  extends: b2b-saas-core
+
+entity_extensions:
+  account:
+    additional_traits:
+      - name: security_posture_score
+        type: number
+        description: "Overall security score"
+      - name: compliance_frameworks
+        type: string
+        description: "Comma-separated frameworks (SOC2, HIPAA, etc.)"
+      - name: assets_monitored
+        type: integer
+        description: "Number of assets under monitoring"
+
+events:
+  # ===== ALERTS =====
+
+  - name: alert.triggered
+    category: core_value
+    description: "Security alert is triggered"
+    properties:
+      - name: alert_id
+        type: string
+        required: true
+      - name: alert_type
+        type: string
+        required: true
+        description: "e.g., intrusion, malware, policy_violation"
+      - name: severity
+        type: string
+        enum: [critical, high, medium, low, info]
+        required: true
+      - name: source
+        type: string
+        required: true
+        description: "Where the alert originated"
+      - name: asset_id
+        type: string
+        required: false
+      - name: asset_type
+        type: string
+        required: false
+    expected_frequency: medium
+
+  - name: alert.viewed
+    category: core_value
+    description: "User views alert details"
+    properties:
+      - name: alert_id
+        type: string
+        required: true
+      - name: severity
+        type: string
+        required: true
+      - name: time_to_view_minutes
+        type: integer
+        required: false
+        description: "Minutes from trigger to first view"
+    expected_frequency: high
+
+  - name: alert.acknowledged
+    category: core_value
+    description: "User acknowledges alert"
+    properties:
+      - name: alert_id
+        type: string
+        required: true
+      - name: severity
+        type: string
+        required: true
+      - name: time_to_ack_minutes
+        type: integer
+        required: true
+    expected_frequency: medium
+
+  - name: alert.escalated
+    category: core_value
+    description: "Alert is escalated"
+    properties:
+      - name: alert_id
+        type: string
+        required: true
+      - name: escalation_level
+        type: string
+        required: true
+      - name: escalated_to_external
+        type: boolean
+        required: false
+        description: "Escalated outside the platform"
+    expected_frequency: low
+
+  - name: alert.resolved
+    category: core_value
+    description: "Alert is marked resolved"
+    properties:
+      - name: alert_id
+        type: string
+        required: true
+      - name: severity
+        type: string
+        required: true
+      - name: resolution_type
+        type: string
+        enum: [fixed, false_positive, accepted_risk, duplicate]
+        required: true
+      - name: time_to_resolve_minutes
+        type: integer
+        required: true
+    expected_frequency: medium
+
+  - name: alert.suppressed
+    category: core_value
+    description: "Alert rule is suppressed"
+    properties:
+      - name: alert_type
+        type: string
+        required: true
+      - name: suppression_duration
+        type: string
+        enum: [1_hour, 24_hours, 7_days, permanent]
+        required: true
+      - name: reason
+        type: string
+        required: false
+    expected_frequency: low
+
+  # ===== SCANNING =====
+
+  - name: scan.initiated
+    category: core_value
+    description: "Security scan is started"
+    properties:
+      - name: scan_id
+        type: string
+        required: true
+      - name: scan_type
+        type: string
+        enum: [vulnerability, compliance, penetration, configuration, code]
+        required: true
+      - name: scope
+        type: string
+        enum: [full, targeted, incremental]
+        required: true
+      - name: assets_count
+        type: integer
+        required: false
+      - name: trigger
+        type: string
+        enum: [manual, scheduled, ci_cd, event]
+        required: true
+    expected_frequency: medium
+
+  - name: scan.completed
+    category: core_value
+    description: "Security scan completes"
+    properties:
+      - name: scan_id
+        type: string
+        required: true
+      - name: scan_type
+        type: string
+        required: true
+      - name: duration_seconds
+        type: integer
+        required: true
+      - name: findings_critical
+        type: integer
+        required: true
+      - name: findings_high
+        type: integer
+        required: true
+      - name: findings_medium
+        type: integer
+        required: true
+      - name: findings_low
+        type: integer
+        required: true
+      - name: findings_info
+        type: integer
+        required: true
+    expected_frequency: medium
+
+  - name: scan.failed
+    category: core_value
+    description: "Security scan fails"
+    properties:
+      - name: scan_id
+        type: string
+        required: true
+      - name: scan_type
+        type: string
+        required: true
+      - name: failure_reason
+        type: string
+        required: true
+    expected_frequency: low
+
+  # ===== VULNERABILITIES =====
+
+  - name: vulnerability.detected
+    category: core_value
+    description: "New vulnerability is detected"
+    properties:
+      - name: vulnerability_id
+        type: string
+        required: true
+      - name: cve_id
+        type: string
+        required: false
+      - name: severity
+        type: string
+        enum: [critical, high, medium, low]
+        required: true
+      - name: asset_id
+        type: string
+        required: true
+      - name: asset_type
+        type: string
+        required: true
+      - name: category
+        type: string
+        required: true
+        description: "e.g., sql_injection, xss, misconfiguration"
+    expected_frequency: medium
+
+  - name: vulnerability.triaged
+    category: core_value
+    description: "Vulnerability is triaged"
+    properties:
+      - name: vulnerability_id
+        type: string
+        required: true
+      - name: severity
+        type: string
+        required: true
+      - name: triage_decision
+        type: string
+        enum: [fix, accept, defer, false_positive]
+        required: true
+      - name: assigned_to
+        type: string
+        required: false
+    expected_frequency: medium
+
+  - name: vulnerability.remediated
+    category: core_value
+    description: "Vulnerability is fixed"
+    properties:
+      - name: vulnerability_id
+        type: string
+        required: true
+      - name: severity
+        type: string
+        required: true
+      - name: days_to_remediate
+        type: integer
+        required: true
+      - name: remediation_method
+        type: string
+        enum: [patch, config_change, code_fix, compensating_control]
+        required: false
+    expected_frequency: low
+
+  - name: vulnerability.reopened
+    category: core_value
+    description: "Previously fixed vulnerability reappears"
+    properties:
+      - name: vulnerability_id
+        type: string
+        required: true
+      - name: severity
+        type: string
+        required: true
+      - name: reopen_reason
+        type: string
+        required: false
+    expected_frequency: low
+
+  # ===== POLICIES =====
+
+  - name: policy.created
+    category: configuration
+    description: "Security policy is created"
+    properties:
+      - name: policy_id
+        type: string
+        required: true
+      - name: policy_type
+        type: string
+        required: true
+        description: "e.g., access, data, network, compliance"
+      - name: enforcement_mode
+        type: string
+        enum: [monitor, warn, block]
+        required: true
+    expected_frequency: low
+
+  - name: policy.updated
+    category: configuration
+    description: "Security policy is modified"
+    properties:
+      - name: policy_id
+        type: string
+        required: true
+      - name: enforcement_changed
+        type: boolean
+        required: false
+      - name: rules_changed
+        type: boolean
+        required: false
+    expected_frequency: low
+
+  - name: policy.violated
+    category: core_value
+    description: "Policy violation is detected"
+    properties:
+      - name: policy_id
+        type: string
+        required: true
+      - name: violation_id
+        type: string
+        required: true
+      - name: severity
+        type: string
+        required: true
+      - name: asset_id
+        type: string
+        required: true
+      - name: action_taken
+        type: string
+        enum: [logged, warned, blocked]
+        required: true
+    expected_frequency: medium
+
+  - name: policy.exception_granted
+    category: configuration
+    description: "Policy exception is approved"
+    properties:
+      - name: policy_id
+        type: string
+        required: true
+      - name: exception_id
+        type: string
+        required: true
+      - name: duration
+        type: string
+        required: true
+      - name: approved_by
+        type: string
+        required: true
+    expected_frequency: low
+
+  # ===== COMPLIANCE =====
+
+  - name: compliance.assessment_started
+    category: core_value
+    description: "Compliance assessment begins"
+    properties:
+      - name: assessment_id
+        type: string
+        required: true
+      - name: framework
+        type: string
+        required: true
+        description: "e.g., SOC2, HIPAA, GDPR, PCI-DSS"
+      - name: scope
+        type: string
+        required: false
+    expected_frequency: low
+
+  - name: compliance.assessment_completed
+    category: core_value
+    description: "Compliance assessment finishes"
+    properties:
+      - name: assessment_id
+        type: string
+        required: true
+      - name: framework
+        type: string
+        required: true
+      - name: controls_passed
+        type: integer
+        required: true
+      - name: controls_failed
+        type: integer
+        required: true
+      - name: controls_not_applicable
+        type: integer
+        required: true
+      - name: overall_score
+        type: number
+        required: false
+    expected_frequency: low
+
+  - name: compliance.evidence_uploaded
+    category: core_value
+    description: "Compliance evidence is submitted"
+    properties:
+      - name: framework
+        type: string
+        required: true
+      - name: control_id
+        type: string
+        required: true
+      - name: evidence_type
+        type: string
+        required: true
+    expected_frequency: medium
+
+  - name: compliance.report_exported
+    category: core_value
+    description: "Compliance report is exported"
+    properties:
+      - name: framework
+        type: string
+        required: true
+      - name: report_type
+        type: string
+        enum: [summary, detailed, auditor]
+        required: true
+      - name: format
+        type: string
+        enum: [pdf, csv, json]
+        required: true
+    expected_frequency: low
+
+  # ===== ASSETS =====
+
+  - name: asset.discovered
+    category: core_value
+    description: "New asset is discovered"
+    properties:
+      - name: asset_id
+        type: string
+        required: true
+      - name: asset_type
+        type: string
+        required: true
+        description: "e.g., server, endpoint, cloud_resource, application"
+      - name: discovery_method
+        type: string
+        enum: [scan, agent, integration, manual]
+        required: true
+    expected_frequency: medium
+
+  - name: asset.classified
+    category: configuration
+    description: "Asset classification is set"
+    properties:
+      - name: asset_id
+        type: string
+        required: true
+      - name: classification
+        type: string
+        enum: [critical, sensitive, internal, public]
+        required: true
+    expected_frequency: low
+
+  - name: asset.decommissioned
+    category: configuration
+    description: "Asset is marked decommissioned"
+    properties:
+      - name: asset_id
+        type: string
+        required: true
+      - name: reason
+        type: string
+        required: false
+    expected_frequency: low
+
+  # ===== INVESTIGATION =====
+
+  - name: investigation.started
+    category: core_value
+    description: "Security investigation begins"
+    properties:
+      - name: investigation_id
+        type: string
+        required: true
+      - name: trigger_type
+        type: string
+        enum: [alert, vulnerability, policy_violation, external_report]
+        required: true
+      - name: priority
+        type: string
+        enum: [critical, high, medium, low]
+        required: true
+    expected_frequency: low
+
+  - name: investigation.closed
+    category: core_value
+    description: "Security investigation concludes"
+    properties:
+      - name: investigation_id
+        type: string
+        required: true
+      - name: outcome
+        type: string
+        enum: [confirmed_incident, false_positive, inconclusive, escalated]
+        required: true
+      - name: duration_hours
+        type: integer
+        required: true
+    expected_frequency: low
+
+implementation_notes:
+  - "Severity is critical for prioritization — track consistently"
+  - "Time-to-X metrics (view, ack, resolve) are key for SLA monitoring"
+  - "Never log sensitive vulnerability details in properties"
+  - "Asset IDs should be consistent across all asset-related events"
+  - "Compliance framework names should be standardized"

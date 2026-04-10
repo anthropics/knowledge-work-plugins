@@ -1,0 +1,465 @@
+# AI/ML Tools Template
+# 
+# For products where AI/ML is the core value: AI writing assistants,
+# image generators, code assistants, chatbots, etc.
+#
+# Usage: /design ai-ml-tools
+
+meta:
+  template: ai-ml-tools
+  template_version: "1.0.0"
+  description: "AI/ML products with generation, model selection, and token tracking"
+  extends: b2b-saas-core
+
+# Inherits all entities from b2b-saas-core
+# Add AI-specific user traits:
+entity_extensions:
+  user:
+    additional_traits:
+      - name: default_model
+        type: string
+        description: "User's preferred AI model"
+      - name: total_tokens_used
+        type: integer
+        description: "Lifetime token consumption"
+
+events:
+  # ===== AI GENERATION =====
+  
+  - name: generation.requested
+    category: core_value
+    description: "User initiates an AI generation"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: generation_type
+        type: string
+        enum: [text, image, code, audio, video, embedding]
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: model_version
+        type: string
+        required: false
+      - name: input_tokens
+        type: integer
+        required: false
+        description: "Token count of input/prompt"
+      - name: temperature
+        type: number
+        required: false
+      - name: max_tokens
+        type: integer
+        required: false
+      - name: has_system_prompt
+        type: boolean
+        required: false
+      - name: has_context
+        type: boolean
+        required: false
+        description: "Whether RAG/context was included"
+    expected_frequency: high
+
+  - name: generation.completed
+    category: core_value
+    description: "AI generation finishes successfully"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: generation_type
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: input_tokens
+        type: integer
+        required: true
+      - name: output_tokens
+        type: integer
+        required: true
+      - name: total_tokens
+        type: integer
+        required: true
+      - name: latency_ms
+        type: integer
+        required: true
+      - name: finish_reason
+        type: string
+        enum: [complete, max_tokens, stop_sequence, content_filter]
+        required: false
+    expected_frequency: high
+
+  - name: generation.failed
+    category: core_value
+    description: "AI generation fails"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: generation_type
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: error_type
+        type: string
+        enum: [rate_limit, model_error, timeout, content_filter, invalid_request]
+        required: true
+      - name: error_message
+        type: string
+        required: false
+      - name: latency_ms
+        type: integer
+        required: false
+    expected_frequency: low
+
+  - name: generation.streamed
+    category: core_value
+    description: "User receives streamed generation (aggregate, not per-token)"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: total_tokens
+        type: integer
+        required: true
+      - name: stream_duration_ms
+        type: integer
+        required: true
+      - name: chunks_received
+        type: integer
+        required: false
+    expected_frequency: high
+
+  - name: generation.cancelled
+    category: core_value
+    description: "User cancels an in-progress generation"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: tokens_generated
+        type: integer
+        required: false
+      - name: elapsed_ms
+        type: integer
+        required: false
+    expected_frequency: low
+
+  - name: generation.regenerated
+    category: core_value
+    description: "User requests regeneration of same prompt"
+    properties:
+      - name: original_generation_id
+        type: string
+        required: true
+      - name: new_generation_id
+        type: string
+        required: true
+      - name: same_model
+        type: boolean
+        required: false
+    expected_frequency: medium
+
+  # ===== OUTPUT INTERACTION =====
+
+  - name: output.copied
+    category: core_value
+    description: "User copies generated output"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: copy_type
+        type: string
+        enum: [full, partial]
+        required: false
+    expected_frequency: high
+
+  - name: output.edited
+    category: core_value
+    description: "User edits generated output"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: edit_type
+        type: string
+        enum: [inline, new_version]
+        required: false
+    expected_frequency: medium
+
+  - name: output.saved
+    category: core_value
+    description: "User saves generated output"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: save_location
+        type: string
+        required: false
+    expected_frequency: medium
+
+  - name: output.exported
+    category: core_value
+    description: "User exports generated output"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: export_format
+        type: string
+        enum: [pdf, docx, txt, md, png, jpg]
+        required: true
+    expected_frequency: low
+
+  - name: output.shared
+    category: core_value
+    description: "User shares generated output"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: share_type
+        type: string
+        enum: [link, email, embed]
+        required: true
+    expected_frequency: low
+
+  # ===== FEEDBACK =====
+
+  - name: output.rated
+    category: core_value
+    description: "User provides feedback on generation quality"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: rating_type
+        type: string
+        enum: [thumbs, stars, detailed]
+        required: true
+      - name: rating_value
+        type: string
+        required: true
+        description: "up/down, 1-5, or detailed category"
+      - name: has_feedback_text
+        type: boolean
+        required: false
+    expected_frequency: low
+
+  - name: output.reported
+    category: core_value
+    description: "User reports problematic output"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: report_reason
+        type: string
+        enum: [inaccurate, harmful, off_topic, other]
+        required: true
+    expected_frequency: low
+
+  # ===== MODEL SELECTION =====
+
+  - name: model.selected
+    category: configuration
+    description: "User selects a different model"
+    properties:
+      - name: from_model
+        type: string
+        required: false
+      - name: to_model
+        type: string
+        required: true
+      - name: selection_context
+        type: string
+        required: false
+        description: "Where they made the selection"
+    expected_frequency: medium
+
+  - name: model.compared
+    category: core_value
+    description: "User compares outputs from multiple models"
+    properties:
+      - name: models_compared
+        type: string
+        required: true
+        description: "Comma-separated model IDs"
+      - name: model_count
+        type: integer
+        required: true
+    expected_frequency: low
+
+  # ===== PROMPTS & TEMPLATES =====
+
+  - name: prompt.saved
+    category: core_value
+    description: "User saves a prompt for reuse"
+    properties:
+      - name: prompt_id
+        type: string
+        required: true
+      - name: prompt_type
+        type: string
+        enum: [user, system, template]
+        required: true
+      - name: is_public
+        type: boolean
+        required: false
+    expected_frequency: low
+
+  - name: prompt.used
+    category: core_value
+    description: "User uses a saved prompt"
+    properties:
+      - name: prompt_id
+        type: string
+        required: true
+      - name: is_own_prompt
+        type: boolean
+        required: true
+    expected_frequency: medium
+
+  - name: template.created
+    category: core_value
+    description: "User creates a generation template"
+    properties:
+      - name: template_id
+        type: string
+        required: true
+      - name: template_type
+        type: string
+        required: true
+      - name: has_variables
+        type: boolean
+        required: false
+    expected_frequency: low
+
+  - name: template.used
+    category: core_value
+    description: "User uses a template for generation"
+    properties:
+      - name: template_id
+        type: string
+        required: true
+      - name: variables_filled
+        type: integer
+        required: false
+    expected_frequency: medium
+
+  # ===== CONVERSATIONS / THREADS =====
+
+  - name: conversation.started
+    category: core_value
+    description: "User starts a new conversation/thread"
+    properties:
+      - name: conversation_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: has_system_prompt
+        type: boolean
+        required: false
+    expected_frequency: high
+
+  - name: conversation.continued
+    category: core_value
+    description: "User sends a follow-up message in conversation"
+    properties:
+      - name: conversation_id
+        type: string
+        required: true
+      - name: turn_number
+        type: integer
+        required: true
+      - name: context_tokens
+        type: integer
+        required: false
+        description: "Tokens in conversation history"
+    expected_frequency: high
+
+  - name: conversation.branched
+    category: core_value
+    description: "User branches conversation from earlier point"
+    properties:
+      - name: original_conversation_id
+        type: string
+        required: true
+      - name: new_conversation_id
+        type: string
+        required: true
+      - name: branch_point_turn
+        type: integer
+        required: true
+    expected_frequency: low
+
+  # ===== USAGE & LIMITS =====
+
+  - name: tokens.consumed
+    category: billing
+    description: "Token usage event (for billing/tracking)"
+    properties:
+      - name: generation_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: input_tokens
+        type: integer
+        required: true
+      - name: output_tokens
+        type: integer
+        required: true
+      - name: total_tokens
+        type: integer
+        required: true
+      - name: estimated_cost
+        type: number
+        required: false
+    expected_frequency: high
+
+  - name: quota.warning
+    category: billing
+    description: "User approaching token/usage quota"
+    properties:
+      - name: quota_type
+        type: string
+        enum: [daily, monthly, total]
+        required: true
+      - name: percentage_used
+        type: number
+        required: true
+      - name: tokens_remaining
+        type: integer
+        required: false
+    expected_frequency: low
+
+  - name: quota.exceeded
+    category: billing
+    description: "User exceeds token/usage quota"
+    properties:
+      - name: quota_type
+        type: string
+        required: true
+      - name: overage_tokens
+        type: integer
+        required: false
+    expected_frequency: low
+
+implementation_notes:
+  - "Track token counts accurately — they drive billing and usage analysis"
+  - "Include model_id on all generation events for model comparison"
+  - "latency_ms is critical for performance monitoring"
+  - "Don't log actual prompts or outputs — just metadata"
+  - "generation_id should be unique and consistent across related events"

@@ -1,0 +1,50 @@
+{
+  "name": "brightdata-plugin",
+  "description": "Web scraping, Google search, structured data extraction, and MCP server integration powered by Bright Data. Includes 11 skills: scrape any webpage as markdown (with bot detection/CAPTCHA bypass), search Google with structured JSON results, extract data from 40+ websites (Amazon, LinkedIn, Instagram, TikTok, YouTube, and more), orchestrate Bright Data's 60+ MCP tools, Bright Data CLI for terminal-based scraping/search/data extraction/zone management, real-time competitive intelligence (competitor snapshots, pricing comparison, review mining, hiring signals, market landscape mapping), built-in best practices for Web Unlocker, SERP API, Web Scraper API, and Browser API, Python SDK best practices for the brightdata-sdk package, scraper builder for any website, design system mirroring, and Browser API session debugging.",
+  "version": "1.5.0",
+  "author": {
+    "name": "Bright Data",
+    "email": "support@brightdata.com",
+    "url": "https://brightdata.com"
+  },
+  "repository": "https://github.com/brightdata/brightdata-plugin",
+  "homepage": "https://brightdata.com",
+  "license": "MIT",
+  "skills": "./skills/",
+  "keywords": [
+    "web-scraping",
+    "search",
+    "serp",
+    "bright-data",
+    "web-unlocker",
+    "captcha-bypass",
+    "claude-code",
+    "data-feeds",
+    "mcp",
+    "mcp-server",
+    "browser-automation",
+    "structured-data",
+    "best-practices",
+    "serp-api",
+    "browser-api",
+    "python-sdk",
+    "brightdata-sdk",
+    "brightdata-cli",
+    "bdata",
+    "cli",
+    "linkedin",
+    "amazon",
+    "instagram",
+    "tiktok",
+    "youtube",
+    "facebook",
+    "competitive-intelligence",
+    "market-research",
+    "competitor-analysis",
+    "pricing-intelligence"
+  ],
+  "dependencies": [
+    "curl",
+    "jq"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "zoominfo": {
+      "type": "http",
+      "url": "https://mcp.zoominfo.com/mcp"
+    }
+  }
+}

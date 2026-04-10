@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "cockroachdb-toolbox": {
+      "command": "toolbox",
+      "args": ["--tools-file", "${CLAUDE_PLUGIN_ROOT}/tools.yaml", "--stdio"],
+      "env": {
+        "COCKROACHDB_HOST": "${COCKROACHDB_HOST}",
+        "COCKROACHDB_PORT": "${COCKROACHDB_PORT}",
+        "COCKROACHDB_USER": "${COCKROACHDB_USER}",
+        "COCKROACHDB_PASSWORD": "${COCKROACHDB_PASSWORD}",
+        "COCKROACHDB_DATABASE": "${COCKROACHDB_DATABASE}",
+        "COCKROACHDB_SSLMODE": "${COCKROACHDB_SSLMODE}"
+      }
+    },
+    "cockroachdb-toolbox-http": {
+      "type": "http",
+      "url": "http://127.0.0.1:5000/mcp",
+      "_comment": "Streamable HTTP transport — run 'toolbox --tools-file tools.yaml' first, then connect via this URL"
+    },
+    "cockroachdb-cloud": {
+      "type": "http",
+      "url": "https://cockroachlabs.cloud/mcp",
+      "headers": {
+        "mcp-cluster-id": "${COCKROACHDB_CLUSTER_ID}"
+      }
+    }
+  }
+}

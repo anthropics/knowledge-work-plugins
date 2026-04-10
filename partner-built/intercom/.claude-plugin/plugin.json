@@ -1,0 +1,13 @@
+{
+  "name": "intercom",
+  "description": "Intercom integration for Claude Code. Search conversations, analyze customer support patterns, look up contacts and companies, and install the Intercom Messenger. Connect your Intercom workspace to get real-time insights from customer data.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Intercom",
+    "url": "https://intercom.com"
+  },
+  "homepage": "https://developers.intercom.com",
+  "repository": "https://github.com/intercom/claude-plugin-external",
+  "license": "MIT",
+  "keywords": ["intercom", "customer-support", "conversations", "contacts", "messenger", "crm", "api"]
+}

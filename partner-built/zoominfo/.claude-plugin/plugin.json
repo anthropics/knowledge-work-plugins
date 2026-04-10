@@ -1,0 +1,13 @@
+{
+  "name": "zoominfo",
+  "version": "1.0.1",
+  "description": "Search companies and contacts, enrich leads, find similar companies and contacts, and get AI-ranked prospect recommendations with ZoomInfo — one-click MCP server integration for Cowork.",
+  "author": {
+    "name": "ZoomInfo",
+    "url": "https://www.zoominfo.com"
+  },
+  "repository": "https://github.com/zoominfo/zi-mcp-plugin",
+  "homepage": "https://www.zoominfo.com",
+  "license": "MIT",
+  "keywords": ["zoominfo", "sales", "prospecting", "enrichment", "b2b", "contacts", "companies", "mcp", "similarity"]
+}

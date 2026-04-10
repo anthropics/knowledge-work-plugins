@@ -1,0 +1,477 @@
+# Collaboration Tools Template
+# 
+# For team collaboration and communication products:
+# Slack, Teams, Notion, Miro, Figma, etc.
+#
+# Usage: /design collaboration-tools
+
+meta:
+  template: collaboration-tools
+  template_version: "1.0.0"
+  description: "Team workspaces, real-time collaboration, and communication"
+  extends: b2b-saas-core
+
+entity_extensions:
+  user:
+    additional_traits:
+      - name: timezone
+        type: string
+        description: "User's timezone"
+      - name: notification_preference
+        type: string
+        enum: [all, mentions, minimal, none]
+      - name: workspaces_count
+        type: integer
+  account:
+    additional_traits:
+      - name: workspace_type
+        type: string
+        enum: [team, department, organization, community]
+      - name: member_count
+        type: integer
+      - name: active_channels
+        type: integer
+
+events:
+  # ===== WORKSPACES =====
+
+  - name: workspace.created
+    category: core_value
+    description: "User creates a new workspace"
+    properties:
+      - name: workspace_id
+        type: string
+        required: true
+      - name: workspace_type
+        type: string
+        enum: [team, project, department, personal]
+        required: true
+      - name: visibility
+        type: string
+        enum: [public, private, restricted]
+        required: true
+    expected_frequency: low
+
+  - name: workspace.joined
+    category: core_value
+    description: "User joins a workspace"
+    properties:
+      - name: workspace_id
+        type: string
+        required: true
+      - name: join_method
+        type: string
+        enum: [invite, link, request, auto]
+        required: true
+    expected_frequency: medium
+
+  - name: workspace.left
+    category: core_value
+    description: "User leaves a workspace"
+    properties:
+      - name: workspace_id
+        type: string
+        required: true
+      - name: leave_type
+        type: string
+        enum: [voluntary, removed, account_deleted]
+        required: true
+    expected_frequency: low
+
+  - name: workspace.archived
+    category: configuration
+    description: "Workspace is archived"
+    properties:
+      - name: workspace_id
+        type: string
+        required: true
+      - name: member_count
+        type: integer
+        required: false
+    expected_frequency: low
+
+  # ===== CHANNELS / ROOMS =====
+
+  - name: channel.created
+    category: core_value
+    description: "User creates a channel/room"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: workspace_id
+        type: string
+        required: true
+      - name: channel_type
+        type: string
+        enum: [public, private, dm, group_dm]
+        required: true
+      - name: purpose
+        type: string
+        required: false
+        description: "Channel purpose category, not actual text"
+    expected_frequency: medium
+
+  - name: channel.joined
+    category: core_value
+    description: "User joins a channel"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: join_method
+        type: string
+        enum: [invite, browse, mention, auto]
+        required: true
+    expected_frequency: high
+
+  - name: channel.left
+    category: core_value
+    description: "User leaves a channel"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+    expected_frequency: medium
+
+  - name: channel.archived
+    category: configuration
+    description: "Channel is archived"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: message_count
+        type: integer
+        required: false
+    expected_frequency: low
+
+  # ===== MESSAGING =====
+
+  - name: message.sent
+    category: core_value
+    description: "User sends a message"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: message_type
+        type: string
+        enum: [text, file, code, embed, poll]
+        required: true
+      - name: has_attachment
+        type: boolean
+        required: false
+      - name: has_mention
+        type: boolean
+        required: false
+      - name: is_thread_reply
+        type: boolean
+        required: false
+      - name: char_count
+        type: integer
+        required: false
+    expected_frequency: high
+
+  - name: message.edited
+    category: core_value
+    description: "User edits a message"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: time_since_sent_seconds
+        type: integer
+        required: false
+    expected_frequency: medium
+
+  - name: message.deleted
+    category: core_value
+    description: "User deletes a message"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: deleted_by_author
+        type: boolean
+        required: true
+    expected_frequency: low
+
+  - name: thread.started
+    category: core_value
+    description: "User starts a thread"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: parent_message_age_hours
+        type: integer
+        required: false
+    expected_frequency: medium
+
+  # ===== REACTIONS & ENGAGEMENT =====
+
+  - name: reaction.added
+    category: core_value
+    description: "User reacts to a message"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: reaction_type
+        type: string
+        required: true
+        description: "Emoji category, not specific emoji"
+    expected_frequency: high
+
+  - name: mention.created
+    category: core_value
+    description: "User mentions someone"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: mention_type
+        type: string
+        enum: [user, channel, everyone, here]
+        required: true
+    expected_frequency: high
+
+  - name: message.pinned
+    category: core_value
+    description: "Message is pinned"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+    expected_frequency: low
+
+  - name: message.bookmarked
+    category: core_value
+    description: "User bookmarks a message"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+    expected_frequency: low
+
+  # ===== FILES & CONTENT =====
+
+  - name: file.shared
+    category: core_value
+    description: "User shares a file"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: file_type
+        type: string
+        enum: [document, image, video, audio, archive, other]
+        required: true
+      - name: file_size_kb
+        type: integer
+        required: false
+    expected_frequency: medium
+
+  - name: file.downloaded
+    category: core_value
+    description: "User downloads a file"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: file_type
+        type: string
+        required: true
+    expected_frequency: medium
+
+  - name: link.shared
+    category: core_value
+    description: "User shares a link"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: link_type
+        type: string
+        enum: [internal, external, integration]
+        required: true
+    expected_frequency: high
+
+  # ===== CALLS =====
+
+  - name: call.started
+    category: core_value
+    description: "User starts a call"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: call_type
+        type: string
+        enum: [audio, video, screen_share]
+        required: true
+    expected_frequency: medium
+
+  - name: call.joined
+    category: core_value
+    description: "User joins an ongoing call"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: call_type
+        type: string
+        required: true
+      - name: participants_at_join
+        type: integer
+        required: false
+    expected_frequency: medium
+
+  - name: call.ended
+    category: core_value
+    description: "Call ends"
+    properties:
+      - name: channel_id
+        type: string
+        required: true
+      - name: duration_minutes
+        type: integer
+        required: true
+      - name: max_participants
+        type: integer
+        required: false
+      - name: screen_shared
+        type: boolean
+        required: false
+    expected_frequency: medium
+
+  # ===== PRESENCE & STATUS =====
+
+  - name: status.changed
+    category: core_value
+    description: "User changes their status"
+    properties:
+      - name: status_type
+        type: string
+        enum: [available, busy, away, dnd, offline, custom]
+        required: true
+      - name: has_custom_message
+        type: boolean
+        required: false
+      - name: has_expiration
+        type: boolean
+        required: false
+    expected_frequency: medium
+
+  - name: presence.changed
+    category: core_value
+    description: "User's online presence changes"
+    properties:
+      - name: from_state
+        type: string
+        enum: [online, idle, offline]
+        required: true
+      - name: to_state
+        type: string
+        enum: [online, idle, offline]
+        required: true
+    expected_frequency: high
+
+  # ===== REAL-TIME COLLABORATION =====
+
+  - name: document.opened
+    category: core_value
+    description: "User opens a shared document"
+    properties:
+      - name: document_id
+        type: string
+        required: true
+      - name: document_type
+        type: string
+        required: true
+      - name: concurrent_editors
+        type: integer
+        required: false
+    expected_frequency: high
+
+  - name: document.edited
+    category: core_value
+    description: "User makes an edit in shared document"
+    properties:
+      - name: document_id
+        type: string
+        required: true
+      - name: edit_type
+        type: string
+        enum: [text, formatting, structural, comment]
+        required: true
+    expected_frequency: high
+
+  - name: cursor.followed
+    category: core_value
+    description: "User follows another user's cursor"
+    properties:
+      - name: document_id
+        type: string
+        required: true
+    expected_frequency: low
+
+  - name: comment.added
+    category: core_value
+    description: "User adds a comment"
+    properties:
+      - name: document_id
+        type: string
+        required: true
+      - name: is_reply
+        type: boolean
+        required: false
+      - name: has_mention
+        type: boolean
+        required: false
+    expected_frequency: medium
+
+  - name: comment.resolved
+    category: core_value
+    description: "User resolves a comment"
+    properties:
+      - name: document_id
+        type: string
+        required: true
+    expected_frequency: low
+
+  # ===== NOTIFICATIONS =====
+
+  - name: notification.received
+    category: navigation
+    description: "User receives a notification"
+    properties:
+      - name: notification_type
+        type: string
+        enum: [message, mention, reaction, invite, reminder]
+        required: true
+      - name: channel_type
+        type: string
+        enum: [push, email, in_app]
+        required: true
+    expected_frequency: high
+
+  - name: notification.clicked
+    category: navigation
+    description: "User clicks on a notification"
+    properties:
+      - name: notification_type
+        type: string
+        required: true
+      - name: time_since_received_seconds
+        type: integer
+        required: false
+    expected_frequency: high
+
+implementation_notes:
+  - "Message content should never be tracked — only metadata"
+  - "High-frequency events (message.sent, reaction.added) may need sampling"
+  - "workspace_id and channel_id enable context analysis"
+  - "Presence events can be very high volume — consider sampling"
+  - "Call duration and participant count are key engagement metrics"

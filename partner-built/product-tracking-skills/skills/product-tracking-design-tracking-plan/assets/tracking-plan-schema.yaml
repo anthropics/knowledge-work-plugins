@@ -1,0 +1,352 @@
+# Tracking Plan Template
+# 
+# This is the canonical artifact produced by Product Tracking Skills.
+# Fill this out through the discovery and design skills.
+
+meta:
+  product: "Your Product Name"
+  version: 1
+  created: 2024-01-01
+  updated: 2024-01-01
+  owner: "team@example.com"
+  
+  # Implementation target
+  # Options: segment, amplitude, mixpanel, accoil, rudderstack, custom
+  implementation: segment
+
+  # PII policy — decided with user in design phase
+  # Options: none (anonymous IDs only), traits_only (PII in identify traits, never in events), allowed (PII anywhere)
+  pii_policy: traits_only
+
+  # Internal user exclusion — decided with user in design phase
+  # Options: by_role (filter admin/system roles), by_domain (filter @company.com), by_flag (is_internal trait), none
+  internal_user_policy: by_role
+
+# -----------------------------------------
+# Entities: Users
+# -----------------------------------------
+
+entities:
+  user:
+    id_property: user_id
+    id_format: "usr_*"  # Prefixed IDs recommended
+    traits:
+      - name: email
+        type: string
+        pii: true
+      - name: name
+        type: string
+        pii: true
+      - name: role
+        type: string
+        enum: [admin, member, viewer]
+      - name: created_at
+        type: datetime
+
+# -----------------------------------------
+# Groups: Hierarchical Objects
+# -----------------------------------------
+# Most B2B products have structure beyond "users and accounts."
+# Define your group hierarchy here. Events will be attributed
+# to the most specific group level where they occur.
+#
+# See references/group-hierarchy.md for detailed guidance.
+
+groups:
+  # Top-level: Account/Organization
+  - type: account
+    id_format: "acc_*"
+    is_top_level: true
+    traits:
+      - name: name
+        type: string
+        required: true
+      - name: plan
+        type: string
+        enum: [free, starter, pro, enterprise]
+      - name: industry
+        type: string
+      - name: employee_count
+        type: integer
+      - name: mrr
+        type: number
+      - name: created_at
+        type: datetime
+
+  # Level 2: Workspace (child of account)
+  # Uncomment and customize if your product has workspaces
+  # - type: workspace
+  #   id_format: "ws_*"
+  #   parent_type: account
+  #   traits:
+  #     - name: name
+  #       type: string
+  #       required: true
+  #     - name: parent_group_id
+  #       type: string
+  #       required: true
+  #       description: "ID of parent account"
+  #     - name: member_count
+  #       type: integer
+  #     - name: created_at
+  #       type: datetime
+
+  # Level 3: Project (child of workspace)
+  # Uncomment and customize if your product has projects
+  # - type: project
+  #   id_format: "proj_*"
+  #   parent_type: workspace
+  #   traits:
+  #     - name: name
+  #       type: string
+  #       required: true
+  #     - name: parent_group_id
+  #       type: string
+  #       required: true
+  #       description: "ID of parent workspace"
+  #     - name: status
+  #       type: string
+  #       enum: [active, archived]
+  #     - name: created_at
+  #       type: datetime
+
+# -----------------------------------------
+# Events
+# -----------------------------------------
+
+events:
+
+  # -- Lifecycle --
+  
+  - name: user.signed_up
+    category: lifecycle
+    group_level: account  # User-level action, but attributed to account
+    description: User creates a new account
+    properties:
+      - name: signup_source
+        type: string
+        enum: [organic, google, invite, api]
+        required: true
+      - name: referrer
+        type: string
+        required: false
+    expected_frequency: low
+    
+  - name: user.invited
+    category: lifecycle
+    description: Existing user invites someone to their account
+    properties:
+      - name: invitee_role
+        type: string
+        enum: [admin, member, viewer]
+        required: true
+      - name: invitation_method
+        type: string
+        enum: [email, link]
+        required: false
+    expected_frequency: low
+    
+  # -- Core Value Actions --
+  # TODO: Replace with your product's core value events
+  
+  - name: report.created
+    category: core_value
+    group_level: workspace  # Or project, depending on your hierarchy
+    description: User creates a new report
+    properties:
+      - name: report_id
+        type: string
+        required: true
+      - name: report_type
+        type: string
+        enum: [standard, custom, template]
+        required: true
+      - name: template_used
+        type: boolean
+        required: false
+    expected_frequency: medium
+    
+  - name: report.exported
+    category: core_value
+    description: User exports a report
+    properties:
+      - name: report_id
+        type: string
+        required: true
+      - name: format
+        type: string
+        enum: [pdf, csv, xlsx, png]
+        required: true
+    expected_frequency: medium
+    
+  - name: report.shared
+    category: core_value
+    description: User shares a report with others
+    properties:
+      - name: report_id
+        type: string
+        required: true
+      - name: share_type
+        type: string
+        enum: [link, email, embed]
+        required: true
+      - name: recipient_count
+        type: integer
+        required: false
+    expected_frequency: low
+
+  # -- Collaboration --
+  
+  - name: comment.added
+    category: collaboration
+    description: User adds a comment to a shared object
+    properties:
+      - name: object_type
+        type: string
+        enum: [report, dashboard, task]
+        required: true
+      - name: object_id
+        type: string
+        required: true
+      - name: has_mention
+        type: boolean
+        required: false
+    expected_frequency: medium
+
+  # -- Configuration --
+  
+  - name: integration.connected
+    category: configuration
+    description: User connects an external integration
+    properties:
+      - name: integration_type
+        type: string
+        enum: [salesforce, hubspot, slack, segment, zapier]
+        required: true
+      - name: is_first_integration
+        type: boolean
+        required: false
+    expected_frequency: low
+    
+  - name: setting.changed
+    category: configuration
+    description: User modifies a setting
+    properties:
+      - name: setting_category
+        type: string
+        required: true
+      - name: setting_name
+        type: string
+        required: true
+    expected_frequency: low
+
+  # -- Billing-Adjacent --
+  
+  - name: trial.started
+    category: billing
+    description: User begins a trial
+    properties:
+      - name: trial_type
+        type: string
+        enum: [standard, extended, enterprise]
+        required: true
+      - name: trial_days
+        type: integer
+        required: true
+    expected_frequency: low
+    
+  - name: plan.upgraded
+    category: billing
+    group_level: account  # Billing always at account level
+    description: Account upgrades to a higher plan
+    properties:
+      - name: from_plan
+        type: string
+        required: true
+      - name: to_plan
+        type: string
+        required: true
+      - name: upgrade_trigger
+        type: string
+        enum: [limit_reached, feature_needed, proactive]
+        required: false
+    expected_frequency: low
+
+  - name: limit.reached
+    category: billing
+    description: Account hits a usage limit
+    properties:
+      - name: limit_type
+        type: string
+        enum: [users, reports, api_calls, storage]
+        required: true
+      - name: current_usage
+        type: integer
+        required: true
+      - name: limit_value
+        type: integer
+        required: true
+    expected_frequency: low
+
+# -----------------------------------------
+# Snapshot Sync
+# -----------------------------------------
+# Traits that reflect current state need scheduled updates.
+# These values change even when no user action triggers them.
+# Define what to sync, at what cadence, and the data source.
+
+snapshot_sync:
+  cadence: daily  # daily or hourly — daily for most, hourly for billing-critical
+
+  # Account-level snapshots
+  - entity: account
+    trait: seats_used
+    type: integer
+    source: "COUNT of active users per account"
+
+  - entity: account
+    trait: mrr
+    type: number
+    source: "Current MRR from billing system"
+
+  - entity: account
+    trait: active_users_30d
+    type: integer
+    source: "COUNT of users with events in last 30 days"
+
+  # Uncomment and customize for your product
+  # - entity: account
+  #   trait: storage_used_gb
+  #   type: number
+  #   source: "SUM of storage per account"
+  #
+  # - entity: account
+  #   trait: reports_created_count
+  #   type: integer
+  #   source: "COUNT of reports per account"
+  #
+  # - entity: workspace
+  #   trait: member_count
+  #   type: integer
+  #   source: "COUNT of active members per workspace"
+
+# -----------------------------------------
+# Implementation Notes
+# -----------------------------------------
+
+implementation_notes:
+  - "All events must include user_id"
+  - "Use ISO 8601 for all datetime properties"
+  - "Prefer prefixed IDs (usr_, acc_, ws_, proj_) for clarity"
+  - "Never include raw PII in event properties"
+  
+  # Group hierarchy
+  - "Define groups with parent_group_id to establish hierarchy"
+  - "Attribute events to the most specific group level (context.groupId for Accoil)"
+  - "Analytics tools roll metrics up automatically — don't double-track"
+  
+  # Platform-specific
+  - "Accoil: Use context.groupId (capital I) for event attribution"
+  - "Amplitude: Use groups property in integrations object"
+  - "Mixpanel: Use $groups property on events"
+  - "Segment: Only supports user-to-group, not event-to-group attribution"

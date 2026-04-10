@@ -1,0 +1,46 @@
+{
+  "name": "atlan-marketplace",
+  "owner": {
+    "name": "Atlan",
+    "email": "engineering@atlan.com"
+  },
+  "metadata": {
+    "description": "Official Atlan plugins for Claude Code - data catalog, governance, and data mesh tools",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "atlan",
+      "source": "./",
+      "description": "Atlan data catalog plugin for Claude Code. Search, explore, govern, and manage your data assets through natural language. Powered by the Atlan MCP server with semantic search, lineage traversal, glossary management, data quality rules, and more.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Atlan",
+        "email": "engineering@atlan.com"
+      },
+      "homepage": "https://atlan.com",
+      "repository": "https://github.com/atlanhq/agent-toolkit",
+      "license": "Apache-2.0",
+      "keywords": [
+        "data-catalog",
+        "data-governance",
+        "metadata",
+        "lineage",
+        "data-quality",
+        "semantic-search",
+        "glossary",
+        "mcp",
+        "atlan"
+      ],
+      "category": "data-tools",
+      "tags": [
+        "data-catalog",
+        "governance",
+        "metadata-management",
+        "data-quality",
+        "data-mesh",
+        "lineage"
+      ]
+    }
+  ]
+}

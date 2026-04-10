@@ -1,0 +1,70 @@
+---
+description: Core enforcement rules for nimble-agent-builder. CLI is primary for all operations. MCP is fallback only. Update over generate. Never use WebSearch or WebFetch.
+alwaysApply: true
+---
+
+# Nimble Agent Builder — Always-Apply Rules
+
+## CLI is primary for all operations
+
+All Nimble operations use CLI commands via Bash. MCP tools are a fallback only when
+the CLI is not installed.
+
+**Foreground — direct CLI calls:**
+
+| Command | Purpose |
+| --- | --- |
+| `nimble agent list --limit 100` | Search for existing agents |
+| `nimble agent get --template-name` | Display schema before run |
+| `nimble agent run --agent --params` | Interactive execution |
+| `nimble search` | Web search / discovery |
+
+**Task agents — long-running operations (generate → poll → publish):**
+
+| Command | Purpose |
+| --- | --- |
+| `nimble agent generate --agent-name --prompt --url` | Create or refine an agent |
+| `nimble agent generate --from-agent --prompt` | Iterate on existing agent |
+| `nimble agent get-generation --generation-id` | Poll generation status |
+| `nimble agent publish --agent-name --version-id` | Publish a version |
+
+Agent creation runs in a Task agent because generation takes 1-3 minutes.
+
+## Update over generate — always
+
+When `nimble agent list --limit 100` finds an agent on the same domain — even with missing fields or different scope — **update it** via `nimble agent generate --from-agent`. Do NOT generate a new agent from scratch.
+
+Only generate from scratch when the agent list returns **zero matches** for the target domain.
+
+## Every Task agent prompt must include the CLI commands
+
+Copy this block into every Task agent prompt:
+
+```
+**CLI tools (use via Bash):**
+- `nimble agent list --limit 100`
+- `nimble agent get --template-name <name>`
+- `nimble agent run --agent <name> --params '{...}'`
+- `nimble agent generate --agent-name <name> --prompt "<prompt>" --url "<url>"`
+- `nimble agent generate --agent-name <name> --from-agent <name> --prompt "<prompt>"`
+- `nimble agent get-generation --generation-id <id>`
+- `nimble agent publish --agent-name <name> --version-id <id>`
+- `nimble search --query "<query>"`
+
+**MCP fallback (only if CLI is not installed):**
+| CLI command | MCP tool |
+|---|---|
+| nimble agent generate | mcp__plugin_nimble_nimble-mcp-server__nimble_agents_generate |
+| nimble agent get-generation | mcp__plugin_nimble_nimble-mcp-server__nimble_agents_status |
+| nimble agent publish | mcp__plugin_nimble_nimble-mcp-server__nimble_agents_publish |
+
+Prefer CLI for all operations. Use MCP only when CLI is unavailable. Never curl MCP endpoints.
+```
+
+## Never use WebSearch or WebFetch
+
+All web search must go through `nimble search` (CLI, via Bash). Never use `WebSearch`, `WebFetch`, `curl`, or `wget` — in the foreground or inside Task agents.
+
+## Never use WSA tools
+
+Never call `nimble_find_search_agent`, `nimble_run_search_agent`, or `nimble_url_extract`.

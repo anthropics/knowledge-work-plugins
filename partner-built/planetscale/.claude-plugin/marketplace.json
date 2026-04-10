@@ -1,0 +1,16 @@
+{
+  "name": "planetscale",
+  "owner": {
+    "name": "PlanetScale"
+  },
+  "metadata": {
+    "description": "PlanetScale plugins for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "planetscale",
+      "source": "./",
+      "description": "An authenticated hosted MCP server that accesses your PlanetScale organizations, databases, branches, schema, and Insights data."
+    }
+  ]
+}

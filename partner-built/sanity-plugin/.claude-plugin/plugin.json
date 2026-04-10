@@ -1,0 +1,22 @@
+{
+  "name": "sanity",
+  "description": "Sanity plugin for Claude Code with MCP server, agent skills, agent rules, and slash commands.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Sanity",
+    "email": "support@sanity.io",
+    "url": "https://www.sanity.io"
+  },
+  "homepage": "https://github.com/sanity-io/agent-toolkit",
+  "repository": "https://github.com/sanity-io/agent-toolkit",
+  "license": "MIT",
+  "keywords": [
+    "sanity",
+    "cms",
+    "content-lake",
+    "groq",
+    "content",
+    "structured-content",
+    "visual-editing"
+  ]
+}

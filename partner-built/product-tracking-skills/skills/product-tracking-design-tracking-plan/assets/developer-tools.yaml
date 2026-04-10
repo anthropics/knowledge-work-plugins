@@ -1,0 +1,495 @@
+# Developer Tools Template
+# 
+# For APIs, SDKs, CLI tools, dev infrastructure:
+# Stripe, Twilio, Vercel, GitHub, etc.
+#
+# Usage: /design developer-tools
+
+meta:
+  template: developer-tools
+  template_version: "1.0.0"
+  description: "APIs, SDKs, CLIs, and developer infrastructure"
+  extends: b2b-saas-core
+
+entity_extensions:
+  user:
+    additional_traits:
+      - name: is_developer
+        type: boolean
+        description: "User has developer role"
+      - name: primary_language
+        type: string
+        description: "Most-used programming language"
+  account:
+    additional_traits:
+      - name: api_tier
+        type: string
+        enum: [free, developer, team, enterprise]
+        description: "API access tier"
+      - name: total_api_calls
+        type: integer
+        description: "Lifetime API call count"
+
+events:
+  # ===== API KEYS =====
+
+  - name: api_key.created
+    category: configuration
+    description: "User creates an API key"
+    properties:
+      - name: key_id
+        type: string
+        required: true
+        description: "Key identifier (not the key itself)"
+      - name: key_name
+        type: string
+        required: false
+      - name: key_type
+        type: string
+        enum: [live, test, restricted]
+        required: true
+      - name: scopes
+        type: string
+        required: false
+        description: "Comma-separated permission scopes"
+      - name: has_expiration
+        type: boolean
+        required: false
+    expected_frequency: low
+
+  - name: api_key.rotated
+    category: configuration
+    description: "User rotates/regenerates an API key"
+    properties:
+      - name: old_key_id
+        type: string
+        required: true
+      - name: new_key_id
+        type: string
+        required: true
+    expected_frequency: low
+
+  - name: api_key.revoked
+    category: configuration
+    description: "User revokes an API key"
+    properties:
+      - name: key_id
+        type: string
+        required: true
+      - name: reason
+        type: string
+        enum: [manual, compromised, expired, unused]
+        required: false
+    expected_frequency: low
+
+  # ===== API CALLS =====
+
+  - name: api.called
+    category: core_value
+    description: "API endpoint is called"
+    properties:
+      - name: endpoint
+        type: string
+        required: true
+        description: "e.g., /v1/users, /v2/orders"
+      - name: method
+        type: string
+        enum: [GET, POST, PUT, PATCH, DELETE]
+        required: true
+      - name: status_code
+        type: integer
+        required: true
+      - name: latency_ms
+        type: integer
+        required: true
+      - name: api_version
+        type: string
+        required: false
+      - name: is_test_mode
+        type: boolean
+        required: false
+    expected_frequency: high
+
+  - name: api.error
+    category: core_value
+    description: "API call returns an error"
+    properties:
+      - name: endpoint
+        type: string
+        required: true
+      - name: method
+        type: string
+        required: true
+      - name: status_code
+        type: integer
+        required: true
+      - name: error_code
+        type: string
+        required: true
+      - name: error_type
+        type: string
+        enum: [validation, auth, rate_limit, server, not_found]
+        required: true
+    expected_frequency: medium
+
+  - name: api.rate_limited
+    category: core_value
+    description: "API call is rate limited"
+    properties:
+      - name: endpoint
+        type: string
+        required: true
+      - name: limit_type
+        type: string
+        enum: [per_second, per_minute, per_hour, per_day]
+        required: true
+      - name: current_usage
+        type: integer
+        required: true
+      - name: limit_value
+        type: integer
+        required: true
+    expected_frequency: low
+
+  # ===== SDK USAGE =====
+
+  - name: sdk.installed
+    category: core_value
+    description: "SDK package is installed"
+    properties:
+      - name: sdk_language
+        type: string
+        enum: [javascript, python, ruby, go, java, php, csharp, swift, kotlin]
+        required: true
+      - name: sdk_version
+        type: string
+        required: true
+      - name: package_manager
+        type: string
+        enum: [npm, pip, gem, go, maven, composer, nuget, cocoapods, gradle]
+        required: false
+    expected_frequency: low
+
+  - name: sdk.initialized
+    category: core_value
+    description: "SDK is initialized in user's code"
+    properties:
+      - name: sdk_language
+        type: string
+        required: true
+      - name: sdk_version
+        type: string
+        required: true
+      - name: runtime_version
+        type: string
+        required: false
+        description: "e.g., Node 18, Python 3.11"
+      - name: is_test_mode
+        type: boolean
+        required: false
+    expected_frequency: medium
+
+  - name: sdk.method_called
+    category: core_value
+    description: "SDK method is invoked (sample, not all calls)"
+    properties:
+      - name: sdk_language
+        type: string
+        required: true
+      - name: method_name
+        type: string
+        required: true
+      - name: success
+        type: boolean
+        required: true
+      - name: latency_ms
+        type: integer
+        required: false
+    expected_frequency: high
+
+  # ===== CLI USAGE =====
+
+  - name: cli.installed
+    category: core_value
+    description: "CLI tool is installed"
+    properties:
+      - name: cli_version
+        type: string
+        required: true
+      - name: install_method
+        type: string
+        enum: [npm, brew, curl, binary, package_manager]
+        required: false
+      - name: os
+        type: string
+        enum: [macos, linux, windows]
+        required: false
+    expected_frequency: low
+
+  - name: cli.invoked
+    category: core_value
+    description: "CLI command is run"
+    properties:
+      - name: command
+        type: string
+        required: true
+        description: "Top-level command (e.g., 'deploy', 'login')"
+      - name: subcommand
+        type: string
+        required: false
+      - name: cli_version
+        type: string
+        required: true
+      - name: success
+        type: boolean
+        required: true
+      - name: duration_ms
+        type: integer
+        required: false
+      - name: is_ci
+        type: boolean
+        required: false
+        description: "Running in CI environment"
+    expected_frequency: high
+
+  - name: cli.error
+    category: core_value
+    description: "CLI command fails"
+    properties:
+      - name: command
+        type: string
+        required: true
+      - name: error_type
+        type: string
+        required: true
+      - name: error_message
+        type: string
+        required: false
+      - name: cli_version
+        type: string
+        required: true
+    expected_frequency: medium
+
+  - name: cli.authenticated
+    category: core_value
+    description: "User authenticates via CLI"
+    properties:
+      - name: auth_method
+        type: string
+        enum: [browser, token, api_key, sso]
+        required: true
+    expected_frequency: low
+
+  # ===== WEBHOOKS =====
+
+  - name: webhook.created
+    category: configuration
+    description: "User creates a webhook endpoint"
+    properties:
+      - name: webhook_id
+        type: string
+        required: true
+      - name: events_subscribed
+        type: string
+        required: true
+        description: "Comma-separated event types"
+      - name: endpoint_url_domain
+        type: string
+        required: false
+        description: "Domain only, not full URL"
+    expected_frequency: low
+
+  - name: webhook.updated
+    category: configuration
+    description: "User updates webhook configuration"
+    properties:
+      - name: webhook_id
+        type: string
+        required: true
+      - name: events_changed
+        type: boolean
+        required: false
+      - name: url_changed
+        type: boolean
+        required: false
+    expected_frequency: low
+
+  - name: webhook.deleted
+    category: configuration
+    description: "User deletes a webhook"
+    properties:
+      - name: webhook_id
+        type: string
+        required: true
+    expected_frequency: low
+
+  - name: webhook.triggered
+    category: core_value
+    description: "Webhook is sent to user's endpoint"
+    properties:
+      - name: webhook_id
+        type: string
+        required: true
+      - name: event_type
+        type: string
+        required: true
+      - name: response_status
+        type: integer
+        required: true
+      - name: latency_ms
+        type: integer
+        required: true
+      - name: retry_count
+        type: integer
+        required: false
+    expected_frequency: high
+
+  - name: webhook.failed
+    category: core_value
+    description: "Webhook delivery fails"
+    properties:
+      - name: webhook_id
+        type: string
+        required: true
+      - name: event_type
+        type: string
+        required: true
+      - name: failure_reason
+        type: string
+        enum: [timeout, connection_error, invalid_response, rate_limit]
+        required: true
+      - name: retry_count
+        type: integer
+        required: true
+    expected_frequency: low
+
+  # ===== DEPLOYMENTS =====
+
+  - name: deployment.initiated
+    category: core_value
+    description: "User initiates a deployment"
+    properties:
+      - name: deployment_id
+        type: string
+        required: true
+      - name: environment
+        type: string
+        enum: [development, staging, production]
+        required: true
+      - name: trigger
+        type: string
+        enum: [manual, git_push, cli, api, scheduled]
+        required: true
+    expected_frequency: medium
+
+  - name: deployment.completed
+    category: core_value
+    description: "Deployment finishes"
+    properties:
+      - name: deployment_id
+        type: string
+        required: true
+      - name: environment
+        type: string
+        required: true
+      - name: status
+        type: string
+        enum: [success, failed, cancelled]
+        required: true
+      - name: duration_seconds
+        type: integer
+        required: true
+    expected_frequency: medium
+
+  - name: deployment.rolled_back
+    category: core_value
+    description: "Deployment is rolled back"
+    properties:
+      - name: deployment_id
+        type: string
+        required: true
+      - name: rollback_to_id
+        type: string
+        required: true
+      - name: reason
+        type: string
+        required: false
+    expected_frequency: low
+
+  # ===== DOCUMENTATION =====
+
+  - name: docs.viewed
+    category: navigation
+    description: "User views documentation page"
+    properties:
+      - name: doc_path
+        type: string
+        required: true
+      - name: doc_section
+        type: string
+        required: false
+      - name: referrer_type
+        type: string
+        enum: [search, navigation, direct, dashboard]
+        required: false
+    expected_frequency: high
+
+  - name: docs.searched
+    category: navigation
+    description: "User searches documentation"
+    properties:
+      - name: query_length
+        type: integer
+        required: true
+      - name: results_count
+        type: integer
+        required: true
+      - name: clicked_result
+        type: boolean
+        required: false
+    expected_frequency: medium
+
+  - name: example.copied
+    category: core_value
+    description: "User copies code example from docs"
+    properties:
+      - name: doc_path
+        type: string
+        required: true
+      - name: language
+        type: string
+        required: true
+    expected_frequency: medium
+
+  # ===== PLAYGROUND / TESTING =====
+
+  - name: playground.used
+    category: core_value
+    description: "User uses API playground/explorer"
+    properties:
+      - name: endpoint
+        type: string
+        required: true
+      - name: method
+        type: string
+        required: true
+      - name: success
+        type: boolean
+        required: true
+    expected_frequency: medium
+
+  - name: sandbox.created
+    category: configuration
+    description: "User creates a test/sandbox environment"
+    properties:
+      - name: sandbox_id
+        type: string
+        required: true
+    expected_frequency: low
+
+implementation_notes:
+  - "Sample high-frequency events (api.called, sdk.method_called) — don't track every single call"
+  - "Never log actual API keys, only key IDs"
+  - "Include sdk_language and sdk_version for SDK usage analysis"
+  - "is_test_mode helps separate test traffic from production"
+  - "Latency tracking is critical for developer experience"

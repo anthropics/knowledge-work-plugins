@@ -1,0 +1,42 @@
+{
+  "name": "nimble-plugin-marketplace",
+  "owner": { "name": "Nimble", "email": "support@nimbleway.com" },
+  "metadata": {
+    "description": "Official Nimble plugin: web data toolkit and business workflow skills"
+  },
+  "plugins": [
+    {
+      "name": "nimble",
+      "source": "./",
+      "description": "Real-time web search and data extraction for AI agents \u2013 powered by Nimble. Search, extract, map, and crawl any site on the web with built-in stealth, JS rendering, and retries. Get clean, structured web data from any public webpage with pre-built Web Search Agents, or build your own reusable extraction templates. The definitive web data toolkit for AI-native development.",
+      "version": "0.17.0",
+      "category": "data",
+      "tags": [
+        "web-search",
+        "extraction",
+        "crawl",
+        "map",
+        "cli",
+        "agents",
+        "structured-data",
+        "competitor-intelligence",
+        "meeting-prep",
+        "company-research",
+        "business-intelligence"
+      ],
+      "skills": [
+        "./skills/web-search-tools/nimble-web-expert",
+        "./skills/web-search-tools/nimble-agent-builder",
+        "./skills/productivity/meeting-prep",
+        "./skills/productivity/local-places",
+        "./skills/business-research/competitor-intel",
+        "./skills/business-research/company-deep-dive",
+        "./skills/business-research/market-finder",
+        "./skills/marketing/competitor-positioning",
+        "./skills/healthcare/healthcare-providers-extract",
+        "./skills/healthcare/healthcare-providers-enrich",
+        "./skills/healthcare/healthcare-providers-verify"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "scraper-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build a scraper for Amazon product pages, I have about 50 ASINs I need to get pricing data for",
+      "expected_output": "A Python script that uses Bright Data's pre-built Amazon scraper (Web Scraper API or Python SDK) with async batch processing for 50 URLs, structured JSON output with pricing fields",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I need to scrape job listings from https://jobs.lever.co/openai including title, location, team, and link for each job. Need all pages.",
+      "expected_output": "A Python script that first checks for pre-built scrapers, then does site reconnaissance with Web Unlocker, analyzes HTML structure, identifies selectors, handles pagination, and produces a complete working scraper",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "build a scraper for a React-based e-commerce site at https://shop.example.com that loads products on infinite scroll, I need product name, price, and image URL",
+      "expected_output": "A Python script using Bright Data Browser API with Playwright, infinite scroll handling, resource blocking for bandwidth optimization, and data extraction via page.evaluate()",
+      "files": []
+    }
+  ]
+}

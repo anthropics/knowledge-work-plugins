@@ -1,0 +1,11 @@
+{
+  "name": "searchfit-seo",
+  "version": "1.0.0",
+  "description": "Free AI-powered SEO toolkit — audit websites, plan content strategy, optimize pages, generate schema markup, cluster keywords, and track AI visibility. Works with any website or codebase.",
+  "author": {
+    "name": "SearchFit.ai",
+    "url": "https://searchfit.ai"
+  },
+  "homepage": "https://searchfit.ai",
+  "repository": "https://github.com/searchfit/searchfit-seo"
+}

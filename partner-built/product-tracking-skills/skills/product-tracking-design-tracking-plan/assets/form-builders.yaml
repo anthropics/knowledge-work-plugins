@@ -1,0 +1,461 @@
+# Form Builders Template
+# 
+# For products that create forms, surveys, quizzes, applications:
+# Typeform, SurveyMonkey, Google Forms, Jotform, etc.
+#
+# Usage: /design form-builders
+
+meta:
+  template: form-builders
+  template_version: "1.0.0"
+  description: "Form creation, distribution, and response collection"
+  extends: b2b-saas-core
+
+entity_extensions:
+  account:
+    additional_traits:
+      - name: total_forms
+        type: integer
+        description: "Number of forms created"
+      - name: total_responses
+        type: integer
+        description: "Lifetime response count"
+
+events:
+  # ===== FORM CREATION =====
+
+  - name: form.created
+    category: core_value
+    description: "User creates a new form"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: form_type
+        type: string
+        enum: [survey, quiz, application, feedback, registration, contact, poll]
+        required: true
+      - name: creation_method
+        type: string
+        enum: [blank, template, duplicate, ai_generated]
+        required: true
+      - name: template_id
+        type: string
+        required: false
+    expected_frequency: medium
+
+  - name: form.opened
+    category: core_value
+    description: "User opens form in editor"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: question_count
+        type: integer
+        required: false
+    expected_frequency: high
+
+  - name: form.saved
+    category: core_value
+    description: "User saves form (manual or auto)"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: save_type
+        type: string
+        enum: [manual, auto]
+        required: true
+      - name: question_count
+        type: integer
+        required: true
+    expected_frequency: high
+
+  - name: form.duplicated
+    category: core_value
+    description: "User duplicates an existing form"
+    properties:
+      - name: source_form_id
+        type: string
+        required: true
+      - name: new_form_id
+        type: string
+        required: true
+    expected_frequency: low
+
+  - name: form.deleted
+    category: core_value
+    description: "User deletes a form"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: response_count
+        type: integer
+        required: false
+        description: "Responses lost with deletion"
+    expected_frequency: low
+
+  # ===== FORM BUILDING =====
+
+  - name: question.added
+    category: core_value
+    description: "User adds a question to form"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: question_type
+        type: string
+        enum: [text, textarea, multiple_choice, checkbox, dropdown, rating, scale, date, file_upload, matrix, nps, signature]
+        required: true
+      - name: question_position
+        type: integer
+        required: false
+      - name: is_required
+        type: boolean
+        required: false
+    expected_frequency: high
+
+  - name: question.edited
+    category: core_value
+    description: "User modifies a question"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: question_type
+        type: string
+        required: true
+      - name: edit_type
+        type: string
+        enum: [text, options, settings, logic]
+        required: false
+    expected_frequency: high
+
+  - name: question.deleted
+    category: core_value
+    description: "User removes a question"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: question_type
+        type: string
+        required: true
+    expected_frequency: medium
+
+  - name: question.reordered
+    category: core_value
+    description: "User reorders questions"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: questions_moved
+        type: integer
+        required: false
+    expected_frequency: medium
+
+  - name: logic.added
+    category: core_value
+    description: "User adds conditional logic"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: logic_type
+        type: string
+        enum: [skip, show_hide, branch, calculate]
+        required: true
+    expected_frequency: low
+
+  # ===== FORM STYLING =====
+
+  - name: theme.applied
+    category: configuration
+    description: "User applies a theme to form"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: theme_type
+        type: string
+        enum: [preset, custom, brand]
+        required: true
+    expected_frequency: low
+
+  - name: branding.updated
+    category: configuration
+    description: "User updates form branding"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: element_changed
+        type: string
+        enum: [logo, colors, fonts, background]
+        required: true
+    expected_frequency: low
+
+  # ===== PUBLISHING =====
+
+  - name: form.published
+    category: core_value
+    description: "User publishes form (makes live)"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: question_count
+        type: integer
+        required: true
+      - name: has_logic
+        type: boolean
+        required: false
+      - name: is_first_publish
+        type: boolean
+        required: false
+    expected_frequency: medium
+
+  - name: form.unpublished
+    category: core_value
+    description: "User unpublishes form (takes offline)"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: response_count
+        type: integer
+        required: false
+    expected_frequency: low
+
+  - name: form.republished
+    category: core_value
+    description: "User republishes after edits"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: changes_made
+        type: boolean
+        required: false
+    expected_frequency: medium
+
+  # ===== DISTRIBUTION =====
+
+  - name: link.copied
+    category: core_value
+    description: "User copies form link"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: link_type
+        type: string
+        enum: [direct, shortened, custom]
+        required: false
+    expected_frequency: high
+
+  - name: form.embedded
+    category: core_value
+    description: "User gets embed code"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: embed_type
+        type: string
+        enum: [iframe, popup, slider, chatbot]
+        required: true
+    expected_frequency: low
+
+  - name: email.sent
+    category: core_value
+    description: "User sends form via email"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: recipient_count
+        type: integer
+        required: true
+    expected_frequency: low
+
+  - name: qr_code.generated
+    category: core_value
+    description: "User generates QR code for form"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+    expected_frequency: low
+
+  # ===== RESPONSES =====
+
+  - name: response.submitted
+    category: core_value
+    description: "Form response is submitted"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: response_id
+        type: string
+        required: true
+      - name: completion_time_seconds
+        type: integer
+        required: false
+      - name: questions_answered
+        type: integer
+        required: true
+      - name: questions_skipped
+        type: integer
+        required: false
+      - name: source
+        type: string
+        enum: [direct_link, embed, email, qr_code]
+        required: false
+    expected_frequency: high
+
+  - name: response.started
+    category: core_value
+    description: "Respondent starts filling form"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: source
+        type: string
+        required: false
+    expected_frequency: high
+
+  - name: response.abandoned
+    category: core_value
+    description: "Respondent abandons form before completion"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: last_question_reached
+        type: integer
+        required: false
+      - name: time_spent_seconds
+        type: integer
+        required: false
+    expected_frequency: medium
+
+  - name: response.viewed
+    category: core_value
+    description: "Form owner views a response"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: response_id
+        type: string
+        required: true
+    expected_frequency: high
+
+  - name: response.deleted
+    category: core_value
+    description: "Form owner deletes a response"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: response_id
+        type: string
+        required: true
+    expected_frequency: low
+
+  # ===== ANALYSIS & EXPORT =====
+
+  - name: results.viewed
+    category: core_value
+    description: "User views form results/analytics"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: view_type
+        type: string
+        enum: [summary, individual, insights]
+        required: true
+    expected_frequency: high
+
+  - name: export.completed
+    category: core_value
+    description: "User exports responses"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: export_format
+        type: string
+        enum: [csv, xlsx, pdf, google_sheets]
+        required: true
+      - name: response_count
+        type: integer
+        required: true
+    expected_frequency: low
+
+  - name: report.generated
+    category: core_value
+    description: "User generates a report"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: report_type
+        type: string
+        enum: [summary, detailed, comparison]
+        required: true
+    expected_frequency: low
+
+  # ===== COLLABORATION =====
+
+  - name: form.shared
+    category: collaboration
+    description: "User shares form with collaborator"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: share_type
+        type: string
+        enum: [edit, view, comment]
+        required: true
+      - name: recipient_count
+        type: integer
+        required: true
+    expected_frequency: low
+
+  - name: folder.created
+    category: configuration
+    description: "User creates a folder for forms"
+    properties:
+      - name: folder_id
+        type: string
+        required: true
+    expected_frequency: low
+
+  - name: form.moved
+    category: configuration
+    description: "User moves form to folder"
+    properties:
+      - name: form_id
+        type: string
+        required: true
+      - name: to_folder_id
+        type: string
+        required: true
+    expected_frequency: low
+
+implementation_notes:
+  - "Track form_id on all events for form-level analysis"
+  - "response.submitted is the most important event for activation"
+  - "Distinguish between form owner actions and respondent actions"
+  - "completion_time_seconds helps optimize form length"
+  - "Don't track actual response content — just metadata"

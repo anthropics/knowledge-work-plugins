@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "daloopa": {
+      "type": "http",
+      "url": "https://mcp.daloopa.com/server/mcp"
+    },
+    "daloopa-docs": {
+      "type": "http",
+      "url": "https://docs.daloopa.com/mcp"
+    }
+  }
+}

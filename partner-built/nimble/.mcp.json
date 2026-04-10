@@ -1,0 +1,7 @@
+{
+  "nimble-mcp-server": {
+    "command": "npx",
+    "args": ["-y", "mcp-remote@latest", "https://mcp.nimbleway.com/mcp",
+             "--header", "Authorization:Bearer ${NIMBLE_API_KEY}"]
+  }
+}

@@ -1,0 +1,421 @@
+# B2B SaaS Core Template
+# 
+# The baseline template. Every B2B SaaS product should start here.
+# Other category templates extend this with domain-specific events.
+#
+# Usage: /design b2b-saas-core
+
+meta:
+  template: b2b-saas-core
+  template_version: "1.0.0"
+  description: "Core B2B SaaS events that every product should track"
+  extends: null
+
+entities:
+  user:
+    id_property: user_id
+    id_format: "usr_*"
+    traits:
+      - name: email
+        type: string
+        pii: true
+        description: "User's email address"
+      - name: name
+        type: string
+        pii: true
+        description: "User's full name"
+      - name: role
+        type: string
+        enum: [owner, admin, member, viewer]
+        description: "User's role in the account"
+      - name: created_at
+        type: datetime
+        description: "When user was created"
+      - name: account_id
+        type: string
+        description: "Primary account association"
+
+  account:
+    id_property: account_id
+    id_format: "acc_*"
+    traits:
+      - name: name
+        type: string
+        description: "Account/company name"
+      - name: plan
+        type: string
+        enum: [free, starter, pro, enterprise]
+        description: "Current pricing plan"
+      - name: industry
+        type: string
+        description: "Industry vertical"
+      - name: employee_count
+        type: integer
+        description: "Company size"
+      - name: mrr
+        type: number
+        description: "Monthly recurring revenue"
+      - name: created_at
+        type: datetime
+        description: "When account was created"
+
+events:
+  # ===== LIFECYCLE =====
+  
+  - name: user.signed_up
+    category: lifecycle
+    description: "User creates a new account"
+    properties:
+      - name: signup_source
+        type: string
+        enum: [organic, google_oauth, github_oauth, invite, api]
+        required: true
+      - name: referrer
+        type: string
+        required: false
+      - name: utm_source
+        type: string
+        required: false
+      - name: utm_medium
+        type: string
+        required: false
+      - name: utm_campaign
+        type: string
+        required: false
+    expected_frequency: low
+
+  - name: user.signed_in
+    category: lifecycle
+    description: "User logs into their account"
+    properties:
+      - name: method
+        type: string
+        enum: [password, google_oauth, github_oauth, sso, magic_link]
+        required: true
+    expected_frequency: high
+
+  - name: user.signed_out
+    category: lifecycle
+    description: "User logs out"
+    properties: []
+    expected_frequency: medium
+
+  - name: user.onboarded
+    category: lifecycle
+    description: "User completes onboarding flow"
+    properties:
+      - name: steps_completed
+        type: integer
+        required: true
+      - name: steps_skipped
+        type: integer
+        required: false
+    expected_frequency: low
+
+  - name: account.created
+    category: lifecycle
+    description: "New account/organization created"
+    properties:
+      - name: account_name
+        type: string
+        required: true
+      - name: created_by
+        type: string
+        required: true
+        description: "User ID of creator"
+    expected_frequency: low
+
+  # ===== COLLABORATION =====
+
+  - name: user.invited
+    category: collaboration
+    description: "Existing user invites someone to account"
+    properties:
+      - name: invitee_email
+        type: string
+        pii: true
+        required: true
+      - name: invitee_role
+        type: string
+        enum: [owner, admin, member, viewer]
+        required: true
+      - name: invitation_method
+        type: string
+        enum: [email, link]
+        required: false
+    expected_frequency: low
+
+  - name: user.joined
+    category: collaboration
+    description: "Invited user joins account"
+    properties:
+      - name: invitation_id
+        type: string
+        required: false
+      - name: role
+        type: string
+        required: true
+    expected_frequency: low
+
+  - name: user.removed
+    category: collaboration
+    description: "User removed from account"
+    properties:
+      - name: removed_by
+        type: string
+        required: true
+      - name: reason
+        type: string
+        required: false
+    expected_frequency: low
+
+  - name: user.role_changed
+    category: collaboration
+    description: "User's role is changed"
+    properties:
+      - name: from_role
+        type: string
+        required: true
+      - name: to_role
+        type: string
+        required: true
+      - name: changed_by
+        type: string
+        required: true
+    expected_frequency: low
+
+  # ===== CONFIGURATION =====
+
+  - name: integration.connected
+    category: configuration
+    description: "User connects an external integration"
+    properties:
+      - name: integration_type
+        type: string
+        required: true
+        description: "e.g., salesforce, hubspot, slack, zapier"
+      - name: is_first_integration
+        type: boolean
+        required: false
+    expected_frequency: low
+
+  - name: integration.disconnected
+    category: configuration
+    description: "User removes an integration"
+    properties:
+      - name: integration_type
+        type: string
+        required: true
+      - name: reason
+        type: string
+        required: false
+    expected_frequency: low
+
+  - name: setting.changed
+    category: configuration
+    description: "User modifies a setting"
+    properties:
+      - name: setting_category
+        type: string
+        required: true
+      - name: setting_name
+        type: string
+        required: true
+      - name: previous_value
+        type: string
+        required: false
+      - name: new_value
+        type: string
+        required: false
+    expected_frequency: low
+
+  - name: notification.toggled
+    category: configuration
+    description: "User changes notification preferences"
+    properties:
+      - name: notification_type
+        type: string
+        required: true
+      - name: channel
+        type: string
+        enum: [email, in_app, slack, sms]
+        required: true
+      - name: enabled
+        type: boolean
+        required: true
+    expected_frequency: low
+
+  # ===== BILLING =====
+
+  - name: trial.started
+    category: billing
+    description: "Account begins trial"
+    properties:
+      - name: trial_type
+        type: string
+        enum: [standard, extended, enterprise]
+        required: true
+      - name: trial_days
+        type: integer
+        required: true
+      - name: plan_trialing
+        type: string
+        required: true
+    expected_frequency: low
+
+  - name: trial.ended
+    category: billing
+    description: "Trial period ends"
+    properties:
+      - name: converted
+        type: boolean
+        required: true
+      - name: plan_selected
+        type: string
+        required: false
+    expected_frequency: low
+
+  - name: plan.viewed
+    category: billing
+    description: "User views pricing/plan page"
+    properties:
+      - name: current_plan
+        type: string
+        required: true
+      - name: source
+        type: string
+        required: false
+        description: "Where they came from (limit_reached, settings, etc.)"
+    expected_frequency: medium
+
+  - name: plan.upgraded
+    category: billing
+    description: "Account upgrades to higher plan"
+    properties:
+      - name: from_plan
+        type: string
+        required: true
+      - name: to_plan
+        type: string
+        required: true
+      - name: upgrade_trigger
+        type: string
+        enum: [limit_reached, feature_needed, proactive]
+        required: false
+    expected_frequency: low
+
+  - name: plan.downgraded
+    category: billing
+    description: "Account downgrades to lower plan"
+    properties:
+      - name: from_plan
+        type: string
+        required: true
+      - name: to_plan
+        type: string
+        required: true
+      - name: reason
+        type: string
+        required: false
+    expected_frequency: low
+
+  - name: limit.reached
+    category: billing
+    description: "Account hits a usage limit"
+    properties:
+      - name: limit_type
+        type: string
+        required: true
+        description: "e.g., users, storage, api_calls"
+      - name: current_usage
+        type: integer
+        required: true
+      - name: limit_value
+        type: integer
+        required: true
+    expected_frequency: low
+
+  - name: limit.warning
+    category: billing
+    description: "Account approaching a usage limit"
+    properties:
+      - name: limit_type
+        type: string
+        required: true
+      - name: current_usage
+        type: integer
+        required: true
+      - name: limit_value
+        type: integer
+        required: true
+      - name: percentage_used
+        type: number
+        required: true
+    expected_frequency: low
+
+  # ===== NAVIGATION (SPARSE) =====
+
+  - name: feature.accessed
+    category: navigation
+    description: "User accesses a major feature area"
+    properties:
+      - name: feature_name
+        type: string
+        required: true
+      - name: is_first_access
+        type: boolean
+        required: false
+    expected_frequency: high
+
+  - name: search.performed
+    category: navigation
+    description: "User performs a search"
+    properties:
+      - name: query_length
+        type: integer
+        required: true
+        description: "Length of query, not the query itself (privacy)"
+      - name: results_count
+        type: integer
+        required: true
+      - name: search_context
+        type: string
+        required: false
+        description: "Where the search was performed"
+    expected_frequency: medium
+
+  - name: help.accessed
+    category: navigation
+    description: "User accesses help/documentation"
+    properties:
+      - name: help_type
+        type: string
+        enum: [docs, tooltip, chat, video]
+        required: true
+      - name: context
+        type: string
+        required: false
+        description: "Where they were when they accessed help"
+    expected_frequency: low
+
+  - name: error.encountered
+    category: navigation
+    description: "User sees an error"
+    properties:
+      - name: error_type
+        type: string
+        required: true
+      - name: error_code
+        type: string
+        required: false
+      - name: context
+        type: string
+        required: false
+    expected_frequency: low
+
+implementation_notes:
+  - "All events must include user_id and account_id in context"
+  - "Use ISO 8601 for all datetime properties"
+  - "Prefer prefixed IDs (usr_, acc_) for clarity"
+  - "Never include raw PII in event properties — use traits for that"
+  - "CUSTOMIZE: Add your core value actions to this template"
