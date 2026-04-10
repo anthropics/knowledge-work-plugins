@@ -124,14 +124,20 @@
       "description": "An authenticated hosted MCP server that accesses your PlanetScale organizations, databases, branches, schema, and Insights data. Query against your data, surface slow queries, and get organizational and account information.",
       "category": "database",
       "source": "./partner-built/planetscale",
-      "homepage": "https://planetscale.com/"
+      "homepage": "https://planetscale.com/",
+      "author": {
+        "name": "PlanetScale"
+      }
     },
     {
       "name": "adspirer-ads-agent",
       "description": "Cross-platform ad management for Google Ads, Meta Ads, TikTok Ads, and LinkedIn Ads. 91 tools for keyword research, campaign creation, performance analysis, and budget optimization.",
       "category": "productivity",
       "source": "./partner-built/adspirer-ads-agent",
-      "homepage": "https://www.adspirer.com"
+      "homepage": "https://www.adspirer.com",
+      "author": {
+        "name": "Adspirer"
+      }
     },
     {
       "name": "sanity-plugin",
@@ -147,108 +153,159 @@
       "name": "zoominfo",
       "description": "Search companies and contacts, enrich leads, find lookalikes, and get AI-ranked contact recommendations. Pre-built skills chain multiple ZoomInfo tools into complete B2B sales workflows.",
       "source": "./partner-built/zoominfo",
-      "homepage": "https://zoominfo.com"
+      "homepage": "https://zoominfo.com",
+      "author": {
+        "name": "ZoomInfo"
+      }
     },
     {
       "name": "mintlify",
       "description": "Build beautiful documentation sites with Mintlify. Convert non-markdown files into properly formatted MDX pages, add and modify content with correct component use, and automate documentation updates.",
       "category": "development",
       "source": "./partner-built/mintlify",
-      "homepage": "https://www.mintlify.com/"
+      "homepage": "https://www.mintlify.com/",
+      "author": {
+        "name": "Mintlify"
+      }
     },
     {
       "name": "daloopa",
       "description": "Financial analysis skills powered by Daloopa's institutional-grade data",
       "category": "finance",
       "source": "./partner-built/daloopa",
-      "homepage": "https://github.com/daloopa/plugin"
+      "homepage": "https://github.com/daloopa/plugin",
+      "author": {
+        "name": "Daloopa"
+      }
     },
     {
       "name": "zapier",
       "description": "Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client.",
       "category": "productivity",
       "source": "./partner-built/zapier",
-      "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier"
+      "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier",
+      "author": {
+        "name": "Zapier"
+      }
     },
     {
       "name": "intercom",
       "description": "Intercom integration for Claude Code. Search conversations, analyze customer support patterns, look up contacts and companies, and install the Intercom Messenger. Connect your Intercom workspace to get real-time insights from customer data.",
       "category": "productivity",
       "source": "./partner-built/intercom",
-      "homepage": "https://github.com/intercom/claude-plugin-external"
+      "homepage": "https://github.com/intercom/claude-plugin-external",
+      "author": {
+        "name": "Intercom"
+      }
     },
     {
       "name": "cockroachdb",
       "description": "CockroachDB plugin for Claude Code — explore schemas, write optimized SQL, debug queries, and manage distributed database clusters directly from your AI coding agent.",
       "source": "./partner-built/cockroachdb",
-      "homepage": "https://github.com/cockroachdb/claude-plugin"
+      "homepage": "https://github.com/cockroachdb/claude-plugin",
+      "author": {
+        "name": "Virag Tripathi"
+      }
     },
     {
       "name": "prisma",
       "description": "Prisma MCP integration for Postgres database management, schema migrations, SQL queries, and connection string management. Provision Prisma Postgres databases, run migrations, and interact with your data directly.",
       "source": "./partner-built/prisma",
-      "homepage": "https://prisma.io"
+      "homepage": "https://prisma.io",
+      "author": {
+        "name": "Prisma"
+      }
     },
     {
       "name": "fastly-agent-toolkit",
       "description": "Fastly development tools and platform skills",
       "source": "./partner-built/fastly-agent-toolkit",
-      "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
+      "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md",
+      "author": {
+        "name": "Fastly"
+      }
     },
     {
       "name": "cloudinary",
       "description": "Use Cloudinary directly in Claude. Manage assets, apply transformations, optimize media, and more through natural conversation.",
       "source": "./partner-built/cloudinary",
-      "homepage": "https://cloudinary.com/documentation"
+      "homepage": "https://cloudinary.com/documentation",
+      "author": {
+        "name": "Cloudinary"
+      }
     },
     {
       "name": "nimble",
       "description": "Nimble web data toolkit — search, extract, map, crawl the web and work with structured data agents",
       "source": "./partner-built/nimble",
-      "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation"
+      "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation",
+      "author": {
+        "name": "Nimble"
+      }
     },
     {
       "name": "brightdata-plugin",
       "description": "Web scraping, Google search, structured data extraction, and MCP server integration powered by Bright Data. Includes 7 skills: scrape any webpage as markdown (with bot detection/CAPTCHA bypass), search Google with structured JSON results, extract data from 40+ websites (Amazon, LinkedIn, Instagram, TikTok, YouTube, and more), orchestrate Bright Data's 60+ MCP tools, built-in best practices for Web Unlocker, SERP API, Web Scraper API, and Browser API, Python SDK best practices for the brightda...",
       "source": "./partner-built/brightdata-plugin",
-      "homepage": "https://docs.brightdata.com"
+      "homepage": "https://docs.brightdata.com",
+      "author": {
+        "name": "Bright Data"
+      }
     },
     {
       "name": "searchfit-seo",
       "description": "Free AI-powered SEO toolkit — audit websites, plan content strategy, optimize pages, generate schema markup, cluster keywords, and track AI visibility. Works with any website or codebase.",
       "source": "./partner-built/searchfit-seo",
-      "homepage": "https://searchfit.ai"
+      "homepage": "https://searchfit.ai",
+      "author": {
+        "name": "SearchFit.ai"
+      }
     },
     {
       "name": "atlan",
       "description": "Atlan data catalog plugin for Claude Code. Search, explore, govern, and manage your data assets through natural language. Powered by the Atlan MCP server with semantic search, lineage traversal, glossary management, data quality rules, and more.",
       "source": "./partner-built/atlan",
-      "homepage": "https://docs.atlan.com/"
+      "homepage": "https://docs.atlan.com/",
+      "author": {
+        "name": "Atlan"
+      }
     },
     {
       "name": "ai-firstify",
       "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
       "source": "./partner-built/ai-firstify",
-      "homepage": "https://ai-first.techwolf.ai"
+      "homepage": "https://ai-first.techwolf.ai",
+      "author": {
+        "name": "TechWolf"
+      }
     },
     {
       "name": "product-tracking-skills",
       "description": "AI agent skills that make SaaS products data-ready for product analytics — from codebase scan to tracking plan to working instrumentation code.",
       "source": "./partner-built/product-tracking-skills",
-      "homepage": "https://www.accoil.com/product-tracking"
+      "homepage": "https://www.accoil.com/product-tracking",
+      "author": {
+        "name": "Accoil"
+      }
     },
     {
       "name": "postiz",
       "description": "Social media automation CLI for scheduling posts, managing integrations, uploading media, and tracking analytics across 28+ platforms including X, LinkedIn, Reddit, YouTube, TikTok, Instagram, and more",
       "source": "./partner-built/postiz",
-      "homepage": "https://postiz.com/agent"
+      "homepage": "https://postiz.com/agent",
+      "author": {
+        "name": "Nevo David"
+      }
     },
     {
       "name": "figma",
       "description": "Figma design platform integration. Access design files, extract component information, read design tokens, and translate designs into code. Bridge the gap between design and development workflows.",
       "category": "design",
       "source": "./partner-built/figma",
-      "homepage": "https://github.com/figma/mcp-server-guide"
+      "homepage": "https://github.com/figma/mcp-server-guide",
+      "author": {
+        "name": "Figma"
+      }
     },
     {
       "name": "pdf-viewer",
