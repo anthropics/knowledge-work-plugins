@@ -1,14 +1,5 @@
 ---
-name: run-monitoring
 description: Run a full monitoring cycle right now. Searches Indeed for open roles at tracked companies, scans for company and people news, checks industry topics, and writes a fresh monitoring/digest.md. User waits while this runs — use /setup-monitoring to configure weekly background runs instead.
-allowed-tools:
-  - Read
-  - Write
-  - Glob
-  - Bash
-  - WebSearch
-  - search_jobs
-  - get_job_details
 ---
 
 Load the kate-coach skill and run the full monitoring flow as defined in `references/flows.md`, Steps 1–7.

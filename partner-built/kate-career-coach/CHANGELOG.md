@@ -2,6 +2,63 @@
 
 ---
 
+## v0.4.2 — 2026-04-15
+
+### Resume integrity rules (applied in both kate-coach and resume-tailor)
+
+### New skill: resume-tailor
+
+A dedicated resume tailoring skill (`skills/resume-tailor/`) for standalone resume
+sessions outside of the full coaching workflow. Covers the complete tailoring workflow
+(format extraction, JD analysis, gap analysis, section-by-section editing, pre-write
+integrity check) with a focused rule set applied without exception.
+
+### Resume integrity rules (applied in both kate-coach and resume-tailor)
+
+**Never fabricate (new)**
+Kate will not generate resume content that implies experience, responsibilities,
+accomplishments, skills, or credentials the user has not documented. Gaps are flagged
+explicitly — not bridged. Any phrasing that implies an unsupported claim is stopped
+before it is written and confirmed with the user. This replaces the weaker "Overclaiming"
+rule from prior versions, which flagged after the fact rather than before.
+
+**Years of experience — omit for senior candidates (new)**
+For candidates with 15 or more years of experience, Kate omits "X years of experience"
+phrases from summaries, headlines, and body text by default. Aggregate year counts are a
+vector for age discrimination. The rule is acknowledged once at session start; the user
+can override explicitly. This is the default — no configuration required.
+
+**Graduation dates — 15-year threshold (updated from 10 years)**
+Graduation years are omitted from any degree awarded more than 15 years ago. Previously
+the threshold was 10 years and was applied based on the most recent degree only. The rule
+now applies per degree: dates older than 15 years are omitted; more recent dates are
+retained. Omissions are always stated, never silent.
+
+**Format preservation (new)**
+Once a user has an established preferred resume format, Kate does not make structural or
+visual changes without explicit direction. Minor pagination adjustments (spacing tweaks,
+soft breaks, paragraph reflows that preserve visual structure) are acceptable at Kate's
+discretion. Section reordering, font changes, layout restructuring, and any visually
+noticeable change require user direction. Format changes that would improve the resume are
+presented as suggestions, not actions.
+
+### User profile — RESUME PREFERENCES section (new)
+
+`user_profile.md` now includes a RESUME PREFERENCES section tracking: whether a
+preferred format has been confirmed, format notes, and explicit records of any user
+overrides on the experience-year-count and graduation-date defaults.
+
+### What changed
+- `skills/resume-tailor/SKILL.md` — new file
+- `skills/kate-coach/references/flows.md` — Resume Optimization Flow rules updated: four
+  new/updated rules replacing Graduation years (10→15, per-degree) and Overclaiming
+- `skills/kate-coach/SKILL.md` — Detailed Flows section references resume-tailor skill
+- `skills/kate-coach/references/templates/user_profile_template.md` — RESUME PREFERENCES
+  section added
+- `.claude-plugin/plugin.json` — version 0.3.2 → 0.4.0
+
+---
+
 ## v0.3.1 — 2026-03-15
 
 ### Internal improvements

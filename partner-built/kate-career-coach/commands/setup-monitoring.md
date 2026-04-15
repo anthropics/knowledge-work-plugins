@@ -1,13 +1,5 @@
 ---
-name: setup-monitoring
 description: Set up weekly background monitoring. Initializes the watchlist, runs a first monitoring cycle, then creates a scheduled task that runs the monitoring headlessly every week and writes results to monitoring/digest.md.
-allowed-tools:
-  - Read
-  - Write
-  - Glob
-  - Bash
-  - WebSearch
-  - search_jobs
 ---
 
 Set up Kate's monitoring system for the first time, or reconfigure it.

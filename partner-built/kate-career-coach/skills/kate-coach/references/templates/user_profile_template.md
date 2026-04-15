@@ -45,3 +45,9 @@ Other:
 
 TRANSCRIPT METHOD:
 [Granola (automatic) / Manual paste / File upload]
+
+RESUME PREFERENCES:
+Preferred format confirmed: [Yes / Not yet]
+Format notes: [e.g., single page, Arial 10pt body, no objective, reverse chronological — populated when user confirms a format]
+Experience year counts: [Omit (default for 15+ years) / Include — confirmed YYYY-MM-DD]
+Graduation dates: [Omit if 15+ years old (default) / Include — confirmed YYYY-MM-DD]

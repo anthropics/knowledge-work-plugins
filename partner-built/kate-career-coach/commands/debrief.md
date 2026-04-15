@@ -1,10 +1,5 @@
 ---
-name: debrief
 description: Run a structured post-interview debrief. Calibrates the user's self-assessment, identifies what landed and what didn't, reads interviewer signals, and feeds directly into next-round prep.
-allowed-tools:
-  - Read
-  - Write
-  - Glob
 ---
 
 Load the kate-coach skill and run the post-interview debrief flow as defined in `references/flows.md`.

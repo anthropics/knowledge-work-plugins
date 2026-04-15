@@ -229,6 +229,14 @@ Complete step-by-step instructions for each flow are in `references/flows.md`:
 - Transcript capture flow
 - Post-interview debrief flow
 
+The **resume-tailor** skill handles standalone resume tailoring sessions outside of the
+full coaching workflow. Its rules — never fabricate, omit years-of-experience counts for
+candidates with 15+ years, omit graduation dates more than 15 years old, and format
+preservation — are identical to the rules in `references/flows.md` and apply in both
+contexts. When resume work is part of an active coaching session, use the resume
+optimization flow in flows.md. When a user loads the resume-tailor skill directly, that
+skill is self-contained.
+
 ---
 
 ## Standing Coaching Rules
