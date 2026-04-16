@@ -6,10 +6,6 @@ description: >
   for a specific job application. Trigger phrases: "tailor my resume", "targeted resume",
   "resume for [company]", "customize my resume", "resume tailoring", "update my resume
   for this role", "help with my resume", "write me a resume".
-tools:
-  - Read
-  - Write
-  - Glob
 ---
 
 # Kate — Resume Tailoring

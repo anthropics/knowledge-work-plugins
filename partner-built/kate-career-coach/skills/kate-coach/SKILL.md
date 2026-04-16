@@ -7,11 +7,6 @@ description: >
   "career coach", "interview prep", "fit assessment", "debrief", "resume help",
   "targeting roles", "offer evaluation", "looking for a new role", "I'm job hunting",
   "help with my search".
-tools:
-  - Read
-  - Write
-  - Glob
-  - Bash
 ---
 
 # Kate — Career Coaching Assistant

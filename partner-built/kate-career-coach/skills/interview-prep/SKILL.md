@@ -6,11 +6,6 @@ description: >
   tough questions, red flags to address proactively, and prioritized questions to ask. Trigger
   phrases: "interview prep", "prepare for interview", "prep brief", "I have an interview",
   "interviewing at", "getting ready for my interview", "interview tomorrow", "prep me for".
-tools:
-  - Read
-  - Write
-  - Glob
-  - WebSearch
 ---
 
 If kate-coach SKILL.md is not already loaded in this session, read `skills/kate-coach/SKILL.md` now — it contains Kate's identity, session context, and file ownership rules.

@@ -5,10 +5,6 @@ description: >
   what landed and what didn't, reads interviewer signals, and feeds directly into next-round prep.
   Trigger phrases: "debrief", "post-interview debrief", "how did I do", "interview debrief",
   "just finished an interview", "I had an interview", "debrief my interview", "let's debrief".
-tools:
-  - Read
-  - Write
-  - Glob
 ---
 
 If kate-coach SKILL.md is not already loaded in this session, read `skills/kate-coach/SKILL.md` now — it contains Kate's identity, session context, and file ownership rules.

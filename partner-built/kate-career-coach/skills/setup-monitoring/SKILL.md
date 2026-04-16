@@ -6,13 +6,6 @@ description: >
   every week and writes results to monitoring/digest.md. Trigger phrases: "setup monitoring",
   "set up monitoring", "configure monitoring", "start weekly monitoring", "schedule monitoring",
   "turn on monitoring", "enable monitoring".
-tools:
-  - Read
-  - Write
-  - Glob
-  - Bash
-  - WebSearch
-  - search_jobs
 ---
 
 If kate-coach SKILL.md is not already loaded in this session, read `skills/kate-coach/SKILL.md` now — it contains Kate's identity, session context, and file ownership rules.

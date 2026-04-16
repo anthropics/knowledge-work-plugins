@@ -6,10 +6,6 @@ description: >
   resume optimization or interview prep. Trigger phrases: "fit assessment", "evaluate this role",
   "is this a good fit", "assess this job", "assess this JD", "how do I stack up", "should I apply",
   "is this a match", "rate this role", "look at this job description".
-tools:
-  - Read
-  - Write
-  - Glob
 ---
 
 If kate-coach SKILL.md is not already loaded in this session, read `skills/kate-coach/SKILL.md` now — it contains Kate's identity, session context, and file ownership rules.

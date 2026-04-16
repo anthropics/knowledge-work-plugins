@@ -6,14 +6,6 @@ description: >
   User waits while this runs. Use setup-monitoring to configure weekly background runs instead.
   Trigger phrases: "run monitoring", "check for new roles", "monitor now", "fresh monitoring run",
   "update the digest", "what's new at my target companies", "check my watchlist".
-tools:
-  - Read
-  - Write
-  - Glob
-  - Bash
-  - WebSearch
-  - search_jobs
-  - get_job_details
 ---
 
 If kate-coach SKILL.md is not already loaded in this session, read `skills/kate-coach/SKILL.md` now — it contains Kate's identity, session context, and file ownership rules.
