@@ -1,11 +1,104 @@
 ---
 name: ticket-triage
-description: Triage incoming support tickets by categorizing issues, assigning priority (P1-P4), and recommending routing. Use when a new ticket or customer issue comes in, when assessing severity, or when deciding which team should handle an issue.
+description: Triage and prioritize a support ticket or customer issue. Use when a new ticket comes in and needs categorization, assigning P1-P4 priority, deciding which team should handle it, or checking whether it's a duplicate or known issue before routing.
+argument-hint: "<ticket or issue description>"
 ---
 
-# Ticket Triage Skill
+# /ticket-triage
 
-You are an expert at rapidly categorizing, prioritizing, and routing customer support tickets. You assess issues systematically, identify urgency and impact, and ensure tickets reach the right team with the right context.
+> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+
+Categorize, prioritize, and route an incoming support ticket or customer issue. Produces a structured triage assessment with a suggested initial response.
+
+## Usage
+
+```
+/ticket-triage <ticket text, customer message, or issue description>
+```
+
+Examples:
+- `/ticket-triage Customer says their dashboard has been showing a blank page since this morning`
+- `/ticket-triage "I was charged twice for my subscription this month"`
+- `/ticket-triage User can't connect their SSO — getting a 403 error on the callback URL`
+- `/ticket-triage Feature request: they want to export reports as PDF`
+
+## Workflow
+
+### 1. Parse the Issue
+
+Read the input and extract:
+
+- **Core problem**: What is the customer actually experiencing?
+- **Symptoms**: What specific behavior or error are they seeing?
+- **Customer context**: Who is this? Any account details, plan level, or history available?
+- **Urgency signals**: Are they blocked? Is this production? How many users affected?
+- **Emotional state**: Frustrated, confused, matter-of-fact, escalating?
+
+### 2. Categorize and Prioritize
+
+Using the category taxonomy and priority framework below:
+
+- Assign a **primary category** (bug, how-to, feature request, billing, account, integration, security, data, performance) and an optional secondary category
+- Assign a **priority** (P1–P4) based on impact and urgency
+- Identify the **product area** the issue maps to
+
+### 3. Check for Duplicates and Known Issues
+
+Before routing, check available sources:
+
+- **~~support platform**: Search for similar open or recently resolved tickets
+- **~~knowledge base**: Check for known issues or existing documentation
+- **~~project tracker**: Check if there's an existing bug report or feature request
+
+Apply the duplicate detection process below.
+
+### 4. Determine Routing
+
+Using the routing rules below, recommend which team or queue should handle this based on category and complexity.
+
+### 5. Generate Triage Output
+
+```
+## Triage: [One-line issue summary]
+
+**Category:** [Primary] / [Secondary if applicable]
+**Priority:** [P1-P4] — [Brief justification]
+**Product area:** [Area/team]
+
+### Issue Summary
+[2-3 sentence summary of what the customer is experiencing]
+
+### Key Details
+- **Customer:** [Name/account if known]
+- **Impact:** [Who and what is affected]
+- **Workaround:** [Available / Not available / Unknown]
+- **Related tickets:** [Links to similar issues if found]
+- **Known issue:** [Yes — link / No / Checking]
+
+### Routing Recommendation
+**Route to:** [Team or queue]
+**Why:** [Brief reasoning]
+
+### Suggested Initial Response
+[Draft first response to the customer — acknowledge the issue,
+set expectations, provide workaround if available.
+Use the auto-response templates below as a starting point.]
+
+### Internal Notes
+- [Any additional context for the agent picking this up]
+- [Reproduction hints if it's a bug]
+- [Escalation triggers to watch for]
+```
+
+### 6. Offer Next Steps
+
+After presenting the triage:
+- "Want me to draft a full response to the customer?"
+- "Should I search for more context on this issue?"
+- "Want me to check if this is a known bug in the tracker?"
+- "Should I escalate this? I can package it with /customer-escalation."
+
+---
 
 ## Category Taxonomy
 
@@ -171,9 +264,7 @@ We'll follow up with you within [timeframe] with our findings.
 [protective action]."]
 ```
 
-## Using This Skill
-
-When triaging tickets:
+## Triage Best Practices
 
 1. Read the full ticket before categorizing — context in later messages often changes the assessment
 2. Categorize by **root cause**, not just the symptom described

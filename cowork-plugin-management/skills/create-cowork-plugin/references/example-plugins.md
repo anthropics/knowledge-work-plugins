@@ -2,9 +2,9 @@
 
 Three complete plugin structures at different complexity levels. Use these as templates when implementing in Phase 4.
 
-## Minimal Plugin: Single Command
+## Minimal Plugin: Single Skill
 
-A simple plugin with one slash command and no other components.
+A simple plugin with one skill and no other components.
 
 ### Structure
 
@@ -12,8 +12,9 @@ A simple plugin with one slash command and no other components.
 meeting-notes/
 ├── .claude-plugin/
 │   └── plugin.json
-├── commands/
-│   └── meeting-notes.md
+├── skills/
+│   └── meeting-notes/
+│       └── SKILL.md
 └── README.md
 ```
 
@@ -30,18 +31,21 @@ meeting-notes/
 }
 ```
 
-### commands/meeting-notes.md
+### skills/meeting-notes/SKILL.md
 
 ```markdown
 ---
-description: Generate structured meeting notes from a transcript
-argument-hint: [transcript-file]
-allowed-tools: Read, Write
+name: meeting-notes
+description: >
+  Generate structured meeting notes from a transcript. Use when the user asks
+  to "summarize this meeting", "create meeting notes", "extract action items
+  from this transcript", or provides a meeting transcript file.
 ---
 
-Read the transcript at @$1 and generate structured meeting notes.
+Read the transcript file the user provided and generate structured meeting notes.
 
 Include these sections:
+
 1. **Attendees** — list all participants mentioned
 2. **Summary** — 2-3 sentence overview of the meeting
 3. **Key Decisions** — numbered list of decisions made
@@ -53,9 +57,9 @@ Write the notes to a new file named after the transcript with `-notes` appended.
 
 ---
 
-## Standard Plugin: Skill + Commands + MCP
+## Standard Plugin: Skills + MCP
 
-A plugin that combines domain knowledge, user commands, and external service integration.
+A plugin that combines domain knowledge, user-initiated actions, and external service integration.
 
 ### Structure
 
@@ -63,14 +67,15 @@ A plugin that combines domain knowledge, user commands, and external service int
 code-quality/
 ├── .claude-plugin/
 │   └── plugin.json
-├── commands/
-│   ├── review.md
-│   └── fix-lint.md
 ├── skills/
-│   └── coding-standards/
-│       ├── SKILL.md
-│       └── references/
-│           └── style-rules.md
+│   ├── coding-standards/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   │       └── style-rules.md
+│   ├── review-changes/
+│   │   └── SKILL.md
+│   └── fix-lint/
+│       └── SKILL.md
 ├── .mcp.json
 └── README.md
 ```
@@ -88,39 +93,47 @@ code-quality/
 }
 ```
 
-### commands/review.md
+### skills/review-changes/SKILL.md
 
 ```markdown
 ---
-description: Review code changes for style and quality issues
-allowed-tools: Read, Grep, Bash(git:*)
+name: review-changes
+description: >
+  Review code changes for style and quality issues. Use when the user asks to
+  "review my changes", "check this diff", "review for style violations", or
+  wants a code quality pass on uncommitted work.
 ---
 
-Get the list of changed files: !`git diff --name-only`
+Run `git diff --name-only` to get the list of changed files.
 
 For each changed file:
+
 1. Read the file
 2. Check against the coding-standards skill for style violations
 3. Identify potential bugs or anti-patterns
 4. Flag any security concerns
 
 Present a summary with:
+
 - File path
 - Issue severity (Error, Warning, Info)
 - Description and suggested fix
 ```
 
-### commands/fix-lint.md
+### skills/fix-lint/SKILL.md
 
 ```markdown
 ---
-description: Auto-fix linting issues in changed files
-allowed-tools: Read, Write, Edit, Bash(npm:*)
+name: fix-lint
+description: >
+  Auto-fix linting issues in changed files. Use when the user asks to
+  "fix lint errors", "clean up linting", or "auto-fix my lint issues".
 ---
 
-Run the linter: !`npm run lint -- --format json 2>&1`
+Run the linter: `npm run lint -- --format json 2>&1`
 
 Parse the linter output and fix each issue:
+
 - For auto-fixable issues, apply the fix directly
 - For manual-fix issues, make the correction following project conventions
 - Skip issues that require architectural changes
@@ -137,7 +150,8 @@ description: >
   This skill should be used when the user asks about "coding standards",
   "style guide", "naming conventions", "code formatting rules", or needs
   guidance on project-specific code quality expectations.
-version: 0.1.0
+metadata:
+  version: "0.1.0"
 ---
 ```
 
@@ -183,7 +197,7 @@ Project coding standards and conventions for consistent, high-quality code.
 
 ## Full-Featured Plugin: All Component Types
 
-A plugin using skills, commands, agents, hooks, and MCP integration with tool-agnostic connectors.
+A plugin using skills, agents, hooks, and MCP integration with tool-agnostic connectors.
 
 ### Structure
 
@@ -191,14 +205,15 @@ A plugin using skills, commands, agents, hooks, and MCP integration with tool-ag
 engineering-workflow/
 ├── .claude-plugin/
 │   └── plugin.json
-├── commands/
-│   ├── standup-prep.md
-│   └── create-ticket.md
 ├── skills/
-│   └── team-processes/
-│       ├── SKILL.md
-│       └── references/
-│           └── workflow-guide.md
+│   ├── team-processes/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   │       └── workflow-guide.md
+│   ├── standup-prep/
+│   │   └── SKILL.md
+│   └── create-ticket/
+│       └── SKILL.md
 ├── agents/
 │   └── ticket-analyzer.md
 ├── hooks/
@@ -255,12 +270,14 @@ tools: ["Read", "Grep"]
 You are a ticket analysis specialist. Analyze tickets for priority, effort, and dependencies.
 
 **Your Core Responsibilities:**
+
 1. Categorize tickets by type (bug, feature, tech debt, improvement)
 2. Estimate relative effort (S, M, L, XL)
 3. Identify dependencies between tickets
 4. Recommend priority ordering
 
 **Analysis Process:**
+
 1. Read all ticket descriptions
 2. Categorize each by type
 3. Estimate effort based on scope
@@ -270,7 +287,7 @@ You are a ticket analysis specialist. Analyze tickets for priority, effort, and 
 **Output Format:**
 | Ticket | Type | Effort | Dependencies | Priority |
 |--------|------|--------|-------------|----------|
-| ...    | ...  | ...    | ...         | ...      |
+| ... | ... | ... | ... | ... |
 
 Followed by a brief rationale for the top 5 priorities.
 ```
@@ -306,11 +323,11 @@ connects in that category. Plugins are tool-agnostic.
 
 ## Connectors for this plugin
 
-| Category | Placeholder | Included servers | Other options |
-|----------|-------------|-----------------|---------------|
-| Project tracker | `~~project tracker` | Linear | Asana, Jira, Monday |
-| Chat | `~~chat` | Slack | Microsoft Teams |
-| Source control | `~~source control` | GitHub | GitLab, Bitbucket |
+| Category        | Placeholder         | Included servers | Other options       |
+| --------------- | ------------------- | ---------------- | ------------------- |
+| Project tracker | `~~project tracker` | Linear           | Asana, Jira, Monday |
+| Chat            | `~~chat`            | Slack            | Microsoft Teams     |
+| Source control  | `~~source control`  | GitHub           | GitLab, Bitbucket   |
 ```
 
 ### .mcp.json

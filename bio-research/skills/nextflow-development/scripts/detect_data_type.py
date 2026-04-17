@@ -71,7 +71,7 @@ def scan_directory(directory: str) -> Dict:
             try:
                 size = os.path.getsize(os.path.join(root, filename))
                 info['total_size_gb'] += size / (1024**3)
-            except:
+            except Exception:
                 pass
 
     return info

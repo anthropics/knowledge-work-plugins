@@ -3,7 +3,7 @@ name: cowork-plugin-customizer
 description: >
   Customize a Claude Code plugin for a specific organization's tools and workflows.
   Use when: customize plugin, set up plugin, configure plugin, tailor plugin, adjust plugin settings,
-  customize plugin connectors, customize plugin skill, customize plugin command, tweak plugin, modify plugin configuration.
+  customize plugin connectors, customize plugin skill, tweak plugin, modify plugin configuration.
 compatibility: Requires Cowork desktop app environment with access to mounted plugin directories (mnt/.local-plugins, mnt/.plugins).
 ---
 
@@ -21,7 +21,9 @@ After locating the plugin, check for `~~`-prefixed placeholders: `grep -rn '~~\w
 
 **1. Generic plugin setup** — The plugin contains `~~`-prefixed placeholders. These are customization points in a template that need to be replaced with real values (e.g., `~~Jira` → `Asana`, `~~your-team-channel` → `#engineering`).
 
-**2. Scoped customization** — No `~~` placeholders exist, and the user asked to customize a specific part of the plugin (e.g., "customize the connectors", "update the standup command", "change the ticket tool"). Read the plugin files to find the relevant section(s) and focus only on those. Do not scan the entire plugin or present unrelated customization items.
+**2. Scoped customization** — No `~~` placeholders exist, and the user asked to customize a specific part of the plugin (e.g., "customize the connectors", "update the standup skill", "change the ticket tool"). Read the plugin files to find the relevant section(s) and focus only on those. Do not scan the entire plugin or present unrelated customization items.
+
+> **Legacy `commands/` directories**: Some plugins include a `commands/` directory. The Cowork UI now presents these alongside skills as a single "Skills" concept, so treat `commands/*.md` files the same way you would `skills/*/SKILL.md` files when customizing.
 
 **3. General customization** — No `~~` placeholders exist, and the user wants to modify the plugin broadly. Read the plugin's files to understand its current configuration, then ask the user what they'd like to change.
 
@@ -33,10 +35,10 @@ After locating the plugin, check for `~~`-prefixed placeholders: `grep -rn '~~\w
 
 ### Phase 0: Gather User Intent (scoped and general customization only)
 
-For **scoped customization** and **general customization** (not generic plugin setup), check whether the user provided free-form context alongside their request (e.g., "customize the standup command — we do async standups in #eng-updates every morning").
+For **scoped customization** and **general customization** (not generic plugin setup), check whether the user provided free-form context alongside their request (e.g., "customize the standup skill — we do async standups in #eng-updates every morning").
 
 - **If the user provided context**: Record it and use it to pre-fill answers in Phase 3 — skip asking questions that the user already answered here.
-- **If the user did not provide context**: Ask a single open-ended question using AskUserQuestion before proceeding. Tailor the question to what they asked to customize — e.g., "What changes do you have in mind for the brief command?" or "What would you like to change about how this plugin works?" Keep it short and specific to their request.
+- **If the user did not provide context**: Ask a single open-ended question using AskUserQuestion before proceeding. Tailor the question to what they asked to customize — e.g., "What changes do you have in mind for the brief skill?" or "What would you like to change about how this plugin works?" Keep it short and specific to their request.
 
   Use their response (if any) as additional context throughout the remaining phases.
 
@@ -45,12 +47,14 @@ For **scoped customization** and **general customization** (not generic plugin s
 Use company-internal knowledge MCPs to collect information relevant to the customization scope. See `references/search-strategies.md` for detailed query patterns by category.
 
 **What to gather** (scope to what's relevant):
+
 - Tool names and services the organization uses
 - Organizational processes and workflows
 - Team conventions (naming, statuses, estimation scales)
 - Configuration values (workspace IDs, project names, team identifiers)
 
 **Sources to search:**
+
 1. **Chat/Slack MCPs** — tool mentions, integrations, workflow discussions
 2. **Document MCPs** — onboarding docs, tool guides, setup instructions
 3. **Email MCPs** — license notifications, admin emails, setup invitations
@@ -68,7 +72,7 @@ Build a todo list of changes to make, scoped appropriately:
 Use user-friendly descriptions that focus on the plugin's purpose:
 
 - **Good**: "Learn how standup prep works at Company"
-- **Bad**: "Replace placeholders in commands/standup-prep.md"
+- **Bad**: "Replace placeholders in skills/standup-prep/SKILL.md"
 
 ### Phase 3: Complete Todo Items
 
@@ -81,7 +85,7 @@ Work through each item using context from Phase 0 and Phase 1.
 **Types of changes:**
 
 1. **Placeholder replacements** (generic setup): `~~Jira` → `Asana`, `~~your-org-channel` → `#engineering`
-2. **Content updates**: Modifying instructions, commands, workflows, or references to match the organization
+2. **Content updates**: Modifying instructions, skills, workflows, or references to match the organization
 3. **URL pattern updates**: `tickets.example.com/your-team/123` → `app.asana.com/0/PROJECT_ID/TASK_ID`
 4. **Configuration values**: Workspace IDs, project names, team identifiers
 
@@ -92,6 +96,7 @@ If user doesn't know or skips, leave the value unchanged (or the `~~`-prefixed p
 After customization items have been resolved, connect MCPs for any tools that were identified or changed. See `references/mcp-servers.md` for the full workflow, category-to-keywords mapping, and config file format.
 
 For each tool identified during customization:
+
 1. Search the registry: `search_mcp_registry(keywords=[...])` using category keywords from `references/mcp-servers.md`, or search for the specific tool name if already known
 2. If unconnected: `suggest_connectors(directoryUuids=["chosen-uuid"])` — user completes auth
 3. Update the plugin's MCP config file (check `plugin.json` for custom location, otherwise `.mcp.json` at root)
@@ -118,19 +123,23 @@ After customization, present the user with a summary of what was learned grouped
 
 ```markdown
 ## From searching Slack
+
 - You use Asana for project management
 - Sprint cycles are 2 weeks
 
 ## From searching documents
+
 - Story points use T-shirt sizes
 
 ## From your answers
+
 - Ticket statuses are: Backlog, In Progress, In Review, Done
 ```
 
 Then present the MCPs that were connected during setup and any that the user should still connect, with instructions on how to connect them.
 
 If no knowledge MCPs were available in Phase 1, and the user had to answer at least one question manually, include a note at the end:
+
 > By the way, connecting sources like Slack or Microsoft Teams would let me find answers automatically next time you customize a plugin.
 
 ## Additional Resources
