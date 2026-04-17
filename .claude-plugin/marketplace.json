@@ -160,14 +160,17 @@
     },
     {
       "name": "adspirer-ads-agent",
-      "description": "Cross-platform ad management for Google Ads, Meta Ads, TikTok Ads, and LinkedIn Ads. 91 tools for keyword research, campaign creation, performance analysis, and budget optimization.",
-      "category": "productivity",
+      "description": "Ad campaign management for Google Ads, Meta Ads, LinkedIn Ads, and TikTok Ads. 150+ tools for keyword research, campaign creation (Search, PMax, YouTube, image/video/carousel), performance analysis, creative fatigue detection, conversion tracking audit, and budget optimization.",
+      "category": "marketing",
       "source": {
         "source": "url",
-        "url": "https://github.com/amekala/adspirer-mcp-plugin.git",
-        "sha": "c40623f1aa7b568e960d3f2e2558a6fcf10e6c18"
+        "url": "https://github.com/amekala/ads-mcp.git",
+        "sha": "a2ef04afd9a1fda57dd48a9fac350b9e80496064"
       },
-      "homepage": "https://www.adspirer.com"
+      "homepage": "https://www.adspirer.com",
+      "author": {
+        "name": "Adspirer"
+      }
     },
     {
       "name": "sanity-plugin",
