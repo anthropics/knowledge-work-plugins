@@ -1,0 +1,9 @@
+{
+  "miro": {
+    "type": "http",
+    "url": "https://mcp.miro.com/",
+    "headers": {
+      "X-AI-Source": "claude-code-plugin"
+    }
+  }
+}
