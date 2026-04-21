@@ -52,13 +52,13 @@
       "type": "http",
       "url": "https://api.fireflies.ai/mcp"
     },
-    "google-calendar": {
+    "google calendar": {
       "type": "http",
-      "url": "https://gcal.mcp.claude.com/mcp"
+      "url": ""
     },
     "gmail": {
       "type": "http",
-      "url": "https://gmail.mcp.claude.com/mcp"
+      "url": ""
     },
     "similarweb": {
       "type": "http",
