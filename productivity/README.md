@@ -23,6 +23,7 @@ This plugin gives Claude a persistent understanding of your work:
 | `/start` | Initialize tasks + memory, open the dashboard |
 | `/update` | Triage stale items, check memory for gaps, sync from external tools if applicable |
 | `/update --comprehensive` | Deep scan email, calendar, chat — flag missed todos and suggest new memories |
+| `/deep-work-planner` | Plan focus blocks from tasks + calendar — supports `--week`, `--window HH:MM-HH:MM`, `--duration MIN` |
 
 ## Skills
 
