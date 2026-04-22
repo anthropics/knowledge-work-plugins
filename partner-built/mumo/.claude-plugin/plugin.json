@@ -1,0 +1,28 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "mumo",
+  "version": "0.1.0",
+  "description": "Multi-model deliberation as MCP tools, with an auto-triggering skill. Consult a panel of models on contested decisions.",
+  "author": {
+    "name": "Sourced LLC",
+    "url": "https://mumo.chat"
+  },
+  "homepage": "https://mumo.chat/mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mumo-chat/mumo-mcp.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "deliberation",
+    "multi-model",
+    "claude",
+    "gpt",
+    "gemini",
+    "panel",
+    "code-review",
+    "architecture"
+  ],
+  "mcpServers": "./.mcp.json"
+}
