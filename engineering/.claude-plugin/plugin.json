@@ -1,8 +1,0 @@
-{
-  "name": "engineering",
-  "version": "1.2.0",
-  "description": "Streamline engineering workflows — standups, code review, architecture decisions, incident response, and technical documentation. Works with your existing tools or standalone.",
-  "author": {
-    "name": "Anthropic"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "name": "pdf-viewer",
-  "version": "0.2.0",
-  "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures — then download the annotated copy.",
-  "author": {
-    "name": "Anthropic"
-  }
-}
