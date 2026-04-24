@@ -150,7 +150,7 @@ Present findings grouped by severity (Critical, Warning, Info) with:
 | ------------------ | ------------------------------- |
 | `PreToolUse`       | Before a tool call executes     |
 | `PostToolUse`      | After a tool call completes     |
-| `Stop`             | When Claude finishes a response |
+| `Stop`             | When the AI finishes a response |
 | `SubagentStop`     | When a subagent finishes        |
 | `SessionStart`     | When a session begins           |
 | `SessionEnd`       | When a session ends             |
@@ -177,7 +177,7 @@ Supported events: Stop, SubagentStop, UserPromptSubmit, PreToolUse.
 ```json
 {
   "type": "command",
-  "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/validate.sh",
+  "command": "bash ${PLUGIN_ROOT}/hooks/scripts/validate.sh",
   "timeout": 60
 }
 ```
@@ -204,7 +204,7 @@ Supported events: Stop, SubagentStop, UserPromptSubmit, PreToolUse.
       "hooks": [
         {
           "type": "command",
-          "command": "cat ${CLAUDE_PLUGIN_ROOT}/context/project-context.md",
+          "command": "cat ${PLUGIN_ROOT}/context/project-context.md",
           "timeout": 10
         }
       ]
@@ -228,7 +228,7 @@ Decisions: `approve`, `block`, `ask_user` (ask for confirmation).
 
 ## MCP Servers
 
-**Location**: `.mcp.json` at plugin root
+**Location**: `mcp.json` at plugin root
 **Format**: JSON
 
 ### Server Types
@@ -240,7 +240,7 @@ Decisions: `approve`, `block`, `ask_user` (ask for confirmation).
   "mcpServers": {
     "my-server": {
       "command": "node",
-      "args": ["${CLAUDE_PLUGIN_ROOT}/servers/server.js"],
+      "args": ["${PLUGIN_ROOT}/servers/server.js"],
       "env": {
         "API_KEY": "${API_KEY}"
       }
@@ -282,7 +282,7 @@ Decisions: `approve`, `block`, `ask_user` (ask for confirmation).
 
 All MCP configs support `${VAR_NAME}` substitution:
 
-- `${CLAUDE_PLUGIN_ROOT}` — plugin directory (always use for portability)
+- `${PLUGIN_ROOT}` — plugin directory (always use for portability)
 - `${ANY_ENV_VAR}` — user environment variables
 
 Document all required environment variables in the plugin README.
@@ -293,7 +293,7 @@ Some MCP directory entries have no `url` because the endpoint is dynamic. Plugin
 
 ## Commands (Legacy)
 
-> **Prefer `skills/*/SKILL.md` for new plugins.** The Cowork UI now presents commands and skills as a single "Skills" concept. The `commands/` format still works, but only use it if you specifically need the single-file format with `$ARGUMENTS`/`$1` substitution and inline bash execution.
+> **Prefer `skills/*/SKILL.md` for new plugins.** Cursor presents commands and skills as a single "Skills" concept. The `commands/` format still works, but only use it if you specifically need the single-file format with `$ARGUMENTS`/`$1` substitution and inline bash execution.
 
 **Location**: `commands/command-name.md`
 **Format**: Markdown with optional YAML frontmatter
@@ -328,11 +328,11 @@ Provide specific line numbers, severity ratings, and remediation suggestions.
 
 ### Key Rules
 
-- Commands are instructions FOR Claude, not messages for the user. Write them as directives.
+- Commands are instructions FOR the AI, not messages for the user. Write them as directives.
 - `$ARGUMENTS` captures all arguments as a single string; `$1`, `$2`, `$3` capture positional arguments.
 - `@path` syntax includes file contents in the command context.
 - `!` backtick syntax executes bash inline for dynamic context (e.g., `` !`git diff --name-only` ``).
-- Use `${CLAUDE_PLUGIN_ROOT}` to reference plugin files portably.
+- Use `${PLUGIN_ROOT}` to reference plugin files portably.
 
 ### allowed-tools Patterns
 
@@ -383,7 +383,7 @@ Check ~~project tracker for open tickets assigned to the user.
 Post a summary to ~~chat in the team channel.
 ```
 
-During customization (via the cowork-plugin-customizer skill), these get replaced with specific tool names.
+During customization (via the plugin-customizer skill), these get replaced with specific tool names.
 
 ## README.md
 

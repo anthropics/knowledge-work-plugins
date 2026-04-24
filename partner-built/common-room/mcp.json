@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "common-room": {
+      "type": "http",
+      "url": "https://mcp.commonroom.io/mcp"
+    }
+  }
+}

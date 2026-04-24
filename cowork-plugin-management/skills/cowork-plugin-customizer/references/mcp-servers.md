@@ -13,7 +13,7 @@ Search the MCP directory for available connectors.
 - `name`: MCP display name
 - `description`: One-liner description
 - `tools`: List of tool names the MCP provides
-- `url`: MCP endpoint URL (use this in `.mcp.json`)
+- `url`: MCP endpoint URL (use this in `mcp.json`)
 - `directoryUuid`: UUID for use with suggest_connectors
 - `connected`: Boolean - whether user has this MCP connected
 
@@ -65,9 +65,9 @@ Display Connect buttons to let users install/connect MCPs.
    ```
    If present, edit the file at that path.
 
-2. **If no `mcpServers` field**, use `.mcp.json` at the plugin root (default).
+2. **If no `mcpServers` field**, use `mcp.json` at the plugin root (default).
 
-3. **If `mcpServers` points only to `.mcpb` files** (bundled servers), create a new `.mcp.json` at the plugin root.
+3. **If `mcpServers` points only to `.mcpb` files** (bundled servers), create a new `mcp.json` at the plugin root.
 
 ### Config File Format
 

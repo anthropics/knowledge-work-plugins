@@ -1,4 +1,5 @@
 ---
+name: enforce-voice
 description: Apply brand guidelines to content creation
 argument-hint: "<content request>"
 ---

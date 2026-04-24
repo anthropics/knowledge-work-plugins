@@ -76,14 +76,17 @@ Brand Voice currently works at the individual level — team-wide enforcement is
 
 ### Per-Project Settings
 
-Copy `settings/brand-voice.local.md.example` to `.claude/brand-voice.local.md` in your project and fill in your company name, enabled platforms, and known brand material locations.
+Copy `settings/brand-voice.local.md.example` to `.cursor/brand-voice.local.md` in your project and fill in your company name, enabled platforms, and known brand material locations.
 
 ## File Structure
 
 ```
+├── .cursor-plugin/
+│   └── plugin.json                              # Cursor plugin manifest
 ├── .claude-plugin/
-│   └── plugin.json                              # Plugin manifest
-├── .mcp.json                                    # 7 MCP server connections
+│   └── plugin.json                              # Claude Code / Cowork manifest
+├── mcp.json                                     # 7 MCP server connections (Cursor)
+├── .mcp.json                                    # 7 MCP server connections (Claude Code)
 ├── README.md
 ├── agents/
 │   ├── discover-brand.md                        # Autonomous platform search agent

@@ -1,4 +1,5 @@
 ---
+name: annotate
 description: Collaboratively annotate a PDF — propose markup, review together, iterate
 argument-hint: "[path-or-url]"
 ---

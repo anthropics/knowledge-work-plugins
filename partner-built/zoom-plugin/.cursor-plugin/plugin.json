@@ -1,0 +1,22 @@
+{
+  "name": "zoom-plugin",
+  "description": "Cursor plugin for planning, building, and debugging Zoom integrations across REST APIs, SDKs, webhooks, bots, and MCP workflows",
+  "version": "1.1.0",
+  "homepage": "https://developers.zoom.us/",
+  "repository": "https://github.com/zoom/zoom-plugin",
+  "license": "MIT",
+  "keywords": [
+    "zoom",
+    "cursor-plugin",
+    "rest-api",
+    "meeting-sdk",
+    "video-sdk",
+    "webhooks",
+    "oauth",
+    "mcp"
+  ],
+  "author": {
+    "name": "Zoom",
+    "url": "https://github.com/zoom/zoom-plugin"
+  }
+}

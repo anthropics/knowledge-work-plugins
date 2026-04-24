@@ -1,11 +1,12 @@
 # HR Plugin
 
-A people operations plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Helps with recruiting, onboarding, performance management, policy guidance, and compensation analysis. Works with any HR team — standalone with your input, supercharged when you connect your HRIS, ATS, and other tools.
+A people operations plugin designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. Helps with recruiting, onboarding, performance management, policy guidance, and compensation analysis. Works with any HR team — standalone with your input, supercharged when you connect your HRIS, ATS, and other tools.
 
 ## Installation
 
 ```bash
-claude plugins add knowledge-work-plugins/human-resources
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/human-resources/
 ```
 
 ## Commands
@@ -25,7 +26,7 @@ All commands work **standalone** (provide context and details) and get **superch
 
 ## Skills
 
-Domain knowledge Claude uses automatically when relevant:
+Domain knowledge the AI uses automatically when relevant:
 
 | Skill | Description |
 |---|---|

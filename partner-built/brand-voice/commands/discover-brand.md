@@ -1,4 +1,5 @@
 ---
+name: discover-brand
 description: Search connected platforms for brand materials and produce a discovery report
 argument-hint: "[company name or platforms to search]"
 ---

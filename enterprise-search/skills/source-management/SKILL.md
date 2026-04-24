@@ -165,9 +165,9 @@ When reporting search results, include which sources were searched so the user k
 
 ## Adding Custom Sources
 
-The enterprise search plugin works with any MCP-connected source. As new MCP servers become available, they can be added to the `.mcp.json` configuration. The search and digest commands will automatically detect and include new sources based on available tools.
+The enterprise search plugin works with any MCP-connected source. As new MCP servers become available, they can be added to the `mcp.json` configuration. The search and digest commands will automatically detect and include new sources based on available tools.
 
 To add a new source:
-1. Add the MCP server configuration to `.mcp.json`
+1. Add the MCP server configuration to `mcp.json`
 2. Authenticate if required
 3. The source will be included in subsequent searches automatically

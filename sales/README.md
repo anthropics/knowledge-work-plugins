@@ -1,11 +1,12 @@
 # Sales Plugin
 
-A sales productivity plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Helps with prospecting, outreach, pipeline management, call preparation, and deal strategy. Works with any sales team — standalone with web search and your input, supercharged when you connect your CRM, email, and other tools.
+A sales productivity plugin designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. Helps with prospecting, outreach, pipeline management, call preparation, and deal strategy. Works with any sales team — standalone with web search and your input, supercharged when you connect your CRM, email, and other tools.
 
 ## Installation
 
 ```bash
-claude plugins add knowledge-work-plugins/sales
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/sales/
 ```
 
 ## Commands
@@ -22,7 +23,7 @@ All commands work **standalone** (paste notes, upload CSV, or describe your situ
 
 ## Skills
 
-Domain knowledge Claude uses automatically when relevant:
+Domain knowledge the AI uses automatically when relevant:
 
 | Skill | Description |
 |---|---|

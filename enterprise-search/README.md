@@ -1,6 +1,6 @@
 # Enterprise Search
 
-An enterprise search plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Search across all your company's tools in one place — email, chat, documents, and wikis — without switching between apps.
+An enterprise search plugin designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. Search across all your company's tools in one place — email, chat, documents, and wikis — without switching between apps.
 
 ---
 
@@ -136,7 +136,8 @@ Result: "Based on message history and doc authorship,
 
 ```bash
 # 1. Install
-claude plugins add knowledge-work-plugins/enterprise-search
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/enterprise-search/
 
 # 2. Search across everything
 /enterprise-search:search [your question here]

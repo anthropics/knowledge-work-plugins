@@ -1,4 +1,5 @@
 ---
+name: generate-guidelines
 description: Generate brand voice guidelines from documents, transcripts, discovery reports, or any combination
 argument-hint: "<sources — documents, transcripts, or description of what you have>"
 ---

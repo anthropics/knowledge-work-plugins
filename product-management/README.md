@@ -1,11 +1,12 @@
 # Product Management Plugin
 
-A product management plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Covers the full PM workflow: writing feature specs, managing roadmaps, communicating with stakeholders, synthesizing user research, analyzing competitors, and tracking product metrics.
+A product management plugin designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. Covers the full PM workflow: writing feature specs, managing roadmaps, communicating with stakeholders, synthesizing user research, analyzing competitors, and tracking product metrics.
 
 ## Installation
 
 ```
-claude plugins add knowledge-work-plugins/product-management
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/product-management/
 ```
 
 ## What It Does

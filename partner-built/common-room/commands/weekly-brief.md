@@ -1,4 +1,5 @@
 ---
+name: weekly-brief
 description: Generate a weekly prep briefing from your calendar and Common Room
 argument-hint: [date range, defaults to next 7 days]
 ---

@@ -1,4 +1,5 @@
 ---
+name: find-discussions
 description: Find discussions about a specific topic across Slack channels
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: standup
 description: Generate a standup update based on your recent Slack activity
 ---
 

@@ -1,11 +1,12 @@
 # Engineering Plugin
 
-A software engineering plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Helps with standups, code review, architecture decisions, incident response, debugging, and technical documentation. Works with any engineering team — standalone with your input, supercharged when you connect your source control, project tracker, and monitoring tools.
+A software engineering plugin designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. Helps with standups, code review, architecture decisions, incident response, debugging, and technical documentation. Works with any engineering team — standalone with your input, supercharged when you connect your source control, project tracker, and monitoring tools.
 
 ## Installation
 
 ```bash
-claude plugins add knowledge-work-plugins/engineering
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/engineering/
 ```
 
 ## Commands
@@ -25,7 +26,7 @@ All commands work **standalone** (paste code, describe your system, upload files
 
 ## Skills
 
-Domain knowledge Claude uses automatically when relevant:
+Domain knowledge the AI uses automatically when relevant:
 
 | Skill | Description |
 |---|---|

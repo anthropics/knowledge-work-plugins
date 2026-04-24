@@ -1,11 +1,12 @@
 # Design Plugin
 
-A design productivity plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Helps with design critique, system management, UX writing, accessibility, research synthesis, and developer handoff. Works with any design team — standalone with your input, supercharged when you connect Figma and other tools.
+A design productivity plugin designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. Helps with design critique, system management, UX writing, accessibility, research synthesis, and developer handoff. Works with any design team — standalone with your input, supercharged when you connect Figma and other tools.
 
 ## Installation
 
 ```bash
-claude plugins add knowledge-work-plugins/design
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/design/
 ```
 
 ## Commands
@@ -25,7 +26,7 @@ All commands work **standalone** (describe your design or paste screenshots) and
 
 ## Skills
 
-Domain knowledge Claude uses automatically when relevant:
+Domain knowledge the AI uses automatically when relevant:
 
 | Skill | Description |
 |---|---|

@@ -1,4 +1,5 @@
 ---
+name: generate-account-plan
 description: Generate a comprehensive strategic account plan
 argument-hint: <company name or domain>
 ---

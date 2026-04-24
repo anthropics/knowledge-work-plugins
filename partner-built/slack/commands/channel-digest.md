@@ -1,4 +1,5 @@
 ---
+name: channel-digest
 description: Get a digest of recent activity across multiple Slack channels
 ---
 

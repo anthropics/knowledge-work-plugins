@@ -1,11 +1,12 @@
 # Customer Support Plugin
 
-A customer support plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Provides ticket triage, escalation management, response drafting, customer research, and knowledge base authoring for support teams.
+A customer support plugin designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. Provides ticket triage, escalation management, response drafting, customer research, and knowledge base authoring for support teams.
 
 ## Installation
 
 ```
-claude plugins add knowledge-work-plugins/customer-support
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/customer-support/
 ```
 
 ## What It Does

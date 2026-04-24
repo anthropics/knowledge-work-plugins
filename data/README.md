@@ -1,11 +1,12 @@
 # Data Analyst Plugin
 
-A data analyst plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. SQL queries, data exploration, visualization, dashboards, and insight generation. Works with any data warehouse, any SQL dialect, and any analytics stack.
+A data analyst plugin designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. SQL queries, data exploration, visualization, dashboards, and insight generation. Works with any data warehouse, any SQL dialect, and any analytics stack.
 
 ## Installation
 
 ```
-claude plugins add knowledge-work-plugins/data
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/data/
 ```
 
 ## What It Does

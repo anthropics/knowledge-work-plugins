@@ -1,0 +1,9 @@
+{
+  "name": "plugin-management",
+  "version": "0.2.2",
+  "description": "Create, customize, and manage Cursor plugins tailored to your organization's tools and workflows. Configure MCP servers, adjust plugin behavior, and adapt templates to match how your team works.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "keywords": ["cursor-plugin", "plugin-management", "mcp", "customization"]
+}

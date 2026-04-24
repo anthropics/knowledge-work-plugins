@@ -1,0 +1,11 @@
+{
+  "name": "slack-by-salesforce",
+  "description": "Official Slack MCP server for interactive and collaborative workflows. Surface insights, draft messages, and engage teams directly within Slack from Cursor.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Salesforce",
+    "url": "https://slack.com"
+  },
+  "homepage": "https://github.com/slackapi/slack-mcp-plugin",
+  "license": "MIT"
+}

@@ -1,4 +1,5 @@
 ---
+name: fill-form
 description: Fill PDF form fields interactively with live visual feedback
 argument-hint: "[path-or-url]"
 ---

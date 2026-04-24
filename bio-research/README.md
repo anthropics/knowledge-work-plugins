@@ -1,6 +1,6 @@
 # Bio-Research Plugin
 
-Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D. Use with [Cowork](https://claude.com/product/cowork) or install directly in Claude Code.
+Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D. Use with [Cursor](https://cursor.com), [Claude Cowork](https://claude.com/product/cowork), or [Claude Code](https://claude.ai/code).
 
 This plugin consolidates 10 MCP server integrations and 5 analysis skills into a single package for life science researchers.
 

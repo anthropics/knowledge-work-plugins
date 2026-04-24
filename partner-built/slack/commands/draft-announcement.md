@@ -1,4 +1,5 @@
 ---
+name: draft-announcement
 description: Draft a well-formatted Slack announcement and save it as a draft
 ---
 

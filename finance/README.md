@@ -1,13 +1,14 @@
 # Finance & Accounting Plugin
 
-A finance and accounting plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Supports month-end close, journal entry preparation, account reconciliation, financial statement generation, variance analysis, and SOX audit support.
+A finance and accounting plugin designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. Supports month-end close, journal entry preparation, account reconciliation, financial statement generation, variance analysis, and SOX audit support.
 
 > **Important**: This plugin assists with finance and accounting workflows but does not provide financial, tax, or audit advice. All outputs should be reviewed by qualified financial professionals before use in financial reporting, regulatory filings, or audit documentation.
 
 ## Installation
 
 ```bash
-claude plugins add knowledge-work-plugins/finance
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/finance/
 ```
 
 ## Commands

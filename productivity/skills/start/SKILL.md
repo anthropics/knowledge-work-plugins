@@ -15,7 +15,7 @@ Initialize the task and memory systems, then open the unified dashboard.
 
 Check the working directory for:
 - `TASKS.md` — task list
-- `CLAUDE.md` — working memory
+- `AGENT.md` — working memory
 - `memory/` — deep memory directory
 - `dashboard.html` — the visual UI
 
@@ -23,13 +23,13 @@ Check the working directory for:
 
 **If `TASKS.md` doesn't exist:** Create it with the standard template (see task-management skill). Place it in the current working directory.
 
-**If `dashboard.html` doesn't exist:** Copy it from `${CLAUDE_PLUGIN_ROOT}/skills/dashboard.html` to the current working directory.
+**If `dashboard.html` doesn't exist:** Copy it from `${PLUGIN_ROOT}/skills/dashboard.html` to the current working directory.
 
-**If `CLAUDE.md` and `memory/` don't exist:** This is a fresh setup — after opening the dashboard, begin the memory bootstrap workflow (see below). Place these in the current working directory.
+**If `AGENT.md` and `memory/` don't exist:** This is a fresh setup — after opening the dashboard, begin the memory bootstrap workflow (see below). Place these in the current working directory.
 
 ### 3. Open the Dashboard
 
-Do NOT use `open` or `xdg-open` — in Cowork, the agent runs in a VM and shell open commands won't reach the user's browser. Instead, tell the user: "Dashboard is ready at `dashboard.html`. Open it from your file browser to get started."
+Do NOT use `open` or `xdg-open` — shell open commands may not reach the user's browser. Instead, tell the user: "Dashboard is ready at `dashboard.html`. Open it from your file browser to get started."
 
 ### 4. Orient the User
 
@@ -44,7 +44,7 @@ If memory hasn't been bootstrapped yet, continue to step 5.
 
 ### 5. Bootstrap Memory (First Run Only)
 
-Only do this if `CLAUDE.md` and `memory/` don't exist yet.
+Only do this if `AGENT.md` and `memory/` don't exist yet.
 
 The best source of workplace language is the user's actual task list. Real tasks = real shorthand.
 
@@ -107,7 +107,7 @@ Build a braindump of people, projects, and terms found. Present findings grouped
 
 From everything gathered, create:
 
-**CLAUDE.md** (working memory, ~50-80 lines):
+**AGENT.md** (working memory, ~50-80 lines):
 ```markdown
 # Memory
 
@@ -152,7 +152,7 @@ Use /productivity:update to keep things current (add --comprehensive for a deep 
 
 ## Notes
 
-- If memory is already initialized, this just opens the dashboard
+- If memory is already initialized (`AGENT.md` exists), this just opens the dashboard
 - Nicknames are critical — always capture how people are actually referred to
 - If a source isn't available, skip it and note the gap
 - Memory grows organically through natural conversation after bootstrap

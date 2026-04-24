@@ -10,7 +10,7 @@ A simple plugin with one skill and no other components.
 
 ```
 meeting-notes/
-├── .claude-plugin/
+├── .cursor-plugin/
 │   └── plugin.json
 ├── skills/
 │   └── meeting-notes/
@@ -65,7 +65,7 @@ A plugin that combines domain knowledge, user-initiated actions, and external se
 
 ```
 code-quality/
-├── .claude-plugin/
+├── .cursor-plugin/
 │   └── plugin.json
 ├── skills/
 │   ├── coding-standards/
@@ -76,7 +76,7 @@ code-quality/
 │   │   └── SKILL.md
 │   └── fix-lint/
 │       └── SKILL.md
-├── .mcp.json
+├── mcp.json
 └── README.md
 ```
 
@@ -203,7 +203,7 @@ A plugin using skills, agents, hooks, and MCP integration with tool-agnostic con
 
 ```
 engineering-workflow/
-├── .claude-plugin/
+├── .cursor-plugin/
 │   └── plugin.json
 ├── skills/
 │   ├── team-processes/
@@ -218,7 +218,7 @@ engineering-workflow/
 │   └── ticket-analyzer.md
 ├── hooks/
 │   └── hooks.json
-├── .mcp.json
+├── mcp.json
 ├── CONNECTORS.md
 └── README.md
 ```

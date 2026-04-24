@@ -1,4 +1,5 @@
 ---
+name: brainstorm
 description: Brainstorm a product idea, problem space, or strategic question with a sharp thinking partner
 argument-hint: "<topic, problem, or idea to explore>"
 ---

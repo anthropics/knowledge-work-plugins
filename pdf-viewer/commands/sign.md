@@ -1,4 +1,5 @@
 ---
+name: sign
 description: Place a signature or initials image on a PDF
 argument-hint: "[path-or-url] [signature-image-path]"
 ---

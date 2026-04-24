@@ -1,4 +1,5 @@
 ---
+name: open
 description: Open a PDF in the interactive viewer
 argument-hint: "[path-or-url]"
 ---

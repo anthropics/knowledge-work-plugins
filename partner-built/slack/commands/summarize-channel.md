@@ -1,4 +1,5 @@
 ---
+name: summarize-channel
 description: Summarize recent activity in a Slack channel
 ---
 

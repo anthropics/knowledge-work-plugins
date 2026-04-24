@@ -1,11 +1,12 @@
 # Marketing Plugin
 
-A marketing plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Content creation, campaign planning, brand voice management, competitive analysis, and performance reporting.
+A marketing plugin designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. Content creation, campaign planning, brand voice management, competitive analysis, and performance reporting.
 
 ## Installation
 
 ```bash
-claude plugins add knowledge-work-plugins/marketing
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/marketing/
 ```
 
 ## Commands

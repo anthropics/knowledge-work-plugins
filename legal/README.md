@@ -1,6 +1,6 @@
 # Legal Productivity Plugin
 
-An AI-powered productivity plugin for in-house legal teams, primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Automates contract review, NDA triage, compliance workflows, legal briefings, and templated responses -- all configurable to your organization's specific playbook and risk tolerances.
+An AI-powered productivity plugin for in-house legal teams, designed for [Cursor](https://cursor.com). Also compatible with Claude Cowork and Claude Code. Automates contract review, NDA triage, compliance workflows, legal briefings, and templated responses -- all configurable to your organization's specific playbook and risk tolerances.
 
 > **Disclaimer:** This plugin assists with legal workflows but does not provide legal advice. Always verify conclusions with qualified legal professionals. AI-generated analysis should be reviewed by licensed attorneys before being relied upon for legal decisions. The default playbook examples in this plugin reflect U.S. legal positions and jurisdictions (Delaware, New York, California). If you operate under different legal systems (EU, UK, Netherlands, Australia, etc.), you must customize the playbook in .claude/legal.local.md to reflect your jurisdiction's specific legal requirements, standard contract terms, and compliance obligations before relying on the plugin's analysis.
 
@@ -14,7 +14,8 @@ An AI-powered productivity plugin for in-house legal teams, primarily designed f
 ## Installation
 
 ```
-claude plugins add knowledge-work-plugins/legal
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/legal/
 ```
 
 ## Quick Start
@@ -22,7 +23,8 @@ claude plugins add knowledge-work-plugins/legal
 ### 1. Install the plugin
 
 ```
-claude plugins add knowledge-work-plugins/legal
+# Install from the Cursor Plugin Marketplace, or copy to your local plugins directory:
+# cp -r . ~/.cursor/plugins/local/legal/
 ```
 
 ### 2. Configure your playbook

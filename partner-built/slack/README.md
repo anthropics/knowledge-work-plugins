@@ -34,7 +34,7 @@ claude --plugin-dir ./
 
 The Slack MCP server will be automatically configured when the plugin loads. You will be prompted to authenticate into your Slack workspace via OAuth.
 
-The Claude plugin uses the following MCP configuration (`.mcp.json`):
+The plugin uses the following MCP configuration (`mcp.json`):
 
 ```json
 {
