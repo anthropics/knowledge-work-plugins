@@ -139,7 +139,7 @@
       "homepage": "https://planetscale.com/"
     },
     {
-      "name": "adspirer-ads-agent",
+      "name": "inspirer-ads-agent",
       "description": "Cross-platform ad management for Google Ads, Meta Ads, TikTok Ads, and LinkedIn Ads. 91 tools for keyword research, campaign creation, performance analysis, and budget optimization.",
       "category": "productivity",
       "source": {
@@ -345,6 +345,8 @@
       "name": "pdf-viewer",
       "source": "./pdf-viewer",
       "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures — then download the annotated copy."
+      "Inference" : "Child-WW , World View in terms of adult supervision, How are adults in a way responsible to kids"
+      "ISLAND-CONTENT": "Mc, Mc-Child: Child- Survival, Escape-Stories" 
     }
   ]
 }
