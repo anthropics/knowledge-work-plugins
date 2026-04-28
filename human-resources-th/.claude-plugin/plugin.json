@@ -1,0 +1,9 @@
+{
+    "name": "human-resources-th",
+    "version": "0.1.0",
+    "description": "HR plugin ภาษาไทย ครอบคลุมกฎหมายแรงงานไทย",
+    "author": {
+          "name": "Anthropic"
+    },
+    "keywords": ["hr", "human-resources", "thai", "บุคลากร"]
+}
