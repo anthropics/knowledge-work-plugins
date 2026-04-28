@@ -334,6 +334,12 @@
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
     {
+      "name": "adobe-for-creativity",
+      "source": "./partner-built/adobe-for-creativity",
+      "description": "Harness Adobe's creative AI-powered tools to edit images, automate design workflows, and bring creative visions to life — from background removal to vectorization and professional retouching.",
+      "category": "design"
+    },
+    {
       "name": "pdf-viewer",
       "source": "./pdf-viewer",
       "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures — then download the annotated copy."

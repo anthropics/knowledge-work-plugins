@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adobe Resize</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E24B4A;--red-bg:rgba(226,75,74,0.08);--red-ring:rgba(226,75,74,0.2);
+  --blue:#378ADD;--blue-dark:#185FA5;--blue-bg:#E6F1FB;--blue-ring:rgba(55,138,221,0.2);
+}
+body{font-family:-apple-system,'Helvetica Neue',sans-serif;background:transparent;padding:20px;color:#1a1a1a}
+.shell{max-width:580px;margin:0 auto}
+.hd{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.logo{width:30px;height:30px;background:var(--red);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo svg{width:16px;height:16px;fill:#fff}
+.ht{font-size:14px;font-weight:600;color:#1a1a1a}
+.hs{font-size:12px;color:#666;margin-top:1px}
+ 
+.tabs{display:flex;background:#f0f0f0;border-radius:10px;padding:3px;gap:3px;margin-bottom:14px}
+.tab{flex:1;padding:8px 0;border:none;border-radius:8px;background:transparent;font-size:13px;font-weight:500;color:#888;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .15s}
+.tab svg{width:13px;height:13px;flex-shrink:0}
+.tab.on{background:#fff;color:var(--blue-dark);border:1px solid var(--blue-ring);box-shadow:0 1px 4px rgba(55,138,221,0.15)}
+ 
+.card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.cl{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#888;margin-bottom:10px}
+ 
+.dim-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:6px}
+.dp{display:flex;flex-direction:column;padding:9px 11px;border-radius:8px;background:#f7f7f7;border:1px solid transparent;cursor:pointer;transition:all .13s;user-select:none}
+.dp:hover{border-color:var(--blue);background:#f0f6fd}
+.dp.on{background:transparent;border:1.5px solid var(--blue)}
+.dp-d{font-family:'SF Mono',Monaco,monospace;font-size:12px;font-weight:600;color:#1a1a1a}
+.dp.on .dp-d{color:var(--blue-dark)}
+.dp-l{font-size:11px;color:#666;margin-top:2px}
+.dp.on .dp-l{color:var(--blue-dark)}
+.dp-t{display:inline-block;margin-top:4px;font-size:10px;padding:1px 6px;border-radius:99px;background:#e8e8e8;color:#888}
+.dp.on .dp-t{background:var(--chip-bg);color:var(--blue-dark)}
+ 
+.or-div{display:flex;align-items:center;gap:8px;margin:10px 0 8px}
+.or-div::before,.or-div::after{content:'';flex:1;height:1px;background:#eee}
+.or-text{font-size:11px;color:#aaa}
+.dr{display:flex;align-items:center;gap:8px}
+.dr label{font-size:12px;color:#888;min-width:26px}
+.df{display:flex;align-items:center;gap:4px;background:#f7f7f7;border:1px solid #e0e0e0;border-radius:7px;padding:5px 9px;flex:1}
+.df:focus-within{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue-ring)}
+.df input{border:none;background:transparent;font-family:'SF Mono',Monaco,monospace;font-size:12px;color:#1a1a1a;width:100%;outline:none}
+.df span{font-size:11px;color:#aaa}
+.tx{font-size:13px;color:#ccc}
+ 
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:5px 11px;border-radius:99px;background:#f7f7f7;border:1px solid #e8e8e8;font-size:12px;color:#666;cursor:pointer;transition:all .13s;user-select:none}
+.chip:hover{border-color:var(--blue);color:var(--blue-dark)}
+.chip.on{background:transparent;border:1.5px solid var(--blue);color:var(--blue-dark);font-weight:500}
+.chip .dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0;transition:opacity .13s;flex-shrink:0}
+.chip.on .dot{opacity:1}
+ 
+.nwrap{margin-top:9px;display:none}
+.nwrap.show{display:block}
+.nin{width:100%;border:1px solid #e0e0e0;border-radius:7px;padding:6px 10px;font-size:12px;font-family:'SF Mono',Monaco,monospace;color:#1a1a1a;background:#f7f7f7;outline:none}
+.nin:focus{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue-ring)}
+ 
+.summ{background:#EBF3FD;border:1px solid #B5D4F4;border-radius:8px;padding:9px 12px;font-family:'SF Mono',Monaco,monospace;font-size:11px;color:#0C447C;margin-bottom:10px;white-space:pre-line;word-break:break-word;display:none}
+.summ.show{display:block}
+ 
+.acts{display:flex;gap:8px}
+.brst{padding:8px 14px;border-radius:8px;border:1px solid #e0e0e0;background:transparent;font-size:12px;font-weight:500;color:#888;cursor:pointer}
+.brst:hover{border-color:#999;color:#333}
+.bgo{flex:1;padding:9px 0;border-radius:8px;border:none;background:var(--red);color:#fff;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px}
+.bgo:hover{background:#c93a39}
+.bgo svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2}
+.panel{display:none}.panel.active{display:block}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="hd">
+  <div class="logo"><svg viewBox="0 0 24 24"><path d="M13.5 2H2v20l10-6.5L22 22V8.5z"/></svg></div>
+  <div><div class="ht">Adobe Resize</div><div class="hs">Select all that apply, or none — then start</div></div>
+</div>
+ 
+<div class="tabs">
+  <button class="tab on" id="tp" onclick="sw('photo')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo
+  </button>
+  <button class="tab" id="tv" onclick="sw('video')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>Video
+  </button>
+</div>
+ 
+<div class="panel active" id="pp">
+  <div class="card">
+    <div class="cl">Dimensions</div>
+    <div class="dim-grid" id="dg-p">
+      <div class="dp" data-w="1080" data-h="1080" onclick="pickD(this,'p')"><span class="dp-d">1080 × 1080</span><span class="dp-l">Instagram square</span><span class="dp-t">1:1</span></div>
+      <div class="dp" data-w="1080" data-h="1350" onclick="pickD(this,'p')"><span class="dp-d">1080 × 1350</span><span class="dp-l">Instagram portrait</span><span class="dp-t">4:5</span></div>
+      <div class="dp" data-w="1080" data-h="1920" onclick="pickD(this,'p')"><span class="dp-d">1080 × 1920</span><span class="dp-l">Stories / Reels</span><span class="dp-t">9:16</span></div>
+      <div class="dp" data-w="1920" data-h="1080" onclick="pickD(this,'p')"><span class="dp-d">1920 × 1080</span><span class="dp-l">YouTube / landscape</span><span class="dp-t">16:9</span></div>
+      <div class="dp" data-w="1280" data-h="720" onclick="pickD(this,'p')"><span class="dp-d">1280 × 720</span><span class="dp-l">YouTube thumbnail</span><span class="dp-t">16:9</span></div>
+      <div class="dp" data-w="1200" data-h="675" onclick="pickD(this,'p')"><span class="dp-d">1200 × 675</span><span class="dp-l">X / Twitter post</span><span class="dp-t">16:9</span></div>
+      <div class="dp" data-w="1200" data-h="630" onclick="pickD(this,'p')"><span class="dp-d">1200 × 630</span><span class="dp-l">Facebook / OG image</span><span class="dp-t">~2:1</span></div>
+      <div class="dp" data-w="1080" data-h="566" onclick="pickD(this,'p')"><span class="dp-d">1080 × 566</span><span class="dp-l">LinkedIn post</span><span class="dp-t">~2:1</span></div>
+      <div class="dp" data-w="2560" data-h="1440" onclick="pickD(this,'p')"><span class="dp-d">2560 × 1440</span><span class="dp-l">YouTube banner</span><span class="dp-t">16:9</span></div>
+      <div class="dp" data-w="3840" data-h="2160" onclick="pickD(this,'p')"><span class="dp-d">3840 × 2160</span><span class="dp-l">4K / UHD</span><span class="dp-t">16:9</span></div>
+      <div class="dp" data-w="400" data-h="400" onclick="pickD(this,'p')"><span class="dp-d">400 × 400</span><span class="dp-l">Profile / avatar</span><span class="dp-t">1:1</span></div>
+      <div class="dp" data-w="2480" data-h="3508" onclick="pickD(this,'p')"><span class="dp-d">2480 × 3508</span><span class="dp-l">A4 print (300 dpi)</span><span class="dp-t">portrait</span></div>
+    </div>
+    <div class="or-div"><span class="or-text">or enter custom</span></div>
+    <div class="dr">
+      <label>W</label><div class="df"><input type="number" id="pw" placeholder="e.g. 1080" oninput="clearD('p');upd()"><span>px</span></div>
+      <span class="tx">×</span>
+      <label>H</label><div class="df"><input type="number" id="ph" placeholder="e.g. 1080" oninput="clearD('p');upd()"><span>px</span></div>
+    </div>
+  </div>
+ 
+  <div class="card">
+    <div class="cl">Fit mode</div>
+    <div class="chips">
+      <span class="chip" data-g="pfit" data-v="reframe" onclick="tc(this)"><span class="dot"></span>Reframe — crop to fill</span>
+      <span class="chip" data-g="pfit" data-v="pad" onclick="tc(this)"><span class="dot"></span>Pad — letterbox, no crop</span>
+      <span class="chip" data-g="pfit" data-v="extract" onclick="tc(this)"><span class="dot"></span>Extract — isolate subject</span>
+    </div>
+  </div>
+ 
+  <div class="card">
+    <div class="cl">Smart focus</div>
+    <div class="chips">
+      <span class="chip" data-g="pfoc" data-v="subject" onclick="tc(this)"><span class="dot"></span>Subject</span>
+      <span class="chip" data-g="pfoc" data-v="face" onclick="tc(this)"><span class="dot"></span>Face / portrait</span>
+      <span class="chip" data-g="pfoc" data-v="upper_body" onclick="tc(this)"><span class="dot"></span>Upper body</span>
+      <span class="chip" data-g="pfoc" data-v="center" onclick="tc(this)"><span class="dot"></span>Center</span>
+      <span class="chip" data-g="pfoc" data-v="named" onclick="tc(this)"><span class="dot"></span>Named object…</span>
+    </div>
+    <div class="nwrap" id="nwrap"><input class="nin" id="nval" type="text" placeholder='e.g. "the product", "the logo"' oninput="upd()"></div>
+  </div>
+ 
+  <div class="card">
+    <div class="cl">Options</div>
+    <div class="chips">
+      <span class="chip" data-g="pbatch" data-v="batch" onclick="tc(this)"><span class="dot"></span>Batch — multiple images</span>
+      <span class="chip" data-g="pfmt" data-v="jpeg" onclick="tc(this)"><span class="dot"></span>Output: JPEG</span>
+      <span class="chip" data-g="pfmt" data-v="png" onclick="tc(this)"><span class="dot"></span>Output: PNG</span>
+    </div>
+  </div>
+</div>
+ 
+<div class="panel" id="pv">
+  <div class="card">
+    <div class="cl">Dimensions</div>
+    <div class="dim-grid" id="dg-v">
+      <div class="dp" data-w="1080" data-h="1920" onclick="pickD(this,'v')"><span class="dp-d">1080 × 1920</span><span class="dp-l">Reels / TikTok / Stories</span><span class="dp-t">9:16</span></div>
+      <div class="dp" data-w="1920" data-h="1080" onclick="pickD(this,'v')"><span class="dp-d">1920 × 1080</span><span class="dp-l">YouTube / landscape</span><span class="dp-t">16:9</span></div>
+      <div class="dp" data-w="1080" data-h="1080" onclick="pickD(this,'v')"><span class="dp-d">1080 × 1080</span><span class="dp-l">Square post</span><span class="dp-t">1:1</span></div>
+      <div class="dp" data-w="1280" data-h="720" onclick="pickD(this,'v')"><span class="dp-d">1280 × 720</span><span class="dp-l">YouTube 720p</span><span class="dp-t">16:9</span></div>
+      <div class="dp" data-w="3840" data-h="2160" onclick="pickD(this,'v')"><span class="dp-d">3840 × 2160</span><span class="dp-l">4K / UHD</span><span class="dp-t">16:9</span></div>
+      <div class="dp" data-w="854" data-h="480" onclick="pickD(this,'v')"><span class="dp-d">854 × 480</span><span class="dp-l">SD / 480p</span><span class="dp-t">16:9</span></div>
+    </div>
+    <div class="or-div"><span class="or-text">or enter custom</span></div>
+    <div class="dr">
+      <label>W</label><div class="df"><input type="number" id="vw" placeholder="e.g. 1080" oninput="clearD('v');upd()"><span>px</span></div>
+      <span class="tx">×</span>
+      <label>H</label><div class="df"><input type="number" id="vh" placeholder="e.g. 1920" oninput="clearD('v');upd()"><span>px</span></div>
+    </div>
+  </div>
+ 
+  <div class="card">
+    <div class="cl">Fit mode</div>
+    <div class="chips">
+      <span class="chip" data-g="vfit" data-v="letterbox" onclick="tc(this)"><span class="dot"></span>Letterbox — preserve ratio</span>
+      <span class="chip" data-g="vfit" data-v="crop" onclick="tc(this)"><span class="dot"></span>Crop — fill, no bars</span>
+      <span class="chip" data-g="vfit" data-v="stretch" onclick="tc(this)"><span class="dot"></span>Stretch — force exact (distort)</span>
+    </div>
+  </div>
+ 
+  <div class="card">
+    <div class="cl">Source</div>
+    <div class="chips">
+      <span class="chip" data-g="vsrc" data-v="upload" onclick="tc(this)"><span class="dot"></span>Upload from device</span>
+      <span class="chip" data-g="vsrc" data-v="cc" onclick="tc(this)"><span class="dot"></span>From Creative Cloud</span>
+    </div>
+  </div>
+</div>
+ 
+<div class="summ" id="summ"></div>
+<div class="acts">
+  <button class="brst" onclick="rst()">Reset</button>
+  <button class="bgo" onclick="go()">
+    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Start resize ↗
+  </button>
+</div>
+</div>
+ 
+<script>
+let mode='photo',sd={p:null,v:null};
+function sw(m){
+  mode=m;
+  document.getElementById('tp').classList.toggle('on',m==='photo');
+  document.getElementById('tv').classList.toggle('on',m==='video');
+  document.getElementById('pp').classList.toggle('active',m==='photo');
+  document.getElementById('pv').classList.toggle('active',m==='video');
+  upd();
+}
+function pickD(el,t){
+  document.querySelectorAll('#dg-'+t+' .dp').forEach(d=>d.classList.remove('on'));
+  if(sd[t]===el){sd[t]=null;document.getElementById(t==='p'?'pw':'vw').value='';document.getElementById(t==='p'?'ph':'vh').value='';}
+  else{el.classList.add('on');sd[t]=el;document.getElementById(t==='p'?'pw':'vw').value=el.dataset.w;document.getElementById(t==='p'?'ph':'vh').value=el.dataset.h;}
+  upd();
+}
+function clearD(t){document.querySelectorAll('#dg-'+t+' .dp').forEach(d=>d.classList.remove('on'));sd[t]=null;}
+function tc(el){
+  el.classList.toggle('on');
+  if(el.dataset.v==='named')document.getElementById('nwrap').classList.toggle('show',el.classList.contains('on'));
+  upd();
+}
+function sel(g){return[...document.querySelectorAll('.chip[data-g="'+g+'"].on')].map(c=>c.dataset.v)}
+function gv(id){return(document.getElementById(id)||{}).value||''}
+function upd(){
+  const el=document.getElementById('summ');const L=[];
+  if(mode==='photo'){
+    const w=gv('pw'),h=gv('ph');if(w&&h)L.push('dimensions: '+w+'×'+h+'px');
+    const f=sel('pfit');if(f.length)L.push('fit: '+f.join(', '));
+    const fc=sel('pfoc');if(fc.length)L.push('focus: '+fc.map(v=>v==='named'?(gv('nval')?'"'+gv('nval')+'"':'named (add name)'):v).join(', '));
+    if(sel('pbatch').includes('batch'))L.push('batch: yes');
+    const fm=sel('pfmt');if(fm.length)L.push('format: '+fm.join(', '));
+  } else {
+    const w=gv('vw'),h=gv('vh');if(w&&h)L.push('dimensions: '+w+'×'+h+'px');
+    const f=sel('vfit');if(f.length)L.push('fit: '+f.join(', '));
+    const s=sel('vsrc');if(s.length)L.push('source: '+s.join(', '));
+  }
+  if(L.length){el.textContent=L.join('\n');el.classList.add('show')}else el.classList.remove('show');
+}
+function rst(){
+  document.querySelectorAll('.chip.on').forEach(c=>c.classList.remove('on'));
+  document.querySelectorAll('.dp.on').forEach(d=>d.classList.remove('on'));
+  sd={p:null,v:null};
+  document.getElementById('nwrap').classList.remove('show');
+  ['pw','ph','nval','vw','vh'].forEach(id=>{const e=document.getElementById(id);if(e)e.value=''});
+  document.getElementById('summ').classList.remove('show');
+}
+function go(){
+  const L=[];
+  if(mode==='photo'){
+    L.push('Photo resize request:');
+    const w=gv('pw'),h=gv('ph');L.push(w&&h?'Dimensions: '+w+'×'+h+'px':'Dimensions: not specified');
+    const f=sel('pfit');if(f.length)L.push('Fit mode: '+f.join(', '));
+    const fc=sel('pfoc');if(fc.length)L.push('Focus: '+fc.map(v=>v==='named'?'named object: "'+gv('nval')+'"':v).join(', '));
+    if(sel('pbatch').includes('batch'))L.push('Batch: yes');
+    const fm=sel('pfmt');if(fm.length)L.push('Output format: '+fm.join(', '));
+  } else {
+    L.push('Video resize request:');
+    const w=gv('vw'),h=gv('vh');L.push(w&&h?'Dimensions: '+w+'×'+h+'px':'Dimensions: not specified');
+    const f=sel('vfit');if(f.length)L.push('Fit mode: '+f.join(', '));
+    const s=sel('vsrc');if(s.length)L.push('Source: '+s.join(', '));
+  }
+  if(typeof sendPrompt==='function')sendPrompt(L.join('\n'));
+}
+</script>
+</body>
+</html>
+ 
