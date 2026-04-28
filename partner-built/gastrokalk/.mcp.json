@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "gastrokalk": {
+      "command": "npx",
+      "args": ["gastrokalk-mcp-server"],
+      "env": {
+        "GASTROKALK_API_URL": "${GASTROKALK_API_URL}",
+        "GASTROKALK_API_KEY": "${GASTROKALK_API_KEY}"
+      }
+    }
+  }
+}

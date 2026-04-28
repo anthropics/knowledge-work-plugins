@@ -1,0 +1,25 @@
+{
+  "name": "gastrokalk",
+  "version": "1.0.0",
+  "description": "All-in-One toolkit for gastronomy professionals in the DACH region (CH/DE/AT). Recipe costing, food cost analysis, allergen detection (14 EU allergens), ingredient search, and recipe generation.",
+  "author": {
+    "name": "Marcel Gaertner",
+    "url": "https://gastrokalk.com"
+  },
+  "homepage": "https://gastrokalk.com",
+  "license": "MIT",
+  "keywords": [
+    "gastronomie",
+    "restaurant",
+    "food-cost",
+    "kalkulation",
+    "rezepte",
+    "allergene",
+    "DACH",
+    "kuechenchef",
+    "catering",
+    "wareneinsatz",
+    "lebensmittel",
+    "mcp"
+  ]
+}
