@@ -1,0 +1,8 @@
+{
+  "name": "travel",
+  "version": "1.0.0",
+  "description": "Find the cheapest business class flights using creative routing strategies, positioning flights, ex-hub origination, fifth-freedom routes, mistake fare detection, and points/miles optimization. Delivers ranked options with an Excel comparison spreadsheet.",
+  "author": {
+    "name": "Satyan Avatara / Anil Jacob"
+  }
+}
