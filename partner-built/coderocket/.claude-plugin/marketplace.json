@@ -1,0 +1,20 @@
+{
+  "name": "coderocket-marketplace",
+  "owner": {
+    "name": "CodeRocket"
+  },
+  "metadata": {
+    "description": "AI-powered CI/CD workflow generation, code review, and deployment automation for Claude Code and Cowork",
+    "version": "1.0.0",
+    "pluginRoot": "."
+  },
+  "plugins": [
+    {
+      "name": "coderocket",
+      "source": ".",
+      "description": "AI-powered deployment automation. Generate CI/CD workflows, create PRs, and review code — all from Claude Code.",
+      "version": "1.0.0",
+      "keywords": ["deploy", "ci/cd", "github-actions", "devops", "workflow", "coderocket"]
+    }
+  ]
+}
