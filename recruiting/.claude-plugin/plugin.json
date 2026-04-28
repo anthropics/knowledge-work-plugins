@@ -1,0 +1,9 @@
+{
+  "name": "recruiting",
+  "version": "1.0.0",
+  "description": "Screen resumes, write job descriptions, source candidates, build interview kits, run debriefs, and manage your hiring pipeline. Built for talent acquisition professionals, HR generalists, and startup founders making their first hires.",
+  "author": {
+    "name": "Jeff Otterson",
+    "url": "https://meritforgeai.com"
+  }
+}
