@@ -1,0 +1,20 @@
+{
+  "name": "miro",
+  "version": "1.0.2",
+  "description": "Secure access to Miro boards. Enables AI to read board context, create diagrams, and generate code with enterprise-grade security.",
+  "author": {
+    "name": "Miro",
+    "email": "support@miro.com"
+  },
+  "homepage": "https://miro.com",
+  "repository": "https://github.com/miroapp/miro-ai",
+  "license": "MIT",
+  "keywords": [
+    "miro", "whiteboard", "boards", "diagrams", "flowchart", "mindmap", "uml",
+    "mermaid", "plantuml", "documents", "tables", "stickies", "wireframes",
+    "prototypes", "visualization", "collaboration", "design-to-code", "mcp",
+    "prd", "specs", "documentation", "planning", "frames", "cards", "shapes",
+    "connectors", "images", "extraction", "design", "requirements", "tasks",
+    "tracking", "todos", "project-management", "kanban", "sync"
+  ]
+}
