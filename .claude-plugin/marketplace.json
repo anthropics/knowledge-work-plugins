@@ -337,6 +337,17 @@
       "name": "pdf-viewer",
       "source": "./pdf-viewer",
       "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures — then download the annotated copy."
+    },
+    {
+      "name": "box",
+      "description": "Work with your Box content directly from Claude Code — search files, organize folders, collaborate with your team, and use Box AI to answer questions, summarize documents, and extract data without leaving your workflow.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/box/box-for-ai.git",
+        "sha": "0fb23244e3c35cd562206c80eff1e22c456046ea"
+      },
+      "homepage": "https://github.com/box/box-for-ai"
     }
   ]
 }
