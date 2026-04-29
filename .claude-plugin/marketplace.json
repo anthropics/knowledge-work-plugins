@@ -134,6 +134,20 @@
       }
     },
     {
+      "name": "miro",
+      "description": "Secure access to Miro boards. Enables AI to read board context, create diagrams, and generate code with enterprise-grade security.",
+      "author": {
+        "name": "Miro"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/miroapp/miro-ai.git",
+        "path": "claude-plugins/miro",
+        "ref": "main",
+        "sha": "b1d33ab97c26aef7924bd0e9da208007a0f4448b"
+      }
+    },
+    {
       "name": "planetscale",
       "description": "An authenticated hosted MCP server that accesses your PlanetScale organizations, databases, branches, schema, and Insights data. Query against your data, surface slow queries, and get organizational and account information.",
       "category": "database",
