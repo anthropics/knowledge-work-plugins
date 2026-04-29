@@ -355,8 +355,7 @@
         "source": "git-subdir",
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
-        "ref": "main",
-        "sha": "f69558c215fe00c114a3946b9faf2db92cb14e09"
+        "ref": "main"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
