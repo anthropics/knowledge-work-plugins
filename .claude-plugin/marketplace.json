@@ -120,6 +120,20 @@
       }
     },
     {
+      "name": "bigdata-com",
+      "description": "Official Bigdata.com plugin providing financial research, analytics, and intelligence tools powered by Bigdata MCP.",
+      "author": {
+        "name": "RavenPack"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Bigdata-com/bigdata-plugins-marketplace.git",
+        "path": "plugins/bigdata-com",
+        "ref": "main",
+        "sha": "274b5365bdc61130225de736d3f3ca5210c0e37d"
+      }
+    },
+    {
       "name": "planetscale",
       "description": "An authenticated hosted MCP server that accesses your PlanetScale organizations, databases, branches, schema, and Insights data. Query against your data, surface slow queries, and get organizational and account information.",
       "category": "database",
