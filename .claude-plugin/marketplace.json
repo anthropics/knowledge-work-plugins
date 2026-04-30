@@ -399,6 +399,19 @@
         "sha": "44422c8ad8366d27d872363981b459912b0db2f4"
       },
       "homepage": "https://github.com/LSEG-API-Samples/lseg-claude-plugin"
+    },
+    {
+      "name": "sp-global",
+      "description": "S&P Global - Financial data and analytics skills including company tearsheets, earnings previews, and transaction summaries",
+      "category": "finance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/kensho-technologies/spglobal-agent-skills.git",
+        "path": "plugins/spglobal-plugin",
+        "ref": "main",
+        "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
+      },
+      "homepage": "https://kensho.com"
     }
   ]
 }
