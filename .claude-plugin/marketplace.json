@@ -363,7 +363,7 @@
     },
     {
       "name": "adobe-for-creativity",
-      "description": "Harness Adobe's creative AI-powered tools to edit images, automate design workflows, and bring creative visions to life — from background removal to vectorization and professional retouching.",
+      "description": "Brings together Adobe Creative Cloud tools for images, vectors, design, and video. Edit multiple assets at once, adapt for different platforms, and complete multi-step creative workflows for polished results.",
       "category": "design",
       "source": {
         "source": "git-subdir",
