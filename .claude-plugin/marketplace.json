@@ -388,6 +388,17 @@
         "sha": "0fb23244e3c35cd562206c80eff1e22c456046ea"
       },
       "homepage": "https://github.com/box/box-for-ai"
+    },
+    {
+      "name": "lseg",
+      "description": "Price bonds, analyze yield curves, evaluate FX carry trades, value options, and build macro dashboards using LSEG financial data and analytics.",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/LSEG-API-Samples/lseg-claude-plugin.git",
+        "sha": "44422c8ad8366d27d872363981b459912b0db2f4"
+      },
+      "homepage": "https://github.com/LSEG-API-Samples/lseg-claude-plugin"
     }
   ]
 }
