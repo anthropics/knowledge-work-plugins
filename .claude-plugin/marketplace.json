@@ -412,6 +412,21 @@
         "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
       },
       "homepage": "https://kensho.com"
+    },
+    {
+      "name": "job-hunt-skills",
+      "description": "Tailor resumes, cover letters, and interview prep to specific roles and organize your job search. Covers research, applications, interviews, LinkedIn, and proof assets — saved as local markdown the user controls. Includes claim-check guards against fabricated experience.",
+      "category": "productivity",
+      "author": {
+        "name": "Remotivated",
+        "url": "https://remotivated.com"
+      },
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Remotivated/job-hunt-skills.git",
+        "sha": "dd89f9ac6ca5bed8e07cb3ab59c319ddc681be5c"
+      },
+      "homepage": "https://github.com/Remotivated/job-hunt-skills"
     }
   ]
 }
