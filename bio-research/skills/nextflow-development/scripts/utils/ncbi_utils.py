@@ -338,9 +338,9 @@ def fetch_ena_fastq_urls(study_accession: str) -> Dict[str, List[str]]:
                 srr = fields[run_idx]
                 ftp_urls = fields[ftp_idx]
                 if ftp_urls:
-                    # URLs are semicolon-separated, convert to HTTP URLs
-                    # ENA supports both FTP and HTTP, HTTP is easier with requests
-                    urls = [f"http://{url}" for url in ftp_urls.split(';') if url]
+                    # URLs are semicolon-separated, convert to HTTPS URLs
+                    # ENA supports HTTPS for encrypted downloads
+                    urls = [f"https://{url}" for url in ftp_urls.split(';') if url]
                     fastq_urls[srr] = urls
 
         return fastq_urls
