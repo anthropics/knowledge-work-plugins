@@ -412,6 +412,14 @@
         "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
       },
       "homepage": "https://kensho.com"
+    },
+    {
+      "name": "management-consulting",
+      "source": "./management-consulting",
+      "description": "Strategic problem solving, framework analysis, and engagement delivery for management consulting. Covers the full lifecycle from scoping and proposals through implementation and closeout.",
+      "author": {
+        "name": "Anot"
+      }
     }
   ]
 }
