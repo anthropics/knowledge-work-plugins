@@ -55,6 +55,11 @@
       "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape."
     },
     {
+      "name": "bio-research",
+      "source": "./bio-research",
+      "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
+    },
+    {
       "name": "slack-by-salesforce",
       "source": "./partner-built/slack",
       "description": "Slack integration for searching messages, sending communications, managing canvases, and more",
@@ -65,7 +70,7 @@
     {
       "name": "apollo",
       "source": "./partner-built/apollo",
-      "description": "Prospect, enrich leads, and load outreach sequences with Apollo.io \u2014 one-click MCP server integration for Claude Code and Cowork.",
+      "description": "Prospect, enrich leads, and load outreach sequences with Apollo.io — one-click MCP server integration for Claude Code and Cowork.",
       "author": {
         "name": "Apollo.io"
       }
@@ -81,22 +86,22 @@
     {
       "name": "engineering",
       "source": "./engineering",
-      "description": "Streamline engineering workflows \u2014 standups, code review, architecture decisions, incident response, and technical documentation. Works with your existing tools or standalone."
+      "description": "Streamline engineering workflows — standups, code review, architecture decisions, incident response, and technical documentation. Works with your existing tools or standalone."
     },
     {
       "name": "human-resources",
       "source": "./human-resources",
-      "description": "Streamline people operations \u2014 recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly."
+      "description": "Streamline people operations — recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly."
     },
     {
       "name": "design",
       "source": "./design",
-      "description": "Accelerate design workflows \u2014 critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs."
+      "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs."
     },
     {
       "name": "operations",
       "source": "./operations",
-      "description": "Optimize business operations \u2014 vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently."
+      "description": "Optimize business operations — vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently."
     },
     {
       "name": "brand-voice",
@@ -104,6 +109,42 @@
       "description": "Discover your brand voice from existing documents and conversations, generate enforceable guidelines, and validate AI-generated content against your established tone and positioning.",
       "author": {
         "name": "Tribe AI"
+      }
+    },
+    {
+      "name": "zoom-plugin",
+      "source": "./partner-built/zoom-plugin",
+      "description": "Plan, build, and debug Zoom integrations across REST APIs, Meeting SDK, Video SDK, webhooks, bots, and MCP workflows. Search meetings, retrieve recordings, access transcripts, and design AI-powered Zoom experiences.",
+      "author": {
+        "name": "Zoom"
+      }
+    },
+    {
+      "name": "bigdata-com",
+      "description": "Official Bigdata.com plugin providing financial research, analytics, and intelligence tools powered by Bigdata MCP.",
+      "author": {
+        "name": "RavenPack"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Bigdata-com/bigdata-plugins-marketplace.git",
+        "path": "plugins/bigdata-com",
+        "ref": "main",
+        "sha": "274b5365bdc61130225de736d3f3ca5210c0e37d"
+      }
+    },
+    {
+      "name": "miro",
+      "description": "Secure access to Miro boards. Enables AI to read board context, create diagrams, and generate code with enterprise-grade security.",
+      "author": {
+        "name": "Miro"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/miroapp/miro-ai.git",
+        "path": "claude-plugins/miro",
+        "ref": "main",
+        "sha": "b1d33ab97c26aef7924bd0e9da208007a0f4448b"
       }
     },
     {
@@ -124,7 +165,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/amekala/adspirer-mcp-plugin.git",
-        "sha": "aa70dbdbbbb843e94a794c10c2b13f5dd66b5e40"
+        "sha": "c40623f1aa7b568e960d3f2e2558a6fcf10e6c18"
       },
       "homepage": "https://www.adspirer.com"
     },
@@ -138,7 +179,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "4b1fb10bd707a22cf0cdfad5374ffc885f2ffa8d"
+        "sha": "bc09fa9854507c538a856648aafbd4e1a775a95c"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -159,7 +200,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/mintlify/mintlify-claude-plugin.git",
-        "sha": "ce435be18a700dc849d6a63a80da4816d1e2128c"
+        "sha": "acd6d2e0128c4f235d55cfb8d8c91ecbdd5df8cc"
       },
       "homepage": "https://www.mintlify.com/"
     },
@@ -170,7 +211,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/daloopa/plugin.git",
-        "sha": "b5641f5bdfb2a44ac541486444cd8a595ccfc49c"
+        "sha": "cc0d09689397e64db7344634246326e7d7d9a42d"
       },
       "homepage": "https://github.com/daloopa/plugin"
     },
@@ -183,7 +224,7 @@
         "url": "zapier/zapier-mcp",
         "path": "plugins/zapier",
         "ref": "main",
-        "sha": "b93007e9a726c6ee93c57a949e732744ef5acbfd"
+        "sha": "ecd7c7220c63a62a9702b76276b6a05f740d8c18"
       },
       "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier"
     },
@@ -194,17 +235,17 @@
       "source": {
         "source": "url",
         "url": "https://github.com/intercom/claude-plugin-external.git",
-        "sha": "eeef353eead2e3dc5f33f64dbaae54e1309e0d45"
+        "sha": "62773a7d4b8aac31545d6888fe6479be3bc53804"
       },
       "homepage": "https://github.com/intercom/claude-plugin-external"
     },
     {
       "name": "cockroachdb",
-      "description": "CockroachDB plugin for Claude Code \u2014 explore schemas, write optimized SQL, debug queries, and manage distributed database clusters directly from your AI coding agent.",
+      "description": "CockroachDB plugin for Claude Code — explore schemas, write optimized SQL, debug queries, and manage distributed database clusters directly from your AI coding agent.",
       "source": {
         "source": "url",
         "url": "https://github.com/cockroachdb/claude-plugin.git",
-        "sha": "a54566e03c852567589ef85bb449d1e4de229667"
+        "sha": "9e34f578a2723cfc921bf66d89eb15691a2202be"
       },
       "homepage": "https://github.com/cockroachdb/claude-plugin"
     },
@@ -224,7 +265,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/fastly/fastly-agent-toolkit.git",
-        "sha": "d9ba949011e725be55cae11acc741aa1f1f393d3"
+        "sha": "4f9f3198d090f8be321470e4e03dcf5351a8d3f1"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
     },
@@ -234,17 +275,17 @@
       "source": {
         "source": "url",
         "url": "https://github.com/cloudinary-devs/cloudinary-plugin.git",
-        "sha": "137c5d7acd9c3f10e80cd2a400486971e1664f31"
+        "sha": "7b443d7dbd607bfe4850d8cfcab6ba4cbf1a57c3"
       },
       "homepage": "https://cloudinary.com/documentation"
     },
     {
       "name": "nimble",
-      "description": "Nimble web data toolkit \u2014 search, extract, map, crawl the web and work with structured data agents",
+      "description": "Nimble web data toolkit — search, extract, map, crawl the web and work with structured data agents",
       "source": {
         "source": "url",
         "url": "https://github.com/Nimbleway/agent-skills.git",
-        "sha": "cf391e95bd8ac009e3641f172434a1d130dde7fe"
+        "sha": "626930f102dc51ef3858a28f94318ceabfdea071"
       },
       "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation"
     },
@@ -254,13 +295,13 @@
       "source": {
         "source": "url",
         "url": "https://github.com/brightdata/skills.git",
-        "sha": "e671da495f7ec0ed6be5e9fa71e260f886a1dc36"
+        "sha": "d0eeb1fbab809ffffe7c270186bd3eb78cf0c8ba"
       },
       "homepage": "https://docs.brightdata.com"
     },
     {
       "name": "searchfit-seo",
-      "description": "Free AI-powered SEO toolkit \u2014 audit websites, plan content strategy, optimize pages, generate schema markup, cluster keywords, and track AI visibility. Works with any website or codebase.",
+      "description": "Free AI-powered SEO toolkit — audit websites, plan content strategy, optimize pages, generate schema markup, cluster keywords, and track AI visibility. Works with any website or codebase.",
       "source": {
         "source": "url",
         "url": "https://github.com/searchfit/searchfit-seo.git",
@@ -274,7 +315,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/atlanhq/agent-toolkit.git",
-        "sha": "acdf284da6aa98b14f8dad90a9827006d8df425c"
+        "sha": "790398c87378f128bdc74c31bb7ecfb8e4695f29"
       },
       "homepage": "https://docs.atlan.com/"
     },
@@ -286,13 +327,13 @@
         "url": "techwolf-ai/ai-first-toolkit",
         "path": "plugins/ai-firstify",
         "ref": "main",
-        "sha": "7f18e11d694b9ae62ea3009fbbc175f08ae913df"
+        "sha": "852272ec21cebab98202df967dffee127209b6bc"
       },
       "homepage": "https://ai-first.techwolf.ai"
     },
     {
       "name": "product-tracking-skills",
-      "description": "AI agent skills that make SaaS products data-ready for product analytics \u2014 from codebase scan to tracking plan to working instrumentation code.",
+      "description": "AI agent skills that make SaaS products data-ready for product analytics — from codebase scan to tracking plan to working instrumentation code.",
       "source": {
         "source": "url",
         "url": "https://github.com/Accoil/product-tracking-skills.git",
@@ -306,7 +347,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/gitroomhq/postiz-agent.git",
-        "sha": "c5d1bf5f7e95a71e230fc19ae2150ddd9c549854"
+        "sha": "d76c99a304875bca8eed9875dd18e03a3f4725aa"
       },
       "homepage": "https://postiz.com/agent"
     },
@@ -321,9 +362,56 @@
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
     {
+      "name": "adobe-for-creativity",
+      "description": "Brings together Adobe Creative Cloud tools for images, vectors, design, and video. Edit multiple assets at once, adapt for different platforms, and complete multi-step creative workflows for polished results.",
+      "category": "design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/adobe/skills.git",
+        "path": "plugins/creative-cloud/adobe-for-creativity",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
+    },
+    {
       "name": "pdf-viewer",
       "source": "./pdf-viewer",
-      "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures \u2014 then download the annotated copy."
+      "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures — then download the annotated copy."
+    },
+    {
+      "name": "box",
+      "description": "Work with your Box content directly from Claude Code — search files, organize folders, collaborate with your team, and use Box AI to answer questions, summarize documents, and extract data without leaving your workflow.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/box/box-for-ai.git",
+        "sha": "0fb23244e3c35cd562206c80eff1e22c456046ea"
+      },
+      "homepage": "https://github.com/box/box-for-ai"
+    },
+    {
+      "name": "lseg",
+      "description": "Price bonds, analyze yield curves, evaluate FX carry trades, value options, and build macro dashboards using LSEG financial data and analytics.",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/LSEG-API-Samples/lseg-claude-plugin.git",
+        "sha": "44422c8ad8366d27d872363981b459912b0db2f4"
+      },
+      "homepage": "https://github.com/LSEG-API-Samples/lseg-claude-plugin"
+    },
+    {
+      "name": "sp-global",
+      "description": "S&P Global - Financial data and analytics skills including company tearsheets, earnings previews, and transaction summaries",
+      "category": "finance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/kensho-technologies/spglobal-agent-skills.git",
+        "path": "plugins/spglobal-plugin",
+        "ref": "main",
+        "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
+      },
+      "homepage": "https://kensho.com"
     },
     {
       "name": "management-consulting",
