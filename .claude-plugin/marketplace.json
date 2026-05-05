@@ -35,6 +35,20 @@
       "description": "Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders."
     },
     {
+      "name": "amplitude",
+      "description": "Use Amplitude as an expert analyst — instrument Amplitude, discover product opportunities, analyze charts, create dashboards, manage experiments, and understand users and accounts.",
+      "author": {
+        "name": "Amplitude"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/amplitude/mcp-marketplace.git",
+        "path": "plugins/amplitude",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/amplitude/mcp-marketplace"
+    },
+    {
       "name": "legal",
       "source": "./legal",
       "description": "Speed up contract review, NDA triage, and compliance workflows for in-house legal teams. Draft legal briefs, organize precedent research, and manage institutional knowledge."
