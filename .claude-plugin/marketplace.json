@@ -40,7 +40,6 @@
       "author": {
         "name": "Amplitude"
       },
-      "category": "data",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/amplitude/mcp-marketplace.git",
