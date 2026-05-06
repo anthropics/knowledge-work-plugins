@@ -412,6 +412,17 @@
         "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
       },
       "homepage": "https://kensho.com"
+    },
+    {
+      "name": "eu-ai-governance",
+      "description": "EU AI Act compliance for European in-house legal, compliance, and AI governance teams. Risk classification, DPIAs, vendor assessments, evidence packs. DACH-first, with Works Council (BetrVG), BaFin, and BSI specifics. By Lexbeam Software.",
+      "category": "legal",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lexbeam-software/eu-ai-governance-plugin.git",
+        "sha": "9a029499914dcf4515dd8726b7c4b7b626c55e20"
+      },
+      "homepage": "https://lexbeam-software.github.io/eu-ai-governance-plugin/"
     }
   ]
 }
