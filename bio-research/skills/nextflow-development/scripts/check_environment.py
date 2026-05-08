@@ -260,7 +260,7 @@ def check_resources() -> CheckResult:
                 )
                 if result.returncode == 0:
                     mem_gb = int(result.stdout.strip()) / (1024**3)
-            except:
+            except Exception:
                 pass
 
         # Disk space (current directory)
@@ -268,7 +268,7 @@ def check_resources() -> CheckResult:
         try:
             statvfs = os.statvfs('.')
             disk_gb = (statvfs.f_frsize * statvfs.f_bavail) / (1024**3)
-        except:
+        except Exception:
             pass
 
         details = f"CPUs: {cpu_count}, Memory: {mem_gb:.1f}GB, Disk: {disk_gb:.1f}GB available"
@@ -319,7 +319,7 @@ def check_network() -> CheckResult:
             req = urllib.request.Request("https://hub.docker.com", headers=headers)
             urllib.request.urlopen(req, timeout=10)
             docker_hub_ok = True
-        except:
+        except Exception:
             docker_hub_ok = False
 
         # Try nf-core (for pipeline downloads)
@@ -327,7 +327,7 @@ def check_network() -> CheckResult:
             req = urllib.request.Request("https://nf-co.re", headers=headers)
             urllib.request.urlopen(req, timeout=10)
             nfcore_ok = True
-        except:
+        except Exception:
             nfcore_ok = False
 
         if docker_hub_ok and nfcore_ok:

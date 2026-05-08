@@ -115,7 +115,10 @@ See [CONNECTORS.md](CONNECTORS.md) for the full list of supported integrations, 
 
 ## Settings
 
-Create a local settings file at `sales/.claude/settings.local.json` to personalize:
+Create a `settings.local.json` file to personalize:
+
+- **Cowork**: Save it in any folder you've shared with Cowork (via the folder picker). The plugin finds it automatically.
+- **Claude Code**: Save it at `sales/.claude/settings.local.json`.
 
 ```json
 {

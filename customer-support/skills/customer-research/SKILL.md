@@ -1,93 +1,151 @@
 ---
 name: customer-research
-description: Research customer questions by searching across documentation, knowledge bases, and connected sources, then synthesize a confidence-scored answer. Use when a customer asks a question you need to investigate, when building background on a customer situation, or when you need account context.
+description: Multi-source research on a customer question or topic with source attribution. Use when a customer asks something you need to look up, investigating whether a bug has been reported before, checking what was previously told to a specific account, or gathering background before drafting a response.
+argument-hint: "<question or topic>"
 ---
 
-# Customer Research Skill
+# /customer-research
 
-You are an expert at conducting multi-source research to answer customer questions, investigate account contexts, and build comprehensive understanding of customer situations. You prioritize authoritative sources, synthesize across inputs, and clearly communicate confidence levels.
+> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
 
-## Multi-Source Research Methodology
+Multi-source research on a customer question, product topic, or account-related inquiry. Synthesizes findings from all available sources with clear attribution and confidence scoring.
 
-### Research Process
+## Usage
 
-**Step 1: Understand the Question**
+```
+/customer-research <question or topic>
+```
+
+## Workflow
+
+### 1. Parse the Research Request
+
+Identify what type of research is needed:
+- **Customer question**: Something a customer has asked that needs an answer (e.g., "Does our product support SSO with Okta?")
+- **Issue investigation**: Background on a reported problem (e.g., "Has this bug been reported before? What's the known workaround?")
+- **Account context**: History with a specific customer (e.g., "What did we tell Acme Corp last time they asked about this?")
+- **Topic research**: General topic relevant to support work (e.g., "Best practices for webhook retry logic")
+
 Before searching, clarify what you're actually trying to find:
 - Is this a factual question with a definitive answer?
 - Is this a contextual question requiring multiple perspectives?
 - Is this an exploratory question where the scope is still being defined?
 - Who is the audience for the answer (internal team, customer, leadership)?
 
-**Step 2: Plan Your Search Strategy**
-Map the question to likely source types:
-- Product capability question → documentation, knowledge base, product specs
-- Customer context question → CRM, email history, meeting notes, chat
-- Process/policy question → internal wikis, runbooks, policy docs
-- Technical question → documentation, engineering resources, support tickets
-- Market/competitive question → web research, analyst reports, competitive intel
+### 2. Search Available Sources
 
-**Step 3: Execute Searches Systematically**
-Search sources in priority order (see below). Don't stop at the first result — cross-reference across sources.
+Search systematically through the source tiers below, adapting to what is connected. Don't stop at the first result — cross-reference across sources.
 
-**Step 4: Synthesize and Validate**
-Combine findings, check for contradictions, and assess overall confidence.
+**Tier 1 — Official Internal Sources (highest confidence):**
+- ~~knowledge base (if connected): product docs, runbooks, FAQs, policy documents
+- ~~cloud storage: internal documents, specs, guides, past research
+- Product roadmap (internal-facing): feature timelines, priorities
 
-**Step 5: Present with Attribution**
-Always cite sources and note confidence level.
+**Tier 2 — Organizational Context:**
+- ~~CRM notes: account notes, activity history, previous answers, opportunity details
+- ~~support platform (if connected): previous resolutions, known issues, workarounds
+- Meeting notes: previous discussions, decisions, commitments
 
-## Source Prioritization
+**Tier 3 — Team Communications:**
+- ~~chat: search for the topic in relevant channels; check if teammates have discussed or answered this before
+- ~~email: search for previous correspondence on this topic
+- Calendar notes: meeting agendas and post-meeting notes
 
-Search sources in this order, with decreasing authority:
+**Tier 4 — External Sources:**
+- Web search: official documentation, blog posts, community forums
+- Public knowledge bases, help centers, release notes
+- Third-party documentation: integration partners, complementary tools
 
-### Tier 1 — Official Internal Sources (Highest Confidence)
-These are authoritative and should be trusted unless outdated.
+**Tier 5 — Inferred or Analogical (use when direct sources don't yield answers):**
+- Similar situations: how similar questions were handled before
+- Analogous customers: what worked for comparable accounts
+- General best practices: industry standards and norms
 
-- **Product documentation**: Official docs, specs, API references
-- **Knowledge base / wiki**: Internal articles, runbooks, FAQs
-- **Policy documents**: Official policies, terms, SLAs
-- **Product roadmap** (internal-facing): Feature timelines, priorities
+### 3. Synthesize Findings
 
-Confidence level: **High** (unless clearly outdated — check dates)
+Compile results into a structured research brief:
 
-### Tier 2 — Organizational Context
-These provide context but may reflect one perspective.
+```
+## Research: [Question/Topic]
 
-- **CRM records**: Account notes, activity history, opportunity details
-- **Support tickets**: Previous resolutions, known issues, workarounds
-- **Internal documents** (Drive, shared folders): Specs, plans, analyses
-- **Meeting notes**: Previous discussions, decisions, commitments
+### Answer
+[Clear, direct answer to the question — lead with the bottom line]
 
-Confidence level: **Medium-High** (may be subjective or incomplete)
+**Confidence:** [High / Medium / Low]
+[Explain what drives the confidence level]
 
-### Tier 3 — Team Communications
-Informal but often contain the most recent information.
+### Key Findings
 
-- **Chat history**: Team discussions, quick answers, context
-- **Email threads**: Customer correspondence, internal discussions
-- **Calendar notes**: Meeting agendas and post-meeting notes
+**From [Source 1]:**
+- [Finding with specific detail]
+- [Finding with specific detail]
 
-Confidence level: **Medium** (informal, may be out of context, could be speculative)
+**From [Source 2]:**
+- [Finding with specific detail]
 
-### Tier 4 — External Sources
-Useful for general knowledge but not authoritative for internal matters.
+### Context & Nuance
+[Any caveats, edge cases, or additional context that matters]
 
-- **Web search**: Official websites, blog posts, industry resources
-- **Community forums**: User discussions, workarounds, experiences
-- **Third-party documentation**: Integration partners, complementary tools
-- **News and analyst reports**: Market context, competitive intelligence
+### Sources
+1. [Source name/link] — [what it contributed]
+2. [Source name/link] — [what it contributed]
+3. [Source name/link] — [what it contributed]
 
-Confidence level: **Low-Medium** (may not reflect your specific situation)
+### Gaps & Unknowns
+- [What couldn't be confirmed]
+- [What might need verification from a subject matter expert]
 
-### Tier 5 — Inferred or Analogical
-Use when direct sources don't yield answers.
+### Recommended Next Steps
+- [Action if the answer needs to go to a customer]
+- [Action if further research is needed]
+- [Who to consult for verification if needed]
+```
 
-- **Similar situations**: How similar questions were handled before
-- **Analogous customers**: What worked for comparable accounts
-- **General best practices**: Industry standards and norms
+### 4. Handle Insufficient Sources
 
-Confidence level: **Low** (clearly flag as inference, not fact)
+If no connected sources yield results:
 
-## Answer Synthesis
+- Perform web research on the topic
+- Ask the user for internal context:
+  - "I couldn't find this in connected sources. Do you have internal docs or knowledge base articles about this?"
+  - "Has your team discussed this topic before? Any ~~chat channels I should check?"
+  - "Is there a subject matter expert who would know the answer?"
+- Be transparent about limitations:
+  - "This answer is based on web research only — please verify against your internal documentation before sharing with the customer."
+  - "I found a possible answer but couldn't confirm it from an authoritative internal source."
+
+### 5. Customer-Facing Considerations
+
+If the research is to answer a customer question:
+
+- Flag if the answer involves product roadmap, pricing, legal, or security topics that may need review
+- Note if the answer differs from what may have been communicated previously
+- Suggest appropriate caveats for the customer-facing response
+- Offer to draft the customer response: "Want me to draft a response to the customer based on these findings?"
+
+### 6. Knowledge Capture
+
+After research is complete, suggest capturing the knowledge:
+
+- "Should I save these findings to your knowledge base for future reference?"
+- "Want me to create a FAQ entry based on this research?"
+- "This might be worth documenting — should I draft a runbook entry?"
+
+This helps build institutional knowledge and reduces duplicate research effort across the team.
+
+---
+
+## Source Prioritization and Confidence
+
+### Confidence by Source Tier
+
+| Tier | Source Type | Confidence | Notes |
+|------|-------------|------------|-------|
+| 1 | Official internal docs, KB, policies | **High** | Trust unless clearly outdated — check dates |
+| 2 | CRM, support tickets, meeting notes | **Medium-High** | May be subjective or incomplete |
+| 3 | Chat, email, calendar notes | **Medium** | Informal, may be out of context or speculative |
+| 4 | Web, forums, third-party docs | **Low-Medium** | May not reflect your specific situation |
+| 5 | Inference, analogies, best practices | **Low** | Clearly flag as inference, not fact |
 
 ### Confidence Levels
 
@@ -125,26 +183,6 @@ When sources disagree:
 4. Recommend how to resolve the discrepancy
 5. If going to a customer: use the most conservative/cautious answer until resolved
 
-### Synthesis Structure
-
-```
-**Direct Answer:** [Bottom-line answer — lead with this]
-
-**Confidence:** [High / Medium / Low]
-
-**Supporting Evidence:**
-- [Source 1]: [What it says]
-- [Source 2]: [What it says — corroborates or adds nuance]
-
-**Caveats:**
-- [Any limitations or conditions on the answer]
-- [Anything that might change the answer in specific contexts]
-
-**Recommendation:**
-- [Whether this is ready to share with customers]
-- [Any verification steps recommended]
-```
-
 ## When to Escalate vs. Answer Directly
 
 ### Answer Directly When:
@@ -174,7 +212,7 @@ When sources disagree:
 
 ## Research Documentation for Team Knowledge Base
 
-After completing research, capture the knowledge for future use:
+After completing research, capture the knowledge for future use.
 
 ### When to Document:
 - Question has come up before or likely will again
@@ -212,15 +250,3 @@ After completing research, capture the knowledge for future use:
 - Review and update entries quarterly
 - Archive entries that are no longer relevant
 - Tag entries for searchability (by topic, product area, customer segment)
-
-## Using This Skill
-
-When conducting customer research:
-
-1. Always start by clarifying what you're actually looking for
-2. Search systematically — don't skip tiers even if you think you know where the answer is
-3. Cross-reference findings across multiple sources
-4. Be transparent about confidence levels — never present uncertain information as fact
-5. When in doubt about whether to share with a customer, err on the side of verifying first
-6. Document your research for future team benefit
-7. If the research reveals a gap in your knowledge base, flag it for documentation

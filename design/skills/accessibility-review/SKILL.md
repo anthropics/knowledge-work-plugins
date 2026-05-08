@@ -1,11 +1,22 @@
 ---
 name: accessibility-review
-description: Audit designs and code for WCAG 2.1 AA compliance. Trigger with "is this accessible", "accessibility check", "WCAG audit", "can screen readers use this", "color contrast", or when the user asks about making designs or code accessible to all users.
+description: Run a WCAG 2.1 AA accessibility audit on a design or page. Trigger with "audit accessibility", "check a11y", "is this accessible?", or when reviewing a design for color contrast, keyboard navigation, touch target size, or screen reader behavior before handoff.
+argument-hint: "<Figma URL, URL, or description>"
 ---
 
-# Accessibility Review
+# /accessibility-review
 
-Evaluate designs and implementations against WCAG 2.1 AA standards.
+> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+
+Audit a design or page for WCAG 2.1 AA accessibility compliance.
+
+## Usage
+
+```
+/accessibility-review $ARGUMENTS
+```
+
+Audit for accessibility: @$1
 
 ## WCAG 2.1 AA Quick Reference
 
@@ -47,3 +58,71 @@ Evaluate designs and implementations against WCAG 2.1 AA standards.
 3. Screen reader testing (VoiceOver, NVDA)
 4. Color contrast verification
 5. Zoom to 200% — does layout break?
+
+## Output
+
+```markdown
+## Accessibility Audit: [Design/Page Name]
+**Standard:** WCAG 2.1 AA | **Date:** [Date]
+
+### Summary
+**Issues found:** [X] | **Critical:** [X] | **Major:** [X] | **Minor:** [X]
+
+### Findings
+
+#### Perceivable
+| # | Issue | WCAG Criterion | Severity | Recommendation |
+|---|-------|---------------|----------|----------------|
+| 1 | [Issue] | [1.4.3 Contrast] | 🔴 Critical | [Fix] |
+
+#### Operable
+| # | Issue | WCAG Criterion | Severity | Recommendation |
+|---|-------|---------------|----------|----------------|
+| 1 | [Issue] | [2.1.1 Keyboard] | 🟡 Major | [Fix] |
+
+#### Understandable
+| # | Issue | WCAG Criterion | Severity | Recommendation |
+|---|-------|---------------|----------|----------------|
+| 1 | [Issue] | [3.3.2 Labels] | 🟢 Minor | [Fix] |
+
+#### Robust
+| # | Issue | WCAG Criterion | Severity | Recommendation |
+|---|-------|---------------|----------|----------------|
+| 1 | [Issue] | [4.1.2 Name, Role, Value] | 🟡 Major | [Fix] |
+
+### Color Contrast Check
+| Element | Foreground | Background | Ratio | Required | Pass? |
+|---------|-----------|------------|-------|----------|-------|
+| [Body text] | [color] | [color] | [X]:1 | 4.5:1 | ✅/❌ |
+
+### Keyboard Navigation
+| Element | Tab Order | Enter/Space | Escape | Arrow Keys |
+|---------|-----------|-------------|--------|------------|
+| [Element] | [Order] | [Behavior] | [Behavior] | [Behavior] |
+
+### Screen Reader
+| Element | Announced As | Issue |
+|---------|-------------|-------|
+| [Element] | [What SR says] | [Problem if any] |
+
+### Priority Fixes
+1. **[Critical fix]** — Affects [who] and blocks [what]
+2. **[Major fix]** — Improves [what] for [who]
+3. **[Minor fix]** — Nice to have
+```
+
+## If Connectors Available
+
+If **~~design tool** is connected:
+- Inspect color values, font sizes, and touch targets directly from Figma
+- Check component ARIA roles and keyboard behavior in the design spec
+
+If **~~project tracker** is connected:
+- Create tickets for each accessibility finding with severity and WCAG criterion
+- Link findings to existing accessibility remediation epics
+
+## Tips
+
+1. **Start with contrast and keyboard** — These catch the most common and impactful issues.
+2. **Test with real assistive technology** — My audit is a great start, but manual testing with VoiceOver/NVDA catches things I can't.
+3. **Prioritize by impact** — Fix issues that block users first, polish later.

@@ -110,6 +110,308 @@
       "author": {
         "name": "Tribe AI"
       }
+    },
+    {
+      "name": "zoom-plugin",
+      "source": "./partner-built/zoom-plugin",
+      "description": "Plan, build, and debug Zoom integrations across REST APIs, Meeting SDK, Video SDK, webhooks, bots, and MCP workflows. Search meetings, retrieve recordings, access transcripts, and design AI-powered Zoom experiences.",
+      "author": {
+        "name": "Zoom"
+      }
+    },
+    {
+      "name": "bigdata-com",
+      "description": "Official Bigdata.com plugin providing financial research, analytics, and intelligence tools powered by Bigdata MCP.",
+      "author": {
+        "name": "RavenPack"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Bigdata-com/bigdata-plugins-marketplace.git",
+        "path": "plugins/bigdata-com",
+        "ref": "main",
+        "sha": "274b5365bdc61130225de736d3f3ca5210c0e37d"
+      }
+    },
+    {
+      "name": "miro",
+      "description": "Secure access to Miro boards. Enables AI to read board context, create diagrams, and generate code with enterprise-grade security.",
+      "author": {
+        "name": "Miro"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/miroapp/miro-ai.git",
+        "path": "claude-plugins/miro",
+        "ref": "main",
+        "sha": "b1d33ab97c26aef7924bd0e9da208007a0f4448b"
+      }
+    },
+    {
+      "name": "planetscale",
+      "description": "An authenticated hosted MCP server that accesses your PlanetScale organizations, databases, branches, schema, and Insights data. Query against your data, surface slow queries, and get organizational and account information.",
+      "category": "database",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/planetscale/claude-plugin.git",
+        "sha": "f1066cac5bb956bbbb05918f5b07fe0e873d44ea"
+      },
+      "homepage": "https://planetscale.com/"
+    },
+    {
+      "name": "adspirer-ads-agent",
+      "description": "Cross-platform ad management for Google Ads, Meta Ads, TikTok Ads, and LinkedIn Ads. 91 tools for keyword research, campaign creation, performance analysis, and budget optimization.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/amekala/adspirer-mcp-plugin.git",
+        "sha": "c40623f1aa7b568e960d3f2e2558a6fcf10e6c18"
+      },
+      "homepage": "https://www.adspirer.com"
+    },
+    {
+      "name": "sanity-plugin",
+      "description": "Sanity content platform integration with MCP server, agent skills, and slash commands. Query and author content, build and optimize GROQ queries, design schemas, and set up Visual Editing.",
+      "category": "development",
+      "author": {
+        "name": "Sanity"
+      },
+      "source": {
+        "source": "url",
+        "url": "https://github.com/sanity-io/agent-toolkit.git",
+        "sha": "bc09fa9854507c538a856648aafbd4e1a775a95c"
+      },
+      "homepage": "https://www.sanity.io"
+    },
+    {
+      "name": "zoominfo",
+      "description": "Search companies and contacts, enrich leads, find lookalikes, and get AI-ranked contact recommendations. Pre-built skills chain multiple ZoomInfo tools into complete B2B sales workflows.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Zoominfo/zoominfo-mcp-plugin.git",
+        "sha": "0705316ef8a2d0c64f81e50d4612ccc6a74edf03"
+      },
+      "homepage": "https://zoominfo.com"
+    },
+    {
+      "name": "mintlify",
+      "description": "Build beautiful documentation sites with Mintlify. Convert non-markdown files into properly formatted MDX pages, add and modify content with correct component use, and automate documentation updates.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/mintlify/mintlify-claude-plugin.git",
+        "sha": "acd6d2e0128c4f235d55cfb8d8c91ecbdd5df8cc"
+      },
+      "homepage": "https://www.mintlify.com/"
+    },
+    {
+      "name": "daloopa",
+      "description": "Financial analysis skills powered by Daloopa's institutional-grade data",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/daloopa/plugin.git",
+        "sha": "cc0d09689397e64db7344634246326e7d7d9a42d"
+      },
+      "homepage": "https://github.com/daloopa/plugin"
+    },
+    {
+      "name": "zapier",
+      "description": "Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client.",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "zapier/zapier-mcp",
+        "path": "plugins/zapier",
+        "ref": "main",
+        "sha": "ecd7c7220c63a62a9702b76276b6a05f740d8c18"
+      },
+      "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier"
+    },
+    {
+      "name": "intercom",
+      "description": "Intercom integration for Claude Code. Search conversations, analyze customer support patterns, look up contacts and companies, and install the Intercom Messenger. Connect your Intercom workspace to get real-time insights from customer data.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/intercom/claude-plugin-external.git",
+        "sha": "62773a7d4b8aac31545d6888fe6479be3bc53804"
+      },
+      "homepage": "https://github.com/intercom/claude-plugin-external"
+    },
+    {
+      "name": "cockroachdb",
+      "description": "CockroachDB plugin for Claude Code — explore schemas, write optimized SQL, debug queries, and manage distributed database clusters directly from your AI coding agent.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/cockroachdb/claude-plugin.git",
+        "sha": "9e34f578a2723cfc921bf66d89eb15691a2202be"
+      },
+      "homepage": "https://github.com/cockroachdb/claude-plugin"
+    },
+    {
+      "name": "prisma",
+      "description": "Prisma MCP integration for Postgres database management, schema migrations, SQL queries, and connection string management. Provision Prisma Postgres databases, run migrations, and interact with your data directly.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/prisma/claude-plugin.git",
+        "sha": "815dbc4a045a29e3b81510ba0e3ab806f1baaf0e"
+      },
+      "homepage": "https://prisma.io"
+    },
+    {
+      "name": "fastly-agent-toolkit",
+      "description": "Fastly development tools and platform skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/fastly/fastly-agent-toolkit.git",
+        "sha": "4f9f3198d090f8be321470e4e03dcf5351a8d3f1"
+      },
+      "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
+    },
+    {
+      "name": "cloudinary",
+      "description": "Use Cloudinary directly in Claude. Manage assets, apply transformations, optimize media, and more through natural conversation.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/cloudinary-devs/cloudinary-plugin.git",
+        "sha": "7b443d7dbd607bfe4850d8cfcab6ba4cbf1a57c3"
+      },
+      "homepage": "https://cloudinary.com/documentation"
+    },
+    {
+      "name": "nimble",
+      "description": "Nimble web data toolkit — search, extract, map, crawl the web and work with structured data agents",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Nimbleway/agent-skills.git",
+        "sha": "626930f102dc51ef3858a28f94318ceabfdea071"
+      },
+      "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation"
+    },
+    {
+      "name": "brightdata-plugin",
+      "description": "Web scraping, Google search, structured data extraction, and MCP server integration powered by Bright Data. Includes 7 skills: scrape any webpage as markdown (with bot detection/CAPTCHA bypass), search Google with structured JSON results, extract data from 40+ websites (Amazon, LinkedIn, Instagram, TikTok, YouTube, and more), orchestrate Bright Data's 60+ MCP tools, built-in best practices for Web Unlocker, SERP API, Web Scraper API, and Browser API, Python SDK best practices for the brightda...",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/brightdata/skills.git",
+        "sha": "d0eeb1fbab809ffffe7c270186bd3eb78cf0c8ba"
+      },
+      "homepage": "https://docs.brightdata.com"
+    },
+    {
+      "name": "searchfit-seo",
+      "description": "Free AI-powered SEO toolkit — audit websites, plan content strategy, optimize pages, generate schema markup, cluster keywords, and track AI visibility. Works with any website or codebase.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/searchfit/searchfit-seo.git",
+        "sha": "ced1a99a9fadfc10aa573a05829fc1bd357d4e4c"
+      },
+      "homepage": "https://searchfit.ai"
+    },
+    {
+      "name": "atlan",
+      "description": "Atlan data catalog plugin for Claude Code. Search, explore, govern, and manage your data assets through natural language. Powered by the Atlan MCP server with semantic search, lineage traversal, glossary management, data quality rules, and more.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/atlanhq/agent-toolkit.git",
+        "sha": "790398c87378f128bdc74c31bb7ecfb8e4695f29"
+      },
+      "homepage": "https://docs.atlan.com/"
+    },
+    {
+      "name": "ai-firstify",
+      "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
+      "source": {
+        "source": "git-subdir",
+        "url": "techwolf-ai/ai-first-toolkit",
+        "path": "plugins/ai-firstify",
+        "ref": "main",
+        "sha": "852272ec21cebab98202df967dffee127209b6bc"
+      },
+      "homepage": "https://ai-first.techwolf.ai"
+    },
+    {
+      "name": "product-tracking-skills",
+      "description": "AI agent skills that make SaaS products data-ready for product analytics — from codebase scan to tracking plan to working instrumentation code.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Accoil/product-tracking-skills.git",
+        "sha": "341f8cf47d8b5dda550222152377c50aee34c723"
+      },
+      "homepage": "https://www.accoil.com/product-tracking"
+    },
+    {
+      "name": "postiz",
+      "description": "Social media automation CLI for scheduling posts, managing integrations, uploading media, and tracking analytics across 28+ platforms including X, LinkedIn, Reddit, YouTube, TikTok, Instagram, and more",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/gitroomhq/postiz-agent.git",
+        "sha": "d76c99a304875bca8eed9875dd18e03a3f4725aa"
+      },
+      "homepage": "https://postiz.com/agent"
+    },
+    {
+      "name": "figma",
+      "description": "Figma design platform integration. Access design files, extract component information, read design tokens, and translate designs into code. Bridge the gap between design and development workflows.",
+      "category": "design",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/figma/mcp-server-guide.git"
+      },
+      "homepage": "https://github.com/figma/mcp-server-guide"
+    },
+    {
+      "name": "adobe-for-creativity",
+      "description": "Brings together Adobe Creative Cloud tools for images, vectors, design, and video. Edit multiple assets at once, adapt for different platforms, and complete multi-step creative workflows for polished results.",
+      "category": "design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/adobe/skills.git",
+        "path": "plugins/creative-cloud/adobe-for-creativity",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
+    },
+    {
+      "name": "pdf-viewer",
+      "source": "./pdf-viewer",
+      "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures — then download the annotated copy."
+    },
+    {
+      "name": "box",
+      "description": "Work with your Box content directly from Claude Code — search files, organize folders, collaborate with your team, and use Box AI to answer questions, summarize documents, and extract data without leaving your workflow.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/box/box-for-ai.git",
+        "sha": "0fb23244e3c35cd562206c80eff1e22c456046ea"
+      },
+      "homepage": "https://github.com/box/box-for-ai"
+    },
+    {
+      "name": "lseg",
+      "description": "Price bonds, analyze yield curves, evaluate FX carry trades, value options, and build macro dashboards using LSEG financial data and analytics.",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/LSEG-API-Samples/lseg-claude-plugin.git",
+        "sha": "44422c8ad8366d27d872363981b459912b0db2f4"
+      },
+      "homepage": "https://github.com/LSEG-API-Samples/lseg-claude-plugin"
+    },
+    {
+      "name": "sp-global",
+      "description": "S&P Global - Financial data and analytics skills including company tearsheets, earnings previews, and transaction summaries",
+      "category": "finance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/kensho-technologies/spglobal-agent-skills.git",
+        "path": "plugins/spglobal-plugin",
+        "ref": "main",
+        "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
+      },
+      "homepage": "https://kensho.com"
     }
   ]
 }

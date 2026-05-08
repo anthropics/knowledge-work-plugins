@@ -18,6 +18,7 @@ This plugin gives you an AI-powered product management partner that can help wit
 - **User Research Synthesis** — Turn interview notes, survey data, and support tickets into structured insights. Identifies themes, builds personas, and surfaces opportunity areas with supporting evidence.
 - **Competitive Analysis** — Research competitors and generate briefs with feature comparisons, positioning analysis, and strategic implications.
 - **Metrics Review** — Analyze product metrics, identify trends, compare against targets, and surface actionable insights.
+- **Product Brainstorming** — Explore problem spaces, generate ideas, and stress-test product thinking with a sharp sparring partner. Supports divergent ideation, assumption testing, and strategy exploration using frameworks like How Might We, Jobs-to-be-Done, First Principles, and Opportunity Solution Trees.
 
 ## Commands
 
@@ -29,6 +30,7 @@ This plugin gives you an AI-powered product management partner that can help wit
 | `/synthesize-research` | Synthesize user research from interviews, surveys, and tickets |
 | `/competitive-brief` | Create a competitive analysis brief |
 | `/metrics-review` | Review and analyze product metrics |
+| `/brainstorm` | Brainstorm a product idea, problem space, or strategic question with a thinking partner |
 
 ## Skills
 
@@ -40,6 +42,7 @@ This plugin gives you an AI-powered product management partner that can help wit
 | `user-research-synthesis` | Thematic analysis, affinity mapping, persona development, opportunity sizing |
 | `competitive-analysis` | Feature comparison matrices, positioning analysis, win/loss analysis |
 | `metrics-tracking` | Product metrics hierarchy, goal setting (OKRs), dashboard design, review cadences |
+| `product-brainstorming` | Brainstorming modes (problem exploration, solution ideation, assumption testing, strategy), PM frameworks, session structure, thinking partner behaviors |
 
 ## Example Workflows
 
@@ -71,6 +74,18 @@ Claude: What research do you want to synthesize? You can paste interview notes, 
 You: [Pastes 8 interview transcripts]
 Claude: [Identifies themes, patterns, and insights across interviews]
 Claude: [Generates synthesis with key findings, personas, opportunity areas, and evidence]
+```
+
+### Brainstorming a Product Idea
+
+```
+You: /brainstorm Should we add AI-powered search to our product?
+Claude: Before we jump to AI search — what problem are your users hitting with search today?
+You: They can't find things. Support tickets about "can't find X" are our #2 category.
+Claude: That's a discovery problem, not necessarily a search technology problem. Let me push on this...
+Claude: [Explores whether the issue is search quality, information architecture, or content discoverability]
+Claude: [Generates 5 distinct approaches ranging from better taxonomy to AI search to guided navigation]
+Claude: [Challenges assumptions, suggests cheapest experiment to test the riskiest one]
 ```
 
 ### Competitive Analysis

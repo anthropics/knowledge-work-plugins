@@ -86,3 +86,4 @@ This plugin works with the following MCP servers:
 - **Ahrefs** — SEO keyword research, backlink analysis, and site audits
 - **Similarweb** — Competitive traffic analysis and market benchmarking
 - **Klaviyo** — Draft and review email marketing sequences and campaigns
+- **Supermetrics** — Pull marketing data from multiple platforms for analytics and reporting

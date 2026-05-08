@@ -2,7 +2,7 @@
 
 An AI-powered productivity plugin for in-house legal teams, primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. Automates contract review, NDA triage, compliance workflows, legal briefings, and templated responses -- all configurable to your organization's specific playbook and risk tolerances.
 
-> **Disclaimer:** This plugin assists with legal workflows but does not provide legal advice. Always verify conclusions with qualified legal professionals. AI-generated analysis should be reviewed by licensed attorneys before being relied upon for legal decisions.
+> **Disclaimer:** This plugin assists with legal workflows but does not provide legal advice. Always verify conclusions with qualified legal professionals. AI-generated analysis should be reviewed by licensed attorneys before being relied upon for legal decisions. The default playbook examples in this plugin reflect U.S. legal positions and jurisdictions (Delaware, New York, California). If you operate under different legal systems (EU, UK, Netherlands, Australia, etc.), you must customize the playbook in .claude/legal.local.md to reflect your jurisdiction's specific legal requirements, standard contract terms, and compliance obligations before relying on the plugin's analysis.
 
 ## Target Personas
 
@@ -29,7 +29,10 @@ claude plugins add knowledge-work-plugins/legal
 
 Create a local settings file to define your organization's standard positions. This is where you encode your team's negotiation playbook, risk tolerances, and standard terms.
 
-In your project's `.claude/` directory, create a `legal.local.md` file:
+Create a `legal.local.md` file where Claude can find it:
+
+- **Cowork**: Save it in any folder you've shared with Cowork (via the folder picker). The plugin finds it automatically.
+- **Claude Code**: Save it in your project's `.claude/` directory.
 
 ```markdown
 # Legal Playbook Configuration
