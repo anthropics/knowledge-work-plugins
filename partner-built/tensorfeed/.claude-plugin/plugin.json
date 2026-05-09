@@ -1,0 +1,13 @@
+{
+  "name": "tensorfeed",
+  "version": "1.0.0",
+  "description": "Live, machine-readable AI ecosystem and regulated-domain data for knowledge workers: AI news, model pricing across providers, AI service status, security advisories (CVE/KEV/EPSS/OSV), SEC EDGAR filings, FDA regulatory data (FAERS, drug labels, recalls, MAUDE), and US energy/macro indicators (EIA, BLS, FRED). 17 free MCP tools, no auth required.",
+  "author": {
+    "name": "TensorFeed",
+    "url": "https://tensorfeed.ai"
+  },
+  "repository": "https://github.com/RipperMercs/tensorfeed",
+  "homepage": "https://tensorfeed.ai",
+  "license": "MIT",
+  "keywords": ["news", "ai", "models", "pricing", "status", "cve", "security", "fda", "regulatory", "sec", "edgar", "filings", "macro", "energy", "mcp"]
+}

@@ -412,6 +412,14 @@
         "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
       },
       "homepage": "https://kensho.com"
+    },
+    {
+      "name": "tensorfeed",
+      "source": "./partner-built/tensorfeed",
+      "description": "Live, machine-readable AI ecosystem and regulated-domain data: AI news across 12+ sources, model pricing, AI service status, security advisories (CVE/KEV/EPSS/OSV), SEC EDGAR filings, FDA regulatory data (FAERS, drug labels, recalls, MAUDE), and US energy/macro indicators. 17 free MCP tools, no auth required.",
+      "author": {
+        "name": "TensorFeed"
+      }
     }
   ]
 }

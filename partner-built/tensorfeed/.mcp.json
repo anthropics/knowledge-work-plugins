@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tensorfeed": {
+      "type": "http",
+      "url": "https://tensorfeed.ai/api/mcp"
+    }
+  }
+}
