@@ -8,6 +8,10 @@
       "type": "http",
       "url": ""
     },
+    "omni": {
+      "type": "http",
+      "url": ""
+    },
     "bigquery": {
       "type": "http",
       "url": "https://bigquery.googleapis.com/mcp"
