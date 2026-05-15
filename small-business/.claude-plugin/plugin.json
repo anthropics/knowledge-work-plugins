@@ -1,0 +1,9 @@
+{
+  "name": "small-business",
+  "version": "0.2.1",
+  "description": "Pre-built small business workflows (including payroll planning, month-end close, weekly briefs, and growth campaigns) using your QuickBooks, PayPal, HubSpot, Docusign, Gsuite, O365, Canva, and other connected tools. You approve every step that touches money or customers.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "keywords": ["smb", "finance", "marketing", "hr", "operations", "all-in-one", "small business"]
+}
