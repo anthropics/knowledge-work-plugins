@@ -149,6 +149,21 @@
       "homepage": "https://help.vanta.com/en/articles/14094979-connecting-to-vanta-mcp#h_887ce3f337"
     },
     {
+      "name": "b12-claude-plugin",
+      "displayName": "B12",
+      "description": "B12 plugin with two skills: Website Generator (create a B12 website from a brief description) and B12 Website Editor (edit a live B12 site via browser in Claude Cowork).",
+      "category": "productivity",
+      "author": {
+        "name": "B12.io"
+      },
+      "source": {
+        "source": "url",
+        "url": "https://github.com/b12io/b12-claude-plugin.git",
+        "sha": "a53638c2b23b82c6be7c4e5b1e3cecd6a59f9fb8"
+      },
+      "homepage": "https://b12.io"
+    },
+    {
       "name": "zoom-plugin",
       "displayName": "Zoom",
       "source": "./partner-built/zoom-plugin",
