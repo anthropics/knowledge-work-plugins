@@ -25,6 +25,7 @@ We're open-sourcing 11 plugins built and inspired by our own work:
 | **[enterprise-search](./enterprise-search)** | Find anything across email, chat, docs, and wikis — one query across all your company's tools. | Slack, Notion, Guru, Jira, Asana, Microsoft 365 |
 | **[bio-research](./bio-research)** | Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D. | PubMed, BioRender, bioRxiv, ClinicalTrials.gov, ChEMBL, Synapse, Wiley, Owkin, Open Targets, Benchling |
 | **[cowork-plugin-management](./cowork-plugin-management)** | Create new plugins or customize existing ones for your organization's specific tools and workflows. | — |
+| **[specialty-retail](./specialty-retail)** | Workflows for SMB dealers carrying floorplan-financed inventory (hot tub, pool, furniture, powersports, RV, marine). Floorplan accounting, refurb P&L, ASC 606 deposit-to-delivery revenue recognition, OEM vendor pricing sync. Pairs with `small-business`. | QuickBooks, Stripe, Gmail, Google Drive, Microsoft 365 |
 
 Install these directly from Cowork, browse the full collection here on GitHub, or build your own.
 
