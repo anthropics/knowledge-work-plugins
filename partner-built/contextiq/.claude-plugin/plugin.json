@@ -1,0 +1,16 @@
+{
+  "name": "contextiq",
+  "version": "1.0.0",
+  "display_name": "ContextIQ",
+  "description": "Governed enterprise knowledge access with citations, entitlement scoping, and audit-ready answer paths. Query your organization's knowledge sources through AI assistants with evidence-backed responses.",
+  "author": {
+    "name": "TechMatrix AI Systems",
+    "url": "https://contextiq.us"
+  },
+  "homepage": "https://contextiq.us",
+  "repository": "https://github.com/TMX-AgenticAI/contextiq-cowork-plugin",
+  "license": "MIT",
+  "keywords": ["contextiq", "enterprise-knowledge", "governed-access", "citations", "mcp", "rag", "compliance", "audit"],
+  "documentation": "https://contextiq-releases.s3.us-west-2.amazonaws.com/essentials/latest/templates/README.md",
+  "setup_instructions": "End users: run ./contextiq-setup with the setup URL or config file provided by your admin. Admins: deploy ContextIQ Essentials (see quickstart guide), then run ./contextiq-setup --export-config --publish --email-to <users> to onboard your team."
+}

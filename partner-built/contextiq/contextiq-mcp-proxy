@@ -1,0 +1,197 @@
+#!/usr/bin/env python3
+"""Stdio-to-HTTP MCP proxy for ContextIQ.
+
+Claude Desktop / Cowork launches this as a local stdio MCP server. It proxies
+JSON-RPC messages to the remote ContextIQ gateway over HTTP, obtaining and
+refreshing Cognito tokens automatically.
+
+Token lifecycle (zero external dependencies — stdlib only):
+  1. Use cached access_token if still valid
+  2. If expired, use cached refresh_token (valid 30 days) via Cognito API
+  3. If refresh_token also expired, prompt user to re-run contextiq-setup
+
+First-time setup: run `contextiq-setup` to authenticate and cache tokens.
+"""
+
+from __future__ import annotations
+
+import base64
+import json
+import os
+import sys
+import time
+import urllib.request
+import urllib.error
+from pathlib import Path
+
+AUTH_CACHE_PATH = Path.home() / ".contextiq" / "auth.json"
+TOKEN_SKEW_S = 120
+
+
+def _resolve_gateway_url() -> str:
+    env = os.environ.get("CONTEXTIQ_GATEWAY_URL")
+    if env:
+        return env
+    try:
+        url = json.loads(AUTH_CACHE_PATH.read_text()).get("gateway_url")
+        if url:
+            return url
+    except Exception:
+        pass
+    raise RuntimeError(
+        "ContextIQ: no gateway URL configured. "
+        "Run 'contextiq-setup' or set CONTEXTIQ_GATEWAY_URL."
+    )
+
+
+def _decode_jwt_field(token: str, field: str):
+    try:
+        payload = token.split(".")[1]
+        payload += "=" * (-len(payload) % 4)
+        claims = json.loads(base64.urlsafe_b64decode(payload))
+        return claims.get(field)
+    except Exception:
+        return None
+
+
+def _token_valid(token: str | None) -> bool:
+    if not token:
+        return False
+    exp = _decode_jwt_field(token, "exp")
+    return isinstance(exp, (int, float)) and exp > time.time() + TOKEN_SKEW_S
+
+
+def _load_cache() -> dict:
+    try:
+        return json.loads(AUTH_CACHE_PATH.read_text())
+    except Exception:
+        return {}
+
+
+def _save_cache(data: dict) -> None:
+    AUTH_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    AUTH_CACHE_PATH.write_text(json.dumps(data, indent=2))
+
+
+def _cognito_initiate_auth(region: str, client_id: str, auth_flow: str, auth_params: dict) -> dict:
+    endpoint = f"https://cognito-idp.{region}.amazonaws.com/"
+    body = json.dumps({
+        "AuthFlow": auth_flow,
+        "ClientId": client_id,
+        "AuthParameters": auth_params,
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        endpoint,
+        data=body,
+        headers={
+            "Content-Type": "application/x-amz-json-1.1",
+            "X-Amz-Target": "AWSCognitoIdentityProviderService.InitiateAuth",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def _refresh_access_token(cached: dict) -> str | None:
+    refresh_token = cached.get("refresh_token")
+    client_id = cached.get("client_id")
+    region = cached.get("region")
+    if not all([refresh_token, client_id, region]):
+        return None
+    try:
+        result = _cognito_initiate_auth(
+            region, client_id,
+            "REFRESH_TOKEN_AUTH",
+            {"REFRESH_TOKEN": refresh_token},
+        )
+        token = result["AuthenticationResult"]["AccessToken"]
+        cached["access_token"] = token
+        cached["access_exp"] = _decode_jwt_field(token, "exp")
+        cached["updated_at"] = int(time.time())
+        _save_cache(cached)
+        return token
+    except Exception:
+        return None
+
+
+def _get_token() -> str:
+    cached = _load_cache()
+    token = cached.get("access_token")
+    if _token_valid(token):
+        return token
+
+    refreshed = _refresh_access_token(cached)
+    if refreshed:
+        return refreshed
+
+    raise RuntimeError(
+        "ContextIQ: session expired. Run 'contextiq-setup' to re-authenticate."
+    )
+
+
+def _parse_sse_response(raw: str) -> dict:
+    for line in raw.splitlines():
+        if line.startswith("data: "):
+            return json.loads(line[6:])
+    return json.loads(raw)
+
+
+def _forward_to_gateway(rpc_message: dict) -> dict:
+    token = _get_token()
+    gateway_url = _resolve_gateway_url()
+    body = json.dumps(rpc_message).encode("utf-8")
+    req = urllib.request.Request(
+        gateway_url,
+        data=body,
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        content_type = resp.headers.get("Content-Type", "")
+        raw = resp.read().decode("utf-8")
+        if "text/event-stream" in content_type:
+            return _parse_sse_response(raw)
+        return json.loads(raw)
+
+
+def main() -> None:
+    for line in sys.stdin:
+        line = line.strip()
+        if not line:
+            continue
+
+        try:
+            rpc_message = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+
+        is_notification = "id" not in rpc_message
+
+        try:
+            response = _forward_to_gateway(rpc_message)
+        except Exception as e:
+            if is_notification:
+                continue
+            response = {
+                "jsonrpc": "2.0",
+                "id": rpc_message.get("id"),
+                "error": {
+                    "code": -32000,
+                    "message": str(e),
+                },
+            }
+
+        if is_notification:
+            continue
+
+        sys.stdout.write(json.dumps(response) + "\n")
+        sys.stdout.flush()
+
+
+if __name__ == "__main__":
+    main()

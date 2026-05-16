@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "contextiq": {
+      "command": "python3",
+      "args": ["contextiq-mcp-proxy"],
+      "cwd": "${PLUGIN_DIR}",
+      "env": {
+        "CONTEXTIQ_GATEWAY_URL": "${CONTEXTIQ_GATEWAY_URL}"
+      }
+    }
+  }
+}
