@@ -216,12 +216,6 @@ legal/
 ├── .claude-plugin/plugin.json
 ├── .mcp.json
 ├── README.md
-├── commands/
-│   ├── review-contract.md
-│   ├── triage-nda.md
-│   ├── vendor-check.md
-│   ├── brief.md
-│   └── respond.md
 └── skills/
     ├── contract-review/SKILL.md
     ├── nda-triage/SKILL.md
