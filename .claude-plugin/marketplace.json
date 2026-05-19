@@ -104,6 +104,11 @@
       "description": "Optimize business operations — vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently."
     },
     {
+      "name": "small-business",
+      "source": "./small-business",
+      "description": "Pre-built small business workflows (including payroll planning, month-end close, weekly briefs, and growth campaigns) using your QuickBooks, PayPal, HubSpot, Docusign, Gsuite, O365, Canva, and other connected tools. You approve every step that touches money or customers."
+    },
+    {
       "name": "brand-voice",
       "source": "./partner-built/brand-voice",
       "description": "Discover your brand voice from existing documents and conversations, generate enforceable guidelines, and validate AI-generated content against your established tone and positioning.",
@@ -130,7 +135,7 @@
         "url": "https://github.com/Bigdata-com/bigdata-plugins-marketplace.git",
         "path": "plugins/bigdata-com",
         "ref": "main",
-        "sha": "274b5365bdc61130225de736d3f3ca5210c0e37d"
+        "sha": "c77a09caabdc8783adbcbf8bbe05a0f57da12b19"
       }
     },
     {
@@ -144,7 +149,7 @@
         "url": "https://github.com/miroapp/miro-ai.git",
         "path": "claude-plugins/miro",
         "ref": "main",
-        "sha": "b1d33ab97c26aef7924bd0e9da208007a0f4448b"
+        "sha": "706b24b6564eaaea33e75ac66c83af9abf3b5a41"
       }
     },
     {
@@ -154,7 +159,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/planetscale/claude-plugin.git",
-        "sha": "f1066cac5bb956bbbb05918f5b07fe0e873d44ea"
+        "sha": "849552445a90b17f2b17267593d0a10d41d4b316"
       },
       "homepage": "https://planetscale.com/"
     },
@@ -179,7 +184,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "bc09fa9854507c538a856648aafbd4e1a775a95c"
+        "sha": "236348e29b31e834ce71e4e2e3072184dd1c1e27"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -189,7 +194,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Zoominfo/zoominfo-mcp-plugin.git",
-        "sha": "0705316ef8a2d0c64f81e50d4612ccc6a74edf03"
+        "sha": "14752e4553312d8af3eb3a3264a97d76bb3e0215"
       },
       "homepage": "https://zoominfo.com"
     },
@@ -245,7 +250,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/cockroachdb/claude-plugin.git",
-        "sha": "9e34f578a2723cfc921bf66d89eb15691a2202be"
+        "sha": "736bd11df55bac97e2a6c98be8e93503b125902c"
       },
       "homepage": "https://github.com/cockroachdb/claude-plugin"
     },
@@ -265,7 +270,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/fastly/fastly-agent-toolkit.git",
-        "sha": "4f9f3198d090f8be321470e4e03dcf5351a8d3f1"
+        "sha": "e0f4205723b843de0b07da4a2aea6c84a3bcb579"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
     },
@@ -285,7 +290,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Nimbleway/agent-skills.git",
-        "sha": "626930f102dc51ef3858a28f94318ceabfdea071"
+        "sha": "b3ab05d3c7c88857940c575e0f46752297b2249b"
       },
       "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation"
     },
@@ -295,7 +300,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/brightdata/skills.git",
-        "sha": "d0eeb1fbab809ffffe7c270186bd3eb78cf0c8ba"
+        "sha": "37145178dfc9b52e28dd224afeccc7184f7711fc"
       },
       "homepage": "https://docs.brightdata.com"
     },
@@ -327,7 +332,7 @@
         "url": "techwolf-ai/ai-first-toolkit",
         "path": "plugins/ai-firstify",
         "ref": "main",
-        "sha": "852272ec21cebab98202df967dffee127209b6bc"
+        "sha": "d7270ecd28f36d2454b36f397a28a96b0b7a5630"
       },
       "homepage": "https://ai-first.techwolf.ai"
     },
@@ -347,7 +352,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/gitroomhq/postiz-agent.git",
-        "sha": "d76c99a304875bca8eed9875dd18e03a3f4725aa"
+        "sha": "238aede6c72672b3201ae0ee533ec0cd53eb51d1"
       },
       "homepage": "https://postiz.com/agent"
     },
@@ -357,7 +362,8 @@
       "category": "design",
       "source": {
         "source": "url",
-        "url": "https://github.com/figma/mcp-server-guide.git"
+        "url": "https://github.com/figma/mcp-server-guide.git",
+        "sha": "a742f0a700a7772ff5ed85f7c9fc1dad5afa9fcc"
       },
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
@@ -369,7 +375,8 @@
         "source": "git-subdir",
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
-        "ref": "main"
+        "ref": "main",
+        "sha": "9ca1da262869ca2fb5f6c3daae2f7eeb648c937d"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -385,7 +392,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/box/box-for-ai.git",
-        "sha": "0fb23244e3c35cd562206c80eff1e22c456046ea"
+        "sha": "16f1a0427710b0812519ea634cd5ce6830bde8fc"
       },
       "homepage": "https://github.com/box/box-for-ai"
     },
