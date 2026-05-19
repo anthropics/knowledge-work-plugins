@@ -34,7 +34,7 @@
     },
     "datadog": {
       "type": "http",
-      "url": "https://mcp.datadoghq.com/mcp"
+      "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp"
     },
     "google calendar": {
       "type": "http",
