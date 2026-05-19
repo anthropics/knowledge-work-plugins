@@ -8,21 +8,9 @@
       "type": "http",
       "url": "https://mcp.services.biorender.com/mcp"
     },
-    "biorxiv": {
-      "type": "http",
-      "url": "https://mcp.deepsense.ai/biorxiv/mcp"
-    },
     "consensus": {
       "type": "http",
       "url": "https://mcp.consensus.app/mcp"
-    },
-    "c-trials": {
-      "type": "http",
-      "url": "https://mcp.deepsense.ai/clinical_trials/mcp"
-    },
-    "chembl": {
-      "type": "http",
-      "url": "https://mcp.deepsense.ai/chembl/mcp"
     },
     "synapse": {
       "type": "http",

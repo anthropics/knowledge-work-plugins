@@ -6,7 +6,7 @@
     },
     "paypal": {
       "type": "http",
-      "url": "https://mcp.paypal.com/mcp"
+      "url": "https://mcp.paypal.com/sse"
     },
     "hubspot": {
       "type": "http",
