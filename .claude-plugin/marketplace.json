@@ -362,7 +362,8 @@
       "category": "design",
       "source": {
         "source": "url",
-        "url": "https://github.com/figma/mcp-server-guide.git"
+        "url": "https://github.com/figma/mcp-server-guide.git",
+        "sha": "fabc1ca81d839602ba7c1ca0f445a64246b3870e"
       },
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
@@ -374,7 +375,8 @@
         "source": "git-subdir",
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
-        "ref": "main"
+        "ref": "main",
+        "sha": "0f1ad97af8b4de2107c2417184fc4c3114bda9d3"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },

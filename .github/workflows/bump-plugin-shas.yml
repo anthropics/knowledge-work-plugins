@@ -1,0 +1,30 @@
+name: Bump Plugin SHAs
+
+on:
+  schedule:
+    - cron: '23 7 * * 1'  # Monday 07:23 UTC
+  workflow_dispatch:
+    inputs:
+      max_bumps:
+        description: Cap on plugins bumped this run
+        required: false
+        default: '20'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: bump-plugin-shas
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: anthropics/claude-plugins-community/.github/actions/bump-plugin-shas@706952a0caebac4024b4be25137ff2faa64e153b
+        with:
+          marketplace-path: .claude-plugin/marketplace.json
+          max-bumps: ${{ inputs.max_bumps || '20' }}
+          claude-cli-version: latest
