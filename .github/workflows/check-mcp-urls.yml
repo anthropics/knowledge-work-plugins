@@ -75,10 +75,16 @@ jobs:
             local code
             # HEAD first — cheap and covers plain web endpoints. -L follows
             # redirects so a permanent redirect to a live page still passes.
+            #
+            # On a connection-level failure curl writes "000" to -w AND exits
+            # nonzero. The fallback assignment must happen OUTSIDE the command
+            # substitution — `... || echo "000"` inside $() would *append* a
+            # second "000", producing "000000" which falls through the case
+            # statement and silently passes a dead host.
             code="$(curl -sS -o /dev/null -w '%{http_code}' \
                       --connect-timeout 10 --max-time 10 \
                       --retry 2 --retry-delay 2 \
-                      -L -I "$url" 2>/dev/null || echo "000")"
+                      -L -I "$url" 2>/dev/null)" || code="000"
 
             # MCP endpoints typically reject HEAD (404/405) but answer POST
             # with a JSON-RPC body. Retry as a real MCP client would.
@@ -90,7 +96,7 @@ jobs:
                         -H 'Content-Type: application/json' \
                         -H 'Accept: application/json, text/event-stream' \
                         --data '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"ci","version":"0"}}}' \
-                        "$url" 2>/dev/null || echo "000")"
+                        "$url" 2>/dev/null)" || code="000"
             fi
 
             case "$code" in
