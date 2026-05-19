@@ -8,9 +8,21 @@
       "type": "http",
       "url": "https://mcp.services.biorender.com/mcp"
     },
+    "biorxiv": {
+      "type": "http",
+      "url": "https://hcls.mcp.claude.com/biorxiv/mcp"
+    },
     "consensus": {
       "type": "http",
       "url": "https://mcp.consensus.app/mcp"
+    },
+    "c-trials": {
+      "type": "http",
+      "url": "https://hcls.mcp.claude.com/clinical_trials/mcp"
+    },
+    "chembl": {
+      "type": "http",
+      "url": "https://hcls.mcp.claude.com/chembl/mcp"
     },
     "synapse": {
       "type": "http",
