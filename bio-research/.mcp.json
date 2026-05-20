@@ -10,7 +10,7 @@
     },
     "biorxiv": {
       "type": "http",
-      "url": "https://mcp.deepsense.ai/biorxiv/mcp"
+      "url": "https://hcls.mcp.claude.com/biorxiv/mcp"
     },
     "consensus": {
       "type": "http",
@@ -18,11 +18,11 @@
     },
     "c-trials": {
       "type": "http",
-      "url": "https://mcp.deepsense.ai/clinical_trials/mcp"
+      "url": "https://hcls.mcp.claude.com/clinical_trials/mcp"
     },
     "chembl": {
       "type": "http",
-      "url": "https://mcp.deepsense.ai/chembl/mcp"
+      "url": "https://hcls.mcp.claude.com/chembl/mcp"
     },
     "synapse": {
       "type": "http",

@@ -5,8 +5,8 @@
       "url": "https://ai-inc.quickbooks.intuit.com/v1/mcp"
     },
     "paypal": {
-      "type": "http",
-      "url": "https://mcp.paypal.com/mcp"
+      "type": "sse",
+      "url": "https://mcp.paypal.com/sse"
     },
     "hubspot": {
       "type": "http",
