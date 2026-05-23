@@ -227,6 +227,21 @@
       "homepage": "https://www.sanity.io"
     },
     {
+      "name": "x-twitter-scraper",
+      "displayName": "Xquik",
+      "description": "Search X posts, look up profiles, export followers, monitor accounts, and use X data from Claude through the Xquik MCP server and bundled skills.",
+      "category": "development",
+      "author": {
+        "name": "Xquik"
+      },
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Xquik-dev/x-twitter-scraper.git",
+        "sha": "da7a6d1bdbfdf5df8c78dff9554e2b8fadd103d5"
+      },
+      "homepage": "https://docs.xquik.com"
+    },
+    {
       "name": "zoominfo",
       "displayName": "ZoomInfo",
       "description": "Search companies and contacts, enrich leads, find lookalikes, and get AI-ranked contact recommendations. Pre-built skills chain multiple ZoomInfo tools into complete B2B sales workflows.",
