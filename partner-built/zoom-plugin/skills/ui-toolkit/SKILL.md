@@ -1,5 +1,5 @@
 ---
-name: ui-toolkit/web
+name: zoom-ui-toolkit-web
 description: "Reference skill for Zoom Video SDK UI Toolkit. Use after routing to a web video workflow when you want prebuilt React UI instead of building a fully custom Video SDK interface."
 user-invocable: false
 triggers:

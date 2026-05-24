@@ -1,5 +1,5 @@
 ---
-name: virtual-agent/web
+name: zoom-virtual-agent-web
 description: "Zoom Virtual Agent SDK for web embeds. Use for campaign or entry ID chat launch, event-driven controls, user context updates, and CSP-safe deployment."
 user-invocable: false
 triggers:

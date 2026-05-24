@@ -1,5 +1,5 @@
 ---
-name: meeting-sdk/linux
+name: zoom-meeting-sdk-linux
 description: "Zoom Meeting SDK for Linux - C++ headless meeting bots with raw audio/video access, transcription, recording, and AI integration for server-side automation"
 user-invocable: false
 triggers:
@@ -25,7 +25,7 @@ Use this skill when the requirement is:
 - or the bot triggers a Zoom-managed cloud-recording workflow after join
 
 Skill chain:
-- primary: `meeting-sdk/linux`
+- primary: `zoom-meeting-sdk-linux`
 - add `zoom-rest-api` for OBF/ZAK lookup, scheduling, or cloud-recording settings
 - add `zoom-webhooks` when post-meeting cloud recording retrieval is required
 

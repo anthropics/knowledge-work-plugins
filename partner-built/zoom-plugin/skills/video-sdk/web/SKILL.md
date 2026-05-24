@@ -1,5 +1,5 @@
 ---
-name: video-sdk/web
+name: zoom-video-sdk-web
 description: "Zoom Video SDK for Web - JavaScript/TypeScript integration for browser-based video sessions, real-time communication, screen sharing, recording, and live transcription"
 user-invocable: false
 triggers:

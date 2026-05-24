@@ -1,5 +1,5 @@
 ---
-name: zoom-mcp/whiteboard
+name: zoom-mcp-whiteboard
 description: |
   Guidance for the bundled Zoom Whiteboard MCP connector. Use for Whiteboard MCP auth,
   endpoints, ID mapping, and tool workflows such as list_whiteboards and get_a_whiteboard.

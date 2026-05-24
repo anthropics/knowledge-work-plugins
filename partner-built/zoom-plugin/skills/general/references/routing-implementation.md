@@ -16,7 +16,7 @@ export type SkillId =
   | 'zoom-general'
   | 'zoom-rest-api'
   | 'zoom-mcp'
-  | 'zoom-mcp/whiteboard'
+  | 'zoom-mcp-whiteboard'
   | 'zoom-webhooks'
   | 'zoom-websockets'
   | 'zoom-meeting-sdk'
@@ -122,7 +122,7 @@ function pickPrimarySkill(s: Signals): SkillId {
   if (s.preflight) return 'probe-sdk';
   if (s.websockets) return 'zoom-websockets';
   if (s.webhooks) return 'zoom-webhooks';
-  if (s.whiteboardMcp) return 'zoom-mcp/whiteboard';
+  if (s.whiteboardMcp) return 'zoom-mcp-whiteboard';
   if (s.mcp) return 'zoom-mcp';
   if (s.restApi) return 'zoom-rest-api';
   if (s.oauth) return 'zoom-oauth';
