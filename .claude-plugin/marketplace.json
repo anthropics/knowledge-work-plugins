@@ -478,6 +478,20 @@
         "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
       },
       "homepage": "https://kensho.com"
+    },
+    {
+      "name": "markifact",
+      "description": "MCP server for Google Ads, Meta Ads, GA4, TikTok Ads, LinkedIn Ads, Amazon Ads, Snapchat Ads, Reddit Ads, and 15+ more advertising and marketing platforms. 300+ tools for campaign creation, performance analysis, keyword research, audience management, creative rotation, conversion tracking audits, and CRM workflows. OAuth 2.1 authentication. Every write operation requires explicit user approval.",
+      "category": "marketing",
+      "author": {
+        "name": "Markifact"
+      },
+      "source": {
+        "source": "url",
+        "url": "https://github.com/markifact/markifact-mcp.git",
+        "sha": "7df96db56e5f3283d9acaa5aff28b0a88b4dd0b7"
+      },
+      "homepage": "https://markifact.com"
     }
   ]
 }
