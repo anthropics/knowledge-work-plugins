@@ -13,13 +13,13 @@ This plugin consolidates 11 MCP server integrations and 5 analysis skills into a
 | Provider | What It Does | Category/Placeholder |
 |----------|-------------|---------------------|
 | U.S. National Library of Medicine | Search biomedical literature and research articles | `~~literature` |
-| deepsense.ai | Access preprints from bioRxiv and medRxiv | `~~literature` |
+| bioRxiv | Access preprints from bioRxiv and medRxiv | `~~literature` |
 | Consensus | AI-powered search and synthesis of peer-reviewed research | `~~literature` |
 | John Wiley & Sons | Access academic research and publications | `~~journal access` |
 | Sage Bionetworks | Collaborative research data management | `~~data repository` |
-| deepsense.ai | Bioactive drug-like compound database | `~~chemical database` |
+| ChEMBL | Bioactive drug-like compound database | `~~chemical database` |
 | OpenTargets | Drug target discovery and prioritization | `~~drug targets` |
-| deepsense.ai | NIH/NLM clinical trial registry | `~~clinical trials` |
+| ClinicalTrials.gov | NIH/NLM clinical trial registry | `~~clinical trials` |
 | BioRender | Scientific illustration creation | `~~scientific illustration` |
 | Owkin | AI for biology — histopathology and drug discovery | `~~AI research` |
 | Benchling\* | Lab data management platform | `~~lab platform` |
