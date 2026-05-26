@@ -36,6 +36,10 @@
       "type": "http",
       "url": "https://api.fireflies.ai/mcp"
     },
+    "grain": {
+      "type": "http",
+      "url": "https://api.grain.com/_/mcp"
+    },
     "ms365": {
       "type": "http",
       "url": "https://microsoft365.mcp.claude.com/mcp"

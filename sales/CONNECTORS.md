@@ -17,6 +17,6 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Data enrichment | `~~data enrichment` | Clay, ZoomInfo, Apollo | Clearbit, Lusha |
 | Email | `~~email` | Gmail, Microsoft 365 | — |
 | Knowledge base | `~~knowledge base` | Notion | Confluence, Guru |
-| Meeting transcription | `~~conversation intelligence` | Fireflies | Gong, Chorus, Otter.ai |
+| Meeting transcription | `~~conversation intelligence` | Fireflies, Grain | Gong, Chorus, Otter.ai |
 | Project tracker | `~~project tracker` | Atlassian (Jira/Confluence) | Linear, Asana |
 | Sales engagement | `~~sales engagement` | Outreach | Salesloft, Apollo |
