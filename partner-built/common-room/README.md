@@ -39,7 +39,7 @@ Two commands for complex workflows that benefit from explicit invocation:
 
 **Contact Research** — Lookup by email, name+company, or social handle. Returns enriched identity, CRM fields, scores, website visits, activity history, Spark analyses, and conversation starters.
 
-**Call Prep** — Company snapshot, per-attendee profiles, signal highlights, tailored talking points, likely objections, and recommended call outcome. Prioritizes Gong/call recording activity. Calendar-aware if connected.
+**Call Prep** — Company snapshot, per-attendee profiles, signal highlights, tailored talking points, likely objections, and recommended call outcome. Prioritizes Gong/Grain/call-recording activity. Calendar-aware if connected; if a `~~conversation intelligence` MCP (Grain, Gong, Fireflies) is connected directly, pulls full transcripts for the most recent meetings with this account.
 
 **Compose Outreach** — Three personalized formats (email, call script, LinkedIn message) grounded in Common Room signals and web search hooks. Tailored to the user's company positioning when available.
 

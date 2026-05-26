@@ -3,6 +3,10 @@
     "common-room": {
       "type": "http",
       "url": "https://mcp.commonroom.io/mcp"
+    },
+    "grain": {
+      "type": "http",
+      "url": "https://api.grain.com/_/mcp"
     }
   }
 }

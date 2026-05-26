@@ -27,7 +27,7 @@ Use the account-research skill process to build a full account snapshot. For cal
 - Any risk signals (declining usage, support tickets, churned seats)
 - Key recent events (funding, executive change, new hire)
 
-When reviewing activity history, prioritize Gong and call recording activities — these provide direct context about previous conversations. Do not filter out call recordings by activity origin.
+When reviewing activity history, prioritize Gong, Grain, and other call-recording activities — these provide direct context about previous conversations. Do not filter out call recordings by activity origin. If a `~~conversation intelligence` MCP (Grain, Gong, Fireflies) is connected directly, supplement the activity-feed metadata with the full transcript and AI-generated notes for the most recent meetings with this account.
 
 ### Step 3: Run Contact Research for Each Attendee
 
