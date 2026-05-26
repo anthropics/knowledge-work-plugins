@@ -1,0 +1,10 @@
+{
+  "name": "management-consulting",
+  "version": "1.0.0",
+  "description": "Strategic problem solving, framework analysis, and engagement delivery for management consulting",
+  "author": {
+    "name": "Anot"
+  },
+  "repository": "https://github.com/anotb/management-consulting-plugin",
+  "license": "Apache-2.0"
+}
