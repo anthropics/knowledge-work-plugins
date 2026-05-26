@@ -158,6 +158,15 @@
       }
     },
     {
+      "name": "contextiq",
+      "displayName": "ContextIQ",
+      "source": "./partner-built/contextiq",
+      "description": "Governed enterprise knowledge access for Cowork and AI agents. Query authorized knowledge sources through MCP with citations, entitlement scoping, and audit-ready answer paths.",
+      "author": {
+        "name": "TechMatrix AI Systems"
+      }
+    },
+    {
       "name": "bigdata-com",
       "displayName": "Bigdata.com",
       "description": "Official Bigdata.com plugin providing financial research, analytics, and intelligence tools powered by Bigdata MCP.",
