@@ -16,7 +16,7 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Design | `~~design` | Figma | Sketch, Adobe XD |
 | Email | `~~email` | Gmail | Microsoft 365 |
 | Knowledge base | `~~knowledge base` | Notion | Confluence, Guru, Coda |
-| Meeting transcription | `~~meeting transcription` | Fireflies | Gong, Dovetail, Otter.ai |
+| Meeting transcription | `~~meeting transcription` | Fireflies, Grain | Gong, Dovetail, Otter.ai |
 | Product analytics | `~~product analytics` | Amplitude, Pendo | Mixpanel, Heap, FullStory |
 | Project tracker | `~~project tracker` | Linear, Asana, monday.com, ClickUp, Atlassian (Jira/Confluence) | Shortcut, Basecamp |
 | User feedback | `~~user feedback` | Intercom | Productboard, Canny, UserVoice |
