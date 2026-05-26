@@ -30,6 +30,7 @@ Read `TASKS.md` and `memory/` directory. If they don't exist, suggest `/producti
 
 Check for available task sources:
 - **Project tracker** (e.g. Asana, Linear, Jira) (if MCP available)
+- **Conversation intelligence** (e.g. Fireflies, Grain, Gong) (if `~~conversation intelligence` MCP available) — pull open action items assigned to the user from recent meetings; surface under a "Meeting Action Items" section in TASKS.md
 - **GitHub Issues** (if in a repo): `gh issue list --assignee=@me`
 
 If no sources are available, skip to Step 3.
@@ -91,6 +92,7 @@ Tasks often contain richer context than memory. Extract and update:
 - **Status changes** ("launch done") → update project status, demote from CLAUDE.md
 - **Relationships** ("Todd's sign-off on Maya's proposal") → cross-reference people
 - **Deadlines** → add to project files
+- **Meeting decisions and attendees** (if `~~conversation intelligence` MCP available) → update `memory/` entries for people, projects, and companies mentioned in recent meetings; capture decisions surfaced in meeting notes that shift project status
 
 ### 7. Report
 
@@ -112,6 +114,7 @@ Gather data from available MCP sources:
 - **Email:** Search sent messages
 - **Documents:** List recently touched docs
 - **Calendar:** List recent + upcoming events
+- **Meeting transcripts** (if `~~conversation intelligence` MCP available): List recent attended meetings, retrieve transcripts and AI-generated notes, surface action items and decisions
 
 ### Extra Step: Flag Missed Todos
 

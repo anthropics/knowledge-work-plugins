@@ -43,6 +43,14 @@
     "gmail": {
       "type": "http",
       "url": ""
+    },
+    "fireflies": {
+      "type": "http",
+      "url": "https://api.fireflies.ai/mcp"
+    },
+    "grain": {
+      "type": "http",
+      "url": "https://api.grain.com/_/mcp"
     }
   }
 }
