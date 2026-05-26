@@ -217,6 +217,30 @@ Meeting notes and transcripts from the AI notepad for meetings.
 - Look for recurring meeting series (weekly brand syncs, marketing standups)
 - Cross-reference Granola meeting notes with Gong call transcripts when both are available
 
+## Grain (Meeting Intelligence)
+
+Meeting transcripts, AI-generated notes, action items, and coaching feedback from Grain's meeting intelligence platform.
+
+### Query Patterns
+
+**Meeting search:**
+- Use `list_attended_meetings` or `list_meetings` to discover recent customer-facing calls, strategy sessions, and brand planning meetings
+- Use `search_in_transcripts` for query terms: "brand", "positioning", "messaging", "value prop", company name, product name
+- Use `search_persons` / `search_companies` to surface meetings with marketing leads, executives, agency partners, or specific customer accounts
+
+**Transcript and notes retrieval:**
+- `fetch_meeting_transcript` returns the full timestamped transcript
+- `fetch_meeting_notes` returns Grain's AI-generated summary, which often surfaces brand-relevant themes already extracted
+- `fetch_meeting_action_items` surfaces commitments and decisions — frequently the source of brand-positioning shifts
+- `fetch_meeting_coaching_feedback` (where available on the workspace) surfaces patterns around message effectiveness
+
+### Tips
+- Grain captures both AI-generated notes and full transcripts — notes are higher-density signal for brand themes; transcripts are higher-fidelity for voice/tone analysis
+- Cross-reference Grain meetings with Gong or Granola when multiple sources are connected — the same call may appear in different systems with different summaries
+- Attended meetings (calls the user was in) carry first-person source authority for brand decisions
+- Recurring meeting series (weekly customer calls, design-partner syncs, strategy sessions) are high-yield for brand evolution
+- Coaching feedback (where surfaced) reveals which messaging frames consistently land or fail
+
 ## Figma (Brand Design Systems)
 
 Visual brand elements inform voice and tone indirectly.
@@ -252,7 +276,8 @@ Visual brand elements inform voice and tone indirectly.
 6. Search Slack for brand discussions and decisions
 7. Search Gong for conversational brand patterns
 8. Search Granola for meeting transcripts and notes
-9. Review Figma for design-embedded brand guidelines
+9. Search Grain for meeting transcripts, AI notes, and action items
+10. Review Figma for design-embedded brand guidelines
 
 ### Avoiding Duplicates
 - Track source URLs to detect the same document across platforms

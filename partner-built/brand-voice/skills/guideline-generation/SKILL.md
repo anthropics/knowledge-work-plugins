@@ -20,7 +20,7 @@ Generate comprehensive, LLM-ready brand voice guidelines from any combination of
 Accept any combination of:
 - **Discovery report** from the discover-brand skill (structured, pre-triaged)
 - **Brand documents** uploaded or from connected platforms (PDF, PPTX, DOCX, MD, TXT)
-- **Conversation transcripts** from Gong, Granola, manual uploads, or Notion meeting notes
+- **Conversation transcripts** from Gong, Granola, Grain, manual uploads, or Notion meeting notes
 - **Direct user input** about their brand voice and values
 
 When a discovery report is provided, use it as the primary input — sources are already triaged and ranked. Supplement with additional analysis as needed.

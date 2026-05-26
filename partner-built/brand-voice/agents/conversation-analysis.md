@@ -26,7 +26,7 @@ description: >
   </example>
 model: sonnet
 color: blue
-# tools not restricted -- this agent needs MCP tools to fetch transcripts from Gong, Granola, etc.
+# tools not restricted -- this agent needs MCP tools to fetch transcripts from Gong, Granola, Grain, etc.
 maxTurns: 15
 ---
 
@@ -49,6 +49,7 @@ When transcripts are available on Gong, use the Gong MCP tools to search for and
 
 - **Gong** (via MCP): Search calls by date, outcome, participants, or tags. Retrieve transcripts and call analysis.
 - **Granola** (via MCP): List meetings, search by query, and retrieve full meeting transcripts and notes.
+- **Grain** (via MCP): List attended meetings, search transcripts by query or tag, and retrieve full transcripts, AI-generated meeting notes, action items, and coaching feedback.
 - **Notion meeting notes** (via MCP): Search for meeting notes pages with transcript content.
 - **Manual uploads**: User-provided .txt, .json, or .md transcript files.
 - **Other sources**: Zoom, Google Meet, or other transcript formats uploaded as files.
