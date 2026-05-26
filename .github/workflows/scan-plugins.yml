@@ -32,6 +32,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write # Anthropic Workload Identity Federation (scan-plugins action)
 
 # Serialize scans per ref so concurrent runs (a re-dispatch racing the
 # original, or a manual dispatch) don't both restore the same cache, scan
@@ -76,18 +77,11 @@ jobs:
             echo "relevant=true" >> "$GITHUB_OUTPUT"
           fi
 
-      # The shared action no-ops gracefully when ANTHROPIC_API_KEY is unset
-      # (sensible default for community repos). Here `scan` is a required
-      # check, so a silent no-op would make it a rubber stamp — fail closed.
-      - name: Require ANTHROPIC_API_KEY when a scan is needed
-        if: steps.changes.outputs.relevant == 'true'
-        env:
-          API_KEY_SET: ${{ secrets.ANTHROPIC_API_KEY != '' }}
-        run: |
-          if [[ "$API_KEY_SET" != "true" ]]; then
-            echo "::error::ANTHROPIC_API_KEY is not configured; refusing to skip a required policy scan."
-            exit 1
-          fi
+      # Auth: the shared scan-plugins action below uses Workload Identity
+      # Federation (anthropic-federation-rule-id input) — the IDs are literal
+      # in this file, so the action's "skip if no auth" path can't trigger.
+      # The previous "Require ANTHROPIC_API_KEY" fail-closed guard is
+      # therefore no longer needed.
 
       # Verdict cache, keyed on the policy content hash. A prompt change
       # invalidates every cached verdict — that is intentional. The save key
@@ -200,9 +194,17 @@ jobs:
         # The verdict (cached + fresh) is what gates the job, not the action's
         # exit code, and the revert workflow needs the artifact even on failure.
         continue-on-error: true
-        uses: anthropics/claude-plugins-community/.github/actions/scan-plugins@b277757588871fe55b2620de8c6dfda470e2e9d8
+        # Pinned to claude-plugins-community#34 (WIF input support).
+        # TODO: re-pin to a main-branch SHA once #34 merges.
+        uses: anthropics/claude-plugins-community/.github/actions/scan-plugins@e85f0d65b4fc87f07862e1dcdc467950514414ec
         with:
-          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Anthropic auth via Workload Identity Federation — the action
+          # mints a GitHub OIDC token (id-token: write above) and the claude
+          # CLI exchanges it for a short-lived bearer. The federation rule is
+          # bound to this repository (repository_id-pinned).
+          anthropic-federation-rule-id: fdrl_01AnM1ihR2h7PCjXfDqfedpq
+          anthropic-organization-id: 1ec12c5c-6542-4da8-bf2f-c15919aef01c
+          anthropic-service-account-id: svac_01UaBRpFouHrgVdfvAM7Bt39
           marketplace-path: .scan-cache/scan-targets.json
           policy-prompt: .github/policy/prompt.md
           fail-on-findings: "true"
@@ -241,12 +243,13 @@ jobs:
           fi
 
           # Defense in depth: the scan action runs Claude with Read access over
-          # a cloned external repo and ANTHROPIC_API_KEY in its process env. A
-          # successful prompt injection could coerce the model to put key
-          # material into `summary`/`violations`. The action's own step summary
-          # already carries that risk; this workflow adds an artifact and a PR
-          # comment, both public sinks. Scrub any key-shaped token here so it
-          # never reaches the cache, artifact, or comment.
+          # a cloned external repo. With WIF auth the process env carries a
+          # short-lived OIDC JWT (masked) and the CLI's exchanged bearer
+          # rather than a long-lived sk-ant- key, which bounds the blast
+          # radius of a prompt-injection exfil to a token that expires in
+          # minutes. The sk-ant- scrubber stays as defense-in-depth (covers
+          # any future static-key fallback) so key-shaped strings still never
+          # reach the cache, artifact, or PR comment.
           jq -c '(.. | strings) |= gsub("sk-ant-[A-Za-z0-9_-]{8,}"; "[REDACTED]")' \
             "$CACHE_DIR/scanned-raw.json" > "$CACHE_DIR/scanned-raw.json.tmp"
           mv "$CACHE_DIR/scanned-raw.json.tmp" "$CACHE_DIR/scanned-raw.json"

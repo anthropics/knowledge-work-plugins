@@ -6,61 +6,73 @@
   "plugins": [
     {
       "name": "productivity",
+      "displayName": "Productivity",
       "source": "./productivity",
       "description": "Manage tasks, plan your day, and build up memory of important context about your work. Syncs with your calendar, email, and chat to keep everything organized and on track."
     },
     {
       "name": "enterprise-search",
+      "displayName": "Enterprise Search",
       "source": "./enterprise-search",
       "description": "Search across all of your company's tools in one place. Find anything across email, chat, documents, and wikis without switching between apps."
     },
     {
       "name": "cowork-plugin-management",
+      "displayName": "Plugin Management",
       "source": "./cowork-plugin-management",
       "description": "Create, customize, and manage plugins tailored to your organization's tools and workflows. Configure MCP servers, adjust plugin behavior, and adapt templates to match how your team works."
     },
     {
       "name": "sales",
+      "displayName": "Sales",
       "source": "./sales",
       "description": "Prospect, craft outreach, and build deal strategy faster. Prep for calls, manage your pipeline, and write personalized messaging that moves deals forward."
     },
     {
       "name": "finance",
+      "displayName": "Finance",
       "source": "./finance",
       "description": "Streamline finance and accounting workflows, from journal entries and reconciliation to financial statements and variance analysis. Speed up audit prep, month-end close, and keeping your books clean."
     },
     {
       "name": "data",
+      "displayName": "Data",
       "source": "./data",
       "description": "Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders."
     },
     {
       "name": "legal",
+      "displayName": "Legal",
       "source": "./legal",
       "description": "Speed up contract review, NDA triage, and compliance workflows for in-house legal teams. Draft legal briefs, organize precedent research, and manage institutional knowledge."
     },
     {
       "name": "marketing",
+      "displayName": "Marketing",
       "source": "./marketing",
       "description": "Create content, plan campaigns, and analyze performance across marketing channels. Maintain brand voice consistency, track competitors, and report on what's working."
     },
     {
       "name": "customer-support",
+      "displayName": "Customer Support",
       "source": "./customer-support",
       "description": "Triage tickets, draft responses, escalate issues, and build your knowledge base. Research customer context and turn resolved issues into self-service content."
     },
     {
       "name": "product-management",
+      "displayName": "Product Management",
       "source": "./product-management",
       "description": "Write feature specs, plan roadmaps, and synthesize user research faster. Keep stakeholders updated and stay ahead of the competitive landscape."
     },
     {
       "name": "bio-research",
+      "displayName": "Bio Research",
       "source": "./bio-research",
       "description": "Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D"
     },
     {
       "name": "slack-by-salesforce",
+      "displayName": "Slack",
       "source": "./partner-built/slack",
       "description": "Slack integration for searching messages, sending communications, managing canvases, and more",
       "author": {
@@ -69,6 +81,7 @@
     },
     {
       "name": "apollo",
+      "displayName": "Apollo.io",
       "source": "./partner-built/apollo",
       "description": "Prospect, enrich leads, and load outreach sequences with Apollo.io — one-click MCP server integration for Claude Code and Cowork.",
       "author": {
@@ -77,6 +90,7 @@
     },
     {
       "name": "common-room",
+      "displayName": "Common Room",
       "source": "./partner-built/common-room",
       "description": "Turn Common Room into your GTM copilot. Research accounts and contacts, prep for calls with attendee profiles and talking points, and draft personalized outreach across email, LinkedIn, and phone.",
       "author": {
@@ -85,31 +99,37 @@
     },
     {
       "name": "engineering",
+      "displayName": "Engineering",
       "source": "./engineering",
       "description": "Streamline engineering workflows — standups, code review, architecture decisions, incident response, and technical documentation. Works with your existing tools or standalone."
     },
     {
       "name": "human-resources",
+      "displayName": "Human Resources",
       "source": "./human-resources",
       "description": "Streamline people operations — recruiting, onboarding, performance reviews, compensation analysis, and policy guidance. Maintain compliance and keep your team running smoothly."
     },
     {
       "name": "design",
+      "displayName": "Design",
       "source": "./design",
       "description": "Accelerate design workflows — critique, design system management, UX writing, accessibility audits, research synthesis, and dev handoff. From exploration to pixel-perfect specs."
     },
     {
       "name": "operations",
+      "displayName": "Operations",
       "source": "./operations",
       "description": "Optimize business operations — vendor management, process documentation, change management, capacity planning, and compliance tracking. Keep your organization running efficiently."
     },
     {
       "name": "small-business",
+      "displayName": "Small Business",
       "source": "./small-business",
       "description": "Pre-built small business workflows (including payroll planning, month-end close, weekly briefs, and growth campaigns) using your QuickBooks, PayPal, HubSpot, Docusign, Gsuite, O365, Canva, and other connected tools. You approve every step that touches money or customers."
     },
     {
       "name": "brand-voice",
+      "displayName": "Brand Voice",
       "source": "./partner-built/brand-voice",
       "description": "Discover your brand voice from existing documents and conversations, generate enforceable guidelines, and validate AI-generated content against your established tone and positioning.",
       "author": {
@@ -118,6 +138,7 @@
     },
     {
       "name": "vanta-mcp-plugin",
+      "displayName": "Vanta",
       "description": "The Vanta plugin connects Claude to Vanta's security and compliance platform through the Vanta MCP server. List failing compliance tests, get test-specific remediation context, and fix failing tests with code changes — directly from your Claude session.",
       "category": "security",
       "source": {
@@ -129,6 +150,7 @@
     },
     {
       "name": "zoom-plugin",
+      "displayName": "Zoom",
       "source": "./partner-built/zoom-plugin",
       "description": "Plan, build, and debug Zoom integrations across REST APIs, Meeting SDK, Video SDK, webhooks, bots, and MCP workflows. Search meetings, retrieve recordings, access transcripts, and design AI-powered Zoom experiences.",
       "author": {
@@ -137,6 +159,7 @@
     },
     {
       "name": "bigdata-com",
+      "displayName": "Bigdata.com",
       "description": "Official Bigdata.com plugin providing financial research, analytics, and intelligence tools powered by Bigdata MCP.",
       "author": {
         "name": "RavenPack"
@@ -151,6 +174,7 @@
     },
     {
       "name": "miro",
+      "displayName": "Miro",
       "description": "Secure access to Miro boards. Enables AI to read board context, create diagrams, and generate code with enterprise-grade security.",
       "author": {
         "name": "Miro"
@@ -165,6 +189,7 @@
     },
     {
       "name": "planetscale",
+      "displayName": "PlanetScale",
       "description": "An authenticated hosted MCP server that accesses your PlanetScale organizations, databases, branches, schema, and Insights data. Query against your data, surface slow queries, and get organizational and account information.",
       "category": "database",
       "source": {
@@ -176,6 +201,7 @@
     },
     {
       "name": "adspirer-ads-agent",
+      "displayName": "Adspirer",
       "description": "Cross-platform ad management for Google Ads, Meta Ads, TikTok Ads, and LinkedIn Ads. 91 tools for keyword research, campaign creation, performance analysis, and budget optimization.",
       "category": "productivity",
       "source": {
@@ -187,6 +213,7 @@
     },
     {
       "name": "sanity-plugin",
+      "displayName": "Sanity",
       "description": "Sanity content platform integration with MCP server, agent skills, and slash commands. Query and author content, build and optimize GROQ queries, design schemas, and set up Visual Editing.",
       "category": "development",
       "author": {
@@ -201,6 +228,7 @@
     },
     {
       "name": "zoominfo",
+      "displayName": "ZoomInfo",
       "description": "Search companies and contacts, enrich leads, find lookalikes, and get AI-ranked contact recommendations. Pre-built skills chain multiple ZoomInfo tools into complete B2B sales workflows.",
       "source": {
         "source": "url",
@@ -211,6 +239,7 @@
     },
     {
       "name": "mintlify",
+      "displayName": "Mintlify",
       "description": "Build beautiful documentation sites with Mintlify. Convert non-markdown files into properly formatted MDX pages, add and modify content with correct component use, and automate documentation updates.",
       "category": "development",
       "source": {
@@ -222,6 +251,7 @@
     },
     {
       "name": "daloopa",
+      "displayName": "Daloopa",
       "description": "Financial analysis skills powered by Daloopa's institutional-grade data",
       "category": "finance",
       "source": {
@@ -233,6 +263,7 @@
     },
     {
       "name": "zapier",
+      "displayName": "Zapier",
       "description": "Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client.",
       "category": "productivity",
       "source": {
@@ -246,6 +277,7 @@
     },
     {
       "name": "intercom",
+      "displayName": "Intercom",
       "description": "Intercom integration for Claude Code. Search conversations, analyze customer support patterns, look up contacts and companies, and install the Intercom Messenger. Connect your Intercom workspace to get real-time insights from customer data.",
       "category": "productivity",
       "source": {
@@ -267,6 +299,7 @@
     },
     {
       "name": "prisma",
+      "displayName": "Prisma",
       "description": "Prisma MCP integration for Postgres database management, schema migrations, SQL queries, and connection string management. Provision Prisma Postgres databases, run migrations, and interact with your data directly.",
       "source": {
         "source": "url",
@@ -277,6 +310,7 @@
     },
     {
       "name": "fastly-agent-toolkit",
+      "displayName": "Fastly",
       "description": "Fastly development tools and platform skills",
       "source": {
         "source": "url",
@@ -287,6 +321,7 @@
     },
     {
       "name": "cloudinary",
+      "displayName": "Cloudinary",
       "description": "Use Cloudinary directly in Claude. Manage assets, apply transformations, optimize media, and more through natural conversation.",
       "source": {
         "source": "url",
@@ -297,6 +332,7 @@
     },
     {
       "name": "nimble",
+      "displayName": "Nimble",
       "description": "Nimble web data toolkit — search, extract, map, crawl the web and work with structured data agents",
       "source": {
         "source": "url",
@@ -307,6 +343,7 @@
     },
     {
       "name": "brightdata-plugin",
+      "displayName": "Bright Data",
       "description": "Web scraping, Google search, structured data extraction, and MCP server integration powered by Bright Data. Includes 7 skills: scrape any webpage as markdown (with bot detection/CAPTCHA bypass), search Google with structured JSON results, extract data from 40+ websites (Amazon, LinkedIn, Instagram, TikTok, YouTube, and more), orchestrate Bright Data's 60+ MCP tools, built-in best practices for Web Unlocker, SERP API, Web Scraper API, and Browser API, Python SDK best practices for the brightda...",
       "source": {
         "source": "url",
@@ -317,6 +354,7 @@
     },
     {
       "name": "searchfit-seo",
+      "displayName": "SearchFit SEO",
       "description": "Free AI-powered SEO toolkit — audit websites, plan content strategy, optimize pages, generate schema markup, cluster keywords, and track AI visibility. Works with any website or codebase.",
       "source": {
         "source": "url",
@@ -327,6 +365,7 @@
     },
     {
       "name": "atlan",
+      "displayName": "Atlan",
       "description": "Atlan data catalog plugin for Claude Code. Search, explore, govern, and manage your data assets through natural language. Powered by the Atlan MCP server with semantic search, lineage traversal, glossary management, data quality rules, and more.",
       "source": {
         "source": "url",
@@ -337,6 +376,7 @@
     },
     {
       "name": "ai-firstify",
+      "displayName": "AI-Firstify",
       "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
       "source": {
         "source": "git-subdir",
@@ -349,6 +389,7 @@
     },
     {
       "name": "product-tracking-skills",
+      "displayName": "Product Tracking",
       "description": "AI agent skills that make SaaS products data-ready for product analytics — from codebase scan to tracking plan to working instrumentation code.",
       "source": {
         "source": "url",
@@ -359,6 +400,7 @@
     },
     {
       "name": "postiz",
+      "displayName": "Postiz",
       "description": "Social media automation CLI for scheduling posts, managing integrations, uploading media, and tracking analytics across 28+ platforms including X, LinkedIn, Reddit, YouTube, TikTok, Instagram, and more",
       "source": {
         "source": "url",
@@ -369,6 +411,7 @@
     },
     {
       "name": "figma",
+      "displayName": "Figma",
       "description": "Figma design platform integration. Access design files, extract component information, read design tokens, and translate designs into code. Bridge the gap between design and development workflows.",
       "category": "design",
       "source": {
@@ -380,6 +423,7 @@
     },
     {
       "name": "adobe-for-creativity",
+      "displayName": "Adobe for Creativity",
       "description": "Brings together Adobe Creative Cloud tools for images, vectors, design, and video. Edit multiple assets at once, adapt for different platforms, and complete multi-step creative workflows for polished results.",
       "category": "design",
       "source": {
@@ -393,11 +437,13 @@
     },
     {
       "name": "pdf-viewer",
+      "displayName": "PDF Viewer",
       "source": "./pdf-viewer",
       "description": "View, annotate, and sign PDFs in a live interactive viewer. Mark up contracts, fill forms with visual feedback, stamp approvals, and place signatures — then download the annotated copy."
     },
     {
       "name": "box",
+      "displayName": "Box",
       "description": "Work with your Box content directly from Claude Code — search files, organize folders, collaborate with your team, and use Box AI to answer questions, summarize documents, and extract data without leaving your workflow.",
       "category": "productivity",
       "source": {
@@ -409,6 +455,7 @@
     },
     {
       "name": "lseg",
+      "displayName": "LSEG",
       "description": "Price bonds, analyze yield curves, evaluate FX carry trades, value options, and build macro dashboards using LSEG financial data and analytics.",
       "category": "finance",
       "source": {
@@ -420,6 +467,7 @@
     },
     {
       "name": "sp-global",
+      "displayName": "S&P Global",
       "description": "S&P Global - Financial data and analytics skills including company tearsheets, earnings previews, and transaction summaries",
       "category": "finance",
       "source": {
