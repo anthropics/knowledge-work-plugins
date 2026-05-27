@@ -533,6 +533,17 @@
         "sha": "21d2fe52774d861e2f2f997eeac2bf965e8590b8"
       },
       "homepage": "https://www.airtable.com"
+    },
+    {
+      "name": "vibe-prospecting",
+      "description": "Vibe Prospecting connects Claude to live B2B company and contact data so users can search, match, enrich, filter, and export prospects at scale. It turns natural-language requests into structured GTM workflows for lead generation, CRM enrichment, company research, executive discovery, and multi-step prospecting automation inside Claude Cowork and Claude Code.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/explorium-ai/vibeprospecting-plugin.git",
+        "sha": "ada4d569dbf70194fe18750ecbc5170e9a3f120a"
+      },
+      "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
     }
   ]
 }
