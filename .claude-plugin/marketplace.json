@@ -517,6 +517,22 @@
         "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
       },
       "homepage": "https://carta.com"
+    },
+    {
+      "name": "airtable",
+      "description": "Airtable is the database and operations layer for your agents — whether running product, marketing, sales, ops, HR, or a custom business app. It combines structured data with multiplayer visual surfaces (grid, kanban, calendar, gallery, timeline) humans and agents share — plus sync integrations to Jira, Salesforce, Zendesk, Google Drive, and Databricks. Makes Claude fluent in Airtable: bases and schema, records, and collaboration UI. Bundles the official Airtable MCP server.",
+      "author": {
+        "name": "Airtable"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Airtable/skills.git",
+        "path": "plugins/airtable",
+        "ref": "main",
+        "sha": "21d2fe52774d861e2f2f997eeac2bf965e8590b8"
+      },
+      "homepage": "https://www.airtable.com"
     }
   ]
 }
