@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "openaccountants": {
+      "type": "http",
+      "url": "https://www.openaccountants.com/api/mcp"
+    }
+  }
+}
