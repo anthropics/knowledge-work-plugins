@@ -5,7 +5,7 @@ A product management plugin primarily designed for [Cowork](https://claude.com/p
 ## Installation
 
 ```
-claude plugins add knowledge-work-plugins/product-management
+claude plugin install product-management@knowledge-work-plugins
 ```
 
 ## What It Does
