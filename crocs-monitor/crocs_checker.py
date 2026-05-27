@@ -141,43 +141,6 @@ def scrape_deichmann() -> list[Deal]:
     return deals
 
 
-def scrape_emag() -> list[Deal]:
-    """emag.hu"""
-    deals: list[Deal] = []
-    for keyword in ["crocs+szandal", "crocs+papucs"]:
-        r = _get(
-            f"https://www.emag.hu/search/{keyword}/p1/sort-priceAsc/size/45"
-        )
-        if not r:
-            continue
-        soup = BeautifulSoup(r.text, "html.parser")
-
-        for item in soup.select(
-            "[class*='card-v2'], [data-component='product-card'], "
-            ".card-item, [class*='ProductCard']"
-        ):
-            name_el  = item.select_one("[class*='title'], h3, h2, a")
-            price_el = item.select_one(
-                "[class*='price-over'], [class*='product-new-price'], [class*='price']"
-            )
-            link_el  = item.select_one("a[href]")
-            if not (name_el and price_el):
-                continue
-            name = name_el.get_text(" ", strip=True)
-            if not _is_crocs(name):
-                continue
-            price = _parse_price(price_el.get_text(strip=True))
-            if not price:
-                continue
-            href = link_el["href"] if link_el else ""
-            if href and not href.startswith("http"):
-                href = "https://www.emag.hu" + href
-            deals.append(Deal(name=name, price=price, url=href, store="eMAG"))
-
-        time.sleep(1)
-    return deals
-
-
 def scrape_pepita() -> list[Deal]:
     """pepita.hu"""
     deals: list[Deal] = []
@@ -203,6 +166,157 @@ def scrape_pepita() -> list[Deal]:
             href = "https://www.pepita.hu" + href
         deals.append(Deal(name=name, price=price, url=href, store="Pepita"))
 
+    return deals
+
+
+def scrape_zalando() -> list[Deal]:
+    """zalando.hu – tries embedded __NEXT_DATA__ JSON first, falls back to HTML"""
+    deals: list[Deal] = []
+    urls = [
+        "https://www.zalando.hu/kereses/?q=crocs+szandal&size=EU+45",
+        "https://www.zalando.hu/kereses/?q=crocs+papucs&size=EU+45",
+    ]
+    for url in urls:
+        r = _get(url)
+        if not r:
+            continue
+        soup = BeautifulSoup(r.text, "html.parser")
+
+        # Next.js sites embed initial data here
+        next_data_tag = soup.find("script", id="__NEXT_DATA__")
+        if next_data_tag:
+            try:
+                import json
+                data = json.loads(next_data_tag.string)
+                # Walk the nested structure to find articles
+                articles = (
+                    data.get("props", {})
+                       .get("pageProps", {})
+                       .get("ssrData", {})
+                       .get("search", {})
+                       .get("articles", {})
+                       .get("items", [])
+                )
+                for item in articles:
+                    name  = item.get("name", "") or item.get("brandName", "")
+                    if not _is_crocs(name):
+                        name = (item.get("brandName", "") + " " + item.get("name", "")).strip()
+                    if not _is_crocs(name):
+                        continue
+                    price_raw = (
+                        item.get("price", {}).get("promotional")
+                        or item.get("price", {}).get("original")
+                        or {}
+                    )
+                    price = _parse_price(str(price_raw.get("value", "") or price_raw.get("amount", "")))
+                    if not price:
+                        continue
+                    slug = item.get("urlKey", "") or item.get("slug", "")
+                    href = f"https://www.zalando.hu/{slug}.html" if slug else url
+                    deals.append(Deal(name=name, price=price, url=href, store="Zalando"))
+            except Exception as e:
+                log.debug(f"Zalando JSON parse error: {e}")
+
+        # HTML fallback for when Next.js data structure changes
+        for item in soup.select(
+            "[data-testid='product-card'], article[class*='Card'], "
+            "[class*='productCard'], [class*='ProductCard']"
+        ):
+            name_el  = item.select_one("[class*='name'], [class*='Name'], h3, h2")
+            price_el = item.select_one("[class*='price'], [class*='Price']")
+            link_el  = item.select_one("a[href]")
+            if not (name_el and price_el):
+                continue
+            name = name_el.get_text(" ", strip=True)
+            if not _is_crocs(name):
+                continue
+            price = _parse_price(price_el.get_text(strip=True))
+            if not price:
+                continue
+            href = link_el["href"] if link_el else url
+            if href and not href.startswith("http"):
+                href = "https://www.zalando.hu" + href
+            deals.append(Deal(name=name, price=price, url=href, store="Zalando"))
+
+        time.sleep(2)
+    return deals
+
+
+def scrape_aboutyou() -> list[Deal]:
+    """aboutyou.hu – tries embedded JSON first, falls back to HTML"""
+    deals: list[Deal] = []
+    urls = [
+        "https://www.aboutyou.hu/kereses?query=crocs+szandal&size=45",
+        "https://www.aboutyou.hu/kereses?query=crocs+papucs&size=45",
+    ]
+    for url in urls:
+        r = _get(url)
+        if not r:
+            continue
+        soup = BeautifulSoup(r.text, "html.parser")
+
+        # About You (Scayle platform) also uses Next.js / embedded state
+        next_data_tag = soup.find("script", id="__NEXT_DATA__")
+        if next_data_tag:
+            try:
+                import json
+                data = json.loads(next_data_tag.string)
+                products = (
+                    data.get("props", {})
+                       .get("pageProps", {})
+                       .get("initialData", {})
+                       .get("products", {})
+                       .get("entities", [])
+                )
+                for item in products:
+                    brand = (item.get("brandName") or item.get("brand", {}).get("name") or "")
+                    name  = brand + " " + (item.get("name") or "")
+                    name  = name.strip()
+                    if not _is_crocs(name):
+                        continue
+                    variants = item.get("variants", []) or [item]
+                    for v in variants:
+                        price_cents = (
+                            v.get("price", {}).get("withTax")
+                            or v.get("lowestPrice", {}).get("withTax")
+                            or item.get("priceRange", {}).get("min", {}).get("withTax")
+                        )
+                        if price_cents:
+                            # About You stores prices in cents (e.g. 1299000 = 12990 HUF)
+                            price = price_cents // 100
+                            if not (1_000 <= price <= 150_000):
+                                price = _parse_price(str(price_cents))
+                            if not price:
+                                continue
+                            slug = item.get("slug", "") or str(item.get("id", ""))
+                            href = f"https://www.aboutyou.hu/p/{slug}" if slug else url
+                            deals.append(Deal(name=name, price=price, url=href, store="About You"))
+                            break
+            except Exception as e:
+                log.debug(f"About You JSON parse error: {e}")
+
+        # HTML fallback
+        for item in soup.select(
+            "[data-testid='product-card'], [class*='ProductCard'], "
+            "[class*='productCard'], [class*='product-tile']"
+        ):
+            name_el  = item.select_one("[class*='name'], [class*='Name'], h3, h2, p")
+            price_el = item.select_one("[class*='price'], [class*='Price']")
+            link_el  = item.select_one("a[href]")
+            if not (name_el and price_el):
+                continue
+            name = name_el.get_text(" ", strip=True)
+            if not _is_crocs(name):
+                continue
+            price = _parse_price(price_el.get_text(strip=True))
+            if not price:
+                continue
+            href = link_el["href"] if link_el else url
+            if href and not href.startswith("http"):
+                href = "https://www.aboutyou.hu" + href
+            deals.append(Deal(name=name, price=price, url=href, store="About You"))
+
+        time.sleep(2)
     return deals
 
 
@@ -326,8 +440,9 @@ def main():
         scrape_arukereso,
         scrape_argep,
         scrape_deichmann,
-        scrape_emag,
         scrape_pepita,
+        scrape_zalando,
+        scrape_aboutyou,
     ]
 
     all_deals: list[Deal] = []
