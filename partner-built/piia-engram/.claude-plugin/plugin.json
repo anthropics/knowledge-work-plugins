@@ -1,0 +1,21 @@
+{
+  "name": "piia-engram",
+  "version": "3.36.0",
+  "description": "Persistent personal memory across tools and chats. Profile, preferences, lessons, and decisions live as local JSON — every AI tool and every new conversation reads the same memory. AI proposes; you approve what becomes permanent. Local-first, no cloud, no account.",
+  "author": {
+    "name": "Engram Contributors",
+    "url": "https://github.com/Patdolitse/piia-engram"
+  },
+  "homepage": "https://github.com/Patdolitse/piia-engram",
+  "license": "Apache-2.0",
+  "keywords": [
+    "memory",
+    "identity",
+    "cross-tool",
+    "cross-chat",
+    "local-first",
+    "knowledge-management",
+    "claude-cowork",
+    "claude-code"
+  ]
+}

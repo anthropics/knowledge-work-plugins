@@ -595,6 +595,17 @@
         "sha": "ada4d569dbf70194fe18750ecbc5170e9a3f120a"
       },
       "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
+    },
+    {
+      "name": "piia-engram",
+      "description": "Persistent personal memory across tools and chats. Profile, preferences, lessons, and decisions live as local JSON — every AI tool and every new conversation reads the same memory. AI proposes; you approve what becomes permanent. Local-first, no cloud, no account.",
+      "category": "productivity",
+      "source": "./partner-built/piia-engram",
+      "homepage": "https://github.com/Patdolitse/piia-engram",
+      "author": {
+        "name": "Engram Contributors",
+        "url": "https://github.com/Patdolitse/piia-engram"
+      }
     }
   ]
 }

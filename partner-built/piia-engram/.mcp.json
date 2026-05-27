@@ -1,0 +1,6 @@
+{
+  "engram": {
+    "command": "uvx",
+    "args": ["--from", "piia-engram", "python", "-m", "piia_engram.mcp_server"]
+  }
+}
