@@ -7,7 +7,7 @@ A finance and accounting plugin primarily designed for [Cowork](https://claude.c
 ## Installation
 
 ```bash
-claude plugins add knowledge-work-plugins/finance
+claude plugin install finance@knowledge-work-plugins
 ```
 
 ## Commands
