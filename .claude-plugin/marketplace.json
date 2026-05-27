@@ -478,6 +478,45 @@
         "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
       },
       "homepage": "https://kensho.com"
+    },
+    {
+      "name": "carta-cap-table",
+      "description": "Carta Cap Table plugin — skills and hooks for querying cap tables, grants, SAFEs, 409A valuations, waterfall scenarios, and more",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/carta/plugins.git",
+        "path": "plugins/carta-cap-table",
+        "ref": "main",
+        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+      },
+      "homepage": "https://carta.com"
+    },
+    {
+      "name": "carta-crm",
+      "description": "Manage the Carta CRM conversationally — search, add, update, and enrich investors, companies, contacts, deals, notes, and fundraisings via the Carta CRM MCP Server",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/carta/plugins.git",
+        "path": "plugins/carta-crm",
+        "ref": "main",
+        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+      },
+      "homepage": "https://carta.com"
+    },
+    {
+      "name": "carta-investors",
+      "description": "Carta Investors plugin — skills for querying investors data, performance benchmarks, regulatory reporting, AGM deck generation, brand extraction, and more via the Carta MCP server",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/carta/plugins.git",
+        "path": "plugins/carta-investors",
+        "ref": "main",
+        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+      },
+      "homepage": "https://carta.com"
     }
   ]
 }
