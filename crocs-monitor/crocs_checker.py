@@ -22,7 +22,7 @@ from bs4 import BeautifulSoup
 TARGET_PRICE    = 12_000   # HUF – "jó ár"
 MAX_PRICE       = 20_000   # HUF – felső határár amig még riasztunk
 SIZE            = "45"
-NOTIFY_EMAIL    = "csatabalazs@gmail.hu"
+NOTIFY_EMAIL    = "csatabalazs@gmail.com"
 
 HEADERS = {
     "User-Agent": (
