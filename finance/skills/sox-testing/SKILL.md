@@ -15,7 +15,7 @@ Generate sample selections, create testing workpapers, document control assessme
 ## Usage
 
 ```
-/sox <control-area> <period>
+/sox-testing <control area> [period]
 ```
 
 ### Arguments
