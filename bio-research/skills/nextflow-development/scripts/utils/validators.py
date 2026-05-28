@@ -44,8 +44,8 @@ class ValidationResult:
 def load_pipeline_config(pipeline: str) -> Optional[Dict]:
     """Load pipeline configuration from YAML file."""
     # Find config directory relative to this file
-    script_dir = Path(__file__).parent.parent.parent
-    config_path = script_dir / "config" / "pipelines" / f"{pipeline}.yaml"
+    scripts_dir = Path(__file__).parent.parent
+    config_path = scripts_dir / "config" / "pipelines" / f"{pipeline}.yaml"
 
     if not config_path.exists():
         return None
