@@ -544,6 +544,17 @@
         "sha": "ada4d569dbf70194fe18750ecbc5170e9a3f120a"
       },
       "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
+    },
+    {
+      "name": "base44",
+      "description": "Build and deploy Base44 full-stack apps with CLI project management and JavaScript/TypeScript SDK development skills",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/base44/skills.git",
+        "sha": "ec420cf2edd2c7e9a523d5afe2e71498a6357fa4"
+      },
+      "homepage": "https://docs.base44.com"
     }
   ]
 }
