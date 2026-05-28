@@ -584,6 +584,17 @@
         "sha": "7d15b215240df28e86a0b7305520524a2c005005"
       },
       "homepage": "https://www.twilio.com"
+    },
+    {
+      "name": "vibe-prospecting",
+      "description": "Vibe Prospecting connects Claude to live B2B company and contact data so users can search, match, enrich, filter, and export prospects at scale. It turns natural-language requests into structured GTM workflows for lead generation, CRM enrichment, company research, executive discovery, and multi-step prospecting automation inside Claude Cowork and Claude Code.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/explorium-ai/vibeprospecting-plugin.git",
+        "sha": "ada4d569dbf70194fe18750ecbc5170e9a3f120a"
+      },
+      "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
     }
   ]
 }
