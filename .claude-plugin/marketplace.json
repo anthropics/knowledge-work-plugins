@@ -544,6 +544,20 @@
         "sha": "ada4d569dbf70194fe18750ecbc5170e9a3f120a"
       },
       "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
+    },
+    {
+      "name": "marcopolo",
+      "displayName": "MarcoPolo",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/immersa-co/marcopolo-plugin.git",
+        "sha": "e0645772b5148b1bcb9c6e72b1d486c9370dda32"
+      },
+      "description": "Secure, persistent remote workspace for analytics, dashboards, and automations across one or more company data connections. Query databases, warehouses, and APIs; join across sources with DuckDB; build previewable dashboards; and schedule recurring jobs — all in an isolated MarcoPolo workspace.",
+      "author": {
+        "name": "MarcoPolo",
+        "url": "https://marcopolo.dev"
+      }
     }
   ]
 }
