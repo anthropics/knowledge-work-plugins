@@ -1,7 +1,7 @@
 {
-  "name": "knowledge-work-plugins",
+  "name": "tf3-knowledge-work-plugins",
   "owner": {
-    "name": "Anthropic"
+    "name": "TF3 Trifecta Solutions"
   },
   "plugins": [
     {
