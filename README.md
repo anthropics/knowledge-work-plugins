@@ -1,3 +1,11 @@
+# TF3 Productivity Plugin
+Adapted from `anthropics/knowledge-work-plugins` for TF3 Trifecta Solutions.
+Connectors: Notion + ClickUp only.
+Install: `claude plugin install ./tf3-productivity-plugin`
+Requires env vars: NOTION_TOKEN, CLICKUP_API_KEY
+
+---
+
 # Knowledge Work Plugins
 
 Plugins that turn Claude into a specialist for your role, team, and company. Built for [Claude Cowork](https://claude.com/product/cowork), also compatible with [Claude Code](https://claude.com/product/claude-code).

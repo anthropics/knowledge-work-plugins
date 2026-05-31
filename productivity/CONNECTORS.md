@@ -8,11 +8,11 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 ## Connectors for this plugin
 
+TF3 stack only — Notion + ClickUp.
+
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
-| Chat | `~~chat` | Slack | Microsoft Teams, Discord |
-| Email | `~~email` | Microsoft 365 | — |
-| Calendar | `~~calendar` | Microsoft 365 | — |
-| Knowledge base | `~~knowledge base` | Notion | Confluence, Guru, Coda |
-| Project tracker | `~~project tracker` | Asana, Linear, Atlassian (Jira/Confluence), monday.com, ClickUp | Shortcut, Basecamp, Wrike |
-| Office suite | `~~office suite` | Microsoft 365 | — |
+| Knowledge base | `~~knowledge base` | Notion | — |
+| Project tracker | `~~project tracker` | ClickUp | — |
+
+Tokens are sourced from Claude Code environment variables: `NOTION_TOKEN`, `CLICKUP_API_KEY`.
