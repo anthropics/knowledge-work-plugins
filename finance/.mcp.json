@@ -20,10 +20,6 @@
         "callbackPort": 3118
       }
     },
-    "ms365": {
-      "type": "http",
-      "url": "https://microsoft365.mcp.claude.com/mcp"
-    },
     "google calendar": {
       "type": "http",
       "url": ""

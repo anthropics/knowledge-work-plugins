@@ -36,10 +36,6 @@
       "type": "http",
       "url": "https://mcp.squareup.com/sse"
     },
-    "ms365": {
-      "type": "http",
-      "url": "https://microsoft365.mcp.claude.com/mcp"
-    },
     "gmail": {
       "type": "http",
       "url": "https://gmailmcp.googleapis.com/mcp/v1"
