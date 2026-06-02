@@ -535,6 +535,57 @@
       "homepage": "https://www.airtable.com"
     },
     {
+      "name": "desktop-commander",
+      "description": "MCP server for terminal commands, process management, and file operations across text, code, PDF, DOCX, Excel, images, and structured data.",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
+        "path": "plugins/claude",
+        "ref": "main",
+        "sha": "9c44119a480ec6460f82d59aeb90cf274bc3dd7b"
+      },
+      "homepage": "https://desktopcommander.app"
+    },
+    {
+      "name": "qodo-skills",
+      "description": "Shift-left code review skills that bring Qodo's quality standards and code review capabilities into your local development workflow. Catch issues before commit, enforce organizational standards, and resolve PR feedback directly in your agent.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/qodo-ai/qodo-skills.git",
+        "sha": "b1eb0389480ee6de8df874f40a230ed2625ef0d3"
+      },
+      "homepage": "https://qodo.ai"
+    },
+    {
+      "name": "servicenow-sdk",
+      "description": "Create, edit, and deploy ServiceNow applications with the Fluent SDK effortlessly through Claude. Helps developers build, extend, and manage ServiceNow applications, workflows, and agents using the ServiceNow SDK.",
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ServiceNow/sdk.git",
+        "path": "providers/claude/plugin",
+        "ref": "main",
+        "sha": "06adf37ca78c270a57f93e7b9dfbb7bf16e24611"
+      },
+      "homepage": "https://servicenow.github.io/sdk/"
+    },
+    {
+      "name": "twilio-developer-kit",
+      "description": "Twilio Skills provide procedural knowledge for AI coding agents — which APIs to use, in what order, and what to avoid. Covers SMS, Voice, WhatsApp, Verify, SendGrid, Compliance, and 30+ products.",
+      "author": {
+        "name": "Twilio"
+      },
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/twilio/ai.git",
+        "sha": "7d15b215240df28e86a0b7305520524a2c005005"
+      },
+      "homepage": "https://www.twilio.com"
+    },
+    {
       "name": "vibe-prospecting",
       "description": "Vibe Prospecting connects Claude to live B2B company and contact data so users can search, match, enrich, filter, and export prospects at scale. It turns natural-language requests into structured GTM workflows for lead generation, CRM enrichment, company research, executive discovery, and multi-step prospecting automation inside Claude Cowork and Claude Code.",
       "category": "productivity",
