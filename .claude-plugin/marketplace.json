@@ -233,7 +233,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Zoominfo/zoominfo-mcp-plugin.git",
-        "sha": "678c0d1b584b77fb8e0cdc14138fc1afc5a21cf2"
+        "sha": "cfdebda5f3ce24d0d964cc0b3e9e5dd9ea9d507d"
       },
       "homepage": "https://zoominfo.com"
     },
@@ -370,7 +370,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/atlanhq/agent-toolkit.git",
-        "sha": "cda594f40503cd2ae144052237fa2890e024828c"
+        "sha": "789507c02d2495235240d10d67aaac8b2051023a"
       },
       "homepage": "https://docs.atlan.com/"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "eb00237daa211b0dc8dd815e013310c6ea9fc827"
+        "sha": "619dbde9d331fc24c0c7ea57402ea0ff24c21628"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "eb00237daa211b0dc8dd815e013310c6ea9fc827"
+        "sha": "619dbde9d331fc24c0c7ea57402ea0ff24c21628"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "eb00237daa211b0dc8dd815e013310c6ea9fc827"
+        "sha": "619dbde9d331fc24c0c7ea57402ea0ff24c21628"
       },
       "homepage": "https://carta.com"
     },
@@ -543,7 +543,7 @@
         "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
         "path": "plugins/claude",
         "ref": "main",
-        "sha": "ce4669cca7a07bd5d493cedb01df400790ec9e23"
+        "sha": "cf857bf061cb3b0e8673717dcac1f0fa2ecbdd40"
       },
       "homepage": "https://desktopcommander.app"
     },
@@ -567,7 +567,7 @@
         "url": "https://github.com/ServiceNow/sdk.git",
         "path": "providers/claude/plugin",
         "ref": "main",
-        "sha": "06adf37ca78c270a57f93e7b9dfbb7bf16e24611"
+        "sha": "35ef6130d8a49e67b531bde2f987808426273d15"
       },
       "homepage": "https://servicenow.github.io/sdk/"
     },
