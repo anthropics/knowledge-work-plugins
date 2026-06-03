@@ -606,6 +606,17 @@
         "sha": "ec420cf2edd2c7e9a523d5afe2e71498a6357fa4"
       },
       "homepage": "https://docs.base44.com"
+    },
+    {
+      "name": "wix",
+      "description": "Build, manage, and deploy Wix sites and apps. Includes CLI development skills and Wix MCP server for site management, eCommerce, CMS, dashboard extensions, and more.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/wix/skills.git",
+        "sha": "4a6e9dac2454808afeb9cd786a0f343bd98154df"
+      },
+      "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     }
   ]
 }
