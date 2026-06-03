@@ -169,7 +169,7 @@
         "url": "https://github.com/Bigdata-com/bigdata-plugins-marketplace.git",
         "path": "plugins/bigdata-com",
         "ref": "main",
-        "sha": "c77a09caabdc8783adbcbf8bbe05a0f57da12b19"
+        "sha": "67c30be97a0a3f46bc6e8d56df449ae108eda9c5"
       }
     },
     {
@@ -184,7 +184,7 @@
         "url": "https://github.com/miroapp/miro-ai.git",
         "path": "claude-plugins/miro",
         "ref": "main",
-        "sha": "706b24b6564eaaea33e75ac66c83af9abf3b5a41"
+        "sha": "9d7c3dc0a9a365b298e3808c741c53e2e80d86d1"
       }
     },
     {
@@ -222,7 +222,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "236348e29b31e834ce71e4e2e3072184dd1c1e27"
+        "sha": "7e04973754975e73b306b1d4dbae561160d797e9"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -233,7 +233,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Zoominfo/zoominfo-mcp-plugin.git",
-        "sha": "14752e4553312d8af3eb3a3264a97d76bb3e0215"
+        "sha": "678c0d1b584b77fb8e0cdc14138fc1afc5a21cf2"
       },
       "homepage": "https://zoominfo.com"
     },
@@ -257,7 +257,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/daloopa/plugin.git",
-        "sha": "cc0d09689397e64db7344634246326e7d7d9a42d"
+        "sha": "a4d8e1ee1a85f291c36c07dbcb23d1ca0cd182b5"
       },
       "homepage": "https://github.com/daloopa/plugin"
     },
@@ -315,7 +315,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/fastly/fastly-agent-toolkit.git",
-        "sha": "e0f4205723b843de0b07da4a2aea6c84a3bcb579"
+        "sha": "6bd17d685a1b361a2b368bf0236f39efb1be62d6"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
     },
@@ -337,7 +337,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Nimbleway/agent-skills.git",
-        "sha": "b3ab05d3c7c88857940c575e0f46752297b2249b"
+        "sha": "9736dfc757f5ed4f05da0480b202af09e93a27de"
       },
       "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation"
     },
@@ -348,7 +348,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/brightdata/skills.git",
-        "sha": "37145178dfc9b52e28dd224afeccc7184f7711fc"
+        "sha": "68651246ad1819b98a1fc15ce10239e55406ff37"
       },
       "homepage": "https://docs.brightdata.com"
     },
@@ -370,7 +370,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/atlanhq/agent-toolkit.git",
-        "sha": "790398c87378f128bdc74c31bb7ecfb8e4695f29"
+        "sha": "cda594f40503cd2ae144052237fa2890e024828c"
       },
       "homepage": "https://docs.atlan.com/"
     },
@@ -405,7 +405,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/gitroomhq/postiz-agent.git",
-        "sha": "238aede6c72672b3201ae0ee533ec0cd53eb51d1"
+        "sha": "41c5a9dbd6b2776863e7c05c22e7a385c208321c"
       },
       "homepage": "https://postiz.com/agent"
     },
@@ -431,7 +431,7 @@
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
         "ref": "main",
-        "sha": "9ca1da262869ca2fb5f6c3daae2f7eeb648c937d"
+        "sha": "e23271f65aa7572f567d085d6baec5c2408e2ad5"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -475,7 +475,7 @@
         "url": "https://github.com/kensho-technologies/spglobal-agent-skills.git",
         "path": "plugins/spglobal-plugin",
         "ref": "main",
-        "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
+        "sha": "6add941c4c084ca50ae23bc3df28b5a10a218c93"
       },
       "homepage": "https://kensho.com"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+        "sha": "eb00237daa211b0dc8dd815e013310c6ea9fc827"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+        "sha": "eb00237daa211b0dc8dd815e013310c6ea9fc827"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+        "sha": "eb00237daa211b0dc8dd815e013310c6ea9fc827"
       },
       "homepage": "https://carta.com"
     },
@@ -543,7 +543,7 @@
         "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
         "path": "plugins/claude",
         "ref": "main",
-        "sha": "9c44119a480ec6460f82d59aeb90cf274bc3dd7b"
+        "sha": "ce4669cca7a07bd5d493cedb01df400790ec9e23"
       },
       "homepage": "https://desktopcommander.app"
     },
@@ -554,7 +554,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/qodo-ai/qodo-skills.git",
-        "sha": "b1eb0389480ee6de8df874f40a230ed2625ef0d3"
+        "sha": "8aec13d6ac60feb9d9f84f36aa1753234de17dc8"
       },
       "homepage": "https://qodo.ai"
     },
@@ -592,7 +592,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/explorium-ai/vibeprospecting-plugin.git",
-        "sha": "ada4d569dbf70194fe18750ecbc5170e9a3f120a"
+        "sha": "7ed0c4e2965ee315132c3c714609b46b23b5edc0"
       },
       "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
     },
