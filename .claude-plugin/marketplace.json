@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+        "sha": "eb00237daa211b0dc8dd815e013310c6ea9fc827"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+        "sha": "eb00237daa211b0dc8dd815e013310c6ea9fc827"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+        "sha": "eb00237daa211b0dc8dd815e013310c6ea9fc827"
       },
       "homepage": "https://carta.com"
     },
