@@ -20,10 +20,6 @@
       "type": "http",
       "url": "https://mcp.gong.io/mcp"
     },
-    "microsoft-365": {
-      "type": "http",
-      "url": "https://microsoft365.mcp.claude.com/mcp"
-    },
     "granola": {
       "type": "http",
       "url": "https://mcp.granola.ai/mcp"
