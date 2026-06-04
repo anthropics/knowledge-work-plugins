@@ -59,6 +59,11 @@
       "description": "Triage tickets, draft responses, escalate issues, and build your knowledge base. Research customer context and turn resolved issues into self-service content."
     },
     {
+      "name": "recruiting",
+      "source": "./recruiting",
+      "description": "Screen resumes, write job descriptions, source candidates, build interview kits, run debriefs, and manage your hiring pipeline. Works standalone or supercharged with ATS, email, and calendar integrations."
+    },
+    {
       "name": "product-management",
       "displayName": "Product Management",
       "source": "./product-management",
