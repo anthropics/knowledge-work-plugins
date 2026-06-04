@@ -1,3 +1,7 @@
+---
+description: Answer questions from enterprise knowledge sources with citations and entitlement-scoped retrieval
+---
+
 # Governed Knowledge Query
 
 Use this skill when the user asks a question that should be answered from enterprise knowledge sources — company documents, policies, technical references, or any organizational content indexed in ContextIQ.

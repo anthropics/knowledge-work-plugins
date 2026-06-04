@@ -1,3 +1,7 @@
+---
+description: Show the enterprise knowledge sources available to the current user through ContextIQ
+---
+
 # Source Discovery
 
 Use this skill when the user wants to understand what enterprise knowledge sources are available to them through ContextIQ.
