@@ -617,6 +617,18 @@
         "sha": "f99715fc149208608a148c0fe0ed16c0f80ee734"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
+    },
+    {
+      "name": "datadog",
+      "displayName": "Datadog",
+      "description": "Use Datadog directly in Claude Code through a preconfigured Datadog MCP server. Query logs, metrics, traces, dashboards, and more through natural conversation. This plugin is in preview.",
+      "category": "monitoring",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/datadog-labs/claude-code-plugin.git",
+        "sha": "96c28a8ce6f258ed54c9a17f16ee206deb8e3f28"
+      },
+      "homepage": "https://docs.datadoghq.com/bits_ai/mcp_server/setup?tab=claudecode"
     }
   ]
 }
