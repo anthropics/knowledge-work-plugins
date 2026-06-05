@@ -222,7 +222,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "7e04973754975e73b306b1d4dbae561160d797e9"
+        "sha": "66f0ec5d9167b3ccb8b3450e5ec34f3b523d4139"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -271,7 +271,7 @@
         "url": "https://github.com/zapier/zapier-mcp.git",
         "path": "plugins/zapier",
         "ref": "main",
-        "sha": "f34a7854febed415c9ef766eec1c66529ef0668e"
+        "sha": "770167c572deaf74c588b45d88003ddf2145d608"
       },
       "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "ea02da68e7be8bf4bc2bffe8f1fd7253f8d0b101"
+        "sha": "26056825a66b6f261f3663b2b0c5254ffd04a28b"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "ea02da68e7be8bf4bc2bffe8f1fd7253f8d0b101"
+        "sha": "26056825a66b6f261f3663b2b0c5254ffd04a28b"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "ea02da68e7be8bf4bc2bffe8f1fd7253f8d0b101"
+        "sha": "26056825a66b6f261f3663b2b0c5254ffd04a28b"
       },
       "homepage": "https://carta.com"
     },
@@ -543,7 +543,7 @@
         "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
         "path": "plugins/claude",
         "ref": "main",
-        "sha": "cf857bf061cb3b0e8673717dcac1f0fa2ecbdd40"
+        "sha": "f53f916f5c9e47eb36f2538f33e105ca378a2be8"
       },
       "homepage": "https://desktopcommander.app"
     },
@@ -592,7 +592,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/explorium-ai/vibeprospecting-plugin.git",
-        "sha": "7ed0c4e2965ee315132c3c714609b46b23b5edc0"
+        "sha": "aa5903f52d79e7f2a5f9c324c6fff7d5a5d92631"
       },
       "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
     },
@@ -614,7 +614,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "f99715fc149208608a148c0fe0ed16c0f80ee734"
+        "sha": "49684b071f7fd00c70fcb4d62d6a518609eca1ee"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
