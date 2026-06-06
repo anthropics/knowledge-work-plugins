@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "26056825a66b6f261f3663b2b0c5254ffd04a28b"
+        "sha": "54602de67332dea3827b325966e454fd1c024240"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "26056825a66b6f261f3663b2b0c5254ffd04a28b"
+        "sha": "54602de67332dea3827b325966e454fd1c024240"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "26056825a66b6f261f3663b2b0c5254ffd04a28b"
+        "sha": "54602de67332dea3827b325966e454fd1c024240"
       },
       "homepage": "https://carta.com"
     },
@@ -543,7 +543,7 @@
         "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
         "path": "plugins/claude",
         "ref": "main",
-        "sha": "f53f916f5c9e47eb36f2538f33e105ca378a2be8"
+        "sha": "7a9b2ff0339a7fdc29c06a9957b323ef478a1dde"
       },
       "homepage": "https://desktopcommander.app"
     },
@@ -614,7 +614,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "49684b071f7fd00c70fcb4d62d6a518609eca1ee"
+        "sha": "9dca098f4b6fb31bff51be29547879033f314381"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
