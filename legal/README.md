@@ -142,6 +142,7 @@ Supported inquiry types include: data subject request, discovery hold, vendor qu
 | `canned-responses` | Template management, response categories, escalation triggers |
 | `legal-risk-assessment` | Risk severity framework, classification levels, escalation criteria |
 | `meeting-briefing` | Meeting prep methodology, context gathering, action item tracking |
+| `verify-citations` | Citation-by-citation verification: existence, holding, and binding-authority checks; flags fabricated, misattributed, wrong-jurisdiction, and hallucinated-detail cites |
 
 ## Example Workflows
 
