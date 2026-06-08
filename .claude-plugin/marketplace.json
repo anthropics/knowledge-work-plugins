@@ -348,7 +348,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/brightdata/skills.git",
-        "sha": "3e6d0838285cbc107b86d61e2e1a943baf7ead29"
+        "sha": "bd5bd76bc889f54b744bab3db3cbd42751a1e5b0"
       },
       "homepage": "https://docs.brightdata.com"
     },
@@ -383,7 +383,7 @@
         "url": "https://github.com/techwolf-ai/ai-first-toolkit.git",
         "path": "plugins/ai-firstify",
         "ref": "main",
-        "sha": "114c1104f65bd58e34862b6b9eab8c95ee06bdf4"
+        "sha": "c84f30c27f38160892e5ff1c1d0b01d76cf27f74"
       },
       "homepage": "https://ai-first.techwolf.ai"
     },
@@ -431,7 +431,7 @@
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
         "ref": "main",
-        "sha": "e23271f65aa7572f567d085d6baec5c2408e2ad5"
+        "sha": "253f56901e058800ccb97ffd5bf1e3329d5f2e00"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "0227331a2f2e5bc34485f3473d1046a3a52084d7"
+        "sha": "9eb312908f4a2e2d15e4e935320981433a549f77"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "0227331a2f2e5bc34485f3473d1046a3a52084d7"
+        "sha": "9eb312908f4a2e2d15e4e935320981433a549f77"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "0227331a2f2e5bc34485f3473d1046a3a52084d7"
+        "sha": "9eb312908f4a2e2d15e4e935320981433a549f77"
       },
       "homepage": "https://carta.com"
     },
@@ -614,7 +614,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "8ed898abcfa5fb3ff8e43c4c1c39d7a55d9cedef"
+        "sha": "188ed338f39d70e5aef7f9a2582bbf338f223b78"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
