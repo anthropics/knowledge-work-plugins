@@ -383,7 +383,7 @@
         "url": "https://github.com/techwolf-ai/ai-first-toolkit.git",
         "path": "plugins/ai-firstify",
         "ref": "main",
-        "sha": "d7270ecd28f36d2454b36f397a28a96b0b7a5630"
+        "sha": "114c1104f65bd58e34862b6b9eab8c95ee06bdf4"
       },
       "homepage": "https://ai-first.techwolf.ai"
     },
@@ -614,7 +614,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "038e0c5593f115519bfd634b1270fd897cf5b99d"
+        "sha": "8ed898abcfa5fb3ff8e43c4c1c39d7a55d9cedef"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
