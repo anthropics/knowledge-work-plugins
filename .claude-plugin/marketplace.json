@@ -712,6 +712,18 @@
         "sha": "ce381e93a0a6c2ed3b9942ff1803b8078ba89389"
       },
       "homepage": "https://monday.com"
+    },
+    {
+      "name": "lusha",
+      "displayName": "Lusha",
+      "description": "Prospect, enrich, and build call-ready lead lists using Lusha's B2B intelligence platform — verified phone numbers, company signals, and lookalike targeting.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lusha-oss/lusha-mcp-plugin.git",
+        "sha": "8fc71d5473ea40e01a92001787f0f3caaf5ca30e"
+      },
+      "homepage": "https://www.lusha.com"
     }
   ]
 }
