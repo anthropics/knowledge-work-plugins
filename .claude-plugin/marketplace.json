@@ -643,6 +643,18 @@
         "sha": "683a7536f9445c07439d087607b44b0383b8c41d"
       },
       "homepage": "https://www.airwallex.com/docs"
+    },
+    {
+      "name": "langfuse",
+      "displayName": "Langfuse",
+      "description": "Skills for working with Langfuse, the open-source LLM engineering platform for tracing, prompt management, and evaluation.",
+      "category": "monitoring",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/langfuse/skills.git",
+        "sha": "84657a123c12e87d7fa32cbc20197144674e110a"
+      },
+      "homepage": "https://langfuse.com"
     }
   ]
 }
