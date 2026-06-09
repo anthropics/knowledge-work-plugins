@@ -315,7 +315,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/fastly/fastly-agent-toolkit.git",
-        "sha": "6bd17d685a1b361a2b368bf0236f39efb1be62d6"
+        "sha": "73af5b94a98448ffeed6e2993495dc83c9a597be"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "732981ca21f33de54e4d0ec3ef7e465e2e8577e4"
+        "sha": "c39482a45c1e4c02922fe5cef3d61fb010a0b2d9"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "732981ca21f33de54e4d0ec3ef7e465e2e8577e4"
+        "sha": "c39482a45c1e4c02922fe5cef3d61fb010a0b2d9"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "732981ca21f33de54e4d0ec3ef7e465e2e8577e4"
+        "sha": "c39482a45c1e4c02922fe5cef3d61fb010a0b2d9"
       },
       "homepage": "https://carta.com"
     },
@@ -530,7 +530,7 @@
         "url": "https://github.com/Airtable/skills.git",
         "path": "plugins/airtable",
         "ref": "main",
-        "sha": "21d2fe52774d861e2f2f997eeac2bf965e8590b8"
+        "sha": "295ab93b7d765912ee1a0dc7f1abb0ecaf73f138"
       },
       "homepage": "https://www.airtable.com"
     },
