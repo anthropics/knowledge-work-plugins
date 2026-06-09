@@ -417,7 +417,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/figma/mcp-server-guide.git",
-        "sha": "a742f0a700a7772ff5ed85f7c9fc1dad5afa9fcc"
+        "sha": "54ad156019d7362a56d8024b9adbe99952aa29b6"
       },
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "9eb312908f4a2e2d15e4e935320981433a549f77"
+        "sha": "732981ca21f33de54e4d0ec3ef7e465e2e8577e4"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "9eb312908f4a2e2d15e4e935320981433a549f77"
+        "sha": "732981ca21f33de54e4d0ec3ef7e465e2e8577e4"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "9eb312908f4a2e2d15e4e935320981433a549f77"
+        "sha": "732981ca21f33de54e4d0ec3ef7e465e2e8577e4"
       },
       "homepage": "https://carta.com"
     },
@@ -614,7 +614,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "188ed338f39d70e5aef7f9a2582bbf338f223b78"
+        "sha": "9666bc8d4856d9028e815610c23ab4f48d8ddd3b"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
