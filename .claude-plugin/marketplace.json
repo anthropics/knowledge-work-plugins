@@ -222,7 +222,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "838d025baf79f58d9b6ae5442d7e19d259890704"
+        "sha": "be762f2fc6c82432ff7e4e5d6f27becfc7a95b06"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -383,7 +383,7 @@
         "url": "https://github.com/techwolf-ai/ai-first-toolkit.git",
         "path": "plugins/ai-firstify",
         "ref": "main",
-        "sha": "c84f30c27f38160892e5ff1c1d0b01d76cf27f74"
+        "sha": "38aa811df152b0d9e98925c65661842d75d9b54a"
       },
       "homepage": "https://ai-first.techwolf.ai"
     },
@@ -417,7 +417,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/figma/mcp-server-guide.git",
-        "sha": "54ad156019d7362a56d8024b9adbe99952aa29b6"
+        "sha": "2efd0e37d10c35c4a7cf6d2b7381c9dc1a569bd4"
       },
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
@@ -431,7 +431,7 @@
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
         "ref": "main",
-        "sha": "253f56901e058800ccb97ffd5bf1e3329d5f2e00"
+        "sha": "a5a5e4e401029cf85fa4b4bb452d0f039900ad43"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "4b60ca6616ce614dacb306c2e3433aeca6ce3b5b"
+        "sha": "3df08a6c4f36fad38d5c0d097278170dfa6689d9"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "4b60ca6616ce614dacb306c2e3433aeca6ce3b5b"
+        "sha": "3df08a6c4f36fad38d5c0d097278170dfa6689d9"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "4b60ca6616ce614dacb306c2e3433aeca6ce3b5b"
+        "sha": "3df08a6c4f36fad38d5c0d097278170dfa6689d9"
       },
       "homepage": "https://carta.com"
     },
@@ -603,7 +603,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/base44/skills.git",
-        "sha": "ec420cf2edd2c7e9a523d5afe2e71498a6357fa4"
+        "sha": "aef0fa35f21b3c0c000d5ab8c0b068e6188618b6"
       },
       "homepage": "https://docs.base44.com"
     },
