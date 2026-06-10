@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "78df43ec581749810eb079bfb161922fa886ba6c"
+        "sha": "4b60ca6616ce614dacb306c2e3433aeca6ce3b5b"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "78df43ec581749810eb079bfb161922fa886ba6c"
+        "sha": "4b60ca6616ce614dacb306c2e3433aeca6ce3b5b"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "78df43ec581749810eb079bfb161922fa886ba6c"
+        "sha": "4b60ca6616ce614dacb306c2e3433aeca6ce3b5b"
       },
       "homepage": "https://carta.com"
     },
@@ -614,7 +614,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "9666bc8d4856d9028e815610c23ab4f48d8ddd3b"
+        "sha": "cda44c29c9155f6e7b3440f953969721aed246be"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
