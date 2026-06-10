@@ -222,7 +222,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "66f0ec5d9167b3ccb8b3450e5ec34f3b523d4139"
+        "sha": "838d025baf79f58d9b6ae5442d7e19d259890704"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "c39482a45c1e4c02922fe5cef3d61fb010a0b2d9"
+        "sha": "78df43ec581749810eb079bfb161922fa886ba6c"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "c39482a45c1e4c02922fe5cef3d61fb010a0b2d9"
+        "sha": "78df43ec581749810eb079bfb161922fa886ba6c"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "c39482a45c1e4c02922fe5cef3d61fb010a0b2d9"
+        "sha": "78df43ec581749810eb079bfb161922fa886ba6c"
       },
       "homepage": "https://carta.com"
     },
