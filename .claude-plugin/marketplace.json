@@ -222,7 +222,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "7e04973754975e73b306b1d4dbae561160d797e9"
+        "sha": "be762f2fc6c82432ff7e4e5d6f27becfc7a95b06"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -271,7 +271,7 @@
         "url": "https://github.com/zapier/zapier-mcp.git",
         "path": "plugins/zapier",
         "ref": "main",
-        "sha": "f34a7854febed415c9ef766eec1c66529ef0668e"
+        "sha": "770167c572deaf74c588b45d88003ddf2145d608"
       },
       "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier"
     },
@@ -315,7 +315,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/fastly/fastly-agent-toolkit.git",
-        "sha": "6bd17d685a1b361a2b368bf0236f39efb1be62d6"
+        "sha": "73af5b94a98448ffeed6e2993495dc83c9a597be"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
     },
@@ -348,7 +348,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/brightdata/skills.git",
-        "sha": "68651246ad1819b98a1fc15ce10239e55406ff37"
+        "sha": "bd5bd76bc889f54b744bab3db3cbd42751a1e5b0"
       },
       "homepage": "https://docs.brightdata.com"
     },
@@ -380,10 +380,10 @@
       "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
       "source": {
         "source": "git-subdir",
-        "url": "techwolf-ai/ai-first-toolkit",
+        "url": "https://github.com/techwolf-ai/ai-first-toolkit.git",
         "path": "plugins/ai-firstify",
         "ref": "main",
-        "sha": "d7270ecd28f36d2454b36f397a28a96b0b7a5630"
+        "sha": "38aa811df152b0d9e98925c65661842d75d9b54a"
       },
       "homepage": "https://ai-first.techwolf.ai"
     },
@@ -417,7 +417,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/figma/mcp-server-guide.git",
-        "sha": "a742f0a700a7772ff5ed85f7c9fc1dad5afa9fcc"
+        "sha": "2efd0e37d10c35c4a7cf6d2b7381c9dc1a569bd4"
       },
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
@@ -431,7 +431,7 @@
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
         "ref": "main",
-        "sha": "e23271f65aa7572f567d085d6baec5c2408e2ad5"
+        "sha": "a5a5e4e401029cf85fa4b4bb452d0f039900ad43"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "ea02da68e7be8bf4bc2bffe8f1fd7253f8d0b101"
+        "sha": "3df08a6c4f36fad38d5c0d097278170dfa6689d9"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "ea02da68e7be8bf4bc2bffe8f1fd7253f8d0b101"
+        "sha": "3df08a6c4f36fad38d5c0d097278170dfa6689d9"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "ea02da68e7be8bf4bc2bffe8f1fd7253f8d0b101"
+        "sha": "3df08a6c4f36fad38d5c0d097278170dfa6689d9"
       },
       "homepage": "https://carta.com"
     },
@@ -530,7 +530,7 @@
         "url": "https://github.com/Airtable/skills.git",
         "path": "plugins/airtable",
         "ref": "main",
-        "sha": "21d2fe52774d861e2f2f997eeac2bf965e8590b8"
+        "sha": "295ab93b7d765912ee1a0dc7f1abb0ecaf73f138"
       },
       "homepage": "https://www.airtable.com"
     },
@@ -543,7 +543,7 @@
         "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
         "path": "plugins/claude",
         "ref": "main",
-        "sha": "cf857bf061cb3b0e8673717dcac1f0fa2ecbdd40"
+        "sha": "7a9b2ff0339a7fdc29c06a9957b323ef478a1dde"
       },
       "homepage": "https://desktopcommander.app"
     },
@@ -592,7 +592,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/explorium-ai/vibeprospecting-plugin.git",
-        "sha": "7ed0c4e2965ee315132c3c714609b46b23b5edc0"
+        "sha": "aa5903f52d79e7f2a5f9c324c6fff7d5a5d92631"
       },
       "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
     },
@@ -603,7 +603,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/base44/skills.git",
-        "sha": "ec420cf2edd2c7e9a523d5afe2e71498a6357fa4"
+        "sha": "aef0fa35f21b3c0c000d5ab8c0b068e6188618b6"
       },
       "homepage": "https://docs.base44.com"
     },
@@ -614,7 +614,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "f99715fc149208608a148c0fe0ed16c0f80ee734"
+        "sha": "cda44c29c9155f6e7b3440f953969721aed246be"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -629,7 +629,7 @@
         "repo": "recharm/claude-plugin",
         "url": "https://github.com/recharm/claude-plugin",
         "ref": "main",
-        "sha": "beb109ceee6e7a1d37e07088b14203d41c81fa6d",
+        "sha": "beb109ceee6e7a1d37e07088b14203d41c81fa6d"
       },
       "category": "design",
       "keywords": [
@@ -642,6 +642,18 @@
         "footage finder"
       ],
       "homepage": "https://www.recharm.com"
+    },
+    {
+      "name": "datadog",
+      "displayName": "Datadog",
+      "description": "Use Datadog directly in Claude Code through a preconfigured Datadog MCP server. Query logs, metrics, traces, dashboards, and more through natural conversation. This plugin is in preview.",
+      "category": "monitoring",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/datadog-labs/claude-code-plugin.git",
+        "sha": "96c28a8ce6f258ed54c9a17f16ee206deb8e3f28"
+      },
+      "homepage": "https://docs.datadoghq.com/bits_ai/mcp_server/setup?tab=claudecode"
     }
   ]
 }
