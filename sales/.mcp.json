@@ -36,10 +36,6 @@
       "type": "http",
       "url": "https://api.fireflies.ai/mcp"
     },
-    "ms365": {
-      "type": "http",
-      "url": "https://microsoft365.mcp.claude.com/mcp"
-    },
     "apollo": {
       "type": "http",
       "url": "https://mcp.apollo.io/mcp"

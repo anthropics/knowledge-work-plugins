@@ -169,7 +169,7 @@
         "url": "https://github.com/Bigdata-com/bigdata-plugins-marketplace.git",
         "path": "plugins/bigdata-com",
         "ref": "main",
-        "sha": "c77a09caabdc8783adbcbf8bbe05a0f57da12b19"
+        "sha": "67c30be97a0a3f46bc6e8d56df449ae108eda9c5"
       }
     },
     {
@@ -184,7 +184,7 @@
         "url": "https://github.com/miroapp/miro-ai.git",
         "path": "claude-plugins/miro",
         "ref": "main",
-        "sha": "706b24b6564eaaea33e75ac66c83af9abf3b5a41"
+        "sha": "9d7c3dc0a9a365b298e3808c741c53e2e80d86d1"
       }
     },
     {
@@ -222,7 +222,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "236348e29b31e834ce71e4e2e3072184dd1c1e27"
+        "sha": "2d7b7c08a31a6e5b613e33a9edc76456e4d7c052"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -233,7 +233,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Zoominfo/zoominfo-mcp-plugin.git",
-        "sha": "14752e4553312d8af3eb3a3264a97d76bb3e0215"
+        "sha": "cfdebda5f3ce24d0d964cc0b3e9e5dd9ea9d507d"
       },
       "homepage": "https://zoominfo.com"
     },
@@ -257,7 +257,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/daloopa/plugin.git",
-        "sha": "cc0d09689397e64db7344634246326e7d7d9a42d"
+        "sha": "a4d8e1ee1a85f291c36c07dbcb23d1ca0cd182b5"
       },
       "homepage": "https://github.com/daloopa/plugin"
     },
@@ -271,7 +271,7 @@
         "url": "https://github.com/zapier/zapier-mcp.git",
         "path": "plugins/zapier",
         "ref": "main",
-        "sha": "f34a7854febed415c9ef766eec1c66529ef0668e"
+        "sha": "770167c572deaf74c588b45d88003ddf2145d608"
       },
       "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier"
     },
@@ -315,7 +315,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/fastly/fastly-agent-toolkit.git",
-        "sha": "e0f4205723b843de0b07da4a2aea6c84a3bcb579"
+        "sha": "73af5b94a98448ffeed6e2993495dc83c9a597be"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
     },
@@ -337,7 +337,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Nimbleway/agent-skills.git",
-        "sha": "b3ab05d3c7c88857940c575e0f46752297b2249b"
+        "sha": "9736dfc757f5ed4f05da0480b202af09e93a27de"
       },
       "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation"
     },
@@ -348,7 +348,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/brightdata/skills.git",
-        "sha": "37145178dfc9b52e28dd224afeccc7184f7711fc"
+        "sha": "bd5bd76bc889f54b744bab3db3cbd42751a1e5b0"
       },
       "homepage": "https://docs.brightdata.com"
     },
@@ -370,7 +370,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/atlanhq/agent-toolkit.git",
-        "sha": "790398c87378f128bdc74c31bb7ecfb8e4695f29"
+        "sha": "789507c02d2495235240d10d67aaac8b2051023a"
       },
       "homepage": "https://docs.atlan.com/"
     },
@@ -380,10 +380,10 @@
       "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
       "source": {
         "source": "git-subdir",
-        "url": "techwolf-ai/ai-first-toolkit",
+        "url": "https://github.com/techwolf-ai/ai-first-toolkit.git",
         "path": "plugins/ai-firstify",
         "ref": "main",
-        "sha": "d7270ecd28f36d2454b36f397a28a96b0b7a5630"
+        "sha": "38aa811df152b0d9e98925c65661842d75d9b54a"
       },
       "homepage": "https://ai-first.techwolf.ai"
     },
@@ -405,7 +405,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/gitroomhq/postiz-agent.git",
-        "sha": "238aede6c72672b3201ae0ee533ec0cd53eb51d1"
+        "sha": "41c5a9dbd6b2776863e7c05c22e7a385c208321c"
       },
       "homepage": "https://postiz.com/agent"
     },
@@ -417,7 +417,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/figma/mcp-server-guide.git",
-        "sha": "a742f0a700a7772ff5ed85f7c9fc1dad5afa9fcc"
+        "sha": "2efd0e37d10c35c4a7cf6d2b7381c9dc1a569bd4"
       },
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
@@ -431,7 +431,7 @@
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
         "ref": "main",
-        "sha": "9ca1da262869ca2fb5f6c3daae2f7eeb648c937d"
+        "sha": "a5a5e4e401029cf85fa4b4bb452d0f039900ad43"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -475,7 +475,7 @@
         "url": "https://github.com/kensho-technologies/spglobal-agent-skills.git",
         "path": "plugins/spglobal-plugin",
         "ref": "main",
-        "sha": "6f41866ea66c63eb80c42e6f652efdac5870e540"
+        "sha": "6add941c4c084ca50ae23bc3df28b5a10a218c93"
       },
       "homepage": "https://kensho.com"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+        "sha": "fd503bbc698b89c6f88828acb2be2eaae71c6754"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+        "sha": "fd503bbc698b89c6f88828acb2be2eaae71c6754"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "aa132f2f5d16eeee6ad256bd19e468ac06e84cf2"
+        "sha": "fd503bbc698b89c6f88828acb2be2eaae71c6754"
       },
       "homepage": "https://carta.com"
     },
@@ -530,9 +530,105 @@
         "url": "https://github.com/Airtable/skills.git",
         "path": "plugins/airtable",
         "ref": "main",
-        "sha": "21d2fe52774d861e2f2f997eeac2bf965e8590b8"
+        "sha": "295ab93b7d765912ee1a0dc7f1abb0ecaf73f138"
       },
       "homepage": "https://www.airtable.com"
+    },
+    {
+      "name": "desktop-commander",
+      "description": "MCP server for terminal commands, process management, and file operations across text, code, PDF, DOCX, Excel, images, and structured data.",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
+        "path": "plugins/claude",
+        "ref": "main",
+        "sha": "7a9b2ff0339a7fdc29c06a9957b323ef478a1dde"
+      },
+      "homepage": "https://desktopcommander.app"
+    },
+    {
+      "name": "qodo-skills",
+      "description": "Shift-left code review skills that bring Qodo's quality standards and code review capabilities into your local development workflow. Catch issues before commit, enforce organizational standards, and resolve PR feedback directly in your agent.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/qodo-ai/qodo-skills.git",
+        "sha": "8aec13d6ac60feb9d9f84f36aa1753234de17dc8"
+      },
+      "homepage": "https://qodo.ai"
+    },
+    {
+      "name": "servicenow-sdk",
+      "description": "Create, edit, and deploy ServiceNow applications with the Fluent SDK effortlessly through Claude. Helps developers build, extend, and manage ServiceNow applications, workflows, and agents using the ServiceNow SDK.",
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ServiceNow/sdk.git",
+        "path": "providers/claude/plugin",
+        "ref": "main",
+        "sha": "35ef6130d8a49e67b531bde2f987808426273d15"
+      },
+      "homepage": "https://servicenow.github.io/sdk/"
+    },
+    {
+      "name": "twilio-developer-kit",
+      "description": "Twilio Skills provide procedural knowledge for AI coding agents — which APIs to use, in what order, and what to avoid. Covers SMS, Voice, WhatsApp, Verify, SendGrid, Compliance, and 30+ products.",
+      "author": {
+        "name": "Twilio"
+      },
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/twilio/ai.git",
+        "sha": "7d15b215240df28e86a0b7305520524a2c005005"
+      },
+      "homepage": "https://www.twilio.com"
+    },
+    {
+      "name": "vibe-prospecting",
+      "description": "Vibe Prospecting connects Claude to live B2B company and contact data so users can search, match, enrich, filter, and export prospects at scale. It turns natural-language requests into structured GTM workflows for lead generation, CRM enrichment, company research, executive discovery, and multi-step prospecting automation inside Claude Cowork and Claude Code.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/explorium-ai/vibeprospecting-plugin.git",
+        "sha": "aa5903f52d79e7f2a5f9c324c6fff7d5a5d92631"
+      },
+      "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
+    },
+    {
+      "name": "base44",
+      "description": "Build and deploy Base44 full-stack apps with CLI project management and JavaScript/TypeScript SDK development skills",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/base44/skills.git",
+        "sha": "aef0fa35f21b3c0c000d5ab8c0b068e6188618b6"
+      },
+      "homepage": "https://docs.base44.com"
+    },
+    {
+      "name": "wix",
+      "description": "Build, manage, and deploy Wix sites and apps. Includes CLI development skills and Wix MCP server for site management, eCommerce, CMS, dashboard extensions, and more.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/wix/skills.git",
+        "sha": "cda44c29c9155f6e7b3440f953969721aed246be"
+      },
+      "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
+    },
+    {
+      "name": "datadog",
+      "displayName": "Datadog",
+      "description": "Use Datadog directly in Claude Code through a preconfigured Datadog MCP server. Query logs, metrics, traces, dashboards, and more through natural conversation. This plugin is in preview.",
+      "category": "monitoring",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/datadog-labs/claude-code-plugin.git",
+        "sha": "96c28a8ce6f258ed54c9a17f16ee206deb8e3f28"
+      },
+      "homepage": "https://docs.datadoghq.com/bits_ai/mcp_server/setup?tab=claudecode"
     }
   ]
 }

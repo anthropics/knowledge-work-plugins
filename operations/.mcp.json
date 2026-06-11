@@ -27,10 +27,6 @@
     "asana": {
       "type": "http",
       "url": "https://mcp.asana.com/v2/mcp"
-    },
-    "ms365": {
-      "type": "http",
-      "url": "https://microsoft365.mcp.claude.com/mcp"
     }
   }
 }
