@@ -264,7 +264,7 @@
     {
       "name": "zapier",
       "displayName": "Zapier",
-      "description": "Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client.",
+      "description": "Connect your AI to thousands of apps and tens of thousands of pre-built actions through Zapier. Search, automate, and take action across your stack — directly from your AI client.",
       "category": "productivity",
       "source": {
         "source": "git-subdir",
