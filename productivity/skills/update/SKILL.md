@@ -20,6 +20,15 @@ Keep your task list and memory current. Two modes:
 /productivity:update --comprehensive
 ```
 
+## Date discipline
+
+Every output reference to a past meeting, a deadline, "yesterday," or a schedule window must resolve cleanly to an ISO date. Two rules:
+
+1. **Cite past events as `YYYY-MM-DD (DayOfWeek)`** — e.g. `2026-05-05 (Tue)`, never bare `Mon May 5` or `May 5`. Compute the day-of-week from the date string (against the current date in `<env>` or via `date -d "<YYYY-MM-DD>" +%a`). Never use a day-of-week label without verifying it from the date.
+2. **Never write "yesterday," "Monday," or "this week" without first anchoring on the ISO date.** When a tool returns `2026-05-05T14:00:00Z`, fix the date first, then translate to relative phrasing. The relative wording is output convenience; the ISO date is the source of truth.
+
+This catches a recurring drift mode where a scheduled run mis-labels Tuesday as Monday because the prior day's update used "Monday" and the model carries the phrasing forward without recomputing.
+
 ## Default Mode
 
 ### 1. Load Current State
@@ -138,6 +147,13 @@ From your activity, these look like todos you haven't captured:
 Let user pick which to add.
 
 ### Extra Step: Suggest New Memories
+
+Before flagging any new entity, **fuzzy-match against existing memory** — this catches the drift mode where two name variants of the same person get treated as two people across recurring runs.
+
+- **For people:** search `memory/people/` (and the People table in CLAUDE.md) by (a) full name, (b) email handle / Slack username, and (c) last name alone. First names often surface as nicknames or full forms — "Mike" and "Michael," or "Sue" and "Susan," can refer to the same person. If the email handle or last name matches anyone in memory, treat the name as already-known and update the existing record instead of flagging a new one.
+- **For projects/topics:** match against `memory/projects/` and the Active Projects context, including acronym ↔ full-name pairs.
+
+Only after the fuzzy match comes back empty should the entity surface as a new-memory suggestion.
 
 Surface new entities not in memory:
 
