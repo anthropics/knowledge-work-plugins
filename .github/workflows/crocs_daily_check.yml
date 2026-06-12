@@ -1,0 +1,37 @@
+name: Crocs Daily Price Check
+
+on:
+  # Budapest = UTC+2 (CEST nyáron), UTC+1 (CET télen)
+  # 06:00 Budapest idő = 04:00 UTC nyáron / 05:00 UTC télen
+  # A cron UTC-ben fut, ezért mindkettőre beállítjuk:
+  schedule:
+    - cron: "0 4 * * *"   # 06:00 CEST (április–október)
+    - cron: "0 5 * * *"   # 06:00 CET  (október–április)
+
+  # Kézi futtatáshoz:
+  workflow_dispatch:
+
+jobs:
+  check-crocs-prices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: crocs-monitor/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r crocs-monitor/requirements.txt
+
+      - name: Run Crocs price checker
+        env:
+          GMAIL_USER:         ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python crocs-monitor/crocs_checker.py
