@@ -48,15 +48,16 @@ Once installed, plugins activate automatically. Skills fire when relevant, and s
 
 ## How Plugins Work
 
-Every plugin follows the same structure:
+Every plugin follows the same baseline structure:
 
 ```
 plugin-name/
 ├── .claude-plugin/plugin.json   # Manifest
 ├── .mcp.json                    # Tool connections
-├── commands/                    # Slash commands you invoke explicitly
 └── skills/                      # Domain knowledge Claude draws on automatically
 ```
+
+Some plugins also include a `commands/` directory for explicit slash commands.
 
 - **Skills** encode the domain expertise, best practices, and step-by-step workflows Claude needs to give you useful help. Claude draws on them automatically when relevant.
 - **Commands** are explicit actions you trigger (e.g., `/finance:reconciliation`, `/product-management:write-spec`).
