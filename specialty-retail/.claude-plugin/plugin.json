@@ -1,0 +1,10 @@
+{
+  "name": "specialty-retail",
+  "version": "0.1.0",
+  "description": "Workflows for specialty retailers that carry floorplan-financed inventory — hot tub / pool / spa dealers, furniture stores, powersports, RV, marine, and similar. Covers floorplan-financing reconciliation (Wells Fargo CDF, Synchrony, consumer-finance dealer programs), per-unit refurbished-inventory P&L, ASC 606 deposit-at-sale / recognize-at-delivery revenue recognition, and OEM vendor pricing sync. Pairs well with the small-business plugin — this one handles the operational complexities specific to dealers.",
+  "author": {
+    "name": "East Texas Hot Tub Company",
+    "url": "https://easttexashottub.com"
+  },
+  "keywords": ["specialty-retail", "dealer", "floorplan", "consumer-financing", "asc-606", "wholesale", "inventory", "refurb", "hot-tub", "pool", "powersports", "rv", "furniture"]
+}
