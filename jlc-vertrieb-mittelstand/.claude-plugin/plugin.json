@@ -1,0 +1,22 @@
+{
+  "name": "jlc-vertrieb-mittelstand",
+  "version": "1.0.0",
+  "description": "B2B sales for the German Mittelstand — cold-outreach waves, trigger-based lead identification, sniper accounts, and a battle-tested cold-mail tuning pattern. Built by a BAFA-funded consultant in DACH for manufacturing accounts (30-250 employees).",
+  "author": {
+    "name": "Lepper Consulting",
+    "url": "https://lepperconsulting.de"
+  },
+  "homepage": "https://github.com/janjotel/jlc-vertrieb-mittelstand",
+  "license": "MIT",
+  "keywords": [
+    "sales",
+    "b2b",
+    "mittelstand",
+    "dach",
+    "outreach",
+    "cold-email",
+    "cold-call",
+    "trigger-based-selling",
+    "manufacturing"
+  ]
+}

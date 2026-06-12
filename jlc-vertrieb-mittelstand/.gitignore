@@ -1,0 +1,22 @@
+# Local settings (user-specific, should not be committed)
+settings.local.json
+.claude/settings.local.json
+**/.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node / Python misc (in case the user adds tooling later)
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
