@@ -97,6 +97,7 @@ Gather data from available MCP sources:
 - **Email:** Sent messages, recipients
 - **Documents:** Recent docs, collaborators
 - **Calendar:** Meetings, attendees
+- **Meeting transcripts** (if `~~conversation intelligence` MCP available): Retrieve the user's most recent ~20 attended meetings — pull attendee names, recurring meeting series, project codenames mentioned in transcripts, and AI-generated meeting notes. Meeting transcripts are the highest-density source of workplace shorthand (nicknames, project codenames, internal terms) — favor them when available.
 
 Build a braindump of people, projects, and terms found. Present findings grouped by confidence:
 - **Ready to add** (high confidence) — offer to add directly
