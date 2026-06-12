@@ -1,0 +1,10 @@
+{
+  "name": "k12-it-admin",
+  "version": "1.0.0",
+  "description": "Microsoft 365 security auditing for K-12 IT administrators. Seven skills covering threat detection, MFA compliance, admin role hygiene, Conditional Access, OAuth app permissions, guest accounts, and inactive accounts — all via the Microsoft Graph API with no extra tooling required.",
+  "author": {
+    "name": "Steve Mojica",
+    "url": "https://github.com/stevemojica"
+  },
+  "keywords": ["k12", "education", "microsoft-365", "security", "entra-id", "mfa", "conditional-access", "threat-scan", "it-admin", "ferpa", "graph-api", "audit"]
+}
