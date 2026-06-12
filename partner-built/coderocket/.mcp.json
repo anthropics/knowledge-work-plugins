@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "coderocket": {
+      "command": "npx",
+      "args": ["-y", "@mlgraham/coderocket-mcp@latest"],
+      "env": {
+        "CODEROCKET_API_KEY": "",
+        "CODEROCKET_API_URL": "https://deploy.coderocket.com/api/v1"
+      }
+    }
+  }
+}
