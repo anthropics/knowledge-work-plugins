@@ -87,6 +87,12 @@ Run parallel searches across all connected platforms. For each platform, execute
 - Retrieve transcripts from sales, customer, and strategy meetings
 - Look for meetings tagged or titled with brand-related topics
 
+**Grain:**
+- List attended meetings and search transcripts for brand-relevant calls
+- Retrieve full transcripts and AI-generated notes from sales, customer-research, and strategy meetings
+- Search persons or companies to surface meetings with marketing leads, executives, or specific customer accounts
+- Pull action items and coaching feedback to capture brand decisions and message effectiveness
+
 **Figma:**
 - Search for brand design systems, style guides
 - Look for files with "brand", "design system", "tokens"
@@ -210,4 +216,4 @@ Produce a structured report with these sections:
 - Redact PII (customer names, contact info) from all excerpts
 - If a platform returns no results, note it explicitly rather than omitting silently
 - If fewer than 3 sources are found, flag the discovery as "low coverage" and recommend additional sources
-- If only supplementary platforms (Slack, Gong, Granola, Figma) are connected with no document platforms, flag this prominently in the report summary: results are based on conversational and design sources only, and formal brand documents may exist on unconnected platforms
+- If only supplementary platforms (Slack, Gong, Granola, Grain, Figma) are connected with no document platforms, flag this prominently in the report summary: results are based on conversational and design sources only, and formal brand documents may exist on unconnected platforms

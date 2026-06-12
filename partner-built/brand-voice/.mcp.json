@@ -23,6 +23,10 @@
     "granola": {
       "type": "http",
       "url": "https://mcp.granola.ai/mcp"
+    },
+    "grain": {
+      "type": "http",
+      "url": "https://api.grain.com/_/mcp"
     }
   }
 }
