@@ -242,10 +242,38 @@ If the user says "whatever you think is best," provide specific recommendations 
    - Report what passed and what didn't, the same way the CLI validator would
 
    Fix any errors before proceeding.
-4. Package as a `.plugin` file:
+4. Package as a `.plugin` file. Verify the archive's `SKILL.md` files byte-match the source **before** copying to outputs - silent mid-word truncation has been observed during archive creation and is hard to spot post-install. Run all steps in a single shell with `set -e` so a verifier finding halts the flow before a corrupted archive reaches the user:
 
 ```bash
-cd /path/to/plugin-dir && zip -r /tmp/plugin-name.plugin . -x "*.DS_Store" && cp /tmp/plugin-name.plugin /path/to/outputs/plugin-name.plugin
+set -e
+
+# Build the archive in /tmp first
+cd /path/to/plugin-dir
+zip -r /tmp/plugin-name.plugin . -x "*.DS_Store"
+
+# Verify every SKILL.md in the archive byte-matches the source on disk.
+# Exit 1 (and halt the flow under set -e) on any mismatch or missing file.
+SRC=/path/to/plugin-dir ARC=/tmp/plugin-name.plugin python3 - <<'PY'
+import os, sys, zipfile
+src, arc = os.environ["SRC"], os.environ["ARC"]
+fail = 0
+with zipfile.ZipFile(arc) as z:
+    for info in z.infolist():
+        if not info.filename.endswith("SKILL.md"):
+            continue
+        disk = os.path.join(src, info.filename)
+        if not os.path.isfile(disk):
+            print(f"[FAIL] {info.filename}: missing in source"); fail += 1; continue
+        with open(disk, "rb") as f: src_bytes = f.read()
+        with z.open(info) as f: arc_bytes = f.read()
+        if src_bytes != arc_bytes:
+            print(f"[FAIL] {info.filename}: archive {len(arc_bytes)}B vs source {len(src_bytes)}B")
+            fail += 1
+sys.exit(1 if fail else 0)
+PY
+
+# Only reached if the verifier returned exit 0
+cp /tmp/plugin-name.plugin /path/to/outputs/plugin-name.plugin
 ```
 
 > **Important**: Always create the zip in `/tmp/` first, then copy to the outputs folder. Writing directly to the outputs folder may fail due to permissions.
