@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "ms365": {
+      "type": "http",
+      "url": "https://microsoft365.mcp.claude.com/mcp"
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp"
+    }
+  }
+}

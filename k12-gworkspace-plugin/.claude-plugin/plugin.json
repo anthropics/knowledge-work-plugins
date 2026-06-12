@@ -1,0 +1,10 @@
+{
+  "name": "k12-gworkspace",
+  "version": "1.0.0",
+  "description": "Google Workspace security auditing for K-12 IT administrators. Seven skills covering threat detection, inactive accounts, external Drive sharing (FERPA), admin activity, OAuth app permissions, storage usage, and Google Meet compliance — all via the Admin SDK Reports API and a service account with domain-wide delegation.",
+  "author": {
+    "name": "Steve Mojica",
+    "url": "https://github.com/stevemojica"
+  },
+  "keywords": ["k12", "education", "google-workspace", "security", "admin-sdk", "ferpa", "drive", "oauth", "threat-scan", "it-admin", "compliance", "meet"]
+}
