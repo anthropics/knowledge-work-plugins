@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "bonito": {
+      "command": "bonito-mcp",
+      "env": {
+        "BONITO_API_KEY": ""
+      }
+    }
+  }
+}
