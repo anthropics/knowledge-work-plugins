@@ -13,6 +13,7 @@ Example:
 import sys
 import zipfile
 from pathlib import Path
+from typing import Optional
 
 
 def validate_skill(skill_path: Path) -> tuple[bool, str]:
@@ -38,10 +39,24 @@ def validate_skill(skill_path: Path) -> tuple[bool, str]:
     if "[PLACEHOLDER]" in content or "[COMPANY]" in content:
         return False, "SKILL.md contains unfilled placeholder text"
 
+    # Validate stability field if present
+    allowed_stability_values = ["experimental", "stable", "deprecated"]
+
+    for line in content.splitlines():
+        if line.strip().startswith("stability:"):
+            stability_value = line.split(":", 1)[1].strip()
+
+            if stability_value not in allowed_stability_values:
+                return (
+                    False,
+                    f"Invalid stability value: '{stability_value}'. "
+                    f"Allowed values are: {', '.join(allowed_stability_values)}"
+                )
+
     return True, "Validation passed"
 
 
-def package_skill(skill_path: str, output_dir: str = None) -> Path | None:
+def package_skill(skill_path: str, output_dir: str = None) -> Optional[Path]:
     """
     Package a skill folder into a .skill file.
 
