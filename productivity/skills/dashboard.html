@@ -768,8 +768,8 @@
     .memory-flat-table th {
       text-align: left;
       padding: 10px 16px;
-      font-weight: 500;
-      color: var(--text-muted);
+      font-weight: 700;
+      color: var(--text-primary);
       border-bottom: 1px solid var(--border);
       font-size: 12px;
       text-transform: uppercase;
@@ -806,7 +806,26 @@
       cursor: pointer;
       transition: all 0.15s ease;
       box-shadow: 0 1px 3px var(--shadow);
+      position: relative;
     }
+
+    .memory-card-delete {
+      display: none;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .memory-card:hover .memory-card-delete { display: block; }
+    .memory-card-delete:hover { color: #d44; }
 
     .memory-card:hover {
       border-color: var(--accent);
@@ -880,6 +899,12 @@
       background: var(--bg-secondary);
     }
 
+    .file-card-header .edit-btn {
+      font-size: 12px;
+      padding: 4px 10px;
+      cursor: pointer;
+    }
+
     .file-card-title {
       font-size: 14px;
       font-weight: 600;
@@ -899,35 +924,6 @@
 
     .file-card-content.expanded {
       display: block;
-    }
-
-    .stats {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-
-    .stat {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: 10px;
-      padding: 16px 24px;
-      min-width: 100px;
-      box-shadow: 0 1px 3px var(--shadow);
-    }
-
-    .stat-value {
-      font-size: 28px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .stat-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      text-transform: capitalize;
-      margin-top: 4px;
     }
 
     .search-box {
@@ -1273,6 +1269,46 @@
       statusEl.textContent = msg;
       statusEl.classList.add('visible');
       setTimeout(() => statusEl.classList.remove('visible'), 2000);
+    }
+
+    // ===== INDEXEDDB PERSISTENCE =====
+    function openDB() {
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open('ProductivityDashboard', 1);
+        req.onupgradeneeded = () => req.result.createObjectStore('handles');
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    async function saveHandle(key, handle) {
+      const db = await openDB();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction('handles', 'readwrite');
+        tx.objectStore('handles').put(handle, key);
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(tx.error);
+      });
+    }
+
+    async function getHandle(key) {
+      const db = await openDB();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction('handles', 'readonly');
+        const req = tx.objectStore('handles').get(key);
+        req.onsuccess = () => resolve(req.result || null);
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    async function clearHandle(key) {
+      const db = await openDB();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction('handles', 'readwrite');
+        tx.objectStore('handles').delete(key);
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(tx.error);
+      });
     }
 
     // ===== MAIN TAB SWITCHING =====
@@ -1893,6 +1929,141 @@
       if (watchInterval) { clearInterval(watchInterval); watchInterval = null; }
     }
 
+    // ===== MEMORY WATCHING =====
+    async function buildMemoryTimestampMap() {
+      const map = {};
+      // CLAUDE.md
+      if (memoryData.claudeMd && memoryData.claudeMd.fileHandle) {
+        try {
+          const f = await memoryData.claudeMd.fileHandle.getFile();
+          map['CLAUDE.md'] = f.lastModified;
+        } catch (e) {}
+      }
+      // Root memory files
+      for (const file of memoryData.memoryFiles) {
+        try {
+          const f = await file.fileHandle.getFile();
+          map['memory/' + file.name] = f.lastModified;
+        } catch (e) {}
+      }
+      // Subdirectory files
+      for (const [dirName, files] of Object.entries(memoryData.memoryDirs)) {
+        for (const file of files) {
+          try {
+            const f = await file.fileHandle.getFile();
+            map['memory/' + dirName + '/' + file.name] = f.lastModified;
+          } catch (e) {}
+        }
+      }
+      return map;
+    }
+
+    async function countMemoryFiles() {
+      let count = 0;
+      try {
+        const memoryDir = await memoryDirHandle.getDirectoryHandle('memory');
+        for await (const entry of memoryDir.values()) {
+          if (entry.kind === 'file' && entry.name.endsWith('.md')) {
+            count++;
+          } else if (entry.kind === 'directory') {
+            for await (const subEntry of entry.values()) {
+              if (subEntry.kind === 'file' && subEntry.name.endsWith('.md')) {
+                count++;
+              }
+            }
+          }
+        }
+      } catch (e) {}
+      // Also count CLAUDE.md
+      try {
+        await memoryDirHandle.getFileHandle('CLAUDE.md');
+        count++;
+      } catch (e) {}
+      return count;
+    }
+
+    async function checkForMemoryChanges() {
+      if (!memoryDirHandle || isMemoryRefreshing) return;
+      if (modalOverlay.classList.contains('visible')) return;
+
+      try {
+        // Check timestamps of known files
+        let changed = false;
+        for (const [path, oldTimestamp] of Object.entries(memoryLastModifiedMap)) {
+          try {
+            let handle;
+            if (path === 'CLAUDE.md') {
+              handle = memoryData.claudeMd?.fileHandle;
+            } else {
+              const parts = path.split('/');
+              if (parts.length === 2) {
+                const file = memoryData.memoryFiles.find(f => f.name === parts[1]);
+                handle = file?.fileHandle;
+              } else if (parts.length === 3) {
+                const dirFiles = memoryData.memoryDirs[parts[1]];
+                const file = dirFiles?.find(f => f.name === parts[2]);
+                handle = file?.fileHandle;
+              }
+            }
+            if (handle) {
+              const f = await handle.getFile();
+              if (f.lastModified !== oldTimestamp) { changed = true; break; }
+            }
+          } catch (e) { changed = true; break; }
+        }
+
+        // Check for additions/deletions by comparing file count
+        if (!changed) {
+          const currentCount = await countMemoryFiles();
+          const knownCount = Object.keys(memoryLastModifiedMap).length;
+          if (currentCount !== knownCount) changed = true;
+        }
+
+        if (changed) {
+          isMemoryRefreshing = true;
+          const activeTab = memoryTabsContainer.querySelector('.memory-tab.active');
+          const activeTabId = activeTab ? activeTab.dataset.tab : null;
+          const searchInput = document.getElementById('dirSearch');
+          const savedSearch = searchInput ? searchInput.value : '';
+
+          await loadMemoryFromHandle();
+          memoryLastModifiedMap = await buildMemoryTimestampMap();
+
+          // Restore active tab
+          if (activeTabId) {
+            const tabToRestore = memoryTabsContainer.querySelector(`[data-tab="${activeTabId}"]`);
+            if (tabToRestore) {
+              memoryTabsContainer.querySelectorAll('.memory-tab').forEach(t => t.classList.remove('active'));
+              tabToRestore.classList.add('active');
+              renderMemoryContent();
+            }
+          }
+
+          // Restore search state
+          const newSearchInput = document.getElementById('dirSearch');
+          if (newSearchInput && savedSearch) {
+            newSearchInput.value = savedSearch;
+            filterMemoryTab(savedSearch);
+          }
+
+          showStatus('Memory reloaded');
+          isMemoryRefreshing = false;
+        }
+      } catch (e) {
+        console.log('Memory watch error:', e);
+        isMemoryRefreshing = false;
+      }
+    }
+
+    function startMemoryWatching() {
+      if (memoryWatchInterval) clearInterval(memoryWatchInterval);
+      memoryWatchInterval = setInterval(checkForMemoryChanges, 1000);
+    }
+
+    function stopMemoryWatching() {
+      if (memoryWatchInterval) { clearInterval(memoryWatchInterval); memoryWatchInterval = null; }
+    }
+
     function renderTasks() {
       if (currentView === 'board') { renderBoard(); }
       else { renderList(); }
@@ -2438,6 +2609,7 @@
         [taskFileHandle] = await window.showOpenFilePicker({
           types: [{ description: 'Markdown', accept: { 'text/markdown': ['.md'] } }]
         });
+        await saveHandle('taskFileHandle', taskFileHandle);
         const file = await taskFileHandle.getFile();
         const content = await file.text();
         lastModified = file.lastModified;
@@ -2483,6 +2655,9 @@
       memoryFiles: [],
       memoryDirs: {}
     };
+    let memoryWatchInterval = null;
+    let memoryLastModifiedMap = {};
+    let isMemoryRefreshing = false;
 
     const memoryEmptyState = document.getElementById('memoryEmptyState');
     const memoryMainContent = document.getElementById('memoryMainContent');
@@ -2568,54 +2743,60 @@
         .join(' ');
     }
 
-    async function loadMemoryDirectory() {
+    async function loadMemoryFromHandle() {
+      memoryData = { claudeMd: null, memoryFiles: [], memoryDirs: {} };
+
       try {
-        memoryDirHandle = await window.showDirectoryPicker();
+        const claudeFileHandle = await memoryDirHandle.getFileHandle('CLAUDE.md');
+        const file = await claudeFileHandle.getFile();
+        memoryData.claudeMd = { content: await file.text(), fileHandle: claudeFileHandle };
+      } catch (e) { console.log('No CLAUDE.md found'); }
 
-        memoryData = { claudeMd: null, memoryFiles: [], memoryDirs: {} };
-
-        try {
-          const claudeFileHandle = await memoryDirHandle.getFileHandle('CLAUDE.md');
-          const file = await claudeFileHandle.getFile();
-          memoryData.claudeMd = { content: await file.text(), fileHandle: claudeFileHandle };
-        } catch (e) { console.log('No CLAUDE.md found'); }
-
-        try {
-          const memoryDir = await memoryDirHandle.getDirectoryHandle('memory');
-          for await (const entry of memoryDir.values()) {
-            if (entry.kind === 'file' && entry.name.endsWith('.md')) {
-              const file = await entry.getFile();
-              memoryData.memoryFiles.push({
-                name: entry.name,
-                content: await file.text(),
-                fileHandle: entry
-              });
-            } else if (entry.kind === 'directory') {
-              memoryData.memoryDirs[entry.name] = [];
-              const subDirHandle = entry;
-              for await (const subEntry of subDirHandle.values()) {
-                if (subEntry.kind === 'file' && subEntry.name.endsWith('.md')) {
-                  const file = await subEntry.getFile();
-                  const content = await file.text();
-                  memoryData.memoryDirs[entry.name].push({
-                    name: subEntry.name,
-                    content: content,
-                    fileHandle: subEntry,
-                    dirHandle: subDirHandle,
-                    parsed: parseMemoryMarkdown(content)
-                  });
-                }
+      try {
+        const memoryDir = await memoryDirHandle.getDirectoryHandle('memory');
+        for await (const entry of memoryDir.values()) {
+          if (entry.kind === 'file' && entry.name.endsWith('.md')) {
+            const file = await entry.getFile();
+            memoryData.memoryFiles.push({
+              name: entry.name,
+              content: await file.text(),
+              fileHandle: entry
+            });
+          } else if (entry.kind === 'directory') {
+            memoryData.memoryDirs[entry.name] = [];
+            const subDirHandle = entry;
+            for await (const subEntry of subDirHandle.values()) {
+              if (subEntry.kind === 'file' && subEntry.name.endsWith('.md')) {
+                const file = await subEntry.getFile();
+                const content = await file.text();
+                memoryData.memoryDirs[entry.name].push({
+                  name: subEntry.name,
+                  content: content,
+                  fileHandle: subEntry,
+                  dirHandle: subDirHandle,
+                  parsed: parseMemoryMarkdown(content)
+                });
               }
             }
           }
-        } catch (e) { console.log('No memory/ directory found'); }
+        }
+      } catch (e) { console.log('No memory/ directory found'); }
 
-        renderMemory();
-        memoryEmptyState.style.display = 'none';
-        memoryMainContent.style.display = 'flex';
-        filePathEl.textContent = memoryDirHandle.name;
+      renderMemory();
+      memoryEmptyState.style.display = 'none';
+      memoryMainContent.style.display = 'flex';
+      filePathEl.textContent = memoryDirHandle.name;
+
+      memoryLastModifiedMap = await buildMemoryTimestampMap();
+      startMemoryWatching();
+    }
+
+    async function loadMemoryDirectory() {
+      try {
+        memoryDirHandle = await window.showDirectoryPicker();
+        await saveHandle('memoryDirHandle', memoryDirHandle);
+        await loadMemoryFromHandle();
         showStatus('Loaded memory from ' + memoryDirHandle.name);
-
       } catch (e) {
         if (e.name !== 'AbortError') { showStatus('Error: ' + e.message); }
       }
@@ -2638,27 +2819,9 @@
         html += `<button class="memory-tab${!memoryData.claudeMd && memoryData.memoryFiles[0] === file ? ' active' : ''}" data-tab="file-${name}">${name}</button>`;
       }
 
-      for (const dirName of Object.keys(memoryData.memoryDirs).sort()) {
-        const files = memoryData.memoryDirs[dirName];
-        let count;
-        if (dirName === 'context') {
-          count = 0;
-          for (const file of files) {
-            const p = file.parsed;
-            count += Object.keys(p.fields).length;
-            for (const table of p.tables) {
-              count += table.rows.length;
-            }
-            for (const [sName, sContent] of Object.entries(p.sections)) {
-              if (sContent && sName !== '_intro') {
-                count += sContent.split('\n').filter(l => l.trim() && !l.trim().startsWith('|')).length;
-              }
-            }
-          }
-        } else {
-          count = files.length;
-        }
-        html += `<button class="memory-tab" data-tab="dir-${dirName}">${dirName} <span class="count">${count}</span></button>`;
+      const stats = getMemoryStats();
+      for (const s of stats) {
+        html += `<button class="memory-tab" data-tab="dir-${s.label}">${s.label} <span class="count">${s.count}</span></button>`;
       }
 
       memoryTabsContainer.innerHTML = html;
@@ -2688,46 +2851,94 @@
       }
     }
 
+    function getMemoryStats() {
+      const stats = [];
+      for (const [dirName, files] of Object.entries(memoryData.memoryDirs).sort(([a],[b]) => a.localeCompare(b))) {
+        const count = files.length;
+        stats.push({ label: dirName, count });
+      }
+      return stats;
+    }
+
+    function renderSearchBoxHtml(placeholder) {
+      return `
+        <div class="search-box">
+          <span style="color: var(--text-muted);">&#128269;</span>
+          <input type="text" placeholder="${placeholder}" id="dirSearch" oninput="filterMemoryTab(this.value)">
+        </div>
+      `;
+    }
+
+    function renderParsedFlatTables(parsed) {
+      let html = '';
+      const fieldEntries = Object.entries(parsed.fields);
+      if (fieldEntries.length > 0) {
+        html += `<div class="file-card" style="margin-bottom: 16px;"><table class="memory-flat-table"><tbody>`;
+        for (const [key, value] of fieldEntries) {
+          html += `<tr data-search="${escapeHtml((key + ' ' + value).toLowerCase())}"><td>${escapeHtml(key)}</td><td>${escapeHtml(value)}</td></tr>`;
+        }
+        html += `</tbody></table></div>`;
+      }
+
+      for (const table of parsed.tables) {
+        html += `<div class="file-card" style="margin-bottom: 16px;"><table class="memory-flat-table"><thead><tr>`;
+        for (const h of table.headers) {
+          html += `<th>${escapeHtml(h)}</th>`;
+        }
+        html += `</tr></thead><tbody>`;
+        for (const row of table.rows) {
+          const searchData = row.join(' ').toLowerCase();
+          html += `<tr data-search="${escapeHtml(searchData)}">`;
+          for (const cell of row) {
+            html += `<td>${escapeHtml(cell)}</td>`;
+          }
+          html += `</tr>`;
+        }
+        html += `</tbody></table></div>`;
+      }
+
+      for (const [sectionName, sectionContent] of Object.entries(parsed.sections)) {
+        if (!sectionContent || sectionName === '_intro') continue;
+        const lines = sectionContent.split('\n').filter(l => l.trim() && !l.trim().startsWith('|'));
+        if (lines.length === 0) continue;
+        html += `<div class="file-card" style="margin-bottom: 16px;"><table class="memory-flat-table"><thead><tr><th colspan="2">${escapeHtml(sectionName)}</th></tr></thead><tbody>`;
+        for (const line of lines) {
+          const cleanLine = line.replace(/^[-*]\s*/, '').replace(/\*\*(.+?)\*\*/g, '$1').trim();
+          if (!cleanLine) continue;
+          html += `<tr data-search="${escapeHtml((sectionName + ' ' + cleanLine).toLowerCase())}"><td colspan="2">${escapeHtml(cleanLine)}</td></tr>`;
+        }
+        html += `</tbody></table></div>`;
+      }
+
+      return html;
+    }
+
+    function hasStructuredContent(parsed) {
+      return Object.keys(parsed.fields).length > 0
+        || parsed.tables.length > 0
+        || Object.entries(parsed.sections).some(([name, content]) => name !== '_intro' && content && content.trim());
+    }
+
     function renderMemoryOverview() {
       if (!memoryData.claudeMd) return;
 
-      let statsHtml = '<div class="stats">';
-      for (const [dirName, files] of Object.entries(memoryData.memoryDirs)) {
-        let count;
-        if (dirName === 'context') {
-          count = 0;
-          for (const file of files) {
-            const p = file.parsed;
-            count += Object.keys(p.fields).length;
-            for (const table of p.tables) { count += table.rows.length; }
-            for (const [sName, sContent] of Object.entries(p.sections)) {
-              if (sContent && sName !== '_intro') {
-                count += sContent.split('\n').filter(l => l.trim() && !l.trim().startsWith('|')).length;
-              }
-            }
-          }
-        } else {
-          count = files.length;
-        }
-        statsHtml += `
-          <div class="stat">
-            <div class="stat-value">${count}</div>
-            <div class="stat-label">${dirName}</div>
-          </div>
-        `;
-      }
-      statsHtml += '</div>';
+      const parsed = parseMemoryMarkdown(memoryData.claudeMd.content);
+      let contentHtml;
 
-      const claudeContent = renderMarkdownToHtml(memoryData.claudeMd.content);
+      if (hasStructuredContent(parsed)) {
+        contentHtml = renderParsedFlatTables(parsed);
+      } else {
+        // Fallback: raw markdown in a searchable file-card
+        const rendered = renderMarkdownToHtml(memoryData.claudeMd.content);
+        contentHtml = `<div class="file-card" data-search="${escapeHtml(memoryData.claudeMd.content.toLowerCase())}" style="margin-bottom: 16px;">
+          <div class="file-card-content expanded markdown-content">${rendered}</div>
+        </div>`;
+      }
 
       memoryContentContainer.innerHTML = `
-        ${statsHtml}
-        <div class="file-card">
-          <div class="file-card-header" onclick="this.nextElementSibling.classList.toggle('expanded'); this.querySelector('.toggle').textContent = this.nextElementSibling.classList.contains('expanded') ? '\u2212' : '+'">
-            <span class="file-card-title">CLAUDE.md</span>
-            <span class="toggle" style="color: var(--text-muted);">&minus;</span>
-          </div>
-          <div class="file-card-content expanded markdown-content">${claudeContent}</div>
+        ${renderSearchBoxHtml('Search overview...')}
+        <div id="dirGrid">
+          ${contentHtml}
         </div>
         <button onclick="openEditModal('CLAUDE.md', 'claudeMd')" style="margin-top: 10px;">Edit CLAUDE.md</button>
       `;
@@ -2737,14 +2948,22 @@
       const file = memoryData.memoryFiles.find(f => f.name === fileName);
       if (!file) return;
 
-      const content = renderMarkdownToHtml(file.content);
+      const parsed = parseMemoryMarkdown(file.content);
+      let contentHtml;
+
+      if (hasStructuredContent(parsed)) {
+        contentHtml = renderParsedFlatTables(parsed);
+      } else {
+        const rendered = renderMarkdownToHtml(file.content);
+        contentHtml = `<div class="file-card" data-search="${escapeHtml(file.content.toLowerCase())}" style="margin-bottom: 16px;">
+          <div class="file-card-content expanded markdown-content">${rendered}</div>
+        </div>`;
+      }
 
       memoryContentContainer.innerHTML = `
-        <div class="file-card">
-          <div class="file-card-header">
-            <span class="file-card-title">${fileName}</span>
-          </div>
-          <div class="file-card-content expanded markdown-content">${content}</div>
+        ${renderSearchBoxHtml('Search ' + fileName.replace('.md', '') + '...')}
+        <div id="dirGrid">
+          ${contentHtml}
         </div>
         <button onclick="openEditModal('${fileName}', 'memoryFile')" style="margin-top: 10px;">Edit ${fileName}</button>
       `;
@@ -2753,20 +2972,10 @@
     function renderMemoryDirectory(dirName) {
       const files = memoryData.memoryDirs[dirName] || [];
 
-      // Context directory uses flat list view
-      if (dirName === 'context') {
-        renderMemoryDirectoryFlat(dirName, files);
-        return;
-      }
-
-      // All other directories use card grid view
-      let html = `
-        <div class="search-box">
-          <span style="color: var(--text-muted);">&#128269;</span>
-          <input type="text" placeholder="Search ${dirName}..." id="dirSearch" oninput="filterMemoryDirectory('${dirName}', this.value)">
-        </div>
-        <div class="memory-grid" id="dirGrid">
-      `;
+      // All directories use card grid view
+      let html = '';
+      html += renderSearchBoxHtml('Search ' + dirName + '...');
+      html += `<div class="memory-grid" id="dirGrid">`;
 
       for (const file of files) {
         const p = file.parsed;
@@ -2798,6 +3007,7 @@
 
         html += `
           <div class="memory-card" onclick="openFileModal('${dirName}', '${file.name}')" data-search="${escapeHtml((title + ' ' + JSON.stringify(p.fields) + ' ' + p.rawContent).toLowerCase())}">
+            <button class="memory-card-delete" onclick="event.stopPropagation(); deleteMemoryFile('${dirName}', '${file.name}')" title="Delete">&times;</button>
             <div class="memory-card-title">${escapeHtml(title)}</div>
             ${fieldsHtml}
             <div class="memory-card-preview">${escapeHtml(preview)}</div>
@@ -2815,57 +3025,82 @@
     }
 
     function renderMemoryDirectoryFlat(dirName, files) {
-      let html = `
-        <div class="search-box">
-          <span style="color: var(--text-muted);">&#128269;</span>
-          <input type="text" placeholder="Search ${dirName}..." id="dirSearch" oninput="filterMemoryDirectory('${dirName}', this.value)">
-        </div>
-        <div id="dirGrid">
-      `;
+      let html = '';
+      html += renderSearchBoxHtml('Search ' + dirName + '...');
+      html += `<div id="dirGrid">`;
 
       for (const file of files) {
         const p = file.parsed;
+        const displayName = p.title || getDisplayName(file.name);
+        let isFirstCard = true;
+
+        // Helper to wrap content in a file-card with optional header
+        function wrapFileCard(innerHtml) {
+          let card = `<div class="file-card" style="margin-bottom: 16px;">`;
+          if (isFirstCard) {
+            card += `<div class="file-card-header">
+              <span class="file-card-title">${escapeHtml(displayName)}</span>
+              <button class="edit-btn" onclick="openFileModal('${dirName}', '${file.name}')">Edit</button>
+            </div>`;
+            isFirstCard = false;
+          }
+          card += innerHtml + `</div>`;
+          return card;
+        }
 
         // Render fields as a key-value table
         const fieldEntries = Object.entries(p.fields);
         if (fieldEntries.length > 0) {
-          html += `<div class="file-card" style="margin-bottom: 16px;"><table class="memory-flat-table"><tbody>`;
+          let tableHtml = `<table class="memory-flat-table"><tbody>`;
           for (const [key, value] of fieldEntries) {
-            html += `<tr data-search="${escapeHtml((key + ' ' + value).toLowerCase())}"><td>${escapeHtml(key)}</td><td>${escapeHtml(value)}</td></tr>`;
+            tableHtml += `<tr data-search="${escapeHtml((key + ' ' + value).toLowerCase())}"><td>${escapeHtml(key)}</td><td>${escapeHtml(value)}</td></tr>`;
           }
-          html += `</tbody></table></div>`;
+          tableHtml += `</tbody></table>`;
+          html += wrapFileCard(tableHtml);
         }
 
-        // Render parsed tables (teams, tools, etc.) as proper HTML tables
+        // Render parsed tables
         for (const table of p.tables) {
-          html += `<div class="file-card" style="margin-bottom: 16px;"><table class="memory-flat-table"><thead><tr>`;
+          let tableHtml = `<table class="memory-flat-table"><thead><tr>`;
           for (const h of table.headers) {
-            html += `<th>${escapeHtml(h)}</th>`;
+            tableHtml += `<th>${escapeHtml(h)}</th>`;
           }
-          html += `</tr></thead><tbody>`;
+          tableHtml += `</tr></thead><tbody>`;
           for (const row of table.rows) {
             const searchData = row.join(' ').toLowerCase();
-            html += `<tr data-search="${escapeHtml(searchData)}">`;
+            tableHtml += `<tr data-search="${escapeHtml(searchData)}">`;
             for (const cell of row) {
-              html += `<td>${escapeHtml(cell)}</td>`;
+              tableHtml += `<td>${escapeHtml(cell)}</td>`;
             }
-            html += `</tr>`;
+            tableHtml += `</tr>`;
           }
-          html += `</tbody></table></div>`;
+          tableHtml += `</tbody></table>`;
+          html += wrapFileCard(tableHtml);
         }
 
-        // Render non-table section content as list items
+        // Render non-table section content
         for (const [sectionName, sectionContent] of Object.entries(p.sections)) {
           if (!sectionContent || sectionName === '_intro') continue;
           const lines = sectionContent.split('\n').filter(l => l.trim() && !l.trim().startsWith('|'));
           if (lines.length === 0) continue;
-          html += `<div class="file-card" style="margin-bottom: 16px;"><table class="memory-flat-table"><thead><tr><th colspan="2">${escapeHtml(sectionName)}</th></tr></thead><tbody>`;
+          let tableHtml = `<table class="memory-flat-table"><thead><tr><th colspan="2">${escapeHtml(sectionName)}</th></tr></thead><tbody>`;
           for (const line of lines) {
             const cleanLine = line.replace(/^[-*]\s*/, '').replace(/\*\*(.+?)\*\*/g, '$1').trim();
             if (!cleanLine) continue;
-            html += `<tr data-search="${escapeHtml((sectionName + ' ' + cleanLine).toLowerCase())}"><td colspan="2">${escapeHtml(cleanLine)}</td></tr>`;
+            tableHtml += `<tr data-search="${escapeHtml((sectionName + ' ' + cleanLine).toLowerCase())}"><td colspan="2">${escapeHtml(cleanLine)}</td></tr>`;
           }
-          html += `</tbody></table></div>`;
+          tableHtml += `</tbody></table>`;
+          html += wrapFileCard(tableHtml);
+        }
+
+        // If no structured content was rendered, ensure the header+edit button still appear
+        if (isFirstCard) {
+          html += `<div class="file-card" style="margin-bottom: 16px;">
+            <div class="file-card-header">
+              <span class="file-card-title">${escapeHtml(displayName)}</span>
+              <button class="edit-btn" onclick="openFileModal('${dirName}', '${file.name}')">Edit</button>
+            </div>
+          </div>`;
         }
       }
 
@@ -2873,14 +3108,26 @@
       memoryContentContainer.innerHTML = html;
     }
 
-    function filterMemoryDirectory(dirName, searchTerm) {
+    function filterMemoryTab(searchTerm) {
       const grid = document.getElementById('dirGrid');
-      const items = grid.querySelectorAll('.memory-card, tr[data-search]');
-      const search = searchTerm.toLowerCase();
+      if (!grid) return;
+      const search = (typeof searchTerm === 'string' ? searchTerm : '').toLowerCase();
+      const items = grid.querySelectorAll('.memory-card, tr[data-search], .file-card[data-search]');
       items.forEach(item => {
         const searchData = item.dataset.search || '';
         item.style.display = (!search || searchData.includes(search)) ? '' : 'none';
       });
+      // Collapse file-card containers if all their searchable rows are hidden
+      grid.querySelectorAll('.file-card:not([data-search])').forEach(card => {
+        const rows = card.querySelectorAll('tr[data-search]');
+        if (rows.length === 0) return;
+        const allHidden = Array.from(rows).every(r => r.style.display === 'none');
+        card.style.display = allHidden ? 'none' : '';
+      });
+    }
+
+    function filterMemoryDirectory(dirName, searchTerm) {
+      filterMemoryTab(searchTerm);
     }
 
     function renderMarkdownToHtml(md) {
@@ -2926,8 +3173,13 @@
       const file = files.find(f => f.name === fileName);
       if (!file) return;
 
-      document.getElementById('modalTitle').textContent = getDisplayName(fileName);
+      const modalTitle = document.getElementById('modalTitle');
+      modalTitle.textContent = getDisplayName(fileName);
+
       document.getElementById('modalBody').innerHTML = `
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 12px;">
+          <button onclick="deleteMemoryFile('${dirName}', '${fileName}', true)" style="color: #d44; border-color: #d44; font-size: 13px; padding: 6px 14px;">Delete</button>
+        </div>
         <div class="markdown-content" style="margin-bottom: 20px;">
           ${renderMarkdownToHtml(file.content)}
         </div>
@@ -3073,6 +3325,25 @@
       }
     }
 
+    async function deleteMemoryFile(dirName, fileName, fromModal) {
+      if (!confirm(`Delete "${getDisplayName(fileName)}"?`)) return;
+      try {
+        const memoryDir = await memoryDirHandle.getDirectoryHandle('memory');
+        const subDir = await memoryDir.getDirectoryHandle(dirName);
+        await subDir.removeEntry(fileName);
+
+        const files = memoryData.memoryDirs[dirName];
+        const idx = files.findIndex(f => f.name === fileName);
+        if (idx !== -1) files.splice(idx, 1);
+
+        if (fromModal) closeModal();
+        renderMemory();
+        showStatus('Deleted ' + getDisplayName(fileName));
+      } catch (e) {
+        showStatus('Error deleting: ' + e.message);
+      }
+    }
+
     // Memory event listeners
     openMemoryBtn.addEventListener('click', loadMemoryDirectory);
     document.getElementById('openMemoryBtnLarge').addEventListener('click', loadMemoryDirectory);
@@ -3088,11 +3359,64 @@
       if (e.key === 'Escape') closeModal();
     });
 
+    // ===== RESTORE PERSISTED HANDLES ON LOAD =====
+    async function restoreHandles() {
+      // Restore task file handle
+      try {
+        const storedTaskHandle = await getHandle('taskFileHandle');
+        if (storedTaskHandle) {
+          let perm = await storedTaskHandle.queryPermission({ mode: 'readwrite' });
+          if (perm === 'prompt') perm = await storedTaskHandle.requestPermission({ mode: 'readwrite' });
+          if (perm === 'granted') {
+            taskFileHandle = storedTaskHandle;
+            const file = await taskFileHandle.getFile();
+            const content = await file.text();
+            lastModified = file.lastModified;
+            const result = parseTaskMarkdown(content);
+            sections = result.sections;
+            tasks = result.tasks;
+            taskFileName = file.name;
+            filePathEl.textContent = file.name;
+            renderTasks();
+            startWatching();
+          } else {
+            await clearHandle('taskFileHandle');
+          }
+        }
+      } catch (e) {
+        console.log('Could not restore task handle:', e);
+        await clearHandle('taskFileHandle').catch(() => {});
+      }
+
+      // Restore memory directory handle
+      try {
+        const storedMemoryHandle = await getHandle('memoryDirHandle');
+        if (storedMemoryHandle) {
+          let perm = await storedMemoryHandle.queryPermission({ mode: 'readwrite' });
+          if (perm === 'prompt') perm = await storedMemoryHandle.requestPermission({ mode: 'readwrite' });
+          if (perm === 'granted') {
+            memoryDirHandle = storedMemoryHandle;
+            await loadMemoryFromHandle();
+          } else {
+            await clearHandle('memoryDirHandle');
+          }
+        }
+      } catch (e) {
+        console.log('Could not restore memory handle:', e);
+        await clearHandle('memoryDirHandle').catch(() => {});
+      }
+    }
+
     // Expose functions to onclick handlers
     window.openFileModal = openFileModal;
     window.openNewFileModal = openNewFileModal;
     window.openEditModal = openEditModal;
     window.filterMemoryDirectory = filterMemoryDirectory;
+    window.filterMemoryTab = filterMemoryTab;
+    window.deleteMemoryFile = deleteMemoryFile;
+
+    // Auto-restore on page load
+    restoreHandles();
   </script>
 </body>
 </html>
