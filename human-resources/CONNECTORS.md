@@ -10,7 +10,7 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
-| ATS | `~~ATS` | — | Greenhouse, Lever, Ashby, Workable |
+| ATS | `~~ATS` | — | Greenhouse, Lever, Ashby, Workable, Chosen HQ |
 | Calendar | `~~calendar` | Google Calendar | Microsoft 365 |
 | Chat | `~~chat` | Slack | Microsoft Teams |
 | Email | `~~email` | Gmail, Microsoft 365 | — |
