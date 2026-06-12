@@ -1,0 +1,22 @@
+{
+  "name": "fluxograma-builder",
+  "version": "1.0.0",
+  "description": "Cria fluxogramas swimlane profissionais em HTML/SVG com raias por ator, fases numeradas, roteamento de setas sem sobreposição e texto sempre dentro dos cartões. Ideal para mapear processos com múltiplos responsáveis como RH, aprovações, onboarding e recrutamento.",
+  "author": {
+    "name": "Rodrigo Moraes",
+    "email": "rmoraes3008@gmail.com"
+  },
+  "keywords": [
+    "fluxograma",
+    "swimlane",
+    "diagrama",
+    "processo",
+    "bpmn",
+    "flowchart",
+    "html",
+    "svg",
+    "rh",
+    "workflow"
+  ],
+  "license": "Apache-2.0"
+}
