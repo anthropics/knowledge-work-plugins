@@ -14,5 +14,6 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Notebook | `~~notebook` | Hex | Jupyter, Deepnote, Observable |
 | Product analytics | `~~product analytics` | Amplitude | Mixpanel, Heap |
 | Project tracker | `~~project tracker` | Atlassian (Jira/Confluence) | Linear, Asana |
+| BI / semantic layer | `~~business intelligence` | Omni\* | — |
 
 \* Placeholder — MCP URL not yet configured
