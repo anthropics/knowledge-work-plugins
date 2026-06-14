@@ -4,6 +4,29 @@ An enterprise search plugin primarily designed for [Cowork](https://claude.com/p
 
 ---
 
+## Installation
+
+```
+claude plugin install enterprise-search@knowledge-work-plugins
+```
+
+## Getting Started
+
+```bash
+# 1. Install
+claude plugin install enterprise-search@knowledge-work-plugins
+
+# 2. Search across everything
+/enterprise-search:search [your question here]
+
+# 3. Get a digest
+/enterprise-search:digest --daily
+```
+
+The more sources you connect via MCP, the more complete your search results. Start with ~~chat, ~~email, and ~~cloud storage, then add your wiki, project management tool, and CRM as needed.
+
+---
+
 ## How It Works
 
 One query searches all your connected tools simultaneously. Claude decomposes your question, runs targeted searches across every source, and synthesizes the results into a single coherent answer with source attribution.
@@ -129,23 +152,6 @@ Result: "Based on message history and doc authorship,
          Alex and Priya are your go-to people for k8s.
          Here's the main runbook (link)."
 ```
-
----
-
-## Getting Started
-
-```bash
-# 1. Install
-claude plugins add knowledge-work-plugins/enterprise-search
-
-# 2. Search across everything
-/enterprise-search:search [your question here]
-
-# 3. Get a digest
-/enterprise-search:digest --daily
-```
-
-The more sources you connect via MCP, the more complete your search results. Start with ~~chat, ~~email, and ~~cloud storage, then add your wiki, project management tool, and CRM as needed.
 
 ---
 
