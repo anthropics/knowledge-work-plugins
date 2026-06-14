@@ -5,7 +5,7 @@ A design productivity plugin primarily designed for [Cowork](https://claude.com/
 ## Installation
 
 ```bash
-claude plugins add knowledge-work-plugins/design
+claude plugin install design@knowledge-work-plugins
 ```
 
 ## Commands

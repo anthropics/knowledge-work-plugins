@@ -5,7 +5,7 @@ A customer support plugin primarily designed for [Cowork](https://claude.com/pro
 ## Installation
 
 ```
-claude plugins add knowledge-work-plugins/customer-support
+claude plugin install customer-support@knowledge-work-plugins
 ```
 
 ## What It Does

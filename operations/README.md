@@ -5,7 +5,7 @@ A business operations plugin primarily designed for [Cowork](https://claude.com/
 ## Installation
 
 ```bash
-claude plugins add knowledge-work-plugins/operations
+claude plugin install operations@knowledge-work-plugins
 ```
 
 ## Commands

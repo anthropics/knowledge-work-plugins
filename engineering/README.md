@@ -5,7 +5,7 @@ A software engineering plugin primarily designed for [Cowork](https://claude.com
 ## Installation
 
 ```bash
-claude plugins add knowledge-work-plugins/engineering
+claude plugin install engineering@knowledge-work-plugins
 ```
 
 ## Commands
