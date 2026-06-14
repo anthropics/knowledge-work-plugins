@@ -315,8 +315,17 @@ def _write_samplesheet(rows: List[Dict], config: Dict, output_path: str):
     columns = config.get("samplesheet", {}).get("columns", [])
     column_names = [c['name'] for c in columns]
 
-    # Filter to columns that have data
-    active_columns = [c for c in column_names if any(c in row and row[c] for row in rows)]
+    # Filter to columns that have data. Use an explicit presence check rather
+    # than truthiness so that valid falsy values are not treated as empty -
+    # notably sarek's `status` column where 0 means "normal" (an all-normal
+    # cohort would otherwise drop the required status column entirely).
+    def _has_value(v):
+        return v is not None and v != ""
+
+    active_columns = [
+        c for c in column_names
+        if any(c in row and _has_value(row[c]) for row in rows)
+    ]
 
     # Ensure fastq_1/fastq_2 or bam/bai are included
     for required in ['fastq_1', 'bam']:
