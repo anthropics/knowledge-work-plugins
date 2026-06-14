@@ -1,0 +1,10 @@
+{
+  "name": "hallucheck-pro",
+  "version": "0.3.0",
+  "description": "Verify academic references via CrossRef, OpenLibrary, and Google Books APIs. Extract references from argument trees, validate metadata live, and generate markdown hallucheck reports. ISBNs use OpenLibrary with automatic Google Books fallback.",
+  "author": {
+    "name": "Roland",
+    "url": "https://github.com/luctaesch"
+  },
+  "keywords": ["academic", "references", "verification", "CrossRef", "OpenLibrary", "GoogleBooks", "hallucheck", "citation"]
+}
