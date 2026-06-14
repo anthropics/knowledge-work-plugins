@@ -28,6 +28,10 @@
       "type": "http",
       "url": "https://mcp.eu.amplitude.com/mcp"
     },
+    "mixpanel": {
+      "type": "http",
+      "url": "https://mcp.mixpanel.com/mcp"
+    },
     "notion": {
       "type": "http",
       "url": "https://mcp.notion.com/mcp"
