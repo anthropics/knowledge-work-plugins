@@ -1,0 +1,26 @@
+{
+  "name": "openaccountants",
+  "version": "1.0.0",
+  "description": "Verified tax & accounting skills for 190+ jurisdictions — every answer linked to a named licensed accountant. 11 tools including a real AI-to-verifier handoff that routes the user (with their working paper) to the lead accountant for their country with a Calendly booking link. Built on the OpenAccountants MCP server: 882 published skills, country-verified sign-offs (Michael Cutajar CPA for Malta, Werner Britz CA(SA) for South Africa, growing).",
+  "author": {
+    "name": "OpenAccountants",
+    "url": "https://openaccountants.com"
+  },
+  "repository": "https://github.com/openaccountants/marketplace",
+  "homepage": "https://openaccountants.com/connect",
+  "license": "MIT",
+  "keywords": [
+    "tax",
+    "accounting",
+    "vat",
+    "gst",
+    "payroll",
+    "crypto-tax",
+    "transfer-pricing",
+    "company-formation",
+    "small-business",
+    "finance",
+    "openaccountants",
+    "mcp"
+  ]
+}
