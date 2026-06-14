@@ -1,0 +1,13 @@
+{
+  "name": "contextiq",
+  "version": "1.0.0",
+  "description": "Governed enterprise knowledge access with citations, entitlement scoping, and audit-ready answer paths. Query your organization's knowledge sources through AI assistants with evidence-backed responses.",
+  "author": {
+    "name": "TechMatrix AI Systems",
+    "url": "https://contextiq.us"
+  },
+  "homepage": "https://contextiq.us",
+  "repository": "https://github.com/TMX-AgenticAI/contextiq-cowork-plugin",
+  "license": "MIT",
+  "keywords": ["contextiq", "enterprise-knowledge", "governed-access", "citations", "mcp", "rag", "compliance", "audit"]
+}

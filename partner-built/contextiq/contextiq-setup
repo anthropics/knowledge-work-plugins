@@ -1,0 +1,708 @@
+#!/usr/bin/env python3
+"""One-time setup for ContextIQ MCP Server.
+
+Auto-discovers deployment values from a connection config file or
+deployment configuration, authenticates with Cognito, caches tokens,
+and writes the Claude Desktop config so the MCP proxy connects automatically.
+
+User setup (no AWS CLI needed):
+  ./contextiq-setup                                    # auto-finds connection config
+  ./contextiq-setup --config ~/Downloads/contextiq-connection.json
+  ./contextiq-setup --url https://s3.../contextiq-connection.json
+  ./contextiq-setup --username user@co.com             # prompt for password only
+
+Admin setup (requires AWS CLI):
+  ./contextiq-setup --export-config                    # generate config file locally
+  ./contextiq-setup --export-config --publish          # upload to S3, get shareable URL
+  ./contextiq-setup --export-config --publish --email-to user1@co.com,user2@co.com
+
+Re-run when you see a "session expired" error (~30 days).
+No external dependencies — uses Python stdlib + aws CLI only.
+"""
+
+from __future__ import annotations
+
+import argparse
+import base64
+import getpass
+import json
+import platform
+import subprocess
+import sys
+import time
+import urllib.request
+import urllib.error
+from pathlib import Path
+
+AUTH_CACHE_PATH = Path.home() / ".contextiq" / "auth.json"
+CONNECTION_CONFIG_NAME = "contextiq-connection.json"
+
+DEFAULT_STACK_NAME = "contextiq"
+DEFAULT_REGION = "us-west-2"
+MCP_PORT = 8005
+DEFAULT_URL_EXPIRY = 604800  # 7 days in seconds
+
+_KEY_USER_POOL = "CognitoUserPoolId"
+_KEY_CLIENT = "CognitoClientId"
+_KEY_GATEWAY = "AlbDnsName"
+_KEY_BUCKET = "DocsBucketName"
+
+
+# ---------------------------------------------------------------------------
+# Connection config discovery
+# ---------------------------------------------------------------------------
+
+def _find_connection_config() -> Path | None:
+    """Search well-known locations for a connection config file."""
+    candidates = [
+        Path.home() / ".contextiq" / CONNECTION_CONFIG_NAME,
+        Path.home() / "Downloads" / CONNECTION_CONFIG_NAME,
+        Path.cwd() / CONNECTION_CONFIG_NAME,
+        Path(__file__).resolve().parent / CONNECTION_CONFIG_NAME,
+    ]
+    for path in candidates:
+        if path.is_file():
+            return path
+    return None
+
+
+def _load_connection_config(path: Path) -> dict[str, str]:
+    """Load and validate a connection config file."""
+    data = json.loads(path.read_text())
+    required = {"gateway_url", "user_pool_id", "client_id", "region"}
+    missing = required - set(data.keys())
+    if missing:
+        raise ValueError(
+            f"Connection config missing required fields: {', '.join(sorted(missing))}"
+        )
+    return data
+
+
+def _fetch_connection_config(url: str) -> dict[str, str]:
+    """Download a connection config from a URL and save locally."""
+    print(f"Downloading connection config from: {url}")
+    req = urllib.request.Request(url, method="GET")
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+
+    required = {"gateway_url", "user_pool_id", "client_id", "region"}
+    missing = required - set(data.keys())
+    if missing:
+        raise ValueError(
+            f"Connection config missing required fields: {', '.join(sorted(missing))}"
+        )
+
+    cache_path = Path.home() / ".contextiq" / CONNECTION_CONFIG_NAME
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(data, indent=2) + "\n")
+    print(f"Connection config saved to: {cache_path}")
+    return data
+
+
+# ---------------------------------------------------------------------------
+# CloudFormation discovery
+# ---------------------------------------------------------------------------
+
+def _run_aws_cli(args: list[str], region: str, profile: str | None = None) -> dict:
+    """Run an aws CLI command and return parsed JSON output."""
+    cmd = ["aws"] + args + ["--region", region, "--output", "json"]
+    if profile:
+        cmd += ["--profile", profile]
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+    if result.returncode != 0:
+        stderr = result.stderr.strip()
+        raise RuntimeError(f"AWS CLI error: {stderr}")
+    return json.loads(result.stdout)
+
+
+def _run_aws_cli_raw(args: list[str], region: str, profile: str | None = None) -> str:
+    """Run an aws CLI command and return raw stdout."""
+    cmd = ["aws"] + args + ["--region", region]
+    if profile:
+        cmd += ["--profile", profile]
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+    if result.returncode != 0:
+        stderr = result.stderr.strip()
+        raise RuntimeError(f"AWS CLI error: {stderr}")
+    return result.stdout.strip()
+
+
+def _extract_outputs(stack_description: dict) -> dict[str, str]:
+    """Pull OutputKey -> OutputValue from a describe-stacks response."""
+    outputs = {}
+    for stack in stack_description.get("Stacks", []):
+        for out in stack.get("Outputs", []):
+            outputs[out["OutputKey"]] = out["OutputValue"]
+    return outputs
+
+
+def _discover_from_stack(
+    stack_name: str, region: str, profile: str | None
+) -> dict[str, str]:
+    """Query CloudFormation for deployment values.
+
+    First checks the parent stack outputs. If a required key is missing
+    (it may live on a nested stack), walks nested stacks to find it.
+    """
+    parent = _run_aws_cli(
+        ["cloudformation", "describe-stacks", "--stack-name", stack_name],
+        region, profile,
+    )
+    outputs = _extract_outputs(parent)
+
+    needed = {_KEY_USER_POOL, _KEY_CLIENT, _KEY_GATEWAY}
+    missing = needed - set(outputs.keys())
+
+    if not missing:
+        return outputs
+
+    try:
+        resources = _run_aws_cli(
+            ["cloudformation", "list-stack-resources",
+             "--stack-name", stack_name],
+            region, profile,
+        )
+        for res in resources.get("StackResourceSummaries", []):
+            if res.get("ResourceType") != "AWS::CloudFormation::Stack":
+                continue
+            nested_id = res.get("PhysicalResourceId")
+            if not nested_id:
+                continue
+            try:
+                nested = _run_aws_cli(
+                    ["cloudformation", "describe-stacks",
+                     "--stack-name", nested_id],
+                    region, profile,
+                )
+                nested_outputs = _extract_outputs(nested)
+                for key in list(missing):
+                    if key in nested_outputs:
+                        outputs[key] = nested_outputs[key]
+                        missing.discard(key)
+                if not missing:
+                    break
+            except RuntimeError:
+                continue
+    except RuntimeError:
+        pass
+
+    still_missing = needed - set(outputs.keys())
+    if still_missing:
+        raise RuntimeError(
+            f"Could not find stack outputs: {', '.join(sorted(still_missing))}. "
+            f"Check that stack '{stack_name}' is fully deployed."
+        )
+
+    return outputs
+
+
+# ---------------------------------------------------------------------------
+# S3 publish
+# ---------------------------------------------------------------------------
+
+def _publish_to_s3(
+    config_path: Path, bucket: str, region: str, profile: str | None,
+    expiry: int = DEFAULT_URL_EXPIRY,
+) -> str:
+    """Upload connection config to S3 and return a pre-signed URL."""
+    s3_key = f"cowork-config/{CONNECTION_CONFIG_NAME}"
+
+    print(f"Uploading config to s3://{bucket}/{s3_key}...")
+    _run_aws_cli_raw(
+        ["s3", "cp", str(config_path), f"s3://{bucket}/{s3_key}"],
+        region, profile,
+    )
+
+    print(f"Generating pre-signed URL (expires in {expiry // 86400} days)...")
+    url = _run_aws_cli_raw(
+        ["s3", "presign", f"s3://{bucket}/{s3_key}",
+         "--expires-in", str(expiry)],
+        region, profile,
+    )
+    return url
+
+
+# ---------------------------------------------------------------------------
+# SES email distribution
+# ---------------------------------------------------------------------------
+
+def _build_setup_email(config_url: str, recipient: str) -> dict:
+    """Build the email body with setup instructions."""
+    subject = "ContextIQ — Your AI Knowledge Access Setup"
+
+    text_body = f"""Hi,
+
+Your ContextIQ admin has set up governed enterprise knowledge access for you. Follow these steps to connect Cowork or Claude Desktop:
+
+Step 1: Install the ContextIQ plugin in Cowork
+  - Open Cowork and install the ContextIQ plugin from the plugin directory
+
+Step 2: Run the setup script
+  - Open a terminal in the plugin directory
+  - Run: ./contextiq-setup --url "{config_url}"
+  - Or download the config file from the link below and run: ./contextiq-setup
+
+Step 3: Sign in
+  - Enter your username ({recipient}) and password when prompted
+  - If this is your first time, check your email for a temporary password from ContextIQ
+
+Step 4: Start querying
+  - Restart Cowork or Claude Desktop
+  - Ask questions about your enterprise knowledge sources
+
+Connection config download:
+{config_url}
+
+Need help? Contact your ContextIQ admin or email hello@contextiq.us
+
+---
+Powered by ContextIQ — https://contextiq.us
+"""
+
+    html_body = f"""<html>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+<h2 style="color: #1a1a2e;">ContextIQ — Your AI Knowledge Access Setup</h2>
+
+<p>Your ContextIQ admin has set up governed enterprise knowledge access for you. Follow these steps to connect Cowork or Claude Desktop:</p>
+
+<h3 style="color: #16213e;">Step 1: Install the ContextIQ plugin</h3>
+<p>Open Cowork and install the <strong>ContextIQ</strong> plugin from the plugin directory.</p>
+
+<h3 style="color: #16213e;">Step 2: Run the setup script</h3>
+<p>Open a terminal in the plugin directory and run:</p>
+<pre style="background: #f5f5f5; padding: 12px; border-radius: 6px; font-size: 14px;">./contextiq-setup --url "{config_url}"</pre>
+<p>Or <a href="{config_url}">download the connection config</a> to your Downloads folder, then run <code>./contextiq-setup</code> — it auto-detects the file.</p>
+
+<h3 style="color: #16213e;">Step 3: Sign in</h3>
+<p>Enter your username (<strong>{recipient}</strong>) and password when prompted. If this is your first sign-in, check your email for a temporary password from ContextIQ.</p>
+
+<h3 style="color: #16213e;">Step 4: Start querying</h3>
+<p>Restart Cowork or Claude Desktop and start asking questions about your enterprise knowledge sources.</p>
+
+<hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;">
+<p style="font-size: 13px; color: #888;">Need help? Contact your ContextIQ admin or email <a href="mailto:hello@contextiq.us">hello@contextiq.us</a></p>
+<p style="font-size: 13px; color: #888;">Powered by <a href="https://contextiq.us">ContextIQ</a></p>
+</body>
+</html>"""
+
+    return {
+        "Subject": {"Data": subject, "Charset": "UTF-8"},
+        "Body": {
+            "Text": {"Data": text_body, "Charset": "UTF-8"},
+            "Html": {"Data": html_body, "Charset": "UTF-8"},
+        },
+    }
+
+
+def _send_setup_email(
+    recipient: str, config_url: str,
+    sender: str, region: str, profile: str | None,
+) -> None:
+    """Send setup instructions via SES."""
+    message = _build_setup_email(config_url, recipient)
+    ses_payload = {
+        "Source": sender,
+        "Destination": {"ToAddresses": [recipient]},
+        "Message": message,
+    }
+
+    payload_json = json.dumps(ses_payload)
+    _run_aws_cli_raw(
+        ["ses", "send-email",
+         "--source", sender,
+         "--destination", json.dumps({"ToAddresses": [recipient]}),
+         "--message", json.dumps(message)],
+        region, profile,
+    )
+
+
+def _distribute_to_users(
+    emails: list[str], config_url: str,
+    sender: str, region: str, profile: str | None,
+) -> None:
+    """Send setup emails to a list of users."""
+    print(f"\nSending setup instructions to {len(emails)} user(s)...")
+    succeeded = []
+    failed = []
+
+    for email in emails:
+        email = email.strip()
+        if not email:
+            continue
+        try:
+            _send_setup_email(email, config_url, sender, region, profile)
+            print(f"  Sent: {email}")
+            succeeded.append(email)
+        except RuntimeError as e:
+            print(f"  Failed: {email} — {e}")
+            failed.append(email)
+
+    print(f"\nDistribution complete: {len(succeeded)} sent, {len(failed)} failed.")
+    if failed:
+        print(f"Failed recipients: {', '.join(failed)}")
+
+
+# ---------------------------------------------------------------------------
+# Export config (admin mode)
+# ---------------------------------------------------------------------------
+
+def _export_config(args: argparse.Namespace) -> None:
+    """Admin command: discover from CloudFormation, optionally publish and email."""
+    print(f"Discovering deployment from stack '{args.stack_name}' in {args.region}...")
+    try:
+        outputs = _discover_from_stack(args.stack_name, args.region, args.profile)
+    except RuntimeError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    alb_dns = outputs[_KEY_GATEWAY]
+    config_data = {
+        "gateway_url": f"http://{alb_dns}:{MCP_PORT}/mcp",
+        "user_pool_id": outputs[_KEY_USER_POOL],
+        "client_id": outputs[_KEY_CLIENT],
+        "region": args.region,
+    }
+
+    output_path = Path(args.export_config)
+    output_path.write_text(json.dumps(config_data, indent=2) + "\n")
+
+    print(f"\nConnection config written to: {output_path}")
+    print(f"  gateway_url  : {config_data['gateway_url']}")
+    print(f"  user_pool_id : {config_data['user_pool_id']}")
+    print(f"  client_id    : {config_data['client_id']}")
+    print(f"  region       : {config_data['region']}")
+
+    # Publish to S3 if requested
+    config_url = None
+    if args.publish:
+        bucket = args.s3_bucket
+        if not bucket:
+            bucket = outputs.get(_KEY_BUCKET)
+        if not bucket:
+            print("\nError: --s3-bucket required (no docs bucket found in stack outputs).",
+                  file=sys.stderr)
+            sys.exit(1)
+        try:
+            config_url = _publish_to_s3(
+                output_path, bucket, args.region, args.profile, args.url_expiry,
+            )
+            print(f"\nShareable URL (expires in {args.url_expiry // 86400} days):")
+            print(f"  {config_url}")
+            print(f"\nUsers can run:")
+            print(f"  ./contextiq-setup --url \"{config_url}\"")
+        except RuntimeError as e:
+            print(f"\nError publishing to S3: {e}", file=sys.stderr)
+            sys.exit(1)
+
+    # Email to users if requested
+    if args.email_to:
+        if not config_url:
+            print("\nError: --email-to requires --publish (need a URL to share).",
+                  file=sys.stderr)
+            sys.exit(1)
+
+        sender = args.sender_email
+        if not sender:
+            sender = input("\nSender email address (must be SES-verified): ").strip()
+        if not sender:
+            print("Error: sender email is required.", file=sys.stderr)
+            sys.exit(1)
+
+        emails = [e.strip() for e in args.email_to.split(",") if e.strip()]
+        _distribute_to_users(emails, config_url, sender, args.region, args.profile)
+
+    # Print manual instructions if not publishing/emailing
+    if not args.publish:
+        print(f"\nTo share with users, either:")
+        print(f"  1. Email this file directly, or")
+        print(f"  2. Re-run with --publish to upload to S3 and get a shareable URL:")
+        print(f"     ./contextiq-setup --export-config --publish")
+        print(f"     ./contextiq-setup --export-config --publish --email-to user1@co.com,user2@co.com")
+
+
+# ---------------------------------------------------------------------------
+# Cognito auth
+# ---------------------------------------------------------------------------
+
+def _decode_jwt_field(token: str, field: str):
+    try:
+        payload = token.split(".")[1]
+        payload += "=" * (-len(payload) % 4)
+        claims = json.loads(base64.urlsafe_b64decode(payload))
+        return claims.get(field)
+    except Exception:
+        return None
+
+
+def _cognito_initiate_auth(
+    region: str, client_id: str, username: str, password: str
+) -> dict:
+    endpoint = f"https://cognito-idp.{region}.amazonaws.com/"
+    body = json.dumps({
+        "AuthFlow": "USER_PASSWORD_AUTH",
+        "ClientId": client_id,
+        "AuthParameters": {"USERNAME": username, "PASSWORD": password},
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        endpoint,
+        data=body,
+        headers={
+            "Content-Type": "application/x-amz-json-1.1",
+            "X-Amz-Target": "AWSCognitoIdentityProviderService.InitiateAuth",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+# ---------------------------------------------------------------------------
+# Claude Desktop config
+# ---------------------------------------------------------------------------
+
+def _claude_config_path() -> Path:
+    if platform.system() == "Darwin":
+        return Path.home() / "Library" / "Application Support" / "Claude" / "claude_desktop_config.json"
+    else:
+        return Path.home() / ".config" / "claude" / "claude_desktop_config.json"
+
+
+def _write_claude_config(gateway_url: str) -> Path:
+    """Write or merge the MCP server entry into Claude Desktop config."""
+    proxy_path = str(Path(__file__).resolve().parent / "contextiq-mcp-proxy")
+    config_path = _claude_config_path()
+
+    existing: dict = {}
+    if config_path.exists():
+        try:
+            existing = json.loads(config_path.read_text())
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    mcp_servers = existing.setdefault("mcpServers", {})
+    mcp_servers["contextiq"] = {
+        "command": "python3",
+        "args": [proxy_path],
+        "env": {
+            "CONTEXTIQ_GATEWAY_URL": gateway_url,
+        },
+        "description": "Search and retrieve from your organization's enterprise knowledge bases with ContextIQ.",
+    }
+
+    config_path.parent.mkdir(parents=True, exist_ok=True)
+    config_path.write_text(json.dumps(existing, indent=2) + "\n")
+    return config_path
+
+
+# ---------------------------------------------------------------------------
+# Resolve deployment config (URL → config file → CloudFormation → manual)
+# ---------------------------------------------------------------------------
+
+def _resolve_deployment(args: argparse.Namespace) -> tuple[str, str, str, str]:
+    """Return (gateway_url, user_pool_id, client_id, region).
+
+    Resolution order:
+      1. --url flag (download from URL)
+      2. --config flag (explicit path)
+      3. --gateway-url / --user-pool-id / --client-id flags (all three required)
+      4. Auto-discover connection config from well-known locations
+      5. Prompt for URL or path
+      6. CloudFormation stack discovery (requires AWS CLI)
+    """
+
+    # 1. Download from URL
+    if args.url:
+        try:
+            cfg = _fetch_connection_config(args.url)
+            return cfg["gateway_url"], cfg["user_pool_id"], cfg["client_id"], cfg["region"]
+        except Exception as e:
+            print(f"Error fetching config from URL: {e}", file=sys.stderr)
+            sys.exit(1)
+
+    # 2. Explicit config file
+    if args.config:
+        config_path = Path(args.config)
+        if not config_path.is_file():
+            print(f"Error: config file not found: {config_path}", file=sys.stderr)
+            sys.exit(1)
+        print(f"Using connection config: {config_path}")
+        cfg = _load_connection_config(config_path)
+        return cfg["gateway_url"], cfg["user_pool_id"], cfg["client_id"], cfg["region"]
+
+    # 3. Manual flags
+    if args.gateway_url and args.user_pool_id and args.client_id:
+        print("Using manually provided connection parameters.")
+        return args.gateway_url, args.user_pool_id, args.client_id, args.region
+
+    # 4. Auto-discover connection config from well-known locations
+    found = _find_connection_config()
+    if found:
+        print(f"Found connection config: {found}")
+        cfg = _load_connection_config(found)
+        return cfg["gateway_url"], cfg["user_pool_id"], cfg["client_id"], cfg["region"]
+
+    # 5. Prompt — offer URL, path, or CloudFormation
+    print("No connection config found in standard locations:")
+    print(f"  ~/.contextiq/{CONNECTION_CONFIG_NAME}")
+    print(f"  ~/Downloads/{CONNECTION_CONFIG_NAME}")
+    print(f"  ./{CONNECTION_CONFIG_NAME}")
+    print()
+    user_input = input(
+        "Enter config URL, file path, or press Enter for CloudFormation discovery: "
+    ).strip()
+
+    if user_input:
+        if user_input.startswith("http://") or user_input.startswith("https://"):
+            try:
+                cfg = _fetch_connection_config(user_input)
+                return cfg["gateway_url"], cfg["user_pool_id"], cfg["client_id"], cfg["region"]
+            except Exception as e:
+                print(f"Error fetching config: {e}", file=sys.stderr)
+                sys.exit(1)
+        else:
+            config_path = Path(user_input).expanduser()
+            if not config_path.is_file():
+                print(f"Error: file not found: {config_path}", file=sys.stderr)
+                sys.exit(1)
+            cfg = _load_connection_config(config_path)
+            return cfg["gateway_url"], cfg["user_pool_id"], cfg["client_id"], cfg["region"]
+
+    # 6. Fall back to CloudFormation discovery
+    print(f"\nDiscovering deployment from stack '{args.stack_name}' in {args.region}...")
+    try:
+        outputs = _discover_from_stack(args.stack_name, args.region, args.profile)
+    except RuntimeError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    alb_dns = outputs[_KEY_GATEWAY]
+    return (
+        f"http://{alb_dns}:{MCP_PORT}/mcp",
+        outputs[_KEY_USER_POOL],
+        outputs[_KEY_CLIENT],
+        args.region,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="ContextIQ — one-time setup for Cowork and Claude Desktop"
+    )
+
+    # User: connection config options
+    parser.add_argument("--url", metavar="URL",
+                        help="Download connection config from a URL")
+    parser.add_argument("--config", metavar="PATH",
+                        help="Path to connection config file (contextiq-connection.json)")
+    parser.add_argument("--gateway-url",
+                        help="ContextIQ gateway URL (manual override)")
+    parser.add_argument("--user-pool-id",
+                        help="Cognito User Pool ID (manual override)")
+    parser.add_argument("--client-id",
+                        help="Cognito Client ID (manual override)")
+    parser.add_argument("--username", help="Cognito username (email)")
+
+    # Admin: CloudFormation discovery
+    parser.add_argument("--stack-name", default=DEFAULT_STACK_NAME,
+                        help=f"CloudFormation stack name (default: {DEFAULT_STACK_NAME})")
+    parser.add_argument("--region", default=DEFAULT_REGION,
+                        help=f"AWS region (default: {DEFAULT_REGION})")
+    parser.add_argument("--profile", default=None,
+                        help="AWS CLI profile name (optional)")
+
+    # Admin: export and distribute
+    parser.add_argument("--export-config", metavar="PATH", nargs="?",
+                        const=CONNECTION_CONFIG_NAME,
+                        help="Generate connection config from CloudFormation "
+                             f"(default: ./{CONNECTION_CONFIG_NAME})")
+    parser.add_argument("--publish", action="store_true",
+                        help="Upload config to S3 and generate a shareable pre-signed URL")
+    parser.add_argument("--s3-bucket", metavar="BUCKET",
+                        help="S3 bucket for publishing config (default: from stack outputs)")
+    parser.add_argument("--url-expiry", type=int, default=DEFAULT_URL_EXPIRY,
+                        help=f"Pre-signed URL expiry in seconds (default: {DEFAULT_URL_EXPIRY})")
+    parser.add_argument("--email-to", metavar="EMAILS",
+                        help="Comma-separated email addresses to send setup instructions")
+    parser.add_argument("--sender-email", metavar="EMAIL",
+                        help="SES-verified sender email address")
+
+    args = parser.parse_args()
+
+    # ---- Admin mode: export config and optionally distribute ----
+    if args.export_config is not None:
+        _export_config(args)
+        return
+
+    # ---- Step 1: Resolve deployment config ----
+    gateway_url, user_pool_id, client_id, region = _resolve_deployment(args)
+
+    print(f"\n  User Pool ID : {user_pool_id}")
+    print(f"  Client ID    : {client_id}")
+    print(f"  Gateway URL  : {gateway_url}")
+
+    # ---- Step 2: Authenticate with Cognito ----
+    username = args.username
+    if not username:
+        username = input("\nUsername (email): ").strip()
+    if not username:
+        print("Error: username is required.", file=sys.stderr)
+        sys.exit(1)
+
+    password = getpass.getpass("Password: ")
+    if not password:
+        print("Error: password is required.", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"\nAuthenticating {username}...")
+
+    try:
+        result = _cognito_initiate_auth(region, client_id, username, password)
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode("utf-8", errors="replace")
+        try:
+            error_data = json.loads(error_body)
+            msg = error_data.get("message", error_body)
+        except Exception:
+            msg = error_body
+        print(f"Authentication failed: {msg}", file=sys.stderr)
+        sys.exit(1)
+
+    auth_result = result["AuthenticationResult"]
+    access_token = auth_result["AccessToken"]
+    refresh_token = auth_result.get("RefreshToken")
+
+    if not refresh_token:
+        print("Warning: no refresh token returned. Token auto-refresh will not work.",
+              file=sys.stderr)
+
+    # ---- Step 3: Write auth cache ----
+    cache_data = {
+        "region": region,
+        "user_pool_id": user_pool_id,
+        "client_id": client_id,
+        "gateway_url": gateway_url,
+        "username": username,
+        "access_token": access_token,
+        "access_exp": _decode_jwt_field(access_token, "exp"),
+        "refresh_token": refresh_token,
+        "updated_at": int(time.time()),
+    }
+
+    AUTH_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    AUTH_CACHE_PATH.write_text(json.dumps(cache_data, indent=2))
+
+    print(f"Authenticated as {username}.")
+    print(f"Auth tokens cached at {AUTH_CACHE_PATH}")
+
+    # ---- Step 4: Write Claude Desktop config ----
+    config_path = _write_claude_config(gateway_url)
+    print(f"Claude Desktop config written to {config_path}")
+    print("\nRestart Claude Desktop or Cowork to connect.")
+
+
+if __name__ == "__main__":
+    main()
