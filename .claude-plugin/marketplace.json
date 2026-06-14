@@ -619,6 +619,31 @@
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
     {
+      "name": "recharm",
+      "description": "Turn a creative brief into a sectioned shot list, search Recharm's library for matching footage, review the candidates visually, and return a final creative brief with picks.",
+      "author": {
+        "name": "Recharm"
+      },
+      "source": {
+        "source": "github",
+        "repo": "recharm/claude-plugin",
+        "url": "https://github.com/recharm/claude-plugin",
+        "ref": "main",
+        "sha": "beb109ceee6e7a1d37e07088b14203d41c81fa6d"
+      },
+      "category": "design",
+      "keywords": [
+        "recharm",
+        "video",
+        "brief",
+        "visual search",
+        "video search",
+        "ad brief",
+        "footage finder"
+      ],
+      "homepage": "https://www.recharm.com"
+    },
+    {
       "name": "datadog",
       "displayName": "Datadog",
       "description": "Use Datadog directly in Claude Code through a preconfigured Datadog MCP server. Query logs, metrics, traces, dashboards, and more through natural conversation. This plugin is in preview.",
