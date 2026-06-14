@@ -12,6 +12,7 @@ import shutil
 import time
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+from urllib.parse import quote, urlsplit
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
@@ -25,6 +26,29 @@ logger = logging.getLogger(__name__)
 # NCBI rate limiting - track last request time
 _last_ncbi_request_time = 0.0
 _NCBI_MIN_DELAY = 0.34  # 3 requests per second max without API key
+
+# Allowlist of trusted hosts for data downloads. Download URLs are built from
+# the `fastq_ftp` field returned by the ENA API, so validate that they point at
+# known ENA/NCBI hosts before streaming their contents to disk. This is a
+# defense-in-depth guard against a tampered or compromised API response causing
+# the downloader to fetch from an arbitrary location.
+_TRUSTED_DOWNLOAD_HOST_SUFFIXES = (
+    ".ebi.ac.uk",      # ENA / EBI (e.g. ftp.sra.ebi.ac.uk)
+    ".ncbi.nlm.nih.gov",  # NCBI
+    ".nih.gov",
+)
+
+
+def _is_trusted_download_host(url: str) -> bool:
+    """Return True if the URL's host is on the trusted-download allowlist."""
+    host = urlsplit(url).hostname
+    if not host:
+        return False
+    host = host.lower()
+    return any(
+        host == suffix.lstrip(".") or host.endswith(suffix)
+        for suffix in _TRUSTED_DOWNLOAD_HOST_SUFFIXES
+    )
 
 
 def _rate_limit_ncbi():
@@ -96,7 +120,7 @@ def fetch_geo_metadata(geo_id: str) -> Optional[Dict]:
     """
     try:
         # Use esearch to get GEO UID
-        search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term={geo_id}[Accession]&retmode=json"
+        search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term={quote(geo_id, safe='')}[Accession]&retmode=json"
 
         _rate_limit_ncbi()
         if HAS_REQUESTS:
@@ -153,7 +177,7 @@ def fetch_sra_study_accession(geo_id: str) -> Optional[str]:
     """
     try:
         # Search for SRA study linked to GEO
-        search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term={geo_id}[GEO]&retmode=json"
+        search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term={quote(geo_id, safe='')}[GEO]&retmode=json"
 
         _rate_limit_ncbi()
         if HAS_REQUESTS:
@@ -209,7 +233,7 @@ def fetch_sra_run_info(geo_id: str, bioproject: Optional[str] = None) -> List[Di
 
     try:
         # First get the BioProject accession
-        search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term={geo_id}[GEO]&retmax=1000&retmode=json"
+        search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term={quote(geo_id, safe='')}[GEO]&retmax=1000&retmode=json"
 
         _rate_limit_ncbi()
         if HAS_REQUESTS:
@@ -228,7 +252,7 @@ def fetch_sra_run_info(geo_id: str, bioproject: Optional[str] = None) -> List[Di
 
             if bioproject:
                 logger.info(f"Using BioProject {bioproject} for {geo_id}")
-                search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term={bioproject}&retmax=1000&retmode=json"
+                search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term={quote(bioproject, safe='')}&retmax=1000&retmode=json"
 
                 _rate_limit_ncbi()
                 if HAS_REQUESTS:
@@ -311,7 +335,7 @@ def fetch_ena_fastq_urls(study_accession: str) -> Dict[str, List[str]]:
 
     try:
         # Query ENA API
-        ena_url = f"https://www.ebi.ac.uk/ena/portal/api/filereport?accession={study_accession}&result=read_run&fields=run_accession,sample_alias,fastq_ftp&format=tsv"
+        ena_url = f"https://www.ebi.ac.uk/ena/portal/api/filereport?accession={quote(study_accession, safe='')}&result=read_run&fields=run_accession,sample_alias,fastq_ftp&format=tsv"
 
         if HAS_REQUESTS:
             response = requests.get(ena_url, timeout=60)
@@ -364,6 +388,13 @@ def download_file(url: str, output_path: Path, timeout: int = 300, show_progress
         True if successful, False otherwise
     """
     try:
+        if not _is_trusted_download_host(url):
+            logger.error(
+                f"Refusing to download from untrusted host: {url} "
+                f"(allowed: {', '.join(_TRUSTED_DOWNLOAD_HOST_SUFFIXES)})"
+            )
+            return False
+
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         if HAS_REQUESTS:
@@ -407,7 +438,7 @@ def fetch_pubmed_metadata(pmid: str, max_retries: int = 3) -> Optional[Dict]:
     Returns:
         Dict with 'authors', 'year', 'journal', 'doi' or None
     """
-    url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id={pmid}&retmode=json"
+    url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id={quote(str(pmid), safe='')}&retmode=json"
 
     for attempt in range(max_retries):
         try:
@@ -511,7 +542,7 @@ def fetch_bioproject_from_geo(geo_id: str) -> Optional[str]:
     """
     try:
         # First get GDS UID
-        search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term={geo_id}[Accession]&retmode=json"
+        search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term={quote(geo_id, safe='')}[Accession]&retmode=json"
 
         _rate_limit_ncbi()
         if HAS_REQUESTS:
@@ -579,7 +610,7 @@ def fetch_sra_run_info_detailed(geo_id: str, bioproject: Optional[str] = None) -
 
     try:
         # First get SRA UIDs using GEO search
-        search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term={geo_id}[GEO]&retmax=1000&retmode=json"
+        search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term={quote(geo_id, safe='')}[GEO]&retmax=1000&retmode=json"
 
         _rate_limit_ncbi()
         if HAS_REQUESTS:
@@ -600,7 +631,7 @@ def fetch_sra_run_info_detailed(geo_id: str, bioproject: Optional[str] = None) -
 
             if bioproject:
                 logger.info(f"Found BioProject: {bioproject}")
-                search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term={bioproject}&retmax=1000&retmode=json"
+                search_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&term={quote(bioproject, safe='')}&retmax=1000&retmode=json"
 
                 _rate_limit_ncbi()
                 if HAS_REQUESTS:
