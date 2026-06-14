@@ -56,6 +56,10 @@
       "type": "http",
       "url": "https://api.fireflies.ai/mcp"
     },
+    "grain": {
+      "type": "http",
+      "url": "https://api.grain.com/_/mcp"
+    },
     "google calendar": {
       "type": "http",
       "url": ""
