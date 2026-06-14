@@ -1,0 +1,13 @@
+{
+  "name": "aclymate",
+  "version": "0.1.0",
+  "description": "Carbon accounting for SMBs. Estimate your business's carbon footprint, look up emission factors, benchmark against industry peers, and understand GHG Protocol scopes — all powered by Aclymate's SMB carbon accounting data.",
+  "author": {
+    "name": "Aclymate",
+    "url": "https://aclymate.com"
+  },
+  "repository": "https://github.com/Aclymate/ai-integrations",
+  "homepage": "https://aclymate.com",
+  "license": "MIT",
+  "keywords": ["carbon-accounting", "sustainability", "ghg-protocol", "emissions", "climate", "scope-1", "scope-2", "scope-3", "smb"]
+}
