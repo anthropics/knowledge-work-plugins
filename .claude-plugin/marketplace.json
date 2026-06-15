@@ -431,7 +431,7 @@
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
         "ref": "main",
-        "sha": "cdf8738152076ea5850354c1a3de21d88e377c2e"
+        "sha": "c467bf831064ebda26f39dd30c02d7cce03eb26c"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "9de95825cd0eef06abc819e99591270ce5a77e95"
+        "sha": "5e119d7848e1f495092df4e41ac43e609e3293d1"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "9de95825cd0eef06abc819e99591270ce5a77e95"
+        "sha": "5e119d7848e1f495092df4e41ac43e609e3293d1"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "9de95825cd0eef06abc819e99591270ce5a77e95"
+        "sha": "5e119d7848e1f495092df4e41ac43e609e3293d1"
       },
       "homepage": "https://carta.com"
     },
@@ -592,7 +592,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/explorium-ai/vibeprospecting-plugin.git",
-        "sha": "aa5903f52d79e7f2a5f9c324c6fff7d5a5d92631"
+        "sha": "14cb2971a99661382f5a56a9caa7c2d526c4e444"
       },
       "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
     },
@@ -614,7 +614,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "a62c26eb185e5dc1cc05fef27ddf654a68e15165"
+        "sha": "561315d22a49544d6518d3a753973d3a95dfafcc"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
