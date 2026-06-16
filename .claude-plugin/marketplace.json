@@ -337,7 +337,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Nimbleway/agent-skills.git",
-        "sha": "e72345e283f977d4f7bb4d6d415b5964a385bdf1"
+        "sha": "eb97261aa8145fa6d0f45d62d0955805fa06fb91"
       },
       "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "5e119d7848e1f495092df4e41ac43e609e3293d1"
+        "sha": "09f9e88252d8bc5ad4c452042f0b871be817ed07"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "5e119d7848e1f495092df4e41ac43e609e3293d1"
+        "sha": "09f9e88252d8bc5ad4c452042f0b871be817ed07"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "5e119d7848e1f495092df4e41ac43e609e3293d1"
+        "sha": "09f9e88252d8bc5ad4c452042f0b871be817ed07"
       },
       "homepage": "https://carta.com"
     },
