@@ -271,7 +271,7 @@
         "url": "https://github.com/zapier/zapier-mcp.git",
         "path": "plugins/zapier",
         "ref": "main",
-        "sha": "ea8ed6b4de66e9bb46c12b3a38da8286e3770ad9"
+        "sha": "14340013c63448a6353d6edb84e7f87722cb0e42"
       },
       "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier"
     },
@@ -431,7 +431,7 @@
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
         "ref": "main",
-        "sha": "c467bf831064ebda26f39dd30c02d7cce03eb26c"
+        "sha": "e3971a70ecf47c0acadcd1852d9eb10e820e83f0"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "09f9e88252d8bc5ad4c452042f0b871be817ed07"
+        "sha": "b40b6d48e5c469bcaa398857c7306ce9445c2a9d"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "09f9e88252d8bc5ad4c452042f0b871be817ed07"
+        "sha": "b40b6d48e5c469bcaa398857c7306ce9445c2a9d"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "09f9e88252d8bc5ad4c452042f0b871be817ed07"
+        "sha": "b40b6d48e5c469bcaa398857c7306ce9445c2a9d"
       },
       "homepage": "https://carta.com"
     },
