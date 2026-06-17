@@ -655,6 +655,20 @@
         "sha": "84657a123c12e87d7fa32cbc20197144674e110a"
       },
       "homepage": "https://langfuse.com"
+    },
+    {
+      "name": "valtown",
+      "displayName": "Val Town",
+      "description": "Build and deploy on Val Town. Bundles the Val Town MCP server and platform skills (HTTP vals, cron/intervals, SQLite, email, OAuth, React UI, third-party integrations, templates).",
+      "category": "deployment",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/val-town/plugins.git",
+        "path": "plugin",
+        "ref": "main",
+        "sha": "1f7928397349f2ccb228302d8b062c7f20745871"
+      },
+      "homepage": "https://val.town"
     }
   ]
 }
