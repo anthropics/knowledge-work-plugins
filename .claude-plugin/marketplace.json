@@ -184,7 +184,7 @@
         "url": "https://github.com/miroapp/miro-ai.git",
         "path": "claude-plugins/miro",
         "ref": "main",
-        "sha": "9d7c3dc0a9a365b298e3808c741c53e2e80d86d1"
+        "sha": "85c2c7347542b3ce185eb1d2793f8d79ad485c63"
       }
     },
     {
@@ -431,7 +431,7 @@
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
         "ref": "main",
-        "sha": "e3971a70ecf47c0acadcd1852d9eb10e820e83f0"
+        "sha": "2178b523eae8dcc75251829a49b24e62e8af6773"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "bb08003a5474a8dbaca41b496a892c5cbcd057c7"
+        "sha": "256c5672468eea32a3cc465dca121ea7d7e3f142"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "bb08003a5474a8dbaca41b496a892c5cbcd057c7"
+        "sha": "256c5672468eea32a3cc465dca121ea7d7e3f142"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "bb08003a5474a8dbaca41b496a892c5cbcd057c7"
+        "sha": "256c5672468eea32a3cc465dca121ea7d7e3f142"
       },
       "homepage": "https://carta.com"
     },
@@ -543,7 +543,7 @@
         "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
         "path": "plugins/claude",
         "ref": "main",
-        "sha": "7a9b2ff0339a7fdc29c06a9957b323ef478a1dde"
+        "sha": "fea06819cb1211658ae6c7fc98134c2ef2109838"
       },
       "homepage": "https://desktopcommander.app"
     },
@@ -652,7 +652,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/langfuse/skills.git",
-        "sha": "84657a123c12e87d7fa32cbc20197144674e110a"
+        "sha": "c39789078b848160a695947907db3ba40b7a2bce"
       },
       "homepage": "https://langfuse.com"
     },
