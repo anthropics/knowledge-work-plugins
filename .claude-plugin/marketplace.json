@@ -700,6 +700,18 @@
         "sha": "668ea969f355217f06bf1e179d48a34213f13a20"
       },
       "homepage": "https://monday.com"
+    },
+    {
+      "name": "monday-com",
+      "displayName": "monday.com",
+      "description": "The official monday.com plugin for Claude Cowork. Manage boards, items, docs, and forms across work management, CRM, dev, service, and campaigns. Full read and write access via OAuth.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/mondaycom/monday-claude-cowork-plugin.git",
+        "sha": "ce381e93a0a6c2ed3b9942ff1803b8078ba89389"
+      },
+      "homepage": "https://monday.com"
     }
   ]
 }
