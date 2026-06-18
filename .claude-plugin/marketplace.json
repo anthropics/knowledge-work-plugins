@@ -488,7 +488,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "72e57830837d2c67d4604f5d913a328548520f6d"
+        "sha": "1042ae01b7c1ec1e68315a03c2fd9b2a8485d96b"
       },
       "homepage": "https://carta.com"
     },
@@ -501,7 +501,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "72e57830837d2c67d4604f5d913a328548520f6d"
+        "sha": "1042ae01b7c1ec1e68315a03c2fd9b2a8485d96b"
       },
       "homepage": "https://carta.com"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "72e57830837d2c67d4604f5d913a328548520f6d"
+        "sha": "1042ae01b7c1ec1e68315a03c2fd9b2a8485d96b"
       },
       "homepage": "https://carta.com"
     },
@@ -603,7 +603,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/base44/skills.git",
-        "sha": "1e0d0aaaa849a044ce95d168826be53491c99f2f"
+        "sha": "7b301e25d0952235c985bb159ca71cc520f27bcf"
       },
       "homepage": "https://docs.base44.com"
     },
@@ -697,7 +697,7 @@
         "url": "https://github.com/mondaycom/mcp.git",
         "path": "plugins/monday-crm",
         "ref": "master",
-        "sha": "668ea969f355217f06bf1e179d48a34213f13a20"
+        "sha": "95500b9c91003aff49762e63bc93144166e0da7b"
       },
       "homepage": "https://monday.com"
     },
