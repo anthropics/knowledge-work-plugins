@@ -303,6 +303,7 @@ def build_flexible_asm(df, detected_type: str, filepath: str) -> Dict[str, Any]:
     """
     Build ASM-like JSON structure from parsed DataFrame.
     """
+    pd = get_pandas()
     timestamp = get_deterministic_timestamp(filepath)
 
     # Determine technique from detected type
