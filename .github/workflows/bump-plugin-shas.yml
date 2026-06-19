@@ -31,6 +31,12 @@ on:
         description: Cap on plugins bumped this run
         required: false
         default: '130'
+      plugin:
+        description: >-
+          Bump ONLY this plugin name (exact entry name; empty = all stale). A
+          frozen/sha-exempt target is still skipped (same as a full run).
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -52,11 +58,12 @@ jobs:
 
       # createCommitOnBranch-based bump so commits are signed by GitHub and
       # satisfy the org-level required_signatures ruleset on main.
-      - uses: anthropics/claude-plugins-community/.github/actions/bump-plugin-shas@c41c6911de0afffd2bc5cd8b21fb1e06444ee13b
+      - uses: anthropics/claude-plugins-community/.github/actions/bump-plugin-shas@a27629fc8c11488cc3e25ec527bb28196c5db04f
         id: bump
         with:
           marketplace-path: .claude-plugin/marketplace.json
           max-bumps: ${{ inputs.max_bumps || '130' }}
+          only: ${{ inputs.plugin }}
           claude-cli-version: latest
 
       # `bump/plugin-shas` is the action's default `pr-branch`. The scan diffs
