@@ -1,0 +1,8 @@
+{
+  "name": "recruiting",
+  "version": "1.0.0",
+  "description": "Source candidates, screen resumes, prepare for interviews, and manage your pipeline. From job description writing to offer letters, Claude becomes your recruiting specialist.",
+  "author": {
+    "name": "Anthropic"
+  }
+}
