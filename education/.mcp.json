@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/sse",
+      "note": "Slack for team communication and announcements"
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/sse",
+      "note": "Notion for course content, syllabi, and knowledge base"
+    },
+    "google-classroom": {
+      "type": "http",
+      "url": "https://classroom.googleapis.com/mcp/sse",
+      "note": "Google Classroom for course management and student submissions"
+    },
+    "canvas": {
+      "type": "http",
+      "url": "https://canvas.instructure.com/mcp/sse",
+      "note": "Canvas LMS for course delivery and grading"
+    }
+  }
+}
