@@ -1,0 +1,8 @@
+{
+  "name": "education",
+  "version": "1.0.0",
+  "description": "Design curricula, assess students, build learning paths, and create engaging course content. From lesson planning to learning analytics, Claude becomes your instructional design specialist.",
+  "author": {
+    "name": "Anthropic"
+  }
+}
