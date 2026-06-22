@@ -724,6 +724,18 @@
         "sha": "aafe0a59cb143d0adc711af2813cd3b9cd5693d0"
       },
       "homepage": "https://www.lusha.com"
+    },
+    {
+      "name": "exa",
+      "displayName": "Exa",
+      "description": "Exa AI web search, deep research, and content extraction. Provides MCP tools and research skills for comprehensive web search, people discovery, company research, academic papers, and more.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/exa-labs/exa-mcp-server.git",
+        "sha": "bd2ccdd52ca7a35fbc2207ad266bb2a961c0e793"
+      },
+      "homepage": "https://exa.ai/docs/reference/exa-mcp"
     }
   ]
 }
