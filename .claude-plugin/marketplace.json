@@ -724,6 +724,18 @@
         "sha": "aafe0a59cb143d0adc711af2813cd3b9cd5693d0"
       },
       "homepage": "https://www.lusha.com"
+    },
+    {
+      "name": "datarobot-agent-skills",
+      "displayName": "DataRobot Agent Skills",
+      "description": "DataRobot skills for AI/ML workflows — model training, deployment, predictions, feature engineering, monitoring, explainability, data preparation, App Framework CI/CD, and external agent monitoring.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/datarobot-oss/datarobot-agent-skills.git",
+        "sha": "b3e8fd33d7c36592c802359026c15f3e067a0646"
+      },
+      "homepage": "https://datarobot.com"
     }
   ]
 }
