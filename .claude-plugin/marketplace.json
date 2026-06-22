@@ -724,6 +724,18 @@
         "sha": "aafe0a59cb143d0adc711af2813cd3b9cd5693d0"
       },
       "homepage": "https://www.lusha.com"
+    },
+    {
+      "name": "qdrant-skills",
+      "displayName": "Qdrant",
+      "description": "Agent skills for Qdrant vector search: scaling, performance optimization, search quality, monitoring, deployment, model migration, version upgrades, and SDK usage",
+      "category": "database",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/qdrant/skills.git",
+        "sha": "1411d7b46aa141dd9cdecfdd26fea607989cab59"
+      },
+      "homepage": "https://skills.qdrant.tech"
     }
   ]
 }
