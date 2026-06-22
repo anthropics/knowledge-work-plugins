@@ -724,6 +724,18 @@
         "sha": "aafe0a59cb143d0adc711af2813cd3b9cd5693d0"
       },
       "homepage": "https://www.lusha.com"
+    },
+    {
+      "name": "clickhouse",
+      "displayName": "ClickHouse",
+      "description": "ClickHouse Claude Code plugin: skills (ClickHouse best practices), rules and MCP.",
+      "category": "database",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/ClickHouse/clickhouse-claude-code-plugin.git",
+        "sha": "9b9ecbdaee84a7fa55023126e88cade2f3913114"
+      },
+      "homepage": "https://github.com/ClickHouse/clickhouse-claude-code-plugin"
     }
   ]
 }
