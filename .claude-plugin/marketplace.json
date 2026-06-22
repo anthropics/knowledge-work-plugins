@@ -724,6 +724,18 @@
         "sha": "aafe0a59cb143d0adc711af2813cd3b9cd5693d0"
       },
       "homepage": "https://www.lusha.com"
+    },
+    {
+      "name": "qt-development-skills",
+      "displayName": "Qt Development Skills",
+      "description": "Agentic engineering skills for Qt software development, including Qt C++/QML code review, QML coding, and Qt C++/QML code documentation. These skills use AI and can make mistakes. Always double-check the output carefully.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/TheQtCompanyRnD/agent-skills.git",
+        "sha": "62a98e2339e6eefcff108cfc3fe9db8a7301856c"
+      },
+      "homepage": "https://github.com/TheQtCompanyRnD/agent-skills"
     }
   ]
 }
