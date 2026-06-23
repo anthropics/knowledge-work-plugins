@@ -16,6 +16,10 @@
       "type": "http",
       "url": "https://mcp.close.com/mcp"
     },
+    "Monday": {
+      "type": "http",
+      "url": "https://mcp.monday.com/mcp"
+    },
     "clay": {
       "type": "http",
       "url": "https://api.clay.com/v3/mcp"

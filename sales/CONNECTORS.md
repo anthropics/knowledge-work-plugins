@@ -13,7 +13,7 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Calendar | `~~calendar` | Google Calendar, Microsoft 365 | — |
 | Chat | `~~chat` | Slack | Microsoft Teams |
 | Competitive intelligence | `~~competitive intelligence` | Similarweb | Crayon, Klue |
-| CRM | `~~CRM` | HubSpot, Close | Salesforce, Pipedrive, Copper |
+| CRM | `~~CRM` | HubSpot, Close, Monday | Salesforce, Pipedrive, Copper |
 | Data enrichment | `~~data enrichment` | Clay, ZoomInfo, Apollo | Clearbit, Lusha |
 | Email | `~~email` | Gmail, Microsoft 365 | — |
 | Knowledge base | `~~knowledge base` | Notion | Confluence, Guru |
