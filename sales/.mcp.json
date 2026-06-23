@@ -16,7 +16,7 @@
       "type": "http",
       "url": "https://mcp.close.com/mcp"
     },
-    "Monday": {
+    "monday": {
       "type": "http",
       "url": "https://mcp.monday.com/mcp"
     },
