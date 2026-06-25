@@ -124,7 +124,10 @@ def validate_samplesheet(
             if col_name in row and row[col_name] and "allowed" in col_config:
                 value = row[col_name]
                 allowed = col_config["allowed"]
-                if value not in allowed:
+                # Samplesheet values are read from CSV as strings (e.g. "0"),
+                # while enum lists may be typed (e.g. integers [0, 1]).
+                # Compare as strings so typed enums still validate correctly.
+                if str(value) not in [str(a) for a in allowed]:
                     errors.append(
                         f"Row {row_num}: Invalid value '{value}' for '{col_name}'. "
                         f"Allowed: {allowed}"
