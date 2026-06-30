@@ -555,7 +555,7 @@
         "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
         "path": "plugins/claude",
         "ref": "main",
-        "sha": "be82290ac1d64f19503d6b084865a91d114c872e"
+        "sha": "acc69e00cced485e37c43088e0f49a1b63a739a7"
       },
       "homepage": "https://desktopcommander.app"
     },
