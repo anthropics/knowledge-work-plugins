@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "xquik": {
+      "type": "http",
+      "url": "https://xquik.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${XQUIK_API_KEY}"
+      }
+    }
+  }
+}

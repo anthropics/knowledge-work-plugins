@@ -1,0 +1,20 @@
+{
+  "name": "xquik",
+  "version": "0.1.0",
+  "description": "Xquik workflows for X data research, media collection, follower export, monitoring, webhooks, and confirmation-gated actions through the Xquik MCP server.",
+  "author": {
+    "name": "Xquik",
+    "url": "https://xquik.com"
+  },
+  "repository": "https://github.com/Xquik-dev/x-twitter-scraper",
+  "homepage": "https://docs.xquik.com/mcp/overview",
+  "license": "Apache-2.0",
+  "keywords": [
+    "xquik",
+    "x",
+    "mcp",
+    "social",
+    "research",
+    "automation"
+  ]
+}
