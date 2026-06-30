@@ -862,6 +862,20 @@
         "sha": "f89c9b73f9dab404df3d9ab9ee4d470399b7c761"
       },
       "homepage": "https://docs.pixeltable.com"
+    },
+    {
+      "name": "honeycomb",
+      "displayName": "Honeycomb",
+      "description": "Skills, agents, and workflows for Honeycomb observability — query patterns, production investigations, SLOs, OpenTelemetry instrumentation, and Beeline migration. Designed to complement the Honeycomb MCP server.",
+      "category": "monitoring",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/honeycombio/agent-skill.git",
+        "path": "honeycomb",
+        "ref": "main",
+        "sha": "53e6bb80242d4667dd730e7cc2150a4a2f9a83bf"
+      },
+      "homepage": "https://www.honeycomb.io"
     }
   ]
 }
