@@ -864,6 +864,17 @@
       "homepage": "https://docs.pixeltable.com"
     },
     {
+      "name": "xquik",
+      "displayName": "Xquik",
+      "description": "Research X content, monitor accounts or keywords, collect media, export followers, and prepare confirmation-gated actions through the Xquik MCP server.",
+      "category": "productivity",
+      "source": "./partner-built/xquik",
+      "homepage": "https://docs.xquik.com/mcp/overview",
+      "author": {
+        "name": "Xquik"
+      }
+    },
+    {
       "name": "grafana-assistant",
       "displayName": "Grafana Assistant",
       "description": "Skills and rules for developing and using the Grafana Assistant app and CLI.",
