@@ -327,7 +327,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/fastly/fastly-agent-toolkit.git",
-        "sha": "73af5b94a98448ffeed6e2993495dc83c9a597be"
+        "sha": "f410cb742523f5eabad9a1bf41e3bc9f8a8e6534"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
     },
@@ -555,7 +555,7 @@
         "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
         "path": "plugins/claude",
         "ref": "main",
-        "sha": "be82290ac1d64f19503d6b084865a91d114c872e"
+        "sha": "acc69e00cced485e37c43088e0f49a1b63a739a7"
       },
       "homepage": "https://desktopcommander.app"
     },
@@ -593,7 +593,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/twilio/ai.git",
-        "sha": "f7b29ecfbb9061937831d2c0210ec39bd3c5c448"
+        "sha": "aa67a6d476107d6742f31a53d68b10749552930f"
       },
       "homepage": "https://www.twilio.com"
     },
@@ -615,7 +615,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/base44/skills.git",
-        "sha": "7b301e25d0952235c985bb159ca71cc520f27bcf"
+        "sha": "1463369a8664bb3dbf127d041a710dd7a085f4fa"
       },
       "homepage": "https://docs.base44.com"
     },
@@ -626,7 +626,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "e2b591ea60a390c6f133366872e8f7fee5c6be27"
+        "sha": "958772ecff1d2e4a3e7a63c2baee502ec65179b1"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -664,7 +664,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/langfuse/skills.git",
-        "sha": "93cb1e5c2bc9e10cda4dbac74f021c594975e5d8"
+        "sha": "604e4c7b1d4879bebd9e78d27c316a07cc9abce5"
       },
       "homepage": "https://langfuse.com"
     },
@@ -795,7 +795,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/qdrant/skills.git",
-        "sha": "b3a33ed40b00877802f5defa307e62d435e0838a"
+        "sha": "b12b75c01f567eb1f7a3e05a991641627c30998a"
       },
       "homepage": "https://skills.qdrant.tech"
     },
@@ -819,7 +819,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/exa-labs/exa-mcp-server.git",
-        "sha": "a4dcddf69b701debe9d7caca30e6fa4610ce553c"
+        "sha": "08242e3b8a9efdee9a8e945a33b68f283874010f"
       },
       "homepage": "https://exa.ai/docs/reference/exa-mcp"
     },
@@ -850,6 +850,18 @@
         "sha": "b56291ea0a36d0a941e1478b47959be5f1771dee"
       },
       "homepage": "https://www.canva.com"
+    },
+    {
+      "name": "pixeltable",
+      "displayName": "Pixeltable",
+      "description": "Build multimodal AI applications with Pixeltable -- tables, computed columns, embedding search, UDFs, tool-calling agents, and 25+ AI provider integrations.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/pixeltable/pixeltable-skill.git",
+        "sha": "f89c9b73f9dab404df3d9ab9ee4d470399b7c761"
+      },
+      "homepage": "https://docs.pixeltable.com"
     },
     {
       "name": "xquik",
