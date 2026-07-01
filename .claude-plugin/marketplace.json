@@ -305,7 +305,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/cockroachdb/claude-plugin.git",
-        "sha": "736bd11df55bac97e2a6c98be8e93503b125902c"
+        "sha": "c511ba806b1797b1737fc4cbffbe3dba8697b1f2"
       },
       "homepage": "https://github.com/cockroachdb/claude-plugin"
     },
@@ -526,7 +526,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "787932173c1bc0fb6f2346e380fddd2349ceb8df"
+        "sha": "1b6e78b4682160975952f4d2c90a81493cd4c7d0"
       },
       "homepage": "https://carta.com"
     },
@@ -819,7 +819,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/exa-labs/exa-mcp-server.git",
-        "sha": "08242e3b8a9efdee9a8e945a33b68f283874010f"
+        "sha": "c4b419adb3ce2674ad062b15f0d42f8b8cee05c5"
       },
       "homepage": "https://exa.ai/docs/reference/exa-mcp"
     },
@@ -873,6 +873,34 @@
       "author": {
         "name": "Xquik"
       }
+    },
+    {
+      "name": "grafana-assistant",
+      "displayName": "Grafana Assistant",
+      "description": "Skills and rules for developing and using the Grafana Assistant app and CLI.",
+      "category": "monitoring",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/grafana/ai-marketplace.git",
+        "path": "plugins/grafana-assistant",
+        "ref": "main",
+        "sha": "a5c72f2d74c640e9675eb0249526447968535015"
+      },
+      "homepage": "https://grafana.com"
+    },
+    {
+      "name": "grafana-cloud-mcp",
+      "displayName": "Grafana Cloud MCP",
+      "description": "Hosted MCP server for AI-assisted Grafana Cloud observability — no local installation required.",
+      "category": "monitoring",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/grafana/ai-marketplace.git",
+        "path": "plugins/grafana-cloud-mcp",
+        "ref": "main",
+        "sha": "a5c72f2d74c640e9675eb0249526447968535015"
+      },
+      "homepage": "https://grafana.com"
     }
   ]
 }
