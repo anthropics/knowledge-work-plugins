@@ -890,6 +890,18 @@
         "sha": "a5c72f2d74c640e9675eb0249526447968535015"
       },
       "homepage": "https://grafana.com"
+    },
+    {
+      "name": "grasp",
+      "displayName": "Grasp",
+      "description": "Deal-work workflows powered by Grasp company lookup, table creation, import, buyer, transaction, table enrichment, contact, and market research tools.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/grasp-ai/grasp-mcp-plugin.git",
+        "sha": "3331cc8b908e038df5ec1b199c55b2f763943511"
+      },
+      "homepage": "https://www.grasp-ai.com/"
     }
   ]
 }
