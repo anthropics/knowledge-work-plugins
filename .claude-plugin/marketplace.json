@@ -890,6 +890,18 @@
         "sha": "a5c72f2d74c640e9675eb0249526447968535015"
       },
       "homepage": "https://grafana.com"
+    },
+    {
+      "name": "b12-claude-plugin",
+      "displayName": "B12",
+      "description": "B12 plugin with two skills: Website Generator (create a B12 website from a brief description) and B12 Website Editor (edit a live B12 website using Claude's browser access in Claude Cowork).",
+      "category": "design",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/b12io/b12-claude-plugin.git",
+        "sha": "a53638c2b23b82c6be7c4e5b1e3cecd6a59f9fb8"
+      },
+      "homepage": "https://www.b12.io"
     }
   ]
 }
