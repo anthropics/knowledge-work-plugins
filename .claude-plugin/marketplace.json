@@ -902,6 +902,18 @@
         "sha": "3331cc8b908e038df5ec1b199c55b2f763943511"
       },
       "homepage": "https://www.grasp-ai.com/"
+    },
+    {
+      "name": "adwhispr-ads-agent",
+      "displayName": "AdWhispr",
+      "description": "Competitor ad intelligence plus campaign launch. 27 tools to research any brand's ads, surface their longest-running proven winners, clone the creative for your brand, and launch Google and TikTok campaigns.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/adwhispr/claude-plugin.git",
+        "sha": "6d2b9239a06dd58a18c41fa833eb3c73f8381798"
+      },
+      "homepage": "https://adwhispr.com"
     }
   ]
 }
