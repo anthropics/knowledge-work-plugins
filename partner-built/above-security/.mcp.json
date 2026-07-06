@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "above-security": {
+      "type": "http",
+      "url": "https://mcp.app.abovesec.com/mcp"
+    }
+  }
+}

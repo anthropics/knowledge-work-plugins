@@ -850,6 +850,17 @@
         "sha": "b56291ea0a36d0a941e1478b47959be5f1771dee"
       },
       "homepage": "https://www.canva.com"
+    },
+    {
+      "name": "above-security",
+      "displayName": "Above Security",
+      "description": "Investigate insider threats and identities with the Above Security MCP server — surface incidents, investigate identities, and validate findings against telemetry.",
+      "category": "security",
+      "source": "./partner-built/above-security",
+      "author": {
+        "name": "Above Security"
+      },
+      "homepage": "https://above.security"
     }
   ]
 }

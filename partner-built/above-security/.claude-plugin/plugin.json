@@ -1,0 +1,11 @@
+{
+  "name": "above-security",
+  "description": "Above Security MCP server for insider threat and identity investigations. Surface incidents, investigate identities, and validate findings against telemetry directly from Claude.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Above Security",
+    "url": "https://above.security"
+  },
+  "homepage": "https://above.security",
+  "license": "MIT"
+}
