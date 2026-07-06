@@ -327,7 +327,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/fastly/fastly-agent-toolkit.git",
-        "sha": "9a273f0b2f7a496355b6ec30c1b34614a80bf805"
+        "sha": "ea3623d5facc7053eaa802f5fc483dd7121a39aa"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
     },
@@ -500,7 +500,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "0f7d5f3f1c71ae5d5715494621764fda0fbb0776"
+        "sha": "74dcec2b733f150c11b6d7c59b7a37e63da79a82"
       },
       "homepage": "https://carta.com"
     },
@@ -526,7 +526,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "0f7d5f3f1c71ae5d5715494621764fda0fbb0776"
+        "sha": "e32d1707c89887768fd8462c3942865ae3b7e343"
       },
       "homepage": "https://carta.com"
     },
@@ -626,7 +626,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "483d35bb7bf5e59268d938cc03802cac9a324508"
+        "sha": "e02cf9bb8567c062e8ca3a1035bb19d4325c9af7"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -771,7 +771,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/ClickHouse/clickhouse-claude-code-plugin.git",
-        "sha": "ecbd47627d7e7b3de15b297b91e0abf3e6ebc746"
+        "sha": "e98bda0a36613cd220243a83535dcc37e14295ab"
       },
       "homepage": "https://github.com/ClickHouse/clickhouse-claude-code-plugin"
     },
@@ -859,7 +859,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/pixeltable/pixeltable-skill.git",
-        "sha": "729175dbb2a144bb6529fb93ac696bad40a1f09d"
+        "sha": "933c15b55a49aa375ce0300c074bdf43b68571b9"
       },
       "homepage": "https://docs.pixeltable.com"
     },
