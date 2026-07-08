@@ -928,6 +928,20 @@
         "sha": "a53638c2b23b82c6be7c4e5b1e3cecd6a59f9fb8"
       },
       "homepage": "https://github.com/b12io/b12-claude-plugin"
+    },
+    {
+      "name": "signoz",
+      "displayName": "SigNoz",
+      "description": "Official SigNoz plugin for MCP setup, docs, queries, dashboards, and alerts",
+      "category": "monitoring",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/SigNoz/agent-skills.git",
+        "path": "plugins/signoz",
+        "ref": "main",
+        "sha": "b15a9247a464690d0d7f9787f305acd9a49b3012"
+      },
+      "homepage": "https://signoz.io/docs/ai/agent-skills"
     }
   ]
 }
