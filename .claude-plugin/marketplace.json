@@ -942,6 +942,23 @@
         "sha": "c86f50a83d52894fb989628b6401824a4238fba4"
       },
       "homepage": "https://signoz.io/docs/ai/agent-skills"
+    },
+    {
+      "name": "alpic",
+      "displayName": "Alpic",
+      "description": "Deploy and manage MCP servers on Alpic Cloud. Skills for the Alpic CLI — deploy, tunnels, logs, analytics, environments, environment variables, auth, custom domains, versioning, readiness audits, and publishing — plus the Alpic MCP server for managing your deployments directly from Claude.",
+      "author": {
+        "name": "Alpic"
+      },
+      "category": "deployment",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/alpic-ai/alpic-plugin.git",
+        "path": "plugins/alpic",
+        "ref": "main",
+        "sha": "5c63a9748a1e089bb82b5f27bf86459b655fabb7"
+      },
+      "homepage": "https://alpic.ai"
     }
   ]
 }
