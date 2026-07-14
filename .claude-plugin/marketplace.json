@@ -245,7 +245,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Zoominfo/zoominfo-mcp-plugin.git",
-        "sha": "b836604c5474f245c4dfc0ed610cd9dfcfeee35e"
+        "sha": "66eae634f40f68bddc6027f0167bbecdb5f4b531"
       },
       "homepage": "https://zoominfo.com"
     },
@@ -338,7 +338,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/cloudinary-devs/cloudinary-plugin.git",
-        "sha": "7b443d7dbd607bfe4850d8cfcab6ba4cbf1a57c3"
+        "sha": "77ed3c5da085ef1d189948f9ff2a1bf5ab7b257b"
       },
       "homepage": "https://cloudinary.com/documentation"
     },
@@ -429,7 +429,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/figma/mcp-server-guide.git",
-        "sha": "aa1d073884af0db2e69a7b31957513f3d3cc6503"
+        "sha": "07316dd2920d61303ca0e52812b31f5f341e7b15"
       },
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
@@ -500,7 +500,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "660e3f601f3d15bcc827f56aa36e140ce4f95e0d"
+        "sha": "6a67756ef25da26d6a84a5b55cbd861526ffef23"
       },
       "homepage": "https://carta.com"
     },
@@ -513,7 +513,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "d73a3615864a5590ad6105df1b3e1b26324d1813"
+        "sha": "fdc57d653abf38cc0a70ddd9e4f23c273af86a7b"
       },
       "homepage": "https://carta.com"
     },
@@ -526,7 +526,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "9223489f76dcc08560ec8f356eb1cf183dab8fcf"
+        "sha": "fdc57d653abf38cc0a70ddd9e4f23c273af86a7b"
       },
       "homepage": "https://carta.com"
     },
@@ -579,7 +579,7 @@
         "url": "https://github.com/ServiceNow/sdk.git",
         "path": "providers/claude/plugin",
         "ref": "main",
-        "sha": "4aadc235ad57a7442e42529869e68ff19c59596c"
+        "sha": "255d35e94e5393e9f36e7ca2789dee83a8aa7f47"
       },
       "homepage": "https://servicenow.github.io/sdk/"
     },
@@ -604,7 +604,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/explorium-ai/vibeprospecting-plugin.git",
-        "sha": "14cb2971a99661382f5a56a9caa7c2d526c4e444"
+        "sha": "9a16badaa9f1e36bc7ae4520b069392438bfc3c8"
       },
       "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
     },
@@ -615,7 +615,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/base44/skills.git",
-        "sha": "b7610fe5082d38b9eddd7180b49e4008608700ab"
+        "sha": "58a183b6e912fe8ae2827c603d485a37b7d00e1b"
       },
       "homepage": "https://docs.base44.com"
     },
@@ -626,7 +626,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "ea51a398690ee1048e1f46a848cd1245697a0a88"
+        "sha": "faa87990ceb4c23dae8f36f47811ab5b2d778709"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -664,7 +664,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/langfuse/skills.git",
-        "sha": "242e0ecce57c73da91af5d1afe5e5dfaf6661482"
+        "sha": "a20c726a70137cb4e3667de78613ba7e00685018"
       },
       "homepage": "https://langfuse.com"
     },
@@ -709,7 +709,7 @@
         "url": "https://github.com/mondaycom/mcp.git",
         "path": "plugins/monday-crm",
         "ref": "master",
-        "sha": "95500b9c91003aff49762e63bc93144166e0da7b"
+        "sha": "fc64cf88c2fd9e3081f70fa8bbfb6d2bbee809a8"
       },
       "homepage": "https://monday.com"
     },
@@ -747,7 +747,7 @@
         "url": "https://github.com/auth0/agent-skills.git",
         "path": "plugins/auth0",
         "ref": "main",
-        "sha": "1ee3e4cc6f43dafa6bcffcc24bb04a94d1a6dc85"
+        "sha": "ce813504a5f05f2c09fe9aa3a10ca6a0b574d875"
       },
       "homepage": "https://github.com/auth0/agent-skills"
     },
@@ -771,7 +771,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/ClickHouse/clickhouse-claude-code-plugin.git",
-        "sha": "e98bda0a36613cd220243a83535dcc37e14295ab"
+        "sha": "0b64ebd82240c14639c55c6f800bcad4626e3224"
       },
       "homepage": "https://github.com/ClickHouse/clickhouse-claude-code-plugin"
     },
@@ -783,7 +783,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/datarobot-oss/datarobot-agent-skills.git",
-        "sha": "c4a9729d617aa32e7e9e35c6b30cc97ae81ee47e"
+        "sha": "c6e70363e41bac72470f755952b04eb7504a0ab0"
       },
       "homepage": "https://datarobot.com"
     },
@@ -795,7 +795,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/qdrant/skills.git",
-        "sha": "8ba95bc77c88d8db365075e285c005654303b205"
+        "sha": "2a06cb1e9b614fca0f902eed79edd049c24877c5"
       },
       "homepage": "https://skills.qdrant.tech"
     },
@@ -939,7 +939,7 @@
         "url": "https://github.com/SigNoz/agent-skills.git",
         "path": "plugins/signoz",
         "ref": "main",
-        "sha": "6f3f47ec3c104353c58853e2caa7a4599af44f3d"
+        "sha": "693b54add12dce5de936e994162930399303e13b"
       },
       "homepage": "https://signoz.io/docs/ai/agent-skills"
     },
