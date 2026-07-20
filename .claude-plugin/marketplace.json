@@ -956,6 +956,18 @@
         "sha": "6156fbdb0dd0509af18326a0e7af2e6717768bdb"
       },
       "homepage": "https://docs.tinyfish.ai"
+    },
+    {
+      "name": "carbone-skill",
+      "displayName": "Carbone",
+      "description": "Official Carbone skill — complete templating language reference covering tags, loops, conditions, formatters, aggregators, and all output formats (DOCX, XLSX, PPTX, ODT, HTML, Markdown, PDF)",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/carboneio/carbone-skill.git",
+        "sha": "52cd97e4ff35490440c066822739e466fab47901"
+      },
+      "homepage": "https://carbone.io"
     }
   ]
 }
