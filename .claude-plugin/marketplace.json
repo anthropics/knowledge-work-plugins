@@ -956,6 +956,18 @@
         "sha": "6156fbdb0dd0509af18326a0e7af2e6717768bdb"
       },
       "homepage": "https://docs.tinyfish.ai"
+    },
+    {
+      "name": "gitkraken",
+      "displayName": "GitKraken",
+      "description": "Gives Claude access to your real Git and project context: commits, branches, pull requests, and issues across every repo you work in. Works with GitHub, GitLab, Azure DevOps, Bitbucket, and Jira.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/gitkraken/claude-plugin.git",
+        "sha": "cd0c2976c9b47a56e2b7d4cce1cd77fc058bee39"
+      },
+      "homepage": "https://www.gitkraken.com"
     }
   ]
 }
