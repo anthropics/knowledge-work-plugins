@@ -956,6 +956,20 @@
         "sha": "6156fbdb0dd0509af18326a0e7af2e6717768bdb"
       },
       "homepage": "https://docs.tinyfish.ai"
+    },
+    {
+      "name": "browser-use",
+      "displayName": "Browser Use",
+      "description": "Give Claude a real browser — your Chrome or a Browser Use Cloud browser. Use it whenever a task involves a website or web app: browsing, scraping and data extraction, filling forms, testing sites, taking screenshots, automating web workflows.",
+      "category": "automation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/browser-use/plugins.git",
+        "path": "browser-use",
+        "ref": "main",
+        "sha": "a25f0a262928bcbb62071432636d943ed9f2b6aa"
+      },
+      "homepage": "https://browser-use.com"
     }
   ]
 }
