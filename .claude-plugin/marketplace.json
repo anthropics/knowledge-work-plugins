@@ -970,6 +970,18 @@
       "homepage": "https://carbone.io"
     },
     {
+      "name": "modern-web-guidance",
+      "displayName": "Modern Web Guidance",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/GoogleChrome/modern-web-guidance.git",
+        "sha": "2354c8c5856602e0730d7c65d91f1c29ffc479ee"
+      },
+      "homepage": "https://goo.gle/modern-web-guidance"
+    },
+    {
       "name": "gitkraken",
       "displayName": "GitKraken",
       "description": "Gives Claude access to your real Git and project context: commits, branches, pull requests, and issues across every repo you work in. Works with GitHub, GitLab, Azure DevOps, Bitbucket, and Jira.",
