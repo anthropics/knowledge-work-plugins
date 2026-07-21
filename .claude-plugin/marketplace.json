@@ -970,6 +970,18 @@
       "homepage": "https://carbone.io"
     },
     {
+      "name": "modern-web-guidance",
+      "displayName": "Modern Web Guidance",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/GoogleChrome/modern-web-guidance.git",
+        "sha": "2354c8c5856602e0730d7c65d91f1c29ffc479ee"
+      },
+      "homepage": "https://goo.gle/modern-web-guidance"
+    },
+    {
       "name": "browser-use",
       "displayName": "Browser Use",
       "description": "Give Claude a real browser — your Chrome or a Browser Use Cloud browser. Use it whenever a task involves a website or web app: browsing, scraping and data extraction, filling forms, testing sites, taking screenshots, automating web workflows.",
