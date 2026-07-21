@@ -996,6 +996,20 @@
       "homepage": "https://docs.stackhawk.com/ai-security/"
     },
     {
+      "name": "stackhawk-hawkscan",
+      "displayName": "StackHawk HawkScan",
+      "description": "Configure, run, and interpret HawkScan DAST results. Generates stackhawk.yml configs, runs scans via CLI or Docker, and transforms security findings into prioritized fix tasks for your coding agent.",
+      "category": "security",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/stackhawk/agent-skills.git",
+        "path": "plugins/hawkscan",
+        "ref": "main",
+        "sha": "248e3fedba8ff80fadfd17f72a0454aa02b66a0b"
+      },
+      "homepage": "https://docs.stackhawk.com/ai-security/"
+    },
+    {
       "name": "gitkraken",
       "displayName": "GitKraken",
       "description": "Gives Claude access to your real Git and project context: commits, branches, pull requests, and issues across every repo you work in. Works with GitHub, GitLab, Azure DevOps, Bitbucket, and Jira.",
