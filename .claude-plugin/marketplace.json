@@ -899,7 +899,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/grasp-ai/grasp-mcp-plugin.git",
-        "sha": "3331cc8b908e038df5ec1b199c55b2f763943511"
+        "sha": "46636efae712699778d15a05b6cffc6f7d2bdf26"
       },
       "homepage": "https://www.grasp-ai.com/"
     },
