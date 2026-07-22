@@ -500,7 +500,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "72fe00abb37d208db25661000f207400fa61630b"
+        "sha": "651a08ae95ae3986ac508d24a7e541131ed72d87"
       },
       "homepage": "https://carta.com"
     },
@@ -526,7 +526,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "72fe00abb37d208db25661000f207400fa61630b"
+        "sha": "651a08ae95ae3986ac508d24a7e541131ed72d87"
       },
       "homepage": "https://carta.com"
     },
@@ -555,7 +555,7 @@
         "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
         "path": "plugins/claude",
         "ref": "main",
-        "sha": "0ad919bc188947fc55b1bf269df62f4b14b3880c"
+        "sha": "1eccc8b09cc09805202a1737fd20d605356c3671"
       },
       "homepage": "https://desktopcommander.app"
     },
@@ -795,7 +795,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/qdrant/skills.git",
-        "sha": "240854b3068b6a9cd1ebf75ab008b5758071052b"
+        "sha": "e24485f0e76d3d4504bf5045ead9a42b56561521"
       },
       "homepage": "https://skills.qdrant.tech"
     },
@@ -977,7 +977,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/GoogleChrome/modern-web-guidance.git",
-        "sha": "2354c8c5856602e0730d7c65d91f1c29ffc479ee"
+        "sha": "79aae1e0bed948e48fd78b58538c5ee1e6463da9"
       },
       "homepage": "https://goo.gle/modern-web-guidance"
     },
@@ -991,7 +991,7 @@
         "url": "https://github.com/stackhawk/agent-skills.git",
         "path": "plugins/api",
         "ref": "main",
-        "sha": "248e3fedba8ff80fadfd17f72a0454aa02b66a0b"
+        "sha": "ba4bab433d31dc313de2ac6e72a43318b31f28dd"
       },
       "homepage": "https://docs.stackhawk.com/ai-security/"
     },
@@ -1005,9 +1005,35 @@
         "url": "https://github.com/stackhawk/agent-skills.git",
         "path": "plugins/hawkscan",
         "ref": "main",
-        "sha": "248e3fedba8ff80fadfd17f72a0454aa02b66a0b"
+        "sha": "ba4bab433d31dc313de2ac6e72a43318b31f28dd"
       },
       "homepage": "https://docs.stackhawk.com/ai-security/"
+    },
+    {
+      "name": "growthbook",
+      "displayName": "GrowthBook",
+      "description": "A suite of agent skills for the full GrowthBook feature flag and experimentation lifecycle.",
+      "category": "testing",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/growthbook/skills.git",
+        "sha": "2ba1f3608d15394b2881125fc4babdc761454cb5"
+      },
+      "homepage": "https://growthbook.io"
+    },
+    {
+      "name": "browser-use",
+      "displayName": "Browser Use",
+      "description": "Give Claude a real browser — your Chrome or a Browser Use Cloud browser. Use it whenever a task involves a website or web app: browsing, scraping and data extraction, filling forms, testing sites, taking screenshots, automating web workflows.",
+      "category": "automation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/browser-use/plugins.git",
+        "path": "browser-use",
+        "ref": "main",
+        "sha": "a25f0a262928bcbb62071432636d943ed9f2b6aa"
+      },
+      "homepage": "https://browser-use.com"
     },
     {
       "name": "gitkraken",
