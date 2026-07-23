@@ -950,10 +950,10 @@
       "category": "automation",
       "source": {
         "source": "git-subdir",
-        "url": "https://github.com/tinyfish-io/tinyfish-cookbook.git",
-        "path": "plugins/tinyfish",
+        "url": "https://github.com/tinyfish-io/tinyfish-web-agent-integrations.git",
+        "path": "claude",
         "ref": "main",
-        "sha": "769c42188c5fc1504846d9a11e583e28a6d7048a"
+        "sha": "80ce9bfacafd7e26d425200677a16cef835b054f"
       },
       "homepage": "https://docs.tinyfish.ai"
     },
