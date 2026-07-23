@@ -234,7 +234,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "6c81e246ed9d63588ca1fb624f29ac804184d1be"
+        "sha": "af54474c21b00aee8e2fa2855b8ff6ef8a0cf41c"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -269,7 +269,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/daloopa/plugin.git",
-        "sha": "a4d8e1ee1a85f291c36c07dbcb23d1ca0cd182b5"
+        "sha": "fb1ed7a6e0fd2c430e8f89b952cdd0f34137cde9"
       },
       "homepage": "https://github.com/daloopa/plugin"
     },
@@ -305,7 +305,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/cockroachdb/claude-plugin.git",
-        "sha": "fb845eda90ab894f26df7b084f3652e5cef49dd4"
+        "sha": "6c96c6394a61f366e8ec1b7cec2281e97507cbff"
       },
       "homepage": "https://github.com/cockroachdb/claude-plugin"
     },
@@ -349,7 +349,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Nimbleway/agent-skills.git",
-        "sha": "fdd3d17713f591b2643d90c35f44546f97458163"
+        "sha": "74ca4dd4bad18a899b1fbf364b70e5a9ceace80d"
       },
       "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation"
     },
@@ -500,7 +500,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "72fe00abb37d208db25661000f207400fa61630b"
+        "sha": "651a08ae95ae3986ac508d24a7e541131ed72d87"
       },
       "homepage": "https://carta.com"
     },
@@ -526,7 +526,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "72fe00abb37d208db25661000f207400fa61630b"
+        "sha": "de2bc306ba03c3f1fa3b6262ec5b63cc97480f68"
       },
       "homepage": "https://carta.com"
     },
@@ -555,7 +555,7 @@
         "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP.git",
         "path": "plugins/claude",
         "ref": "main",
-        "sha": "0ad919bc188947fc55b1bf269df62f4b14b3880c"
+        "sha": "1eccc8b09cc09805202a1737fd20d605356c3671"
       },
       "homepage": "https://desktopcommander.app"
     },
@@ -626,7 +626,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "bef043f07972401e14fc4b129cf3895417f09352"
+        "sha": "1f45b5dfc8431fa523fb055824f86742af259373"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -664,7 +664,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/langfuse/skills.git",
-        "sha": "abe69fac6b0e0df94605dc5ae162da4726d0fb78"
+        "sha": "3e89523ca290e0192395c5044b1cef11063a1842"
       },
       "homepage": "https://langfuse.com"
     },
@@ -747,7 +747,7 @@
         "url": "https://github.com/auth0/agent-skills.git",
         "path": "plugins/auth0",
         "ref": "main",
-        "sha": "d1b19854e60c6dfde048df91e4d97e536dba2491"
+        "sha": "e295fd64597c164c31921705b530baadaf60dd87"
       },
       "homepage": "https://github.com/auth0/agent-skills"
     },
@@ -759,7 +759,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/buildkite/skills.git",
-        "sha": "e854e111766e9494d742fe6836d5b6ecefd10b68"
+        "sha": "5bbd53d496b9dd5cd7b3e0a2d8345daa333c3f4e"
       },
       "homepage": "https://github.com/buildkite/skills"
     },
@@ -795,7 +795,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/qdrant/skills.git",
-        "sha": "240854b3068b6a9cd1ebf75ab008b5758071052b"
+        "sha": "e24485f0e76d3d4504bf5045ead9a42b56561521"
       },
       "homepage": "https://skills.qdrant.tech"
     },
@@ -899,7 +899,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/grasp-ai/grasp-mcp-plugin.git",
-        "sha": "3331cc8b908e038df5ec1b199c55b2f763943511"
+        "sha": "46636efae712699778d15a05b6cffc6f7d2bdf26"
       },
       "homepage": "https://www.grasp-ai.com/"
     },
@@ -939,7 +939,7 @@
         "url": "https://github.com/SigNoz/agent-skills.git",
         "path": "plugins/signoz",
         "ref": "main",
-        "sha": "478ec291491b7eb59824fb9947bf6f37ca640db3"
+        "sha": "de93bd31e934b450dd02c5f77ce7176ae2d22f3e"
       },
       "homepage": "https://signoz.io/docs/ai/agent-skills"
     },
@@ -953,7 +953,7 @@
         "url": "https://github.com/tinyfish-io/tinyfish-cookbook.git",
         "path": "plugins/tinyfish",
         "ref": "main",
-        "sha": "6156fbdb0dd0509af18326a0e7af2e6717768bdb"
+        "sha": "769c42188c5fc1504846d9a11e583e28a6d7048a"
       },
       "homepage": "https://docs.tinyfish.ai"
     },
@@ -977,7 +977,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/GoogleChrome/modern-web-guidance.git",
-        "sha": "2354c8c5856602e0730d7c65d91f1c29ffc479ee"
+        "sha": "79aae1e0bed948e48fd78b58538c5ee1e6463da9"
       },
       "homepage": "https://goo.gle/modern-web-guidance"
     },
@@ -991,7 +991,7 @@
         "url": "https://github.com/stackhawk/agent-skills.git",
         "path": "plugins/api",
         "ref": "main",
-        "sha": "248e3fedba8ff80fadfd17f72a0454aa02b66a0b"
+        "sha": "ba4bab433d31dc313de2ac6e72a43318b31f28dd"
       },
       "homepage": "https://docs.stackhawk.com/ai-security/"
     },
@@ -1005,9 +1005,47 @@
         "url": "https://github.com/stackhawk/agent-skills.git",
         "path": "plugins/hawkscan",
         "ref": "main",
-        "sha": "248e3fedba8ff80fadfd17f72a0454aa02b66a0b"
+        "sha": "ba4bab433d31dc313de2ac6e72a43318b31f28dd"
       },
       "homepage": "https://docs.stackhawk.com/ai-security/"
+    },
+    {
+      "name": "growthbook",
+      "displayName": "GrowthBook",
+      "description": "A suite of agent skills for the full GrowthBook feature flag and experimentation lifecycle.",
+      "category": "testing",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/growthbook/skills.git",
+        "sha": "2ba1f3608d15394b2881125fc4babdc761454cb5"
+      },
+      "homepage": "https://growthbook.io"
+    },
+    {
+      "name": "browser-use",
+      "displayName": "Browser Use",
+      "description": "Give Claude a real browser — your Chrome or a Browser Use Cloud browser. Use it whenever a task involves a website or web app: browsing, scraping and data extraction, filling forms, testing sites, taking screenshots, automating web workflows.",
+      "category": "automation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/browser-use/plugins.git",
+        "path": "browser-use",
+        "ref": "main",
+        "sha": "a25f0a262928bcbb62071432636d943ed9f2b6aa"
+      },
+      "homepage": "https://browser-use.com"
+    },
+    {
+      "name": "gitkraken",
+      "displayName": "GitKraken",
+      "description": "Gives Claude access to your real Git and project context: commits, branches, pull requests, and issues across every repo you work in. Works with GitHub, GitLab, Azure DevOps, Bitbucket, and Jira.",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/gitkraken/claude-plugin.git",
+        "sha": "cd0c2976c9b47a56e2b7d4cce1cd77fc058bee39"
+      },
+      "homepage": "https://www.gitkraken.com"
     }
   ]
 }
