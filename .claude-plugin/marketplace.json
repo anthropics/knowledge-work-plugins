@@ -953,7 +953,7 @@
         "url": "https://github.com/tinyfish-io/tinyfish-cookbook.git",
         "path": "plugins/tinyfish",
         "ref": "main",
-        "sha": "6156fbdb0dd0509af18326a0e7af2e6717768bdb"
+        "sha": "00bf5cb7a3945110da2a8cc0323b29fccb988104"
       },
       "homepage": "https://docs.tinyfish.ai"
     },
