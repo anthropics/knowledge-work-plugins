@@ -500,7 +500,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "651a08ae95ae3986ac508d24a7e541131ed72d87"
+        "sha": "dda298e64d1e890c0abfc0223507aae12259342e"
       },
       "homepage": "https://carta.com"
     },
