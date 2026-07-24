@@ -38,15 +38,15 @@
     },
     "gmail": {
       "type": "http",
-      "url": "https://gmailmcp.googleapis.com/mcp/v1"
+      "url": ""
     },
     "google calendar": {
       "type": "http",
-      "url": "https://calendarmcp.googleapis.com/mcp/v1"
+      "url": ""
     },
     "google drive": {
       "type": "http",
-      "url": "https://drivemcp.googleapis.com/mcp/v1"
+      "url": ""
     }
   }
 }
