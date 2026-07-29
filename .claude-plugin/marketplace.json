@@ -487,7 +487,7 @@
         "url": "https://github.com/kensho-technologies/spglobal-agent-skills.git",
         "path": "plugins/spglobal-plugin",
         "ref": "main",
-        "sha": "6add941c4c084ca50ae23bc3df28b5a10a218c93"
+        "sha": "1d7d364a07d755d401b6f66d41affe71bc62a9b9"
       },
       "homepage": "https://kensho.com"
     },
