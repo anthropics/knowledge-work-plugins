@@ -341,7 +341,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/fastly/fastly-agent-toolkit.git",
-        "sha": "ea3623d5facc7053eaa802f5fc483dd7121a39aa"
+        "sha": "172b2fd572f08fb4957bbe6d74cab3aba1e43fcf"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
     },
@@ -363,7 +363,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Nimbleway/agent-skills.git",
-        "sha": "6b0cacada17dad0f21490dae07009e401939b044"
+        "sha": "dc6ee17b12f74ff0f5d892dbec43a6b0bfdd9337"
       },
       "homepage": "https://docs.nimbleway.com/integrations/agent-skills/plugin-installation"
     },
@@ -457,7 +457,7 @@
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
         "ref": "main",
-        "sha": "778ea719f56f4ca1af96a8d07838243349bea5b0"
+        "sha": "cbaeec4138c6006fcdb499c94f545c2a4fa8f568"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -514,7 +514,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "874158e8f1b2c58378ec150faa7773a0d24f5187"
+        "sha": "7b02f62bdb4455c5a9dc4259eca7fca71a9525ed"
       },
       "homepage": "https://carta.com"
     },
@@ -527,7 +527,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "b03d2264c04aad903afa76af60809b76f0293f2e"
+        "sha": "7b02f62bdb4455c5a9dc4259eca7fca71a9525ed"
       },
       "homepage": "https://carta.com"
     },
@@ -540,7 +540,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "874158e8f1b2c58378ec150faa7773a0d24f5187"
+        "sha": "7b02f62bdb4455c5a9dc4259eca7fca71a9525ed"
       },
       "homepage": "https://carta.com"
     },
@@ -640,7 +640,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "9193b6e2beb79ef58b8f0bda4d7b14ffaaa3b0d6"
+        "sha": "0aa30fa3d9a93e6932ae10c9eaaef05c8278408d"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -666,7 +666,7 @@
         "url": "https://github.com/airwallex/airwallex-marketplace.git",
         "path": "plugins/airwallex-agentos",
         "ref": "master",
-        "sha": "af06b97b6e94a4316abcb581d666feaa20c61b98"
+        "sha": "d4593e33a9e1177a44b895ca0a1d6e015215736f"
       },
       "homepage": "https://www.airwallex.com/docs"
     },
@@ -747,7 +747,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/lusha-oss/lusha-mcp-plugin.git",
-        "sha": "f42bb8f65b3a62fd59711578b8e0446bca644e4b"
+        "sha": "ed34947a36754411f03cdeaba91c8cdaa153ef2e"
       },
       "homepage": "https://www.lusha.com"
     },
@@ -761,7 +761,7 @@
         "url": "https://github.com/auth0/agent-skills.git",
         "path": "plugins/auth0",
         "ref": "main",
-        "sha": "04f746a0fb78e1b774a00fe28339ad56e0d7b78b"
+        "sha": "fe3d7c59d9d8721a14c4302d273de91c4cf06004"
       },
       "homepage": "https://github.com/auth0/agent-skills"
     },
@@ -809,7 +809,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/qdrant/skills.git",
-        "sha": "67d7db5290178bd450a459102c381dcb79da776f"
+        "sha": "15b556ae9b7dc3aa960d14a69ed82ec427305487"
       },
       "homepage": "https://skills.qdrant.tech"
     },
@@ -833,7 +833,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/exa-labs/exa-mcp-server.git",
-        "sha": "a664592b5dd7c5598b70158c771dcc5c2a4fb2c1"
+        "sha": "611962dd59b7606de567edb390d8d79aceb5264c"
       },
       "homepage": "https://exa.ai/docs/reference/exa-mcp"
     },

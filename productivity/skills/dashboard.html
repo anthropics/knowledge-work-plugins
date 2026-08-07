@@ -1426,12 +1426,12 @@
         <div style="display: flex; align-items: flex-start; gap: 12px;">
           <button class="delete-btn" data-action="delete" title="Delete task">&times;</button>
           <span class="checkbox ${task.checked ? 'checked' : ''}" data-action="toggle"></span>
-          <div class="card-title" data-action="edit-title">${task.title}</div>
+          <div class="card-title" data-action="edit-title">${escapeHtml(task.title)}</div>
         </div>
       `;
 
       if (task.note) {
-        html += `<div class="card-note" data-action="edit-note" style="cursor: pointer; margin-left: 30px;">${task.note}</div>`;
+        html += `<div class="card-note" data-action="edit-note" style="cursor: pointer; margin-left: 30px;">${escapeHtml(task.note)}</div>`;
       } else {
         html += `<div class="card-note add-on-hover" data-action="edit-note" style="cursor: pointer; margin-left: 30px; font-style: italic;">+ Add note</div>`;
       }
@@ -1441,7 +1441,7 @@
         task.subtasks.forEach((st, idx) => {
           html += `<div class="subtask">
             <span class="checkbox ${st.checked ? 'checked' : ''}" data-action="toggle-sub" data-idx="${idx}" style="width: 16px; height: 16px; min-width: 16px; min-height: 16px;"></span>
-            <span data-action="edit-subtask" data-idx="${idx}" style="cursor: pointer;">${st.text}</span>
+            <span data-action="edit-subtask" data-idx="${idx}" style="cursor: pointer;">${escapeHtml(st.text)}</span>
           </div>`;
         });
         html += `<div class="subtask add-on-hover" data-action="add-subtask" style="color: var(--text-muted); cursor: pointer; font-style: italic; padding-left: 24px;">+ Add subtask</div>`;
@@ -1644,7 +1644,7 @@
       col.className = 'column';
       col.innerHTML = `
         <div class="column-header">
-          <span class="column-title" data-section-id="${id}" style="cursor: pointer;">${title}</span>
+          <span class="column-title" data-section-id="${id}" style="cursor: pointer;">${escapeHtml(title)}</span>
           <span class="count">${items.length}</span>
         </div>
         <div class="cards" data-column="${id}"></div>
@@ -1929,7 +1929,7 @@
       quickAdd.innerHTML = `
         <span class="checkbox" style="opacity: 0.3;"></span>
         <input type="text" class="quick-add-input" placeholder="Add a task..." id="quickAddInput">
-        <span class="quick-add-section" id="quickAddSectionBtn">${sectionName}</span>
+        <span class="quick-add-section" id="quickAddSectionBtn">${escapeHtml(sectionName)}</span>
       `;
       listView.appendChild(quickAdd);
 
@@ -1967,7 +1967,7 @@
         const header = document.createElement('div');
         header.className = 'list-section-header';
         header.innerHTML = `
-          <span class="section-title" data-section-id="${section.id}">${section.name}</span>
+          <span class="section-title" data-section-id="${section.id}">${escapeHtml(section.name)}</span>
           <span class="count">${sectionTasks.length}</span>
         `;
 
@@ -2491,9 +2491,12 @@
     const modalOverlay = document.getElementById('modalOverlay');
 
     function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text || '';
-      return div.innerHTML;
+      return String(text || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
     }
 
     function parseMemoryMarkdown(content) {
@@ -2635,7 +2638,7 @@
 
       for (const file of memoryData.memoryFiles) {
         const name = file.name.replace('.md', '');
-        html += `<button class="memory-tab${!memoryData.claudeMd && memoryData.memoryFiles[0] === file ? ' active' : ''}" data-tab="file-${name}">${name}</button>`;
+        html += `<button class="memory-tab${!memoryData.claudeMd && memoryData.memoryFiles[0] === file ? ' active' : ''}" data-tab="file-${escapeHtml(name)}">${escapeHtml(name)}</button>`;
       }
 
       for (const dirName of Object.keys(memoryData.memoryDirs).sort()) {
@@ -2658,7 +2661,7 @@
         } else {
           count = files.length;
         }
-        html += `<button class="memory-tab" data-tab="dir-${dirName}">${dirName} <span class="count">${count}</span></button>`;
+        html += `<button class="memory-tab" data-tab="dir-${escapeHtml(dirName)}">${escapeHtml(dirName)} <span class="count">${count}</span></button>`;
       }
 
       memoryTabsContainer.innerHTML = html;
@@ -2712,7 +2715,7 @@
         statsHtml += `
           <div class="stat">
             <div class="stat-value">${count}</div>
-            <div class="stat-label">${dirName}</div>
+            <div class="stat-label">${escapeHtml(dirName)}</div>
           </div>
         `;
       }
@@ -2742,12 +2745,14 @@
       memoryContentContainer.innerHTML = `
         <div class="file-card">
           <div class="file-card-header">
-            <span class="file-card-title">${fileName}</span>
+            <span class="file-card-title">${escapeHtml(fileName)}</span>
           </div>
           <div class="file-card-content expanded markdown-content">${content}</div>
         </div>
-        <button onclick="openEditModal('${fileName}', 'memoryFile')" style="margin-top: 10px;">Edit ${fileName}</button>
+        <button id="editMemoryFileBtn" style="margin-top: 10px;">Edit ${escapeHtml(fileName)}</button>
       `;
+
+      document.getElementById('editMemoryFileBtn').addEventListener('click', () => openEditModal(fileName, 'memoryFile'));
     }
 
     function renderMemoryDirectory(dirName) {
@@ -2763,7 +2768,7 @@
       let html = `
         <div class="search-box">
           <span style="color: var(--text-muted);">&#128269;</span>
-          <input type="text" placeholder="Search ${dirName}..." id="dirSearch" oninput="filterMemoryDirectory('${dirName}', this.value)">
+          <input type="text" placeholder="Search ${escapeHtml(dirName)}..." id="dirSearch">
         </div>
         <div class="memory-grid" id="dirGrid">
       `;
@@ -2797,7 +2802,7 @@
         if (!preview) preview = getPreview(p.rawContent, 100);
 
         html += `
-          <div class="memory-card" onclick="openFileModal('${dirName}', '${file.name}')" data-search="${escapeHtml((title + ' ' + JSON.stringify(p.fields) + ' ' + p.rawContent).toLowerCase())}">
+          <div class="memory-card" data-file-name="${escapeHtml(file.name)}" data-search="${escapeHtml((title + ' ' + JSON.stringify(p.fields) + ' ' + p.rawContent).toLowerCase())}">
             <div class="memory-card-title">${escapeHtml(title)}</div>
             ${fieldsHtml}
             <div class="memory-card-preview">${escapeHtml(preview)}</div>
@@ -2806,19 +2811,25 @@
       }
 
       html += `
-        <div class="add-btn" onclick="openNewFileModal('${dirName}')">
-          + Add to ${dirName}
+        <div class="add-btn">
+          + Add to ${escapeHtml(dirName)}
         </div>
       </div>`;
 
       memoryContentContainer.innerHTML = html;
+
+      document.getElementById('dirSearch').addEventListener('input', (e) => filterMemoryDirectory(dirName, e.target.value));
+      memoryContentContainer.querySelectorAll('.memory-card').forEach(cardEl => {
+        cardEl.addEventListener('click', () => openFileModal(dirName, cardEl.dataset.fileName));
+      });
+      memoryContentContainer.querySelector('.add-btn').addEventListener('click', () => openNewFileModal(dirName));
     }
 
     function renderMemoryDirectoryFlat(dirName, files) {
       let html = `
         <div class="search-box">
           <span style="color: var(--text-muted);">&#128269;</span>
-          <input type="text" placeholder="Search ${dirName}..." id="dirSearch" oninput="filterMemoryDirectory('${dirName}', this.value)">
+          <input type="text" placeholder="Search ${escapeHtml(dirName)}..." id="dirSearch">
         </div>
         <div id="dirGrid">
       `;
@@ -2871,6 +2882,8 @@
 
       html += `</div>`;
       memoryContentContainer.innerHTML = html;
+
+      document.getElementById('dirSearch').addEventListener('input', (e) => filterMemoryDirectory(dirName, e.target.value));
     }
 
     function filterMemoryDirectory(dirName, searchTerm) {
