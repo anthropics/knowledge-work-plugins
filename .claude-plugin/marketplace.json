@@ -1060,6 +1060,23 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "prowl",
+      "displayName": "Prowl",
+      "description": "Market and competitor intelligence for any agent: 408 tools across 15 providers — SEO and backlinks, 60+ SERP engines, ad libraries, web scraping, reviews, AI mention tracking — behind one hosted MCP server, plus a research pipeline with tiered cost caps and eight report playbooks. Requires a Prowl account; the bundled MCP config runs npx mcp-remote against prowl.chat with the user's own token.",
+      "author": {
+        "name": "Prowl",
+        "email": "support@prowl.chat"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/PROWL-AI/prowl-skill.git",
+        "path": "plugins/prowl",
+        "ref": "main",
+        "sha": "8b211a6f4054e1e1ea804fd1220f6767c6081b5d"
+      },
+      "homepage": "https://prowl.chat"
     }
   ]
 }
