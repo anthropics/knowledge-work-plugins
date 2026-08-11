@@ -1060,6 +1060,23 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "super-ux",
+      "displayName": "Super UX",
+      "description": "Scenario-driven UI development: a versioned design chain in docs/ux/ — personas, jobs-to-be-done, journeys and stories, user flows, a screens-and-states UI map, traced use-case scenarios — plus audits that judge the code against those scenarios with file:line evidence and a prioritized fix plan.",
+      "author": {
+        "name": "ssheleg"
+      },
+      "category": "design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ssheleg/super-ux.git",
+        "path": "plugins/super-ux",
+        "ref": "main",
+        "sha": "c30be58a09b62bef6e9b38b3b40d7481d327ba0f"
+      },
+      "homepage": "https://github.com/ssheleg/super-ux"
     }
   ]
 }
