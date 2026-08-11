@@ -1060,6 +1060,22 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "seo-aeo-audit",
+      "displayName": "SEO & AEO Audit",
+      "description": "Evidence-first website audit for search engines and answer engines: ten tracks from crawl access and indexation to structured data, content quality and AI citation mechanics, a triage model that separates broken from merely weak, and a prioritized change plan with verification steps.",
+      "author": {
+        "name": "ssheleg"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ssheleg/seo-aeo-audit.git",
+        "path": "plugins/seo-aeo-audit",
+        "ref": "main",
+        "sha": "0a36aad74afa7f810f5643773468d58fa45623ca"
+      },
+      "homepage": "https://github.com/ssheleg/seo-aeo-audit"
     }
   ]
 }
