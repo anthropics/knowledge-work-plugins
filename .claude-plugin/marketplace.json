@@ -1060,6 +1060,23 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "sheleg-design",
+      "displayName": "SHELEG Design",
+      "description": "Cinematic scroll-driven landing pages — a single scroll clock, layered motion that degrades to calm, WebGL particle formations — plus pluggable visual style packs that apply the same taste to product UI: dark instrument console, warm editorial, and a light or dark workbench for dashboards and internal tools.",
+      "author": {
+        "name": "ssheleg"
+      },
+      "category": "design",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ssheleg/sheleg-design-skill.git",
+        "path": "plugins/sheleg-design",
+        "ref": "main",
+        "sha": "13f0a3f46339490f91535c11522335bc23522f25"
+      },
+      "homepage": "https://github.com/ssheleg/sheleg-design-skill"
     }
   ]
 }
