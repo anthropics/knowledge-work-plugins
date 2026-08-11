@@ -1060,6 +1060,23 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "prowl-cli",
+      "displayName": "Prowl CLI",
+      "description": "Drive the 408-tool Prowl market-intelligence catalog from the shell with @prowl-ai/cli: free catalog search and schema lookup, metered tool calls, analyze tiers with hard cost caps, eight playbooks, JSON output and typed exit codes. For scripts and CI where no MCP server is configured; requires Node.js 18+ and a Prowl account.",
+      "author": {
+        "name": "Prowl",
+        "email": "support@prowl.chat"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/PROWL-AI/prowl-skill.git",
+        "path": "plugins/prowl-cli",
+        "ref": "main",
+        "sha": "8b211a6f4054e1e1ea804fd1220f6767c6081b5d"
+      },
+      "homepage": "https://prowl.chat"
     }
   ]
 }
