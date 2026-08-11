@@ -1060,6 +1060,23 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "task-pipeline",
+      "displayName": "Task Pipeline",
+      "description": "Full-cycle delivery orchestrator: an intake grill that expands a vague request into a written brief, then ten gated stages — docs, brainstorm, spec, plan, subagent build, tests, lint and deploy, post-deploy, docs and wiki, acceptance — with a frozen requirement spine that must close with evidence and a loop guard that breaks churn.",
+      "author": {
+        "name": "ssheleg"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ssheleg/task-pipeline.git",
+        "path": "plugins/task-pipeline",
+        "ref": "main",
+        "sha": "8763277677b6ca021624e6ea6388180bf5cde3c7"
+      },
+      "homepage": "https://github.com/ssheleg/task-pipeline"
     }
   ]
 }
