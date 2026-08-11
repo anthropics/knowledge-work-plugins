@@ -1060,6 +1060,23 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "agent-stack",
+      "displayName": "Agent Stack",
+      "description": "Patterns from a production multi-agent system: tool-calling loops with context-pressure handling, multi-stage pipelines with human-in-the-loop checkpoints and resume, multi-provider LLM routing with fallback and health checks, a four-layer memory system with confidence decay and conflict resolution, and the wallet side — tiered balances, a single markup boundary, two-phase commit against a provider API with compensating transactions, spend-delta polling, and budget/loop/auto-pause guardrails.",
+      "author": {
+        "name": "ssheleg"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ssheleg/agent-stack.git",
+        "path": "plugins/agent-stack",
+        "ref": "main",
+        "sha": "e7342d438fd4814c48377626e002b938539b4d71"
+      },
+      "homepage": "https://github.com/ssheleg/agent-stack"
     }
   ]
 }
