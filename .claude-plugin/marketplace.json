@@ -1046,6 +1046,20 @@
         "sha": "f7a53b2cd138c22eccb977b9d93494ea6d423d12"
       },
       "homepage": "https://www.gitkraken.com"
+    },
+    {
+      "name": "synthflow",
+      "displayName": "Synthflow",
+      "description": "Connects Claude Code to the Synthflow AI voice-agent platform through its hosted MCP server, with skills for reviewing calls and auditing agent prompts, plus a docs-search connector.",
+      "category": "automation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/SynthFlowAI/AnthropicPlugin.git",
+        "path": "plugins/synthflow",
+        "ref": "main",
+        "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
+      },
+      "homepage": "https://synthflow.ai"
     }
   ]
 }
