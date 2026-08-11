@@ -1060,6 +1060,23 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "make-skill",
+      "displayName": "Make Skill",
+      "description": "Create, retrofit, audit and ship Agent Skills and Claude Code plugins: front-matter and progressive-disclosure limits from the Agent Skills standard, marketplace repo layout, version sync, a validator plus CI, and multi-channel distribution (Claude Code plugin, skills CLI, npx, Cursor).",
+      "author": {
+        "name": "ssheleg"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ssheleg/make-skill.git",
+        "path": "plugins/make-skill",
+        "ref": "main",
+        "sha": "41bf01aa996d05ce22eea4cee21160a02f8cf14f"
+      },
+      "homepage": "https://github.com/ssheleg/make-skill"
     }
   ]
 }
