@@ -1060,6 +1060,23 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "agent-sync",
+      "displayName": "Agent Sync",
+      "description": "Coordination for repositories where several coding agents work at once: task leases with TTL, race-free ID reservation, an append-only run journal, a cross-repo signal feed and a generated read-only board over a pluggable knowledge backend. Ships Claude Code hooks that guard shared registry files; every hook exits immediately in projects without a .claude/agent-sync.json.",
+      "author": {
+        "name": "ssheleg"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ssheleg/agent-sync.git",
+        "path": "plugins/agent-sync",
+        "ref": "main",
+        "sha": "3f3a97742080f07b58cc528ea63494929bb37dee"
+      },
+      "homepage": "https://github.com/ssheleg/agent-sync"
     }
   ]
 }
