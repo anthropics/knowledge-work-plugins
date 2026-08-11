@@ -1060,6 +1060,23 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "sheleg-dev",
+      "displayName": "Sheleg Dev",
+      "description": "Six integration playbooks for the seams that quietly lose money: stripe-billing (checkout, renewals, proration, claim-first webhook idempotency), crypto-payments (under-payment, duplicate webhooks, rate drift), ad-tracking (GA4, Google Ads, Meta, LinkedIn under Consent Mode v2), google-signin (GIS ID-token flow, pre-hijacking and login-CSRF defence), google-auth (OAuth 2.0, ADC, service accounts, Workload Identity Federation), frontend-performance (Core Web Vitals, bundles, accessibility).",
+      "author": {
+        "name": "ssheleg"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ssheleg/sheleg-dev.git",
+        "path": "plugins/sheleg-dev",
+        "ref": "main",
+        "sha": "9d9a507aa8369e5f0db827f1071d68a58cce34bd"
+      },
+      "homepage": "https://github.com/ssheleg/sheleg-dev"
     }
   ]
 }
