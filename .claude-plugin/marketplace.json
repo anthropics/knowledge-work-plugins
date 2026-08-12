@@ -327,7 +327,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/fastly/fastly-agent-toolkit.git",
-        "sha": "f6dc3106d928312818b0252272c68d62a74644f7"
+        "sha": "9e5372506801baba57a3e903bc0e8c48823be081"
       },
       "homepage": "https://github.com/fastly/fastly-agent-toolkit/blob/main/README.md"
     },
@@ -500,7 +500,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "f95f76bcab9a11d419b0eebc80c4d6c7cf0f03ba"
+        "sha": "5577658f26260d5b3dab8ca2f7df6891030a7967"
       },
       "homepage": "https://carta.com"
     },
@@ -626,7 +626,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "c98a4fb6dc654d137191017f730372e8f149e697"
+        "sha": "105a82c7cebc873bc82dffa2a44ba3d6f6e57a2f"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -783,7 +783,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/datarobot-oss/datarobot-agent-skills.git",
-        "sha": "db112b09ad19059c186f803231da0efbcc89c5b4"
+        "sha": "a92f4277e79ad387c46dd5c257ebd3148d846077"
       },
       "homepage": "https://datarobot.com"
     },
