@@ -526,7 +526,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "e9bb21cb3f16e1b152c98edb8c8ae2029997b82a"
+        "sha": "2ee88a4f0582a9f6a046735a0029ad09f695b9da"
       },
       "homepage": "https://carta.com"
     },
@@ -626,7 +626,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "1c0cebc07eb52740461591e05ba1c176ee25ac6e"
+        "sha": "3973a100295fa2b3b32b1f127c6a10dae41da4d8"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -759,7 +759,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/buildkite/skills.git",
-        "sha": "5bbd53d496b9dd5cd7b3e0a2d8345daa333c3f4e"
+        "sha": "a4bb20c6bf9ae535335f782015f65b9975065f27"
       },
       "homepage": "https://github.com/buildkite/skills"
     },
