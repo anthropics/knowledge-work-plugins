@@ -234,7 +234,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "77a54f785085b7a70fb98ce9e33ef80f3775fce8"
+        "sha": "6b48aeddf90cc59257cfacc0a022a28340383a41"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -500,7 +500,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "570f794b5588e4e9a4d80c0d7879fadf647f618d"
+        "sha": "ea82d37090686142778dfc9a5bb413c772de8ceb"
       },
       "homepage": "https://carta.com"
     },
@@ -513,7 +513,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "570f794b5588e4e9a4d80c0d7879fadf647f618d"
+        "sha": "ea82d37090686142778dfc9a5bb413c772de8ceb"
       },
       "homepage": "https://carta.com"
     },
@@ -526,7 +526,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "9aec72dafd243759daa6df098225524a288a3f65"
+        "sha": "e6f2d8af3e45b7651a8ade496bd85b5e348d5335"
       },
       "homepage": "https://carta.com"
     },
@@ -626,7 +626,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "a04e0e586da63359fa9d42bec9f7795319acbd05"
+        "sha": "796a250c04e61359472986718363fced66ff6b14"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -795,7 +795,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/qdrant/skills.git",
-        "sha": "864f969fc7f8c6c02e0133f37e4f0840fe0f1fab"
+        "sha": "cdcce09dfe0742ecf294649ec029c1f491320853"
       },
       "homepage": "https://skills.qdrant.tech"
     },
