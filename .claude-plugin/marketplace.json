@@ -513,7 +513,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "570f794b5588e4e9a4d80c0d7879fadf647f618d"
+        "sha": "ea82d37090686142778dfc9a5bb413c772de8ceb"
       },
       "homepage": "https://carta.com"
     },
