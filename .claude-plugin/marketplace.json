@@ -953,7 +953,7 @@
         "url": "https://github.com/tinyfish-io/tinyfish-web-agent-integrations.git",
         "path": "claude",
         "ref": "main",
-        "sha": "80ce9bfacafd7e26d425200677a16cef835b054f"
+        "sha": "ca1f3f6dad23b57afee356b6fe201a185eb28046"
       },
       "homepage": "https://docs.tinyfish.ai"
     },
