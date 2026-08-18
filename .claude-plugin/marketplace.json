@@ -526,7 +526,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "570f794b5588e4e9a4d80c0d7879fadf647f618d"
+        "sha": "9aec72dafd243759daa6df098225524a288a3f65"
       },
       "homepage": "https://carta.com"
     },
@@ -626,7 +626,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "2c342a5329e903fe7f441a67ffc2299c0cc3802b"
+        "sha": "a04e0e586da63359fa9d42bec9f7795319acbd05"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -819,7 +819,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/exa-labs/exa-mcp-server.git",
-        "sha": "e64c11f2d3b4400ffbda8ccdd9658a450cc9d270"
+        "sha": "c42a8a0bfe8f75eaf386e5bf278dd78eea56f9dc"
       },
       "homepage": "https://exa.ai/docs/reference/exa-mcp"
     },
@@ -953,7 +953,7 @@
         "url": "https://github.com/tinyfish-io/tinyfish-web-agent-integrations.git",
         "path": "claude",
         "ref": "main",
-        "sha": "80ce9bfacafd7e26d425200677a16cef835b054f"
+        "sha": "ca1f3f6dad23b57afee356b6fe201a185eb28046"
       },
       "homepage": "https://docs.tinyfish.ai"
     },
@@ -977,7 +977,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/GoogleChrome/modern-web-guidance.git",
-        "sha": "9e70fa4c808b52364eb85c645e261523231176f6"
+        "sha": "460e5536b8e61034d83ff4af24bb0bf1112d2cb0"
       },
       "homepage": "https://goo.gle/modern-web-guidance"
     },
