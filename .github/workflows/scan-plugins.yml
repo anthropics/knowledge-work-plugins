@@ -197,7 +197,7 @@ jobs:
         # Pinned to claude-plugins-community#2361 (static pin check for
         # auto-exec MCP launchers — detection always on, warn-only here).
         # TODO: re-pin to the main-branch merge SHA once #2361 merges.
-        uses: anthropics/claude-plugins-community/.github/actions/scan-plugins@3f3ff3f254ac412c5ff89cb00ed8f1219bba36a0
+        uses: anthropics/claude-plugins-community/.github/actions/scan-plugins@24a5ecd5dd88e201e185e1174b7797a4e857dd67
         with:
           # Anthropic auth via Workload Identity Federation — the action
           # mints a GitHub OIDC token (id-token: write above) and the claude
