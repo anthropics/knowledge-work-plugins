@@ -526,7 +526,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "a26da2682642a04a5ddb0bffd89c596bb931230b"
+        "sha": "0f0e2f5a07d5f80a0272d6b3232d56d6757ce447"
       },
       "homepage": "https://carta.com"
     },
@@ -638,7 +638,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/datadog-labs/claude-code-plugin.git",
-        "sha": "c5c062abba0df33f6bfc2c0fd0f8d17857e3fa2c"
+        "sha": "cd4aedbcddf9473ef1d37c6d6d13e7c771df5242"
       },
       "homepage": "https://docs.datadoghq.com/bits_ai/mcp_server/setup?tab=claudecode"
     },
@@ -783,7 +783,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/datarobot-oss/datarobot-agent-skills.git",
-        "sha": "a37519e9abc02a0c1418f22ea381e7c24e7e94f8"
+        "sha": "b901f1c491c1742ebf9282820cd2d5c00d7db2bf"
       },
       "homepage": "https://datarobot.com"
     },
@@ -819,7 +819,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/exa-labs/exa-mcp-server.git",
-        "sha": "c42a8a0bfe8f75eaf386e5bf278dd78eea56f9dc"
+        "sha": "66bacbe4afd35a7e1671be9ab55c2b6bf60aff34"
       },
       "homepage": "https://exa.ai/docs/reference/exa-mcp"
     },
@@ -953,7 +953,7 @@
         "url": "https://github.com/tinyfish-io/tinyfish-web-agent-integrations.git",
         "path": "claude",
         "ref": "main",
-        "sha": "ca1f3f6dad23b57afee356b6fe201a185eb28046"
+        "sha": "38f73e3d54bedf8e06344a7fce9751cba0458526"
       },
       "homepage": "https://docs.tinyfish.ai"
     },
