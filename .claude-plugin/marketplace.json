@@ -1060,6 +1060,18 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "render",
+      "displayName": "Render",
+      "description": "Deploy, debug, and monitor applications on Render. Includes skills, an agent, slash commands, a render.yaml validation hook, and the Render MCP server preconfigured over OAuth.",
+      "category": "deployment",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/render-oss/render-plugin-claude-code.git",
+        "sha": "e8f889396634dbc8c368448a7f3de993ed4a5ac1"
+      },
+      "homepage": "https://github.com/render-oss/render-plugin-claude-code"
     }
   ]
 }
