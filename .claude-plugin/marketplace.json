@@ -1060,6 +1060,18 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "superdesign",
+      "displayName": "Superdesign",
+      "description": "Design or redesign frontend UI and marketing graphics on the Superdesign infinite canvas. Reads your codebase for context, sets up a design system, and generates branchable design drafts you refine.",
+      "category": "design",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/superdesigndev/superdesign-skill.git",
+        "sha": "dc59c1b1b9661580831f0b6e0eff8e879967d282"
+      },
+      "homepage": "https://superdesign.dev"
     }
   ]
 }
