@@ -181,7 +181,7 @@
         "url": "https://github.com/Bigdata-com/bigdata-plugins-marketplace.git",
         "path": "plugins/bigdata-com",
         "ref": "main",
-        "sha": "74ec89c998c78c04c3f4c2a3d1396c5e5935847a"
+        "sha": "2a52a001366227e205cfa7565d78e8198dc42fa8"
       }
     },
     {
@@ -429,7 +429,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/figma/mcp-server-guide.git",
-        "sha": "72fcf1f4b170bcaa78fa8bef2f27cce15f4d58f4"
+        "sha": "7f6562c4900fafb46e5e8fd3cc8ced954779bab3"
       },
       "homepage": "https://github.com/figma/mcp-server-guide"
     },
@@ -443,7 +443,7 @@
         "url": "https://github.com/adobe/skills.git",
         "path": "plugins/creative-cloud/adobe-for-creativity",
         "ref": "main",
-        "sha": "cbaeec4138c6006fcdb499c94f545c2a4fa8f568"
+        "sha": "1307e2c03b9cd20c49872be8cbdfda7ee9aa8c7e"
       },
       "homepage": "https://github.com/adobe/skills/tree/main/plugins/creative-cloud/adobe-for-creativity"
     },
@@ -500,7 +500,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-cap-table",
         "ref": "main",
-        "sha": "a26da2682642a04a5ddb0bffd89c596bb931230b"
+        "sha": "7be35157286a6654783f82c701e46d06c40dcfb1"
       },
       "homepage": "https://carta.com"
     },
@@ -513,7 +513,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-crm",
         "ref": "main",
-        "sha": "ea82d37090686142778dfc9a5bb413c772de8ceb"
+        "sha": "3aa656ea870e1d8d7f73d0418c49043cab9df01a"
       },
       "homepage": "https://carta.com"
     },
@@ -526,7 +526,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "0f0e2f5a07d5f80a0272d6b3232d56d6757ce447"
+        "sha": "7be35157286a6654783f82c701e46d06c40dcfb1"
       },
       "homepage": "https://carta.com"
     },
@@ -604,7 +604,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/explorium-ai/vibeprospecting-plugin.git",
-        "sha": "804bab5e0500d7a0f8613a83a3cfe5b79e6a31c3"
+        "sha": "9b4067473305dbba80be0fa9a492be39b96f455e"
       },
       "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
     },
@@ -626,7 +626,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "0054b3d75afd69666eaedd2fc88148b31d263b17"
+        "sha": "712089cd9f8af5a518722a3f0108b445677b2c34"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -664,7 +664,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/langfuse/skills.git",
-        "sha": "0f9a20a874f6ae847eddff2b81ab48cadf9eedc9"
+        "sha": "ff47830ae782fe422c565361b0742789e5dc9f62"
       },
       "homepage": "https://langfuse.com"
     },
@@ -678,7 +678,7 @@
         "url": "https://github.com/val-town/plugins.git",
         "path": "plugin",
         "ref": "main",
-        "sha": "0afe7b73671e39021b945f1f154bd9059bc7f39a"
+        "sha": "2d3ec654b6a7d93e209afb8f2e8848eddcb9f17b"
       },
       "homepage": "https://val.town"
     },
@@ -747,7 +747,7 @@
         "url": "https://github.com/auth0/agent-skills.git",
         "path": "plugins/auth0",
         "ref": "main",
-        "sha": "abab92beb4b7c703313fe2309567b018474e48a0"
+        "sha": "09a0d450c1e52de3bf0b50502a80e3018653cc11"
       },
       "homepage": "https://github.com/auth0/agent-skills"
     },
