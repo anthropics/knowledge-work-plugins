@@ -1060,6 +1060,18 @@
         "sha": "205871ee83508502d2c982ee1bb7e65a2a29190b"
       },
       "homepage": "https://synthflow.ai"
+    },
+    {
+      "name": "klarity",
+      "displayName": "Within",
+      "description": "Bring your organization's processes and operational knowledge into your AI assistant. The Within MCP connects to your Within workspace so you can query your organization's processes, explore the process index knowledge graph linking processes to systems and teams, and ground answers in how your business actually runs — not generic guesses.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Within-AI/within-mcp.git",
+        "sha": "8e0e4f3375e0da07ab69eb03b05f8777bd8343b5"
+      },
+      "homepage": "https://www.within.ai/"
     }
   ]
 }
