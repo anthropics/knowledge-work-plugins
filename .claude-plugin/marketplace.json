@@ -939,7 +939,7 @@
         "url": "https://github.com/SigNoz/agent-skills.git",
         "path": "plugins/signoz",
         "ref": "main",
-        "sha": "3c248c672709232b20ba9a9bff0ed9858434cc6e"
+        "sha": "045cf0b116b445dd1a4b6987508225dccc02ac7e"
       },
       "homepage": "https://signoz.io/docs/ai/agent-skills"
     },
