@@ -1087,6 +1087,18 @@
         "sha": "48b739d8e1be8480dc1c67177b11a7b39af4b5ef"
       },
       "homepage": "https://unity.com"
+    },
+    {
+      "name": "activecampaign",
+      "displayName": "ActiveCampaign",
+      "description": "Marketing automation, CRM, and email marketing powered by ActiveCampaign. Manage contacts, campaigns, automations, deals, and get AI-powered marketing insights — all from Claude.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/ActiveCampaign/activecampaign-plugin.git",
+        "sha": "964b2f9f9ad4c918645adf5efd6d87c2fca36c84"
+      },
+      "homepage": "https://www.activecampaign.com"
     }
   ]
 }
