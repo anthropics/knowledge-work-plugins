@@ -1087,6 +1087,20 @@
         "sha": "48b739d8e1be8480dc1c67177b11a7b39af4b5ef"
       },
       "homepage": "https://unity.com"
+    },
+    {
+      "name": "unstructured-foundation",
+      "displayName": "Unstructured Foundation",
+      "description": "Connect sources and search processed documents with Unstructured Foundation. Provides MCP access to source setup, processing status, document search, and document retrieval.",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Unstructured-IO/unstructured-foundation-marketplace.git",
+        "path": "plugins/foundation",
+        "ref": "main",
+        "sha": "492770f062ba9f01e8a0ae9b111c89e4642fdb29"
+      },
+      "homepage": "https://unstructured.io"
     }
   ]
 }
