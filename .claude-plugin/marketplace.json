@@ -1087,6 +1087,20 @@
         "sha": "48b739d8e1be8480dc1c67177b11a7b39af4b5ef"
       },
       "homepage": "https://unity.com"
+    },
+    {
+      "name": "clay",
+      "displayName": "Clay",
+      "description": "Build with Clay in Claude Code",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/clay-run/agent-plugins.git",
+        "path": "clay",
+        "ref": "main",
+        "sha": "eee220be078c7b54ea1d31e9cde4e55631496b62"
+      },
+      "homepage": "https://www.clay.com/agent-plugin"
     }
   ]
 }
