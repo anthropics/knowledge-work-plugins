@@ -679,7 +679,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/langfuse/skills.git",
-        "sha": "ff47830ae782fe422c565361b0742789e5dc9f62"
+        "sha": "1264dc534ffb208f731cef74b681f618c7426e09"
       },
       "homepage": "https://langfuse.com"
     },
