@@ -1087,6 +1087,18 @@
         "sha": "48b739d8e1be8480dc1c67177b11a7b39af4b5ef"
       },
       "homepage": "https://unity.com"
+    },
+    {
+      "name": "freee",
+      "displayName": "freee",
+      "description": "freee's official plugin for Claude. Connects to freee's accounting, HR and payroll, invoicing, project time tracking, sales, IT management, contractor management, and e-signature APIs through the freee remote MCP connector, and ships Agent Skills with API references and step-by-step recipes (expense claims, journal entries, invoices, attendance, payroll, reports) so Claude calls the right endpoints correctly.",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/freee/freee-mcp.git",
+        "sha": "01bc64ddfefaf2f9adf01c4110aba042f898f76d"
+      },
+      "homepage": "https://github.com/freee/freee-mcp"
     }
   ]
 }
