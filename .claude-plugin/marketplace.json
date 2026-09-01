@@ -1099,6 +1099,20 @@
         "sha": "0ff858728bc52aee335d5475b0d4eb5f3a9589b0"
       },
       "homepage": "https://www.activecampaign.com"
+    },
+    {
+      "name": "security-guidance",
+      "displayName": "Security Guidance",
+      "description": "Security review for Claude-generated code. Pattern-based warnings on edits, LLM-powered diff review on Stop, and an agentic commit reviewer that catches injection, XSS, SSRF, hardcoded secrets, and 25+ other vulnerability classes.",
+      "category": "security",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/security-guidance",
+        "ref": "main",
+        "sha": "ed404106fcd80ba98ecb7c851e531dcb626d13b7"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance"
     }
   ]
 }
