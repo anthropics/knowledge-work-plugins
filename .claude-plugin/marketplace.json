@@ -1113,6 +1113,18 @@
         "sha": "ed404106fcd80ba98ecb7c851e531dcb626d13b7"
       },
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance"
+    },
+    {
+      "name": "postsyncer",
+      "displayName": "PostSyncer",
+      "description": "Schedule, publish, and analyze social media posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram. One-click PostSyncer MCP server integration plus a skill covering the full posting workflow: media, threads, first comments, repeats, campaigns, comment moderation, and analytics.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/PostSyncer/claude-plugin.git",
+        "sha": "1bb419f4ce9ac06e3f65e91e89628ea03788ad6e"
+      },
+      "homepage": "https://postsyncer.com"
     }
   ]
 }
