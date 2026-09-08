@@ -588,6 +588,20 @@
       "homepage": "https://qodo.ai"
     },
     {
+      "name": "qodo-standards",
+      "displayName": "Qodo Standards",
+      "description": "Optional Qodo rules discovery and standards administration workflows.",
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/qodo-ai/qodo-skills.git",
+        "path": "packages/qodo-standards",
+        "ref": "main",
+        "sha": "3f017b1f2e13dbf9feb532143dc39fa4eea12479"
+      },
+      "homepage": "https://qodo.ai"
+    },
+    {
       "name": "servicenow-sdk",
       "description": "Create, edit, and deploy ServiceNow applications with the Fluent SDK effortlessly through Claude. Helps developers build, extend, and manage ServiceNow applications, workflows, and agents using the ServiceNow SDK.",
       "category": "development",
