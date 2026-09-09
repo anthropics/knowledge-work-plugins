@@ -186,6 +186,7 @@ The plugin connects to your tools through MCP (Model Context Protocol) servers:
 | Cloud storage | Box, Egnyte | Playbooks, templates, precedents |
 | Office suite | Microsoft 365 | Email, calendar, documents |
 | Project tracker | Atlassian (Jira/Confluence) | Matter tracking, tasks |
+| Legal research | OpenCaseLaw (Swiss law, open access) | Case law, statutes, verified citations for topic briefs |
 
 See [CONNECTORS.md](CONNECTORS.md) for the full list of supported integrations, including CLM, CRM, e-signature, and additional options.
 

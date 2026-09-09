@@ -19,3 +19,4 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | E-signature | `~~e-signature` | DocuSign | Adobe Sign |
 | Office suite | `~~office suite` | Microsoft 365 | Google Workspace |
 | Project tracker | `~~project tracker` | Atlassian (Jira/Confluence) | Linear, Asana |
+| Legal research | `~~legal research` | — | OpenCaseLaw (Swiss law, open access), other open-access case-law servers |

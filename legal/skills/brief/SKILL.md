@@ -136,7 +136,7 @@ Research and brief on a specific legal question or topic across available source
 
 #### Important Notes
 - Topic briefs synthesize what is available in connected sources; they do not substitute for formal legal research
-- If the topic requires current legal authority or case law, recommend the user consult a legal research platform (Westlaw, Lexis, etc.) or outside counsel
+- If the topic requires current legal authority or case law, use a connected ~~legal research server if one is available, verify every citation it returns, and note the jurisdiction it covers; otherwise recommend the user consult a legal research source for their jurisdiction or outside counsel
 - Always note the limitations of the sources searched
 
 ---
