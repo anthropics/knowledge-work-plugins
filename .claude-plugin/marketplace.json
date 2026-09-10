@@ -1117,6 +1117,18 @@
       "homepage": "https://www.activecampaign.com"
     },
     {
+      "name": "crossbeam",
+      "displayName": "Crossbeam",
+      "description": "Crossbeam's Skills for partnership and go-to-market teams: co-sell plays, ecosystem-qualified prospecting, account briefs, pipeline prioritization, and partner outreach built on partner overlap and ecosystem signals.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/getcrossbeam/crossbeam-claude-skills.git",
+        "sha": "b1b491a870d785287cad5417566a66be1adf09c6"
+      },
+      "homepage": "https://www.crossbeam.com/skills"
+    },
+    {
       "name": "security-guidance",
       "displayName": "Security Guidance",
       "description": "Security review for Claude-generated code. Pattern-based warnings on edits, LLM-powered diff review on Stop, and an agentic commit reviewer that catches injection, XSS, SSRF, hardcoded secrets, and 25+ other vulnerability classes.",
@@ -1143,18 +1155,6 @@
         "sha": "843d5a38f82cdc1b275baf4953a659be0ad41247"
       },
       "homepage": "https://www.hubspot.com"
-    },
-    {
-      "name": "crossbeam",
-      "displayName": "Crossbeam",
-      "description": "Crossbeam's Skills for partnership and go-to-market teams: co-sell plays, ecosystem-qualified prospecting, account briefs, pipeline prioritization, and partner outreach built on partner overlap and ecosystem signals.",
-      "category": "productivity",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/getcrossbeam/crossbeam-claude-skills.git",
-        "sha": "b1b491a870d785287cad5417566a66be1adf09c6"
-      },
-      "homepage": "https://www.crossbeam.com/skills"
     }
   ]
 }
