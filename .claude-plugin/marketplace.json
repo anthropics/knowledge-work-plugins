@@ -1131,6 +1131,18 @@
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance"
     },
     {
+      "name": "freee",
+      "displayName": "freee",
+      "description": "freee's official plugin for Claude. Connects to freee's accounting, HR and payroll, invoicing, project time tracking, sales, IT management, contractor management, and e-signature APIs through the freee remote MCP connector, and ships Agent Skills with API references and step-by-step recipes (expense claims, journal entries, invoices, attendance, payroll, reports) so Claude calls the right endpoints correctly.",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/freee/freee-mcp.git",
+        "sha": "01bc64ddfefaf2f9adf01c4110aba042f898f76d"
+      },
+      "homepage": "https://github.com/freee/freee-mcp"
+    },
+    {
       "name": "hubspot-sales",
       "displayName": "HubSpot Sales",
       "description": "Run your HubSpot sales workflow directly from Claude. Adds skills that cover the full sales day: import contacts and deals into HubSpot, get a prioritised morning brief, prep for any call with full CRM context, draft personalised follow-ups grounded in deal history, log calls and update records by describing what happened, and review your pipeline to surface stalling deals. Everything writes back to HubSpot.",
@@ -1143,18 +1155,6 @@
         "sha": "843d5a38f82cdc1b275baf4953a659be0ad41247"
       },
       "homepage": "https://www.hubspot.com"
-    },
-    {
-      "name": "freee",
-      "displayName": "freee",
-      "description": "freee's official plugin for Claude. Connects to freee's accounting, HR and payroll, invoicing, project time tracking, sales, IT management, contractor management, and e-signature APIs through the freee remote MCP connector, and ships Agent Skills with API references and step-by-step recipes (expense claims, journal entries, invoices, attendance, payroll, reports) so Claude calls the right endpoints correctly.",
-      "category": "finance",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/freee/freee-mcp.git",
-        "sha": "01bc64ddfefaf2f9adf01c4110aba042f898f76d"
-      },
-      "homepage": "https://github.com/freee/freee-mcp"
     }
   ]
 }
