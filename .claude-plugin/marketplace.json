@@ -1197,6 +1197,20 @@
         "sha": "efda779972c7b7162e79234e164bc2f359a8a518"
       },
       "homepage": "https://docs.gc.ai/api-reference/mcp/overview"
+    },
+    {
+      "name": "maven-bio",
+      "displayName": "Maven Bio",
+      "description": "Evidence-backed BioPharma research workflows over Maven Bio's drug, trial, company, and deal knowledge graph. Skills for competitive pipelines, indication landscapes, asset profiles, deal and financing activity, and evidence synthesis grounded in FDA, SEC, clinical, and press sources. Requires a Maven Bio account.",
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/MavenBio/maven-bio-plugin.git",
+        "path": "plugins/maven-bio",
+        "ref": "main",
+        "sha": "885259378b239f9a4d3fe628ccea91d490edc3e9"
+      },
+      "homepage": "https://mavenbio.com/mcp/docs"
     }
   ]
 }
