@@ -1147,6 +1147,18 @@
       "homepage": "https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-finance-analyst"
     },
     {
+      "name": "blackrock-advisor-center-plugin",
+      "displayName": "BlackRock Advisor Center",
+      "description": "BlackRock Advisor Center 360° skills for financial advisors: portfolio review, opportunity and fund-health checks, guided benchmark selection, guided portfolio building, wealth projections, and routing to Advisor Center web workflows. Requires the BlackRock Advisor Center connector and an Advisor Center account.",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/blackrock/advisor-center-agent-skills.git",
+        "sha": "66b3e98002588a599c5c86fc10eea34b1dd93552"
+      },
+      "homepage": "https://github.com/blackrock/advisor-center-agent-skills"
+    },
+    {
       "name": "activecampaign",
       "displayName": "ActiveCampaign",
       "description": "Marketing automation, CRM, and email marketing powered by ActiveCampaign. Manage contacts, campaigns, automations, deals, and get AI-powered marketing insights — all from Claude.",
