@@ -1154,7 +1154,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/blackrock/advisor-center-agent-skills.git",
-        "sha": "66b3e98002588a599c5c86fc10eea34b1dd93552"
+        "sha": "591c758960c18c26fe8342ddb8ad3ba4dcfac6fe"
       },
       "homepage": "https://github.com/blackrock/advisor-center-agent-skills"
     },
