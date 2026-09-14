@@ -1223,6 +1223,21 @@
         "sha": "885259378b239f9a4d3fe628ccea91d490edc3e9"
       },
       "homepage": "https://mavenbio.com/mcp/docs"
+    },
+    {
+      "name": "claude-for-financial-advisors",
+      "displayName": "Claude for Financial Advisors",
+      "description": "Ready-to-run workflows for financial advisors in Claude Cowork, drawing live data from the tools their firm already uses through third-party connectors. The plugin holds no client data, and the advisor approves any write back to an external system. Claude gathers, organizes, summarizes, compares and presents information, while the advisor exercises judgment, makes the recommendation and gives the advice. For financial professional use only; not investment, legal, or tax advice.",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/anthropics/claude-for-financial-advisors.git",
+        "sha": "0bff313c8522cd0bf3404c53bd77b243b88d5bc9"
+      },
+      "homepage": "https://github.com/anthropics/claude-for-financial-advisors"
     }
   ]
 }
