@@ -12,11 +12,11 @@ Every skill also works with nothing connected: upload an export or paste notes, 
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
-| CRM | `~~CRM` | HubSpot, Close, Monday | Salesforce\*, Pipedrive, Attio, Zoho CRM, Copper |
-| Email | `~~email` | Gmail | Microsoft 365 (Outlook)\* |
-| Calendar | `~~calendar` | Google Calendar, Calendly | Microsoft 365 (Outlook)\* |
-| Chat | `~~chat` | Slack | Microsoft 365 (Teams)\* |
-| Docs and knowledge base | `~~knowledge base` | Google Drive, Notion, Atlassian (Confluence) | Microsoft 365 (SharePoint)\*, Box, Dropbox, Guru |
+| CRM | `~~CRM` | HubSpot, Salesforce\*, Close, Monday | Pipedrive, Attio, Zoho CRM, Copper |
+| Email | `~~email` | Gmail, Microsoft 365 (Outlook)\* |  |
+| Calendar | `~~calendar` | Google Calendar, Calendly, Microsoft 365 (Outlook)\* |  |
+| Chat | `~~chat` | Slack, Microsoft 365 (Teams)\* |  |
+| Docs and knowledge base | `~~knowledge base` | Google Drive, Notion, Atlassian (Confluence), Microsoft 365 (SharePoint)\* | Box, Dropbox, Guru |
 | Conversation intelligence | `~~conversation intelligence` | Gong, Fireflies, Zoom, Otter.ai | Granola, Fathom, Chorus |
 | Data enrichment | `~~data enrichment` | Clay, ZoomInfo, Apollo, Lusha, Crunchbase | Clearbit |
 | Sales engagement | `~~sales engagement` | Outreach, Apollo | Salesloft |
@@ -25,7 +25,7 @@ Every skill also works with nothing connected: upload an export or paste notes, 
 
 ## Salesforce and Microsoft 365
 
-**Salesforce and Microsoft 365 (marked \* above) connect through the Claude connector directory, because both need setup at the organization level before a person can sign in.**
+**Salesforce and Microsoft 365 (marked \* above) are included, and both need setup at the organization level: an admin enables the connector in Claude before people can sign in. For Salesforce, that includes setting up your org's Salesforce app.**
 
 Once connected, the skills use them the same way as any other tool in their category.
 

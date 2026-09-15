@@ -12,6 +12,10 @@
       "type": "http",
       "url": "https://mcp.hubspot.com/anthropic"
     },
+    "salesforce": {
+      "type": "http",
+      "url": "https://api.salesforce.com/platform/mcp/v1/platform/headless-360"
+    },
     "close": {
       "type": "http",
       "url": "https://mcp.close.com/mcp"
@@ -55,6 +59,10 @@
     "gmail": {
       "type": "http",
       "url": ""
+    },
+    "microsoft-365": {
+      "type": "http",
+      "url": "https://microsoft365.mcp.claude.com/mcp"
     },
     "similarweb": {
       "type": "http",
