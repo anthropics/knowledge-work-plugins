@@ -1245,7 +1245,7 @@
       "name": "informatica-for-claude-platform",
       "displayName": "Informatica",
       "description": "Governed catalog discovery and data Q&A powered by Informatica's data catalog and governance (IDMC). Discover, explore and evaluate enterprise data assets through natural language without bypassing governance.",
-      "category": "development",
+      "category": "database",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/forcedotcom/informatica-claude-plugins.git",
