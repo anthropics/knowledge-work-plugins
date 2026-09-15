@@ -59,6 +59,34 @@
     "similarweb": {
       "type": "http",
       "url": "https://mcp.similarweb.com/mcp"
+    },
+    "google drive": {
+      "type": "http",
+      "url": ""
+    },
+    "gong": {
+      "type": "http",
+      "url": "https://mcp.gong.io/mcp"
+    },
+    "zoom": {
+      "type": "http",
+      "url": "https://mcp.zoom.us/mcp/zoom/streamable"
+    },
+    "otter-ai": {
+      "type": "http",
+      "url": "https://mcp.otter.ai/mcp"
+    },
+    "calendly": {
+      "type": "http",
+      "url": "https://mcp.calendly.com/"
+    },
+    "lusha": {
+      "type": "http",
+      "url": "https://mcp.lusha.com/mcp/claude"
+    },
+    "crunchbase": {
+      "type": "http",
+      "url": "https://mcp.crunchbase.com/"
     }
   }
 }
