@@ -1233,13 +1233,11 @@
       },
       "category": "finance",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/anthropics/financial-services.git",
-        "path": "claude-for-financial-advisors",
-        "ref": "main",
-        "sha": "6e7f94d3fc5aed3289d63a90999252162b3cc8f8"
+        "source": "url",
+        "url": "https://github.com/anthropics/claude-for-financial-advisors.git",
+        "sha": "bcef83e6c849e35de6dfd6fe1274dd0022efdc44"
       },
-      "homepage": "https://github.com/anthropics/financial-services/tree/main/claude-for-financial-advisors"
+      "homepage": "https://github.com/anthropics/claude-for-financial-advisors"
     }
   ]
 }
