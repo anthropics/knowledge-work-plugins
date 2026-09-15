@@ -53,6 +53,9 @@ No preview, no approval — owner doesn't know what was written.
 > Size: 4 people (including owner)
 > Top headaches: cash flow gaps · slow-paying contractors · scheduling part-timers
 > Connected tools: QuickBooks, Gmail
+> Country: US
+> Currency: USD
+> Financial year end: 31 December
 > Weekly cadence: weekly check-in every Monday
 > Onboarded: 2026-04-23
 > ```
@@ -79,10 +82,30 @@ Reads like marketing for HubSpot and Gmail. The owner is being sold to.
 
 > "For customer follow-up, the two pieces I'd want are a CRM and your inbox.
 >
-> Are you on HubSpot today, or something else?"
+> What do you use for a CRM today?"
 >
 > *(Owner: "Pipedrive.")*
 >
-> "Got it — we don't have a Pipedrive connector yet. If you stayed on Pipedrive, you'd still get cash-flow and calendar work, but I wouldn't be able to score leads or draft follow-ups from inside Claude. If you'd be open to trying HubSpot's free tier, here's what'd unlock: top-5 call list every morning, drafted follow-ups after every meeting, stale-deal alerts. Up to you — want to try it, or skip CRM for now?"
+> "Got it — we don't have a Pipedrive connector yet. Two ways to go: I can connect Pipedrive through Zapier, which takes about ten minutes of setup and then lead scoring and drafted follow-ups work from inside it. Or you can export your leads as a CSV whenever you want a call list, and I'll work from that. Which do you prefer?"
 
-States the function, checks what the owner uses, gives a clear gain/loss in plain English, leaves the decision with the owner. If the owner asks "what does HubSpot actually do?" — that's an explicit invitation; answer it directly.
+States the function, asks what the owner uses without naming a vendor, offers the Zapier connection and the fallback with the trade-off in one line each, and leaves the decision with the owner. It never suggests switching to a CRM we happen to support. If the owner asks "which CRM should I get?" — that's an explicit invitation; describe what each connector in the category unlocks, alphabetically and in the same number of words, and let them choose.
+
+---
+
+## Gotcha: Recommending a vendor because it is the one we have
+
+**Why it matters:** The plugin is neutral. An owner on Xero told to "connect QuickBooks first" hears that their tool is second-class, and an owner with no bookkeeping tool told to get a specific one hears an ad. Both are wrong. The rule is `../../../shared/connector-neutrality.md`.
+
+### ✗ Bad
+
+> "Let's connect QuickBooks first — that lets me pull your cash position anytime."
+
+### ✓ Good
+
+> "Let's start with your bookkeeping — what do you use?"
+>
+> *(Owner: "Xero.")*
+>
+> "Xero it is. Here's how to authorize the connection…"
+
+Ask the category, connect what they name. If they have nothing in the category, say what the zero-connector path gives them and name the category — "once you have a bookkeeping tool connected, this gets deeper" — not a product.

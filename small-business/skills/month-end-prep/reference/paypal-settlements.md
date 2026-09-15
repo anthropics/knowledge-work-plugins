@@ -92,12 +92,12 @@ Use this logic to match processor deposits against QuickBooks bank deposits:
 ```
 for each processor deposit in target month:
     find QB deposit where:
-        abs(QB.amount - processor.net_amount) < $0.50
+        abs(QB.amount - processor.net_amount) < USD 0.50
         AND abs(QB.date - processor.arrival_date) <= 2 days
 
     if match found:
         mark as RECONCILED
-    elif abs(QB.amount - processor.net_amount) < $0.50 (date mismatch only):
+    elif abs(QB.amount - processor.net_amount) < USD 0.50 (date mismatch only):
         flag as DATE_MISMATCH (usually a timing difference — low priority)
     elif processor deposit not matched at all:
         flag as MISSING_IN_QB

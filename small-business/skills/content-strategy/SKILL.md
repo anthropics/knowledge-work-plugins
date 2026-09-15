@@ -6,14 +6,10 @@ description: >
   content brief: what to push, what offers to run, what to hold. Strategic
   output only — no calendars or assets. Use when the user asks what to post,
   wants a content plan, asks what's selling, or what to promote this month.
+allowed-tools: Read, WebFetch
 ---
 
 # Content Strategy
-
-> **Status:** MVP draft
-> **Owner:** JJ
-> **Version:** 0.2.0 · Phase MVP
-> **Category:** Marketing & Sales
 
 ## Quick start
 
@@ -23,7 +19,7 @@ When an SMB owner asks "what should I post this month?" or "what's my content pl
 2. **Identifies patterns** — top-selling products, slow movers, seasonal trends
 3. **Layers in context** — seasonality (user-provided or industry benchmarks), past performance
 4. **Produces a 30-day brief** — ranked recommendations of what to push, what to hold, what offers to consider
-5. **Gets owner approval** before the brief feeds into `canva-creator` for asset generation
+5. **Gets owner approval** before the brief feeds into `social-content-engine` for asset generation
 
 The output is strategic only — no calendar scheduling, no creative assets.
 
@@ -67,9 +63,17 @@ Fetch data from the authenticated connector (QuickBooks, PayPal, or Square, user
 
 **Connector-specific notes:**
 
-- **QuickBooks:** Fetch invoice line items via `profit-loss-quickbooks-account` (pre-flight sets industry context)
+- **QuickBooks:** Fetch invoice line items via `profit_loss_quickbooks_account` (pre-flight sets industry context). Read the rows or `monthlyBreakdown`; the response's `totalExpenses` reports 0 against real rows, so never read the summary fields
 - **PayPal:** Fetch merchant transactions via `list_transactions`. *Rate-limiting:* If you hit rate limits, pause 30 seconds and retry once. If still blocked, gracefully offer: "PayPal is rate-limited. Would you like to switch to QuickBooks or Square instead, or I can continue with historical data I already pulled?"
-- **Square:** Requires location ID first. Call `make_api_request(service="locations", method="list")` to discover available locations, then fetch orders for each location. *Future enhancement:* Square integration is stubbed; full path documented in `reference/square-integration.md`.
+- **Square:** Requires location ID first. Call `make_api_request(service="locations", method="list")` to discover available locations, then fetch orders for each location.
+
+**No connectors at all?** This still runs, and it is a supported path — not a degraded one. Ask the owner to export their sales history and upload it. Name the export by the label they will actually see in the app:
+
+- **QuickBooks** — Reports, then the "Sales by Product/Service Detail" report, set to the last 90 days, exported to Excel or CSV
+- **PayPal** — Activity, then Download, set to the last 90 days, "Completed transactions" as CSV
+- **Square** — Reports, then Item Sales, set to the last 90 days, exported as CSV
+
+Any one of those carries product name, date, revenue, and usually quantity, which is everything Step 3 needs. A pasted list of what sold and roughly when also works — say plainly that the read is rougher, and run it.
 
 **Fallback:** If <3 months of data, use industry seasonality benchmarks for the SMB's category (e.g., retail, services, e-commerce)
 
@@ -102,11 +106,22 @@ Example length: **200–400 words** (brief and actionable, not essay-length).
 Present the brief to the owner. Ask:
 - "Does this match your gut?"
 - "Anything to adjust?"
-- "Ready to feed this to canva-creator for asset generation?"
+- "Ready to feed this to social-content-engine for asset generation?"
 
 Iterate if needed; once approved, return the final brief as structured JSON (ready for downstream tools).
 
 ---
+
+## More sources, and direct invocation
+
+Read `reference/v2_sources.md` for the mapping:
+
+- **Shopify** — per-SKU velocity, variant performance, and product images that flow straight into asset generation downstream
+- **Stripe** — subscription and recurring revenue, where relevant
+
+### Direct invocation
+
+If the owner asks for a sales brief, run this and return the brief. Don't route them anywhere.
 
 ## Gotchas & edge cases
 
@@ -117,3 +132,21 @@ See [`reference/gotchas.md`](reference/gotchas.md) for common pitfalls.
 ## Examples
 
 See [`reference/examples/`](reference/examples/) for worked examples (SaaS, retail, services).
+
+---
+
+## Output
+
+**Deliver the 30-day brief per the owner's stored output preference — never default to a markdown file.** Check the `## Business context` block's `Output preference` (shared style guide rule, `../../shared/artifact-style.md`):
+
+- **Visual artifact (the default):** render the brief as an HTML page in the house style — what to promote as the lead, the why behind each pick with its numbers in tabular-nums, and the channel call per push. The structured JSON for downstream tools rides along unchanged; it is an input to other skills, not a second deliverable.
+- **docx / md / notion / canva preference:** deliver the same content in that form — a DOCX or markdown file, a Notion page created via the connector (named destination, never overwriting), or a Canva Doc created via the Canva connector (a new design each run, named with the date; tables become lists); fall back to the visual artifact if Notion or Canva is not connected — and say that is why.
+- **Best for skill:** use the visual artifact — this output is a decision page, not prose.
+
+## After the brief
+
+The 30-day brief is approved and ready to act on. The natural next step is "make the content" — `social-content-engine` turns the brief into the standing calendar and the posts. Also nearby: "run this brief" (`canva-creator`) for a one-shot campaign build from this exact brief, and "is my marketing working" (`growth-pulse`) to check whether last month's push paid off. Offer at most three, and skip any offer the owner already declined this session.
+
+## Using a tool that isn't listed
+
+The connectors named in this skill are the tested paths, not a wall. If the owner wants this flow to use a tool that isn't connected or listed, offer `build-connector` — it checks the connector directory first and connects through Zapier otherwise, never hand-building against a raw API. Once the connection exists, the tool joins this skill like any other optional connector, under the same approval gates.

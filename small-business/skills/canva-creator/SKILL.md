@@ -6,9 +6,14 @@ description: >
   caption and email copy, and stages social sends in HubSpot. Canva is used
   for social posts only (Instagram, Facebook, X, LinkedIn) — email content
   is drafted as plain text and surfaced inline for the owner to send from
-  their own tool. Every step requires explicit owner approval. Use when the
-  user says "make the content," "generate the posts," "create the assets,"
-  "turn this into a campaign," or hands off an approved brief for execution.
+  their own tool. Every step requires explicit owner approval. This is the
+  one-shot campaign executor: a finished brief goes in, a complete campaign
+  comes out. Use when the owner hands off an approved brief or points at one
+  — "run this brief," "execute the campaign," "turn this brief into posts,"
+  "build the campaign from the plan we approved." For day-to-day posting with
+  no brief — "I need to post more," "what should we post" — use
+  social-content-engine instead; it owns the standing calendar.
+allowed-tools: Read, WebFetch
 ---
 
 # Canva Creator
@@ -28,8 +33,8 @@ brief → calendar → asset inventory → Canva designs → copy → HubSpot st
 | Text-only | Email (newsletter, marketing, drip) | Subject + preheader + body, surfaced inline for the owner to send |
 
 **Canva is not used for email rows under any circumstance** — no templates,
-no autofill, no design copies, no asset uploads, no exports. The owner
-explicitly descoped Canva from the email path because email-template
+no autofill, no design copies, no asset uploads, no exports. Email
+graphics are out of scope for this skill because email-template
 autofill produces placeholder graphics when image slots exceed available
 photos, and variation thumbnails fail to render in chat previews. If the
 owner asks for a Canva email design, see `reference/gotchas.md` for the
@@ -54,8 +59,18 @@ Before Stage 1, confirm:
    Starter or Free → skip Stage 5 and export a CSV instead
    (see [reference/hubspot-staging.md](reference/hubspot-staging.md)).
 
-4. **Brand assets.** Confirm the path to product photos on disk or that
-   the brand kit is live in Canva.
+4. **Brand assets.** If a storefront is connected (Shopify or Square —
+   peers, `../../shared/connector-neutrality.md`), read the product list
+   first: titles, image URLs, and prices for every product the brief names.
+   Read only — nothing is uploaded to Canva until Stage 2 step 5, and then
+   only the images the approved calendar's slots need. That list is the
+   starting photo inventory; ask only about products the store has no
+   image for. The pull rules — which fields, the price-claim rule — are in
+   [../social-content-engine/reference/shopify-assets.md](../social-content-engine/reference/shopify-assets.md)
+   (written for Shopify; Square's catalog images follow the same steps
+   from the tool inventory). With no storefront,
+   confirm the path to product photos on disk or that the brand kit is
+   live in Canva.
 
 5. **Generation budget.** Estimate the campaign's Canva volume and surface
    it before Stage 1 begins. Default is 3 candidates per Canva-bound row;
@@ -121,9 +136,13 @@ a manifest of what the template needs and what's already available.
    - Pro/Teams: count every distinct image rectangle in the template.
 
 2. **Inventory available assets.** Text content from the brief (product
-   names, offer copy, taglines, pricing), product photos already uploaded
-   to Canva (`GET /v1/assets`) or on the owner's disk, brand kit colors
-   and fonts (Enterprise).
+   names, offer copy, taglines, pricing), product image URLs read from the
+   connected storefront at pre-flight (uploaded in step 5, only for the
+   slots the gap table needs, and recorded by `asset.id` then), product
+   photos already uploaded to Canva (`GET /v1/assets`) or on the owner's
+   disk, brand kit colors and fonts (Enterprise). A price in a caption
+   comes from the storefront's returned value or the brief, never from
+   memory.
 
 3. **Build the slot-by-slot gap table.** One row per slot per design — not
    per design.
@@ -356,7 +375,7 @@ field reference, see
 4. **Surface email content for handoff.** For each email row, present the
    approved subject + preheader + body inline, grouped by send date. The
    owner copies these into their email tool (HubSpot Marketing Email,
-   Mailchimp, Gmail).
+   Mailchimp, Gmail or M365).
 
 **Final checkpoint.**
 
@@ -372,6 +391,19 @@ you're ready to send:
 
 Anything to change before we're done?
 ```
+
+Alongside that summary — never replacing it — render the campaign as an
+HTML artifact per the house style (`../../shared/artifact-style.md`): the
+posting calendar as a table, a per-channel status pill on each row
+(scheduled / drafted / handoff), and a staged-post panel per row with the
+approved caption or email copy and its export PNG link.
+
+**Closing offer.** One line on what the campaign now contains, then the
+single most relevant next step with its trigger phrase — usually "is my
+marketing working?" (`growth-pulse`) once posts start going out. Up to
+two others: "make the content" (`social-content-engine`) for the standing
+calendar, or "my ads" (`ad-manager`). Max three; never re-offer something
+the owner declined this session.
 
 ---
 
@@ -407,6 +439,10 @@ Anything to change before we're done?
 - [reference/hubspot-staging.md](reference/hubspot-staging.md) — HubSpot
   Social API and CSV fallback for non-Pro tiers
 - [reference/gotchas.md](reference/gotchas.md) — Good / Bad patterns for
-  every failure mode this skill has hit in production
+  common failure modes
 - [reference/examples/boutique-brief-campaign.md](reference/examples/boutique-brief-campaign.md)
   — full worked examples (single-slot social, multi-slot template)
+
+## Using a tool that isn't listed
+
+The connectors named in this skill are the tested paths, not a wall. If the owner wants this flow to use a tool that isn't connected or listed, offer `build-connector` — it checks the connector directory first and connects through Zapier otherwise, never hand-building against a raw API. Once the connection exists, the tool joins this skill like any other optional connector, under the same approval gates.

@@ -1,6 +1,6 @@
 # Gotchas — ticket-deflector
 
-Edge cases that caused problems in testing or review.
+Edge cases where this skill is most likely to go wrong.
 
 ---
 
@@ -18,13 +18,13 @@ Edge cases that caused problems in testing or review.
 
 ### ✓ Good
 
-Draft in the owner's actual register. If no prior emails from the owner are available to reference, ask: *"What's your usual tone — formal, casual, or somewhere in between?"* A short, direct owner gets a short direct draft. A warm, chatty owner gets warmth and their punctuation quirks preserved.
+Read `../../../shared/voice-profile.md` first and draft in the owner's actual register. If that file holds no profile yet, follow its "When there is no sample" instruction — ask for three emails the owner was happy with. If they decline or have nothing handy, write plainly and say the draft is un-voiced rather than inventing a personality. A short, direct owner gets a short direct draft. A warm, chatty owner gets warmth and their punctuation quirks preserved.
 
 ---
 
 ## Gotcha: Flagging data gaps inline, not at the end
 
-**Why it matters:** If PayPal has no matching transaction and the draft says "your refund of $X is being processed," the owner will send a false claim. Data gaps must be visible at the point they affect the message.
+**Why it matters:** If PayPal has no matching transaction and the draft says "your refund of USD 64.00 is being processed," the owner will send a false claim. Data gaps must be visible at the point they affect the message.
 
 ### ✗ Bad
 
@@ -52,6 +52,6 @@ Auto-pick the most recent transaction and proceed without telling the owner.
 
 Surface all matching transactions and pause:
 
-> *"Found 2 PayPal transactions for this customer: (1) $49.00 · 2026-03-14 · Completed · (2) $129.00 · 2026-04-01 · Completed. Which one is this about?"*
+> *"Found 2 PayPal transactions for this customer: (1) USD 49.00 · 2026-03-14 · Completed · (2) USD 129.00 · 2026-04-01 · Completed. Which one is this about?"*
 
 Wait for the owner to confirm before writing the draft.

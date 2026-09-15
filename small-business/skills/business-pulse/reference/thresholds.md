@@ -4,6 +4,8 @@ Red/yellow/green cutoffs for each section of the pulse. These are SMB defaults �
 
 Any threshold marked `# TODO: confirm with owner` should produce a note at the top of the first pulse output so the owner knows to tune it.
 
+Amount thresholds are in the business's own currency (`../../../shared/currency-and-locale.md`): "200" means 200 of whatever the business invoices in. They are attention lines, not legal ones, and do not need converting.
+
 ---
 
 ## Cash & Finance
@@ -35,8 +37,8 @@ Any threshold marked `# TODO: confirm with owner` should produce a note at the t
 - 🔴 < -10%
 
 **Failed transactions**
-- 🟡 Any failed transaction > $200
-- 🔴 Any failed transaction > $1,000, or 3+ failures in the week
+- 🟡 Any failed transaction > 200
+- 🔴 Any failed transaction > 1,000, or 3+ failures in the week
 
 ---
 
@@ -54,7 +56,7 @@ Any threshold marked `# TODO: confirm with owner` should produce a note at the t
 
 ## Watch List
 
-No numeric thresholds — any escalation or complaint in Gmail/Slack gets surfaced. Severity is contextual; surface and let the owner decide.
+No numeric thresholds — any escalation or complaint in mail or Slack gets surfaced. Severity is contextual; surface and let the owner decide.
 
 ---
 

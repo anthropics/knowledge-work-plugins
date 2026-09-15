@@ -1,24 +1,92 @@
 {
   "mcpServers": {
-    "quickbooks": {
+    "airwallex-agentos": {
       "type": "http",
-      "url": "https://ai-inc.quickbooks.intuit.com/v1/mcp"
+      "url": "https://mcp.airwallex.com/mcp"
     },
-    "paypal": {
-      "type": "sse",
-      "url": "https://mcp.paypal.com/sse"
-    },
-    "hubspot": {
+    "apollo-io": {
       "type": "http",
-      "url": "https://mcp.hubspot.com/anthropic"
+      "url": "https://mcp.apollo.io/mcp"
+    },
+    "atlassian-rovo": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp"
     },
     "canva": {
       "type": "http",
       "url": "https://mcp.canva.com/mcp"
     },
+    "clay": {
+      "type": "http",
+      "url": "https://api.clay.com/v3/mcp"
+    },
     "docusign": {
       "type": "http",
       "url": "https://mcp.docusign.com/mcp"
+    },
+    "emergent": {
+      "type": "http",
+      "url": "https://mcp.emergent.sh"
+    },
+    "expensify": {
+      "type": "http",
+      "url": "https://www.expensify.com/mcp"
+    },
+    "gmail": {
+      "type": "http",
+      "url": "https://gmailmcp.googleapis.com/mcp/v1"
+    },
+    "google-calendar": {
+      "type": "http",
+      "url": "https://calendarmcp.googleapis.com/mcp/v1"
+    },
+    "google-drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1"
+    },
+    "gusto": {
+      "type": "http",
+      "url": "https://mcp.api.gusto.com/anthropic"
+    },
+    "hubspot": {
+      "type": "http",
+      "url": "https://mcp.hubspot.com/anthropic"
+    },
+    "intuit-mailchimp": {
+      "type": "http",
+      "url": "https://ai-inc.mailchimp.com/claude/mcp/v2"
+    },
+    "intuit-quickbooks": {
+      "type": "http",
+      "url": "https://ai-inc.quickbooks.intuit.com/v1/mcp"
+    },
+    "monday-com": {
+      "type": "http",
+      "url": "https://mcp.monday.com/mcp"
+    },
+    "myob": {
+      "type": "http",
+      "url": "https://mcp.myob.com/mcp"
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "paypal": {
+      "type": "http",
+      "url": "https://mcp.paypal.com/mcp"
+    },
+    "ramp": {
+      "type": "http",
+      "url": "https://mcp.ramp.com/mcp"
+    },
+    "ringex-chat": {
+      "type": "http",
+      "url": "https://mcp.labs.ringcentral.com/ringex/v1.1.0/team-chat"
+    },
+    "shopify": {
+      "type": "http",
+      "url": "https://setup.shopify.com/mcp"
     },
     "slack": {
       "type": "http",
@@ -28,25 +96,53 @@
         "callbackPort": 3118
       }
     },
+    "square": {
+      "type": "http",
+      "url": "https://mcp.squareup.com/mcp"
+    },
     "stripe": {
       "type": "http",
       "url": "https://mcp.stripe.com"
     },
-    "square": {
+    "tiktok": {
       "type": "http",
-      "url": "https://mcp.squareup.com/sse"
+      "url": "https://business-api.tiktok.com/open_mcp/tt-ads-mcp-layer"
     },
-    "gmail": {
+    "trello": {
       "type": "http",
-      "url": ""
+      "url": "https://mcp.trello.com/v1"
     },
-    "google calendar": {
+    "wix": {
       "type": "http",
-      "url": ""
+      "url": "https://mcp.wix.com/mcp"
     },
-    "google drive": {
+    "xero": {
       "type": "http",
-      "url": ""
+      "url": "https://mcp.xero.com/mcp"
+    },
+    "zapier": {
+      "type": "http",
+      "url": "https://mcp.zapier.com/api/v1/connect"
+    },
+    "zoho-books": {
+      "type": "http",
+      "url": "https://claude-zohobooks.zohomcp.com/mcp/message"
+    },
+    "zoho-crm": {
+      "type": "http",
+      "url": "https://claude-zohocrm.zohomcp.com/mcp/message"
+    },
+    "zoho-desk": {
+      "type": "http",
+      "url": "https://claude-zohodesk.zohomcp.com/mcp/message"
+    },
+    "zoho-projects": {
+      "type": "http",
+      "url": "https://claude-zohoprojects.zohomcp.com/mcp/message"
+    },
+    "zoom": {
+      "type": "http",
+      "url": "https://mcp.zoom.us/mcp/zoom/streamable"
     }
   }
 }

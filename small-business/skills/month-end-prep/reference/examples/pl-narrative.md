@@ -8,9 +8,9 @@ occasional local markets.
 **Month:** March 2024
 
 **Key figures:**
-- Revenue: $18,400 (Feb: $15,200) → +21% MoM
-- COGS: $7,360 (Feb: $5,776) → gross margin 60% (Feb: 62%)
-- Net income: $4,150 (Feb: $3,100) → +34% MoM
+- Revenue: USD 18,400 (Feb: USD 15,200) → +21% MoM
+- COGS: USD 7,360 (Feb: USD 5,776) → gross margin 60% (Feb: 62%)
+- Net income: USD 4,150 (Feb: USD 3,100) → +34% MoM
 
 **Drivers:**
 - Spring collection launched March 8 — strong first two weeks
@@ -21,16 +21,16 @@ occasional local markets.
 
 ## Example narrative
 
-> **March came in at $4,150 net — your best month yet, up 34% from February.**
+> **March came in at USD 4,150 net — your best month yet, up 34% from February.**
 >
-> Revenue hit $18,400, driven almost entirely by the Spring Collection launch on
+> Revenue hit USD 18,400, driven almost entirely by the Spring Collection launch on
 > March 8. The Lavender + Sage three-pack was your top seller, accounting for
 > roughly a third of units. The last week of the month slowed after the launch
 > buzz faded, which is normal — watch whether that holds in April.
 >
 > Gross margin dipped slightly to 60% (from 62% in February). The culprit is
 > beeswax: your new supplier is running about 8% higher than your previous one.
-> At current volume that's roughly $200/month — not alarming, but worth a
+> At current volume that's roughly USD 200/month — not alarming, but worth a
 > conversation with them or a price comparison before next order.
 >
 > Expenses were otherwise flat. Shopify fees ticked up proportionally with
@@ -38,7 +38,7 @@ occasional local markets.
 >
 > **Watch list for April:** (1) Whether the post-launch slowdown stabilizes or
 > continues. (2) Beeswax pricing — lock in a rate if you can. (3) You have
-> $2,800 in deposits from the Petal & Bloom wholesale order that haven't
+> USD 2,800 in deposits from the Petal & Bloom wholesale order that haven't
 > shipped yet — those aren't revenue until delivery.
 
 ---

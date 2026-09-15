@@ -6,7 +6,9 @@ for the user to fill in. Mark any placeholder clearly so it's obvious what
 still needs to be completed before sending.
 
 > ⚠️ Legal reminder: This template requires review by qualified legal counsel
-> before use. Employment law varies by jurisdiction.
+> before use. Employment law varies by jurisdiction. The default clauses below
+> (at-will employment, FLSA exempt status, 401(k)) are US terms; outside the
+> US they are placeholders for the equivalent local terms, not defaults.
 
 ---
 
@@ -25,7 +27,7 @@ still needs to be completed before sending.
 
 Dear [CANDIDATE FIRST NAME],
 
-We are thrilled to offer you the position of **[JOB TITLE]** at [COMPANY NAME].
+We are thrilled to offer you the position of **<JOB TITLE>** at <COMPANY NAME>.
 We were genuinely impressed by [a brief, specific, warm note about the candidate —
 e.g., "your approach to the product design challenge and your thoughtful questions
 about the team's roadmap"], and we believe you will be an outstanding addition to
@@ -45,25 +47,29 @@ our team.
 
 **Compensation**
 
-Your starting base salary will be **[ANNUAL SALARY OR HOURLY RATE]**,
-paid [bi-weekly / semi-monthly / monthly] in accordance with [COMPANY NAME]'s
+Your starting base salary will be **<ANNUAL SALARY OR HOURLY RATE>**,
+paid [bi-weekly / semi-monthly / monthly] in accordance with <COMPANY NAME>'s
 standard payroll schedule.
 
 [IF APPLICABLE — EQUITY]
-You will be eligible to receive a grant of **[NUMBER] [shares/options]** of
-[COMPANY NAME] [common stock / stock options] at the fair market value on the
+You will be eligible to receive a grant of **<NUMBER> <shares or options>** of
+<COMPANY NAME> [common stock / stock options] at the fair market value on the
 date of grant, subject to approval by the Board of Directors and the terms of
 the company's equity incentive plan. Your grant will vest over [VESTING SCHEDULE,
 e.g., "four years with a one-year cliff"].
 
 [IF APPLICABLE — BONUS]
-You will be eligible to participate in [COMPANY NAME]'s annual bonus program,
-with a target bonus of **[BONUS AMOUNT OR %]** of your base salary, subject to
+You will be eligible to participate in <COMPANY NAME>'s annual bonus program,
+with a target bonus of **<BONUS AMOUNT OR %>** of your base salary, subject to
 company and individual performance.
+
+[IF APPLICABLE — BENEFITS. Delete this whole section when the employer has
+named no benefits program. A small business with none is common, and an
+unedited paragraph promising one is a promise the owner did not make.]
 
 **Benefits**
 
-You will be eligible to participate in [COMPANY NAME]'s benefits program,
+You will be eligible to participate in <COMPANY NAME>'s benefits program,
 which includes [list 3–5 key benefits, e.g., medical/dental/vision insurance,
 401(k) with employer match, paid parental leave, etc.]. Full details will be
 provided during your onboarding.
@@ -74,23 +80,23 @@ This offer is contingent upon:
 - [Successful completion of a background check — delete if not applicable]
 - [Satisfactory reference checks — delete if not applicable]
 - [Verification of your legal right to work in [COUNTRY/JURISDICTION]]
-- Your execution of [COMPANY NAME]'s standard Confidentiality and Intellectual
+- Your execution of <COMPANY NAME>'s standard Confidentiality and Intellectual
   Property Agreement (enclosed / provided separately)
 
 **Employment At-Will**
 [Include or delete depending on jurisdiction and employment type]
-Your employment with [COMPANY NAME] is at-will, meaning either you or the
+Your employment with <COMPANY NAME> is at-will, meaning either you or the
 company may terminate the employment relationship at any time, with or without
 cause or advance notice.
 
 **Acceptance**
 
-To accept this offer, please sign and return this letter by **[OFFER EXPIRATION DATE]**.
+To accept this offer, please sign and return this letter by **<OFFER EXPIRATION DATE>**.
 We've enclosed a copy for your records.
 
 [DOCUSIGN ENVELOPE LINK — paste here before sending]
 
-We are excited about the prospect of you joining [COMPANY NAME] and look forward
+We are excited about the prospect of you joining <COMPANY NAME> and look forward
 to welcoming you to the team. Please don't hesitate to reach out to [HR CONTACT NAME]
 at [HR CONTACT EMAIL] if you have any questions.
 
@@ -98,7 +104,7 @@ Sincerely,
 
 [HIRING MANAGER NAME]
 [HIRING MANAGER TITLE]
-[COMPANY NAME]
+<COMPANY NAME>
 [DATE]
 
 ---

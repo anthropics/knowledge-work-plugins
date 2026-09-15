@@ -6,7 +6,7 @@ User message:
 > "We need to hire a Senior Product Manager for our payments team. They'll own
 > the roadmap for our checkout experience. We want 5+ years of PM experience,
 > ideally with a fintech or payments background. Remote-friendly, NYC preferred.
-> Comp is $160–185k base. Three interview rounds: recruiter screen, hiring manager
+> Comp is USD 160–185k base. Three interview rounds: recruiter screen, hiring manager
 > deep-dive, and a panel with two senior PMs. Send the offer via DocuSign when
 > we get there."
 
@@ -22,12 +22,12 @@ User message:
 | Must-haves | 5+ years PM experience |
 | Nice-to-haves | Fintech or payments background |
 | Location | Remote-friendly, NYC preferred |
-| Compensation | $160–185k base |
+| Compensation | USD 160–185k base |
 | Interview process | 3 rounds: recruiter screen, HM deep-dive, senior PM panel (2 people) |
 | Offer delivery | DocuSign |
 
 Claude confirms and asks exactly one question:
-> "Got it — hiring packet for a Senior PM on the payments team, $160–185k,
+> "Got it — hiring packet for a Senior PM on the payments team, USD 160–185k,
 > remote-friendly NYC. One question before I start: do you have an existing job
 > description or offer letter template I should use as the starting point, or
 > should I build from scratch?"
@@ -38,7 +38,7 @@ Claude confirms and asks exactly one question:
 
 ### `Senior-PM-Job-Post.docx`
 
-Structure follows `references/job-post-structure.md`:
+Structure follows `../job-post-structure.md`:
 
 1. **Opening hook** — Why this role exists now: the payments team is scaling the
    checkout experience and needs someone to own the roadmap end-to-end.
@@ -49,7 +49,7 @@ Structure follows `references/job-post-structure.md`:
    roadmap from discovery through launch…").
 5. **What we're looking for** — Required: 5+ yrs PM exp, comfort with data,
    strong written communication. Preferred: fintech or payments domain experience.
-6. **Compensation** — $160,000–$185,000 base salary.
+6. **Compensation** — USD 160,000–USD 185,000 base salary.
 7. **How to apply** — One sentence.
 
 Length target: 500–650 words.
@@ -58,7 +58,7 @@ Length target: 500–650 words.
 
 ### `Senior-PM-Interview-Guide.docx`
 
-Structure follows `references/interview-guide-structure.md`:
+Structure follows `../interview-guide-structure.md`:
 
 - **Role summary** — one paragraph reminding interviewers what they're assessing.
 - **Stage map** — 3 stages, each interviewer, each competency.
@@ -80,12 +80,12 @@ Structure follows `references/interview-guide-structure.md`:
 
 ### `Senior-PM-Offer-Letter.docx`
 
-Based on `references/offer-letter-template.md`. Pre-filled where data is available:
+Based on `../offer-letter-template.md`. Pre-filled where data is available:
 
 | Field | Value |
 |---|---|
 | `[JOB TITLE]` | Senior Product Manager |
-| `[ANNUAL SALARY]` | `$160,000–$185,000 — confirm exact figure with HR before sending` |
+| `[ANNUAL SALARY]` | `USD 160,000–USD 185,000 — confirm exact figure with HR before sending` |
 | `[CANDIDATE FULL NAME]` | Left blank |
 | `[PROPOSED START DATE]` | Left blank |
 | `[OFFER EXPIRATION DATE]` | Left blank |

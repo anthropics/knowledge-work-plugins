@@ -1,13 +1,13 @@
 # Gotchas — cash-flow-snapshot
 
-Known edge cases and connector failure modes. 2–5 entries, Good/Bad format.
+Known edge cases and connector failure modes.
 
 ---
 
 ## 1. QuickBooks AR aging includes invoices already collected
 
 **Bad:** Including fully-paid invoices from the AR aging report inflates inflow
-projections. QuickBooks sometimes shows $0-balance invoices in aging exports.
+projections. QuickBooks sometimes shows USD 0-balance invoices in aging exports.
 
 **Good:** Filter AR rows to `balance_due > 0` before computing inflows. If the
 connector doesn't expose balance_due, subtract known PayPal/Stripe settlements

@@ -102,7 +102,7 @@ Offer runs June 1–July 31. Don't sleep on it.
 Swipe up to shop →
 ```
 
-*Owner approved with one change: "Jun 4 caption — add the price at the end. '$88, link below.'"*  
+*Owner approved with one change: "Jun 4 caption — add the price at the end. 'USD 88, link below.'"*  
 *Caption updated.*
 
 ---

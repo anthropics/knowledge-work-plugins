@@ -43,3 +43,33 @@ PayPal's MCP connector rate-limits aggressively when the requested date window i
 *Retry pattern:* If a 7-day query returns 429, retry immediately with a **3-day window**. A narrower window reduces the response payload and usually succeeds.
 
 *Fallback:* If the 3-day retry also returns 429, skip the PayPal cross-reference for this run entirely. Flag every customer in the batch as "PayPal unavailable — verify manually" in the summary table. Proceed with QuickBooks-only scoring. Do not silently drop the caveat — the owner needs to know the cross-reference was skipped before approving any sends.
+
+---
+
+**Airwallex invoice numbers match nothing in the ledger.**
+
+Airwallex numbers its invoices itself (`INV-XXXX-0002` style). Its numbers do not match a ledger invoice, while the ledger invoice number stored in each invoice's `metadata` does. Match on `metadata` first. When an invoice has no `metadata` (subscription-generated invoices often do not), resolve `billing_customer_id` with `retrieve_billing_customer` and match on customer plus amount plus due date. Never put Airwallex's own number in a reminder as the invoice number; the customer's copy carries the ledger number.
+
+---
+
+**Airwallex voided invoices still report `payment_status: UNPAID`.**
+
+A voided invoice keeps `payment_status: UNPAID`, so a list filtered on payment status alone includes invoices nobody owes. Always pass `status: FINALIZED` too (or drop any row whose `status` is `VOIDED`).
+
+---
+
+**Airwallex account name may not match the business name.**
+
+`get_account_details` can return a legal name that does not match the owner's business while the account nickname does. Confirm the account by the nickname or identifiers before treating it as the wrong account; do not stop the run on the legal name alone.
+
+---
+
+**Airwallex cannot send a reminder.**
+
+There is no send-reminder or notify tool on an invoice; Airwallex's own billing skill says the same ("no API to email invoices directly"). Every Airwallex-sourced reminder goes out through the owner's mail connector, or comes back as copy, with the invoice's `hosted_url` as the pay link. `hosted_url` only exists when `collection_method` is `CHARGE_ON_CHECKOUT`; an `OUT_OF_BAND` invoice may have only `pdf_url` — link that and tell the owner the customer will pay by bank transfer. `create_payment_link` does take a `shopper_email` that emails the link from Airwallex — do not use it here; the reminder is the owner's message, in the owner's voice, from the owner's mailbox.
+
+---
+
+**Two Airwallex connectors exist; the owner wants the production one.**
+
+There are two: **airwallex-agentos** (production account, `mcp.airwallex.com/mcp`) and **airwallex-developer** (sandbox plus docs). The plugin declares the production one. Airwallex's own guidance is to take tool names from the connected server's tool list rather than assume them, so on first use confirm `list_billing_invoices`, `retrieve_billing_customer`, and `create_payment_link` exist by name and adapt if the production server names them differently. If the owner connected the developer connector by mistake, every figure is sandbox data: say so and stop.

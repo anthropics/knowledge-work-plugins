@@ -1,80 +1,86 @@
 ---
 name: close-month
-description: Closes the month — reconciles QB vs payment processors, flags gaps, writes P&L narrative, exports close packet. Accepts optional month and save-to arguments.
-allowed-tools: Read, WebFetch, Bash
+description: Closes the books and turns them into a decision as a three-link chain — month-end-prep reconciles the ledger against every connected payment processor and writes the P&L narrative, cash-flow-snapshot then refreshes the 30/60/90-day forecast off the newly closed numbers rather than raw ones, and report-builder publishes and distributes the close packet. Requires a ledger (MYOB, NetSuite, QuickBooks, Xero, or Zoho Books) and uses Gusto, PayPal, Ramp, Shopify, Square, and Stripe when connected, falling back to statement or CSV uploads. Trigger on "close the month," "month-end," "close the books," "reconcile," "send the close packet to my accountant," or when the owner asks why revenue or margin moved last month. An owner who wants only the reconciliation and its flags, with no forecast refresh and no packet distribution, routes to month-end-prep directly.
+allowed-tools: Read, WebFetch
 ---
 
-Run the month-end close workflow. Reconcile, flag gaps, narrate the P&L, and export the close packet for the owner's records (and their accountant).
+Run the month-end chain. Close, then forecast off the closed books, then publish. The ordering is the product.
 
 Parse arguments:
-- `--month` (default: previous calendar month) — `YYYY-MM` format
-- `--save-to` (default `files`) — `files` (Google Drive / OneDrive), `desktop` (local), or `both`
+- `--month` (default: previous calendar month) — `YYYY-MM`
+- `--save-to` (default `files`) — `files` (Drive / OneDrive), `desktop`, or `both`
 
-## Step 1 — Reconcile
+**A ledger is required** — MYOB, NetSuite, QuickBooks, Xero, or Zoho Books, whichever is connected; they are peers (`../../shared/connector-neutrality.md`). If none is reachable, stop and say so. Reconciliation without a ledger is not a close. Offer the CSV path from `month-end-prep` rather than producing a partial packet. If two ledgers are connected, ask which holds the books being closed and name it in the packet.
 
-Trigger the `month-end-prep` skill workflow:
+## Step 1 — Close and reconcile (month-end-prep)
 
-1. Pull all QuickBooks transactions for the target month.
-2. Pull settlements from each connected payment processor (PayPal, Stripe, Square) for the same month.
-3. Match QB entries to processor settlements by amount + date (±2 days).
-4. Surface three gap categories:
-   - **Unmatched processor settlements** — money came in via PayPal/Stripe/Square but never landed in QB
-   - **Unmatched QB deposits** — QB shows income with no processor record (cash? wire? misclassified?)
-   - **Variance lines** — matched but amount differs (fees, refunds split)
+Run `month-end-prep` for the target month, start to finish.
 
-## Step 2 — Flag suspicious entries
+- **In:** the target month.
+- **Out:** the reconciliation table, the flagged items (uncategorized, suspicious duplicates, missing receipts), the P&L narrative, and the close packet XLSX plus one-page PDF.
+- **Gate:** `month-end-prep`'s own Step 6 sign-off holds. The owner triages every flagged item — or explicitly skips it — before anything downstream runs.
 
-Surface in the same report:
-- **Uncategorized transactions** — QB entries with no category
-- **Suspicious duplicates** — same amount, same vendor, within 3 days
-- **Missing receipts** — QB entries above $75 with no attachment
+**This step owns the numbers.** Nothing later in the chain recategorizes a transaction or restates revenue.
 
-For each, recommend an action: categorize as X, delete duplicate, attach receipt from inbox.
+### The hard gate before Step 2
 
-Wait for owner to triage flagged items before generating the narrative. Do not auto-categorize or auto-delete.
+Do not start the forecast until the owner has signed off on the close. Say plainly what is waiting:
 
-## Step 3 — P&L narrative
+> "Books are closed for April — USD 3,200 in variances resolved, two receipts still missing. Ready to refresh your cash forecast off these closed numbers?"
 
-After triage, generate a plain-English P&L narrative:
+If flagged items are still open, name them and ask whether to forecast anyway. A forecast built on eleven uncategorized transactions is a forecast built on a guess, and the owner deserves to know which they are getting.
 
-```
-{Month YYYY} closed at ${revenue} revenue ({+/-}{X}% vs prior month).
-Top driver: {category/customer}. Biggest swing: {category} {direction} ${amount}
-because {reason inferred from transactions}.
+## Step 2 — Forecast off the closed books (cash-flow-snapshot)
 
-Margin: {X}% ({+/-}Y pts vs prior). {Cost-side commentary}.
+Run `cash-flow-snapshot` using the reconciled month as its historical base.
 
-Three notable items:
-1. ...
-2. ...
-3. ...
-```
+- **In:** the closed-month figures from Step 1 — actual AR collection timing, actual fixed costs as coded, actual settlement lag.
+- **Out:** the 30/60/90-day forecast with confidence bands and named risks.
+- **Gate:** none. The forecast is read-only.
 
-Numbers come from QB; the *why* comes from cross-referencing top transactions, vendor names, and prior-month deltas.
+**Say why this ordering matters, in the output.** A forecast run on raw books inherits every miscoded expense and every unmatched settlement. Running it after the close means the payment-timing history is real and the fixed-cost floor is right. One line is enough:
 
-## Step 4 — Export the close packet
+> "This forecast is built on April's closed books, so the collection timing and cost floor reflect reconciled numbers — not the raw register."
 
-Generate two files:
+If the close surfaced something that moves the forecast — a duplicate vendor charge removed, a settlement finally matched — call out the delta against last month's forecast.
 
-1. **`close-packet-{YYYY-MM}.xlsx`** — multi-tab workbook:
-   - `Reconciliation` — QB ↔ processor match table with gap rows highlighted
-   - `Flagged` — uncategorized / duplicates / missing receipts
-   - `P&L` — formatted income statement with prior-month delta column
-   - `Trial Balance` — accounts + ending balances
-2. **`close-packet-{YYYY-MM}.pdf`** — one-page summary: P&L narrative + top-line numbers + gap count
+## Step 3 — Publish and distribute (report-builder)
 
-Save both to the chosen `--save-to` location. Filename format: `close-packet-2026-04.xlsx` etc.
+Run `report-builder` to package and deliver the close.
 
-## Connector failures
+- **In:** the P&L narrative and packet from Step 1, the forecast from Step 2.
+- **Out:** the merged close packet — chat summary first, then the workbook. Save the definition so next month's close publishes the same pack without being described again.
+- **Gate:** saving to the owner's own drive is automatic. **Sending to an accountant or anyone else is not** — draft the message, show it, and wait.
 
-If QuickBooks is unreachable, stop — reconciliation requires QB as the source of truth. If a payment processor (PayPal, Stripe, Square) is unreachable, run reconciliation against the available processors and note "PayPal not connected — PayPal settlements skipped from reconciliation" (or whichever is missing). If all processors are missing, run QB-only analysis and flag it.
+Merge, do not staple. The packet reads: what the month was, what the books say, what the next 90 days look like off those books, and what is still open.
 
-## Approval gates
+Example, Okonkwo Mechanical: "April closed at USD 84,200, up 6% on March. Margin held at 38%. Two receipts outstanding. The 30-day forecast is USD 11,400 net at the midpoint — Rosewood's USD 12,400 is the swing."
 
-- **Never auto-fix flagged items.** Always show the gap, recommend an action, wait for the owner.
-- **Never delete duplicates without explicit confirmation.** Show both records side-by-side.
-- **Saving the packet is auto** — it goes to the owner's own drive.
+## What not to do
+
+- **Do not forecast before the close is signed off.** The ordering is the entire reason this is a chain.
+- **Do not auto-fix a flagged item.** Show the gap, recommend the action, wait.
+- **Do not delete a suspected duplicate without explicit confirmation.** Show both records side by side.
+- **Do not restate a number downstream.** Step 1 owns the books; later steps cite them.
+- **Do not send the packet to an accountant without approval.**
+- **Do not proceed without a ledger.** Say what is missing, by category, and offer the CSV path.
 
 ## Output
 
-End the run with a one-paragraph recap: revenue, margin, gap count remaining (if any), file paths to the saved packet. If gaps were not all resolved, list them so the owner can revisit.
+End with a one-paragraph recap: revenue and margin, gaps still open, the 30-day forecast midpoint and its top risk, and the file paths. If anything was skipped rather than resolved, list it so the owner can come back to it.
+
+Also render the merged close as one HTML artifact using the house artifact style (`../../shared/artifact-style.md`) — additive to the chat recap and the packet files, never instead of them. Revenue, margin percent, and the 30-day forecast midpoint are stat tiles with their comparison as context lines; the reconciliation and flagged items are a table with tabular-nums amounts and a status pill per row (good reconciled, warn skipped, critical unresolved); the 30/60/90 forecast gets its own panel; the open-items checklist closes the page.
+
+## After the run
+
+One line: the month is closed, forecast refreshed, packet published. Then the single most relevant next step, with at most two others nearby:
+
+- If the forecast flagged a payroll risk: "can I make payroll" runs `/plan-payroll`.
+- "Who owes me money?" runs `invoice-chase` on the AR the close just confirmed.
+- "The weekly pack, on schedule" runs `/report-pack` so these numbers recur.
+
+Max three offers. Never repeat an offer the owner declined this session.
+
+## Using a tool that isn't listed
+
+The connectors named in this skill are the tested paths, not a wall. If the owner wants this flow to use a tool that isn't connected or listed, offer `build-connector` — it checks the connector directory first and connects through Zapier otherwise, never hand-building against a raw API. Once the connection exists, the tool joins this skill like any other optional connector, under the same approval gates.

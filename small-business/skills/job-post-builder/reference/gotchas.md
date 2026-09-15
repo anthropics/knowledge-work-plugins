@@ -31,7 +31,7 @@ disrupts the automation state and confuses the user.
 
 ## 3. Re-asking for context the user already provided
 
-✗ **Bad:** The user says "we need to hire a senior PM, fully remote, $160–180k"
+✗ **Bad:** The user says "we need to hire a senior PM, fully remote, USD 160–180k"
 and Phase 1 asks for role title, location, and compensation anyway.
 
 ✓ **Good:** Extract role title, location, and compensation from the message, confirm
@@ -45,7 +45,7 @@ rather than a long form." Redundant questions break trust and slow the workflow.
 ## 4. Silently expanding the user's existing format
 
 ✗ **Bad:** The user has a 3-section job post on file. Claude produces a 7-section
-post based on `references/job-post-structure.md` without asking.
+post based on `job-post-structure.md` without asking.
 
 ✓ **Good:** Map the user's existing format against the reference, identify missing
 sections, and ask one question: "Your existing JD has X and Y — want me to add Z,
@@ -58,7 +58,7 @@ may conflict with internal HR or legal standards the user hasn't mentioned.
 
 ## 5. Inventing compensation figures
 
-✗ **Bad:** No salary range was provided, so Claude writes "$120,000–$150,000 DOE"
+✗ **Bad:** No salary range was provided, so Claude writes "USD 120,000–USD 150,000 DOE"
 in the job post or offer letter.
 
 ✓ **Good:** If compensation isn't provided, omit the range from the job post entirely.

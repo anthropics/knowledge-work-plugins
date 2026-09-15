@@ -16,7 +16,7 @@ Contract: 18-page SaaS Subscription Agreement, vendor template, governing law: C
 
 ### 📋 Contract summary
 
-12-month SaaS subscription, auto-renewing annually. Vendor provides project management software. You pay $2,400/year billed monthly. Vendor hosts data; you own your data but grant vendor a broad license to use it for "product improvement." You can terminate with 30 days notice but owe fees through end of the contract term.
+12-month SaaS subscription, auto-renewing annually. Vendor provides project management software. You pay USD 2,400/year billed monthly. Vendor hosts data; you own your data but grant vendor a broad license to use it for "product improvement." You can terminate with 30 days notice but owe fees through end of the contract term.
 
 ---
 
@@ -26,11 +26,11 @@ Contract: 18-page SaaS Subscription Agreement, vendor template, governing law: C
 
 > *"IN NO EVENT SHALL VENDOR'S LIABILITY EXCEED THE AMOUNTS ACTUALLY PAID BY CUSTOMER IN THE THREE (3) MONTHS PRECEDING THE CLAIM."*
 
-**Problem:** Three months of fees = $600. If a vendor data breach exposes your client data, your recovery is capped at $600 — regardless of actual damages. For a consulting firm handling client information, this is inadequate.
+**Problem:** Three months of fees = USD 600. If a vendor data breach exposes your client data, your recovery is capped at USD 600 — regardless of actual damages. For a consulting firm handling client information, this is inadequate.
 
-**Ask for:** Cap at 12 months of fees paid ($2,400), or at a fixed floor of $50,000 for data security incidents. Suggested language:
+**Ask for:** Cap at 12 months of fees paid (USD 2,400), or at a fixed floor of USD 50,000 for data security incidents. Suggested language:
 
-> *"Vendor's total liability shall not exceed the greater of (a) fees paid in the twelve (12) months preceding the claim or (b) $50,000 for claims arising from data security incidents."*
+> *"Vendor's total liability shall not exceed the greater of (a) fees paid in the twelve (12) months preceding the claim or (b) USD 50,000 for claims arising from data security incidents."*
 
 ---
 
@@ -38,7 +38,7 @@ Contract: 18-page SaaS Subscription Agreement, vendor template, governing law: C
 
 > *"This Agreement shall automatically renew for successive one-year terms unless either party provides written notice of non-renewal no less than sixty (60) days prior to the end of the then-current term."*
 
-**Problem:** You have a 60-day window to opt out. Miss it and you're committed to another year. With a $2,400/year contract, that's easy to overlook.
+**Problem:** You have a 60-day window to opt out. Miss it and you're committed to another year. With a USD 2,400/year contract, that's easy to overlook.
 
 **Ask for:** Reduce to 30-day opt-out, or add a reminder obligation from vendor. Alternatively, calendar the opt-out deadline now (2027-04-01 if signing May 1, 2026).
 
@@ -81,7 +81,7 @@ Contract: 18-page SaaS Subscription Agreement, vendor template, governing law: C
 
 | Flag | Ask | Framing |
 |------|-----|---------|
-| Liability cap | Raise to 12 months ($2,400) or $50K for security incidents | "We handle client data — we need the liability cap to reflect actual risk" |
+| Liability cap | Raise to 12 months (USD 2,400) or USD 50K for security incidents | "We handle client data — we need the liability cap to reflect actual risk" |
 | Auto-renewal window | Reduce to 30 days | "60 days is tight for a small team — 30 is more typical" |
 | Data license | Restrict to anonymized/aggregated | "Our client agreements restrict how we share their project data" |
 | Termination cure | Add 15-day cure period | "We need a chance to fix issues before access is cut off" |

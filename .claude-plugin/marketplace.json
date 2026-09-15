@@ -139,7 +139,7 @@
       "name": "small-business",
       "displayName": "Small Business",
       "source": "./small-business",
-      "description": "Pre-built small business workflows (including payroll planning, month-end close, weekly briefs, and growth campaigns) using your QuickBooks, PayPal, HubSpot, Docusign, Gsuite, O365, Canva, and other connected tools. You approve every step that touches money or customers."
+      "description": "Pre-built small business workflows to help you run and grow your business. Supports a majority of the tools you already use. You approve every step that touches money or customers. Install and then ask Claude to help you get onboarded."
     },
     {
       "name": "brand-voice",

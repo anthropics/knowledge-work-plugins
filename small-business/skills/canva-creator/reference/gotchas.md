@@ -6,12 +6,12 @@ Common failure modes for the canva-creator skill.
 
 ## Gotcha: Generating ANY Canva design for an email row
 
-**Why it matters:** The owner descoped Canva from the email path entirely.
+**Why it matters:** Canva is out of scope for the email path entirely.
 Canva email-template autofill produces placeholder graphics (stock
 landscapes, blank rectangles) in service-grid tiles, and variation
-thumbnails fail to render in chat. The decision was: emails are text-only
-from this skill, period. Generating a Canva email design — even one — is
-a regression of an explicit descope.
+thumbnails fail to render in chat. Emails are text-only
+from this skill, period. Generating a Canva email design — even one —
+breaks that rule.
 
 ### ✗ Bad
 

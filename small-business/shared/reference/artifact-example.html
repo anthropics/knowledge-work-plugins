@@ -1,0 +1,316 @@
+<!doctype html>
+<!-- Reference implementation of the house style. The USD figures are
+     illustrative: a real page uses the business's stored currency code
+     (shared/currency-and-locale.md). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cash Flow Snapshot</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17211F;
+    --paper: #F4F3EE;
+    --paper-raised: #FFFFFF;
+    --line: #DEDCD1;
+    --accent: #0B6B5C;
+    --accent-soft: #E4EFEC;
+    --amber: #B9781F;
+    --amber-soft: #F6EBDA;
+    --good: #2E7D4F;
+    --good-soft: #E4F0E8;
+    --warn: #B9781F;
+    --warn-soft: #F6EBDA;
+    --critical: #B3392C;
+    --critical-soft: #FBEAE7;
+    --font-display: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+    --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem;
+    --text-lg: 1.125rem; --text-xl: 1.375rem; --text-2xl: 1.75rem; --text-3xl: 2.25rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #EDEAE2; --paper: #14201C; --paper-raised: #1B2A25; --line: #2C3A34;
+      --accent: #4FBFA5; --accent-soft: #1E332C; --amber: #E0A559; --amber-soft: #362A16;
+      --good: #6FCB94; --good-soft: #1D3226; --warn: #E0A559; --warn-soft: #362A16;
+      --critical: #E37B6B; --critical-soft: #3A211C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #EDEAE2; --paper: #14201C; --paper-raised: #1B2A25; --line: #2C3A34;
+    --accent: #4FBFA5; --accent-soft: #1E332C; --amber: #E0A559; --amber-soft: #362A16;
+    --good: #6FCB94; --good-soft: #1D3226; --warn: #E0A559; --warn-soft: #362A16;
+    --critical: #E37B6B; --critical-soft: #3A211C;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.5;
+  }
+  .page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 3rem;
+  }
+  .panel {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.5rem;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .brand-mark {
+    flex: 0 0 auto;
+    width: 44px; height: 44px;
+    border-radius: 6px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font: 600 1.05rem var(--font-display);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-2xl);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .page-header .meta {
+    margin: 0.15rem 0 0;
+    font-size: var(--text-sm);
+    color: var(--ink);
+    opacity: 0.65;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
+  }
+  .stat-tile { text-align: left; }
+  .stat-figure {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: var(--text-3xl);
+    font-weight: 500;
+    line-height: 1;
+  }
+  .stat-label {
+    margin-top: 0.35rem;
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.6;
+  }
+  .stat-context {
+    margin: 0.6rem 0 0;
+    font-size: var(--text-sm);
+    color: var(--ink);
+    opacity: 0.85;
+  }
+
+  h2.section-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-lg);
+    margin: 0 0 0.75rem;
+  }
+
+  .status {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: 3px;
+    font: 600 var(--text-xs) var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .status--good { background: var(--good-soft); color: var(--good); }
+  .status--warn { background: var(--warn-soft); color: var(--warn); }
+  .status--critical { background: var(--critical-soft); color: var(--critical); }
+
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+    opacity: 0.7;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--line); }
+  tr:last-child td { border-bottom: none; }
+  .num {
+    text-align: right;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .copy-block { position: relative; }
+  .copy-block pre {
+    margin: 0;
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 1rem 5.5rem 1rem 1rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    white-space: pre-wrap;
+    color: var(--ink);
+  }
+  .copy-btn {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.7rem;
+    font: 600 var(--text-xs) var(--font-body);
+    background: var(--paper-raised);
+    color: var(--accent);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+  }
+  .copy-btn:hover { background: var(--accent-soft); }
+  .copy-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .checklist { display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist-progress {
+    margin: 0 0 0.5rem;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .checklist label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: var(--text-sm);
+  }
+  .checklist input[disabled] { accent-color: var(--accent); }
+
+  .page-footer {
+    text-align: center;
+    font-size: var(--text-xs);
+    color: var(--ink);
+    opacity: 0.5;
+    padding-top: 0.5rem;
+  }
+  .page-footer strong { font-weight: 600; opacity: 1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="page-header">
+    <div class="brand-mark">RM</div>
+    <div>
+      <h1>Cash Flow Snapshot</h1>
+      <p class="meta">Ridgeline Mechanical · Generated Aug 21, 2026</p>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h2 class="section-title">The picture</h2>
+    <div class="stat-row">
+      <div class="stat-tile">
+        <div class="stat-figure">USD 18,240</div>
+        <div class="stat-label">Cash on hand</div>
+        <p class="stat-context">About 11 weeks of runway at current burn.</p>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-figure">USD 6,420</div>
+        <div class="stat-label">Overdue receivable</div>
+        <p class="stat-context">6 invoices, oldest 34 days.</p>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-figure">USD 4,900</div>
+        <div class="stat-label">Due this week</div>
+        <p class="stat-context">Payroll and two vendor bills.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2 class="section-title">Overdue invoices</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Customer</th><th>Amount</th><th>Days overdue</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Corwin &amp; Bay Dental</td><td class="num">USD 1,240</td><td class="num">34</td><td><span class="status status--critical">Overdue</span></td></tr>
+          <tr><td>Fairmount HVAC</td><td class="num">USD 2,100</td><td class="num">18</td><td><span class="status status--warn">Review</span></td></tr>
+          <tr><td>Harborline Logistics</td><td class="num">USD 980</td><td class="num">6</td><td><span class="status status--good">On track</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2 class="section-title">Paste this into your reminder email</h2>
+    <div class="copy-block">
+      <button class="copy-btn" onclick="copyBlock(this)">Copy</button>
+      <pre>Hi Dana, just a friendly nudge that invoice #1042 (USD 1,240) is a bit overdue. Let me know if you need anything from me to get it squared away.</pre>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2 class="section-title">Month-end close</h2>
+    <div class="checklist">
+      <p class="checklist-progress">3 of 5 done</p>
+      <label><input type="checkbox" checked disabled> Bank feed reconciled</label>
+      <label><input type="checkbox" checked disabled> Payroll posted</label>
+      <label><input type="checkbox" checked disabled> Vendor bills entered</label>
+      <label><input type="checkbox" disabled> Sales tax filed</label>
+      <label><input type="checkbox" disabled> Books locked</label>
+    </div>
+  </section>
+
+  <footer class="page-footer">Generated by <strong>Cash Flow Snapshot</strong> — Small Business</footer>
+
+</div>
+
+<script>
+function copyBlock(btn) {
+  const pre = btn.nextElementSibling;
+  const text = pre.textContent;
+  const done = () => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = 'Copy', 1500); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackSelect(pre, btn));
+  } else {
+    fallbackSelect(pre, btn);
+  }
+}
+function fallbackSelect(pre, btn) {
+  const range = document.createRange();
+  range.selectNodeContents(pre);
+  const sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+  btn.textContent = 'Selected — press Cmd/Ctrl+C';
+  setTimeout(() => btn.textContent = 'Copy', 2500);
+}
+</script>
+</body>
+</html>

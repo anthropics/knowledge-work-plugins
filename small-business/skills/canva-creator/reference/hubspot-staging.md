@@ -40,7 +40,7 @@ POST /marketing/v3/campaigns
   "name": "Summer Sale 2026 — Social",
   "startDate": "2026-06-01",
   "endDate":   "2026-06-30",
-  "currencyCode": "USD",
+  "currencyCode": "<Currency from the Business context block, e.g. AUD>",
   "utm": {
     "source": "social",
     "medium": "owned",

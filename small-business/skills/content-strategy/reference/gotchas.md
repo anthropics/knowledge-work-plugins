@@ -21,10 +21,10 @@ Revenue is tempting. A low-volume, high-margin service (like consulting) might g
 **Why it matters:** If you obsess over volume winners and ignore margin leaders, you prioritize busy-work over profit.
 
 ### ✗ Bad
-"Service packages sold $500 total, but widget bundles sold $2000. Push widgets."
+"Service packages sold USD 500 total, but widget bundles sold USD 2000. Push widgets."
 
 ### ✓ Good
-"Ask: Which brings in the most profit per unit? Service packages might be 70% margin × $500 = $350 profit. Widget bundles might be 20% margin × $2000 = $400 profit. Different story now."
+"Ask: Which brings in the most profit per unit? Service packages might be 70% margin × USD 500 = USD 350 profit. Widget bundles might be 20% margin × USD 2000 = USD 400 profit. Different story now."
 
 ---
 
@@ -78,7 +78,7 @@ New QuickBooks users often skip the business profile setup (industry, business n
 
 ### ✗ Bad
 User: "What should I post?"
-Skill: [calls profit-loss-quickbooks-account] → Error: "Profile required"
+Skill: [calls profit_loss_quickbooks_account] → Error: "Profile required"
 User: [confused, doesn't know what to do next]
 
 ### ✓ Good
@@ -87,7 +87,7 @@ Skill: [calls company-info] → Industry = "Unknown"
 Skill: "I need your industry to pull the right benchmarks. What industry are you in?"
 User: [provides industry]
 Skill: [calls quickbooks-profile-info-update] → Profile updated
-Skill: [now calls profit-loss-quickbooks-account successfully]
+Skill: [now calls profit_loss_quickbooks_account successfully]
 
 ---
 

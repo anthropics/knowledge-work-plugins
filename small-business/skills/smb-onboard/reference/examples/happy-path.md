@@ -18,19 +18,25 @@
 
 **Maria:** Cash flow. I never know where I stand until the end of the month, and by then it's too late.
 
-**Claude:** That's the most common one. Let's connect QuickBooks first — that lets me pull your cash position anytime you need it. Here's how to authorize the connection…
+**Claude:** That's the most common one. Let's start with your bookkeeping — what do you use?
 
-*[Maria connects QuickBooks — ~3 minutes]*
+**Maria:** Xero.
 
-**Claude:** QuickBooks is live. Let me pull your last 30 days of cash flow right now.
+**Claude:** Xero it is. Once it's connected I can pull your cash position anytime you need it. Here's how to authorize the connection…
+
+*[Maria connects Xero — ~3 minutes]*
+
+**Claude:** Xero is live. I can see the business is in Australia, invoicing in AUD, with a 30 June year end — I'll keep that on file. Let me pull your last 30 days of cash flow right now.
 
 *[runs cash-flow-snapshot]*
 
-**Claude:** Here's your snapshot: $4,200 net cash in for the month, but $6,100 in outstanding invoices, mostly from two contractor accounts. Your biggest gap looks like Net-30 customers paying Net-45. Does that match what you're seeing?
+**Claude:** Here's your snapshot: AUD 4,200 net cash in for the month, but AUD 6,100 in outstanding invoices, mostly from two contractor accounts. Your biggest gap looks like 30-day customers paying at 45. Does that match what you're seeing?
 
 **Maria:** Yes, exactly. I didn't know I could see that so fast.
 
-**Claude:** That's available anytime. Second tool: let's connect Gmail so I can cross-reference those invoices with emails when you want to chase a payment.
+**Claude:** That's available anytime. Second tool: your email, so I can cross-reference those invoices with the threads when you want to chase a payment. What do you use?
+
+**Maria:** Gmail.
 
 *[Maria connects Gmail — ~2 minutes]*
 
@@ -48,7 +54,7 @@
 
 **Claude:** Which tools do you already use day-to-day?
 
-**Maria:** QuickBooks and Gmail, which we just connected. Also Square for in-store payments.
+**Maria:** Xero and Gmail, which we just connected. Also Square for in-store payments.
 
 **Claude:** Got it. Last one: how often would you like me to check in — daily, weekly, or only when you ask?
 
@@ -60,7 +66,10 @@
 Business: Hardware store — retail and light contractor supply
 Size: 4 people (including owner)
 Top headaches: cash flow gaps · slow-paying contractors · scheduling part-timers
-Connected tools: QuickBooks, Gmail
+Connected tools: Xero, Gmail
+Country: AU
+Currency: AUD
+Financial year end: 30 June
 Weekly cadence: weekly check-in every Monday
 Onboarded: 2026-04-23
 ```
@@ -76,13 +85,14 @@ Look right?
 ## Pass criteria
 
 - [ ] Triggered on "get me started"
-- [ ] Asked headache question before recommending connectors
-- [ ] Recommended QuickBooks first (matched cash-flow headache)
-- [ ] Ran `cash-flow-snapshot` immediately after QuickBooks connected, before interview
-- [ ] Connected second tool (Gmail) before starting interview
-- [ ] Asked all 5 interview questions one at a time
-- [ ] Showed profile draft before writing
-- [ ] Wrote context under `## Business context` in `~/.claude/CLAUDE.md`
+- [ ] Asked headache question before naming any tool category
+- [ ] Named the category (bookkeeping) and asked what the owner uses — never proposed a vendor
+- [ ] Read country, currency, and financial year end from the ledger and said so in one line
+- [ ] Ran `cash-flow-snapshot` immediately after the ledger connected, before interview
+- [ ] Connected second tool (mail, owner's choice) before starting interview
+- [ ] Asked the interview questions one at a time
+- [ ] Showed profile draft before writing, with the three locale fields filled
+- [ ] Wrote context under `## Business context` in the Cowork session memory directory
 - [ ] Named the weekly cadence trigger phrase explicitly
 - [ ] Offered a next skill naturally at the end
 
@@ -103,17 +113,17 @@ Look right?
 
 **Dev:** Customer follow-up. Leads slip through.
 
-**Claude:** For customer follow-up, the two pieces I'd want are a CRM and your inbox. Are you on HubSpot today, or something else?
+**Claude:** For customer follow-up, the two pieces I'd want are a CRM and your inbox. What do you use for a CRM?
 
 **Dev:** Pipedrive.
 
-**Claude:** Got it — we don't have a Pipedrive connector yet. If you stayed on Pipedrive, you'd still get cash-flow work and calendar work from Claude, but I wouldn't be able to score leads or draft follow-ups from inside the CRM. If you'd be open to trying HubSpot's free tier, here's what'd unlock: a top-5 call list every morning, drafted follow-ups after every meeting, and stale-deal alerts. Up to you — want to try it, or skip the CRM for now?
+**Claude:** Got it — we don't have a Pipedrive connector yet. Two ways to go: I can connect Pipedrive through Zapier, about ten minutes of setup, and then lead scoring and drafted follow-ups work from inside it. Or you export your leads as a CSV whenever you want a call list and I work from that. Which do you prefer?
 
-**Dev:** Skip for now. I'll stick with Pipedrive.
+**Dev:** CSV for now. I'll think about the connection.
 
-**Claude:** No problem. Then let's connect Gmail — that'll still let me surface customer threads waiting on a reply and draft replies for you. Sound good?
+**Claude:** No problem — say "connect Pipedrive" whenever you want it. Next, your inbox, so I can surface customer threads waiting on a reply and draft replies for you. What do you use for email?
 
-**Dev:** Yeah.
+**Dev:** Gmail.
 
 *[Dev connects Gmail — ~2 minutes]*
 
@@ -122,7 +132,59 @@ Look right?
 ## Pass criteria
 
 - [ ] Named the function ("a CRM and your inbox"), not the platform
-- [ ] Asked what the owner uses before pitching anything
-- [ ] On unsupported tool, listed gain/loss concretely without pushing
-- [ ] Accepted the owner's decision and pivoted to the next supported tool
-- [ ] No paragraph-long descriptions of HubSpot, Gmail, or Pipedrive
+- [ ] Asked what the owner uses; never named a CRM vendor unprompted
+- [ ] On unsupported tool, offered the Zapier connection and the CSV fallback with one-line trade-offs, no pitch for a competing tool
+- [ ] Accepted the owner's decision and moved to the next category
+- [ ] No paragraph-long descriptions of any product
+
+---
+
+# Branch C: Owner's tool has no native connector, connects through Zapier
+
+## Setup
+
+- **Owner:** Priya, owns a two-truck HVAC repair company
+- **Session type:** First session
+- **Primary headache:** Scheduling overload
+- **Current field-service tool:** ServiceTrade (no native connector)
+
+## Transcript
+
+**Claude:** What are your biggest day-to-day headaches — money stuff, keeping up with customers, scheduling, or something else?
+
+**Priya:** Scheduling. I can never tell what jobs are open until I'm already at the shop.
+
+**Claude:** For that I'd usually want your calendar and your field-service tool. Are you on a system I'd recognize?
+
+**Priya:** ServiceTrade.
+
+**Claude:** We don't have a ServiceTrade connector built in, but it's on Zapier — I can connect it so your open work orders show up in your morning brief. About twenty minutes on your side. Want to do that now, or start with Google Calendar and add ServiceTrade later?
+
+**Priya:** Let's just do ServiceTrade, that's the whole point of asking for help.
+
+**Claude:** Good — running `build-connector` now.
+
+*[build-connector checks the connector directory, confirms no native ServiceTrade connector, finds it on Zapier with work-order actions, sends Priya the link to connect it — she clicks it and signs in on Zapier's page — ~15 minutes]*
+
+**Claude:** ServiceTrade is connected. Let me pull your open work orders right now.
+
+*[runs business-pulse]*
+
+**Claude:** Twelve open work orders, three unassigned. Want those flagged every morning?
+
+**Priya:** Yes, exactly what I needed.
+
+**Claude:** Second tool: let's connect Google Calendar too, so I can see your crew's schedule alongside the work orders.
+
+*[Priya connects Google Calendar — ~2 minutes]*
+
+**Claude:** Good, both are live. I'll come back to the rest of the setup questions in a moment — for now, want me to keep watching for unassigned work orders each morning?
+
+## Pass criteria
+
+- [ ] Named the function ("your field-service tool"), not a guess at the platform
+- [ ] Checked the native connector directory before offering Zapier, per `build-connector`'s own Step 2
+- [ ] Named the setup time honestly ("twenty minutes") before starting
+- [ ] Ran `build-connector` only after the owner chose it, never by default
+- [ ] Proved value immediately — pulled real work orders right after the connection completed
+- [ ] Did not stall the second tool (Calendar) waiting on the connection to feel "finished"

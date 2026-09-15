@@ -32,7 +32,7 @@ The owner sees the gap explicitly and can decide whether to reconnect or proceed
 
 ## Gotcha: Gmail auth failure mid-pulse
 
-**Why it matters:** Gmail auth is intermittently flaky in workshop environments. Surfacing a raw auth error in the middle of the pulse looks broken and breaks the owner's trust in the skill.
+**Why it matters:** Gmail auth is intermittently flaky. Surfacing a raw auth error in the middle of the pulse looks broken and breaks the owner's trust in the skill.
 
 ### ✗ Bad
 
@@ -82,7 +82,7 @@ Claude: [immediately dispatches all parallel tool calls]
 
 ## Gotcha: Slack write requires explicit confirmation
 
-**Why it matters:** Slack write is not tested in the standard validation path and posts to channels other people can see. Auto-posting without confirmation could embarrass the owner or spam a team.
+**Why it matters:** Slack write posts to channels other people can see. Auto-posting without confirmation could embarrass the owner or spam a team.
 
 ### ✗ Bad
 

@@ -19,7 +19,7 @@
 Found 1 transaction matching sarah.m@email.com:
 
 - **Transaction ID:** PP-3847-XXXX
-- **Amount:** $64.00
+- **Amount:** USD 64.00
 - **Date:** 2026-03-28
 - **Status:** Completed
 - **Refund issued:** No
@@ -41,7 +41,7 @@ Contact found: Sarah M. (sarah.m@email.com)
 >
 > Hi Sarah,
 >
-> So sorry to hear your cutting board set arrived cracked — that's definitely not okay. I've pulled up your order and I'm issuing a full refund of $64.00. You should see it back on your original payment method within 3–5 business days.
+> So sorry to hear your cutting board set arrived cracked — that's definitely not okay. I've pulled up your order and I'm issuing a full refund of USD 64.00. You should see it back on your original payment method within 3–5 business days.
 >
 > Thanks for letting me know, and I appreciate your patience. Really sorry about this.
 >
@@ -55,7 +55,7 @@ Contact found: Sarah M. (sarah.m@email.com)
 
 ## Step 6 — Refund approval prompt
 
-> *"Issue refund of $64.00 to Sarah M. (sarah.m@email.com) for transaction PP-3847-XXXX? Reply Y to proceed."*
+> *"Issue refund of USD 64.00 to Sarah M. (sarah.m@email.com) for transaction PP-3847-XXXX? Reply Y to proceed."*
 
 Owner replies: **Y**
 
@@ -68,10 +68,10 @@ Owner replies: **Y**
 Reply sent via Gmail.
 
 HubSpot note logged on Sarah M.'s contact:
-> "Ticket Deflector — 2026-04-23: Customer reported damaged product. Full refund of $64.00 issued via PayPal (PP-3847-XXXX). Reply sent via email."
+> "Ticket Deflector — 2026-04-23: Customer reported damaged product. Full refund of USD 64.00 issued via PayPal (PP-3847-XXXX). Reply sent via email."
 
 ---
 
 ## Step 8 — Report
 
-> Reply sent to Sarah M. · Refund of $64.00 issued (PP-3847-XXXX) · HubSpot note logged.
+> Reply sent to Sarah M. · Refund of USD 64.00 issued (PP-3847-XXXX) · HubSpot note logged.
