@@ -1276,6 +1276,18 @@
         "sha": "bb30cbdf7b5b1fc1a00bc210a3192f7efc78b3c4"
       },
       "homepage": "https://github.com/intuit/quickbooks-claude-plugin"
+    },
+    {
+      "name": "leadfeeder",
+      "displayName": "Leadfeeder",
+      "description": "Turn website visitor signals into pipeline with Leadfeeder: daily visitor briefs, visitor company research, buyer and contact discovery, personalised outreach drafts, and adding companies to your Leadfeeder lists, via the Leadfeeder connector. Requires a Leadfeeder account.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Leadfeeder/leadfeeder-mcp-plugin.git",
+        "sha": "f344f4383363199963c34a0c353e09d26596d501"
+      },
+      "homepage": "https://www.leadfeeder.com"
     }
   ]
 }
