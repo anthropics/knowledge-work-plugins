@@ -11,9 +11,11 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
 | ATS | `~~ATS` | — | Greenhouse, Lever, Ashby, Workable |
-| Calendar | `~~calendar` | Google Calendar | Microsoft 365 |
+| Calendar | `~~calendar` | Google Calendar\* | Microsoft 365 |
 | Chat | `~~chat` | Slack | Microsoft Teams |
-| Email | `~~email` | Gmail, Microsoft 365 | — |
+| Email | `~~email` | Gmail\*, Microsoft 365 | — |
 | HRIS | `~~HRIS` | — | Workday, BambooHR, Rippling, Gusto |
 | Knowledge base | `~~knowledge base` | Notion, Atlassian (Confluence) | Guru, Coda |
 | Compensation data | `~~compensation data` | — | Pave, Radford, Levels.fyi |
+
+\* Placeholder — MCP URL not yet configured

@@ -10,11 +10,13 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
-| Calendar | `~~calendar` | Google Calendar | Microsoft 365 |
+| Calendar | `~~calendar` | Google Calendar\* | Microsoft 365 |
 | Chat | `~~chat` | Slack | Microsoft Teams |
-| Email | `~~email` | Gmail, Microsoft 365 | — |
+| Email | `~~email` | Gmail\*, Microsoft 365 | — |
 | ITSM | `~~ITSM` | ServiceNow | Zendesk, Freshservice, Jira Service Management |
 | Knowledge base | `~~knowledge base` | Notion, Atlassian (Confluence) | Guru, Coda |
 | Project tracker | `~~project tracker` | Asana, Atlassian (Jira) | Linear, monday.com, ClickUp |
 | Procurement | `~~procurement` | — | Coupa, SAP Ariba, Zip |
 | Office suite | `~~office suite` | Microsoft 365 | Google Workspace |
+
+\* Placeholder — MCP URL not yet configured
