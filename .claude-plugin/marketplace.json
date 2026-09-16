@@ -1264,6 +1264,18 @@
         "sha": "a3e445c139665055c2f22f25c9a9f8721a7c6355"
       },
       "homepage": "https://github.com/zocks-communications/zocks-agent-plugins"
+    },
+    {
+      "name": "intuit-quickbooks",
+      "displayName": "Intuit QuickBooks",
+      "description": "QuickBooks business insights and actions: financial health briefings across P&L, cash flow, balance sheet and A/R, industry benchmarking, payroll cost analysis, overdue-invoice reminders, estimate/invoice drafting from email, payroll onboarding and base-pay changes (with confirmation), and QuickBooks Capital lending guidance. Requires the Intuit QuickBooks connector.",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/intuit/quickbooks-claude-plugin.git",
+        "sha": "bb30cbdf7b5b1fc1a00bc210a3192f7efc78b3c4"
+      },
+      "homepage": "https://github.com/intuit/quickbooks-claude-plugin"
     }
   ]
 }
