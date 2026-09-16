@@ -1252,6 +1252,18 @@
         "sha": "bcef83e6c849e35de6dfd6fe1274dd0022efdc44"
       },
       "homepage": "https://github.com/anthropics/claude-for-financial-advisors"
+    },
+    {
+      "name": "zocks-advisor",
+      "displayName": "Zocks Advisor Intelligence",
+      "description": "Seven skills for financial advisors built on Zocks meeting intelligence: client behavioral profiles, attrition-risk ranking, held-away asset radar, client journey dossiers, household review packs, next-best-action analysis and a tax opportunity scan. Requires the Zocks connector and a Zocks account.",
+      "category": "finance",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/zocks-communications/zocks-agent-plugins.git",
+        "sha": "a3e445c139665055c2f22f25c9a9f8721a7c6355"
+      },
+      "homepage": "https://github.com/zocks-communications/zocks-agent-plugins"
     }
   ]
 }
