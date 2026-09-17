@@ -23,14 +23,6 @@
     "docusign": {
       "type": "http",
       "url": "https://mcp.docusign.com/mcp"
-    },
-    "google calendar": {
-      "type": "http",
-      "url": ""
-    },
-    "gmail": {
-      "type": "http",
-      "url": ""
     }
   }
 }

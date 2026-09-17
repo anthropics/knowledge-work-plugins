@@ -8,14 +8,6 @@
         "callbackPort": 3118
       }
     },
-    "google calendar": {
-      "type": "http",
-      "url": ""
-    },
-    "gmail": {
-      "type": "http",
-      "url": ""
-    },
     "notion": {
       "type": "http",
       "url": "https://mcp.notion.com/mcp"
