@@ -1312,6 +1312,20 @@
         "sha": "322b2d3fbd4db0a2eeed117e3b3c31522408ae6f"
       },
       "homepage": "https://www.chronograph.pe/"
+    },
+    {
+      "name": "incident-io",
+      "displayName": "incident.io",
+      "description": "Work with incident.io from Claude: respond to and investigate incidents, check on-call schedules and escalations, and author the runbooks, skills and architecture docs that incident.io investigations draw on. Bundles the official incident.io MCP server (OAuth on first use).",
+      "category": "monitoring",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/incident-io/skills.git",
+        "path": "plugins/incident-io",
+        "ref": "main",
+        "sha": "6d0bbfc9e52256fc39326b9ba6d08f16831b60ae"
+      },
+      "homepage": "https://incident.io"
     }
   ]
 }
