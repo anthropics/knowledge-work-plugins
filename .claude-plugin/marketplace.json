@@ -1273,7 +1273,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/intuit/quickbooks-claude-plugin.git",
-        "sha": "bb30cbdf7b5b1fc1a00bc210a3192f7efc78b3c4"
+        "sha": "c8daa17a64d4d0fdeabdf0516524f72549b6ad19"
       },
       "homepage": "https://github.com/intuit/quickbooks-claude-plugin"
     },
