@@ -23,14 +23,6 @@
     "asana": {
       "type": "http",
       "url": "https://mcp.asana.com/v2/mcp"
-    },
-    "google calendar": {
-      "type": "http",
-      "url": ""
-    },
-    "gmail": {
-      "type": "http",
-      "url": ""
     }
   }
 }
