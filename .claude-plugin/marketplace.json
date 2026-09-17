@@ -1249,7 +1249,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/anthropics/claude-for-financial-advisors.git",
-        "sha": "bcef83e6c849e35de6dfd6fe1274dd0022efdc44"
+        "sha": "96fbcb4797758186786c50dd1a09ce2feac6e18c"
       },
       "homepage": "https://github.com/anthropics/claude-for-financial-advisors"
     },
