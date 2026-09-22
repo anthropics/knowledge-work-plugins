@@ -1360,7 +1360,7 @@
     {
       "name": "pendo-analytics",
       "displayName": "Pendo Analytics",
-      "description": "Bring Pendo product analytics into Claude Code: account health, feature adoption, session replay lookup and triage, feedback analysis, and data-informed planning grounded in real usage data. Requires the Pendo connector and a Pendo subscription.",
+      "description": "Bring Pendo product analytics into Claude: account health, feature adoption, session replay lookup and triage, feedback analysis, and data-informed planning grounded in real usage data. Requires the Pendo connector and a Pendo subscription.",
       "author": {
         "name": "Pendo"
       },
