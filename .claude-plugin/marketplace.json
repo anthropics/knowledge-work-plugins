@@ -1344,6 +1344,20 @@
         "sha": "01f2b0806fc91d0550859a7f840db353d1edd4e9"
       },
       "homepage": "https://github.com/wingspanHQ/mcp-claude-plugin"
+    },
+    {
+      "name": "linq-alpha",
+      "displayName": "LinqAlpha",
+      "description": "LinqAlpha financial research in Claude: guided setup for the LinqAlpha connector, capability-based source selection for fundamentals, estimates, transcripts, filings and market data, and an optional, opt-in default-source preference you can remove at any time. Requires a LinqAlpha account.",
+      "category": "finance",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/linq-lab/linq-alpha-plugin.git",
+        "path": "plugins/linq-alpha",
+        "ref": "main",
+        "sha": "42202fdd4bd1cbb373c1f11a4114f173edffc437"
+      },
+      "homepage": "https://www.linqalpha.com"
     }
   ]
 }
