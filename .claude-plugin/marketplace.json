@@ -1407,6 +1407,21 @@
         "sha": "340d503c23eed487be83693aa4c1837df4a7dcd4"
       },
       "homepage": "https://www.pendo.io"
+    },
+    {
+      "name": "amazon-selling-partner",
+      "displayName": "Amazon Selling Partner",
+      "description": "Connect your Amazon Seller Central account to Claude. Ask about sales, inventory, and listing performance and get recommendations grounded in your own data, then review and approve every listing, inventory or FBA action before it runs. Bundles the Amazon Selling Partner MCP server (Seller Central OAuth on first use). Currently in beta.",
+      "author": {
+        "name": "Amazon"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/amzn/selling-partner-agentic-toolkit.git",
+        "sha": "5e8147fc6da6a6c1ebf51a7ab7d7e8497565a865"
+      },
+      "homepage": "https://github.com/amzn/selling-partner-agentic-toolkit"
     }
   ]
 }
