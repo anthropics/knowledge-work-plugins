@@ -449,7 +449,10 @@
     },
     {
       "name": "adobe-for-creativity",
-      "displayName": "Adobe for Creativity",
+      "displayName": "Adobe",
+      "author": {
+        "name": "Adobe"
+      },
       "description": "Brings together Adobe Creative Cloud tools for images, vectors, design, and video. Edit multiple assets at once, adapt for different platforms, and complete multi-step creative workflows for polished results.",
       "category": "design",
       "source": {
