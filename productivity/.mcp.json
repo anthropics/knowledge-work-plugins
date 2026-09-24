@@ -31,14 +31,6 @@
     "clickup": {
       "type": "http",
       "url": "https://mcp.clickup.com/mcp"
-    },
-    "google calendar": {
-      "type": "http",
-      "url": ""
-    },
-    "gmail": {
-      "type": "http",
-      "url": ""
     }
   }
 }

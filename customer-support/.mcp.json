@@ -27,14 +27,6 @@
     "notion": {
       "type": "http",
       "url": "https://mcp.notion.com/mcp"
-    },
-    "google calendar": {
-      "type": "http",
-      "url": ""
-    },
-    "gmail": {
-      "type": "http",
-      "url": ""
     }
   }
 }

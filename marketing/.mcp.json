@@ -47,14 +47,6 @@
     "supermetrics": {
       "type": "http",
       "url": "https://mcp.supermetrics.com/mcp"
-    },
-    "google calendar": {
-      "type": "http",
-      "url": ""
-    },
-    "gmail": {
-      "type": "http",
-      "url": ""
     }
   }
 }
