@@ -20,6 +20,7 @@ claude plugin install marketing@knowledge-work-plugins
 | `/performance-report` | Build a marketing performance report with key metrics, trends, and optimization recommendations |
 | `/seo-audit` | Run a comprehensive SEO audit — keyword research, on-page analysis, content gaps, technical checks, and competitor comparison |
 | `/email-sequence` | Design and draft multi-email sequences for nurture flows, onboarding, drip campaigns, and more |
+| `/publish-social` | Publish or schedule a finished post (text, images, or video) to the connected social accounts, with per-platform adaptation and a confirmation step before anything goes live |
 
 ## Skills
 
@@ -88,3 +89,4 @@ This plugin works with the following MCP servers:
 - **Similarweb** — Competitive traffic analysis and market benchmarking
 - **Klaviyo** — Draft and review email marketing sequences and campaigns
 - **Supermetrics** — Pull marketing data from multiple platforms for analytics and reporting
+- **Upload-Post** — Publish and schedule posts to TikTok, Instagram, YouTube, LinkedIn, Facebook, X, Threads, Pinterest, Bluesky and more from one connected account

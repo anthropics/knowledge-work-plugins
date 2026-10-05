@@ -18,3 +18,4 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | SEO | `~~SEO` | Ahrefs, Similarweb | Semrush, Moz |
 | Email marketing | `~~email marketing` | Klaviyo | Mailchimp, Brevo, Customer.io |
 | Marketing analytics | `~~marketing analytics` | Supermetrics | Google Analytics, Mailchimp, Semrush |
+| Social publishing | `~~social publishing` | Upload-Post | Buffer, Hootsuite, Metricool |

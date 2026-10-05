@@ -48,6 +48,10 @@
       "type": "http",
       "url": "https://mcp.supermetrics.com/mcp"
     },
+    "upload-post": {
+      "type": "http",
+      "url": "https://mcp.upload-post.com/mcp"
+    },
     "google calendar": {
       "type": "http",
       "url": ""

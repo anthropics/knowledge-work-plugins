@@ -113,5 +113,6 @@ Present the draft with clear formatting. After the draft, include:
 - A brief note on what brand voice and tone were applied
 - Any SEO recommendations (for web content)
 - Suggestions for next steps (e.g., "Review with your team", "Add customer quotes", "Pair with a visual")
+- For social media posts: offer to publish or schedule the final version with `/publish-social` when a `~~social publishing` tool is connected
 
 Ask: "Would you like me to revise any section, adjust the tone, or create a variation for a different channel?"
