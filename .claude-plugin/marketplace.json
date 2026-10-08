@@ -1407,7 +1407,7 @@
         "url": "https://github.com/pendo-io/claude-pendo-plugin.git",
         "path": "plugins/pendo-orchestrate",
         "ref": "main",
-        "sha": "340d503c23eed487be83693aa4c1837df4a7dcd4"
+        "sha": "7bd8867ae88c66dfa469aefa8a2a0f4cc09727aa"
       },
       "homepage": "https://www.pendo.io"
     },
