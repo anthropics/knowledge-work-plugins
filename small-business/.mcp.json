@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "airwallex-agentos": {
+    "airwallex": {
       "type": "http",
       "url": "https://mcp.airwallex.com/mcp"
     },
