@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "Gmail": {
+      "type": "http",
+      "url": "https://gmailmcp.googleapis.com/mcp/v1"
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1"
+    },
+    "Google Calendar": {
+      "type": "http",
+      "url": "https://calendarmcp.googleapis.com/mcp/v1"
+    },
+    "Google Docs": {
+      "type": "http",
+      "url": ""
+    },
+    "Google Sheets": {
+      "type": "http",
+      "url": ""
+    },
+    "Google Slides": {
+      "type": "http",
+      "url": ""
+    }
+  }
+}
