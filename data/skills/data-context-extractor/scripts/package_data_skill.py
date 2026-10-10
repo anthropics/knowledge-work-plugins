@@ -87,7 +87,7 @@ def package_skill(skill_path: str, output_dir: str = None) -> Path | None:
             for file_path in skill_path.rglob('*'):
                 if file_path.is_file():
                     # Skip hidden files and common junk
-                    if any(part.startswith('.') for part in file_path.parts):
+                    if any(part.startswith('.') for part in file_path.relative_to(skill_path).parts):
                         continue
                     if file_path.name in ['__pycache__', '.DS_Store', 'Thumbs.db']:
                         continue
