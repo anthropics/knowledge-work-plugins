@@ -1,0 +1,296 @@
+name: Scan Plugins
+description: >
+  Claude-based policy/safety scan of changed external marketplace entries.
+  Clones each changed entry at its pinned SHA, runs Claude headless against
+  policy/prompt.md, and reports verdicts as inline annotations and a step
+  summary. Non-blocking by default (warnings); set fail-on-findings to make
+  policy violations fail the job. Bot-free: needs only Anthropic API auth —
+  either an ANTHROPIC_API_KEY secret or Workload Identity Federation inputs
+  (the latter requires `permissions: id-token: write` on the calling job).
+  Also runs a deterministic, auth-free static pin check on each entry's
+  declared .mcp.json MCP servers (floating npx/uvx/bunx/pipx specs — code
+  resolved from a package registry at session start that the pinned source
+  SHA does not fix); always annotates, hard-fails only when the consumer
+  sets fail-on-unpinned-autoexec.
+
+inputs:
+  anthropic-api-key:
+    description: >
+      Static API key for Claude. If neither this nor
+      anthropic-federation-rule-id is set, the scan is skipped (graceful no-op).
+    default: ""
+  anthropic-federation-rule-id:
+    description: >
+      Anthropic Workload Identity Federation rule ID (fdrl_...). When set,
+      the action mints a GitHub OIDC token and the claude CLI exchanges it
+      for a short-lived access token — no static API key needed. The calling
+      job must grant `permissions: id-token: write`. Takes precedence over
+      anthropic-api-key when both are set.
+    default: ""
+  anthropic-organization-id:
+    description: Anthropic organization UUID the federation rule is bound to. Required when anthropic-federation-rule-id is set.
+    default: ""
+  anthropic-service-account-id:
+    description: Anthropic service account ID (svac_...) bound to the federation rule. Required when anthropic-federation-rule-id is set.
+    default: ""
+  marketplace-path:
+    description: Path to marketplace.json
+    default: .claude-plugin/marketplace.json
+  base-ref:
+    description: Git ref to diff against for change detection
+    default: ${{ github.event.pull_request.base.sha || github.event.before || 'origin/main' }}
+  fail-on-findings:
+    description: If true, a `passes:false` verdict fails the job. Default false (annotate-only).
+    default: "false"
+  fail-on-unscanned:
+    description: >
+      If true, the job fails when any target ends without a verdict, whatever
+      the reason (skipped by a guard, clone failure, timeout, auth or API
+      error). Default false (annotate-only). Set it wherever this scan backs a
+      required check: without it a run that scanned nothing still succeeds.
+    default: "false"
+  fail-on-unpinned-autoexec:
+    description: >
+      If true, any non-waived floating-tag/range/unversioned npx/uvx/bunx/pipx
+      launcher declared in a scanned entry's .mcp.json (an auto-exec MCP server
+      whose executed code is registry-resolved at session start, not fixed by
+      the pinned source SHA) fails the job. Default false = detect + annotate
+      only. Detection itself always runs (auth-free) and always emits the
+      unpinned_autoexec_* fields; this input only arms the hard-fail —
+      per-repo severity is set here by each consumer.
+    default: "false"
+  launch-shape-waivers:
+    description: >
+      Path (in the calling repo's checkout) to a package-grained waivers file
+      for adjudicated exceptions to the pin check. Line format:
+      `<entry-name> <package-prefix> [<package-prefix>…]  # rationale`; a
+      prefix ending in `/` waives a scope, anything else must equal the
+      package name exactly, and EVERY floating spec of the entry must match a
+      prefix for the waiver to apply. Empty (default) = no waivers. A set but
+      missing path is a hard error (never a silent no-waiver run).
+    default: ""
+  scan-all-external:
+    description: Scan EVERY external entry, not just changed ones. For nightly full sweeps.
+    default: "false"
+  policy-prompt:
+    description: Path to the policy prompt markdown. Override to point at a repo-local prompt.
+    default: ""
+  allowed-hosts:
+    description: Space-separated allowlist of git hosts to clone from (SSRF guard).
+    default: "github.com gitlab.com bitbucket.org"
+  claude-cli-version:
+    description: >
+      Version of @anthropic-ai/claude-code to install. 2.1.295 or later (the
+      scan relies on --restricted). Pin an exact version in your workflow.
+    default: latest
+  npm-registry:
+    description: Optional npm registry URL for tooling installs
+    default: ""
+  scan-timeout-secs:
+    description: Per-plugin timeout for the Claude scan
+    default: "300"
+
+outputs:
+  scanned:
+    description: >
+      JSON array of {name, passes, summary, violations,
+      may_make_external_network_calls, may_download_additional_software,
+      unpinned_autoexec_runtime, unpinned_autoexec_specs}. The
+      unpinned_autoexec_* pair is action-emitted by the deterministic static
+      pin check (never model-produced): unpinned_autoexec_runtime=true means
+      the entry declares at least one non-waived floating auto-exec launcher;
+      unpinned_autoexec_specs carries
+      [{server, launcher, class, spec, waived}].
+    value: ${{ steps.scan.outputs.scanned }}
+  failed:
+    description: JSON array of plugin names that failed policy
+    value: ${{ steps.scan.outputs.failed }}
+  unscanned:
+    description: JSON array of target names that ended without a verdict
+    value: ${{ steps.scan.outputs.unscanned }}
+  pin-scanned:
+    description: >
+      JSON array from the static pin check, one element per target:
+      {name, assessed, unpinned_autoexec_runtime, unpinned_autoexec_specs}.
+      Emitted even when the AI review is skipped (no Anthropic auth); gate on
+      `assessed` — an unclonable target records assessed=false.
+    value: ${{ steps.pin.outputs.pin-scanned }}
+  pin-failed:
+    description: JSON array of plugin names with a non-waived floating auto-exec launcher
+    value: ${{ steps.pin.outputs.pin-failed }}
+  result:
+    description: >
+      pass | fail | incomplete. The AI review's verdict when it ran
+      (incomplete = no policy failure, but at least one target has no
+      verdict); otherwise the static pin check's (so an auth-less run still
+      reports pass, or fail when fail-on-unpinned-autoexec armed a pin
+      failure).
+    value: ${{ steps.scan.outputs.result || steps.pin.outputs.result }}
+
+runs:
+  using: composite
+  steps:
+    - name: Setup
+      shell: bash
+      env:
+        HAS_API_KEY: ${{ inputs.anthropic-api-key != '' }}
+        HAS_WIF: ${{ inputs.anthropic-federation-rule-id != '' }}
+      run: |
+        set -euo pipefail
+        echo "ACTION_PATH=${{ github.action_path }}" >> "$GITHUB_ENV"
+        echo "VALIDATE_LIB=${{ github.action_path }}/../validate-plugins/lib/common.sh" >> "$GITHUB_ENV"
+        chmod +x "${{ github.action_path }}/scripts/"*.sh
+        if [[ "$HAS_API_KEY" == "true" || "$HAS_WIF" == "true" ]]; then
+          echo "SCAN_HAS_AUTH=true" >> "$GITHUB_ENV"
+        else
+          echo "SCAN_HAS_AUTH=false" >> "$GITHUB_ENV"
+        fi
+
+    - name: Skip if no Anthropic auth configured
+      if: env.SCAN_HAS_AUTH != 'true'
+      shell: bash
+      run: |
+        echo "::notice::scan-plugins: no Anthropic auth (anthropic-api-key or anthropic-federation-rule-id) configured; skipping policy scan."
+        echo "result=skipped" >> "$GITHUB_OUTPUT"
+
+    # jq is needed by the (unconditional) static pin check, not just the
+    # auth-gated AI review — install it regardless of auth.
+    - name: Install jq
+      shell: bash
+      run: command -v jq >/dev/null || sudo apt-get install -y jq
+
+    # Deterministic, auth-free: clones each changed external entry at its
+    # pinned SHA and classifies declared .mcp.json launcher specs. Always
+    # detects + annotates; hard-fails only when fail-on-unpinned-autoexec is
+    # true. Runs BEFORE the AI review so a pin failure (fail mode) skips the
+    # expensive review, and exports PIN_RESULTS_FILE so scan.sh can join the
+    # unpinned_autoexec_* fields into its scanned[] output.
+    - name: Static pin check
+      id: pin
+      shell: bash
+      env:
+        MARKETPLACE_PATH: ${{ inputs.marketplace-path }}
+        BASE_REF: ${{ inputs.base-ref }}
+        SCAN_ALL_EXTERNAL: ${{ inputs.scan-all-external }}
+        ALLOWED_HOSTS: ${{ inputs.allowed-hosts }}
+        FAIL_ON_UNPINNED_AUTOEXEC: ${{ inputs.fail-on-unpinned-autoexec }}
+        LAUNCH_SHAPE_WAIVERS: ${{ inputs.launch-shape-waivers }}
+      run: "$ACTION_PATH/scripts/static-pin-check.sh"
+
+    - name: Mint GitHub OIDC token (Workload Identity Federation)
+      if: inputs.anthropic-federation-rule-id != ''
+      shell: bash
+      env:
+        WIF_RULE_ID: ${{ inputs.anthropic-federation-rule-id }}
+        WIF_ORG_ID: ${{ inputs.anthropic-organization-id }}
+        WIF_SVAC_ID: ${{ inputs.anthropic-service-account-id }}
+      run: |
+        set -euo pipefail
+        : "${WIF_ORG_ID:?anthropic-organization-id is required when anthropic-federation-rule-id is set}"
+        : "${WIF_SVAC_ID:?anthropic-service-account-id is required when anthropic-federation-rule-id is set}"
+        : "${ACTIONS_ID_TOKEN_REQUEST_URL:?permissions: id-token: write is required on the calling job for WIF}"
+        TOKEN_FILE="$RUNNER_TEMP/anthropic-gha-jwt"
+        CURL_CFG="$RUNNER_TEMP/anthropic-gha-jwt.curlcfg"
+        (umask 077; printf 'header = "Authorization: Bearer %s"\n' \
+          "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" > "$CURL_CFG")
+        unset ACTIONS_ID_TOKEN_REQUEST_TOKEN
+        fetch_jwt() {
+          curl -fsS --retry 3 --retry-delay 2 -K "$CURL_CFG" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=https%3A%2F%2Fapi.anthropic.com" \
+            | jq -erj .value
+        }
+        (umask 077; fetch_jwt > "$TOKEN_FILE")
+        echo "::add-mask::$(cat "$TOKEN_FILE")"
+        # Background refresh: GHA OIDC JWTs are ~5min TTL; the claude CLI
+        # re-reads the token file when its exchanged bearer nears expiry, so
+        # long scan loops (>5min total) need the file to stay fresh.
+        ( while sleep 240; do
+            [ -f "$CURL_CFG" ] || exit 0
+            J="$(fetch_jwt)" && [ -n "$J" ] || continue
+            (umask 077; printf '%s' "$J" > "$TOKEN_FILE.tmp")
+            mv -f "$TOKEN_FILE.tmp" "$TOKEN_FILE"
+          done ) </dev/null >/dev/null 2>&1 & disown
+        {
+          echo "ANTHROPIC_FEDERATION_RULE_ID=$WIF_RULE_ID"
+          echo "ANTHROPIC_ORGANIZATION_ID=$WIF_ORG_ID"
+          echo "ANTHROPIC_SERVICE_ACCOUNT_ID=$WIF_SVAC_ID"
+          echo "ANTHROPIC_IDENTITY_TOKEN_FILE=$TOKEN_FILE"
+        } >> "$GITHUB_ENV"
+
+    - name: Install Node
+      if: env.SCAN_HAS_AUTH == 'true'
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+
+    - name: Configure npm registry
+      if: env.SCAN_HAS_AUTH == 'true' && inputs.npm-registry != ''
+      shell: bash
+      env:
+        NPM_REGISTRY: ${{ inputs.npm-registry }}
+      run: npm config set registry "$NPM_REGISTRY"
+
+    - name: Install claude CLI
+      if: env.SCAN_HAS_AUTH == 'true'
+      shell: bash
+      env:
+        CLAUDE_CLI_VERSION: ${{ inputs.claude-cli-version }}
+      run: |
+        set -euo pipefail
+        # See validate-plugins/action.yml for the full rationale. claude-code ships
+        # its runtime as a platform-native OPTIONAL dep fetched by postinstall; on
+        # hosted runners that fetch intermittently stalls or is skipped, leaving
+        # "added 1 package" but no usable `claude` binary. Make the install
+        # self-healing: force the optional dep, verify, re-run the postinstall on a
+        # miss, bound every network step with a timeout, retry with real reinstalls.
+        PKG="@anthropic-ai/claude-code@${CLAUDE_CLI_VERSION}"
+        pkg_root() { echo "$(npm root -g 2>/dev/null || true)/@anthropic-ai/claude-code"; }
+        clean_state() {
+          local root; root="$(pkg_root)"
+          [[ "$root" == */node_modules/@anthropic-ai/claude-code ]] && rm -rf "$root" 2>/dev/null || true
+          npm cache clean --force >/dev/null 2>&1 || true
+        }
+        install_attempt() { timeout -k 10 300 npm install -g --include=optional "$PKG"; }
+        heal_postinstall() {
+          local root; root="$(pkg_root)"
+          if [[ -f "$root/install.cjs" ]]; then
+            echo "claude binary missing after install; running postinstall: $root/install.cjs"
+            timeout -k 10 300 node "$root/install.cjs" || true
+          fi
+        }
+        ok=""
+        for attempt in 1 2 3; do
+          echo "::group::Install claude CLI (attempt ${attempt}/3)"
+          [[ "$attempt" -gt 1 ]] && clean_state
+          install_attempt || echo "npm install attempt ${attempt} failed or timed out"
+          if claude --version 2>/dev/null; then ok=1; echo "::endgroup::"; break; fi
+          heal_postinstall
+          if claude --version 2>/dev/null; then ok=1; echo "::endgroup::"; break; fi
+          echo "::endgroup::"
+          [[ "$attempt" -lt 3 ]] && sleep $((attempt * 10))
+        done
+        if [[ -z "$ok" ]]; then
+          echo "::error::claude CLI did not become usable after 3 attempts (native-binary fetch failing — see logs above)." >&2
+          echo "diag: node=$(node --version 2>/dev/null) npm=$(npm --version 2>/dev/null) omit=$(npm config get omit 2>/dev/null)" >&2
+          exit 1
+        fi
+        claude --version
+
+    - name: Scan
+      if: env.SCAN_HAS_AUTH == 'true'
+      id: scan
+      shell: bash
+      env:
+        # On the WIF path this is empty; the claude CLI reads the
+        # ANTHROPIC_FEDERATION_* / _IDENTITY_TOKEN_FILE env exported by
+        # the mint step above instead. scan.sh's auth guard accepts either.
+        ANTHROPIC_API_KEY: ${{ inputs.anthropic-api-key }}
+        MARKETPLACE_PATH: ${{ inputs.marketplace-path }}
+        BASE_REF: ${{ inputs.base-ref }}
+        FAIL_ON_FINDINGS: ${{ inputs.fail-on-findings }}
+        FAIL_ON_UNSCANNED: ${{ inputs.fail-on-unscanned }}
+        SCAN_ALL_EXTERNAL: ${{ inputs.scan-all-external }}
+        POLICY_PROMPT: ${{ inputs.policy-prompt }}
+        ALLOWED_HOSTS: ${{ inputs.allowed-hosts }}
+        SCAN_TIMEOUT_SECS: ${{ inputs.scan-timeout-secs }}
+      run: "$ACTION_PATH/scripts/scan.sh"
