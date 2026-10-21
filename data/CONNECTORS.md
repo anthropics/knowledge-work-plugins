@@ -10,7 +10,7 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 | Category | Placeholder | Included servers | Other options |
 |----------|-------------|-----------------|---------------|
-| Data warehouse | `~~data warehouse` | Snowflake\*, Databricks\*, BigQuery, Definite | Redshift, PostgreSQL, MySQL |
+| Data warehouse | `~~data warehouse` | Snowflake\*, Databricks\*, BigQuery, Definite, ClickHouse | Redshift, PostgreSQL, MySQL |
 | Notebook | `~~notebook` | Hex | Jupyter, Deepnote, Observable |
 | Product analytics | `~~product analytics` | Amplitude | Mixpanel, Heap |
 | Project tracker | `~~project tracker` | Atlassian (Jira/Confluence) | Linear, Asana |
