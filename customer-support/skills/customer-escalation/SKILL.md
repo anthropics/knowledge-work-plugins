@@ -6,7 +6,8 @@ argument-hint: "<issue summary> [customer name]"
 
 # /customer-escalation
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> Plugin files use `~~category` as a placeholder for whatever tool you have connected in that category — `~~design tool` might be Figma, Sketch, or any other design tool.
+> If you see unfamiliar placeholders, they name a tool category rather than a specific product; any connected tool in that category works.
 
 Package a support issue into a structured escalation brief for engineering, product, or leadership. Gathers context, structures reproduction steps, assesses business impact, and identifies the right escalation target.
 

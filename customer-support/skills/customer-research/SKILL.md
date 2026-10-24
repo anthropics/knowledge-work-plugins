@@ -6,7 +6,8 @@ argument-hint: "<question or topic>"
 
 # /customer-research
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> Plugin files use `~~category` as a placeholder for whatever tool you have connected in that category — `~~design tool` might be Figma, Sketch, or any other design tool.
+> If you see unfamiliar placeholders, they name a tool category rather than a specific product; any connected tool in that category works.
 
 Multi-source research on a customer question, product topic, or account-related inquiry. Synthesizes findings from all available sources with clear attribution and confidence scoring.
 

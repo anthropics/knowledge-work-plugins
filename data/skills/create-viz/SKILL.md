@@ -6,7 +6,8 @@ argument-hint: "<data source> [chart type]"
 
 # /create-viz - Create Visualizations
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> Plugin files use `~~category` as a placeholder for whatever tool you have connected in that category — `~~design tool` might be Figma, Sketch, or any other design tool.
+> If you see unfamiliar placeholders, they name a tool category rather than a specific product; any connected tool in that category works.
 
 Create publication-quality data visualizations using Python. Generates charts from data with best practices for clarity, accuracy, and design.
 

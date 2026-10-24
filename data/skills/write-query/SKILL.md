@@ -6,7 +6,8 @@ argument-hint: "<description of what data you need>"
 
 # /write-query - Write Optimized SQL
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> Plugin files use `~~category` as a placeholder for whatever tool you have connected in that category — `~~design tool` might be Figma, Sketch, or any other design tool.
+> If you see unfamiliar placeholders, they name a tool category rather than a specific product; any connected tool in that category works.
 
 Write a SQL query from a natural language description, optimized for your specific SQL dialect and following best practices.
 

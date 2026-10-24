@@ -6,7 +6,8 @@ argument-hint: "[sprint name or date range]"
 
 # /sprint-planning
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> Plugin files use `~~category` as a placeholder for whatever tool you have connected in that category — `~~design tool` might be Figma, Sketch, or any other design tool.
+> If you see unfamiliar placeholders, they name a tool category rather than a specific product; any connected tool in that category works.
 
 Plan a sprint by scoping work, estimating capacity, and setting clear goals.
 

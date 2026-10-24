@@ -6,7 +6,8 @@ argument-hint: "<content to review>"
 
 # Brand Review
 
-> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
+> Plugin files use `~~category` as a placeholder for whatever tool you have connected in that category — `~~design tool` might be Figma, Sketch, or any other design tool.
+> If you see unfamiliar placeholders, they name a tool category rather than a specific product; any connected tool in that category works.
 
 Review marketing content against brand voice, style guidelines, and messaging standards. Flag deviations and provide specific improvement suggestions.
 
