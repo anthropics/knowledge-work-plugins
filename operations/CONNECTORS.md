@@ -18,3 +18,4 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Project tracker | `~~project tracker` | Asana, Atlassian (Jira) | Linear, monday.com, ClickUp |
 | Procurement | `~~procurement` | — | Coupa, SAP Ariba, Zip |
 | Office suite | `~~office suite` | Microsoft 365 | Google Workspace |
+| Workflow runner | `~~workflow runner` | — | Tallyfy |

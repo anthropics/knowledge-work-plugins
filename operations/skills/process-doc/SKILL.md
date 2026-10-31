@@ -75,6 +75,10 @@ If **~~project tracker** is connected:
 - Link the process to related projects and workflows
 - Create tasks for process improvement action items
 
+If **~~workflow runner** is connected:
+- Offer to turn the approved SOP into a reusable procedure, with the RACI owners assigned to each step and the deadlines set
+- Offer a test run before the team uses it, and launch nothing without the user's approval
+
 ## Tips
 
 1. **Start messy** — You don't need a perfect description. Tell me how it works today and I'll structure it.
