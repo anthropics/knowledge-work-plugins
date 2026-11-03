@@ -1,5 +1,12 @@
 # Knowledge Work Plugins
 
+> [!WARNING]
+> **This marketplace is deprecated.** Plugins are now listed and served through the [Claude plugin directory](https://claude.ai/plugins), which you can also browse at [claude.com/marketplace](https://claude.com/marketplace).
+>
+> - **Submit or update a plugin:** use [claude.ai/directory/manage](https://claude.ai/directory/manage). Pull requests that add or update marketplace entries here are no longer reviewed.
+> - **Install a plugin:** use the directory. The entries in this repository's `marketplace.json` remain in place, but entries that point to other repositories stay at the versions they were last pinned to.
+> - **Source code:** some plugins in the directory are still built from the source in this repository, so it stays available. You can still fork it to customize a plugin for your team.
+
 Plugins that turn Claude into a specialist for your role, team, and company. Built for [Claude Cowork](https://claude.com/product/cowork), also compatible with [Claude Code](https://claude.com/product/claude-code).
 
 ## Why Plugins
@@ -35,6 +42,8 @@ Install these directly from Cowork, browse the full collection here on GitHub, o
 Install plugins from [claude.com/plugins](https://claude.com/plugins/).
 
 ### Claude Code
+
+This marketplace is deprecated, so prefer the [Claude plugin directory](https://claude.ai/plugins). To install from this repository anyway:
 
 ```bash
 # Add the marketplace first
@@ -77,4 +86,4 @@ As your team builds and shares plugins, Claude becomes a cross-functional expert
 
 ## Contributing
 
-Plugins are just markdown files. Fork the repo, make your changes, and submit a PR.
+This repository no longer takes marketplace submissions. To list a plugin, submit it at [claude.ai/directory/manage](https://claude.ai/directory/manage). Plugins are just markdown files, so you can still fork the repo and customize them for your team.
