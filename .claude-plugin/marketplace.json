@@ -1200,7 +1200,7 @@
         "url": "https://github.com/anthropics/claude-plugins-official.git",
         "path": "plugins/security-guidance",
         "ref": "main",
-        "sha": "41f619d61b999adec1a1c8deb97d1a5b6ac35bb6"
+        "sha": "c07c748f1c680734a813eefd909bc073f8a9103f"
       },
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance"
     },
