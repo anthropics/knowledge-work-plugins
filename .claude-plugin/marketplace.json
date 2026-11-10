@@ -1470,6 +1470,28 @@
         "sha": "41cb943db7f96e33f0255f46c882742cb92cb909"
       },
       "homepage": "https://govtribe.com"
+    },
+    {
+      "name": "scan-selftest-a",
+      "description": "Temporary entry for a scan workflow self-test. Not for merge.",
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/code-simplifier",
+        "sha": "46497b7ed360472e65ce11b001e34ef5c174097e"
+      }
+    },
+    {
+      "name": "scan-selftest-b",
+      "description": "Temporary entry for a scan workflow self-test. Not for merge.",
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/example-plugin",
+        "sha": "46497b7ed360472e65ce11b001e34ef5c174097e"
+      }
     }
   ]
 }
