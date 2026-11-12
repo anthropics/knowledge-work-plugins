@@ -114,4 +114,4 @@ other skills together with an approval checkpoint at every step.
 
 ---
 
-**Current version:** 1.35.1 — 2026-09-15
+**Current version:** 1.35.2 — 2026-11-09

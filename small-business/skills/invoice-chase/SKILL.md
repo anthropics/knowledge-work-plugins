@@ -95,7 +95,7 @@ Still works. Ask for the AR aging report as a CSV upload, score and draft from t
 Read `reference/v2_sources.md` for the mapping:
 
 - **Stripe** — pull Stripe overdue invoices alongside the ledger whenever it's connected
-- **Airwallex** — unpaid invoices and paid status as a second cross-check, and a hosted pay link for every reminder that has one. Read-only on invoices; the only write is minting a pay link, inside the batch approval. Match by the ledger invoice number in `metadata`, never Airwallex's own numbering; skip `VOIDED` (`reference/gotchas.md`). Owners connect the **airwallex-agentos** connector (production); take the exact tool names from the connected server's tool list (`../../shared/connector-call-shapes.md`)
+- **Airwallex** — unpaid invoices and paid status as a second cross-check, and a hosted pay link for every reminder that has one. Read-only on invoices; the only write is minting a pay link, inside the batch approval. Match by the ledger invoice number in `metadata`, never Airwallex's own numbering; skip `VOIDED` (`reference/gotchas.md`). Owners connect the **airwallex** connector (production); take the exact tool names from the connected server's tool list (`../../shared/connector-call-shapes.md`)
 - **Xero** — aged receivables by contact, with invoice dates and amounts
 - **MYOB** — per-customer AR aging with at-risk flags, plus standard payment terms. Read-only, and it carries **no customer email addresses** — so chases still go out through Gmail or Microsoft 365
 - **NetSuite** — AR aging via reports and SuiteQL, common at the larger end of the segment
