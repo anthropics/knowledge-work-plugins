@@ -46,7 +46,7 @@ When the plugin encounters ambiguity it can't resolve — conflicting documents,
 | Connector | URL | Purpose |
 |-----------|-----|---------|
 | **Notion** | `https://mcp.notion.com/mcp` | Discovery backbone — federates across connected Google Drive, SharePoint, OneDrive, Slack, Jira. Also stores output guidelines. |
-| **Atlassian** | `https://mcp.atlassian.com/v1/mcp` | Deep Confluence search + Jira context for Atlassian-heavy enterprises |
+| **Atlassian** | `https://mcp.atlassian.com/v2/mcp` | Deep Confluence search + Jira context for Atlassian-heavy enterprises |
 | **Box** | `https://mcp.box.com` | Cloud file storage — official brand docs, shared decks, and style guides often live here |
 | **Microsoft 365** | `https://microsoft365.mcp.claude.com/mcp` | SharePoint, OneDrive, Outlook, Teams — enterprise document storage and email templates |
 | **Figma** | `https://mcp.figma.com/mcp` | Brand design systems — color, typography, design tokens inform voice |
