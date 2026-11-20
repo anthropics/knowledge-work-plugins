@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "required": ["passes", "summary", "violations", "may_make_external_network_calls", "may_download_additional_software"],
+  "additionalProperties": true,
+  "properties": {
+    "passes": { "type": "boolean" },
+    "summary": { "type": "string" },
+    "violations": { "type": "string" },
+    "may_make_external_network_calls": { "type": "boolean" },
+    "may_download_additional_software": { "type": "boolean" },
+    "unpinned_autoexec_runtime": {
+      "type": "boolean",
+      "description": "NOT model-produced (deliberately absent from `required`): joined into scanned[] entries by the deterministic static pin check step. true = the entry declares at least one non-waived floating npx/uvx/bunx/pipx MCP-server launcher spec (code resolved from a package registry at session start, not fixed by the pinned source SHA). Documented here so downstream JSON consumers have the field contract."
+    },
+    "unpinned_autoexec_specs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "server": { "type": "string" },
+          "launcher": { "type": "string" },
+          "class": { "type": "string" },
+          "spec": { "type": "string" },
+          "waived": { "type": "boolean" }
+        }
+      },
+      "description": "NOT model-produced: detail rows for unpinned_autoexec_runtime, action-emitted by the static pin check. Empty array when no floating specs."
+    }
+  }
+}
