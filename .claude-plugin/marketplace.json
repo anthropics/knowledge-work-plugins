@@ -1240,7 +1240,7 @@
         "url": "https://github.com/MavenBio/maven-bio-plugin.git",
         "path": "plugins/maven-bio",
         "ref": "main",
-        "sha": "885259378b239f9a4d3fe628ccea91d490edc3e9"
+        "sha": "e77a5d04c238e741bf41bfdde2fc3e1d4d0bcd1f"
       },
       "homepage": "https://mavenbio.com/mcp/docs"
     },
