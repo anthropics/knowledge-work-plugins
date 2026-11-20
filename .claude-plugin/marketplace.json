@@ -586,7 +586,7 @@
         "url": "https://github.com/qodo-ai/qodo-skills.git",
         "path": "packages/qodo",
         "ref": "main",
-        "sha": "80240e3f5b40d4b8e39935926770f7be0ddb5cde"
+        "sha": "20f9ba53696889dd05fd4c8ba53dd3fbef6809bb"
       },
       "homepage": "https://qodo.ai"
     },
