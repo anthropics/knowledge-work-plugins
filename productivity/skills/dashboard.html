@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="auto">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='2' width='24' height='28' rx='4' fill='%23faf9f5' stroke='%23D97757' stroke-width='2'/%3E%3Crect x='8' y='0' width='16' height='5' rx='2.5' fill='%23D97757'/%3E%3Cpath d='M9 13l3 3 5-5' fill='none' stroke='%23D97757' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='20' y='12' width='5' height='2' rx='1' fill='%23c4c4c2'/%3E%3Crect x='9' y='20' width='10' height='2' rx='1' fill='%23c4c4c2'/%3E%3Crect x='9' y='25' width='7' height='2' rx='1' fill='%23c4c4c2'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -27,7 +27,7 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', 'Readex Pro', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg-primary);
       color: var(--text-primary);
       height: 100vh;
@@ -1263,6 +1263,38 @@
   <div class="status-bar" id="status"></div>
 
   <script>
+
+    // Safari & Firefox fallback polyfill for Chromium File System Access API
+    if (typeof window.showOpenFilePicker !== 'function') {
+      window.showOpenFilePicker = async function(opts) {
+        return new Promise((resolve, reject) => {
+          const input = document.createElement('input');
+          input.type = 'file';
+          input.accept = '.md,.txt';
+          input.onchange = () => {
+            const file = input.files && input.files[0];
+            if (!file) return reject(new Error('No file selected'));
+            let cachedText = null;
+            resolve([{
+              name: file.name,
+              getFile: async () => cachedText !== null ? new File([cachedText], file.name, { type: 'text/markdown' }) : file,
+              createWritable: async () => {
+                let buf = '';
+                return {
+                  write: async (chunk) => { buf += chunk; },
+                  close: async () => {
+                    cachedText = buf;
+                    try { localStorage.setItem('dashboard_file_fallback_' + file.name, buf); } catch (e) {}
+                  }
+                };
+              }
+            }]);
+          };
+          input.click();
+        });
+      };
+    }
+
     // ===== SHARED STATE =====
     let activeMainTab = 'tasks'; // 'tasks' or 'memory'
 
