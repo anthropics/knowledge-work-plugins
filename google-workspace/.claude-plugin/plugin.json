@@ -1,0 +1,19 @@
+{
+  "name": "google-workspace",
+  "displayName": "Google Workspace",
+  "version": "1.0.0",
+  "description": "Connect Gmail, Google Drive, Google Calendar and other Google Workspace apps in one place, so Claude can work with your email, files and calendar.",
+  "author": {
+    "name": "Anthropic"
+  },
+  "privacyPolicyUrl": "https://www.anthropic.com/legal/privacy",
+  "keywords": [
+    "google",
+    "google workspace",
+    "gmail",
+    "drive",
+    "calendar",
+    "email",
+    "productivity"
+  ]
+}
