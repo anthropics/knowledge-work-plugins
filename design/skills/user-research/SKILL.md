@@ -1,9 +1,11 @@
 ---
 name: user-research
-description: Plan, conduct, and synthesize user research. Trigger with "user research plan", "interview guide", "usability test", "survey design", "research questions", or when the user needs help with any aspect of understanding their users through research.
+description: Plan, conduct, and synthesize user research. Trigger with "user research plan", "interview guide", "usability test", "survey design", "research questions", or when the user needs help with any aspect of understanding their users through research. When a user research platform is connected, use it to recruit and run interviews, and get approval of the plan and the cost before any paid launch.
 ---
 
 # User Research
+
+> If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
 
 Help plan, execute, and synthesize user research studies.
 
@@ -32,6 +34,16 @@ Help plan, execute, and synthesize user research studies.
 - **Impact/effort matrix**: Prioritize findings
 - **Journey mapping**: Visualize the user experience over time
 - **Jobs to be done**: Understand what users are hiring your product to do
+
+## Connected research platform
+
+If **~~user research platform** is connected, use it to plan the study, recruit participants (a panel or the user's own customers), run the interviews, and return findings with quotes traceable to each interview. The plan keeps the audience, count, time window, and questions or stimuli the user already named.
+
+Any launch that spends money stops until the user approves the plan and the cost. Do not start recruitment or fieldwork before that approval.
+
+If it is not connected, produce the plan and interview guide here and ask for notes or transcripts.
+
+Do not invent participant quotes.
 
 ## Deliverables
 

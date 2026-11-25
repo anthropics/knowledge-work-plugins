@@ -18,3 +18,6 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | SEO | `~~SEO` | Ahrefs, Similarweb | Semrush, Moz |
 | Email marketing | `~~email marketing` | Klaviyo | Mailchimp, Brevo, Customer.io |
 | Marketing analytics | `~~marketing analytics` | Supermetrics | Google Analytics, Mailchimp, Semrush |
+| User research | `~~user research platform` | *(not pre-configured)* | Any MCP server that runs interviews and returns cited findings |
+
+`~~user research platform` plans an interview study, recruits participants (a panel or the user's own customers), runs the interviews, and returns findings with quotes traceable to each interview. Any launch that spends money stops until the user approves the plan and the cost.

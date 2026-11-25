@@ -20,3 +20,6 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 | Product analytics | `~~product analytics` | Amplitude, Pendo | Mixpanel, Heap, FullStory |
 | Project tracker | `~~project tracker` | Linear, Asana, monday.com, ClickUp, Atlassian (Jira/Confluence) | Shortcut, Basecamp |
 | User feedback | `~~user feedback` | Intercom | Productboard, Canny, UserVoice |
+| User research | `~~user research platform` | *(not pre-configured)* | Any MCP server that runs interviews and returns cited findings |
+
+`~~user research platform` plans an interview study, recruits participants (a panel or the user's own customers), runs the interviews, and returns findings with quotes traceable to each interview. `~~meeting transcription` and `~~user feedback` stay the sources for recordings and feedback that already exist. Any launch that spends money stops until the user approves the plan and the cost.

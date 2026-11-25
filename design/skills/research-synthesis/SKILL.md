@@ -1,6 +1,6 @@
 ---
 name: research-synthesis
-description: Synthesize user research into themes, insights, and recommendations. Use when you have interview transcripts, survey results, usability test notes, support tickets, or NPS responses that need to be distilled into patterns, user segments, and prioritized next steps.
+description: Synthesize user research into themes, insights, and recommendations. Use when you have interview transcripts, survey results, usability test notes, support tickets, or NPS responses that need to be distilled into patterns, user segments, and prioritized next steps, or when a connected user research platform can supply those findings.
 argument-hint: "<research data, transcripts, or survey results>"
 ---
 
@@ -84,6 +84,12 @@ If **~~product analytics** is connected:
 If **~~knowledge base** is connected:
 - Search for prior research studies and findings to compare against
 - Publish the synthesis to your research repository
+
+If **~~user research platform** is connected:
+- Pull findings and quotes traceable to each interview
+- For a new study, draft the plan and the cost, keeping the audience, count, time window, and questions the user already named, and wait for approval of both the plan and the cost before any launch that spends money
+
+Pasted transcripts and notes stay valid whether or not that platform is connected. Do not invent participant quotes.
 
 ## Tips
 

@@ -1,6 +1,6 @@
 ---
 name: synthesize-research
-description: Synthesize user research from interviews, surveys, and feedback into structured insights. Use when you have a pile of interview notes, survey responses, or support tickets to make sense of, need to extract themes and rank findings by frequency and impact, or want to turn raw feedback into roadmap recommendations.
+description: Synthesize user research from interviews, surveys, and feedback into structured insights. Use when you have a pile of interview notes, survey responses, or support tickets to make sense of, need to extract themes and rank findings by frequency and impact, want to turn raw feedback into roadmap recommendations, when a feature concept needs interviews with target users before a decision, or when the user wants interviews with customers who cancelled in a time window they name.
 argument-hint: "<research topic or question>"
 ---
 
@@ -27,8 +27,11 @@ Accept research from any combination of:
 - **~~user feedback** (if connected): Pull recent support tickets, feature requests, bug reports
 - **~~product analytics** (if connected): Pull usage data, funnel metrics, behavioral data
 - **~~meeting transcription** (if connected): Pull interview recordings, meeting summaries, and discussion notes
+- **~~user research platform** (if connected): Retrieve interview findings with quotes traceable to each interview. To run a new study, draft the plan and the cost first. Keep the audience, count, time window, and question the user already named, such as a concept test with a set number of target users, or interviews with customers who cancelled in a window they named. Do not launch a study that spends money until the user approves both the plan and the cost. Pasted notes and uploads remain valid inputs.
 
-Ask the user what they have:
+If **~~user research platform** is not connected and the user wants new interviews, draft that same plan and ask them to paste findings or connect a server in this category. Do not invent quotes, and do not launch anything that spends money. Do not require pasted notes before the plan exists.
+
+Ask the user what they have when they are synthesizing material that already exists:
 - What type of research? (interviews, surveys, usability tests, analytics, support tickets, sales call notes)
 - How many sources / participants?
 - Is there a specific question or hypothesis they are investigating?

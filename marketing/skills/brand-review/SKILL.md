@@ -1,6 +1,6 @@
 ---
 name: brand-review
-description: Review content against your brand voice, style guide, and messaging pillars, flagging deviations by severity with specific before/after fixes. Use when checking a draft before it ships, when auditing copy for voice consistency and terminology, or when screening for unsubstantiated claims, missing disclaimers, and other legal flags.
+description: Review content against your brand voice, style guide, and messaging pillars, flagging deviations by severity with specific before/after fixes. Use when checking a draft before it ships, when auditing copy for voice consistency and terminology, when screening for unsubstantiated claims, missing disclaimers, and other legal flags, or when the user wants real people to react to specific claims or messages.
 argument-hint: "<content to review>"
 ---
 
@@ -9,6 +9,14 @@ argument-hint: "<content to review>"
 > If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
 
 Review marketing content against brand voice, style guidelines, and messaging standards. Flag deviations and provide specific improvement suggestions.
+
+## Testing claims with people
+
+Only when the user asks which messages or claims people notice: treat that as a research request. Do not answer it with a style review or with invented shopper reactions.
+
+If **~~user research platform** is connected, draft the study plan and the cost and wait. The plan keeps the claims or messages they named, who should see them, and how many people. Do not launch a study that spends money until the user approves both the plan and the cost. If it is not connected, write that plan and ask the user to paste findings.
+
+Any other request, including a check for unsubstantiated claims in a draft, stays a brand review and follows the sections below.
 
 ## Trigger
 

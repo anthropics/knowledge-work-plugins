@@ -98,7 +98,7 @@ Every command and skill works without any integrations:
 | Handoff specs | Describe or screenshot | Figma MCP (exact measurements, tokens) |
 | UX copy | Describe the context | Knowledge base (brand voice guidelines) |
 | Accessibility | Describe or screenshot | Figma MCP, analytics for real usage data |
-| Research synthesis | Paste transcripts | User feedback tools (pull raw data) |
+| Research synthesis | Paste transcripts | User feedback tools, or a user research platform for interview findings |
 
 ## MCP Integrations
 
@@ -113,5 +113,6 @@ Connect your tools for a richer experience:
 | **Project tracker** | Linear, Asana, Jira | Link designs to tickets, track implementation |
 | **Knowledge base** | Notion | Brand guidelines, design principles, research repository |
 | **Product analytics** | Amplitude, Mixpanel | Usage data for research synthesis and design decisions |
+| **User research** | Not pre-configured | Plan a study, run interviews, and return quotes tied to each interview |
 
 See [CONNECTORS.md](CONNECTORS.md) for the full list of supported integrations.
